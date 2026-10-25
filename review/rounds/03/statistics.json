@@ -1,0 +1,69 @@
+{
+  "round": 3,
+  "role": "statistics",
+  "topic": "标签成熟与隔离期",
+  "conclusion": "所核查短标签共同样本与长STOP标签的最晚成熟界均落在物理训练截止之前，6日隔离界得到既存标签和模型收据支持；但60日标签的重叠依然很强，隔离界保障因果截止而不创造独立训练或验证样本，标签条数与重复年度/种子数都不能直接作为有效样本量。",
+  "verdict": "qualified",
+  "evidence": [
+    {
+      "source": "lab/lagged_short.py:12–18,38–53；lab/sgd.py:10–13；lab/execution_labels.py:34–40；lab/label_trees.py:11–13,30–38",
+      "finding": "短L1成熟index+61，L2成熟index+62，B67共同样本按较慢的L2要求index+62≤cut−6。长STOP的60日持有期限加1日执行时差，成熟index+61≤cut−6。6日是标签成熟终点与训练/内层拟合截止的间隔，绝非把60日标签彼此隔开6日。"
+    },
+    {
+      "source": "studies/B67-lag-matched-short-supervision/folds/{2018,…,2025}/{labels.json.gz,training.json}:L1,L2,common_ids,receipts",
+      "finding": "独立逐条核查21082条跨扩展折的双头标签记录：候选index、各头maturity_index和共同DEFINED支持精确符合冻结规则，labels SHA256全部匹配。共同支持数量依次0、408、771、1135、1498、1861、2224、2588。非空折L1最晚成熟距cut均7日，L2均6日；所有实际exit≤maturity。收据的count、last_label与common_last_label均与支持和边界一致。此21082为重复扩展训练与双头累计记录数，不是独立经济样本。"
+    },
+    {
+      "source": "studies/B67-lag-matched-short-supervision/folds/2025/labels.json.gz；training.json:common_ids",
+      "finding": "2025折2588个共同支持形成2587对相邻标签，两头的全部2587对均重叠。按完整60日持有期计算，平均共享58.99458832624662个日价格增量；计入实际提前退出后，L1平均仍共享27.420950908388093个，L2共享28.23811364514882个。2019–2024各非空折的相邻共同支持实际退出路径也全部存在重叠。"
+    },
+    {
+      "source": "studies/B36-network-activity-factors/folds/{2019,…,2025}/labels/STOP.json.gz；studies/B81-reported-volume-long-core/folds/{2019,…,2025}/training.json:source_label_sha256",
+      "finding": "B81使用的长STOP标签共10548条跨扩展折记录，逐条index等于range(252,cut−66)，maturity=index+61≤cut−6；各折源标签SHA256与B81绑定一致，实际exit不晚于maturity。最新成熟日均为前一年12-25，物理cutoff为12-31，差6日。2018无可用拟合。各非空折含1至7个年末禁止入场的既定0标签，也不应称为等量独立成交。"
+    },
+    {
+      "source": "studies/B81-reported-volume-long-core/folds/{2019,…,2025}/models/{PAD47,PRICE_L7,VOL_L7,PRICE_L30,VOL_L30}.json.gz:receipt、source_label_sha256",
+      "finding": "只读核查35个现存模型文件的training模型哈希与源标签绑定；245份最终成员收据及980份内层模型收据的last_label/支持边界均通过。内层训练标签终点≤该held首个决策index−6，held最后标签成熟终点≤外层cut−6。未重拟合模型。"
+    },
+    {
+      "source": "同上模型:receipt.details[].trials[].folds",
+      "finding": "490组既存内层验证片段对逐一检查：每段60个相邻决策，第二段紧随第一段；两段完整期限所涉及的价格日期集合共有60个日期、日增量集合共有59个增量。这个检查表示标注期限重叠，不声称每个实际提前退出标签都使用了全期限。它足以说明两个验证loss不是独立重复实验。"
+    }
+  ],
+  "counterevidence": [
+    "60日标签重叠本身不证明未来数据泄漏。逐条成熟界、物理训练截止和内层训练/验证边界检查通过，支持所核查标签在当前折拟合时已经可知。",
+    "提前止损、跟踪退出与不同执行时差会缩短或改变实际经济观察窗口；不能机械假设每对标签都共享59个实际收益增量。此次同时检查完整期限和实际exit，区分了二者。",
+    "6日隔离是在标签已成熟之后再留出的边界；如果忽略成熟期只给决策日期留6天，会是另一种错误实现，本次所核查源码与收据并非这种实现。"
+  ],
+  "recommendations": [
+    {
+      "priority": "P0",
+      "action": "在新仓标签合同显式列出signal index、entry index、maturity index、actual exit、model cut和6日边界；短共同支持采用max(L1 maturity,L2 maturity)，不能仅写“gap=6”。",
+      "acceptance": "标签的index+lag+60≤cut−6与actual exit≤maturity逐条成立；共同支持精确等于两头均DEFINED的index集合；原始0标签和不可执行状态按既定合同披露，冻结标签不得改写。"
+    },
+    {
+      "priority": "P0",
+      "action": "将“independently checked labels/independent labels”等工程字段解释为独立实现复核的记录数，不解释成独立市场样本量；附上2025共同支持2588条、相邻实际路径2587对均重叠这一事实。",
+      "acceptance": "交付文档不以21082、10548、2588或重复种子/年度拟合数直接计算iid标准误、p值或置信度；标签条数与有效样本量使用不同字段。"
+    },
+    {
+      "priority": "P1",
+      "action": "将既存内层loss表标为相邻且期限重叠的开发期模型选择损失；若未来需要区间推断，应事前规定与标签期限和时间依赖相符的块级方法或不重叠评价设计，另处理策略/模型选择偏差。",
+      "acceptance": "不得把两段60日loss或七个模型种子当成独立市场实验，不将N/60机械写成精确有效样本量；本轮仅交付检查与限制，不改冻结分割、不运行优化、不读取2026。"
+    }
+  ],
+  "checks_performed": [
+    "读取冻结lagged_short、sgd、execution_labels、label_trees及其B67/B81调用源码，未导入或执行训练/回放入口。",
+    "标准库独立脚本逐折比对B67全标签候选、共同支持、标签哈希、成熟与actual exit边界以及既存训练收据。",
+    "独立统计每折共同样本相邻标签的完整期限和实际退出路径日增量交集，报告重叠而不把它直接换算成相关系数。",
+    "逐条检查B81源长STOP共10548条标签的index/成熟界/exit与哈希绑定，并只读检查35个既存模型文件的245份最终及980份内层拟合收据。",
+    "从490组内层验证收据实际首尾index构造期限集合，验证每段60个决策与两段60个价格日期/59个日增量交叠。",
+    "仅独占创建本人r03.json；未读取2026经济观察、V01/V02、其他专家意见，未改源仓、模型、账户、分割或门槛，未进行策略搜索或新拟合。"
+  ],
+  "unresolved": [
+    "强标签期限重叠不等于已经估计具体相关结构；本轮没有给出有效样本量数值，N/60也不是一般成立的精确答案。",
+    "所核查成熟界支持这些标签的截止合规，但不替代全部特征的真实发布时间/修订时点检查。",
+    "过去开发期模型和策略选择造成的额外偏差，不由6日gap、双头共同支持或成熟标签检查自动消除。"
+  ],
+  "independence_statement": "本轮仅依共享协议和冻结原始源证据独立检查；没有读取其他专家目录、评分、意见或主审结论。statistics是模拟AI分析角色，不是真实人类专家，也不是独立市场样本。全部经济证据不晚于2025，2026继续禁读；仅完成第03轮，没有预写后续轮次。"
+}

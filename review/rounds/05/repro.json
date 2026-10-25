@@ -1,0 +1,80 @@
+{
+  "round": 5,
+  "role": "repro",
+  "topic": "模型方程与实现一致性",
+  "conclusion": "本轮保存的接口快照在拒绝旧交易工程读取时首次导入models失败；使用明确披露、仅内存的本地instrument替身继续后，六家族真实numeric模型重建与封存context逐值误差均为0、None完全一致，seed/head平均及feature_order也一致。由此支持数值打包的一致性，但不能把替身后的通过宣称为该快照已独立导入；年度hash/roster强制校验与家族惰性因子仍属构建阶段待闭环项，需后续隔离回归而非本轮最终失败判定。",
+  "verdict": "qualified",
+  "evidence": [
+    {
+      "source": "/workspace/BTCExpertReview/workspaces/repro/checks-r05.json:clean_independent_import_passed,clean_independent_import_failure,code_hashes_at_start,code_hashes_at_end",
+      "actual_check": "在自有新进程加audit hook：拒绝任何旧源仓或旧binance_robot工程读取，并禁止交付仓写入。第一次import btc_strategy.models失败；传递链为models→strategies→conditional_short→bear_short_overlay→b05→margin_walkforward→binance_robot。保存的失败包含被阻止的旧工程__init__缓存路径，代码hash检查前后稳定。此证据限定为本轮已保存快照，不覆盖后续施工改动。"
+    },
+    {
+      "source": "/workspace/BTCExpertReview/workspaces/repro/checks-r05.json:in_memory_local_instrument_shim_used_for_continued_checks,six_family_actual_reconstructions",
+      "actual_check": "为继续检查，仅在本进程sys.modules中放入以新仓instrument.INSTRUMENT/VENUE/paper_instrument为内容的显式binance_robot命名替身，不修改任何文件、不读取旧工程，然后调用六家族verify_family。每家族3287位置、2557有限预测，max_error=0.0，原容差2e-12及None掩码均通过。audit读集未含training_inputs或旧源/旧交易工程。该通过以替身为条件，不能用于宣称第一次独立导入通过。"
+    },
+    {
+      "source": "/workspace/BTC-strategy/src/btc_strategy/models.py:18-42（保存快照）； /workspace/BTCExpertReview/workspaces/repro/checks-r05.json:roster_schema_digest_checks",
+      "actual_check": "48个真实年度route检查全部通过：2018为0状态，其余年度每家族/每head按整数seed排序为[101,307,509,701,907,1103,1701]，无真实重复/漏项；文件摘要匹配manifest，schema宽度及index连续。short家族先分别平均lag1、lag2的7个seed，再对两个head作(a+b)/2，与原B67/B88A实现一致。避免按文件名字典序将1103放到307之前。"
+    },
+    {
+      "source": "/workspace/BTCExpertReview/workspaces/repro/checks-r05-schema.json:feature_order_checks,feature_schema_sha256",
+      "actual_check": "新仓已增加feature_schema与manifest引用。独立逐位置核对CAL44的20基础列+原PATH_NAMES16+CAL_NAMES8、PRICE47再加3列、MINING58再加MASK_NAMES2+NAMES12，三套name顺序均精确一致；矿业index54–57的forced_zero标志准确。schema的SHA为d832e171f83a62ee61f35a8d72ca78dabc5b2d59601fb79245a9502b11773999。"
+    },
+    {
+      "source": "/workspace/BTCExpertReview/workspaces/repro/checks-r05.json:in_memory_fault_outcomes",
+      "actual_check": "只把models.read临时替换为返回内存副本，未修改磁盘：保存快照的annual_states接受重复seed条目（返回8个）、只剩lag1（返回7个）和已漂移initial；对2019声明missing则按invalid missing-state contract拒绝。这证明当时单独annual_states尚未强制完整性/roster；并不证明真实导出文件存在这些故障，也不预判开发中的全局hash gate最终失效。"
+    },
+    {
+      "source": "/workspace/BTCExpertReview/workspaces/repro/checks-r05.json:price_only_market_call_error; /workspace/BTC-strategy/src/btc_strategy/models.py:11-15,31-34（保存快照）",
+      "actual_check": "对真实历史days/prices但省去mining的自定义market调用reconstruct('price47',market)，保存快照因features无条件生成全部六家族而抛KeyError('mining')。PRICE47数值并不依赖mining，此项是接口的额外输入耦合；默认完整market可成功，所以不是预测方程错误。"
+    },
+    {
+      "source": "/workspace/BTCExpertReview/workspaces/repro/checks-r05-schema.json:synthetic_path_rejections; /workspace/BTCExpertReview/workspaces/repro/checks-r05.json:active_interface_absolute_workspace_literals",
+      "actual_check": "artifacts.read对../逃逸及2026/V01/V02三类合成禁读路径在打开文件前均拒绝；models/strategies/artifacts三接口源码没有/workspace绝对字符串。但真实首次导入仍通过_frozen传递链访问旧工程，说明只搜顶层绝对字符串不足以证明依赖闭合。没有打开真实禁读文件。"
+    }
+  ],
+  "counterevidence": [
+    "六家族实际年度numeric状态对封存参考误差全为0，已提供直接的数值一致性证据；不能因首次导入依赖故障断言模型方程或已导出状态错误。",
+    "真实48个route的seed/head清单和模型摘要全部正确；故障注入只说明当时接口缺少强制拒绝，不代表真实manifest发生重复、漏head或漂移。",
+    "新仓feature_order已补齐且逐位置通过，不应沿用第04轮“当时无显式schema”的快照判断作为当前事实。",
+    "本轮数字重建使用同一冻结预测函数实现，是打包/接口回归证据，不是另一个算法实现、重新拟合或新的独立市场样本。",
+    "trainer、全局hash gate与纯依赖闭包正在开发，本轮保留首次失败及代码hash，不把阶段缺项升级为最终验收失败，也不以尚未独立回归的后续改动覆盖保存证据。"
+  ],
+  "recommendations": [
+    {
+      "priority": "P0",
+      "action": "在新仓消除models的纯推理/规则导入对旧交易runner和账户模块的传递依赖：让纯时钟/信号函数处于可独立导入的运行闭包，冻结原件继续作为原样血缘归档；不得靠审查脚本或环境中预装binance_robot作为正式运行条件。",
+      "acceptance": "后续新进程在旧源仓、binance_robot源码/缓存不可读且无内存替身时，直接import models/strategies并完成六家族预测；实际读集只含交付包及已锁定第三方依赖，所有预测误差和None合同仍满足原阈值。"
+    },
+    {
+      "priority": "P0",
+      "action": "完成开发中的hash gate并使公开推理入口不可绕过；同时校验route唯一、schema引用/摘要、模型宽度、每head唯一的完整seed roster、预测有限性、2018唯一可用的无状态合同及年度window/cutoff。可以集中预检，但不能只在独立测试中核对hash而运行路径不检查。",
+      "acceptance": "在私有副本或内存故障中，重复seed、缺head、漂移模型、错schema、改cutoff或额外/缺route均明确拒绝；真实48route仍通过，非2018缺模型继续拒绝，不产生NaN或静默降级。"
+    },
+    {
+      "priority": "P1",
+      "action": "按family惰性构造需要的因子；纯价格家族仅要求days/prices，mining58才要求mining。明确reconstruct是完整历史重建接口，若提供按日/前缀推理则另行定义年度窗口与输入前缀要求。",
+      "acceptance": "PRICE47在缺mining与volume时可执行并与完整market结果精确一致；mining58缺其观测物料时给出家族明确错误。所有因子/模型输出仍保留2018及终端日None掩码，不用补零或邻年模型替代。"
+    },
+    {
+      "priority": "P1",
+      "action": "保留“numeric模型→年度预测”和“封存context→策略目标”两条已验证结果的用途说明；在最终验收增加把重建预测注入策略context后的目标/entry对照，避免只测试两条各自正确的缓存链而未连接模型与策略。",
+      "acceptance": "九候选的目标/权限可在使用重建预测的context下与冻结targets精确一致；该检查不训练、不搜索新参数、不改原冻结件，账户核算仍按后续授权验收。"
+    }
+  ],
+  "checks_performed": [
+    "只读当前models/strategies/artifacts和feature_schema/manifest；保存三个接口起止SHA，快照稳定。",
+    "新进程audit拒绝旧源/旧binance_robot工程及交付写入，捕获首次import失败；明确记录后续仅内存instrument替身及其条件式数值结果。",
+    "核对48route的seed/head roster、schema宽度/index及全部实际模型清单hash；六家族实际预测重建与封存参考均0误差、None精确一致。",
+    "核对三套完整feature_order和矿业forced_zero标志；验证4类合成路径在文件打开前被拒绝。",
+    "只以内存read替身测试重复seed、缺head、漂移initial、非法2019 missing；真实文件从未改写。",
+    "没有读取training_inputs、其他专家/主审内容、禁读年度或账户；未训练、未重跑writer、未执行账户/策略搜索。仅写本角色check_r05.py、checks-r05.json、checks-r05-schema.json及r05.json。"
+  ],
+  "unresolved": [
+    "首次导入依赖与开发阶段gate/惰性因子的修复尚未由本角色在后续版本做隔离回归；当前通过明确以保存快照和内存替身为条件。",
+    "完整性gate、schema/roster拒绝与trainer尚在开发，最终集成状态不能从本轮快照推定。",
+    "本轮未做重新拟合、独立标签重建或使用重建预测的九候选端到端目标比较。"
+  ],
+  "independence_statement": "本结果为repro工程复现AI角色的隔离审查，使用被授权的新仓只读物料、此前已冻结源规则及自有新进程检查；未读取其他专家意见/评分或主审结论。未读2026经济数据、V01/V02或2026账户，未修改源代码/spec/model/account/verification/gates或交付仓；故障和instrument替身仅在自有进程内存。未运行训练、独占writer、账户重放或新策略搜索；没有派生代理或预写未来轮次。本角色不是人类专家，不构成新的独立市场样本。"
+}

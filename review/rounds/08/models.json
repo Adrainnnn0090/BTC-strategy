@@ -1,0 +1,72 @@
+{
+  "round": 8,
+  "role": "models",
+  "topic": "多重试验与有效独立性",
+  "conclusion": "列序、宽度、seed与反复特征/损失选择产生的是共享数据和模型祖先下的相关研究分支，不能按分支或拟合次数计为独立alpha。已存模型存在精确重复绑定；有限随机树在重新训练时对列序/宽度敏感并不自动构成数学实现bug，须与固定模型坐标映射后的函数等价检验分开。本轮能够确认依赖与重复，但不能据此给出有效独立市场样本数或独立alpha结论。",
+  "verdict": "qualified",
+  "evidence": [
+    {
+      "source": "lab/price_order_core.py:7; studies/B94-price-column-order-stability/registration.json orders/qualification；r08_checks.json information_preserving_orders",
+      "actual": "B94的ORIGINAL/REVERSE/ROTATE23/SHUFFLE都是同一PRICE47的47列双射，不增加价格或外部信息。无拟合检查四个逆置换均逐值恢复原32×47合成矩阵；对各组既有2025 seed101树映射节点feature索引回原坐标后，原坐标预测与置换坐标预测最大误差均为0。"
+    },
+    {
+      "source": "lab/tree_factors.py:11; lab/tree_stability.py:53; lab/label_trees.py:28; studies/B81-reported-volume-long-core/registration.json groups/profiles/seeds",
+      "actual": "有限96树ExtraTrees按随机seed和max_features=0.7在列索引空间取候选特征/阈值。列重排可改变同一seed对应的语义特征和后续随机消耗；宽度变化/补常数也会改变候选特征抽样及有效分裂路径，继而影响内层profile选择。相同信息并不要求用同一seed重新拟合后逐树等同；只有固定已训模型和输入一致坐标转换时才要求预测函数相同。"
+    },
+    {
+      "source": "r08_checks.json shared_huber_bindings；studies/B67-lag-matched-short-supervision/folds/{2019..2025}/training.json model_states；B88A对应HUBER模型绑定",
+      "actual": "新确定性哈希核对：两执行头×七seed×七可训练年共98个B67状态，与B88A HUBER对应压缩文件的SHA逐一完全相同，并与双方model_states登记SHA一致。这是同一数值模型，不因研究编号或再拟合计数而成为新的独立预测证据。"
+    },
+    {
+      "source": "r08_checks.json shared_price_bindings；studies/B81-reported-volume-long-core/folds/{2019..2025}/models/PRICE_L7.json.gz；B94对应ORIGINAL.json.gz",
+      "actual": "B81 PRICE_L7与B94 ORIGINAL的七年×七seed=49个最终numeric成员逐对象完全一致，receipt也完全一致。B94的ORIGINAL是继承/重建身份对照，不是与PRICE_L7独立的新alpha样本。"
+    },
+    {
+      "source": "studies/B94-price-column-order-stability/registration.json recipes/qualification；同研究analysis.json qualification/duplicate_groups/original_identity_vs_p02",
+      "actual": "B94登记O00身份对照、O01–O03单独列序为诊断且goal_eligible=false，只允许预先指定四序均值O04作为新提名；analysis描述“no best-order promotion”、O00与P02四成本账本相同，并记录多个重复路径组。该记录支持保留诊断用途，不能把事后最优单列序升格为已获独立验证的策略。"
+    },
+    {
+      "source": "studies/B81-reported-volume-long-core/registration.json；studies/B88A-short-net-loss-families/registration.json；两研究analysis.json qualification/mechanism/duplicate_groups",
+      "actual": "B81五组/两个lag共享原STOP标签与固定七seed；B88A四损失共享原CAL44、L1/L2样本、种子和P02多头/risk，S03主要改变post空头许可。登记研究拟合数B81=1225、B94=980、B88A=392是工作量/选型轨迹计数，不是独立行情样本数。分析文件记录重复组，只能作为现有历史描述，不能补出未见样本外证据。"
+    }
+  ],
+  "counterevidence": [
+    "不同列序/seed训练出的有限模型可以确有不同预测或账户路径；“同信息”不等于“同一有限随机训练结果”，因此不能仅凭历史RNG敏感性断定实现错误。",
+    "不同损失或因子变换也可能产生有用的条件行为差异；共享数据并不证明所有分支完全相同。这里否定的是把其当成独立alpha/独立市场复制，而不是否定差异存在。",
+    "模型哈希相同证明特定数值状态重复，但不同策略覆盖层仍可能产生不同账户结果；反过来，四成本账户路径重复也不必要求所有模型参数相同。",
+    "现有登记可见的拟合次数不是全部研究尝试的完整普查；本轮不据此推算有效独立试验数、显著性或置信度。"
+  ],
+  "recommendations": [
+    {
+      "priority": "P0",
+      "action": "交付试验谱系同时登记数据/标签/模型hash/seed/列序/损失/策略覆盖层，精确重复模型与身份对照合并标记，但保留原研究记录。",
+      "acceptance": "能标出98个B67↔B88A HUBER同状态和49个B81↔B94 ORIGINAL同成员；不把392或1225次拟合称作对应数量的独立alpha证据。"
+    },
+    {
+      "priority": "P0",
+      "action": "将固定模型的坐标一致性验收，与重新训练后的列序/seed稳定性诊断分别报告；沿用2e-12数值容差。",
+      "acceptance": "四个已训模型映射检验误差0；历史重新训练敏感性只在有额外实现不一致证据时才定为数学实现bug。"
+    },
+    {
+      "priority": "P1",
+      "action": "保留B94原登记的诊断/提名资格边界和已消耗历史限定，停止用同一历史反复筛选后的最佳分支充当新增独立验证。",
+      "acceptance": "O01–O03仍是诊断，O04固定均值的资格说明与注册一致；不凭当前可见研究次数发明有效样本数或显著性结论。"
+    }
+  ],
+  "checks_performed": [
+    {
+      "command": "/workspace/BinanceTradingRobot/backend/.venv/bin/python -B /workspace/BTCExpertReview/workspaces/models/check_r08.py",
+      "result": "exit 0；all_checks_pass=true；零拟合，四序双射/逆变换和固定树坐标映射误差0，98个HUBER状态精确SHA相同，49个价格最终成员和receipts相同。",
+      "artifact": "/workspace/BTCExpertReview/workspaces/models/r08_checks.json"
+    },
+    {
+      "check": "仅明确白名单读取B94/B81/B88A注册和analysis及所列2019–2025数字模型/训练绑定",
+      "result": "analysis均validation_read=false；未做新参数、seed、列序或策略搜索。"
+    }
+  ],
+  "unresolved": [
+    "没有完整的全部研究尝试计数或独立市场复制，本轮不能估计有效独立试验/样本数或确证alpha。",
+    "无拟合坐标等价性并不量化有限森林在不同列序、宽度和seed下的总体稳定性；本轮不新开训练研究。"
+  ],
+  "independence_statement": "只访问明确白名单冻结源码、B94/B81/B88A注册/分析和列出的2019–2025模型/训练记录，未读V01/V02、2026经济数据、其他专家意见/评分或主审结论，未派生agents。未拟合、未执行原写入器、未进行策略或参数搜索；新文件仅在models目录首次独占创建，-B禁止源码字节码写入。AI角色不是人类专家或独立市场样本。"
+}

@@ -1,0 +1,72 @@
+{
+  "round": 2,
+  "role": "models",
+  "topic": "年度分集与封存",
+  "conclusion": "六个关键模型家族的年度代表状态与封存记录支持同一年度合同：预测年Y使用截止Y-1年12月31日的模型，内层选型限于此前训练前缀；2018均无模型且目标流为None，2019起状态与目标流同时可用。63个代表数值文件、161项内层选型及7次同年度1701种子复用核对均通过，未发现被查代表状态跨年错配。",
+  "verdict": "supported",
+  "evidence": [
+    {
+      "source": "r02_checks.json records[*].cutoff/cut_index/sample_models; lab/b10.py:66; lab/b20.py:84; lab/b81.py:92; lab/b67.py:64; lab/b88a.py:69; lab/b17.py:85",
+      "actual": "六家族×2018–2025共48个年度合同：训练/封存cutoff均为前一年12月31日，数值receipt.cut与自2017-01-01起的对应日索引一致。2019代表cut=729；2025采用2024年末截止。所有代表模型实际SHA与同年seal.model_sha256或training.model_states一致，训练摘要与seal、seal与测试receipt、registration与seal的绑定也一致。"
+    },
+    {
+      "source": "lab/tree_stability.py:53; lab/label_trees.py:28; lab/b17.py:96; r02_checks.json deterministic_inner_profile_selections_checked/inner_fit_receipt_boundaries_checked",
+      "actual": "B10代表101/1701种子及原STOP44、PRICE_L7、H04每个包装内全部7成员，共检查161项内层选型：每项两个固定profile、每profile两段按时间排序的验证；以receipt中平均损失和固定索引平局规则重算selected，均等于实际状态profile。644条内层训练receipt满足cut=对应验证起点，训练标签末端不晚于该cut-6；验证标签末端不晚于外层cut-6。该检查复核已存损失的选型规则，未重新估计损失。"
+    },
+    {
+      "source": "lab/b10.py:78; r02_checks.json same_year_retained_seed_reuses_checked及BASE_TREE记录",
+      "actual": "B10的1701种子并非每年都新增拟合；2019–2025七次复用的reused_source均在相同fold年，源状态文件SHA等于reused_sha256，外层模型cutoff与最终训练receipt.cut也吻合。未把历史同seed状态跨年沿用。"
+    },
+    {
+      "source": "lab/b67.py:69; lab/b88a.py:74; r02_checks.json B67/B88A_MEDIAN代表L1/L2记录",
+      "actual": "B67及B88A_MEDIAN每年各抽取L1/L2的seed101状态，固定profile训练receipt的selection_calls=0、random_validation=false、cut为当年训练前缀，且execution_lag与数值状态一致。不能将这两个固定损失/时钟头描述为另做了内层超参数选型。"
+    },
+    {
+      "source": "lab/b10.py:123; lab/b20.py:111; lab/b81.py:117; lab/b67.py:86; lab/b88a.py:93; lab/b17.py:109; r02_checks.json static_test_checks",
+      "actual": "六个test函数均从当前year目录加载已绑定模型；静态AST没有直接fit/tune/partial_fit/fit_transform调用，测试receipt均fitting_calls=0，存在selection_calls字段者均为0。B10/B20/B17由seal的模型表读取，B81/B67/B88A由同年training.model_states核SHA后推理。"
+    },
+    {
+      "source": "r02_checks.json records[*].all_streams_none/test_first_decision/test_last_decision；r01_2018_model_contract.json",
+      "actual": "2018六家族无模型/无清单项、被查目标预报流全部None；2019开始目标预报流全部为有限数且对应数值状态存在。各Y年预报决策日期为Y-1-12-31至Y-12-30，非简单从Y-01-01起切；例如2019为2018-12-31至2019-12-30。应保留决策日与后续执行日的区别。"
+    }
+  ],
+  "counterevidence": [
+    "本轮读取63个年度代表数值文件：B10的101/1701、两空头家族的L1/L2 seed101，以及三个7成员包装。未读取每个家族所有种子的全部模型内容，不能把代表检查升级为全数值模型认证。",
+    "根据存档损失重算selected证明索引/状态profile一致，并未重建因子或重算验证损失，因此不是独立重训复现。",
+    "AST和receipt只支持已查直接调用及记录一致性；尚未从独立解释器重新执行全部测试推理。年度封存一致也不单独证明来源时点、标签经济正确性或开发选择无偏。"
+  ],
+  "recommendations": [
+    {
+      "priority": "P0",
+      "action": "导出清单逐年绑定训练cutoff、模型路径/SHA、最终receipt.cut和预测决策区间；B10为1701种子额外保留同年reused_source/SHA。",
+      "acceptance": "48个年度家族条目与r02_checks一致；2019cut=729；任何模型路径、cutoff或复用年度被改动时校验失败。"
+    },
+    {
+      "priority": "P0",
+      "action": "把2018无状态合同作为导出器显式分支，2019起才加载模型；保留原None语义和冷启动策略覆盖。",
+      "acceptance": "六家族2018均不访问不存在的模型文件且相应流全None，2019流全有限；不能填0、复制2019参数到2018或跳过2018账户路径。"
+    },
+    {
+      "priority": "P1",
+      "action": "保留原STOP44、PRICE_L7、BASE_TREE和H04每成员的selected/trials/receipt，不将内层选型摘要误当成测试年重新选型。",
+      "acceptance": "可在不训练模型的条件下重算selected及选中profile，一致率161/161；测试适配器只从封存状态推理，不调用训练或选择函数。"
+    }
+  ],
+  "checks_performed": [
+    {
+      "command": "/workspace/BinanceTradingRobot/backend/.venv/bin/python /workspace/BTCExpertReview/workspaces/models/check_r02.py",
+      "result": "exit 0；all_checks_pass=true；48个年度家族合同、63个代表数值文件、161项内层选型、644条内层receipt边界、7次同年seed1701复用、6个test函数AST均通过。",
+      "artifact": "/workspace/BTCExpertReview/workspaces/models/r02_checks.json"
+    },
+    {
+      "check": "按显式2018–2025目录只读检查年度目标流日期与None→有限数转换",
+      "result": "六家族转换一致；未重复上轮跨候选完整预报相同检查，未训练或重放账户。"
+    }
+  ],
+  "unresolved": [
+    "全种子模型的独立数值推断复现及测试年完整预测逐值重建尚未执行。",
+    "2018无状态仍可经冷启动规则产生策略行为；本轮未据此验证或重放账户。",
+    "本轮是年度模型隔离和存档选型的证据，不对2026或其他未查看验证资料作任何推断。"
+  ],
+  "independence_statement": "仅读共享事实源、冻结源仓与models自身工作区；未读其他专家工作区、评分、建议或主审结论，未派生agents，未读V01/V02与2026经济数据。所有写入仅在models目录且首次独占创建；角色是AI分析视角，不是人类或独立市场样本。"
+}

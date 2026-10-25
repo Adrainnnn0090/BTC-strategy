@@ -1,0 +1,207 @@
+"""Conditional lagged mining-state descendants, with mask-only ablations."""
+import argparse
+import itertools
+import subprocess
+import sys
+from importlib.metadata import version
+from threadpoolctl import threadpool_limits
+from .io import ROOT,read,write,sha
+from .b16_io import STUDY,UPSTREAM,BASELINE,FOLDS,FEATURES,install_guard,load_fold,load_features
+from .mining_models import tune,infer
+from .mining_features import append_to_prices,LAGS,NAMES,MASK_NAMES
+from .kernel_models import SEEDS as RIDGE_SEEDS,PROFILES as RIDGE_PROFILES
+from .tree_stability import SEEDS as TREE_SEEDS
+from .tree_factors import matrix,PROFILES as TREE_PROFILES
+from .sgd import matured
+from .b12_signals import SignalFactory
+from .margin_walkforward import run_account,CASES,BORROW
+from .margin_walkforward_audit import audit
+
+MODELS=[dict(id=f'{family}_{kind}_L{lag}',family=family,kind=kind,lag=lag,horizon=60)
+        for family,kind,lag in itertools.product(('RFF_RIDGE','EXTRA'),('MASK','MINER'),LAGS)]
+RECIPES=[dict(id=f'M{i+1:02}',mode=mode,model=m['id'],family=m['family'],kind=m['kind'],lag=m['lag'])
+         for i,(m,mode)in enumerate(itertools.product(MODELS,('PURE','BLEND')))]
+RECIPES += [dict(id='M17',mode='BASELINE',family='RFF_RIDGE'),
+            dict(id='M18',mode='BASELINE',family='EXTRA'),
+            dict(id='M19',mode='EXACT',parent='U02'),dict(id='M20',mode='EXACT',parent='U04')]
+BASE_SCORES={'RFF_RIDGE':'BASE_RIDGE','EXTRA':'BASE_TREE'}
+
+
+def verify():
+    reg=read(STUDY/'registration.json')
+    for name,digest in reg['sources'].items():
+        if sha(ROOT/name)!=digest:raise ValueError('frozen source changed: '+name)
+    assert sha(FOLDS/'manifest.json')==reg['data_manifest_sha256']
+    assert sha(FEATURES/'manifest.json')==reg['feature_manifest_sha256']
+    for name,v in reg['versions'].items():assert version(name)==v
+    return reg
+
+
+def upstream(reg,path,baseline=False):
+    p=(BASELINE if baseline else UPSTREAM)/path
+    if sha(p)!=reg['baseline'if baseline else 'upstream'][path]:raise ValueError('parent seal changed')
+    return read(p)
+
+
+def freeze():
+    names=['lab/b16.py','lab/b16_io.py','lab/mining_models.py','lab/mining_features.py',
+        'lab/kernel_models.py','lab/tree_stability.py','lab/tree_factors.py','lab/b12_signals.py',
+        'lab/b05.py','lab/sgd.py','lab/signals.py','lab/io.py','lab/native.py','lab/audit.py','lab/search.py',
+        'lab/walkforward_io.py','lab/margin_walkforward.py','lab/margin_walkforward_audit.py',
+        'tests/test_b16_features.py','tests/test_b16.py','tools/verify_b16.py',
+        'WALKFORWARD_AUTHORIZATION.md','studies/B16-lagged-mining-descendants/data-registration.json',
+        'studies/B16-lagged-mining-descendants/data-spec.md','studies/B16-lagged-mining-descendants/data-check.json',
+        'studies/B16-lagged-mining-descendants/spec.md','studies/B16-lagged-mining-descendants/sources.md']
+    seals={}
+    for label,source in (('upstream',UPSTREAM),('baseline',BASELINE)):
+        sealed={}
+        for year in range(2018,2026):
+            stem=f'folds/{year}/';seal=read(source/(stem+'seal.json'));receipt=read(source/(stem+'test-receipt.json'))
+            sealed[stem+'seal.json']=sha(source/(stem+'seal.json'))
+            if label=='upstream':sealed[stem+'training.json']=seal['training_sha256']
+            sealed[stem+'test-receipt.json']=sha(source/(stem+'test-receipt.json'))
+            sealed[stem+'predictions.json.gz']=receipt['predictions_sha256']
+        seals[label]=sealed
+    write(STUDY/'registration.json',dict(models=MODELS,recipes=RECIPES,**seals,
+        ridge_seeds=RIDGE_SEEDS,tree_seeds=TREE_SEEDS,ridge_profiles=RIDGE_PROFILES,
+        tree_profiles=TREE_PROFILES['EXTRA'],new_member_fits_cap=1736,new_final_members_cap=280,
+        final_account_cap=80,sources={p:sha(ROOT/p)for p in names},
+        data_manifest_sha256=sha(FOLDS/'manifest.json'),feature_manifest_sha256=sha(FEATURES/'manifest.json'),
+        costs=CASES,financing=BORROW,
+        versions={p:version(p)for p in ('scikit-learn','numpy','pandas','nautilus-trader','threadpoolctl')},
+        target_return_pct=10000,max_drawdown_strict_pct=35,
+        qualification='conditional reconstructed mining-state inputs; consumed history; not PIT certification'))
+    print('B16 FROZEN',sha(STUDY/'registration.json'),flush=True)
+
+
+def matrices(days,prices,records):
+    base=matrix(days,prices,'CAL44')
+    return {(kind,lag):append_to_prices(base,records,kind,lag)for kind in ('MASK','MINER')for lag in LAGS}
+
+
+def train(year):
+    reads=install_guard(year,'train');reg=verify();folder=STUDY/f'folds/{year}'
+    if (folder/'seal.json').exists():raise ValueError('preserve sealed fold')
+    oldseal=upstream(reg,f'folds/{year}/seal.json');parent=upstream(reg,f'folds/{year}/training.json')
+    assert oldseal['cutoff']==f'{year-1}-12-31'and not oldseal['current_test_read']
+    days,prices=load_fold(year);records=load_features(year,days);cut=len(days)-1
+    rows=matrices(days,prices,records);models={};fits=0;cold=[]
+    for m in MODELS:
+        try:
+            ids=matured(cut,60);matured(int(ids[-120:-60][0]),60)
+        except (ValueError,IndexError):cold.append(m['id']);continue
+        with threadpool_limits(limits=1):members,receipt=tune(rows[m['kind'],m['lag']],prices,cut,m['family'])
+        p=folder/f"models/{m['id']}.json.gz"
+        write(p,dict(spec=m,members=members,receipt=receipt,cutoff=days[-1]))
+        models[m['id']]=sha(p);fits+=receipt['model_fits']
+        print('B16 MODEL',year,m['id'],'fits',fits,flush=True)
+    write(folder/'training.json',dict(year=year,cutoff=days[-1],model_fits=fits,cold_models=cold,
+        parent_policies={k:parent['policies'][k]for k in ('U02','U04')},protected_reads=sorted(reads)))
+    write(folder/'seal.json',dict(year=year,cutoff=days[-1],current_test_read=False,model_sha256=models,
+        train_sha256=sha(FOLDS/str(year)/'train.json'),feature_train_sha256=sha(FEATURES/str(year)/'train.json.gz'),
+        training_sha256=sha(folder/'training.json'),registration_sha256=sha(STUDY/'registration.json')))
+    print('B16 TRAIN SEALED',year,flush=True)
+
+
+def test(year):
+    reads=install_guard(year,'test');reg=verify();folder=STUDY/f'folds/{year}';seal=read(folder/'seal.json')
+    assert not seal['current_test_read']and seal['cutoff']==f'{year-1}-12-31'
+    assert sha(folder/'training.json')==seal['training_sha256']
+    assert sha(STUDY/'registration.json')==seal['registration_sha256']
+    assert sha(FOLDS/str(year)/'train.json')==seal['train_sha256']
+    assert sha(FEATURES/str(year)/'train.json.gz')==seal['feature_train_sha256']
+    models={}
+    for name,digest in seal['model_sha256'].items():
+        p=folder/f'models/{name}.json.gz';assert sha(p)==digest;models[name]=read(p)
+    parent=upstream(reg,f'folds/{year}/predictions.json.gz')
+    baseline=upstream(reg,f'folds/{year}/predictions.json.gz',baseline=True)
+    days,prices=load_fold(year,include_test=True);records=load_features(year,days,include_test=True)
+    first,last=days.index(f'{year-1}-12-31'),days.index(f'{year}-12-31')
+    assert parent['dates']==baseline['dates']==days[first:last]
+    rows=matrices(days,prices,records)
+    with threadpool_limits(limits=1):
+        scores={m['id']:infer(models[m['id']]['members'],rows[m['kind'],m['lag']][first:last]).tolist()
+                if m['id']in models else [None]*(last-first)for m in MODELS}
+    scores.update({k:parent['scores'][k]for k in ('MEAN_PATH36','MEAN_CAL44')})
+    scores['BASE_TREE']=parent['scores']['MEAN_CAL44']
+    scores['BASE_RIDGE']=baseline['scores']['RFF_RIDGE_CAL44_H60']
+    assert scores['BASE_TREE']==baseline['scores']['MEAN_CAL44']
+    write(folder/'predictions.json.gz',dict(dates=days[first:last],scores=scores))
+    write(folder/'test-receipt.json',dict(year=year,seal_sha256=sha(folder/'seal.json'),
+        predictions_sha256=sha(folder/'predictions.json.gz'),test_sha256=sha(FOLDS/str(year)/'test.json'),
+        feature_test_sha256=sha(FEATURES/str(year)/'test.json.gz'),fitting_calls=0,
+        protected_reads=sorted(reads),reserved_validation_read=False))
+    print('B16 TEST FROZEN',year,flush=True)
+
+
+def desired(days,prices,scores,policies,recipe):
+    if recipe['mode']=='EXACT':return SignalFactory(days,prices,scores).targets(policies[recipe['parent']])
+    if recipe['mode']=='BASELINE':values=scores[BASE_SCORES[recipe['family']]]
+    elif recipe['mode']=='PURE':values=scores[recipe['model']]
+    else:
+        a,b=scores[recipe['model']],scores[BASE_SCORES[recipe['family']]]
+        values=[None if x is None or y is None else .5*(x+y)for x,y in zip(a,b,strict=True)]
+    chosen={y:{**p,'model':'CASH'if p['model']=='CASH'else 'NEW'}for y,p in policies['U02'].items()}
+    assert all(p['short_mode']=='NONE'for p in chosen.values())
+    return SignalFactory(days,prices,{'NEW':values}).targets(chosen)
+
+
+def assemble():
+    days,prices=load_fold(2025,include_test=True);where={d:i for i,d in enumerate(days)}
+    scores={m['id']:[None]*len(days)for m in MODELS}
+    scores.update({k:[None]*len(days)for k in ('MEAN_PATH36','MEAN_CAL44','BASE_TREE','BASE_RIDGE')})
+    policies={k:{}for k in ('U02','U04')};folds=[]
+    for year in range(2018,2026):
+        folder=STUDY/f'folds/{year}'
+        seal,receipt,training=[read(folder/n)for n in ('seal.json','test-receipt.json','training.json')]
+        assert sha(folder/'seal.json')==receipt['seal_sha256']
+        assert sha(folder/'training.json')==seal['training_sha256']
+        assert sha(folder/'predictions.json.gz')==receipt['predictions_sha256']
+        forecast=read(folder/'predictions.json.gz')
+        for name,values in forecast['scores'].items():
+            for day,v in zip(forecast['dates'],values,strict=True):scores[name][where[day]]=v
+        for name in policies:policies[name][year]=training['parent_policies'][name]
+        folds.append(dict(year=year,model_fits=training['model_fits'],test_receipt_sha256=sha(folder/'test-receipt.json')))
+    return days,prices,scores,policies,folds
+
+
+def replay():
+    reads=install_guard(2025,'replay');verify();days,prices,scores,policies,folds=assemble();results=[]
+    for recipe in RECIPES:
+        name=recipe['id'];targets=desired(days,prices,scores,policies,recipe)
+        summaries,audits,failures={},{},{}
+        for case in CASES:
+            try:account=run_account(days,prices,targets,case,{},end='2025-12-31',role='target_replay')
+            except ValueError as e:
+                if str(e)!='minimum notional makes registered trade infeasible':raise
+                failures[case]=dict(type=type(e).__name__,message=str(e));continue
+            audits[case]=audit(account,days,prices,targets,CASES[case],BORROW[case],{})
+            if recipe['mode']=='EXACT':assert account==read(UPSTREAM/'accounts'/recipe['parent']/f'{case}.json.gz')
+            if recipe['mode']=='BASELINE':
+                old='V07'if recipe['family']=='RFF_RIDGE'else 'V18'
+                assert account==read(BASELINE/'accounts'/old/f'{case}.json.gz')
+            write(STUDY/'accounts'/name/f'{case}.json.gz',account);summaries[case]=account['summary']
+        passed=not failures and summaries['STRESS']['return_pct']>=10000 and max(s['max_drawdown_pct']for s in summaries.values())<35
+        results.append(dict(id=name,recipe=recipe,status='FAILED'if failures else 'COMPLETE',
+            summaries=summaries,audits=audits,failures=failures,historical_economic_gate=passed,
+            qualification='conditional reconstructed inputs; not certified PIT or fresh OOS'))
+        print('B16 RESULT',name,round(summaries['STRESS']['return_pct'],2)if 'STRESS'in summaries else failures,
+              round(max(s['max_drawdown_pct']for s in summaries.values()),2)if summaries else None,passed,flush=True)
+    write(STUDY/'results.json',dict(results=results,folds=folds,protected_reads=sorted(reads),
+        reserved_validation_read=False,qualification='conditional reconstructed mining-state inputs'))
+
+
+def run():
+    for year in range(2018,2026):
+        for stage in ('train','test'):
+            subprocess.run([sys.executable,'-m','lab.b16',stage,'--year',str(year)],cwd=ROOT,check=True)
+    subprocess.run([sys.executable,'-m','lab.b16','replay'],cwd=ROOT,check=True)
+
+
+if __name__=='__main__':
+    parser=argparse.ArgumentParser();parser.add_argument('command',choices=('freeze','train','test','replay','run'))
+    parser.add_argument('--year',type=int,choices=range(2018,2026));args=parser.parse_args()
+    if args.command in ('train','test'):
+        if args.year is None:parser.error('--year required')
+        globals()[args.command](args.year)
+    else:globals()[args.command]()

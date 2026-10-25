@@ -1,0 +1,68 @@
+{
+  "round": 2,
+  "role": "data",
+  "topic": "年度分集与封存",
+  "conclusion": "实际拟合家族B81、B67、B88A在2019–2025的21折冻结产物均与上一年12月31日截止、下一年度信号区间一致；预测日期是Y-1年12月31日至Y年12月30日的信号日期，不能直接当成成交日期，按执行滞后及policy_year处理跨年接缝后未发现错配。",
+  "verdict": "supported",
+  "evidence": [
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/lab/b81.py:92–133；lab/label_trees.py:11–45；studies/B81-reported-volume-long-core/folds/2019…2025/training.json:model_fits,cutoff,model_states",
+      "fact": "B81是真实ExtraTrees拟合而非B109零拟合包装器。每折5个特征组、每组7种子并含内部profile选择，总model_fits=175；7折总1225。实际选用P02所依赖的PRICE_L7模型包逐折匹配training声明摘要、cutoff和7个最终成员的训练cut索引；其余无关模型未解码。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/lab/b67.py:64–103；lab/lagged_short.py:7、39–54；studies/B67-lag-matched-short-supervision/folds/2019…2025/training.json:fits,receipts",
+      "fact": "B67固定L1/L2双时钟、7种子的真实拟合，每折14次，7折98次；全部训练回执cut均等于当折截止日相对2017-01-01的索引，common_last_label不晚于cut-6。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/lab/b88a.py:69–111；lab/short_loss_models.py:8–33；studies/B88A-short-net-loss-families/folds/2019…2025/training.json:fits,receipts",
+      "fact": "B88A固定四损失×双时钟×7种子，每折56次真实拟合，7折392次；全部训练回执cut及common_last_label边界一致。本轮仅检查年度边界声明和日期，未重新拟合。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/studies/{B81-reported-volume-long-core,B67-lag-matched-short-supervision,B88A-short-net-loss-families}/folds/2019…2025/{training,seal,test-receipt,predictions.json.gz}；/workspace/BTCExpertReview/workspaces/data/r02-checks.json:folds",
+      "fact": "新增只读检查21折全部PASS：training/seal截止=Y-1/12/31；training、registration、seal、prediction摘要链相符；物理分区摘要匹配manifest；封存current_test_read=false；测试fitting_calls=selection_calls=0且validation_read=false。所有实际预测日期逐日精确等于Y-1/12/31…Y/12/30。"
+    },
+    {
+      "source": "/workspace/BTCExpertReview/workspaces/data/r02-checks.json:signal_rows_per_family,folds；/workspace/BTCStrategyResearchLedger/lab/price_trail_activation.py:35–52；lab/full_retained.py:10–21",
+      "fact": "三族2019–2025每族共2557个信号日期，跨年拼接从2018-12-31至2025-12-30连续、无重复、无缺口；三个家族日期完全一致，所有score数组长度匹配日期。2020和2024闰日包含在精确日期列表中。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/lab/b05.py:48–49；lab/b12_signals.py:42–70；lab/carry_native.py:59、108–114；/workspace/BTCExpertReview/workspaces/data/r02-checks.json:cross_year_seams",
+      "fact": "forecast_year将12/31信号归属下一政策年，targets携带policy_year；账户使用targets[i-lag]。lag1的当折信号对应Y/1/1…Y/12/31；lag2首个新折信号到Y/1/2。旧折12/30信号延至新年1/1时policy_year不匹配，源执行代码禁止据其开新仓。2020–2025六处跨年接缝日期算术和政策年份检查均通过，未运行账户。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/lab/sgd.py:10–13；lab/label_trees.py:11–25；lab/lagged_short.py:39–54；/workspace/BTCExpertReview/workspaces/data/r02-checks.json:folds.latest_declared_label_date",
+      "fact": "年度边界不能只按样本信号日期认定：长标签覆盖i+61，短双时钟共同成熟覆盖i+62，最终训练需留cut-6边界。实检最终回执的最晚共同标签日期均为截止年12/25；这核对了回执边界，尚未核对原始标签路径收益。"
+    }
+  ],
+  "counterevidence": [
+    "预测文件首行落在上一年12/31本身不是前视证据：该日恰为训练截止、特征和信号日期，其lag1交易日已是下一年1/1。",
+    "B81包含内部profile选择，三族真实拟合总数不同于B109包装器的0次；本轮“年度分集通过”不撤销历史开发/人工规则筛选已消费2018–2025的限制。",
+    "测试构造整年特征矩阵，日期与摘要核验本身不能证明每个特征逐行只依赖当时可得信息；本轮不以结构分集替代因子可得性审计。"
+  ],
+  "recommendations": [
+    {
+      "priority": "P0",
+      "action": "在新交付仓将预测数组日期显式命名为signal_date，另记录policy_year、execution_lag和账户日期；禁止把预测日期直接当成交日期或按日历年粗切后重新拼接。",
+      "acceptance": "映射复核覆盖21折2557日期/族及两个闰年；BASE等lag1首日为1/1，DELAY新折首日为1/2；跨年旧policy_year不能开新仓，2025结束后不引入任何额外经济观测。"
+    },
+    {
+      "priority": "P1",
+      "action": "保留真实模型家族的逐折训练/封存/预测血缘证据，而非只交付B109零拟合回执。",
+      "acceptance": "B81、B67、B88A每折截止、训练摘要、注册摘要、预测摘要、原始fit数量及信号日期范围可核查，数据引用均终止于2025，未重跑冻结writer。"
+    }
+  ],
+  "checks_performed": [
+    "新增独占脚本r02-check.py，使用指定Python并禁用字节码；只读取源仓2019–2025三族元数据、预测，以及本链相关的B81 PRICE_L7模型包。",
+    "21折四件套摘要/截止/分区/零测试拟合声明检查；三个家族实际预测2557日/族精确覆盖、长度一致、无缝拼接检查。",
+    "B81相关模型7折共49个最终成员回执cut；B67共98、B88A共392个回执cut与共同标签截止检查。",
+    "仅提取纯forecast_year函数用于实际日期年度映射，另按源执行代码做六处lag1/lag2跨年日期算术；未运行模型训练、策略搜索或账户回放。",
+    "训练/测试protected_reads未出现2026、V01/V02；未打开2026经济文件、验证账户或其他专家文件。"
+  ],
+  "unresolved": [
+    "回执和哈希链支持冻结产物内部一致性，不单独证明原执行过程的不可变真实时钟先后顺序。",
+    "本轮按任务核验2019–2025，未对三个家族2018暖启动折逐文件做同样检查；源码将该折处理为样本不足/无新拟合。",
+    "标签成熟检查限于最终回执边界，未核对全部原始标签的entry/exit/maturity路径及收益；也未以日期核查替代逐因子来源时点检查。",
+    "跨年账户映射通过代码与日期算术验证；未重新运行冻结账户，因此不声称本轮独立核验实际订单或持仓账本。"
+  ],
+  "independence_statement": "保持角色隔离：只读共享原始事实和指定冻结源证据，未读其他专家目录、评分、意见或主审结论；只写/workspace/BTCExpertReview/workspaces/data。AI角色是分析分工，不是真实专家或统计独立市场样本；仅提交第02轮，未预写后续轮次。"
+}

@@ -1,0 +1,108 @@
+{
+  "round": 4,
+  "role": "execution",
+  "topic": "因子可得性与来源时点：参考价、合成quote与fill时间语义",
+  "conclusion": "参考价到合成quote和fill的数值/事件时钟映射可精确复算，但这些时间戳是回测调度假设，不能证明供应商历史发布时点、真实可成交收盘价或真实交易所执行延迟。",
+  "verdict": "qualified",
+  "evidence": [
+    {
+      "来源": "/workspace/BTCStrategyResearchLedger/studies/B23-eth-source-audit/spec.md:17—23；lab/b23.py:95—97",
+      "事实": "来源规范将canonical BTC识别为Coin Metrics PriceUSD、BTC/USD日度参考价。规范记载官方日度价格按标注UTC日结束计量、CSV日期为区间起点标签，因此D行观察期结束为D+1 00:00 UTC；其发布、历史修订完整性和strict PIT并未取得资格。该结论来自冻结来源规范，本轮未联网重证供应商定义或下载raw。"
+    },
+    {
+      "来源": "/workspace/BTCStrategyResearchLedger/lab/walkforward_io.py:67—84；lab/io.py:9—12；data/manifest.json:sources（仅元数据）",
+      "事实": "load_fold核对文件hash和连续date后，只返回date/price；它没有携带逐行historical published_at、first_available_at、实际venue quote或原始接收时间。文件在何时被读取/生成、快照在何时被获取与某经济日的观察时间是不同字段。hash只能固定字节，不能补造历史发布时点。本轮未打开manifest引用的含更晚日期原始input文件。"
+    },
+    {
+      "来源": "/workspace/BTCStrategyResearchLedger/lab/native.py:22—24；lab/carry_native.py:108—114、119—120",
+      "事实": "参考价p被转换为向外0.01 tick取整的bid=p(1−slip)、ask=p(1+slip)。每个账户日期D的decision在D+1 00:00 UTC，fill用+10毫秒，mark用+20毫秒，三条quote使用相同价格和10000 BTC买卖数量；QuoteTick的ts_event与ts_init都直接设成这一调度时间。它们不是供应商原始发布/接收时间。"
+    },
+    {
+      "来源": "/workspace/BTCStrategyResearchLedger/lab/carry_native.py:53、114、119；lab/native.py:17",
+      "事实": "STRESS的lag=1、DELAY的lag=2，target使用i-lag，风险触发待执行日也使用i+lag。这些是日级策略时钟。StaticLatencyModel的insert_latency_nanos=1000000是1毫秒，实际已保存fill落在+10000000纳秒的下一条合成quote上；不能把这两个时间差解释为观测到的真实网络/撮合延迟。"
+    },
+    {
+      "来源": "/workspace/BTCStrategyResearchLedger/studies/B109-long-profit-local-coordinate/accounts/LP35/{BASE,STRESS,DELAY,SEVERE}.json.gz:marks、fills；本轮AST隔离quote_prices计算",
+      "实际计算": "四情景各2922个marks、102个fills，共11688个marks和408个fills。所有bid/ask均可从reference_price和各case slip精确复算，最大报价误差0.00；所有fill均等于对应BUY的ask或SELL的bid，最大误差0.00；所有fill.ts_event−次UTC日零点=10000000纳秒。",
+      "例证": [
+        {
+          "case": "STRESS",
+          "账户日期": "2018-01-01",
+          "reference_price": "13464.6536116306",
+          "bid": "13451.18",
+          "ask": "13478.12",
+          "side": "SELL",
+          "fill_price": "13451.18",
+          "fill_ts_event": 1514851200010000000,
+          "合成事件时间UTC": "2018-01-02T00:00:00.010Z"
+        },
+        {
+          "case": "DELAY",
+          "账户日期": "2018-01-02",
+          "reference_price": "14754.322204851",
+          "bid": "14739.56",
+          "ask": "14769.08",
+          "side": "SELL",
+          "fill_price": "14739.56",
+          "fill_ts_event": 1514937600010000000,
+          "合成事件时间UTC": "2018-01-03T00:00:00.010Z"
+        }
+      ]
+    },
+    {
+      "来源": "/workspace/BTCStrategyResearchLedger/studies/B23-eth-source-audit/spec.md:19、23；lab/carry_native.py:17、119—120",
+      "事实": "来源价格单位为USD，Native钱包和费用为USDT。来源规范明确没有USDT=USD或真实venue candle资格；合成USDT账户沿用USD参考价的算术，不证明实际USDT基差、交易场所价差、真实深度或成交可获得性。"
+    },
+    {
+      "来源": "/workspace/BTCStrategyResearchLedger/studies/B23-eth-source-audit/spec.md:23、27、31；lab/b23.py:97",
+      "事实": "来源规范把D+2可得性列为前瞻假设而非已建立的发布证据；两个后期快照相等不代表历史从未修订。经济观察结束、假设可得时间、历史真实发布、获取和回放时间应分别陈述。"
+    }
+  ],
+  "counterevidence": [
+    "时间可得性未获资格不等于报价转换计算失败：11688个marks和408个fills的映射全部精确相符，支持合成回测内部可复算。",
+    "当前调度没有把标注日D的收尾参考价放在D日开始成交，而是映射到D+1零点；这与冻结来源规范的观察期结束口径一致，但在同一零点已能获取并执行仍是未证明假设。",
+    "i-lag提供日级预测滞后，不能替代参考价格自身的发布时点证明；另一方面，也不能仅因price按D+1调度就断言历史特征一定泄漏，仍需逐因子available_at证据。",
+    "DELAY情景检验的是已登记日级路径改变；它不是实测1毫秒、10毫秒或真实venue延迟测试。"
+  ],
+  "recommendations": [
+    {
+      "行动": "在审查交付数据字典中分别列出source_observation_date、source_period_end_utc、historical_published_at/first_available_at、snapshot_revision/retrieved_at、transformation_generated_at、account_date、signal_date/lag、quote_ts_event/quote_ts_init、fill_ts_event、case和单位。",
+      "优先级": "P0",
+      "验收方法": "历史发布/可得时间无证据时保持null并标unknown，不用文件mtime、获取或回放时间替代；每字段注明observed/assumed/derived。本轮只建议交付字段，不修改冻结账户schema。"
+    },
+    {
+      "行动": "将报价与成交价格明确称为“日度参考价生成的合成bid/ask”，公开USD参考价至USDT钱包的条件口径。",
+      "优先级": "P0",
+      "验收方法": "不得称真实交易所收盘、真实BBO、实测滑点或USDT基差已验证；引用来源规范的单位和未资格声明，同时保留现有历史数值结果。"
+    },
+    {
+      "行动": "分别陈述日级lag、1毫秒配置延迟和10毫秒合成fill调度，避免把模拟精度当成交易证据。",
+      "优先级": "P1",
+      "验收方法": "代表STRESS 2018-01-01账户行复算为2018-01-02T00:00:00.010Z，1514851200010000000纳秒；408笔fill偏移应仍全为10000000纳秒，且bid/ask转换误差为0。"
+    },
+    {
+      "行动": "任何后续strict PIT或实际可成交主张都另列发布/修订与venue证据门槛，证据不足维持conditional历史研究结论。",
+      "优先级": "P1",
+      "验收方法": "需要可追溯的历史available_at<=使用时点证据及相应venue报价/单位证据；仅有静态日期、hash、后期相同快照或合成ts_init不足以通过，不在本轮新增下载或改造策略。"
+    }
+  ],
+  "checks_performed": [
+    {
+      "检查": "新的确定性quote/fill时钟检查",
+      "方法": "/workspace/BinanceTradingRobot/backend/.venv/bin/python -B；AST隔离native.quote_prices，不导入项目或调用writer。读取LP35四情景已有2018—2025 marks/fills，以Decimal重算bid/ask；由每笔fill.account_date计算下一UTC日零点并比较ts_event；按side核对fill价格。",
+      "结果": "11688个marks报价转换最大差0.00，408个fills价格差0.00，所有fill偏移为10000000纳秒。检查的是2025及以前经济观察，即使静态时钟规则可能跨自然年，也未读取2026经济观察。"
+    },
+    {
+      "检查": "来源与时间字段静态审查",
+      "方法": "读取冻结B23来源规范、b23元数据输出代码、io/walkforward_io/carry_native；data/manifest只检查来源日期/hash等元数据，不打开其原始input对象，也未读取B23 raw快照。",
+      "结果": "明确区分供应商观察时点、历史发布可得性、获取/生成时点和合成引擎时点；没有以mtime推断历史可得性。"
+    }
+  ],
+  "unresolved": [
+    "供应商逐日真实历史发布时点和完整修订日志仍未知，本轮未重新验证官方方法文档。",
+    "没有真实venue BBO、交易深度或成交路径证据，因此无法验证参考价生成的bid/ask在模拟时点可成交。",
+    "USD至USDT基差未建模；此限制不能由成本百分点或引擎纳秒时间戳消除。",
+    "账户记录未逐行保存quote的原始ts_init或真实published_at；源码中的同值生成规则只能证明模拟约定，不能创造历史数据血缘。"
+  ],
+  "independence_statement": "execution为隔离AI分析角色，不是真实专家或新增市场样本。未读其他专家目录/评分/意见或主审意见，未读2026经济值、V01/V02或2026账户；来源规范和manifest中的日期元数据不作经济观察使用。未联网下载、拟合、优化、改冻结实现/账户/verification/gates或交付仓，未重跑writer或Native。仅独占创建本轮r04.json，未预写后轮。"
+}

@@ -1,0 +1,111 @@
+{
+  "round": 3,
+  "role": "execution",
+  "topic": "标签成熟与隔离期：单笔标签和连续账户的口径差异",
+  "conclusion": "被核对的标签是具有固定入场、期限、风险和收益单位的单笔预测目标，不能等同于LP35连续账户收益；年末截断、信号退出和仓位数量差异主要是明确的设计假设，本轮未发现其被误算为连续账户盈亏，成熟度仍保守要求完整i+61端点加6日隔离。",
+  "verdict": "qualified",
+  "evidence": [
+    {
+      "来源": "/workspace/BTCStrategyResearchLedger/lab/execution_labels.py:1—15、29—57、61—65；lab/b44.py:10、19、98—103",
+      "事实": "execution_labels的CLOSE/STOP/RISK是每单位入场基础上的长仓log收益，固定STRESS手续费0.003、报价偏移0.001、次日入场、60日持有期限；不含账户预算、手数、最小名义金额或第二次入场。标签在年末强制截断；B44明确以该模块生成STOP训练标签。"
+    },
+    {
+      "来源": "/workspace/BTCStrategyResearchLedger/lab/short_payoff.py:1—18、44—80",
+      "事实": "SHORT_NET是固定100 USDT、25%预算、0.01保留额的独立单笔短仓账户，按0.00001 BTC向下舍入，最小名义金额5 USDT，手续费按1e-8 HALF_EVEN；固定STRESS成本、年融资0.10、60日期限，无年度强平。输出是pnl/(入场名义金额+入场手续费)的simple_return，不是长仓log_return的负值。"
+    },
+    {
+      "来源": "/workspace/BTCStrategyResearchLedger/lab/carry_native.py:34—61、73—79；lab/b109.py:92—102、114；lab/cold_short_profit_trailing.py:5、15—20",
+      "事实": "LP35连续账户预算来自当时融资后净值，持有期既受entry-owned risk也受方向变化影响，无固定60日强制到期，且annual_settlement=False。SHORT_NET的数量和融资/费用公式与相同条件下Native兼容，但其固定25%起始预算不等于实际动态账户预算；TS04/LP35在核心头缺失时还将短仓trailing_stop改为0.04，而SHORT_NET固定0.12。长仓标签STOP固定15%止损、RISK固定100%止盈等，也不等于LP35的350%止盈政策。"
+    },
+    {
+      "来源": "/workspace/BTCStrategyResearchLedger/lab/sgd.py:10—13；lab/execution_labels.py:32—38、61—65；lab/short_payoff.py:47—49、84—98；lab/boosted_stop.py:13—18；lab/label_trees.py:12—15",
+      "事实": "matured使用np.arange(252,cut−60−6)，最大允许决策id=cut−67，完整成熟端点id+61<=cut−6。即便STOP因风险或年末提前退出，仍不以实际exit_index放宽成熟边界。records要求物理训练前缀末端cut=len(days)−1。",
+      "实际计算": "隔离编译原matured函数，cut=1000、horizon=60得到682条id，首252、末933，末成熟端点994，距cut恰6。"
+    },
+    {
+      "来源": "本轮对/workspace/BTCStrategyResearchLedger/lab/execution_labels.py与lab/short_payoff.py函数的隔离合成计算；仅合成2020—2021日期及恒价10000，无新增市场观察",
+      "实际计算": {
+        "决策日期": "2020-12-20",
+        "入场日期": "2020-12-21",
+        "STOP退出日期": "2020-12-31",
+        "STOP退出原因": "YEAR_CLOSE",
+        "STOP完整成熟日期": "2021-02-19",
+        "STOP_log_return": -0.008000018666764292,
+        "SHORT_NET退出日期": "2021-02-19",
+        "SHORT_NET退出原因": "HORIZON_CLOSE",
+        "SHORT_NET_simple_return": -0.024389650033267127,
+        "SHORT_NET_quantity": "0.00249",
+        "SHORT_NET_basis": "24.94972530",
+        "SHORT_NET_fees": "0.14940000",
+        "SHORT_NET_financing": "0.4093150684931506849315068483",
+        "SHORT_NET_pnl": "-0.6085150684931506849315068483",
+        "融资公式误差USDT": "-1.0E-27",
+        "PnL恒等式误差USDT": "0E-28"
+      },
+      "含义": "长仓标签的年末截断与短仓标签的跨年不是会计不守恒；它们定义了不同预测问题。手续费及短仓60天融资的手算核对通过。"
+    },
+    {
+      "来源": "同上隔离合成检查；lab/execution_labels.py:33—37；lab/short_payoff.py:48—56、101—114",
+      "实际计算": "STOP只给61个观测点时拒绝“label horizon is not mature”，给62个点才定义标签，尽管实际年末退出已在第11索引发生。对12/31入场，STOP返回reason=FORBIDDEN_YEAR_END_ENTRY和log_return=0，SHORT_NET返回UNEXECUTABLE和simple_return=None；long.target_vector会保留该零值，short.target_vector保留NaN，二者缺失处理不相同。"
+    },
+    {
+      "来源": "同上纯合成检查；lab/short_payoff.py:53—56；lab/carry_native.py:60—64",
+      "实际计算": "合成参考价3000000时，固定100 USDT×25%预算的SHORT_NET被判MINIMUM_NOTIONAL（向下取整数量为0）；以已存在的连续账户公式、相同100资本×50%预算则数量0.00001、名义金额29.97，可满足最小金额。该差异由固定预算和精度共同造成，不能解释为标签或实际账户必有错误。"
+    },
+    {
+      "来源": "/workspace/BTCStrategyResearchLedger/lab/calendar_labels.py:1—4、11—21",
+      "事实": "NOCALENDAR标签专门去掉长仓年末截断，但仍保留60日期限、长仓log收益及禁12/31入场。该模块注释对其原研究称实际交易仍年度结算；该注释不能跨研究覆盖B109显式annual_settlement=False的调用。"
+    }
+  ],
+  "counterevidence": [
+    "标签与实际账户不同不自动构成错误：short标签融资逐日记法、开平手续费、数量精度与同条件Native公式可一致，合成账的pnl恒等式误差为0。",
+    "不能因长仓STOP在12/31已提前退出，就把12/31之后尚未完整到期的近期样本纳入训练；现有代码仍要求i+61成熟，属于较保守设计。",
+    "手续费0.003/报价偏移0.001是STRESS基准，不能将标签直接解释为BASE、SEVERE、DELAY四种实际情景的期望净收益；DELAY额外的入场和风险执行lag也未体现在固定次日标签中。",
+    "本轮发现long禁年末入场编码为0、short编码为未定义，这是两套标签的实际语义差异；尚未得到它本身导致冻结模型泄漏或账户核算失败的证据。"
+  ],
+  "recommendations": [
+    {
+      "行动": "在审查交付件用明确对照表登记每个head的标签收益单位、入场lag、期限、年末规则、风险、费用/融资、数量与禁入场编码；将标签预测值与连续账户年收益分别命名。",
+      "优先级": "P0",
+      "验收方法": "STOP标为每单位长仓log收益及年末截断，SHORT_NET标为固定100/25%预算短仓simple收益及跨年；不能用score直接充当账户收益或声称等价于真实持仓路径，冻结模型和标签保持原样。"
+    },
+    {
+      "行动": "保持完整成熟端点和6日隔离合同，不因止损或年末提前退出改用更近期标签。",
+      "优先级": "P1",
+      "验收方法": "代表cut=1000核对最大id933、成熟端点994；物理训练前缀61点必须拒绝本轮示例、62点可定义；任何放宽须另立研究合同而非覆盖冻结标签。"
+    },
+    {
+      "行动": "把实际账户与标签差异列为适用范围，按同条件单笔守恒来验收核算，按连续信号/预算路径来验收策略，不要求两种目标的收益数值相同。",
+      "优先级": "P1",
+      "验收方法": "相同q、报价、费用和融资日历时能复算pnl及basis；不同年末/60日/信号退出、不同预算或cold trailing应明确归因。合成SHORT_NET示例融资误差<=1e-25、PnL误差<=1e-8 USDT。"
+    },
+    {
+      "行动": "在后续来源审计中确认各导出head究竟使用哪套标签及禁入场处理，避免根据遗留模块注释替代当前调用链。",
+      "优先级": "P1",
+      "验收方法": "head到模型/训练回执/label hash/生成函数的引用可逐一追溯，并明确STOP的年末零值是否参与该head训练；未完成追溯前不宣称所有九候选标签语义相同。"
+    }
+  ],
+  "checks_performed": [
+    {
+      "检查": "新的确定性隔离标签计算",
+      "方法": "/workspace/BinanceTradingRobot/backend/.venv/bin/python -B；用AST只编译execution_labels的quotes/path_label和short_payoff的quote/commission/path_label，显式注入从源码抄录的冻结常量；不导入项目模块或调用writer。构造2020-12-20起92天合成日历和恒价10000，对输出与独立Decimal融资/PnL公式核对。",
+      "结果": "STOP年末退出、SHORT_NET满60天退出；融资公式误差1e-27、PnL恒等式误差0。"
+    },
+    {
+      "检查": "成熟与不可执行边界",
+      "方法": "同一函数分别给予61/62点物理前缀、12/31入场、合成价3000000；单独AST隔离matured并使用numpy原函数。",
+      "结果": "成熟边界和固定预算下最小金额语义均符合源码；cut1000的成熟间隔为6。"
+    },
+    {
+      "检查": "连续账户语义对照",
+      "方法": "静态读取carry_native、B109及cold_short_profit_trailing当前调用链；未重建策略target或重跑账户。",
+      "结果": "固定期限/年末/预算/信号退出/cold风险之间的差异有明确来源，不视作已证实核算错误。"
+    }
+  ],
+  "unresolved": [
+    "本轮没有逐一重建九候选所有head与祖先标签的完整引用链；模块核对不能冒充所有实际训练产物已核对。",
+    "未量化标签年末零值、固定25%预算或缺少信号退出对样本分布和预测校准的影响；这属于后续适用性问题，不是本轮新策略优化任务。",
+    "标签风险和实际entry-owned风险不同，预测分数不能直接解释为实际账户的已校准预期净收益；尚无此类校准证明。"
+  ],
+  "independence_statement": "execution为隔离AI分析角色，不是真实专家或独立市场样本。未读取其他角色目录/意见/评分或主审意见；未读2026经济数据、V01/V02或2026账户。只用源代码及合成日期/价格进行确定性检查，未拟合、优化、改冻结文件、改交付仓、重跑writer、下单或部署。仅独占创建r03.json，未预写后轮。"
+}

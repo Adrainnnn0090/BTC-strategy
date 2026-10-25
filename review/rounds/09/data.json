@@ -1,0 +1,84 @@
+{
+  "round": 9,
+  "role": "data",
+  "topic": "年度、行情与盈利集中",
+  "conclusion": "LP35与较低四成本最坏回撤参考C02的年度收益均应按年末融资调整后mark端点计算；跨年交易必须按实际经济日拆分，cold又是入场信号可用性归属而非entry_year或行情标签，把这些口径混合会显著误写年度表现与2018资本贡献。",
+  "verdict": "supported",
+  "evidence": [
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/lab/carry_native.py:85–92；/workspace/BTCExpertReview/workspaces/data/r09-checks.json:annual_definition,results.annual",
+      "fact": "主对照LP35/C02的STRESS各8个年度return_pct逐一精确对应100×(本年12/31融资调整后equity/前一年12/31 equity−1)，2018起始资本100。以Fraction从原mark逐日差分后，年度增量精确望远镜相消至年末减年初；不是按已平仓交易PnL或entry_year聚合。"
+    },
+    {
+      "source": "/workspace/BTCExpertReview/workspaces/data/r09-checks.json:observed_four_cost_max_drawdown_pct；r09-reference-correction.json",
+      "fact": "C02四成本最坏DD=31.89344824596897%，低于LP35的32.58571943244992%；但C02 STRESS DD=31.014385272679167%，高于LP35的28.260355755434684%，不存在各成本全面占优。初选K02因其最坏DD32.92404834089216%不满足“更低”而被更正；该审计范围更正留档，未改策略。"
+    },
+    {
+      "source": "/workspace/BTC-strategy/artifacts/accounts/LP35/STRESS.json.gz:marks,trades；/workspace/BTCExpertReview/workspaces/data/r09-checks.json:LP35 annual2020/2021,cross_year_trades",
+      "fact": "LP35 2020年度mark-PnL为+768.9183023584451002472602738 USDT，而2020退出已实现PnL为−45.931814205554899752739726027，差额为年末未平仓应计814.850116564。2020-04-30→2021-01-09长单全PnL1270.34731416，实际经济日拆为2020年814.850116564、2021年455.497197596；不能把整笔归入入场年或退出年来充当年度收益。"
+    },
+    {
+      "source": "/workspace/BTC-strategy/artifacts/accounts/C02/STRESS.json.gz:marks,trades；/workspace/BTCExpertReview/workspaces/data/r09-checks.json:C02 annual2025,cross_year_trades",
+      "fact": "C02 2025真实mark年度收益−1.772824453002464%，mark-PnL−45.4310445702；若错误汇总2025入场交易的全生命周期PnL则得到+44.25285036。其2024-12-23→2025-02-25长单全亏损−131.85627312，应分配2024年−42.1723781898和2025年−89.6838949302。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/lab/cold_budget.py:1、10–30；lab/exit_coordinate.py:23–26；/workspace/BTCExpertReview/workspaces/data/r09-checks.json:cold_definition,entry_signal_regime_counts",
+      "fact": "cold判断键为原H03核心score可用性：BASE_TREE与CAL44_STOP均存在才可形成其均值；在实际入场信号i−lag上判断，不用辅助learner缺失，也不用熊市或entry_year作定义。STRESS实际LP35有15个cold_entry/36个postcold_entry交易；C02为0/19。该归属描述交易入场条件，不等于所有持有日的经济归属。"
+    },
+    {
+      "source": "/workspace/BTC-strategy/artifacts/accounts/K02/STRESS.json.gz:2018-11-14→2019-01-01 trade；/workspace/BTCExpertReview/workspaces/data/r09-checks.json:K02 cross_year_trades,old_position_new_signal_regime_days",
+      "fact": "附加归属反例K02：2018-11-14按cold信号开空、2019-01-01平仓，全PnL7.444577520078829…；逐日mark贡献为2018年7.988239715874075…、2019年−0.543662195795245…。2019-01-01当前信号已postcold，但旧仓仍归cold入场批次，证明不能把entry_year、当前signal状态与全部经济日混成一列。"
+    },
+    {
+      "source": "/workspace/BTCExpertReview/workspaces/data/r09-checks.json:LP35,C02 capital_2018",
+      "fact": "LP35 STRESS 2018末equity=176.432733296162437…，起始资本倍率1.764327332961624…；完整路径资本增长102.279183673855567…倍，精确等于该倍率×2019–2025同路径重基准57.970639440340307…倍。C02 2018末仍100、倍率1。重基准只拆解现有复利路径，不是删掉2018交易或重置 lot-sized账户的反事实，也不能把cold已实现PnL当成全部后续资本影响。"
+    },
+    {
+      "source": "/workspace/BTC-strategy/artifacts/accounts/{LP35,C02}/STRESS.json.gz:summary.best_two_positive_contribution_fraction,trades；/workspace/BTCExpertReview/workspaces/data/r09-checks.json:results.concentration",
+      "fact": "按原定义“前两笔正的非terminal交易净PnL/所有正的非terminal交易净PnL”，LP35为42.786849295839463%，C02为41.51542556177805%，均匹配summary。两者最大两笔恰为2024-01-17→3/17与2024-09-27→12/21；它们共享市场片段，不是独立盈利机会样本。该分母不是最终净利润或所有年度收益之和。"
+    }
+  ],
+  "counterevidence": [
+    "按entry_year或exit_year归属全交易PnL可用于交易批次审计，但不能替代包含未实现盈亏、退出费准备和融资的日历年度mark收益。",
+    "LP35/C02本轮跨年拆分的交易PnL及年度边界应计与原记录在既有1e-8审计精度内一致，残差约1e-24量级；未发现年度summary公式错算。",
+    "K02是敞口控制而非本组更低最坏DD参考。初次参考适合性断言失败已保留并改用C02；未按盈利挑选或改变任何策略参数。",
+    "2018盈利改变后续实际资金基数，但代数重基准不能识别其因果份额；不同策略的后续信号、风险及复利路径亦不同。"
+  ],
+  "recommendations": [
+    {
+      "priority": "P0",
+      "action": "年度表以融资调整后mark端点收益为主，另列exit-year已实现PnL、entry-cohort全交易PnL与期初/期末未平仓应计，不混用百分比和USDT。",
+      "acceptance": "LP35 2020同时正确显示mark-PnL+768.918302与exit-year已实现−45.931814；C02 2025年度收益保持−1.772824%，不被entry-cohort正PnL替换。"
+    },
+    {
+      "priority": "P0",
+      "action": "在交易归因中分列入场信号日期/原score可用性、当前日历年、当前信号可用性和持仓所属入场批次；cold不得自动翻译成2018或熊市。",
+      "acceptance": "K02跨年cold空单在2019-01-01的−0.543662日贡献计入2019日历经济日，同时保留cold_entry所有权；不要据postcold新信号把旧仓整笔重分类。"
+    },
+    {
+      "priority": "P1",
+      "action": "2018贡献展示起始资本倍率及后续既有路径的重基准，并明确它是代数分解；集中度表标明正PnL分母和terminal排除。",
+      "acceptance": "LP35显示1.764327×57.970639=102.279184的资本增长关系，不声称删除2018后的真实策略收益；top2比例保持42.7868%/41.5154%且列出共同2024交易区间。"
+    },
+    {
+      "priority": "P1",
+      "action": "低回撤参考按预先声明的四成本最坏DD口径命名，并并列各成本差异。",
+      "acceptance": "C02称“较低四成本最坏DD参考”，同时保留其STRESS DD高于LP35的事实，K02不再误标低DD。"
+    }
+  ],
+  "checks_performed": [
+    "新增独占r09-check.py/r09-checks.json与r09-reference-correction.json；主对照LP35/C02，K02仅保留cold跨年归属辅助例。",
+    "12个三策略×四成本源封存账户字节摘要及mark最大DD复算；主STRESS逐年端点return与原summary精确对应。",
+    "以Fraction拆分逐日净值变动，将全部交易按实际持有经济日分配年度，核对每笔全PnL及年度已实现/未平仓应计桥接。",
+    "按原核心score在入场信号i−lag判断cold，另统计当前信号状态与旧仓入场状态跨边界不一致的实际经济日。",
+    "独立核对前两笔正自然交易集中度分母与原summary，验证2018资本倍率×后续路径重基准的精确乘法恒等式。",
+    "未运行writer/引擎、重新拟合、策略参数搜索或删除2018的反事实回放；未读取2026经济数据、其他专家意见或主审结论。"
+  ],
+  "unresolved": [
+    "未进行删除2018/重置资金的策略反事实回放，因此不能量化2018交易对最终净值的独立因果贡献。",
+    "主要经济日归因只对STRESS深核，其他成本本轮仅核对封存字节及最大DD，不能外推所有成本的年度归因已经逐笔完成。",
+    "cold为模型可用性状态，不是独立宏观行情分类；本轮未建立未消费行情样本或市场机制因果证据。",
+    "集中度和共同盈利区间属于消费历史描述，不构成持久alpha或独立重复事件证明。"
+  ],
+  "independence_statement": "仅使用共享原始源代码、原封存2018–2025账户及相应core score导出事实，未读其他专家评分/意见、review/verification结论或主审结论，仅写data角色目录。AI角色不是受聘真实专家或独立市场样本；仅完成第09轮，未预写后续轮次。"
+}

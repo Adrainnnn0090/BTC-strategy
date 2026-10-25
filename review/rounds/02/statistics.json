@@ -1,0 +1,72 @@
+{
+  "round": 2,
+  "role": "statistics",
+  "topic": "年度分集与封存",
+  "conclusion": "八个年度经济测试区间确为非重叠、无缺日的2018–2025共2922个日期，且LP35年度净值倍率能精确复合成同一连续账户终值；然而扩展训练集复用、连续持仓资金路径和同一市场序列意味着八个年度或四个成本情景不能当作独立评价样本。",
+  "verdict": "qualified",
+  "evidence": [
+    {
+      "source": "data/walkforward-v1/{2018,…,2025}/test.json:date；studies/B109-long-profit-local-coordinate/accounts/LP35/{BASE,STRESS,SEVERE,DELAY}.json.gz:marks[].date",
+      "finding": "独立日期检查：年度行数依次365、365、366、365、365、365、366、365；八折test顺序拼接精确等于2018-01-01至2025-12-31完整公历，2922行=2922唯一日期，无重叠或缺口。LP35四成本账户marks日期序列逐项等于该拼接。"
+    },
+    {
+      "source": "data/walkforward-v1/{2018,…,2025}/{train,test}.json:date及完整行；studies/B109-long-profit-local-coordinate/folds/{2018,…,2025}/training.json:cutoff",
+      "finding": "每折train日期从2017-01-01起至测试年前一年的12-31，各折train/test日期交集均为0。训练行数依次365、730、1095、1461、1826、2191、2556、2922；所有相邻年度都有下一折完整train逐行精确等于本折train+本折test，属于扩展窗口复用。复用过去观察是历史向前学习安排，不能转化为新增市场样本或独立验证。"
+    },
+    {
+      "source": "studies/B109-long-profit-local-coordinate/folds/{2018,…,2025}/{seal,test-receipt,training}.json及predictions.json.gz",
+      "finding": "八折合计48项SHA256绑定全部一致：seal绑定training、train数据、registration，receipt绑定seal、predictions、test数据；八折cutoff均为前一年末且current_test_read=false，receipt的fitting_calls=selection_calls=0、validation_read=false。B109本轮继承父策略模型，不新增拟合。"
+    },
+    {
+      "source": "studies/B109-long-profit-local-coordinate/folds/{2018,…,2025}/predictions.json.gz:dates；data/walkforward-v1/{2018,…,2025}/test.json:date",
+      "finding": "八折predictions日期序列均精确等于对应经济test日期减1日；例如2025折信号日期从2024-12-31开始。统计经济观察区间必须使用test/账户日期，不能把上一日信号标签误报为跨折重复经济观察。"
+    },
+    {
+      "source": "studies/B109-long-profit-local-coordinate/accounts/LP35/{BASE,STRESS,SEVERE,DELAY}.json.gz:marks、summary.annual",
+      "finding": "使用原始十进制净值字符串构造Fraction，定义年度倍率q_y=E_该年末/E_上年末（2018基准100），四成本均精确满足100×∏q_y=账户最后净值。年度收益不能相加或等权平均来得到总收益。与summary.annual浮点数比较，四本最大绝对差均仅2.842170943040401e-14个百分点。"
+    },
+    {
+      "source": "studies/B109-long-profit-local-coordinate/accounts/LP35/STRESS.json.gz:marks、summary.annual",
+      "finding": "STRESS年度端点净收益依次约76.4327332962%、134.9193546331%、185.5163696596%、125.0131232409%、4.0186755584%、56.6639782549%、128.8540370027%、2.9938713650%；使用未舍入端点倍率的有理数连乘精确复原终值10227.91836738555674890594521。此检查仅验证年度拼接及复利恒等式，未重做第01轮收益/DD门槛。"
+    },
+    {
+      "source": "lab/b109.py:57–84,114；studies/B109-long-profit-local-coordinate/spec.md:5",
+      "finding": "assemble读取八折既有预测后形成统一历史路径；回放annual_settlement=False且终止于2025-12-31。源合同明确全2018–2025是已消耗开发历史；不论每年模型训练是否仅用前期，跨年资金与历史策略选择仍共享同一条市场实现。"
+    }
+  ],
+  "counterevidence": [
+    "当折训练日期与当折test日期交集为0，预测日期统一落后一天；这些确定性检查支持基本时间分割，不能把“训练扩展复用”直接等同于当折测试泄漏。",
+    "八折经济观察非重叠有助于避免累计收益重复计算；但观察日期不重叠不是统计独立性证明，2922个日净值点、八个年度和四个成本情景均不是相应数量的独立实验。",
+    "封存SHA256链全部匹配提供内容完整性证据；仅凭自述字段和现存哈希不能独立证明最初创建时点，或证明所有前序模型/标签/因子时点均正确。"
+  ],
+  "recommendations": [
+    {
+      "priority": "P0",
+      "action": "新仓保留逐折表：训练起止、经济测试起止、训练/测试行数、信号日期与执行日期口径、seal与receipt绑定；明确标记扩展窗口。",
+      "acceptance": "表中测试行数合计2922且日期唯一连续；每折train/test交集0；八折48项内容哈希绑定均验证通过；不得将上一日信号日期计作额外市场观察。"
+    },
+    {
+      "priority": "P0",
+      "action": "年度表用同一连续账户年末净值计算年度净收益，显示总收益由∏(1+r_y)−1形成；保留跨年持仓和资金连续性的说明。",
+      "acceptance": "从冻结净值端点用精确有理数验证，四成本的年度倍率乘积精确还原各自终值；不得通过相加年度百分比、每年重置资金或另造年结重算来替代既有账户。"
+    },
+    {
+      "priority": "P1",
+      "action": "在统计结论中将“年度经济区间不重复”“模型训练复用”“市场评价样本独立性”分开陈述，停止把8折×4成本或2922天当成独立验证次数。",
+      "acceptance": "不输出基于八年iid假设的未经论证置信区间/胜率；如未来开展统计推断，须先预先说明时间依赖、模型和策略选择依赖的处理及可支持的推断对象，且不读取2026。"
+    }
+  ],
+  "checks_performed": [
+    "独立标准库脚本逐年读取2018–2025 train/test日期与现存B109折文件；验证全部当折日期隔离、七次相邻扩展训练完整行相等、完整2922日公历覆盖。",
+    "验证八折各六项封存/回执SHA256绑定（共48项）、八个前年度cutoff、八个current_test_read=false及receipt零拟合/选择/validation字段。",
+    "验证八折predictions日期恰为经济test日期减1天，并验证LP35四成本marks逐日等于八折test拼接。",
+    "用Fraction精确验证四成本年度净值倍率连乘终值恒等式，仅与既存年度摘要作浮点表示误差比较；未重跑第01轮门槛、策略回放、拟合、搜索或独占写入器。",
+    "未读取2026经济数据、V01/V02、其他专家目录或意见；未修改源仓或交付仓。"
+  ],
+  "unresolved": [
+    "现存封存内容与哈希匹配不等于独立验证历史创建顺序；原始提交/执行日志的时间链尚未在本轮独立核查。",
+    "本轮确认的是原始日期分割与累计会计拼接，不涵盖监督标签跨界成熟、因子真实可得时点或前序模型实现的全部合规性。",
+    "未估计有效独立年度数、有效样本量或收益显著性；仅有非重叠年度区间不足以确定这些统计量。"
+  ],
+  "independence_statement": "仅读取共享协议和清单、冻结源仓的2017历史训练及2018–2025分集/模型收据/账户/代码；2026经济观察始终禁读。未读取其他专家目录、评分、意见或主审结论。statistics是模拟AI角色，不是真实人类专家或独立市场样本；仅完成第02轮，未预写任何后续轮次。"
+}

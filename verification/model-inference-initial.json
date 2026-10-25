@@ -1,0 +1,60 @@
+{
+  "status": "PASS",
+  "families": [
+    {
+      "family": "base_tree",
+      "positions": 3287,
+      "finite": 2557,
+      "max_error": 0.0,
+      "tolerance": 2e-12,
+      "availability_exact": true,
+      "actual_numeric_models_used": true
+    },
+    {
+      "family": "stop44",
+      "positions": 3287,
+      "finite": 2557,
+      "max_error": 0.0,
+      "tolerance": 2e-12,
+      "availability_exact": true,
+      "actual_numeric_models_used": true
+    },
+    {
+      "family": "price47",
+      "positions": 3287,
+      "finite": 2557,
+      "max_error": 0.0,
+      "tolerance": 2e-12,
+      "availability_exact": true,
+      "actual_numeric_models_used": true
+    },
+    {
+      "family": "short_huber",
+      "positions": 3287,
+      "finite": 2557,
+      "max_error": 0.0,
+      "tolerance": 2e-12,
+      "availability_exact": true,
+      "actual_numeric_models_used": true
+    },
+    {
+      "family": "short_median",
+      "positions": 3287,
+      "finite": 2557,
+      "max_error": 0.0,
+      "tolerance": 2e-12,
+      "availability_exact": true,
+      "actual_numeric_models_used": true
+    },
+    {
+      "family": "mining58",
+      "positions": 3287,
+      "finite": 2557,
+      "max_error": 0.0,
+      "tolerance": 2e-12,
+      "availability_exact": true,
+      "actual_numeric_models_used": true
+    }
+  ],
+  "scope": "Current dependency environment; exact agreement with frozen forecasts; no refit or new strategy selection."
+}

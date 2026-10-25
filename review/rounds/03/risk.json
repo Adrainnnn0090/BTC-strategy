@@ -1,0 +1,161 @@
+{
+  "round": 3,
+  "role": "risk",
+  "topic": "标签成熟与隔离期",
+  "conclusion": "STOP15与60天空头SHORT_NET是按固定假设构造并在训练截止前成熟的预测目标，并非LP35/TS04完整持仓风险合同：实际退出包含不同追踪/止盈参数、信号和可超过60天的持仓，故标签成熟与6日隔离不能解释为未来仓位期限、最大亏损或DD保证。",
+  "verdict": "qualified",
+  "evidence": [
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/lab/execution_labels.py:1-15,29-65; /workspace/BTCStrategyResearchLedger/lab/b20.py:12,23-26; /workspace/BTCStrategyResearchLedger/lab/label_trees.py:11-25",
+      "finding": "原CAL44_STOP标签来自kind=STOP：决策i、开仓i+1、名义成熟i+61，60天单位入场basis净对数收益；净清算价值<=basis*.85触发，下一日执行；STOP没有RISK分支的追踪止损或止盈，且可在12-31按YEAR_CLOSE提前清算。它不包含组合资金分配、lot/minimum-notional或再次入场。即使早停，训练支持仍按完整名义成熟时点筛选，不能利用提前退出把样本提前放入训练。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/lab/carry_stop_labels.py:9-10,20-43; /workspace/BTCStrategyResearchLedger/lab/long_profit_local_coordinate.py:5,14-20; /workspace/BTCStrategyResearchLedger/studies/B109-long-profit-local-coordinate/spec.md:3; /workspace/BTCStrategyResearchLedger/lab/carry_native.py:46-60,75-81",
+      "finding": "CARRY_STOP对照只去掉STOP标签的中间年末强平，仍为15%止损、无追踪止损、无有效止盈、名义60天到期，不能视为LP35/TS04实际退出目标。实际LP35长头固定take_profit=3.5，TS04=3；两者继承long SL15、按入场年度的trail（已查年度.08/.10/.15）、arm.5、cooldown与信号退出，且annual_settlement=False。数值上同为SL15不能使标签与实际策略完整相等。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/lab/short_payoff.py:1-18,44-80; /workspace/BTCStrategyResearchLedger/lab/lagged_short.py:7-8,11-45; /workspace/BTCStrategyResearchLedger/studies/B67-lag-matched-short-supervision/spec.md:24-32",
+      "finding": "SHORT_NET标签是独立单笔100USDT/.25预算合成账户，固定STRESS fee=.003、slip=.001、annual borrow=.1，计lot/minimum-notional和融资，输出入场basis上的简单收益；SL12/TP50/arm10/trail12，lag1或lag2、触发后同lag执行，从入场起60天到期，不年末强平。标签不编码未来price门、真实组合数量、长头优先/信号切换或多次进出。标签简单收益也不是长头log标签取负。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/lab/conditional_short.py:45-67; /workspace/BTCStrategyResearchLedger/lab/cold_short_profit_trailing.py:5,8-22; /workspace/BTCStrategyResearchLedger/lab/b109.py:91-102; /workspace/BTCStrategyResearchLedger/studies/B109-long-profit-local-coordinate/spec.md:3",
+      "finding": "LP35/TS04后冷启动空头确实仍用short_payoff.RISK的SL12/TP50/arm10/trail12，不能笼统说全部空头阈值都不同；冷启动空头才改成trail4，其他短头SL12/TP50/arm10不变。实际账户还受持续desired方向、入场许可、复利预算、不同成本情景与融资约束，并无统一第60天强平规则。因此四个后冷参数相同也不足以证明SHORT_NET分数是实际组合完整交易收益的校准预测。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/lab/sgd.py:10-13; /workspace/BTCStrategyResearchLedger/lab/boosted_stop.py:13-18; /workspace/BTCStrategyResearchLedger/lab/lagged_short.py:39-54; /workspace/BTCStrategyResearchLedger/lab/short_loss_models.py:14-33; /workspace/BTCStrategyResearchLedger/studies/B67-lag-matched-short-supervision/folds/{2018..2025}/training.json:common_ids/receipts",
+      "calculation": {
+        "label_endpoint_long_or_lag1": "i+61",
+        "label_endpoint_lag2": "i+62",
+        "common_short_training_gate": "i+62<=cut-6",
+        "2018_common_ids": 0,
+        "2018_receipts": 0,
+        "2019_to_2025_receipts_checked": 98,
+        "all_receipt_common_maturity_and_gap_checks_pass": true,
+        "common_last_label_to_cut_gap_each_nonempty_year": 6,
+        "2025_example": {
+          "cut": 2921,
+          "last_decision": 2853,
+          "L1_last_label": 2914,
+          "L2_last_label": 2915,
+          "common_last_label": 2915,
+          "common_gap": 6,
+          "common_ids": 2588
+        }
+      },
+      "finding": "固定期限和lag必须一起计入成熟边界；L1/L2共用更严格的i+62支持。6日隔离限制训练可用信息，但不消除相邻60天标签之间的重叠依赖，也不限制之后实际持仓的风险。2018无足够支持而不拟合是合同分支，不应写成边界失败。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/studies/B109-long-profit-local-coordinate/accounts/LP35/{BASE,STRESS,SEVERE,DELAY}.json.gz:trades[*].entry_date/exit_date/direction/policy_year/exit_reason",
+      "calculation": {
+        "calendar_day_definition": "date(exit_date)-date(entry_date)，不是含首尾的报价个数",
+        "trade_records_checked": 204,
+        "gt_60_calendar_days": {
+          "BASE": 10,
+          "STRESS": 10,
+          "SEVERE": 10,
+          "DELAY": 10
+        },
+        "gt_60_long_counts_each_case": 10,
+        "gt_60_short_counts_each_case": 0,
+        "max_calendar_days": {
+          "BASE": 253,
+          "STRESS": 254,
+          "SEVERE": 254,
+          "DELAY": 254
+        },
+        "examples": [
+          {
+            "case": "STRESS",
+            "trade_index": 24,
+            "entry_date": "2020-04-30",
+            "exit_date": "2021-01-09",
+            "policy_year": 2020,
+            "direction": 1,
+            "calendar_days": 254,
+            "exit_reason": "TAKE_PROFIT"
+          },
+          {
+            "case": "STRESS",
+            "trade_index": 15,
+            "entry_date": "2019-02-26",
+            "exit_date": "2019-05-18",
+            "policy_year": 2019,
+            "direction": 1,
+            "calendar_days": 81,
+            "exit_reason": "TRAIL_STOP"
+          },
+          {
+            "case": "DELAY",
+            "trade_index": 25,
+            "entry_date": "2020-05-01",
+            "exit_date": "2021-01-10",
+            "policy_year": 2020,
+            "direction": 1,
+            "calendar_days": 254,
+            "exit_reason": "TAKE_PROFIT"
+          }
+        ]
+      },
+      "finding": "既有账户直接反驳“60天标签=实际持仓最长60天”。四情景中的40条长持仓记录共享交易历史，不能算40个独立风险样本；本轮没有重跑或生成任何账户。"
+    }
+  ],
+  "counterevidence": [
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/lab/lagged_short.py:48-54; /workspace/BTCStrategyResearchLedger/studies/B67-lag-matched-short-supervision/folds/{2019..2025}/training.json:receipts",
+      "finding": "已查98份原训练receipt均满足common maturity+6日隔离；本轮没有发现这些receipt把未成熟标签纳入训练的算术证据。风险目标与实际退出不同本身不等于标签泄漏或策略失效。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/lab/conditional_short.py:61; /workspace/BTCStrategyResearchLedger/lab/short_payoff.py:18; /workspace/BTCStrategyResearchLedger/lab/cold_short_profit_trailing.py:17-20",
+      "finding": "后冷启动空头的四项风险阈值与标签完全一致，差异应明确定位到冷trail4、期限、信号/资金路径及成本情景，不能为了风险叙述扩大成所有退出参数不匹配。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/studies/B109-long-profit-local-coordinate/spec.md:3-5; /workspace/BTCStrategyResearchLedger/lab/short_loss_models.py:8-11,14-33",
+      "finding": "LP35冻结合同明确继承原预测而仅改长TP；B88A_S03的MEDIAN改变损失函数而保持SHORT_NET成熟支持，不应误写成重新构造与LP35实际退出一致的标签。既有合同未承诺这种完整退出校准。"
+    }
+  ],
+  "recommendations": [
+    {
+      "priority": "P0",
+      "action": "在交付仓补充标签—执行对照表，分别列原STOP15、CARRY_STOP、SHORT_NET L1/L2、TS04和LP35的收益单位、entry lag、期限/名义成熟、年末处理、SL/TP/arm/trail与是否有信号退出。",
+      "acceptance": "明确STOP15没有实际长TP3/3.5和年度trail；SHORT_NET为简单收益、long为log收益；实际冷空头trail4、后冷trail12，不得把后冷四参数也说成不匹配；不得将CAL44_STOP预测称为完整LP35交易收益预测。"
+    },
+    {
+      "priority": "P0",
+      "action": "在研究合同和策略卡中明确“60天为标签构造期限，不是实际最大持仓时长、最大亏损或未来DD担保”；用既有长持仓例子支撑。",
+      "acceptance": "至少保留STRESS2020-04-30→2021-01-09共254日的可溯源交易；不增加60天强平规则或修改冻结模型/账户来使叙述成立。"
+    },
+    {
+      "priority": "P1",
+      "action": "在交付仓标签成熟检查说明中保留i+61与i+62以及cut-6的精确关系，区分实际早退出日和名义成熟日。",
+      "acceptance": "共用短头支持按i+62<=cut-6记录；不得以某标签早SL/TP为由缩短成熟边界，也不得把6日gap称作相邻标签完全独立或未来持仓风险受限的证明。"
+    },
+    {
+      "priority": "P1",
+      "action": "把退出目标与实际组合路径的差异记为解释和外推限制；本轮保留冻结标签和参数，不进行匹配真实退出的新标签搜索或重拟合。",
+      "acceptance": "结论为现有监督目标的适用边界，不暗示现有模型被证实失效或已校准真实全持仓风险；后续若另行授权研究，须独立注册新假设而不能回写本轮冻结源。"
+    }
+  ],
+  "checks_performed": [
+    {
+      "check": "SHORT_NET与TS04/LP35风险参数的隔离确定性新检查",
+      "method": "AST提取short_payoff.RISK常量；只装载无源写入行为的cold_short_profit_trailing和long_profit_local_coordinate函数，以两个全人工cold/post分数行及目标执行补丁；不加载市场序列或运行模型。",
+      "result": "标签RISK精确为SL.12/TP.5/trail.12/arm.1/cooldown3；TS04只把cold trail改成.04、post整字典保持原值；LP35长TP改3.5，人工示例其余长参数不变，权限及原输入未被修改。"
+    },
+    {
+      "check": "现有B67 L1/L2成熟receipt的只读新检查",
+      "method": "指定Python -B读取2018—2025 B67 training.json的common_ids与receipts，逐项核对last、last_label=i+60+lag、common_last_label=i+62、count与common_last_label<=cut-6。",
+      "result": "2018无common_ids/receipt；2019—2025共98份receipt全部通过，各年最后共同标签距cut为6；未重建经济标签、未拟合或读取2026。"
+    },
+    {
+      "check": "LP35持仓超过标签60日期限的只读新检查",
+      "method": "仅解压LP35四份既有2018—2025账户，断言交易日期不超过2025-12-31，按datetime.date差计算204笔交易的持仓日数。",
+      "result": "四情景各10笔>60日、均为多头；最长BASE253日，其余三情景254日；没有据此宣称空头必定<=60日，样本观测不能替代执行合同。"
+    }
+  ],
+  "unresolved": [
+    "本轮核对风险标签定义、原receipt成熟算术与实际持仓时长，不是所有原始标签的独立Fraction重建或无泄漏全面证明。",
+    "没有量化标签—实际退出差异对预测校准或未来组合DD的影响；不能仅从合同差异得出模型经济失效或未来风险大小。",
+    "已存trades没有完整entry.risk快照，本轮参数继承由冻结代码/规范与隔离人工补丁支持，未独立重跑实际账户风险状态机。"
+  ],
+  "independence_statement": "本人为risk AI分析角色，不是人类专家或新独立市场样本；只读共享冻结事实源且未读其他专家意见/评分/主审结论，未读V01/V02或任何2026经济数据/账户；未派生代理、未改冻结代码/spec/模型/账户/verification/gates、未重跑独占写入器，仅独占写risk/r03.json，未预写后轮。"
+}

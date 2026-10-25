@@ -1,0 +1,24 @@
+{
+  "id": "C02",
+  "category": "risk_tradeoffs",
+  "description": "Y01在合资格2020–2025折把新开多头预算乘0.75；2018/2019保持原预算。",
+  "model_families": [
+    "base_tree",
+    "stop44"
+  ],
+  "implementation": "btc_strategy.strategies.compose",
+  "source_study": "studies/B31-constant-sizing-controls",
+  "period": [
+    "2018-01-01",
+    "2025-12-31"
+  ],
+  "new2026validation": false,
+  "source_recipe": {
+    "id": "C02",
+    "mode": "CONSTANT",
+    "parent": "Y01",
+    "scale": 0.75,
+    "source": "P07"
+  },
+  "risk_qualification": "回撤取舍有限，不代表低风险或未来回撤上限。"
+}

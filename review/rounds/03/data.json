@@ -1,0 +1,67 @@
+{
+  "round": 3,
+  "role": "data",
+  "topic": "标签成熟与隔离期",
+  "conclusion": "B67/B88A共同短样本的i+62≤cut−6及多头i+61≤cut−6得到2019–2025元数据和2025代表折实际标签核验支持；仅使用截至2024-12-31的训练行情即可精确重算全部7807条代表标签，价格访问和实际退出均未借用2025测试行情完成成熟。",
+  "verdict": "supported",
+  "evidence": [
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/lab/lagged_short.py:11–19、39–54；lab/short_loss_models.py:14–33",
+      "fact": "短L1入场i+1、理论成熟i+61；L2入场i+2、理论成熟i+62。records取range(252,cut-67)，拟合共同支持明确拒绝ids[-1]+62>cut-6；B88A同样检查共同62日边界，不能用较早实际退出替代完整理论成熟期。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/studies/{B67-lag-matched-short-supervision,B88A-short-net-loss-families}/folds/2019…2025/training.json:common_ids,receipts；/workspace/BTCExpertReview/workspaces/data/r03-checks.json:metadata",
+      "fact": "7个年度B67与B88A common_ids逐项相等、严格递增，全部i+62≤cut-6；每份短模型回执cut、last、last_label和common_last_label均与对应索引及lag一致；B88A source_labels_sha256与B67 labels_sha256一致。各年度最晚共同成熟日均为截止年12/25。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/lab/sgd.py:10–13；lab/label_trees.py:11–25；lab/b81.py:99–108；studies/B36-network-activity-factors/folds/2025/labels/STOP.json.gz；/workspace/BTCExpertReview/workspaces/data/r03-checks.json:long",
+      "fact": "多头使用i+61成熟并保留6日隔离，2025代表折2603条实际STOP标签索引精确为range(252,cut-66)，理论成熟和非空实际退出均不超cut-6。B81各年度源标签摘要与B36对应seal.label_sha256.STOP绑定一致；代表折实际标签文件摘要也匹配。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/data/walkforward-v1/2025/train.json；/workspace/BTCExpertReview/workspaces/data/r03-check.py；r03-checks.json:physical_prefix_end,latest_label_allowed,label_records_recomputed",
+      "fact": "代表年度2025的物理训练前缀摘要匹配manifest、逐日终止2024-12-31，cut=2921，允许的最晚标签终点2024-12-25。仅提取原标签纯函数，以该前缀精确重算短L1/L2各2602条加多头2603条，共7807条完整字典全部相等；逐调用跟踪价格下标均不超各自maturity_index且≤cut-6。没有打开任何测试价格文件。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/studies/B67-lag-matched-short-supervision/folds/2025/labels.json.gz；/workspace/BTCExpertReview/workspaces/data/r03-checks.json:short,common_ids,common_excluded_year_end_signal_dates",
+      "fact": "每个短头各2595条DEFINED及7条UNEXECUTABLE；按双头均DEFINED筛选后恰为2588条，与B67/B88A实际共同样本相等。排除的14个历史信号日期仅为12/29或12/30：L2或L1的入场分别落12/31禁入日。未定义短收益保持None，不混作零收益。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/lab/execution_labels.py:29–57；lab/short_payoff.py:44–80；/workspace/BTCExpertReview/workspaces/data/r03-checks.json:long.year_close_example,short",
+      "fact": "多头STOP标签遇历史12/31将deadline截为YEAR_CLOSE，但仍先要求完整i+61理论成熟。代表折305条YEAR_CLOSE均在12/31且实际退出早于理论成熟，例如信号2017-11-09、入场11-10、退出12-31、理论成熟2018-01-09；不能据早退出把该标签提前加入2017截止训练。短标签不作年度强平，L1/L2分别有249/250条历史跨年实际退出，全部仍在自身成熟和隔离边界以内。"
+    },
+    {
+      "source": "/workspace/BTCExpertReview/workspaces/data/r03-checks.json:immature_prefix_rejections；/workspace/BTCStrategyResearchLedger/lab/execution_labels.py:32–38；lab/short_payoff.py:47–52；lab/lagged_short.py:15–19",
+      "fact": "用只有训练前缀的纯函数调用构造长STOP及短L1/L2三个理论成熟超出前缀的边界样本，三者均明确抛出horizon not mature类ValueError；不存在为了年末先退出而放行未成熟标签的路径。"
+    }
+  ],
+  "counterevidence": [
+    "代表折短L1/L2最晚实际退出分别只有2024-11-09/11-10，理论共同成熟仍保守保留至2024-12-25；短期早止损不使更多临近截止样本进入训练。",
+    "多头年末禁入的7条标签在原设计中为log_return=0并保留，短头禁入则UNEXECUTABLE且从共同支持排除；两类标签支持不同是已声明语义，不应在导出时强行混同。",
+    "使用原纯函数复算是成熟边界与可复现性检查；完整字典一致不能替代独立金融定价实现，也不能直接证明标签与连续账户的每一种退出机制相同。"
+  ],
+  "recommendations": [
+    {
+      "priority": "P0",
+      "action": "新交付仓保存每条训练样本的signal_index、entry_index、maturity_index、exit_index和该折cut；短双头共同筛选固定使用i+62≤cut−6，多头固定使用i+61≤cut−6，禁止按实际提前退出放松成熟条件。",
+      "acceptance": "代表折7807条标签可只用2024-12-31及以前训练前缀复核；全部价格访问、非空退出及成熟下标不超cut−6；三个未成熟边界调用仍被拒绝。"
+    },
+    {
+      "priority": "P1",
+      "action": "交付数据字典分别解释多头YEAR_CLOSE、年末禁入零标签与短头UNEXECUTABLE/双时钟共同支持，并标明多头标签年末截断不同于annual_settlement=False的连续账户。",
+      "acceptance": "能复核2025折共同样本2588、14条双头排除和多头305条YEAR_CLOSE/7条禁入零标签；报告不把辅助标签目标写成连续账户退出路径的逐笔恒等式。"
+    }
+  ],
+  "checks_performed": [
+    "新增独占r03-check.py与r03-checks.json；使用指定Python、禁用字节码，未导入ledger模块或执行写入器/拟合/账户回放。",
+    "2019–2025 B67/B88A共同支持与全部短模型回执边界检查，B81/B36长标签摘要元数据绑定检查。",
+    "2025代表折物理训练前缀摘要与连续日期检查；7807条标签完整字典精确重算和逐调用价格访问下标检查。",
+    "实际入场/退出/成熟关系检查、历史跨年退出与多头YEAR_CLOSE检查、双时钟共同排除集合精确复核、3个未成熟前缀拒绝检查。",
+    "全程未读2026数据、V01/V02、其他2026账户或其他专家工件；未使用测试价格完成标签。"
+  ],
+  "unresolved": [
+    "原始标签路径的完整重算限于2025代表折；较早年度本轮只核对共同支持和回执/摘要元数据，不能据此声称全部年度标签均已逐条独立定价。",
+    "复算使用提取的原纯标签函数，非独立金融公式实现；手续费、滑点、融资和退出规则的经济正确性仍需对应账本/定价证据。",
+    "多头辅助标签的YEAR_CLOSE与连续账户不年度平仓存在目标语义差异；本轮确认该差异未突破成熟边界，不量化其预测或盈利影响。"
+  ],
+  "independence_statement": "本角色仅读取共享原始事实、冻结源代码及2019–2025折证据；未读取其他专家目录、评分、意见或主审结论，仅写自己的data目录。AI角色不是真实受聘专家或统计独立市场样本。本次仅完成第03轮，未预写后续轮次。"
+}

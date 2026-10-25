@@ -1,0 +1,70 @@
+{
+  "round": 1,
+  "role": "data",
+  "topic": "声明边界与研究合同",
+  "conclusion": "逐折训练合同和2025准入边界有源证据且B109的8折元数据检查通过；但该合同只支持既定年度流程的时间隔离，2018–2025已经用于后续人工假设与规则坐标筛选，不能将LP35等历史胜出规则或其年度拼接收益写成未经选择的新盲测结果。",
+  "verdict": "qualified",
+  "evidence": [
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/WALKFORWARD_AUTHORIZATION.md:5、7",
+      "fact": "授权逐年前推：每折只训练至上一年12月31日，过去年度测试可进入较后年度训练，不得进入同年或更早折；当前测试不得用于模型/缩放/阈值/风险选择。原B01–B04合同保留，2018–2025已消费，年度时序正确不等于新外部盲测。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/notes/RESEARCH_2025_SCOPE_AUTHORIZED.md:3、5、7",
+      "fact": "明确2025纳入开发，2025模型只用2017–2024前缀拟合后推断2025，原2018–2024输出不以较晚数据重训；2026全部排除新拟合、缩放、标签、调参、筛选、策略测试与目标算术。该澄清覆盖较早待确认范围，不抹去原合同。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/lab/walkforward_io.py:67–84",
+      "fact": "load_fold核对授权摘要、分区摘要与日期，训练日期从2017-01-01到year-1的12-31，测试日期为year完整日历年。此处是源代码合同检查，未执行原worker。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/lab/b109.py:61–75；studies/B109-long-profit-local-coordinate/folds/2018…2025/{training,seal,test-receipt}.json:cutoff及摘要键",
+      "fact": "独立只读检查8折：截止依次2017-12-31至2024-12-31；训练、封存、注册、预测摘要链均匹配；train/test分区摘要与冻结manifest一致；训练model_fits/selection_calls/calibration_accounts及测试fitting_calls/selection_calls均为0；封存current_test_read和收据validation_read均为false。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/lab/b109_io.py:13–36、44–53；/workspace/BTCExpertReview/workspaces/data/r01-checks.json:permission_results",
+      "fact": "仅提取并执行纯permitted函数，80个确定性路径用例全部通过：2018–2025各折训练可读本折train但不可读本折test/预测；test可读本折test/预测；train/test/replay/audit均拒绝2026物理测试路径；audit拒绝2026本研究折元数据。函数测试只构造路径，未打开2026文件。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/studies/B109-long-profit-local-coordinate/registration.json:qualification,arms,model_fits,calibration_accounts；spec.md:3、5；notes/proposed-long-profit-local-coordinate.md:3、5",
+      "fact": "B109限定四个固定多头止盈坐标LP25/35/40/50（2.5/3.5/4/5，父TS04为3），复用逐年前推预测和TS04信号/权限/敞口/其他风险规则，不作新模型拟合。提案明确在看过B108历史结果后提出，spec明确“Consumedhistory/adaptivehypothesesselectionnotfreshOOS”。0次worker选择不能外推为整个研究历程没有选择。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/lab/b82.py:70–104",
+      "fact": "B82年度规则选择的校准数据只来自该折训练前缀和prior<year的旧预测；符合资格时枚举预设ARMS并choose，最早2021。它与B109零次当折选择是不同层级，不能混写。"
+    },
+    {
+      "source": "/workspace/BTCExpertReview/shared/source_manifest.json:files；/workspace/BTCExpertReview/workspaces/data/r01-checks.json:manifest_hash,authorization_hash,selected_source_hashes",
+      "fact": "B109注册文件与共享源清单摘要一致；四个指定代码文件与B109冻结绑定摘要一致；分区manifest和授权文件摘要一致。"
+    }
+  ],
+  "counterevidence": [
+    "未在本轮指定文件和8折日志中发现当前年度测试被B109训练读取；每折训练protected_reads为6项且不含预测/test-receipt/本折test；测试为20项且未记录2026、V01或V02路径。",
+    "B109提案与spec均公开披露2018–2025已消费和2026排除；四个TP坐标在该轮新风险数组/账户生成前声明。这减轻该单轮坐标追加风险，但不消除跨研究轮次的历史适应性筛选。",
+    "本轮未打开任何2026经济观测、V01/V02或其他2026账户，也未据其作出表现判断。"
+  ],
+  "recommendations": [
+    {
+      "priority": "P0",
+      "action": "在新交付仓的研究合同与每张历史绩效表旁同时标注年度训练截止、2025为已消费开发年、2018–2025规则筛选历史与2026全排除；把“模型逐折无当前测试”与“研究规则经历史选择”分成两个明确命题。",
+      "acceptance": "LP35/TS04等每一项对外历史结论均不得使用fresh OOS/独立盲测/未经筛选等称谓；表注包含开发期终点2025-12-31与2025训练截止2024-12-31。"
+    },
+    {
+      "priority": "P1",
+      "action": "新交付仓保存本轮只读检查证据与原路径/摘要引用，不重跑freeze/train/test/replay或覆盖源封存。",
+      "acceptance": "可独立复核8折截止及摘要链和80个纯权限用例；源仓代码/spec/模型/账户/verification/阈值保持原样。"
+    }
+  ],
+  "checks_performed": [
+    "先读取shared/protocol.json与source_manifest.json；检查可适用AGENTS.md，未发现。",
+    "直接读取指定四份源码、B109注册、两份年度范围授权、B109提案与spec。",
+    "使用指定Python并禁用字节码；未导入或执行ledger模块，只用标准库读取冻结元数据、计算<=2025预测文件摘要及提取纯权限谓词。",
+    "确定性只读结果PASS：8折截止与摘要/声明检查、四份指定源码绑定摘要、manifest/授权摘要、80条路径权限检查。结果独占写入本角色r01-checks.json。"
+  ],
+  "unresolved": [
+    "哈希绑定与回执false字段本身不能证明原始真实时钟上先封存后访问；该事实需另有不可变执行日志/提交顺序证据才可加强。",
+    "本轮检查未证明61天标签成熟、6天隔离的逐样本实现或各因子来源发布时间；不得从年度截止检查外推这些细粒度条件已经满足。",
+    "路径白名单拒绝指定2026源路径，不能单凭此证明任何合法路径内容绝无跨时点复制；本轮未进行经济内容穿透审计。"
+  ],
+  "independence_statement": "本角色独立读取共享协议、共享原始源清单和冻结源证据；未读取其他专家目录、评分、意见或主审结论，未开展新策略搜索，未修改源仓或新交付仓。角色为AI分析分工，不是真实受聘专家，也不是统计独立市场样本。仅完成第01轮，不预写后续轮次。"
+}

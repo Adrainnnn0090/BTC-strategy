@@ -1,0 +1,15 @@
+.git
+.venv
+.env
+.env.*
+__pycache__
+**/__pycache__
+artifacts
+models
+training_inputs
+provenance
+review
+verification
+runs
+dist
+build

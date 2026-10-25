@@ -1,0 +1,67 @@
+{
+  "round": 5,
+  "role": "models",
+  "topic": "模型方程与实现一致性",
+  "conclusion": "对当前交付models.py绑定版本的检查支持六族树推理方程与原冻结模型一致：先将节点输入转float32，以<=走左，读取终叶值，按initial加权累加，按数值seed排序求成员均值，空头再按L1/L2两头均值合成。独立标量实现的336个状态预测与交付predict误差0，36个家族预测对原冻结预测最大误差1.3877787807814457e-17，满足原2e-12容差且未放宽。",
+  "verdict": "supported",
+  "evidence": [
+    {
+      "source": "/workspace/BTC-strategy/src/btc_strategy/models.py:18; /workspace/BTCStrategyResearchLedger/lab/tree_factors.py:88; r05_checks.json delivery_models_py_sha256",
+      "actual": "被核对交付models.py SHA256=be94b2dd9fc765cd6da3b3b56449795f14e8c872d0c837d274e795366729b29f，检查前后相同。新仓导入的冻结tree_factors.py、volume_short_factors.py、mining_ablation.py与源仓对应文件逐字节相同。树分支对float32输入比较double阈值，<=选左，否则选右；left=-1时读取叶value，不将内部节点value当预测。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/lab/tree_factors.py:104; /workspace/BTC-strategy/src/btc_strategy/models.py:42; r05_checks.json results",
+      "actual": "独立重建每状态f(x)=initial+按原树顺序累加weight*leaf_t(float32(x))。被查ExtraTrees状态initial=0、96树、weight=1/96，家族预测再对7seed状态平均；SGB使用存档initial和profile.learning_rate作为weight，不能把96树再平均。状态中的initial/叶值/节点/权重均保留原数字文件。"
+    },
+    {
+      "source": "/workspace/BTC-strategy/src/btc_strategy/models.py:25; /workspace/BTC-strategy/src/btc_strategy/models.py:39; lab/b67.py:94; lab/b88a.py:99",
+      "actual": "交付annual_states先解包装members或state，再按(execution_lag, seed)排序；被查各年非空头家族的成员顺序均为101/307/509/701/907/1103/1701。两个空头家族均为L1和L2各7seed，先分别对7个完整SGB输出求均值，再(a+b)/2；与原代码顺序一致。"
+    },
+    {
+      "source": "r05_checks.json numeric_files_checked/independent_scalar_state_predictions/aggregate_predictions_checked/results；check_r05.py scalar_tree/scalar_state",
+      "actual": "在预先指定2019与2025每族首/中/末3个决策日，独立读取76个导出数值文件，显式确认每个文件SHA=manifest SHA=源文件SHA。用Python struct执行IEEE754 float32转换，用标量while遍历节点而不调用同一predict作为重建算法，共336个状态预测、36个家族预测。与交付state predict最大误差0，与原六族冻结预报最大误差1.3877787807814457e-17。"
+    },
+    {
+      "source": "r05_checks.json threshold_float32_canary",
+      "actual": "独立阈值边界用例：阈值0.5、输入0.5应走左；double值0.5000000000000001转float32后仍为0.5，也走左；float32下一数0.5000000596046448走右。加入initial=1.25与weight=0.03、故意把内部节点value设为999后，结果分别为1.16/1.16/1.46，交付预测完全一致。"
+    },
+    {
+      "source": "r05_checks.json complete_pipeline_samples；/workspace/BTC-strategy/verification/model-inference-initial.json",
+      "actual": "另直接调用交付完整reconstruct路径处理price47和short_median两族，各抽样6点，与独立标量结果最大误差分别为3.469446951953614e-18和1.3877787807814457e-17。用户指定的root初始对照收据记录六族各3287位置、2557有限预测、最大误差0与可得性完全一致；此收据为已观测事实，独立检查覆盖范围仍以本轮附件为准。"
+    }
+  ],
+  "counterevidence": [
+    "独立标量求均值采用Python顺序求和，与NumPy均值的舍入可能有末位差异；实测最大1.3877787807814457e-17，因此不应把独立家族级结果写成“全部严格0误差”。原2e-12容差始终未变。",
+    "本轮未重新拟合模型；数字文件与源一致及推理方程正确，不证明模型具有样本外预测力或来源已获PIT认证。",
+    "本轮全六族独立标量验证为两个代表年度的36个家族点，完整reconstruct的独立抽样为两族；并非重新独立核算六族所有2557个有限预测。",
+    "本轮显式核验样本模型SHA；annual_states本身从manifest读取状态但未在该函数内逐文件校验SHA，因此不能把本轮显式检查描述成该函数的内置行为。"
+  ],
+  "recommendations": [
+    {
+      "priority": "P0",
+      "action": "把float32输入转换、<=左分支、叶值、initial与weight、成员/lag合成顺序作为离线推理规格的不可省略项。",
+      "acceptance": "阈值0.5三边界用例及本轮ExtraTrees/SGB独立标量样本在2e-12内；禁止将SGB树当森林平均、遗漏initial或把14个空头状态的合成顺序改写。"
+    },
+    {
+      "priority": "P1",
+      "action": "归档此次被测models.py版本SHA、模型manifest及本轮独立数值收据，后续数值实现更改沿用原2e-12绝对容差。",
+      "acceptance": "能定位76个样本数字模型与源SHA、336个状态/36个家族比较点及两族pipeline比较；任何新误差不通过放宽容差消除。"
+    }
+  ],
+  "checks_performed": [
+    {
+      "command": "/workspace/BinanceTradingRobot/backend/.venv/bin/python -B /workspace/BTCExpertReview/workspaces/models/check_r05.py",
+      "result": "exit 0；all_checks_pass=true；336个独立标量状态、36个家族点、两族完整路径抽样、阈值/float32边界检查均在2e-12内。",
+      "artifact": "/workspace/BTCExpertReview/workspaces/models/r05_checks.json"
+    },
+    {
+      "check": "只读比对冻结因子/树推理实现与源仓对应文件，并记录交付models.py前后SHA",
+      "result": "三个冻结文件逐字节相同；models.py未在检查期间变化。以Python审计钩子阻止源仓和交付仓写入，-B禁止字节码写入。"
+    }
+  ],
+  "unresolved": [
+    "独立推理全年度/全日期覆盖与重新训练重建尚未由本轮完成。",
+    "模型数值一致性不单独认证因子来源时点、研究选择无偏性或账户执行正确性。"
+  ],
+  "independence_statement": "遵照本轮明确授权，只读交付models.py、numeric模型/manifest及指定root初始预测对照收据；该收据作为共享事实材料，不读取专家意见或主审结论。其余只读冻结源仓与自身工作区，未派生agents、未读V01/V02或2026经济数据。所有新文件仅在models目录首次独占创建，未调用原独占写入器。AI角色不是人类专家或独立市场样本。"
+}

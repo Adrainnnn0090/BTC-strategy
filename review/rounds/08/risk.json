@@ -1,0 +1,190 @@
+{
+  "round": 8,
+  "role": "risk",
+  "topic": "多重试验与有效独立性",
+  "conclusion": "LP35通过的是反复消费历史上的固定数值门，不能转化为未来DD置信保证：原LP25/35/40/50只有LP35越过10000%收益门，最差DD却完全相同且LP40/50整书重复，说明局部DD不敏感而收益过线缺乏跨邻点平台；四名称或四成本均非独立市场验证。",
+  "verdict": "qualified",
+  "evidence": [
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/lab/long_profit_local_coordinate.py:5,8-20; /workspace/BTCStrategyResearchLedger/lab/b109.py:22,42-44,114-120; /workspace/BTCStrategyResearchLedger/studies/B109-long-profit-local-coordinate/spec.md:3-5",
+      "finding": "B109在本步骤结果前固定TP=2.5/3.5/4/5四点、同12个参考和原STRESS>=10000%且完整四情景DD严格<35%门；本层model_fits=0不代表没有经济选择，因为四个退出合同可改变持仓退出及后续复利路径。规范明确消耗2018—2025/adaptive history，非fresh OOS。没有证据说B109在事后改了35/10000门，本轮也不允许改门。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/studies/B109-long-profit-local-coordinate/accounts/{LP25,LP35,LP40,LP50}/{BASE,STRESS,SEVERE,DELAY}.json.gz:marks[*].equity; results.json:results[recipe.id in LP*].goal_gate/summaries",
+      "local_original_registered_arms": [
+        {
+          "arm": "LP25",
+          "take_profit": 2.5,
+          "STRESS_net_return_pct": "8109.002953085639246227315068",
+          "return_threshold_margin_pct_points": "-1890.997046914360753772684932",
+          "return_threshold_margin_pct_of_10000": "-18.90997046914360753772684932",
+          "worst_DD_pct": "32.58571943244992458468202560427929948068800671159302051156276356556800",
+          "DD_headroom_to_35_pct_points": "2.41428056755007541531797439572070051931199328840697948843723643443200",
+          "worst_case": "DELAY",
+          "worst_peak": "2019-06-26",
+          "worst_trough": "2020-05-11",
+          "goal_gate": false
+        },
+        {
+          "arm": "LP35",
+          "take_profit": 3.5,
+          "STRESS_net_return_pct": "10127.91836738555674890594521",
+          "return_threshold_margin_pct_points": "127.91836738555674890594521",
+          "return_threshold_margin_pct_of_10000": "1.2791836738555674890594521",
+          "worst_DD_pct": "32.58571943244992458468202560427929948068800671159302051156276356556800",
+          "DD_headroom_to_35_pct_points": "2.41428056755007541531797439572070051931199328840697948843723643443200",
+          "worst_case": "DELAY",
+          "worst_peak": "2019-06-26",
+          "worst_trough": "2020-05-11",
+          "goal_gate": true
+        },
+        {
+          "arm": "LP40",
+          "take_profit": 4.0,
+          "STRESS_net_return_pct": "9384.789173490440646725123288",
+          "return_threshold_margin_pct_points": "-615.210826509559353274876712",
+          "return_threshold_margin_pct_of_10000": "-6.15210826509559353274876712",
+          "worst_DD_pct": "32.58571943244992458468202560427929948068800671159302051156276356556800",
+          "DD_headroom_to_35_pct_points": "2.41428056755007541531797439572070051931199328840697948843723643443200",
+          "worst_case": "DELAY",
+          "worst_peak": "2019-06-26",
+          "worst_trough": "2020-05-11",
+          "goal_gate": false
+        },
+        {
+          "arm": "LP50",
+          "take_profit": 5.0,
+          "STRESS_net_return_pct": "9384.789173490440646725123288",
+          "return_threshold_margin_pct_points": "-615.210826509559353274876712",
+          "return_threshold_margin_pct_of_10000": "-6.15210826509559353274876712",
+          "worst_DD_pct": "32.58571943244992458468202560427929948068800671159302051156276356556800",
+          "DD_headroom_to_35_pct_points": "2.41428056755007541531797439572070051931199328840697948843723643443200",
+          "worst_case": "DELAY",
+          "worst_peak": "2019-06-26",
+          "worst_trough": "2020-05-11",
+          "goal_gate": false
+        }
+      ],
+      "finding": "新只读Decimal复算16份既有账户：四点无失败、全部四成本完整，最差均DELAY32.58571943245%，同2019-06-26→2020-05-11；距35为2.41428056755点。只有LP35 STRESS10127.9183673856%通过收益门；LP25低1890.9970469144点，LP40/50各低615.2108265096点。1/4名称通过只是这个已消费家族的描述，不是25%通过概率或置信度，也不因去重成3路径而成为1/3统计概率。"
+    },
+    {
+      "source": "同16份原账户:完整JSON字典与summary.path_sha256; /workspace/BTCStrategyResearchLedger/studies/B109-long-profit-local-coordinate/analysis.json:duplicate_groups/qualification",
+      "calculation": {
+        "local_name_count": 4,
+        "local_unique_four_cost_path_count": 3,
+        "local_duplicate_groups": [
+          [
+            "LP40",
+            "LP50"
+          ]
+        ],
+        "LP40_LP50_full_account_dicts_identical_all_four_costs": true,
+        "DD_range_within_original_family_pct_points_by_case": {
+          "BASE": "0.00209405173685018175070967186252622932334570419384969659730563143718",
+          "STRESS": "0.00259207390662024026159947307314177377068235706413348986799773572378",
+          "SEVERE": "0E-68",
+          "DELAY": "0E-68"
+        }
+      },
+      "finding": "LP40与LP50不只是最差DD相同，而是四情景完整账户字典逐项相同；四点只有三组全路径输出，但仍共享同一BTC历史、输入与父方案。BASE/STRESS DD跨度仅约.00209405/.00259207点，SEVERE/DELAY跨度0；不能把这种同危机区间未受TP变化影响的局部不敏感解释为独立危机或未来风险稳定性的证明。去重是输出清点，不是有效独立样本量估计。"
+    },
+    {
+      "source": "LP35/STRESS.json.gz:marks[-1].equity；固定100USDT初始资金与10000%收益门",
+      "calculation": {
+        "original_capital": "100",
+        "goal_terminal_wealth": "10100",
+        "actual_STRESS_terminal_wealth": "10227.91836738555674890594521",
+        "absolute_terminal_margin": "127.91836738555674890594521",
+        "terminal_margin_fraction_of_actual_pct": "1.250678415594893199517742628530703562397532838267303304667690411619874",
+        "qualification": "arithmetic final-wealth subtraction only; not a permissible cost budget or rerun"
+      },
+      "finding": "LP35收益超过10000门127.9183673856个百分点，即目标10000的1.2791836739%。在初始100USDT口径下，门对应终值10100、实际终值10227.9183673856，纯终值算术余量127.9183673856USDT，约实际终值的1.2506784156%。这不是可承受的额外交易费/滑点预算：真实成本会改变止损触发、数量和复利路径，本轮未做新成本情景或参数扫描。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/studies/B109-long-profit-local-coordinate/results.json:results[recipe.id=LP35].summaries; goal-milestone-audit.json:qualification/status",
+      "finding": "合同只对STRESS收益要求>=10000，其他成本收益如DELAY约4133.27%未被要求达到10000；必须保持这种原门的精确定义，不能事后改成四成本收益全>=10000或只挑有利情景DD。原历史数值里程碑可成立，但在同一历史上多次选择幸存方案后，其通过不自带未触碰样本证明、持久alpha或实际DD硬保证。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/studies/B109-long-profit-local-coordinate/spec.md:3-5; /workspace/BTCExpertReview/shared/protocol.json:independence/limits/aggregation",
+      "finding": "四新TP合同在本步骤预先固定有利于审计，但父链和阈值反复消费同一历史的选择效应不会因此消失。没有掌握完整自适应研究路径的独立试验数，本轮不编造Bonferroni分母、p值、有效N或置信度；AI六角色、软件测试、随机种子、成本情景与同路径副本都不能增加新的市场危机样本。"
+    }
+  ],
+  "counterevidence": [
+    {
+      "source": "本轮16份账户重算与原B109 results.json/goal-milestone-audit.json",
+      "finding": "LP35确实满足原固定收益和DD门，16书的终值、DD、路径hash与原结果一致；本轮没有发现数值里程碑不可复现。局部邻点未过收益门不能反向取消已经满足的历史算术结果。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/lab/long_profit_local_coordinate.py:5; /workspace/BTCStrategyResearchLedger/studies/B109-long-profit-local-coordinate/spec.md:3",
+      "finding": "四点是在B109实际新账户前明确固定，不是本轮看结果后新扫的密集网格；不能无证据指控本步骤事后更改参数表或经济门。问题在于外推范围与长期消耗历史，而非否认本次预注册本身。"
+    },
+    {
+      "source": "本轮local_original_registered_arms及DD_range_within_original_family",
+      "finding": "四点DD都低于35且最差值相同，支持“这些原点在该已消费历史DD指标上局部不敏感”的有限结论；但收益只有单点越线，不能把“风险局部不敏感”和“收益过线稳定平台”混写。"
+    }
+  ],
+  "recommendations": [
+    {
+      "priority": "P0",
+      "action": "在交付仓并列披露原四点的STRESS收益余量、最差四情景DD余量、完整/失败状态及重复关系，不只展示LP35通过。",
+      "acceptance": "必须显示本轮四点表、LP40/LP50四书相同、4名3组输出和只有LP35收益过线；将1/4或1/3标为样本内描述而非成功概率，不增加未经计算的置信分数。"
+    },
+    {
+      "priority": "P0",
+      "action": "未来另行授权的验收先提交不可变注册清单，再读取任何目标窗口；本轮仅提出草案，2026继续禁读。",
+      "pre_registration_fields": {
+        "primary_contract": "LP35 take_profit=3.5及其完整冻结模型/风控/数据/执行版本哈希，主假设只有一个",
+        "diagnostic_comparators": [
+          "原LP25",
+          "原LP40",
+          "原LP50"
+        ],
+        "window": "明确未消费且非本轮禁止2026的UTC起止日、数据来源和可得性；不得滚动挑起止点",
+        "runtime": "先注册未来policy_year、模型训练截止与执行时钟适配器；原仅允许至2025的runner不得静默外推",
+        "economic_goal": "预先写明目标期长度及收益门；若窗口长度不同于原8年历史，不得未经说明直接把单年10000%或单年未达10000%当同一经济检验",
+        "risk_metric": "完整四情景、连续扣融资净值的日度DD严格<35，仅为该有限窗口观测准则；盘中/实际保证另需paper风险合同",
+        "stopping_and_reporting": "固定评估时点、异常/失败/缺源记录、无成交时的不充分结论、全候选与全成本报告；不因中途表现改TP/模型/门或重置起点"
+      },
+      "acceptance": "任一字段未冻结、未来时钟/年度policy未获注册、数据时间不可证明或2026禁读边界未维持，均不得开始目标数据验收；本轮不创建未来模型/账户、不读封存验证数据。"
+    },
+    {
+      "priority": "P1",
+      "action": "未来验收把“冻结系统执行正确”和“经济目标在指定新窗口成立”分开判定，保留失败而非选择新赢家。",
+      "acceptance": "执行/账本测试通过只能给工程结论；新窗口原LP35未满足预注册经济/风险门则如实记未通过或不充分，不能改选邻点后称同一次确认成功；诊断对照若用于下一次选择，下一次需新的未消费窗口。"
+    },
+    {
+      "priority": "P1",
+      "action": "把本轮局部检查停在四个原注册点，不围绕3.5增加3.25/3.75等新扫描或用事后成本容忍度扩大通过。",
+      "acceptance": "不新增TP、stop、budget或cost参数，不把127.91837终值余量解释为新增费率可用额度；风险结论保留本地DD平坦、收益过线单点、历史重复消费三个事实。"
+    }
+  ],
+  "checks_performed": [
+    {
+      "check": "原四TP×四成本局部稳定性与门余量只读新检查",
+      "method": "指定Python -B读取LP25/35/40/50原16份账户，以70位Decimal从marks末值减100计算净收益、从完整2922日marks独立算DD峰谷，断言period为2018—2025并按原STRESS>=10000、worst四DD<35比较goal_gate。",
+      "result": "16/16完整匹配原结果：净收益差<1e-8个百分点、DD差<1e-9个百分点，四点最差DD精确相同，仅LP35收益过线；没有新策略账户或原writer调用。"
+    },
+    {
+      "check": "输出路径与完整账户去重只读新检查",
+      "method": "对16本marks按原sort_keys JSON方式重算path_sha256并逐一与原summary对照；比较LP40与LP50四情景完整解压JSON字典。",
+      "result": "16/16原路径hash一致，LP40/50四情景完整账户均精确相等；本地4名称为3组输出，该计数不作为统计有效N。"
+    },
+    {
+      "check": "LP35收益门余量及终值余量确定性新检查",
+      "method": "Decimal计算STRESS net return-10000、35-maxDD以及actual_terminal-10100和终值余量/actual_terminal；只对既有数值运算。",
+      "result": "收益余量127.9183673856点（目标的1.2791836739%），DD余量2.41428056755点，终值余量占实际终值1.2506784156%；不是新滑点/手续费允许值或成本反事实。"
+    },
+    {
+      "check": "冻结注册与重复历史边界静态核对",
+      "method": "读取原B109 registration相关代码、spec及results/analysis资格说明；未运行freeze/train/test/replay/verify，未读2026或其他专家材料。",
+      "result": "保留原四参数、原门和失败/重复事实，未产生p值、置信度、有效独立市场样本数或新优化。"
+    }
+  ],
+  "unresolved": [
+    "完整历史自适应研究路径的独立检验数量未在本轮重建，因此不能给经多重选择调整后的p值、置信概率或未来DD分布。",
+    "原四点之间没有密集参数面；本轮不能断言3.5附近任意未试点稳定或给最优参数置信区间，也不会继续搜索。",
+    "未来目标窗口、未来合法policy_year/runner与经济目标期长度尚未注册/执行；本轮只有可检查的预注册条件草案，不宣称独立验证或paper就绪。",
+    "日度DD余量不是盘中gap、外部融资保证金或未来尾部风险缓冲的充分证明。"
+  ],
+  "independence_statement": "本人为risk AI分析角色，不是人类专家或新的独立市场样本；未读取其他专家意见/评分/主审结论，未读V01/V02或2026经济数据/账户；本轮仅比较原注册四TP账户，不新增参数或策略搜索、不改冻结源/spec/模型/账户/verification/gates、不重跑writer，仅独占写risk/r08.json及/tmp私有中间结果，未预写后轮。"
+}

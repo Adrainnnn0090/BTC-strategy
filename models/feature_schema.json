@@ -1,0 +1,662 @@
+{
+  "CAL44": [
+    {
+      "index": 0,
+      "name": "logret5"
+    },
+    {
+      "index": 1,
+      "name": "logret20"
+    },
+    {
+      "index": 2,
+      "name": "logret60"
+    },
+    {
+      "index": 3,
+      "name": "logret120"
+    },
+    {
+      "index": 4,
+      "name": "logret252"
+    },
+    {
+      "index": 5,
+      "name": "log_price_mean20"
+    },
+    {
+      "index": 6,
+      "name": "log_price_mean100"
+    },
+    {
+      "index": 7,
+      "name": "log_price_mean200"
+    },
+    {
+      "index": 8,
+      "name": "annualized_vol20"
+    },
+    {
+      "index": 9,
+      "name": "annualized_vol60"
+    },
+    {
+      "index": 10,
+      "name": "price_rollinghigh60_minus1"
+    },
+    {
+      "index": 11,
+      "name": "efficiency20"
+    },
+    {
+      "index": 12,
+      "name": "logret1"
+    },
+    {
+      "index": 13,
+      "name": "logret3"
+    },
+    {
+      "index": 14,
+      "name": "logret10"
+    },
+    {
+      "index": 15,
+      "name": "annualized_vol5"
+    },
+    {
+      "index": 16,
+      "name": "annualized_downside20"
+    },
+    {
+      "index": 17,
+      "name": "rsi14_div100"
+    },
+    {
+      "index": 18,
+      "name": "price_rollinghigh20_minus1"
+    },
+    {
+      "index": 19,
+      "name": "efficiency5"
+    },
+    {
+      "index": 20,
+      "name": "skew20"
+    },
+    {
+      "index": 21,
+      "name": "skew60"
+    },
+    {
+      "index": 22,
+      "name": "kurt20"
+    },
+    {
+      "index": 23,
+      "name": "kurt60"
+    },
+    {
+      "index": 24,
+      "name": "autocorr20"
+    },
+    {
+      "index": 25,
+      "name": "autocorr60"
+    },
+    {
+      "index": 26,
+      "name": "sign_balance20"
+    },
+    {
+      "index": 27,
+      "name": "sign_balance60"
+    },
+    {
+      "index": 28,
+      "name": "down_variance_share20"
+    },
+    {
+      "index": 29,
+      "name": "down_variance_share60"
+    },
+    {
+      "index": 30,
+      "name": "log_vol5_60"
+    },
+    {
+      "index": 31,
+      "name": "log_vol20_120"
+    },
+    {
+      "index": 32,
+      "name": "signed_streak20"
+    },
+    {
+      "index": 33,
+      "name": "days_since_high60"
+    },
+    {
+      "index": 34,
+      "name": "largest_move_share20"
+    },
+    {
+      "index": 35,
+      "name": "variance_ratio5_100"
+    },
+    {
+      "index": 36,
+      "name": "weekday_sin"
+    },
+    {
+      "index": 37,
+      "name": "weekday_cos"
+    },
+    {
+      "index": 38,
+      "name": "month_phase_sin"
+    },
+    {
+      "index": 39,
+      "name": "month_phase_cos"
+    },
+    {
+      "index": 40,
+      "name": "year_phase_sin"
+    },
+    {
+      "index": 41,
+      "name": "year_phase_cos"
+    },
+    {
+      "index": 42,
+      "name": "first3_of_month"
+    },
+    {
+      "index": 43,
+      "name": "last3_of_month"
+    }
+  ],
+  "PRICE47": [
+    {
+      "index": 0,
+      "name": "logret5"
+    },
+    {
+      "index": 1,
+      "name": "logret20"
+    },
+    {
+      "index": 2,
+      "name": "logret60"
+    },
+    {
+      "index": 3,
+      "name": "logret120"
+    },
+    {
+      "index": 4,
+      "name": "logret252"
+    },
+    {
+      "index": 5,
+      "name": "log_price_mean20"
+    },
+    {
+      "index": 6,
+      "name": "log_price_mean100"
+    },
+    {
+      "index": 7,
+      "name": "log_price_mean200"
+    },
+    {
+      "index": 8,
+      "name": "annualized_vol20"
+    },
+    {
+      "index": 9,
+      "name": "annualized_vol60"
+    },
+    {
+      "index": 10,
+      "name": "price_rollinghigh60_minus1"
+    },
+    {
+      "index": 11,
+      "name": "efficiency20"
+    },
+    {
+      "index": 12,
+      "name": "logret1"
+    },
+    {
+      "index": 13,
+      "name": "logret3"
+    },
+    {
+      "index": 14,
+      "name": "logret10"
+    },
+    {
+      "index": 15,
+      "name": "annualized_vol5"
+    },
+    {
+      "index": 16,
+      "name": "annualized_downside20"
+    },
+    {
+      "index": 17,
+      "name": "rsi14_div100"
+    },
+    {
+      "index": 18,
+      "name": "price_rollinghigh20_minus1"
+    },
+    {
+      "index": 19,
+      "name": "efficiency5"
+    },
+    {
+      "index": 20,
+      "name": "skew20"
+    },
+    {
+      "index": 21,
+      "name": "skew60"
+    },
+    {
+      "index": 22,
+      "name": "kurt20"
+    },
+    {
+      "index": 23,
+      "name": "kurt60"
+    },
+    {
+      "index": 24,
+      "name": "autocorr20"
+    },
+    {
+      "index": 25,
+      "name": "autocorr60"
+    },
+    {
+      "index": 26,
+      "name": "sign_balance20"
+    },
+    {
+      "index": 27,
+      "name": "sign_balance60"
+    },
+    {
+      "index": 28,
+      "name": "down_variance_share20"
+    },
+    {
+      "index": 29,
+      "name": "down_variance_share60"
+    },
+    {
+      "index": 30,
+      "name": "log_vol5_60"
+    },
+    {
+      "index": 31,
+      "name": "log_vol20_120"
+    },
+    {
+      "index": 32,
+      "name": "signed_streak20"
+    },
+    {
+      "index": 33,
+      "name": "days_since_high60"
+    },
+    {
+      "index": 34,
+      "name": "largest_move_share20"
+    },
+    {
+      "index": 35,
+      "name": "variance_ratio5_100"
+    },
+    {
+      "index": 36,
+      "name": "weekday_sin"
+    },
+    {
+      "index": 37,
+      "name": "weekday_cos"
+    },
+    {
+      "index": 38,
+      "name": "month_phase_sin"
+    },
+    {
+      "index": 39,
+      "name": "month_phase_cos"
+    },
+    {
+      "index": 40,
+      "name": "year_phase_sin"
+    },
+    {
+      "index": 41,
+      "name": "year_phase_cos"
+    },
+    {
+      "index": 42,
+      "name": "first3_of_month"
+    },
+    {
+      "index": 43,
+      "name": "last3_of_month"
+    },
+    {
+      "index": 44,
+      "name": "postwarmup_constant1"
+    },
+    {
+      "index": 45,
+      "name": "price_log_mean7_mean90_lag7"
+    },
+    {
+      "index": 46,
+      "name": "price_log_mean30_mean90_lag7"
+    }
+  ],
+  "MINING58_DYNAMICS_L60": [
+    {
+      "index": 0,
+      "name": "logret5",
+      "forced_zero": false
+    },
+    {
+      "index": 1,
+      "name": "logret20",
+      "forced_zero": false
+    },
+    {
+      "index": 2,
+      "name": "logret60",
+      "forced_zero": false
+    },
+    {
+      "index": 3,
+      "name": "logret120",
+      "forced_zero": false
+    },
+    {
+      "index": 4,
+      "name": "logret252",
+      "forced_zero": false
+    },
+    {
+      "index": 5,
+      "name": "log_price_mean20",
+      "forced_zero": false
+    },
+    {
+      "index": 6,
+      "name": "log_price_mean100",
+      "forced_zero": false
+    },
+    {
+      "index": 7,
+      "name": "log_price_mean200",
+      "forced_zero": false
+    },
+    {
+      "index": 8,
+      "name": "annualized_vol20",
+      "forced_zero": false
+    },
+    {
+      "index": 9,
+      "name": "annualized_vol60",
+      "forced_zero": false
+    },
+    {
+      "index": 10,
+      "name": "price_rollinghigh60_minus1",
+      "forced_zero": false
+    },
+    {
+      "index": 11,
+      "name": "efficiency20",
+      "forced_zero": false
+    },
+    {
+      "index": 12,
+      "name": "logret1",
+      "forced_zero": false
+    },
+    {
+      "index": 13,
+      "name": "logret3",
+      "forced_zero": false
+    },
+    {
+      "index": 14,
+      "name": "logret10",
+      "forced_zero": false
+    },
+    {
+      "index": 15,
+      "name": "annualized_vol5",
+      "forced_zero": false
+    },
+    {
+      "index": 16,
+      "name": "annualized_downside20",
+      "forced_zero": false
+    },
+    {
+      "index": 17,
+      "name": "rsi14_div100",
+      "forced_zero": false
+    },
+    {
+      "index": 18,
+      "name": "price_rollinghigh20_minus1",
+      "forced_zero": false
+    },
+    {
+      "index": 19,
+      "name": "efficiency5",
+      "forced_zero": false
+    },
+    {
+      "index": 20,
+      "name": "skew20",
+      "forced_zero": false
+    },
+    {
+      "index": 21,
+      "name": "skew60",
+      "forced_zero": false
+    },
+    {
+      "index": 22,
+      "name": "kurt20",
+      "forced_zero": false
+    },
+    {
+      "index": 23,
+      "name": "kurt60",
+      "forced_zero": false
+    },
+    {
+      "index": 24,
+      "name": "autocorr20",
+      "forced_zero": false
+    },
+    {
+      "index": 25,
+      "name": "autocorr60",
+      "forced_zero": false
+    },
+    {
+      "index": 26,
+      "name": "sign_balance20",
+      "forced_zero": false
+    },
+    {
+      "index": 27,
+      "name": "sign_balance60",
+      "forced_zero": false
+    },
+    {
+      "index": 28,
+      "name": "down_variance_share20",
+      "forced_zero": false
+    },
+    {
+      "index": 29,
+      "name": "down_variance_share60",
+      "forced_zero": false
+    },
+    {
+      "index": 30,
+      "name": "log_vol5_60",
+      "forced_zero": false
+    },
+    {
+      "index": 31,
+      "name": "log_vol20_120",
+      "forced_zero": false
+    },
+    {
+      "index": 32,
+      "name": "signed_streak20",
+      "forced_zero": false
+    },
+    {
+      "index": 33,
+      "name": "days_since_high60",
+      "forced_zero": false
+    },
+    {
+      "index": 34,
+      "name": "largest_move_share20",
+      "forced_zero": false
+    },
+    {
+      "index": 35,
+      "name": "variance_ratio5_100",
+      "forced_zero": false
+    },
+    {
+      "index": 36,
+      "name": "weekday_sin",
+      "forced_zero": false
+    },
+    {
+      "index": 37,
+      "name": "weekday_cos",
+      "forced_zero": false
+    },
+    {
+      "index": 38,
+      "name": "month_phase_sin",
+      "forced_zero": false
+    },
+    {
+      "index": 39,
+      "name": "month_phase_cos",
+      "forced_zero": false
+    },
+    {
+      "index": 40,
+      "name": "year_phase_sin",
+      "forced_zero": false
+    },
+    {
+      "index": 41,
+      "name": "year_phase_cos",
+      "forced_zero": false
+    },
+    {
+      "index": 42,
+      "name": "first3_of_month",
+      "forced_zero": false
+    },
+    {
+      "index": 43,
+      "name": "last3_of_month",
+      "forced_zero": false
+    },
+    {
+      "index": 44,
+      "name": "observation_fresh",
+      "forced_zero": false
+    },
+    {
+      "index": 45,
+      "name": "log_progress_age_days",
+      "forced_zero": false
+    },
+    {
+      "index": 46,
+      "name": "difficulty_growth_1epoch",
+      "forced_zero": false
+    },
+    {
+      "index": 47,
+      "name": "difficulty_growth_3epoch",
+      "forced_zero": false
+    },
+    {
+      "index": 48,
+      "name": "difficulty_growth_6epoch",
+      "forced_zero": false
+    },
+    {
+      "index": 49,
+      "name": "difficulty_growth_12epoch",
+      "forced_zero": false
+    },
+    {
+      "index": 50,
+      "name": "hashpower_ratio_1_3epoch",
+      "forced_zero": false
+    },
+    {
+      "index": 51,
+      "name": "hashpower_ratio_3_6epoch",
+      "forced_zero": false
+    },
+    {
+      "index": 52,
+      "name": "production_speed_1epoch",
+      "forced_zero": false
+    },
+    {
+      "index": 53,
+      "name": "production_speed_3epoch",
+      "forced_zero": false
+    },
+    {
+      "index": 54,
+      "name": "difficulty_epoch_phase",
+      "forced_zero": true
+    },
+    {
+      "index": 55,
+      "name": "subsidy_epoch_phase",
+      "forced_zero": true
+    },
+    {
+      "index": 56,
+      "name": "log2_subsidy_relative_genesis",
+      "forced_zero": true
+    },
+    {
+      "index": 57,
+      "name": "log_difficulty_scaled",
+      "forced_zero": true
+    }
+  ]
+}

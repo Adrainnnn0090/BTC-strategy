@@ -1,0 +1,566 @@
+{
+  "round": 7,
+  "role": "risk",
+  "topic": "敞口、止损与跨年风险",
+  "conclusion": "九项方案主要改变退出、入场许可或入场预算，并非九个独立风险来源：K02/MX03的历史short gross下降未带来对应整体DD改善，九项最差DD均由共同2019—2020多头亏损区间主导；carry、延迟止损和钱包外融资仍要求单独paper风险验收，不能据历史DD<35%给实际风险保证。",
+  "verdict": "qualified",
+  "evidence": [
+    {
+      "source": "以下source_map各账户的marks/fills/trades/financing；/workspace/BTCStrategyResearchLedger/lab/quote_exposure.py:5-29; carry_native.py:85-92",
+      "source_map": {
+        "LP35": "/workspace/BTCStrategyResearchLedger/studies/B109-long-profit-local-coordinate/accounts/LP35/{case}.json.gz",
+        "TS04": "/workspace/BTCStrategyResearchLedger/studies/B107-cold-short-profit-trailing/accounts/TS04/{case}.json.gz",
+        "ME01": "/workspace/BTCStrategyResearchLedger/studies/B105-cold-entry-momentum/accounts/ME01/{case}.json.gz",
+        "MX03": "/workspace/BTCStrategyResearchLedger/studies/B106-shorter-cold-entry-momentum/accounts/MX03/{case}.json.gz",
+        "B88A_S03": "/workspace/BTCStrategyResearchLedger/studies/B88A-short-net-loss-families/accounts/S03/{case}.json.gz",
+        "K02": "/workspace/BTCStrategyResearchLedger/studies/B72-cold-budget-exposure/accounts/K02/{case}.json.gz",
+        "Y01": "/workspace/BTCStrategyResearchLedger/studies/B29-prior-forecast-exits/accounts/Y01/{case}.json.gz",
+        "C02": "/workspace/BTCStrategyResearchLedger/studies/B31-constant-sizing-controls/accounts/C02/{case}.json.gz",
+        "C04": "/workspace/BTCStrategyResearchLedger/studies/B31-constant-sizing-controls/accounts/C04/{case}.json.gz"
+      },
+      "finding": "本轮只读九项×四情景36份完整2018—2025既有账户，另读三个预先固定父参考×四情景12份账户用于结构对照；没有新策略搜索或账户回放。统一以扣融资/退出费储备的equity为分母，计算下单前后日度proxy gross，独立从完整marks重算全程peak-to-trough DD；这些是历史观测，不是盘中或未来上限。"
+    },
+    {
+      "source": "source_map对应账户:marks[*].signed_qty/equity/reference_price及quote_exposure返回值；trades[*].entry_date/exit_date",
+      "nine_strategy_risk_table": [
+        {
+          "strategy": "LP35",
+          "mechanism": "TS04长TP由3变3.5；非gross控制",
+          "worst_four_cost_daily_DD_pct": "32.5857194324499245846820256042792994806880067115930205115628",
+          "worst_case": "DELAY",
+          "peak": "2019-06-26",
+          "trough": "2020-05-11",
+          "max_daily_before_or_after_short_gross_pct": 118.0455835631524,
+          "short_gross_case": "BASE",
+          "short_gross_date": "2018-01-05",
+          "max_daily_before_or_after_long_gross_pct": 99.5718235044465,
+          "long_gross_case": "SEVERE",
+          "long_gross_date": "2021-01-08",
+          "max_daily_before_or_after_whole_gross_pct": 118.0455835631524,
+          "max_whole_gross_case": "BASE",
+          "headroom_to_35_pct_points": "2.4142805675500754153179743957207005193119932884069794884372",
+          "cross_year_trade_count_each_case": {
+            "BASE": 3,
+            "STRESS": 3,
+            "SEVERE": 3,
+            "DELAY": 3
+          },
+          "max_calendar_holding_days": 254
+        },
+        {
+          "strategy": "TS04",
+          "mechanism": "ME01冷空头trail改.04；非gross控制",
+          "worst_four_cost_daily_DD_pct": "32.5857194324499245846820256042792994806880067115930205115628",
+          "worst_case": "DELAY",
+          "peak": "2019-06-26",
+          "trough": "2020-05-11",
+          "max_daily_before_or_after_short_gross_pct": 118.0455835631524,
+          "short_gross_case": "BASE",
+          "short_gross_date": "2018-01-05",
+          "max_daily_before_or_after_long_gross_pct": 99.52733717273415,
+          "long_gross_case": "SEVERE",
+          "long_gross_date": "2021-01-07",
+          "max_daily_before_or_after_whole_gross_pct": 118.0455835631524,
+          "max_whole_gross_case": "BASE",
+          "headroom_to_35_pct_points": "2.4142805675500754153179743957207005193119932884069794884372",
+          "cross_year_trade_count_each_case": {
+            "BASE": 3,
+            "STRESS": 3,
+            "SEVERE": 3,
+            "DELAY": 3
+          },
+          "max_calendar_holding_days": 252
+        },
+        {
+          "strategy": "ME01",
+          "mechanism": "冷空头新入场5日动量许可；不按风险动态再平衡",
+          "worst_four_cost_daily_DD_pct": "32.5849829691387506904110684593493884089158943249298096166400",
+          "worst_case": "DELAY",
+          "peak": "2019-06-26",
+          "trough": "2020-05-11",
+          "max_daily_before_or_after_short_gross_pct": 118.0455835631524,
+          "short_gross_case": "BASE",
+          "short_gross_date": "2018-01-05",
+          "max_daily_before_or_after_long_gross_pct": 99.53064163152006,
+          "long_gross_case": "SEVERE",
+          "long_gross_date": "2021-01-07",
+          "max_daily_before_or_after_whole_gross_pct": 118.0455835631524,
+          "max_whole_gross_case": "BASE",
+          "headroom_to_35_pct_points": "2.4150170308612493095889315406506115910841056750701903833600",
+          "cross_year_trade_count_each_case": {
+            "BASE": 3,
+            "STRESS": 3,
+            "SEVERE": 3,
+            "DELAY": 3
+          },
+          "max_calendar_holding_days": 252
+        },
+        {
+          "strategy": "MX03",
+          "mechanism": "ME01新入场许可再与1日负动量相与；非fraction缩放",
+          "worst_four_cost_daily_DD_pct": "32.5846367613562408039843174044920842679262090691919665570554",
+          "worst_case": "DELAY",
+          "peak": "2019-06-26",
+          "trough": "2020-05-11",
+          "max_daily_before_or_after_short_gross_pct": 98.48354549468513,
+          "short_gross_case": "SEVERE",
+          "short_gross_date": "2018-01-05",
+          "max_daily_before_or_after_long_gross_pct": 99.52381429377289,
+          "long_gross_case": "SEVERE",
+          "long_gross_date": "2021-01-07",
+          "max_daily_before_or_after_whole_gross_pct": 99.52381429377289,
+          "max_whole_gross_case": "SEVERE",
+          "headroom_to_35_pct_points": "2.4153632386437591960156825955079157320737909308080334429446",
+          "cross_year_trade_count_each_case": {
+            "BASE": 3,
+            "STRESS": 3,
+            "SEVERE": 3,
+            "DELAY": 3
+          },
+          "max_calendar_holding_days": 252
+        },
+        {
+          "strategy": "B88A_S03",
+          "mechanism": "后冷短头median损失/许可；原risk和budget不变",
+          "worst_four_cost_daily_DD_pct": "32.2630589790961124582493824568905005217890429540136733178568",
+          "worst_case": "DELAY",
+          "peak": "2019-06-26",
+          "trough": "2020-05-11",
+          "max_daily_before_or_after_short_gross_pct": 102.24200234448837,
+          "short_gross_case": "DELAY",
+          "short_gross_date": "2018-02-19",
+          "max_daily_before_or_after_long_gross_pct": 98.92079518870777,
+          "long_gross_case": "SEVERE",
+          "long_gross_date": "2020-12-26",
+          "max_daily_before_or_after_whole_gross_pct": 102.24200234448837,
+          "max_whole_gross_case": "DELAY",
+          "headroom_to_35_pct_points": "2.7369410209038875417506175431094994782109570459863266821432",
+          "cross_year_trade_count_each_case": {
+            "BASE": 3,
+            "STRESS": 3,
+            "SEVERE": 3,
+            "DELAY": 3
+          },
+          "max_calendar_holding_days": 243
+        },
+        {
+          "strategy": "K02",
+          "mechanism": "cold/post空头入场预算.25/.25；非持仓gross cap",
+          "worst_four_cost_daily_DD_pct": "32.9240483408921554906966837927520533800432000703136364860168",
+          "worst_case": "DELAY",
+          "peak": "2019-06-26",
+          "trough": "2020-05-11",
+          "max_daily_before_or_after_short_gross_pct": 30.72229059543503,
+          "short_gross_case": "DELAY",
+          "short_gross_date": "2018-02-19",
+          "max_daily_before_or_after_long_gross_pct": 98.9314637843309,
+          "long_gross_case": "SEVERE",
+          "long_gross_date": "2020-12-26",
+          "max_daily_before_or_after_whole_gross_pct": 98.9314637843309,
+          "max_whole_gross_case": "SEVERE",
+          "headroom_to_35_pct_points": "2.0759516591078445093033162072479466199567999296863635139832",
+          "cross_year_trade_count_each_case": {
+            "BASE": 3,
+            "STRESS": 3,
+            "SEVERE": 3,
+            "DELAY": 3
+          },
+          "max_calendar_holding_days": 243
+        },
+        {
+          "strategy": "Y01",
+          "mechanism": "仅多头年度原政策；无short gross",
+          "worst_four_cost_daily_DD_pct": "34.2758999497703832912374073963318515016505515899168858969109",
+          "worst_case": "SEVERE",
+          "peak": "2019-07-09",
+          "trough": "2020-05-11",
+          "max_daily_before_or_after_short_gross_pct": 0.0,
+          "short_gross_case": "BASE",
+          "short_gross_date": null,
+          "max_daily_before_or_after_long_gross_pct": 98.91890156050492,
+          "long_gross_case": "SEVERE",
+          "long_gross_date": "2020-12-26",
+          "max_daily_before_or_after_whole_gross_pct": 98.91890156050492,
+          "max_whole_gross_case": "SEVERE",
+          "headroom_to_35_pct_points": "0.7241000502296167087625926036681484983494484100831141030891",
+          "cross_year_trade_count_each_case": {
+            "BASE": 2,
+            "STRESS": 2,
+            "SEVERE": 2,
+            "DELAY": 2
+          },
+          "max_calendar_holding_days": 243
+        },
+        {
+          "strategy": "C02",
+          "mechanism": "Y01合资格折long预算×.75，2018/2019不缩放",
+          "worst_four_cost_daily_DD_pct": "31.8934482459689796690263652354283965418936868788352846607990",
+          "worst_case": "SEVERE",
+          "peak": "2019-07-09",
+          "trough": "2020-05-11",
+          "max_daily_before_or_after_short_gross_pct": 0.0,
+          "short_gross_case": "BASE",
+          "short_gross_date": null,
+          "max_daily_before_or_after_long_gross_pct": 89.91804032171049,
+          "long_gross_case": "SEVERE",
+          "long_gross_date": "2019-05-14",
+          "max_daily_before_or_after_whole_gross_pct": 89.91804032171049,
+          "max_whole_gross_case": "SEVERE",
+          "headroom_to_35_pct_points": "3.1065517540310203309736347645716034581063131211647153392010",
+          "cross_year_trade_count_each_case": {
+            "BASE": 2,
+            "STRESS": 2,
+            "SEVERE": 2,
+            "DELAY": 2
+          },
+          "max_calendar_holding_days": 243
+        },
+        {
+          "strategy": "C04",
+          "mechanism": "H04合资格折long预算×.75，2018/2019不缩放",
+          "worst_four_cost_daily_DD_pct": "31.8934482459689796690263652354283965418936868788352846607990",
+          "worst_case": "SEVERE",
+          "peak": "2019-07-09",
+          "trough": "2020-05-11",
+          "max_daily_before_or_after_short_gross_pct": 0.0,
+          "short_gross_case": "BASE",
+          "short_gross_date": null,
+          "max_daily_before_or_after_long_gross_pct": 89.91804032171049,
+          "long_gross_case": "SEVERE",
+          "long_gross_date": "2019-05-14",
+          "max_daily_before_or_after_whole_gross_pct": 89.91804032171049,
+          "max_whole_gross_case": "SEVERE",
+          "headroom_to_35_pct_points": "3.1065517540310203309736347645716034581063131211647153392010",
+          "cross_year_trade_count_each_case": {
+            "BASE": 2,
+            "STRESS": 2,
+            "SEVERE": 2,
+            "DELAY": 2
+          },
+          "max_calendar_holding_days": 243
+        }
+      ],
+      "finding": "Y01/C02/C04没有空头，所谓缩放是多头预算；K02机制是空头入场预算，MX03机制是权限门。两者虽实测short gross变小，均非持续gross cap。LP35/TS04/ME01仍观测到118.04558%短头gross，名字中的TP/trail并不限制持仓gross；C02/C04的89.91804%峰值来自2019未缩放年度，也不能标成全期75%敞口。"
+    },
+    {
+      "source": "九项表及固定父参考账户同口径重算；/workspace/BTCStrategyResearchLedger/studies/B72-cold-budget-exposure/decision.md:9-23; B31-constant-sizing-controls/decision.md:9-18; B88A-short-net-loss-families/decision.md:14-18",
+      "fixed_reference_sources": {
+        "P02_reference": {
+          "source": "/workspace/BTCStrategyResearchLedger/studies/B88A-short-net-loss-families/accounts/P02/{case}.json.gz",
+          "worst_DD_pct": "32.5528883863026195368623198457592543309090806418362351704367",
+          "max_short_gross_pct": 102.24200234448837
+        },
+        "L05_reference": {
+          "source": "/workspace/BTCStrategyResearchLedger/studies/B72-cold-budget-exposure/accounts/L05/{case}.json.gz",
+          "worst_DD_pct": "32.9205494883880542020578443084477398922856377266802564885558",
+          "max_short_gross_pct": 102.24200234448837
+        },
+        "H04_reference": {
+          "source": "/workspace/BTCStrategyResearchLedger/studies/B22-annual-carry/accounts/H04/{case}.json.gz",
+          "worst_DD_pct": "34.2758999497703832912374073963318515016505515899168858969109",
+          "max_short_gross_pct": 0.0
+        }
+      },
+      "child_parent_risk_contrasts": [
+        {
+          "child": "LP35",
+          "fixed_parent_reference": "TS04",
+          "DD_change_pct_points_child_minus_parent": "0E-58",
+          "max_short_gross_change_pct_points_child_minus_parent_approx": "0E-13",
+          "max_whole_gross_change_pct_points_child_minus_parent_approx": "0E-13"
+        },
+        {
+          "child": "TS04",
+          "fixed_parent_reference": "ME01",
+          "DD_change_pct_points_child_minus_parent": "0.0007364633111738942709571449299110717721123866632108949228",
+          "max_short_gross_change_pct_points_child_minus_parent_approx": "0E-13",
+          "max_whole_gross_change_pct_points_child_minus_parent_approx": "0E-13"
+        },
+        {
+          "child": "MX03",
+          "fixed_parent_reference": "ME01",
+          "DD_change_pct_points_child_minus_parent": "-0.0003462077825098864267510548573041409896852557378430595846",
+          "max_short_gross_change_pct_points_child_minus_parent_approx": "-19.56203806846727",
+          "max_whole_gross_change_pct_points_child_minus_parent_approx": "-18.52176926937951"
+        },
+        {
+          "child": "B88A_S03",
+          "fixed_parent_reference": "P02_reference",
+          "DD_change_pct_points_child_minus_parent": "-0.2898294072065070786129373888687538091200376878225618525799",
+          "max_short_gross_change_pct_points_child_minus_parent_approx": "0E-14",
+          "max_whole_gross_change_pct_points_child_minus_parent_approx": "0E-14"
+        },
+        {
+          "child": "K02",
+          "fixed_parent_reference": "L05_reference",
+          "DD_change_pct_points_child_minus_parent": "0.0034988525041012886388394843043134877575623436333799974610",
+          "max_short_gross_change_pct_points_child_minus_parent_approx": "-71.51971174905334",
+          "max_whole_gross_change_pct_points_child_minus_parent_approx": "-3.31053856015747"
+        },
+        {
+          "child": "C02",
+          "fixed_parent_reference": "Y01",
+          "DD_change_pct_points_child_minus_parent": "-2.3824517038014036222110421609034549597568647110816012361119",
+          "max_short_gross_change_pct_points_child_minus_parent_approx": "0.0",
+          "max_whole_gross_change_pct_points_child_minus_parent_approx": "-9.00086123879443"
+        },
+        {
+          "child": "C04",
+          "fixed_parent_reference": "H04_reference",
+          "DD_change_pct_points_child_minus_parent": "-2.3824517038014036222110421609034549597568647110816012361119",
+          "max_short_gross_change_pct_points_child_minus_parent_approx": "0.0",
+          "max_whole_gross_change_pct_points_child_minus_parent_approx": "-9.00086123879443"
+        }
+      ],
+      "finding": "K02应与同post=.25、cold=.75的L05比，不能拿L06 post=.50作预算匹配父方案：short gross102.24200→30.72229%，DD反而约+0.00349885点。MX03较ME01 short gross118.04558→98.48355%，DD只改善.00034621点。TS04较ME01 DD约+.00073646点，LP35与TS04最差DD完全相同。S03较P02 DD改善.28982941点但最大short gross仍102.24200%。C02/C04较各自原父DD改善2.38245170点，是可见的历史预算权衡，不能与前述极小变化混为一谈。"
+    },
+    {
+      "source": "source_map各账户:最差DD峰谷之间marks逐日equity差及相邻signed_qty",
+      "worst_interval_daily_attribution": [
+        {
+          "strategy": "LP35",
+          "case": "DELAY",
+          "peak": "2019-06-26",
+          "trough": "2020-05-11",
+          "daily_equity_change_by_held_side_pct_of_peak": {
+            "long": "-33.6425540406569528848637537685544866263414950890596840124378",
+            "short": "1.05683460820702830018172816427518714565348837746666350087502",
+            "flat": "0"
+          }
+        },
+        {
+          "strategy": "TS04",
+          "case": "DELAY",
+          "peak": "2019-06-26",
+          "trough": "2020-05-11",
+          "daily_equity_change_by_held_side_pct_of_peak": {
+            "long": "-33.6425540406569528848637537685544866263414950890596840124378",
+            "short": "1.05683460820702830018172816427518714565348837746666350087502",
+            "flat": "0"
+          }
+        },
+        {
+          "strategy": "ME01",
+          "case": "DELAY",
+          "peak": "2019-06-26",
+          "trough": "2020-05-11",
+          "daily_equity_change_by_held_side_pct_of_peak": {
+            "long": "-33.6412375942881475983882128234969480657778061714552659918601",
+            "short": "1.05625462514939690797714436414755965686191184652545637522006",
+            "flat": "0"
+          }
+        },
+        {
+          "strategy": "MX03",
+          "case": "DELAY",
+          "peak": "2019-06-26",
+          "trough": "2020-05-11",
+          "daily_equity_change_by_held_side_pct_of_peak": {
+            "long": "-33.6424048039362879315355513947741856763630578896909975839068",
+            "short": "1.05776804258004712755123399028210140843684882049903102685138",
+            "flat": "0"
+          }
+        },
+        {
+          "strategy": "B88A_S03",
+          "case": "DELAY",
+          "peak": "2019-06-26",
+          "trough": "2020-05-11",
+          "daily_equity_change_by_held_side_pct_of_peak": {
+            "long": "-33.6532795796412450727595742742266177010374226296978594546327",
+            "short": "1.39022060054513261451019181733611717924837967568418613677596",
+            "flat": "0"
+          }
+        },
+        {
+          "strategy": "K02",
+          "case": "DELAY",
+          "peak": "2019-06-26",
+          "trough": "2020-05-11",
+          "daily_equity_change_by_held_side_pct_of_peak": {
+            "long": "-33.5573025022822963151880840158820416338015038637050879078080",
+            "short": "0.633254161390140824491400223129988253758303793391451421791220",
+            "flat": "0"
+          }
+        },
+        {
+          "strategy": "Y01",
+          "case": "SEVERE",
+          "peak": "2019-07-09",
+          "trough": "2020-05-11",
+          "daily_equity_change_by_held_side_pct_of_peak": {
+            "long": "-34.2758999497703832912374073963318515016505515899168858969109",
+            "short": "0E+10",
+            "flat": "0E+2"
+          }
+        },
+        {
+          "strategy": "C02",
+          "case": "SEVERE",
+          "peak": "2019-07-09",
+          "trough": "2020-05-11",
+          "daily_equity_change_by_held_side_pct_of_peak": {
+            "long": "-31.8934482459689796690263652354283965418936868788352846607990",
+            "short": "0E+10",
+            "flat": "0E+2"
+          }
+        },
+        {
+          "strategy": "C04",
+          "case": "SEVERE",
+          "peak": "2019-07-09",
+          "trough": "2020-05-11",
+          "daily_equity_change_by_held_side_pct_of_peak": {
+            "long": "-31.8934482459689796690263652354283965418936868788352846607990",
+            "short": "0E+10",
+            "flat": "0E+2"
+          }
+        }
+      ],
+      "calculation_method": "在最差DD的peak之后到trough，逐日deltaE归到前一日或当日非零持仓方向；先断言无同日异号反转，long+short+flat增量之和精确等于troughE-peakE，再除peakE。此为已观测每日净值会计归属，非去掉空头的反事实因果收益。",
+      "finding": "九项最差DD全跨2019—2020，谷均为2020-05-11：含空头六项峰2019-06-26，纯多三项峰2019-07-09。含空头组多头贡献约-33.56至-33.65个百分点、空头抵消约+.633至+1.390点；纯多Y01为-34.27590点，C02/C04为-31.89345点。共同多头下跌解释整体DD主导，不能因为cold short最大gross明显下降就宣称整体历史回撤等比例降低。"
+    },
+    {
+      "source": "source_map各账户:trades[*].entry_date/exit_date；/workspace/BTCStrategyResearchLedger/lab/carry_native.py:48-60,76-81,85-90；lab/b109.py:114",
+      "finding": "九项均有跨年实际持仓：含空头六项各情景3笔、纯多三项各情景2笔；最长持仓243—254日。旧仓保留entry-owned风险、peak、数量与policy_year，年度预算不能覆盖旧仓。最差DD区间跨年并不意味着该区间一直有同一笔跨年仓；全年净值/全程DD也不会因年界或暂时平仓而归零。carry带来连续敞口与政策归属风险，本轮未用新年强平反事实声称carry造成了全部DD。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/studies/B109-long-profit-local-coordinate/accounts/LP35/BASE.json.gz:trades[0]/risk_events；/workspace/BTCStrategyResearchLedger/lab/carry_native.py:34-41,48-60,119-120",
+      "finding": "风险控制必须与敞口一起验收：已查BASE SL12在2018-01-04触发、01-05成交，单笔basis亏损26.6249215770%，说明名义stop不能约束跳变后的净成交亏损；外部融资已扣净值/预算却未扣Native钱包，不能仅用引擎liquidation_enabled=true给融资后保证金安全结论。上述是具体冻结事实，不是实际仓位配置建议。"
+    }
+  ],
+  "counterevidence": [
+    {
+      "source": "本轮统一重算risk table/contrasts；/workspace/BTCStrategyResearchLedger/studies/B31-constant-sizing-controls/decision.md:14-16",
+      "finding": "K02确实明显降低所观测short gross，C02/C04确实较各自父方案降低历史DD约2.38245点，MX03也有short gross降低；不应因缺少硬保证否认这些测量。但机制只改变预算或许可，不保证未来风险单调改善。"
+    },
+    {
+      "source": "本轮worst_interval_daily_attribution",
+      "finding": "最差区间空头净贡献为正，说明这些具体历史短头活动在该区间抵消了部分多头损失；不能写成“空头造成九项最大DD”或“全部做空没有价值”。该归属不是关闭空头后的独立反事实。"
+    },
+    {
+      "source": "source_map全部账户；/workspace/BTCStrategyResearchLedger/lab/carry_native.py:85-92",
+      "finding": "九项四情景现有DD均严格<35%，重算与原summary最大误差<1e-9个百分点；没有发现推翻原历史数值门的证据。相同DD/最差区间不等于完整路径重复，LP35/TS04及C02/C04也不能只凭此表被说成全账户相同。"
+    }
+  ],
+  "recommendations": [
+    {
+      "priority": "P0",
+      "action": "paper前建立单独风险合同，固定被选paper策略的全限定来源ID/哈希、年度fraction、执行lag和gross/融资后的净值定义；明确任何新增paper guard与冻结回放的差异。",
+      "acceptance": "B88A_S03不能仅写S03导致跨研究同名误用；每个paper订单同时记录下单前后signed_qty、bid/ask、reference、exit_fee_reserve、累计融资、equity与gross。历史最大gross只标为观测，不自动当未来安全阈值；若另设paper上限，必须在paper合同显式登记，不能暗改冻结策略或自行给实际仓位建议。"
+    },
+    {
+      "priority": "P0",
+      "action": "paper前验收gross越线与账户差额的行为，使用独立人工输入触发已登记paper阈值，保持Native钱包和外部融资账分列。",
+      "acceptance": "人工将equity减小或价格跳变越过登记阈值时，系统明确记录违规并阻止额外paper entry，退出处理按登记规则继续；未知来源/非正调整equity不得静默补值放行。钱包raw、外部debt、调整equity可对账；不能凭Native margin健康替代净融资后风控检查。此为paper外层验收条件，不在本轮实现新控制。"
+    },
+    {
+      "priority": "P0",
+      "action": "paper前必须通过止损延迟和跨年归属两个可审计情景，不把SL或年度更新当硬保证。",
+      "acceptance": "固定SL12日度跳变注入后，记录trigger+1/2日的due与真实成交净损失，允许并显示超过12%的结果而非重写止损价；2024旧仓带到2025时quantity、policy_year、entry risk、peak和债务延续，新年度trail不得无成交覆盖旧仓。日志足以重算每笔basis净PnL与全程DD，年界不重置高水位。"
+    },
+    {
+      "priority": "P1",
+      "action": "paper前复核共同压力区间与预算对照，使用本轮已存账户计算验收而非继续选参数。",
+      "acceptance": "复现九项最差DD谷2020-05-11及给定峰日；K02用L05作匹配预算参考，报告short gross下降71.51971点同时DD上升.00349885点；C02/C04保留2018/2019不缩放。不得把九方案或四成本当独立危机样本，不据此推导组合分散后的未来DD。"
+    },
+    {
+      "priority": "P1",
+      "action": "paper就绪结论只在风险合同、异常行为和账本验收都有可检查结果后给出，不将本轮历史表等同paper系统已经通过。",
+      "acceptance": "当前交付明确“paper风险验收条件已提出，运行系统尚未在本轮建立/验收”；不批准实盘、生产部署或任何新实际仓位，不新增仓位比例建议。"
+    }
+  ],
+  "checks_performed": [
+    {
+      "check": "九策略同口径敞口与DD的定量只读新检查",
+      "method": "指定Python -B以60位Decimal读九策略36份及三个固定父参考12份2018—2025原账户；每份断言2922个日marks且两端为2018-01-01/2025-12-31；装载无文件写行为quote_exposure.measure计算pre/post daily gross，并从marks独立计算全程peak/trough DD。",
+      "result": {
+        "books_checked": 48,
+        "scope_books": 36,
+        "fixed_reference_books": 12,
+        "all_registered_periods_pass": true,
+        "all_DD_summary_differences_below_pct_points": 1e-09,
+        "max_pre_order_equity_reconciliation_error_USDT": "5.00000000000000044767E-9",
+        "all_pre_order_equity_errors_within_original_2e_8": true
+      },
+      "scope_input_book_sha256": {
+        "LP35": {
+          "BASE": "5f2840245acfa04e23f11ba8dfa8b4f62397da6731bc57709d987ef21b538c39",
+          "STRESS": "3dbac177bddfad29019f2c1297daae92716e78af0a8046d78f1fbcfac098726e",
+          "SEVERE": "f0a9d2b7ddb23d34a875cb0c185509a190ae2bf8175f873e71ff43fc113edfef",
+          "DELAY": "2d8b9e0c2fc099098addb4467f3d73bdc77f70bf1aa89187b640442b2109767e"
+        },
+        "TS04": {
+          "BASE": "3b0422a11665ebd1ffc40277b15a9db10a7996f45f0ee19e19f1cf05564f7f48",
+          "STRESS": "4caab22af9b9bc619e6d3c2986a95360527974d398c24a8d5fe87983082cade6",
+          "SEVERE": "e671c19c68299ed393da99d2bd4847e530c43c069d9fdd2e309bb641c62af257",
+          "DELAY": "d4af55a86b7acdb3b507dab3a381ec228338c079cbc13e7c71bb24b0bda9aac2"
+        },
+        "ME01": {
+          "BASE": "4660eb2477d56fd0854cc96f65eb2583dc6f46412bd540beb2c665ce51438c7c",
+          "STRESS": "686b27f965bf930bff0e5134cccf4304f773307c969151346856f81d10586b3d",
+          "SEVERE": "de41cc28dccc5a875945ac37061b4f4e94bdc75f6a041975cd888cc9f469be9c",
+          "DELAY": "d615abdbc3e71482f6616284e27fcf852adba37b29c4dccf76b90ad13bd22ee6"
+        },
+        "MX03": {
+          "BASE": "509c49b71380eb75c78971b1eba1b3bbf3a19de4230a1017943bbe446011ee3e",
+          "STRESS": "79a55bf16492edac902aa9f2ba7aa7e99d6d0156649d4ebd541afb703bc824ee",
+          "SEVERE": "9c5917ee37f35fb78ecc91c47830f79d198369254452320e43c4ec356aac1c67",
+          "DELAY": "33446f0dc7ceae38e12523acf6a50413d42a8af208c73ed6d2494f5a026cc3fd"
+        },
+        "B88A_S03": {
+          "BASE": "b92eb5ed46681abd9f417791b24c5e2896648119b8318a30aaf1f6a8d2ab364f",
+          "STRESS": "6d077197c017fffa956f6dee6af684b93c3a3a8cd6589c32e36295df7567ba24",
+          "SEVERE": "eeacbbfd61a3fd5dc27df81e2b0b51259112fb49110d986c5fd61b306212b5ef",
+          "DELAY": "2993c6224d6391319b99305a56d3e0d695661dc7e0d9727b0600828bd499521f"
+        },
+        "K02": {
+          "BASE": "85d82f3774aa801e3025e395e56e9839dd51eea184db19f0ea2df86a94496d01",
+          "STRESS": "9e5ec05f509db7d926c94a612641c7682df8c377adc8c62003b4fe9d26945c5f",
+          "SEVERE": "1633daa89ba4315b7c047673d3a1c8e807e73dc08e845a55a1bc1e545ea7014c",
+          "DELAY": "a25e29aa810510b3df27f5129ccd6578b29a401c18053551dce8a970e257070a"
+        },
+        "Y01": {
+          "BASE": "73ba9509991976923e99ce5aa5dff27850465b30edaae32a50431a64ad7e9567",
+          "STRESS": "c726d5a7302a0c167b26137889454b419c921eb31bf122ffa32e49cf50a4c2ee",
+          "SEVERE": "b152dcba0c989ef3584fa0c3580a3fd4c1bbbf6ae8626d402eb2fbede4b02a83",
+          "DELAY": "ad6d7b37f9528499dfdaefa26626aa5d1f14fba10a94743cdfc17453c9b1b153"
+        },
+        "C02": {
+          "BASE": "acc5790659bac1798c82bc0dd423f775035fdec359efaf0a3b47bee3f2bcfb4a",
+          "STRESS": "6af367aa64d2e97cd06b610e59d9e615c32509221b5b126175e39331dc4fc76b",
+          "SEVERE": "ae07a559ba68a167fb3462ed71b31a9bb35aeb097f52a95da229d559526d6dae",
+          "DELAY": "7191d56d16a85ea1efb296286eea47c390035de935f9ed951e16257ea538391d"
+        },
+        "C04": {
+          "BASE": "fbb1036b21eb83903bd3c9bc32848b576dafaa9703ad7ad2eb76dc712ed3cb07",
+          "STRESS": "22e91c4b7cec345f96cb2477934aa302e914b32ff4e51bc49935c625f4850205",
+          "SEVERE": "fb9b22d03319c6757e102bd03ced0aa56032c62c6cb1adeb9e4a48584bccb233",
+          "DELAY": "3b90fc884214e48a6d87d2e928dce4096484fb1b8477ade72df0d9544cfdd4a6"
+        }
+      }
+    },
+    {
+      "check": "最差DD期间持仓方向每日净值归属新检查",
+      "method": "对每份既有账户最差区间，按相邻日持仓方向分配delta equity并断言没有同日异号反转；核对long+short+flat之和与峰谷净值差，结果按峰值归一。",
+      "result": "48/48对账通过；九策略全部最差谷为2020-05-11，多头负贡献主导；含空头六项在各自最差情景的短头贡献为+.633至+1.390个百分点。不是新反事实账户或因果策略评估。"
+    },
+    {
+      "check": "固定父参考差异和carry统计新检查",
+      "method": "只用上述既有输出相减，比较LP35/TS04、TS04/ME01、MX03/ME01、B88A_S03/P02、K02/L05、C02/Y01、C04/H04；从trades计算跨年计数与calendar日持仓长度。",
+      "result": "得到表中精确DD差与gross差；九项每个情景均存在2或3笔跨年持仓，最长243—254日；没有新参数选择、策略回放或实际下单。"
+    },
+    {
+      "check": "源只读与运行边界",
+      "method": "仅从明确列出的历史account路径、quote_exposure和已有风险规范读取；部分B105/B106/B107 decision.md不存在，未据此编造结论，改用实际账户与冻结代码。中间计算只落/tmp私有文件。",
+      "result": "未读取其他专家材料或V01/V02/2026经济数据，未修改冻结源/spec/模型/账户/verification/gates、未调用任何原writer。"
+    }
+  ],
+  "unresolved": [
+    "paper系统的gross阈值、外部融资后保证金动作和异常日志尚未被本轮实现或运行验收；本轮不提供新实际仓位比例。",
+    "日度pre/post gross不是盘中最大值；止损延迟、gap、实际滑点/借贷和清算差异仍不能由历史DD<35%硬保证覆盖。",
+    "共同历史区间的每日会计归属不证明未来因果对冲或九方案的组合分散；没有新独立危机样本或新市场验证。",
+    "本轮没有给carry移除、新限仓或新stop的反事实绩效，不得将风险条件包装成已通过的新策略。"
+  ],
+  "independence_statement": "本人为risk AI分析角色，不是人类专家或新的独立市场样本；未读取其他专家意见/评分/主审结论，未读V01/V02或2026经济数据/账户；未派生代理、新策略/参数搜索、改冻结源/spec/模型/账户/verification/gates或重跑原writer，仅独占写risk/r07.json与/tmp私有中间结果，未预写后轮。"
+}

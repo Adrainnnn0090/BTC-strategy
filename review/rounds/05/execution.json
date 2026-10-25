@@ -1,0 +1,191 @@
+{
+  "round": 5,
+  "role": "execution",
+  "topic": "模型方程与实现一致性：分数、desired与新入场许可",
+  "conclusion": "被核对的执行路径把模型分数、持仓方向desired和新入场许可分开处理：负长仓预测不自动退出，cold缺失值不是负分数，post-cold辅助短仓分数主要控制新入场；不能把score符号直接当交易方向或持仓退出指令。",
+  "verdict": "qualified",
+  "evidence": [
+    {
+      "来源": "/workspace/BTCStrategyResearchLedger/lab/exit_coordinate.py:23—26、55—58；lab/b12_signals.py:42—57；lab/entry_permissions.py:13—24",
+      "事实": "H03为两核心头的等权均值，但任一头None则组合分数None。长仓active在有限正分数且父趋势有效时启动；已active后有限负分数本身不清除active。None或父趋势失效清除长仓active，年度政策更替也先重置。POS1新入场许可另按score>0判定；direction=1不等于permission=True。"
+    },
+    {
+      "来源": "本轮隔离执行源SignalFactory.targets及permissions函数；父趋势恒true、同年度、short_mode=NONE的合成fixture",
+      "实际计算": {
+        "分数": [
+          0.1,
+          -0.1,
+          -0.2,
+          null,
+          0.1
+        ],
+        "desired": [
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        "POS1许可": [
+          true,
+          false,
+          false,
+          false,
+          true
+        ]
+      },
+      "含义": "第2/3点已有长仓仍可继续，空仓不能仅凭desired=1开仓。第4点的基础长仓direction=0可能被下游cold fallback改成short，不能把该基础结果误写成完整LP35一定空仓。"
+    },
+    {
+      "来源": "/workspace/BTCStrategyResearchLedger/lab/conditional_short.py:45—67",
+      "事实": "post-cold先要求原组合分数有限且当前非长仓；第一个有限分数若上一点None，先direction=0、entry=False。随后在available/bear/negative20且非CASH政策条件成立时，direction设−1；MODEL模式新入场仅当learner非None且>0。learner<=0/None不直接把持有方向从−1改0。"
+    },
+    {
+      "来源": "本轮隔离执行源conditional_short.component；明确给定overlay输出及趋势flags fixture，不冒充完整策略重建",
+      "实际计算": {
+        "postcold_original": [
+          -0.2,
+          -0.2,
+          -0.2,
+          -0.2,
+          -0.2
+        ],
+        "postcold_learner": [
+          null,
+          null,
+          -0.1,
+          0,
+          0.1
+        ],
+        "postcold_desired": [
+          0,
+          -1,
+          -1,
+          -1,
+          -1
+        ],
+        "postcold_entry": [
+          false,
+          false,
+          false,
+          false,
+          true
+        ],
+        "cold_original": [
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "cold_learner": [
+          null,
+          -0.1,
+          0,
+          0.1,
+          null
+        ],
+        "预置cold_short方向后的desired": [
+          -1,
+          -1,
+          -1,
+          -1,
+          -1
+        ],
+        "预置cold_short方向后的entry": [
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "cold转有限original": [
+          null,
+          null,
+          -0.2,
+          -0.2,
+          -0.2
+        ],
+        "cold转有限desired": [
+          -1,
+          -1,
+          0,
+          -1,
+          -1
+        ],
+        "cold转有限entry": [
+          true,
+          true,
+          false,
+          true,
+          true
+        ]
+      },
+      "含义": "cold fixture保留overlay已有的许可，说明component在original=None时不读取learner符号；它不是对真实cold行情每天许可为true的声称。"
+    },
+    {
+      "来源": "/workspace/BTCStrategyResearchLedger/lab/bear_short_overlay.py:24—44；lab/faster_cold_short.py:24—39；lab/cold_entry_momentum.py:12—19；lab/shorter_cold_momentum.py:12—19；lab/b109.py:91—102",
+      "事实": "LP35/TS04/ME01/MX03的cold由任一核心头缺失识别，后续按价格MA、available、政策非CASH重写short desired；ME01以5日动量替换cold新入场许可，MX03还与1日动量相与。cold不是模型给出负收益预测，也不靠post-cold learner>0来启动；新增动量patch只改entry、不改held desired。"
+    },
+    {
+      "来源": "/workspace/BTCStrategyResearchLedger/lab/carry_native.py:47—67、108—114",
+      "事实": "真正开仓还要求滞后entry_allowed为true、desired非0、冷却已过、非12/31/终日且policy_year匹配；持仓中不因entry_allowed=False而自动退出，而是检查desired改变或entry-owned风险到期。方向1/−1只是目标状态之一，不是已经成交。"
+    },
+    {
+      "来源": "/workspace/BTC-strategy/src/btc_strategy/strategies.py:19—45、48—52；本轮只读AST与重组核对",
+      "实际计算": "交付仓_frozen中SignalFactory.targets、permissions、conditional_short.component、bear_short_overlay.overlay、parent_score、desired这6个函数的AST与源仓逐项相同。只读调用verify_targets(LP35)、verify_targets(B88A_S03)，各3287个2017—2025位置的targets和entry_permission均与已保存产物完全相同。",
+      "限制": "这是规则与已保存目标的实现一致性，不是重新拟合、预测重建或新增经济验证，也不是9候选全覆盖。"
+    }
+  ],
+  "counterevidence": [
+    "不能把“负分数不强制退出”写成永久不退出：父趋势失效、模型缺失、年度重置后的状态、方向改变或entry-owned风险仍可导致退出。",
+    "不能把learner>0单独解释为做空指令：长仓优先、core已有限、冷启动过渡、bear/negative20/available和非CASH等条件均在先。",
+    "None是模型缺失状态而非数值0或负收益；在基础长仓层它清除active，在下游cold规则中却可能启用价格驱动short，最终作用取决于调用链。",
+    "交付仓两个策略的完整target/permission精确相等是正面一致性证据；但不证明模型分数已经校准为真实预期收益，也不代表其余所有策略已逐点检查。"
+  ],
+  "recommendations": [
+    {
+      "行动": "在交付说明用score→状态机desired→entry_permission→账户开仓门→fill的顺序解释策略，不用“预测为负便退出/做空”的简写。",
+      "优先级": "P0",
+      "验收方法": "合成序列[0.1,−0.1,−0.2,None,0.1]在父趋势有效时应产生desired[1,1,1,0,1]、POS1[true,false,false,false,true]；文案必须区分持仓与空仓。"
+    },
+    {
+      "行动": "把cold模型缺失与post-cold learner正负分别定义，明确long优先和None→finite首点过渡。",
+      "优先级": "P1",
+      "验收方法": "post-cold learner=None/负/零均可保持desired−1但entry=false；cold overlay已有方向不由learner符号改写；None后首有限且非长仓点为direction0/entryfalse。实际cold动量规则另列，避免把fixture写成生产全时许可。"
+    },
+    {
+      "行动": "展示或导出解释性字段时同时保留核心头defined标志、组合分数、learner、父趋势/price flags、最终desired、最终entry_permission、lag和最终成交原因。",
+      "优先级": "P1",
+      "验收方法": "某日未开仓可追溯为许可/冷却/年度/风险/账户数量等具体条件，而不是只显示score符号；持仓退出需归因到SIGNAL或风险原因。本轮不改冻结产物schema。"
+    },
+    {
+      "行动": "将交付实现一致性验收与预测有效性分开，并保留已完成两组的逐点目标比较结果。",
+      "优先级": "P1",
+      "验收方法": "六函数AST比较和LP35/B88A_S03各3287点targets/permission相等可复现；其余候选、完整预测重建及真实收益含义留待相应验收，不据此扩张通过范围。"
+    }
+  ],
+  "checks_performed": [
+    {
+      "检查": "新的长仓规则合成计算",
+      "方法": "/workspace/BinanceTradingRobot/backend/.venv/bin/python -B；AST隔离源SignalFactory.targets、permissions、forecast_year；用同年度5点分数及显式父趋势fixture，不导入原训练模块。",
+      "结果": "负数保持active、POS1阻新入场、None清基础长仓active的行为与源码一致。"
+    },
+    {
+      "检查": "新的post-cold/cold边界合成计算",
+      "方法": "AST隔离原component；stub仅固定上游overlay、Features.vol和parent_score，以区分该函数对learner与原分数缺失的分支，不将stub替代真实全链策略。",
+      "结果": "post-cold非正learner阻新入场而不改short desired；cold跳过learner；首有限分数过渡点direction0/entryfalse。"
+    },
+    {
+      "检查": "新仓只读一致性抽样",
+      "方法": "比较6个源/冻结函数AST；-B导入交付仓纯strategies.verify_targets，仅重组LP35、B88A_S03并读预存targets，不运行writer、训练、账户或Native。",
+      "结果": "6/6 AST相同；两组各3287点targets与permission精确相同。"
+    }
+  ],
+  "unresolved": [
+    "本轮只抽查交付仓两组完整targets及6个规则函数，未逐一重组全部九候选或重建模型预测。",
+    "纯规则合成fixture没有检验真实父趋势和price flags的生成，本轮关于该部分只提供静态调用链证据。",
+    "score的经济校准、模型误差和利润解释仍需要其他主题证据；符号到执行逻辑正确不等于预测本身有效。"
+  ],
+  "independence_statement": "execution为隔离AI分析角色，不是真实专家或独立市场样本。未读其他角色目录/意见/评分或主审意见，未读2026经济数据、V01/V02或2026账户。源仓和交付仓均只读；所有计算使用既有2017—2025导出或合成fixture，未改冻结模型/账户/verification/gates，未训练/优化/运行writer/Native/下单/部署。仅独占创建r05.json，未预写后轮。"
+}

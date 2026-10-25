@@ -1,0 +1,77 @@
+{
+  "round": 5,
+  "role": "data",
+  "topic": "模型方程与实现一致性",
+  "conclusion": "新仓2019和2025两个实际预测窗口的六模型族在模型摘要、年度特征前缀、标签类型/样本索引与预测可用性上全部对应；76个raw模型文件经原封存绑定后独立树遍历重建4380个预测，最大误差为0，未见本次窗口错年、把missing预测补零或混用标签。",
+  "verdict": "supported",
+  "evidence": [
+    {
+      "source": "/workspace/BTC-strategy/models/manifest.json:family,fold_year,cutoff,decision_start,decision_end,files,training_input；/workspace/BTCExpertReview/workspaces/data/r05-checks.json:model_manifest_family_years,results",
+      "fact": "manifest有6族×2018–2025共48个唯一family-year记录。本轮实际检查2019与2025各六族：cutoff和decision_start分别为2018-12-31、2024-12-31；decision_end为对应年度12-30；预测均为365行信号窗口，与原实际预测dates逐日相同。manifest字段名decision仍需按第02轮信号日期语义解释。"
+    },
+    {
+      "source": "/workspace/BTC-strategy/artifacts/factors/market.json.gz:days,prices,mining；/workspace/BTCExpertReview/workspaces/data/r05-checks.json:market_source_dates_prices_mining_exact",
+      "fact": "market的3287日精确对应2017-01-01…2025-12-31；日期与prices逐项等于源2025物理train+test分区，mining逐项等于源lag文件对应train+test。未借入2026观测，也未把原日期压缩或补齐成其他时钟。"
+    },
+    {
+      "source": "/workspace/BTC-strategy/models/{base_tree,stop44,price47,short_huber,short_median,mining58}/{2019,2025}；源对应studies/*/folds/*/seal.json:model_sha256或training.json:model_states；/workspace/BTCExpertReview/workspaces/data/r05-checks.json:checked_raw_model_files",
+      "fact": "76个实际raw numeric模型文件逐一满足导出SHA=manifest声明SHA=原源文件SHA，并进入原model_sha256或model_states封存绑定；原training摘要及截止匹配、current_test_read=false。解包后112个实际成员的n_features均匹配44/47/58列schema，未用仅带标签/参数说明的空模型代替数值树。"
+    },
+    {
+      "source": "/workspace/BTC-strategy/training_inputs/{2019,2025}/*.json.gz:dates,cut_index,features,ids,targets；/workspace/BTCExpertReview/workspaces/data/r05-checks.json:results.training_feature_prefix_exact,training_labels_exact",
+      "fact": "12份训练输入实际日期分别只到2018-12-31（730行）或2024-12-31（2922行），cut_index与日期索引一致、embargo=6。导出features与只用该物理前缀重算的44/47/58列矩阵逐元素相等，也等于完整market矩阵同前缀；没有测试行进入训练张量。"
+    },
+    {
+      "source": "/workspace/BTCExpertReview/workspaces/data/r05-checks.json:results.labels,training_ids；源B36 labels/STOP.json.gz、B67 labels.json.gz及sgd固定期限标签公式",
+      "fact": "实际标签未混用：stop44/price47目标精确为STOP路径log_return（含原YEAR_CLOSE定义）；base_tree/mining58精确为下一日入场、60日固定期限log_return减原固定成本；short_huber/short_median均精确为同一B67共同ids上的L1/L2 SHORT_NET simple_return。2019长/短索引数411/408，2025为2603/2588，分别满足i+61或i+62≤cut−6。"
+    },
+    {
+      "source": "/workspace/BTCExpertReview/workspaces/data/r05-check.py:tree_values,numeric_predict；r05-checks.json:results,max_forecast_error；源B10 MEAN_CAL44、B20 CAL44_STOP、B81 PRICE_L7、B67 MEAN、B88A MEDIAN、B17 EXTRA_DYNAMICS_L60实际预测",
+      "fact": "以独立的按节点递归分派行集合的数值树遍历器重建两个年度六族，保留float32输入与float64阈值语义、种子平均及短头L1/L2平均。4380个预测与原年度归档及新仓context对应数组全部精确一致，最大误差0，未改原2e-12比较阈值。"
+    },
+    {
+      "source": "/workspace/BTC-strategy/models/manifest.json:2018 missing；training_inputs/2018/*.json.gz:ids,targets,model_missing；/workspace/BTCExpertReview/workspaces/data/r05-checks.json:cold_start",
+      "fact": "2018六族记录均明确missing且files为空，训练ids和targets为空；对应2017-12-31…2018-12-30共365行/族的context预测均为None而非0。该冷启动空缺没有在导出中被伪造成中性数值预测。"
+    },
+    {
+      "source": "/workspace/BTCExpertReview/workspaces/data/r05-auditor-correction.json；r05-reviewed-input-hashes.json",
+      "fact": "独立审计器初版出现short_huber/2019差0.00011093307708681666，定位为审计器NumPy弱标量比较将阈值错误降为float32；仅修正本角色脚本保留float64阈值后12窗全部误差0。该失败与修正单独留档，未改新仓、冻结模型、原预测或数值门槛；另保存被审输入摘要。"
+    }
+  ],
+  "counterevidence": [
+    "本轮仅两个年度实际窗口精确通过，不能外推其余年份已经由本角色独立数值重建；此前年度日期/封存检查也不能替代未做的数值重建。",
+    "字节摘要与年度预测精确匹配属于软件导出/推断一致性，不是新盲测或未来收益证据，也不解除来源PIT未知及消费历史限制。",
+    "审计器初版差异来自审计实现的阈值精度，而非新仓数据或模型；若忽略该差异继续放宽容差，会产生错误结论。本轮保留失败、修正遍历语义，未放宽容差。"
+  ],
+  "recommendations": [
+    {
+      "priority": "P0",
+      "action": "保留年度family→raw numeric文件→原封存→特征schema→信号窗口→训练标签语义的显式绑定；训练入口必须拒绝当前测试行、错年模型、None补0和SHORT_NET/log_return混同。",
+      "acceptance": "2019/2025六族训练输入及预测保持本轮逐项相等，2018空模型保持None；成熟边界不变，SHORT_NET双头共用ids，STOP与固定期限目标可分辨。"
+    },
+    {
+      "priority": "P1",
+      "action": "任何独立树解释器保留float32输入和float64阈值比较，并让导出推断入口验证manifest模型摘要与feature_width；当前annual_states读取文件本身未显式重算item.sha256。",
+      "acceptance": "原数值边界预测无需放宽2e-12即可复现；模型字节被改或schema/年份错配时显式拒绝，而非只依赖事后预测比较。"
+    },
+    {
+      "priority": "P1",
+      "action": "将尚未验证的重新拟合CLI与已经通过的冻结模型预测重建分开验收，后续只在新仓实现并使用独立输出位置。",
+      "acceptance": "不得把本轮raw model推断一致性写成从训练输入重新拟合成功；任何refit不修改原封存工件、标签、模型或门槛。"
+    }
+  ],
+  "checks_performed": [
+    "新增独占r05-check.py/r05-checks.json，记录审计器初次精度错误与纠正事实；全程只写本角色目录。",
+    "核对六份导出纯因子代码与原源逐字节一致，market日期/价格/挖矿源字段精确对应。",
+    "两年度六族共12窗、76个raw numeric模型文件与112个成员的原source/seal摘要及特征宽度检查。",
+    "12份training_inputs物理日期/成熟ids/标签目标与实际前缀特征重算；4380个独立树预测与原年度归档及新仓context双重比较，最终误差0。",
+    "2018六族missing与None可用性检查；未运行fit/refit CLI、策略搜索或账户回放，未读取2026经济数据、其他专家意见、review/verification结果或主审结论。"
+  ],
+  "unresolved": [
+    "该检查未执行训练输入到新模型的重新拟合CLI，不能认证其实现完整性、确定性或重新拟合后输出。",
+    "其余年度raw模型的数值预测不在本轮两窗口抽核范围内。",
+    "独立树遍历已实现，但特征计算复用提取的冻结纯函数；本轮不是全部特征方程的另行数学实现。",
+    "当前models.annual_states的读取链提供manifest路径但未在该函数显式核对item.sha256；本轮手工摘要绑定通过仅说明被审快照正确，不能保证未来任意文件修改被加载器自动拦截。"
+  ],
+  "independence_statement": "只读共享原始事实、源冻结代码/模型/标签与新仓原始导出工件；未读取其他专家内容、评分或主审结论，仅写/workspace/BTCExpertReview/workspaces/data。AI角色是分析分工，不是真实专家或独立市场样本，仅完成第05轮，未预写后续轮次。"
+}

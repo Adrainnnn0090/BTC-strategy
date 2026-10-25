@@ -1,0 +1,256 @@
+{
+  "round": 2,
+  "role": "risk",
+  "topic": "年度分集与封存",
+  "conclusion": "已查LP35年度封存链与跨年账户记录表明，年度分集切换预测和新开仓政策，不重置资金、旧仓或全程回撤：2018—2019的80%及2020—2025的95%是原年度多头入场预算，跨年持仓保留入场风险与policy_year，均不构成未来gross或DD的硬上限。",
+  "verdict": "qualified",
+  "evidence": [
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/lab/b109.py:61-85; /workspace/BTCStrategyResearchLedger/lab/b81_io.py:11; /workspace/BTCStrategyResearchLedger/studies/B109-long-profit-local-coordinate/registration.json:source",
+      "finding": "B109每年parent_policy来自已绑定的B50年度training.json的y01_policy；train要求其cutoff为前一年12-31、current_test_read=false，B109本层model_fits/selection_calls/calibration_accounts均为0。assemble按年读取parent_policy并要求与B50全表相等；本轮只读核对8年相等且上游training/seal哈希均与B109注册绑定值一致。不是本轮重新选择年度参数。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/studies/B109-long-profit-local-coordinate/folds/{2018..2025}/training.json:cutoff/parent_policy; /workspace/BTCStrategyResearchLedger/studies/B50-cross-market-fixed-averages/folds/{2018..2025}/training.json:y01_policy",
+      "annual_parent_parameters": [
+        {
+          "year": 2018,
+          "cutoff": "2017-12-31",
+          "fraction": 0.8,
+          "vol_target": 0.0,
+          "stop_loss": 0.15,
+          "trailing_stop": 0.1,
+          "trail_arm": 0.5,
+          "cooldown_days": 3
+        },
+        {
+          "year": 2019,
+          "cutoff": "2018-12-31",
+          "fraction": 0.8,
+          "vol_target": 0.0,
+          "stop_loss": 0.15,
+          "trailing_stop": 0.1,
+          "trail_arm": 0.5,
+          "cooldown_days": 3
+        },
+        {
+          "year": 2020,
+          "cutoff": "2019-12-31",
+          "fraction": 0.95,
+          "vol_target": 0.75,
+          "stop_loss": 0.15,
+          "trailing_stop": 0.15,
+          "trail_arm": 0.5,
+          "cooldown_days": 3
+        },
+        {
+          "year": 2021,
+          "cutoff": "2020-12-31",
+          "fraction": 0.95,
+          "vol_target": 0.75,
+          "stop_loss": 0.15,
+          "trailing_stop": 0.1,
+          "trail_arm": 0.5,
+          "cooldown_days": 1
+        },
+        {
+          "year": 2022,
+          "cutoff": "2021-12-31",
+          "fraction": 0.95,
+          "vol_target": 0.75,
+          "stop_loss": 0.15,
+          "trailing_stop": 0.1,
+          "trail_arm": 0.5,
+          "cooldown_days": 1
+        },
+        {
+          "year": 2023,
+          "cutoff": "2022-12-31",
+          "fraction": 0.95,
+          "vol_target": 0.75,
+          "stop_loss": 0.15,
+          "trailing_stop": 0.08,
+          "trail_arm": 0.5,
+          "cooldown_days": 3
+        },
+        {
+          "year": 2024,
+          "cutoff": "2023-12-31",
+          "fraction": 0.95,
+          "vol_target": 0.75,
+          "stop_loss": 0.15,
+          "trailing_stop": 0.08,
+          "trail_arm": 0.5,
+          "cooldown_days": 1
+        },
+        {
+          "year": 2025,
+          "cutoff": "2024-12-31",
+          "fraction": 0.95,
+          "vol_target": 0.75,
+          "stop_loss": 0.15,
+          "trailing_stop": 0.1,
+          "trail_arm": 0.5,
+          "cooldown_days": 1
+        }
+      ],
+      "finding": "此表是原年度父政策，不是把LP35重新定义为父策略；LP35另把long take_profit固定为3.5，其余入口/预算/止损按冻结组合继承。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/lab/b12_signals.py:42-70; /workspace/BTCStrategyResearchLedger/lab/long_vol_budget.py:9-22; /workspace/BTCStrategyResearchLedger/lab/b109.py:89-102; /workspace/BTCStrategyResearchLedger/lab/long_profit_local_coordinate.py:14-20; /workspace/BTCStrategyResearchLedger/lab/carry_native.py:58-61",
+      "finding": "SignalFactory将年度fraction乘波动scale生成long_fraction；LP35父链调用patch_budget(...,cap=None)，正vol_target时恢复至原年度fraction（最多.95）。该fraction只在entry为空时按当前净值计算新开仓数量；现有entry不会因为年初预算改变而缩放或再平衡。因此80/95%是入场资金规则，不是动态持仓gross控制。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/lab/carry_native.py:34-60,75-81; /workspace/BTCStrategyResearchLedger/lab/b109.py:114",
+      "finding": "LP35历史回放明确annual_settlement=False；仅entry为空时保存current risk与policy_year。已有entry用entry.risk计算止损、追踪峰值、止盈及风险触发后冷却；数量、入场峰值与融资债务未在年界重置。把新年度risk直接覆盖到旧仓会改变这份冻结entry-owned合同和历史账户路径，本轮无权这样修改。新年度desired方向仍可触发SIGNAL退出，entry-owned不等于忽略新信号。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/studies/B109-long-profit-local-coordinate/accounts/LP35/{BASE,STRESS,SEVERE,DELAY}.json.gz:trades[*].entry_date/exit_date/policy_year; marks[date=2020-12-31,2021-01-01,2023-12-31,2024-01-01,2024-12-31,2025-01-01]; orders[*].date",
+      "calculation": {
+        "accounts_checked": 4,
+        "trades_checked": 204,
+        "policy_year_not_equal_to_entry_calendar_year": 0,
+        "cross_year_trades_per_case": {
+          "BASE": 3,
+          "STRESS": 3,
+          "SEVERE": 3,
+          "DELAY": 3
+        },
+        "nonflat_year_boundaries_per_case": [
+          "2020/2021",
+          "2023/2024",
+          "2024/2025"
+        ],
+        "year_boundary_pairs_with_unchanged_nonzero_quantity_and_no_orders": 12,
+        "STRESS_examples": [
+          {
+            "entry_date": "2020-04-30",
+            "exit_date": "2021-01-09",
+            "direction": 1,
+            "policy_year": 2020,
+            "exit_reason": "TAKE_PROFIT",
+            "quantity": "0.04030"
+          },
+          {
+            "entry_date": "2023-10-20",
+            "exit_date": "2024-01-13",
+            "direction": 1,
+            "policy_year": 2023,
+            "exit_reason": "TRAIL_STOP",
+            "quantity": "0.09948"
+          },
+          {
+            "entry_date": "2024-12-23",
+            "exit_date": "2025-02-25",
+            "direction": 1,
+            "policy_year": 2024,
+            "exit_reason": "SIGNAL",
+            "quantity": "0.10130"
+          }
+        ]
+      },
+      "finding": "四情景均有旧仓跨年且归属旧政策年，12个持仓年界两侧数量完全相同、两天无订单。2020→2021和2024→2025父trail分别由.15→.1及.08→.1，但旧仓不能仅凭新年度表推断为新trail归属。账户trade仅记录policy_year，风险快照归属另由上述冻结代码静态证据支持。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/studies/B109-long-profit-local-coordinate/accounts/LP35/{BASE,STRESS,SEVERE,DELAY}.json.gz:marks[*].signed_qty/reference_price/equity",
+      "calculation": {
+        "formula": "100*abs(signed_qty)*reference_price/equity，signed_qty>0；Decimal从已存marks重算",
+        "long_post_fill_gross_maxima": [
+          {
+            "case": "BASE",
+            "date": "2021-01-07",
+            "gross_pct": "98.99360891840426825720573206"
+          },
+          {
+            "case": "STRESS",
+            "date": "2021-01-08",
+            "gross_pct": "99.28186240102741683798662169"
+          },
+          {
+            "case": "SEVERE",
+            "date": "2021-01-08",
+            "gross_pct": "99.57182350444649949119185152"
+          },
+          {
+            "case": "DELAY",
+            "date": "2021-01-08",
+            "gross_pct": "99.24918544333837606999054155"
+          }
+        ]
+      },
+      "finding": "四情景跨2020/2021旧多头的已观测成交后gross均超过95%入场预算，直接否定将95%表述为持仓上限；该检查不是盘中最大值、未来敞口预测或新策略回放。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/lab/b05.py:48-49; /workspace/BTCStrategyResearchLedger/lab/b12_signals.py:43-46; /workspace/BTCStrategyResearchLedger/lab/carry_native.py:55-60,85-90,112-114",
+      "finding": "forecast_year在非最终年度12-31切到下一policy_year，并受2018—2025边界夹定；targets经场景lag使用，12-31禁止新开仓且新开仓要求policy_year等于成交日年份。SignalFactory年度重置的是active信号状态；full-path DD只在整条序列开始初始化一次peak=100，年度收益取相邻年末净值比，没有每年重置100、清除旧DD或硬性风险担保。"
+    }
+  ],
+  "counterevidence": [
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/lab/b109.py:64,67,73,82; /workspace/BTCStrategyResearchLedger/lab/b109_io.py:13-37",
+      "finding": "8年封存链的实际哈希和截止日检查均通过，年度guard也在train阻止读取当前预测/账户；本轮没有找到支持“B109每年事后换入新预算或未封存”的证据。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/lab/carry_native.py:46-57; /workspace/BTCStrategyResearchLedger/studies/B109-long-profit-local-coordinate/accounts/LP35/STRESS.json.gz:trades[entry_date=2024-12-23]",
+      "finding": "虽然旧仓风险政策保持entry-owned，新年度信号仍能关闭旧仓；2024入场、2025-02-25以SIGNAL退出即一例。不能把保留旧风险参数误写为跨年期间完全冻结所有决策。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/lab/b12_signals.py:59-64; /workspace/BTCStrategyResearchLedger/lab/long_vol_budget.py:17-21",
+      "finding": "原父策略有波动缩放机制，但LP35父链对正vol_target采用cap=None放宽至原年度fraction；原vol_target=.75的存在本身不能证明LP35仍按该目标持续压仓，也不能证明gross<=95%。"
+    }
+  ],
+  "recommendations": [
+    {
+      "priority": "P0",
+      "action": "在交付仓年度政策表明确显示policy_year、前一年12-31截止日、父policy来源和原fraction，另列LP35对父政策的固定改动；只引用既有封存文件。",
+      "acceptance": "2018/2019为.80、2020—2025为.95，8年与B50 y01_policy一一对应；不要把父vol_target=.75直接标成LP35实际持续波动上限；不得改原训练、seal或账户。"
+    },
+    {
+      "priority": "P0",
+      "action": "在交付仓补充entry-owned跨年说明：旧仓quantity、risk、peak、financing与policy_year延续，新年的预算与风险参数用于新entry，新的desired仍可使旧仓SIGNAL退出。",
+      "acceptance": "至少列出STRESS三笔跨年交易及其旧policy_year；不得把2025 trail=.1回填到2024-12-23已开旧仓，也不得把年界标为平仓/重新分配资金。"
+    },
+    {
+      "priority": "P1",
+      "action": "在年度风险图表或卡片并列显示原新开仓fraction与观测持仓gross，保持整条复利净值及全程DD。",
+      "acceptance": "至少展示STRESS2021-01-08多头gross99.2818624010274%超过95%预算的例子；不得将年初信号active重置写成净值重置、风险清零或未来年度DD保证。"
+    },
+    {
+      "priority": "P1",
+      "action": "将本轮年度封存的结论限定为已查LP35八年度元数据/哈希/账户一致性；保留数据和模型角色对年度时间可得性的独立审阅空间。",
+      "acceptance": "不得把8年封存链通过扩写为九策略全部无泄漏证明、未触碰样本外证明或八个独立风险情景；不生成后续轮次结论。"
+    }
+  ],
+  "checks_performed": [
+    {
+      "check": "LP35八年度封存与receipt链只读新检查",
+      "method": "指定Python -B逐年读取B109 training/seal/test-receipt，只对已封存predictions压缩字节做哈希；检查cutoff、current_test_read=false、training/registration/receipt/predictions哈希绑定、B109本层零fit/selection及validation_read=false。",
+      "result": "8/8年度共72项条件通过；未解压当年预测，未读取2026，未执行原verify/train/test/replay写入器。"
+    },
+    {
+      "check": "B50年度参数来源只读新检查",
+      "method": "对2018—2025 B50 training/seal验证B109 registration.source绑定哈希、上游seal.training_sha256、前一年截止日/current_test_read=false，并逐年精确比较B50 y01_policy与B109 parent_policy。",
+      "result": "8/8年度相等且绑定检查通过；fraction依次.8,.8,.95,.95,.95,.95,.95,.95。"
+    },
+    {
+      "check": "LP35跨年entry-owned元数据及年界连续性只读新检查",
+      "method": "仅解压LP35四个2018—2025历史账户；先断言所有交易和marks日期不超过2025-12-31，再遍历204交易的policy_year及跨年日期，核对12组非平仓年界前后quantity和order日期。",
+      "result": "204/204 policy_year等于入场年；四情景各3笔跨年；12/12年界持仓数量相同且12-31/01-01无订单；四情景均无PERIOD_CLOSE/TERMINAL退出。"
+    },
+    {
+      "check": "年度预算与持仓gross差异只读新检查",
+      "method": "在既有四账户多头marks中用Decimal重算100*abs(q)*reference_price/equity并提取最大值，不重建交易、不生成账户。",
+      "result": "最大值BASE98.9936089184%、STRESS99.2818624010%、SEVERE99.5718235044%、DELAY99.2491854433%，均>95%。"
+    },
+    {
+      "check": "纯日历函数隔离检查",
+      "method": "AST只提取b05.forecast_year函数，在独立namespace执行5个人工日历输入，无经济数据或模型模块导入。",
+      "result": "2019-12-30→2019，2019-12-31→2020，2020-01-01→2020，2024-12-31→2025，2025-12-31→2025，5/5符合冻结实现。"
+    }
+  ],
+  "unresolved": [
+    "哈希和声明字段的一致性不能单独证明上游经济数据或标签全无泄漏；本轮未重建训练集、标签或预测。",
+    "账户trades只显式记录policy_year，没有逐笔序列化完整entry.risk；实际风险快照沿用由冻结代码静态检查支持，本轮不宣称已独立重跑风险状态机。",
+    "本轮详细确定性核对对象为LP35；不能据此自动扩张成九策略所有年度账户完整审计或未来风险保证。"
+  ],
+  "independence_statement": "本人为risk AI分析角色，不是人类专家或新的独立市场样本；保持角色隔离，未读取其他专家意见、评分、建议或主审结论；未读取V01/V02或任何2026经济观察/账户，未派生代理、未优化或改动冻结源/参数/账户/verification/gates，只独占写risk/r02.json。"
+}

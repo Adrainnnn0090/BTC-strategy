@@ -1,0 +1,76 @@
+{
+  "round": 4,
+  "role": "models",
+  "topic": "因子可得性与来源时点",
+  "conclusion": "CAL44、PRICE47与C04的58列DYNAMICS_L60构造具有可复核的固定列序和因果前缀不变性；PRICE47只增加既有价格的滞后变换，C04保留矿业动态/可得性掩码但把4个协议状态列置零。None、warmup零和源缺失零的语义必须分开；这些实现检查支持因果构造，不能把C04的观察记录重建升级为历史PIT来源认证，也不能把同一信息重排当作新增因子。",
+  "verdict": "qualified",
+  "evidence": [
+    {
+      "source": "lab/sgd.py:15; lab/tree_factors.py:19; lab/tree_factors.py:28; r04_feature_schema.json CAL44",
+      "actual": "零基列序：0–19为PRICE20（log收益、价格/均线、波动、效率、RSI等），20–35为PATH_NAMES固定16列，36–43为CAL_NAMES固定8列。首252行全零；之后矩阵必须全有限。价格窗口为截至当前行的滚动/指数统计，日历相位由该日期直接确定；没有通过未来价格或全样本学习的归一化器。完整逐列名称已按原实现导出至r04_feature_schema.json。"
+    },
+    {
+      "source": "lab/volume_short_factors.py:7; lab/b81.py:23; lab/b81.py:88; r04_feature_schema.json PRICE47; r04_checks.json PRICE47_external_observations_not_accessed",
+      "actual": "选中PRICE_L7使用PRICE47：前44列原样CAL44，44列为warmup后常数1，45/46列分别为clip(log(mean7/mean90),-5,5)、clip(log(mean30/mean90),-5,5)，均以j=i-7结尾，分母分子均加1e-12。PRICE47分支直接取prices，传入会在任何访问时报错的外部观测对象仍与None输入逐值相同，说明不使用volume信息；这不表示原研究脚手架没有其他volume文件依赖。"
+    },
+    {
+      "source": "lab/mining_features.py:11; lab/mining_features.py:77; lab/mining_ablation.py:8; lab/b17.py:80; lab/exit_coordinate.py:23; r04_feature_schema.json MINING58_DYNAMICS_L60",
+      "actual": "C04父H04的EXTRA_DYNAMICS_L60输入为58列：0–43 CAL44；44 observation_fresh、45 log_progress_age_days；46–49四种难度增长，50–51两种算力比，52–53两种区块产出速度；54–57的难度阶段/补贴阶段/相对补贴/难度水平在DYNAMICS消融中强制置零。58是固定位置合同，不代表58个独立或均非零的信息源。"
+    },
+    {
+      "source": "lab/mining_features.py:48; data/mining-lag-v1/2019/train.json.gz; r04_source_trace_checks.json",
+      "actual": "矿业L60的来源截止为UTC日期时间戳减60天再减7200秒，按observer记录时点选已观察前沿并再减100确认；fresh要求记录年龄不超过3天且确认后高度至少24192。实际2019训练特征730行、60/120两lag合计1460条trace均满足内部cutoff/observed_at/confirmed_height/fresh/mask规则，文件SHA匹配B17同年seal；每lag689行fresh、41行过旧或缺失。"
+    },
+    {
+      "source": "r04_checks.json factor_prefix_checks; check_r04.py",
+      "actual": "900行合成价格/矿业记录中，改写第500行及以后后缀，CAL44、PRICE47、MINING58的前500行最大绝对误差均为0；仅用前500行截断重算亦均为0。另核对PRICE_L7三行附加公式、三个矩阵前252行全零、58列掩码/动态/强制零位置完全吻合。"
+    },
+    {
+      "source": "lab/mining_features.py:63; lab/volume_long_core.py:5; r04_checks.json mining_future_observation_ignored/stale_mining_values_all_zero/None_to_zero_STOP_replacement_rejected",
+      "actual": "合成observer事件仅比L60截止晚1毫秒，加入它不会改变该日特征；过旧事件使12个矿业值变0并使fresh掩码为0，年龄掩码仍保留。该零编码不同于模型未拟合时的None。replace_stop允许有限0分数，但将原None改为0会拒绝，保持原头可得性掩码。"
+    }
+  ],
+  "counterevidence": [
+    "PRICE47的两个新增滚动量是不同的确定性价格变换，但不增加独立外部来源；列位置或同信息排序的变化本身也不增加信息。",
+    "后缀不变性检查验证当前因子算法的因果性；它不能证明基础日价格在真实决策时刻已发布，也不认证矿业observer记录未曾修订。",
+    "矿业源trace明确写有“observer-recorded frontier; ancestor access and canonical survival assumed”，模块也声明是reconstruction而非PIT certification。60日滞后、2小时缓冲和100确认不能单独消除这些来源假设。",
+    "前252行暖机零、缺失矿业值零和正常取值零会在数字上相同；其含义由掩码/行位置给出。只有预测头None表示该模型当时未可用，不能无条件填零。"
+  ],
+  "recommendations": [
+    {
+      "priority": "P0",
+      "action": "将r04_feature_schema.json的零基列序与lag/掩码语义写入独立导出规格，并以模型n_features校验；保持矿业DYNAMICS最后4列为零。",
+      "acceptance": "CAL44/PRICE47/MINING58分别为44/47/58列；前44列逐值相同；PRICE的44/45/46与矿业44–57位置一致，列错位或遗漏强制零时校验失败。"
+    },
+    {
+      "priority": "P0",
+      "action": "交付说明中把价格变换与外部矿业来源区分，并保留C04条件重建/非PIT认证限定及observer trace依赖。",
+      "acceptance": "PRICE_L7不会被描述成使用交易量或新增独立数据；C04不会仅因lag60/100确认就被标作完整历史可交易来源认证。"
+    },
+    {
+      "priority": "P1",
+      "action": "独立推断适配器分别处理warmup零、矿业stale零加掩码、正常有限零和未可用预测None；保留合成因果检查。",
+      "acceptance": "三个矩阵后缀扰动前缀误差均0；PRICE47不访问观测对象；未来observer事件被排除；原STOP头None改0被拒绝。"
+    }
+  ],
+  "checks_performed": [
+    {
+      "command": "/workspace/BinanceTradingRobot/backend/.venv/bin/python -B /workspace/BTCExpertReview/workspaces/models/check_r04.py",
+      "result": "exit 0，all_checks_pass=true；合成900行/前缀500行，三矩阵未来后缀和截断误差均0，列序/lag/price-only/observer截止/None与零检查通过。",
+      "artifacts": [
+        "/workspace/BTCExpertReview/workspaces/models/r04_checks.json",
+        "/workspace/BTCExpertReview/workspaces/models/r04_feature_schema.json"
+      ]
+    },
+    {
+      "check": "只读2019矿业训练文件与B17封存、核对1460条trace内部来源截止与掩码",
+      "result": "全部通过；数据止于2018-12-31，无2026经济数据。",
+      "artifact": "/workspace/BTCExpertReview/workspaces/models/r04_source_trace_checks.json"
+    }
+  ],
+  "unresolved": [
+    "未独立认证observer原始日志的历史完整性、修订情况、祖先访问及最终主链存活假设；本轮不将内部trace自洽等同PIT可交易证明。",
+    "未重建全部年度实际特征或重训模型；合成因果性与代表年度trace检查的覆盖范围如上。"
+  ],
+  "independence_statement": "仅使用冻结源仓、共享事实资料与models自身工作区；未读其他专家意见/评分/主审结论，未派生agents。未读V01/V02及2026经济数据。导入因子函数时以-B和sys.dont_write_bytecode禁止源码目录字节码写入，未调用训练器或原写入器；新文件仅在models目录首次独占创建。此AI角色不是人类专家或独立市场样本。"
+}

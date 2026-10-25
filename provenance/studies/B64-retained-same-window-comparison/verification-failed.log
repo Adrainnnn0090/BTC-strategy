@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/workspace/BTCStrategyResearchLedger/tools/verify_b64.py", line 63, in <module>
+    main()
+  File "/workspace/BTCStrategyResearchLedger/tools/verify_b64.py", line 35, in main
+    assert {k:v for k,v in a.items() if k!='long_fraction'} == {k:v for k,v in b.items() if k!='long_fraction'}
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

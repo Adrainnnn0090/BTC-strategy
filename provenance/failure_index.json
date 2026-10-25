@@ -1,0 +1,72 @@
+[
+  {
+    "source": "studies/B31-constant-sizing-controls/original-verifier-failure.txt",
+    "destination": "provenance/studies/B31-constant-sizing-controls/original-verifier-failure.txt",
+    "sha256": "10ad60a74d607fd46339f29435ea834f8807545287ada4c092b4f80090b2fa7c"
+  },
+  {
+    "source": "studies/B31-constant-sizing-controls/original-report-failure.txt",
+    "destination": "provenance/studies/B31-constant-sizing-controls/original-report-failure.txt",
+    "sha256": "95d79014f27bac876bb0ecf150bdc0d05c93a8618615571e3eff34060690a81e"
+  },
+  {
+    "source": "studies/B31-constant-sizing-controls/verifier-correction.md",
+    "destination": "provenance/studies/B31-constant-sizing-controls/verifier-correction.md",
+    "sha256": "598a573bad1501d0511b099a46c75eea9ef35ac2378fcffa8ba233b8c7a12ebd"
+  },
+  {
+    "source": "studies/B60-trend-alpha-controls/run-failed.log",
+    "destination": "provenance/studies/B60-trend-alpha-controls/run-failed.log",
+    "sha256": "52946ec527aef206f36431eb73ea8426ceb2a1da5999cbca3df49412bf731ead"
+  },
+  {
+    "source": "studies/B60-trend-alpha-controls/verification-failed.log",
+    "destination": "provenance/studies/B60-trend-alpha-controls/verification-failed.log",
+    "sha256": "7f2ab2f404df75ec76a0e4c2012689c4a3eabdce96749fe2e37d14a94bd5ba14"
+  },
+  {
+    "source": "studies/B64-retained-same-window-comparison/failure.md",
+    "destination": "provenance/studies/B64-retained-same-window-comparison/failure.md",
+    "sha256": "317574be4313e878f7284e0567a33c044fa4e766a6e1f3260da343d1b6dc863c"
+  },
+  {
+    "source": "studies/B64-retained-same-window-comparison/verification-failed.log",
+    "destination": "provenance/studies/B64-retained-same-window-comparison/verification-failed.log",
+    "sha256": "7eee211d383366b5f59af9354f9ceecf946c21568a462d8e6a2ebca38b366c97"
+  },
+  {
+    "source": "studies/B88-short-net-loss-families/original-failure.log",
+    "destination": "provenance/studies/B88-short-net-loss-families/original-failure.log",
+    "sha256": "e666fa5290ff8d2194759adbf94b9ee306ebce65e1af21a8101481f094523f08"
+  },
+  {
+    "source": "studies/B100-persistent-negative-long-exits/original-run-failure.json",
+    "destination": "provenance/studies/B100-persistent-negative-long-exits/original-run-failure.json",
+    "sha256": "aace264d15a54985d1621a52bffa74cab6026adeaaa473bcbd630b8e59e443a2"
+  },
+  {
+    "source": "studies/B103-faster-cold-short-trend/original-verification-failure.json",
+    "destination": "provenance/studies/B103-faster-cold-short-trend/original-verification-failure.json",
+    "sha256": "83cc972c748200dffb3a77adc7f0de4a5a725935dae717563aa4429886dd8ea5"
+  },
+  {
+    "source": "studies/B103A-cold-source-mask-independent-audit/analysis-metadata-correction.json",
+    "destination": "provenance/studies/B103A-cold-source-mask-independent-audit/analysis-metadata-correction.json",
+    "sha256": "13355e2c3db7b947e3e41b1fe6ae3f8487e902b29ca684431e9ea99f33ca7622"
+  },
+  {
+    "source": "studies/B105-cold-entry-momentum/analysis-kind-correction.json",
+    "destination": "provenance/studies/B105-cold-entry-momentum/analysis-kind-correction.json",
+    "sha256": "3899788ff786e3acbdb57f15fe85119fd9d174f5666f10bffd91a9fd69e426f5"
+  },
+  {
+    "source": "studies/B107-cold-short-profit-trailing/decision-metadata-correction.json",
+    "destination": "provenance/studies/B107-cold-short-profit-trailing/decision-metadata-correction.json",
+    "sha256": "9d79b0d7973cbd4101a9751e03abdbd9a9274dda2aa62033a28f95a0aa0b26e8"
+  },
+  {
+    "source": "studies/B109-long-profit-local-coordinate/spec-metadata-correction.json",
+    "destination": "provenance/studies/B109-long-profit-local-coordinate/spec-metadata-correction.json",
+    "sha256": "92268de0e4ae036e727b0f842e85710ff8b450ecdac7ec82f83e6bdfe0102f47"
+  }
+]

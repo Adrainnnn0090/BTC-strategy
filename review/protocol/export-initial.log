@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/workspace/BTCExpertReview/export_release.py", line 72, in <module>
+    if(s/name).exists():copy(s/name,Path('provenance')/s.relative_to(ROOT)/name)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/BTCExpertReview/export_release.py", line 16, in copy
+    with q.open('xb')as f:f.write(p.read_bytes())
+         ^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py", line 1013, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileExistsError: [Errno 17] File exists: '/workspace/BTC-strategy/provenance/studies/B88A-short-net-loss-families/registration.json'

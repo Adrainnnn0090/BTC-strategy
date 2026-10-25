@@ -1,0 +1,534 @@
+{
+  "round": 9,
+  "role": "statistics",
+  "topic": "年度、行情与盈利集中",
+  "conclusion": "冻结净值显示收益集中于共同历史行情并受早期资本和一次长仓退出后的复利放大；LP35的八个正年度和末值达标不能解释为八次独立成功或持续预测优势，事件敏感性只能作保留已观察后续倍率的非可交易代数诊断。",
+  "verdict": "qualified",
+  "evidence": [
+    {
+      "source": "9个选中候选STRESS原账户:marks及trades，具体位置为B109/{LP35,TS04,ME01,MX03,Y01}、B88A/S03、B72/K02、B31/{C02,C04}",
+      "finding": "独立从年末融资调整净值计算q_y=E_y/E_(y−1)、log贡献log(q_y)、年度绝对资金变化E_y−E_(y−1)及正交易PnL份额。下表完整保留年度倍率和不同分母。所有候选两大正log-growth年份均为2019/2020，份额41.126%至53.299%；以年度正绝对资金增量计算则两大年份均2023/2024，份额67.117%至75.917%。后者受到此前已积累资本规模影响，不能直接解释成新增预测能力。",
+      "actual_results": [
+        {
+          "candidate": "LP35",
+          "annual_factors": [
+            {
+              "year": 2018,
+              "net_equity_factor": 1.7643273329616245
+            },
+            {
+              "year": 2019,
+              "net_equity_factor": 2.349193546331256
+            },
+            {
+              "year": 2020,
+              "net_equity_factor": 2.8551636965964464
+            },
+            {
+              "year": 2021,
+              "net_equity_factor": 2.2501312324089016
+            },
+            {
+              "year": 2022,
+              "net_equity_factor": 1.0401867555839053
+            },
+            {
+              "year": 2023,
+              "net_equity_factor": 1.566639782548923
+            },
+            {
+              "year": 2024,
+              "net_equity_factor": 2.288540370027423
+            },
+            {
+              "year": 2025,
+              "net_equity_factor": 1.0299387136495783
+            }
+          ],
+          "positive_years": 8,
+          "top2_positive_log_growth_years": [
+            "2020",
+            "2019"
+          ],
+          "top2_positive_log_growth_share": 0.4112623416904946,
+          "top2_positive_equity_change_years": [
+            "2024",
+            "2023"
+          ],
+          "top2_positive_equity_change_share": 0.7070367446887006,
+          "top2_positive_trade_pnl_share": 0.42786849295839463,
+          "2018_end_equity": "176.4327332961624370089315069",
+          "observed_post2018_equity_factor": 57.97063944034031
+        },
+        {
+          "candidate": "TS04",
+          "annual_factors": [
+            {
+              "year": 2018,
+              "net_equity_factor": 1.7643273329616245
+            },
+            {
+              "year": 2019,
+              "net_equity_factor": 2.349193546331256
+            },
+            {
+              "year": 2020,
+              "net_equity_factor": 2.8551636965964464
+            },
+            {
+              "year": 2021,
+              "net_equity_factor": 2.186410182672835
+            },
+            {
+              "year": 2022,
+              "net_equity_factor": 1.0401830314854215
+            },
+            {
+              "year": 2023,
+              "net_equity_factor": 1.5666537865993846
+            },
+            {
+              "year": 2024,
+              "net_equity_factor": 2.2885446368068165
+            },
+            {
+              "year": 2025,
+              "net_equity_factor": 1.0299450747683137
+            }
+          ],
+          "positive_years": 8,
+          "top2_positive_log_growth_years": [
+            "2020",
+            "2019"
+          ],
+          "top2_positive_log_growth_share": 0.41383008683321415,
+          "top2_positive_equity_change_years": [
+            "2024",
+            "2023"
+          ],
+          "top2_positive_equity_change_share": 0.7072387514100209,
+          "top2_positive_trade_pnl_share": 0.4278152500995788,
+          "2018_end_equity": "176.4327332961624370089315069",
+          "observed_post2018_equity_factor": 56.32973440659591
+        },
+        {
+          "candidate": "ME01",
+          "annual_factors": [
+            {
+              "year": 2018,
+              "net_equity_factor": 1.662333793354901
+            },
+            {
+              "year": 2019,
+              "net_equity_factor": 2.348852158127669
+            },
+            {
+              "year": 2020,
+              "net_equity_factor": 2.8549086957717233
+            },
+            {
+              "year": 2021,
+              "net_equity_factor": 2.186431237235473
+            },
+            {
+              "year": 2022,
+              "net_equity_factor": 1.0401820043440957
+            },
+            {
+              "year": 2023,
+              "net_equity_factor": 1.5666455759124225
+            },
+            {
+              "year": 2024,
+              "net_equity_factor": 2.2884989779873206
+            },
+            {
+              "year": 2025,
+              "net_equity_factor": 1.0299416551866984
+            }
+          ],
+          "positive_years": 8,
+          "top2_positive_log_growth_years": [
+            "2020",
+            "2019"
+          ],
+          "top2_positive_log_growth_share": 0.41923039211842084,
+          "top2_positive_equity_change_years": [
+            "2024",
+            "2023"
+          ],
+          "top2_positive_equity_change_share": 0.707677482835468,
+          "top2_positive_trade_pnl_share": 0.4285529855182797,
+          "2018_end_equity": "166.2333793354900930219726027",
+          "observed_post2018_equity_factor": 56.315399286517845
+        },
+        {
+          "candidate": "MX03",
+          "annual_factors": [
+            {
+              "year": 2018,
+              "net_equity_factor": 1.616935436957942
+            },
+            {
+              "year": 2019,
+              "net_equity_factor": 2.3489831776651426
+            },
+            {
+              "year": 2020,
+              "net_equity_factor": 2.85516706228359
+            },
+            {
+              "year": 2021,
+              "net_equity_factor": 2.1865655042943173
+            },
+            {
+              "year": 2022,
+              "net_equity_factor": 1.0401819701816999
+            },
+            {
+              "year": 2023,
+              "net_equity_factor": 1.5666909089588925
+            },
+            {
+              "year": 2024,
+              "net_equity_factor": 2.2885620527883828
+            },
+            {
+              "year": 2025,
+              "net_equity_factor": 1.0299307546599012
+            }
+          ],
+          "positive_years": 8,
+          "top2_positive_log_growth_years": [
+            "2020",
+            "2019"
+          ],
+          "top2_positive_log_growth_share": 0.42181218274513,
+          "top2_positive_equity_change_years": [
+            "2024",
+            "2023"
+          ],
+          "top2_positive_equity_change_share": 0.7079130534933941,
+          "top2_positive_trade_pnl_share": 0.4285682422707538,
+          "2018_end_equity": "161.6935436957941994220547945",
+          "observed_post2018_equity_factor": 56.32968052377594
+        },
+        {
+          "candidate": "Y01",
+          "annual_factors": [
+            {
+              "year": 2018,
+              "net_equity_factor": 1.0
+            },
+            {
+              "year": 2019,
+              "net_equity_factor": 2.4847973925
+            },
+            {
+              "year": 2020,
+              "net_equity_factor": 2.6173581372590724
+            },
+            {
+              "year": 2021,
+              "net_equity_factor": 1.7846381098241324
+            },
+            {
+              "year": 2022,
+              "net_equity_factor": 1.0
+            },
+            {
+              "year": 2023,
+              "net_equity_factor": 1.695788021174245
+            },
+            {
+              "year": 2024,
+              "net_equity_factor": 2.288478317067667
+            },
+            {
+              "year": 2025,
+              "net_equity_factor": 0.9730338303526227
+            }
+          ],
+          "positive_years": 5,
+          "top2_positive_log_growth_years": [
+            "2020",
+            "2019"
+          ],
+          "top2_positive_log_growth_share": 0.49174104408417424,
+          "top2_positive_equity_change_years": [
+            "2024",
+            "2023"
+          ],
+          "top2_positive_equity_change_share": 0.759174061939106,
+          "top2_positive_trade_pnl_share": 0.47118269685745906,
+          "2018_end_equity": "100.00000000",
+          "observed_post2018_equity_factor": 43.8278939871
+        },
+        {
+          "candidate": "B88A_S03",
+          "annual_factors": [
+            {
+              "year": 2018,
+              "net_equity_factor": 1.2055084871048678
+            },
+            {
+              "year": 2019,
+              "net_equity_factor": 2.6243556043661997
+            },
+            {
+              "year": 2020,
+              "net_equity_factor": 2.6173036210645146
+            },
+            {
+              "year": 2021,
+              "net_equity_factor": 2.015474374655816
+            },
+            {
+              "year": 2022,
+              "net_equity_factor": 1.0401813223247165
+            },
+            {
+              "year": 2023,
+              "net_equity_factor": 1.589775355239052
+            },
+            {
+              "year": 2024,
+              "net_equity_factor": 2.2884518881657305
+            },
+            {
+              "year": 2025,
+              "net_equity_factor": 0.9730322714484961
+            }
+          ],
+          "positive_years": 7,
+          "top2_positive_log_growth_years": [
+            "2019",
+            "2020"
+          ],
+          "top2_positive_log_growth_share": 0.4648254296173886,
+          "top2_positive_equity_change_years": [
+            "2024",
+            "2023"
+          ],
+          "top2_positive_equity_change_share": 0.7367995357318149,
+          "top2_positive_trade_pnl_share": 0.4550980553101844,
+          "2018_end_equity": "120.5508487104867787836438356",
+          "observed_post2018_equity_factor": 50.976253189774155
+        },
+        {
+          "candidate": "K02",
+          "annual_factors": [
+            {
+              "year": 2018,
+              "net_equity_factor": 1.074242715823542
+            },
+            {
+              "year": 2019,
+              "net_equity_factor": 2.5721687303011542
+            },
+            {
+              "year": 2020,
+              "net_equity_factor": 2.6096369679065536
+            },
+            {
+              "year": 2021,
+              "net_equity_factor": 1.8652079510468595
+            },
+            {
+              "year": 2022,
+              "net_equity_factor": 1.0200132217851516
+            },
+            {
+              "year": 2023,
+              "net_equity_factor": 1.6308358451362104
+            },
+            {
+              "year": 2024,
+              "net_equity_factor": 2.2884601448793367
+            },
+            {
+              "year": 2025,
+              "net_equity_factor": 1.0014553217474178
+            }
+          ],
+          "positive_years": 8,
+          "top2_positive_log_growth_years": [
+            "2020",
+            "2019"
+          ],
+          "top2_positive_log_growth_share": 0.4835835135162197,
+          "top2_positive_equity_change_years": [
+            "2024",
+            "2023"
+          ],
+          "top2_positive_equity_change_share": 0.7455307478494576,
+          "top2_positive_trade_pnl_share": 0.4517520700467264,
+          "2018_end_equity": "107.4242715823542010831506849",
+          "observed_post2018_equity_factor": 47.73069851345641
+        },
+        {
+          "candidate": "C02",
+          "annual_factors": [
+            {
+              "year": 2018,
+              "net_equity_factor": 1.0
+            },
+            {
+              "year": 2019,
+              "net_equity_factor": 2.4847973925
+            },
+            {
+              "year": 2020,
+              "net_equity_factor": 2.2511726494416786
+            },
+            {
+              "year": 2021,
+              "net_equity_factor": 1.5774379367795242
+            },
+            {
+              "year": 2022,
+              "net_equity_factor": 1.0
+            },
+            {
+              "year": 2023,
+              "net_equity_factor": 1.5154423819523688
+            },
+            {
+              "year": 2024,
+              "net_equity_factor": 1.9164411723859833
+            },
+            {
+              "year": 2025,
+              "net_equity_factor": 0.9822717554699754
+            }
+          ],
+          "positive_years": 5,
+          "top2_positive_log_growth_years": [
+            "2019",
+            "2020"
+          ],
+          "top2_positive_log_growth_share": 0.53077780384089,
+          "top2_positive_equity_change_years": [
+            "2024",
+            "2023"
+          ],
+          "top2_positive_equity_change_share": 0.6823027903891197,
+          "top2_positive_trade_pnl_share": 0.4151542556177805,
+          "2018_end_equity": "100.00000000",
+          "observed_post2018_equity_factor": 25.1720534581
+        },
+        {
+          "candidate": "C04",
+          "annual_factors": [
+            {
+              "year": 2018,
+              "net_equity_factor": 1.0
+            },
+            {
+              "year": 2019,
+              "net_equity_factor": 2.4847973925
+            },
+            {
+              "year": 2020,
+              "net_equity_factor": 2.2511726494416786
+            },
+            {
+              "year": 2021,
+              "net_equity_factor": 1.6062642793478419
+            },
+            {
+              "year": 2022,
+              "net_equity_factor": 1.0
+            },
+            {
+              "year": 2023,
+              "net_equity_factor": 1.650500524261211
+            },
+            {
+              "year": 2024,
+              "net_equity_factor": 1.704905996418874
+            },
+            {
+              "year": 2025,
+              "net_equity_factor": 0.9850119114743148
+            }
+          ],
+          "positive_years": 5,
+          "top2_positive_log_growth_years": [
+            "2019",
+            "2020"
+          ],
+          "top2_positive_log_growth_share": 0.5329927678706,
+          "top2_positive_equity_change_years": [
+            "2024",
+            "2023"
+          ],
+          "top2_positive_equity_change_share": 0.6711736132104439,
+          "top2_positive_trade_pnl_share": 0.4121452425841274,
+          "2018_end_equity": "100.00000000",
+          "observed_post2018_equity_factor": 24.9043020486
+        }
+      ]
+    },
+    {
+      "source": "LP35/STRESS.json.gz:年末marks、trades",
+      "finding": "LP35年度净值倍率依次1.764327333、2.349193546、2.855163697、2.250131232、1.040186756、1.566639783、2.288540370、1.029938714；两大正log-growth贡献份额41.1262341690%，年度正绝对资金增量头两年份额70.7036744689%，头两笔正交易PnL占全部正交易PnL的42.7868492958%。这三个份额的分母不同，也不是净利润份额或独立事件概率。2022与2025净收益仅约4.0187%和2.9939%。"
+    },
+    {
+      "source": "data/walkforward-v1/2025/{train,test}.json:各年12-31 price；选中候选年末marks",
+      "finding": "准入参考价格的公历年简单收益2018–2025依次约−73.5143%、94.3859%、304.9264%、59.7204%、−64.3530%、155.4866%、121.2127%、−6.2884%。这些为事后机械行情描述，未用来重设策略regime或参数；同一2019/2020市场路径为各候选提供共同大贡献，不能视为各策略独立获得的多份经济证据。参考价收益未扣交易/融资，不是可直接替代策略账户的同成本基准。"
+    },
+    {
+      "source": "LP35/STRESS.json.gz:2018-12-31 mark与终值；其余候选相同口径年末marks",
+      "finding": "LP35的2018末资本176.4327332961624370089315069，之后已观察的末值/该资本倍率为57.97063944034031。将2018净增长代数归零但强行保留该后续倍率，末值会显示5797.0639440340307，而实际末值10227.9183673855567。此差额不作新增交易收益归因：此处只展示早期资金如何被随后倍率放大，未重新模拟数量、借币、门槛或后续路径，不能称去掉2018后策略真的得到这一末值。"
+    },
+    {
+      "source": "LP35与TS04四成本原trades、marks；profit-cap-trade-postmortem.json对应case",
+      "finding": "独立比较每成本51笔完整交易日历，LP35与TS04各仅有一个(entry,exit,direction,reason)元组不同，均为2020-04-30（DELAY为05-01）入场的长仓退出。STRESS从TS04的2021-01-07改为LP35的01-09，单笔净PnL从1223.98545425到1270.34731416，直接多46.36185991；两者在01-09均空仓且该时点净值差与直接PnL差一致，随后末值差变成289.5093601829555，约为直接差的6.24456倍。终值差主要表现为资本传播，不能称289.51 USDT的新预测利润。"
+    },
+    {
+      "source": "相同LP35/TS04配对账户四成本:该笔net pnl与末期净值",
+      "finding": "直接事件PnL差/最终净值差：BASE +61.42429103/+425.7267014864607；STRESS +46.36185991/+289.5093601829555；SEVERE +39.22624917/+220.8224239144531；DELAY −68.36199351/−266.7933490532565。DELAY同一更晚退出反而减利，说明获益没有跨执行时差同向；没有通过移除交易或调参把敏感性修成正结果。"
+    },
+    {
+      "source": "LP35/STRESS.json.gz:2021-01-09空仓净值与该长仓pnl、末期净值",
+      "finding": "单事件归零敏感性明确定义为F*=F×(E_anchor−pnl_event)/E_anchor。STRESS anchor净值1638.890138375373576293068493，事件净PnL1270.34731416，观察后续倍率F/E_anchor=6.2407589916456869；代数F*=2299.9869440285885。它不是跳过该交易后的可交易账户、不是新的绩效行，也没有对不同候选作此新排名。该整笔事件约跨越2020/2021两年，因此年度正数也不等于独立交易成功。"
+    }
+  ],
+  "counterevidence": [
+    "收益集中和早期资本放大是复利策略的可核实特征，并不自动推翻历史净值；LP35的各成本原账户仍按原始记录保留。",
+    "将年度贡献写为正log-growth份额会淡化资金规模效应，而按绝对资金变化会强调后期已积累资本；两者均有用途，不能挑选一个分母来单独宣传“分散”或“集中”。",
+    "单笔退出差在三个同lag成本情景中为正，但DELAY为负；这是冻结执行敏感性，不等于对未知未来退出时点的获利概率。",
+    "归零事件PnL或2018增益后继续沿用观察到的后续倍率忽略了资金/lot/触发反馈，属于有边界代数诊断；真实移除交易后结果不能从它直接得出。"
+  ],
+  "recommendations": [
+    {
+      "priority": "P0",
+      "action": "交付年度页同时保留各年净值倍率、参考行情描述及log-growth/绝对资金变化/正交易PnL三种集中度的分母定义，不将八个正年度当八次iid试验。",
+      "acceptance": "9候选年度倍率和表内份额可由冻结marks/trades还原；零收益年份保留为零而非正年；正交易份额明确分母是全部正PnL而非净利润。"
+    },
+    {
+      "priority": "P0",
+      "action": "LP35相对TS04改进说明直接写出单次长仓退出差与后续复利传播，并同时披露DELAY方向相反。",
+      "acceptance": "STRESS直接差46.36185991与末值差289.5093601829555分开；不得把末值增加直接称新增alpha，或只展示三个有利成本。"
+    },
+    {
+      "priority": "P1",
+      "action": "将归零事件/早期增益敏感性放在单独的代数诊断说明中，不混入正式策略绩效表，不以此选择新参数或筛除年份/交易。",
+      "acceptance": "公式、anchor与保留后续倍率假设齐全；F*=2299.986944和早期归零5797.063944均标为非可交易反事实，未生成新账户、排名或样本外声明，2026仍禁读。"
+    }
+  ],
+  "checks_performed": [
+    "从9个选中STRESS账户年末marks独立生成2018–2025年度倍率、正log-growth贡献、正绝对资金变化与正交易PnL集中度；不重跑账户。",
+    "从准入2017–2025参考价格独立算公历年收益，只作事后行情描述，未改regime标签或策略规则。",
+    "逐成本对LP35/TS04完整51笔交易日历比较，确认每成本仅1个退出元组变化；在双方均空仓的anchor核对净值差与该笔净PnL差。",
+    "独立计算事件PnL差至末值差的资本传播倍率，并按明确公式给出整笔事件/早期增益归零的非可交易代数敏感性；没有移除交易重放。",
+    "未读取2026经济数据、V01/V02、其他专家目录或意见；未拟合、优化、重跑账户、重设目标或产生新策略排名；仅独占创建本人r09.json。"
+  ],
+  "unresolved": [
+    "年度、交易和策略共享同一市场与连续资本，缺乏足够独立行情实现来据8个年度估计稳定胜率或未来集中度。",
+    "事件差的直接金额可以精确核对，但其后资金、lot和手续费取整等路径反馈不能凭单一代数倍率完全分解成因果份额。",
+    "非可交易归零诊断不能替代真实可执行反事实；本轮有意不新增账户，因此不声称已测得跳过该事件后的真实风险或回报。"
+  ],
+  "independence_statement": "本轮仅用共享协议和冻结原始2017–2025参考价/2018–2025账户独立计算，未读取其他专家目录、评分、意见或主审结论。statistics是模拟AI角色，不是真实人类专家或独立市场样本；年度也未视作独立实验。2026始终禁读；只完成第09轮，无后续预写。"
+}

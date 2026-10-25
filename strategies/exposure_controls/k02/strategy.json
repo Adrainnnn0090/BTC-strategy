@@ -1,0 +1,24 @@
+{
+  "id": "K02",
+  "category": "exposure_controls",
+  "description": "L06模型与信号不变，冷启动及后期空头预算均改25%并保留原波动缩放。",
+  "model_families": [
+    "base_tree",
+    "stop44",
+    "short_huber"
+  ],
+  "implementation": "btc_strategy.strategies.compose",
+  "source_study": "studies/B72-cold-budget-exposure",
+  "period": [
+    "2018-01-01",
+    "2025-12-31"
+  ],
+  "new2026validation": false,
+  "source_recipe": {
+    "cold": 0.25,
+    "id": "K02",
+    "kind": "BUDGET",
+    "post": 0.25
+  },
+  "risk_qualification": "降低的是空头入场预算，不是实时gross硬上限。"
+}

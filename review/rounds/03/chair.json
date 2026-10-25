@@ -1,0 +1,53 @@
+{
+  "conclusion": "已查标签和共同样本符合完整成熟期后的因果截止；6日隔离不能消除重叠标签的统计依赖，训练单笔标签也不是实际持仓期限或真实风险保证。",
+  "scope_filter": "排除把成熟检查PASS解释为标签独立、显著alpha或真实清算安全；标签银行/成员/成本情景的重复不能增加独立样本数。",
+  "object_filter": "区分BASE终点log、STOP单笔路径log与SHORT_NET空头simple净收益；多头年末标签截断与连续账户carry不同是明确设计假设，需披露而非改写原标签。后冷空头原风险匹配标签，冷空头trail4则不同。",
+  "actions": [
+    "导出物理训练前缀、共同ids、标签与cut；训练包不含测试context，禁止从未来模型补缺。",
+    "文档明确60日为监督期限，LP35实际长仓可超过250日。",
+    "保留原标签差异，新增任何更贴合真实执行的标签需另行预注册与重新年度验证，不在本审查中优化。"
+  ],
+  "chair_checks": [
+    "从2025物理train行数核对B67最大common_id+62<=cut-6",
+    "从matured函数核对多头最大id+61<=cut-6"
+  ],
+  "open": [
+    "来源真实历史可得性留待第04轮",
+    "新仓训练包和训练读权限尚未完成"
+  ],
+  "round": 3,
+  "submissions": {
+    "statistics": {
+      "verdict": "qualified",
+      "conclusion": "所核查短标签共同样本与长STOP标签的最晚成熟界均落在物理训练截止之前，6日隔离界得到既存标签和模型收据支持；但60日标签的重叠依然很强，隔离界保障因果截止而不创造独立训练或验证样本，标签条数与重复年度/种子数都不能直接作为有效样本量。",
+      "sha256": "3a6321246219c54ae66399d4b5d8a707f2bc3f6b1eb5006ea5ac4579bcf851a8"
+    },
+    "data": {
+      "verdict": "supported",
+      "conclusion": "B67/B88A共同短样本的i+62≤cut−6及多头i+61≤cut−6得到2019–2025元数据和2025代表折实际标签核验支持；仅使用截至2024-12-31的训练行情即可精确重算全部7807条代表标签，价格访问和实际退出均未借用2025测试行情完成成熟。",
+      "sha256": "071d5e29c679dc6c2be5bce44f34ad2b727c19a31e118f44ad3b601ca4d385d1"
+    },
+    "models": {
+      "verdict": "supported",
+      "conclusion": "BASE_TREE、STOP与B67/B88A分别学习扣固定成本的终点log收益、带提前退出的多头路径log收益、以及含融资/舍入/风险退出的空头simple净收益；“60天”是标签跨度或最长存续边界，不是策略必须持仓60天，空头目标不能由多头目标取负。实际2019训练标签按计划最晚成熟日保留6日隔离，未因提前退出而放宽可用样本边界。",
+      "sha256": "ccb8f30beea5b8d623fc63ee0a44f565ce40f116031134d0e72ed874c439d8ed"
+    },
+    "execution": {
+      "verdict": "qualified",
+      "conclusion": "被核对的标签是具有固定入场、期限、风险和收益单位的单笔预测目标，不能等同于LP35连续账户收益；年末截断、信号退出和仓位数量差异主要是明确的设计假设，本轮未发现其被误算为连续账户盈亏，成熟度仍保守要求完整i+61端点加6日隔离。",
+      "sha256": "b1c0639e2816c0060efbca5f4dceefbc2bc8293b474f9aeb73e0c53e6e0233ae"
+    },
+    "risk": {
+      "verdict": "qualified",
+      "conclusion": "STOP15与60天空头SHORT_NET是按固定假设构造并在训练截止前成熟的预测目标，并非LP35/TS04完整持仓风险合同：实际退出包含不同追踪/止盈参数、信号和可超过60天的持仓，故标签成熟与6日隔离不能解释为未来仓位期限、最大亏损或DD保证。",
+      "sha256": "31a38a0b3b57394b0700a87d8c93ffa50c154dfff8b2f2be7c4a9c2daa8779c7"
+    },
+    "repro": {
+      "verdict": "qualified",
+      "conclusion": "选定B67/B88A年度训练样本与标签完整成熟边界通过核验，新仓98个short_median已拟合状态也与原件一致；但可重拟合所需的common_ids、两执行lag标签、物理训练前缀及cut/head/spec/profile/seed不能由超参数或回放context代替，应另行归档并与推理状态、含多年预测的回放context物理分离。本轮未证明新仓训练包完整或角色访问隔离已实现。",
+      "sha256": "f99e06a3da07d64324594b6691276bfbf8100c971f3209bff587b6623ea2f51d"
+    }
+  },
+  "not_external_human_audit": true,
+  "not_independent_market_samples": true
+}

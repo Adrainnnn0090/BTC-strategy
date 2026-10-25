@@ -1,0 +1,192 @@
+{
+  "round": 5,
+  "role": "risk",
+  "topic": "模型方程与实现一致性",
+  "conclusion": "当前所查长头和后冷MODEL空头分支主要把分数用于方向状态或入场许可，不按分数幅度加仓；预算、止损和持仓状态另有冻结规则，median改变损失及过门样本，不能自动解释为较小仓位、期望盈利改善或未来风险下降。",
+  "verdict": "qualified",
+  "evidence": [
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/lab/b12_signals.py:43-70; /workspace/BTCStrategyResearchLedger/lab/entry_permissions.py:8-25; /workspace/BTCStrategyResearchLedger/lab/exit_coordinate.py:55-58",
+      "finding": "长头score>0可启动active，POS1/POS3按正分数连续性给新入场许可；long_fraction由年度fraction×vol scale给出，risk由年度policy取值，均不乘score。active另有状态：已经active、父价格long仍成立时，有限负分数不会单独把desired long清零，而新的POS1许可会变false；不能把“符号门”简写成每次负分立即清仓。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/lab/conditional_short.py:45-67; /workspace/BTCStrategyResearchLedger/lab/cold_budget.py:14-24; /workspace/BTCStrategyResearchLedger/lab/b31.py:13-27,149-154; /workspace/BTCStrategyResearchLedger/lab/long_vol_budget.py:13-21",
+      "finding": "后冷MODEL短头许可是learner存在且>0；PRICE不看learner大小，NEG_LONG检查原长头<0。short_fraction是注册的.25/.5/.75乘波动scale，K02另固定cold/post预算.25/.25；C02/C04在合资格折对父long_fraction乘.75，非按实时分数强度缩放；LP35父链放宽长vol cap至原年度fraction。不同分支阈值和状态应分别说明，不能归纳成全系统只有一个零阈值。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/lab/carry_native.py:47-61,75-81; /workspace/BTCStrategyResearchLedger/lab/long_profit_local_coordinate.py:14-20; /workspace/BTCStrategyResearchLedger/lab/cold_short_profit_trailing.py:15-22",
+      "finding": "新entry预算=当时净值×注册fraction，数量再按执行价格、fee、.01 reserve和lot量化；源公式无score项。持仓entry-owned risk在开仓时固定；LP35长TP3.5和TS04 cold short trail.04由显式补丁赋值，score幅度不会自动收紧止损、加仓或改变冷却。分数可能改变入场时点/次数及后续复利资本，间接改变实际金额与风险路径，这不同于同一次固定条件下的score比例加仓。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/lab/short_loss_models.py:8-11,14-33; /workspace/BTCStrategyResearchLedger/lab/b88a.py:23-24,127-130",
+      "finding": "B88A_S03是固定SHORT_NET支持上的MEDIAN/absolute_error损失；原预算和RISK仍由同一component生成。训练目标没有直接优化组合DD、CVaR、最大gross或止损预算，也没有将alpha=.9作为风控置信度传入预算/止损。中位数误差目标不等于条件均值净收益或尾部损失保证，不同loss的预测幅度不能直接当作可比较的仓位强度。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/studies/B88A-short-net-loss-families/decision.md:7-20",
+      "calculation": {
+        "reference_P02_or_S01": {
+          "STRESS_return_pct": 6272.344993940111,
+          "worst_four_daily_DD_pct": 32.55288838630263,
+          "DELAY_return_pct": 2304.2482668455323
+        },
+        "B88A_S03": {
+          "STRESS_return_pct": 6045.230586107933,
+          "worst_four_daily_DD_pct": 32.263058979096115,
+          "DELAY_return_pct": 2287.674045210503
+        },
+        "reported_worst_DD_reduction_pct_points_approx": 0.289829407,
+        "S03_post_short_permission_changes": {
+          "added": 10,
+          "removed": 22
+        }
+      },
+      "finding": "已存结论仅保留S03小幅历史收益/风险权衡。原raw target/risk/budget字典、长预测和长许可不变，但post-short门变动，DELAY后冷空头净额由约-30.58变为-100.49USDT；较低历史整体DD不表示median必定降低未来风险，也不能把权限日数当独立交易。"
+    },
+    {
+      "source": "本轮隔离执行 /workspace/BTCStrategyResearchLedger/lab/b12_signals.py:42-71; entry_permissions.py:8-25; long_vol_budget.py:9-22; long_profit_local_coordinate.py:8-20; conditional_short.py:45-67",
+      "calculation": {
+        "long_same_sign_test": {
+          "scores": [
+            1e-09,
+            100.0
+          ],
+          "all_255_target_rows_and_permissions_identical": true,
+          "final_direction": 1,
+          "final_long_fraction": 0.95,
+          "final_long_risk": {
+            "stop_loss": 0.15,
+            "take_profit": 3.5,
+            "cooldown_days": 1,
+            "trailing_stop": 0.1,
+            "trail_arm": 0.5
+          },
+          "same_synthetic_quantity": "0.94705",
+          "quantity_equity": 100,
+          "quantity_ask": 100,
+          "quantity_fee": 0.003
+        },
+        "long_state_test": {
+          "score_tail": [
+            1.0,
+            -1.0,
+            null
+          ],
+          "desired_direction_tail": [
+            1,
+            1,
+            0
+          ],
+          "POS1_new_entry_permission_tail": [
+            true,
+            false,
+            false
+          ]
+        },
+        "post_short_same_sign_test": {
+          "scores": [
+            1e-09,
+            100.0
+          ],
+          "all_255_target_rows_and_permissions_identical": true,
+          "fraction_input": 0.5,
+          "fixed_vol_target": 0.75,
+          "fixed_sigma": 2.0,
+          "result_short_fraction": 0.1875,
+          "short_risk": {
+            "stop_loss": 0.12,
+            "take_profit": 0.5,
+            "trailing_stop": 0.12,
+            "trail_arm": 0.1,
+            "cooldown_days": 3
+          },
+          "None_or_zero_preserves_same_raw_target_but_permission_false": true
+        }
+      },
+      "finding": "纯人工输入在固定年度、价格/父状态/波动条件下直接验证同符号幅度不产生更大预算。post短头单位测试固定上游flat目标及vol stub，仅验证实际component的门/预算映射，不宣称完整经济回放。"
+    },
+    {
+      "source": "本轮人工Decimal算术示例，非市场证据",
+      "calculation": {
+        "return_values": [
+          "-0.9",
+          "0.1",
+          "0.2"
+        ],
+        "median": "0.1",
+        "mean": "-0.2",
+        "sum_absolute_error_at_median": "1.1",
+        "sum_absolute_error_at_mean": "1.4"
+      },
+      "finding": "人工分布可有正中位数和负均值，且中位数确实更小化该例绝对误差；这说明“median分数>0”本身不保证正期望盈利或消除尾部亏损。此例不是新拟合、历史收益结论或独立市场样本。"
+    }
+  ],
+  "counterevidence": [
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/studies/B88A-short-net-loss-families/decision.md:14,18",
+      "finding": "S03确实在既有四成本历史中降低了最差日度DD约.28983个百分点，不能抹去这项观测；但同时牺牲四成本收益，且改变权限/复利资本路径。支持小幅历史权衡，不支持自动风险改善定理。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/lab/b12_signals.py:54-56; /workspace/BTCStrategyResearchLedger/lab/conditional_short.py:66; /workspace/BTCStrategyResearchLedger/lab/entry_permissions.py:23-24",
+      "finding": "不是所有逻辑都只检查score>0：旧SCORE/COLD_SCORE短头还涉及hurdle，NEG_LONG检查负号，POS3有连续天数，长头有active状态；因此本轮结论限定所查主要门与预算映射，不声称绝对分数对所有模型选择/阈值分支永远无作用。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/lab/carry_native.py:54-61; /workspace/BTCStrategyResearchLedger/studies/B88A-short-net-loss-families/decision.md:18",
+      "finding": "即便fraction不随幅度变化，符号/阈值变化可以改变是否/何时成交，后续equity及lot rounding会改变数量；持仓期间重复许可也不会每次自动加仓。不能把单位输入不变性外推成不同拟合模型必有同一账户风险或路径。"
+    }
+  ],
+  "recommendations": [
+    {
+      "priority": "P0",
+      "action": "在交付仓把模型输出、desired方向、new-entry许可、fraction、entry-owned risk及最终lot数量分栏或画成有方向的映射，使用“许可”而非“预测越高仓位越大”的说明。",
+      "acceptance": "长头POS1/POS3与后冷MODEL>0的门清楚；预算公式只引用年度fraction、波动/固定缩放、equity、执行成本，不把score幅度混入；同符号1e-9/100合成对照可定位到本轮证据。"
+    },
+    {
+      "priority": "P0",
+      "action": "保留S03的“median损失小幅历史权衡”表述，独立列示四成本收益、DD、post-short权限/成交、融资与复利路径，禁止以损失函数名称直接标记低风险。",
+      "acceptance": "不将absolute_error写成最小化DD/CVaR或未来风险约束；不将alpha=.9写成90%止损/置信保证；保留原P02与S03历史数字及DELAY后冷空头弱点，不改冻结门。"
+    },
+    {
+      "priority": "P1",
+      "action": "在风险验收说明中区分新开仓许可与已有持仓状态，记录符号变化怎样影响两者。",
+      "acceptance": "人工序列[+1,-1,None]在父long为真时得到desired[1,1,0]、POS1许可[true,false,false]；不把负score一律解释为立即平仓，也不把更多许可日一律计成更多独立成交。"
+    },
+    {
+      "priority": "P1",
+      "action": "对不同loss/头/标签单位的分数保持原阈值解释，禁止用未经注册的统一幅度排序、线性仓位映射或“更高=更安全”分档。",
+      "acceptance": "交付材料不追加score比例仓位、重拟合或阈值搜索；若描述风险差异，只依据已存账户与具体结构而不是分数数值大小，并明确路径/资本会间接变化。"
+    }
+  ],
+  "checks_performed": [
+    {
+      "check": "长头同符号幅度与LP35预算映射的确定性新检查",
+      "method": "指定Python -B，AST隔离原SignalFactory/permissions/patch_budget，构造255个全人工日期、固定父long和vol状态；两次仅把最后3个正分数由1e-9变100，再调用无写入的LP35 patch_risk；未调用Features市场计算或模型。",
+      "result": "255行目标及权限完全相等；最终long_fraction=.95，SL.15/TP3.5/trail.1/arm.5/cooldown1相同；用冻结数量公式在equity100/ask100/fee.003下均得.94705。"
+    },
+    {
+      "check": "长头active与入场门分离的确定性新检查",
+      "method": "同一人工self固定父long=true，把尾部score设为[1,-1,None]，分别运行原targets与POS1 permissions。",
+      "result": "方向尾部[1,1,0]，新入场许可[true,false,false]，验证负分不自动重置已active方向。"
+    },
+    {
+      "check": "后冷MODEL空头同符号幅度的确定性新检查",
+      "method": "AST隔离实际conditional_short.component及parent_score，固定上游人工flat rows和vol=2 stub、vol_target=.75、fraction=.5；比较learner None/0/1e-9/100，其他输入相同。",
+      "result": "1e-9与100全部255行目标/权限完全一致，short_fraction=.1875且风险字典相同；None与0的raw targets相同但许可false。范围是component单位映射，不是全链或Native经济回放。"
+    },
+    {
+      "check": "中位数不等于正均值的人工算术检查",
+      "method": "Decimal对人工[-.9,.1,.2]求中位数、均值及绝对误差和，无拟合和经济来源。",
+      "result": "median=.1>0、mean=-.2<0；绝对误差和在median为1.1，在mean为1.4。"
+    },
+    {
+      "check": "冻结预算与损失目标静态只读检查",
+      "method": "读取所列risk/permission/constant-scale/loss-model代码及B88A原decision；未执行任何freeze/train/test/replay/verify写入命令。",
+      "result": "确认预算/止损未读取预测幅度；absolute_error目标不是组合DD优化器；未改源、模型、账户或门。"
+    }
+  ],
+  "unresolved": [
+    "本轮没有独立重建S03各树或估计分数校准误差；状态/门/预算映射检查不能替代模型角色对方程与导出数值的审计。",
+    "人工同符号比较只在其他输入固定时成立；不同真实拟合导致符号/时间和复利路径变化的风险大小仍只能由既有经济证据描述，不能给未来保证。",
+    "median正分数对尾部风险的实际预测能力未由本轮证明；未开展新参数、标签、仓位或损失函数搜索。"
+  ],
+  "independence_statement": "本人为risk AI分析角色，不是人类专家或新的独立市场样本；未读取其他专家意见/评分/主审结论，未读取V01/V02或任何2026经济数据/账户；未派生代理、新优化、修改冻结代码/spec/模型/账户/verification/gates或重跑独占写入器，仅独占写risk/r05.json，未预写后轮。"
+}

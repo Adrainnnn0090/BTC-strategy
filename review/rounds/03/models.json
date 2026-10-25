@@ -1,0 +1,72 @@
+{
+  "round": 3,
+  "role": "models",
+  "topic": "标签成熟与隔离期",
+  "conclusion": "BASE_TREE、STOP与B67/B88A分别学习扣固定成本的终点log收益、带提前退出的多头路径log收益、以及含融资/舍入/风险退出的空头simple净收益；“60天”是标签跨度或最长存续边界，不是策略必须持仓60天，空头目标不能由多头目标取负。实际2019训练标签按计划最晚成熟日保留6日隔离，未因提前退出而放宽可用样本边界。",
+  "verdict": "supported",
+  "evidence": [
+    {
+      "source": "lab/sgd.py:10; lab/sgd.py:30; lab/tree_stability.py:35; r03_checks.json baseline_label_at_252",
+      "actual": "BASE_TREE标签y=log(P[i+61]/P[i+1])-log(1.001/(0.999*0.997^2))，从次日入场终点到60日后终点，扣固定解析成本0.00800901870726449。该标签不做路径止损、数量舍入、最小金额或借贷融资核算；其固定跨度不规定真实账户持仓期限。"
+    },
+    {
+      "source": "lab/execution_labels.py:1; lab/execution_labels.py:29; lab/execution_labels.py:61",
+      "actual": "STOP标签以每单位ask_entry*(1+0.003)为basis，退出所得为bid_exit*(1-0.003)，目标为log(退出所得/basis)。bid/ask分别按0.1%滑点与分币向下/向上舍入；15%净清算阈值触发后次日退出，或在60日到期/年末提前清算。STOP不含RISK分支的追踪止损/止盈，不含账户仓位、数量舍入、最小金额或再次入场。其入场若为12月31日则标签为0、entry_index为空。"
+    },
+    {
+      "source": "lab/short_payoff.py:1; lab/short_payoff.py:44; lab/lagged_short.py:11; lab/short_loss_models.py:14",
+      "actual": "B67/B88A共用SHORT_NET：100USDT合成账户、25%预算、0.01储备，以bid卖空，数量按0.00001向下舍入且金额至少5；目标为[q*(bid_entry-ask_exit)-开平仓费-累计借币费]/(q*bid_entry+开仓费)，是simple净收益。费率0.3%、滑点0.1%，借币按每日q*原始价格*10%/365累计；12%止损、10%启动/12%回撤追踪止损、50%止盈，触发后按该头1日或2日延迟执行；无年末强平，但12月31日禁止新入场。"
+    },
+    {
+      "source": "lab/lagged_short.py:39; lab/lagged_short.py:48; lab/b88a.py:71; r03_checks.json long_max_id/short_common_max_id/embargo_boundary",
+      "actual": "实际2019训练物理前缀截止2018-12-31，cut=729，隔离界=723。长标签411条，最大决策i=662，计划成熟i+61=723；空头L1/L2各410条原始银行，共同可执行408条、最大i=661，L1计划成熟722、L2计划成熟723。B67与B88A全部同年receipt匹配common_last_label=723。下一个长i=663或共同空头i=662都会越界，被排除。"
+    },
+    {
+      "source": "studies/B20-execution-aware-labels/folds/2019/labels/STOP.json.gz [index=252,362,662]; studies/B67-lag-matched-short-supervision/folds/2019/labels.json.gz [L1/L2,index=252]; r03_checks.json stop_examples/short_examples",
+      "actual": "实样i=252：STOP入场253、触发256、退出257，实际持仓4日但maturity_index仍313，log标签=-0.13794817491839304；L1入场253、退出261，持仓8日，simple标签=0.058259263782029135；L2入场254、退出262，同为8日，simple标签=0.054648456456840834。按原价格重算STOP清算/basis，以及空头数量、双边费、每日融资、pnl/basis均与存档一致。BASE_TREE同i的终点log目标=0.4441044589337175。该组实样直接否定统一60日持仓与直接取负的解释。"
+    },
+    {
+      "source": "r03_checks.json year_end_unexecutable_difference；lab/execution_labels.py:35; lab/short_payoff.py:51; lab/lagged_short.py:18",
+      "actual": "实际i=362的STOP在年末364退出，仅持仓1日；L1对应空头持有至367，可跨年。STOP i=363是禁止年末入场的0值；空头L1 i=363和L2 i=362是UNEXECUTABLE/None，两者从共同样本排除。不能把None与0统一处理。B20和供B81使用的B36 STOP银行逐条相同，且各自封存标签SHA吻合。"
+    }
+  ],
+  "counterevidence": [
+    "BASE_TREE的固定60日终点标签确实使用相隔60日的两个价格；否定的是把这个监督目标直接解释为组合必须持仓60日，而不是否定公式的固定跨度。",
+    "有些STOP/SHORT_NET记录以HORIZON_CLOSE退出，实际持仓就是60日；另一些记录因止损、追踪、止盈或年末规则提前结束。不能只拿其中一种退出代表全体。",
+    "标签是固定的一次入场代理任务，不是全部候选账户的逐笔已实现收益；尤其STOP的年末清算与空头的无年末清算、当前后代策略风险覆盖具有明确差异。",
+    "本轮成熟界实证覆盖2019标签银行和对应receipt；结合代码支持计划成熟规则，但未穷尽全部年度标签重建。"
+  ],
+  "recommendations": [
+    {
+      "priority": "P0",
+      "action": "导出标签合同逐类写出量纲、入场/退出时钟、成本公式、数量/融资假设及年末处理；BASE_TREE、STOP、SHORT_NET使用不同类型标识。",
+      "acceptance": "能够无歧义写出上述三种方程；B88A S03改变损失函数不改变SHORT_NET标签，且不存在short_target=-long_target的适配转换。"
+    },
+    {
+      "priority": "P0",
+      "action": "标签可用性按计划maturity_index检查，不以实际早退exit_index替代；L1/L2共同训练支持按更晚的i+62检查。",
+      "acceptance": "2019长最大i=662、空头共同最大i=661且成熟界723；人为加入下一条索引时确定性拒绝，早退也不能使它提前入选。"
+    },
+    {
+      "priority": "P1",
+      "action": "把年末禁止入场的STOP零值与SHORT_NET未定义值分别保留；在导出数据字典解释60日到期与提前退出。",
+      "acceptance": "2019 STOP i=363保留0，SHORT_NET的L1 i=363/L2 i=362保持None并不进入common_ids；复现4日/8日示例及相应现金恒等式。"
+    }
+  ],
+  "checks_performed": [
+    {
+      "command": "/workspace/BinanceTradingRobot/backend/.venv/bin/python /workspace/BTCExpertReview/workspaces/models/check_r03.py",
+      "result": "exit 0；all_checks_pass=true；核对411条STOP、两头各410条空头银行的计划成熟界、408个共同ids及B67/B88A同年全部receipt；另重算3条STOP和5条SHORT_NET的数值/现金恒等式与BASE_TREE一条终点目标。",
+      "artifact": "/workspace/BTCExpertReview/workspaces/models/r03_checks.json"
+    },
+    {
+      "check": "读取2019训练前缀、实际标签银行、封存标签SHA与代表BASE_TREE最终receipt；未导入原lab训练/写入函数",
+      "result": "所有读取的价格均止于2018-12-31；未读取当前测试期、2026经济数据、V01/V02或其他角色意见。"
+    }
+  ],
+  "unresolved": [
+    "未对所有年度所有标签做独立路径重算，亦未重新训练模型；本轮数值复核范围在checks中明确。",
+    "固定标签代理任务与真实组合多次入场/持仓规则之间的经济匹配程度，不能仅凭成熟和现金恒等式推出。"
+  ],
+  "independence_statement": "仅以models分析视角工作；只读冻结源仓、共享事实资料与自身工作区，未读其他专家工作区、评分、建议或主审结论，未派生agents。无2026经济数据/V01/V02访问；所有新文件仅在models目录首次独占创建。AI角色不是人类专家或独立市场样本。"
+}

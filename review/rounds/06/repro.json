@@ -1,0 +1,74 @@
+{
+  "round": 6,
+  "role": "repro",
+  "topic": "执行、滑点、融资与净值",
+  "conclusion": "在本轮限定的工程适配范围内，新仓execution.py与冻结carry_native.py精确只差三个已允许的import替换，完整账户类、融资/滑点/净值及run_account逻辑均未改变；成本、报价、instrument和纯_runtime函数体的独立比对亦通过。因此支持代码适配等价，但本轮没有自行重放原生账户，不把root的36本收据、源码等价或_runtime函数体一致升级为经济实现独立验证或第05轮失败已回归通过。",
+  "verdict": "supported",
+  "evidence": [
+    {
+      "source": "/workspace/BTCExpertReview/workspaces/repro/checks-r06.json:execution_checks,allowed_import_replacements,execution_text_diff",
+      "actual_check": "用源carry_native原全文精确替换且只替换3条import后，与新仓execution.py全文逐字相等；整模块AST也完全相等。三条映射为binance_robot.execution→.instrument、binance_robot.runner→.instrument、.native的CASES/quote_prices→.costs。MarginResearch整个类及所有顶层函数AST均未变化，没有额外公式、条件、常量或序列改写。"
+    },
+    {
+      "source": "/workspace/BTCExpertReview/workspaces/repro/checks-r06.json:source_carry_native_sha256,delivery_execution_sha256",
+      "actual_check": "本轮读取源carry_native SHA=b4c159df393aa16622bc8a0ee2b409b2f52a103e1517b5b6fe1addde79f0569b，新仓execution SHA=43f8d2a786096f49ac04677a57ab5b5122608a49e97b35f37731880315bfea38；差异完整保存在checks-r06.json，原文件没有修改。"
+    },
+    {
+      "source": "/workspace/BTCExpertReview/workspaces/repro/checks-r06.json:cost_checks,quote_case_count,all_quote_cases_exact",
+      "actual_check": "新仓CASES的手续费/滑点/lag四案例字面值等于源native.CASES，BORROW等于源carry_native.BORROW；quote_prices函数AST等于源native实现。仅抽取原报价函数AST到受控namespace执行，不导入原native交易模块，12个合成/边界正价格×5个slip共60例Decimal bid/ask精确相等，覆盖分币tick及ROUND_DOWN/ROUND_UP。"
+    },
+    {
+      "source": "/workspace/BTCExpertReview/workspaces/repro/checks-r06.json:instrument_function_ast_exact,instrument_pure_metadata_cases; /workspace/BTCExpertReview/workspaces/repro/checks-r06-instrument.json:instrument_identifier_assignment_AST_exact",
+      "actual_check": "paper_instrument函数AST与登记外部runner原函数完全一致；INSTRUMENT、VENUE两项赋值AST与原execution相同。只抽取该函数、使用本地相同类型/常量执行，在0、2018-01-01和2025-12-31三个纳秒时间戳生成的CurrencyPair字典精确一致。没有导入原binance_robot模块、运行引擎或连接交易所。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/lab/carry_native.py:31-61,72-82,94-123",
+      "finding": "全文等价涵盖短仓按日独立融资债务、raw cash减债务加浮盈减预留退出费的净值、entry-owned风险和lag触发、报价侧成交/数量向下取整、订单成交一致性检查、decision/fill/mark顺序、年度可选平仓及终端清算等关键行为。该证据证明新仓保持源语义，未独立证明原语义等同现实撮合或实际借贷条件。"
+    },
+    {
+      "source": "/workspace/BTCExpertReview/workspaces/repro/checks-r06-runtime.json:all_26_only_allowed_clock_import_replacement,runtime_module_checks; /workspace/BTCExpertReview/workspaces/repro/checks-r06.json:clock_function_ast_exact",
+      "actual_check": "26个_runtime原来源模块中19个逐字不变，7个仅将from .b05 import forecast_year精确替换为from .clock import forecast_year；其余代码逐字不变。新clock.forecast_year函数AST等于原b05函数。本轮只核对源码函数体/导入映射，未重新执行第05轮独立导入场景，不覆盖其保存的失败证据。"
+    },
+    {
+      "source": "/workspace/BTCExpertReview/workspaces/repro/checks-r06.json:runtime_all_only_allowed_change; /workspace/BTCExpertReview/workspaces/repro/checks-r06-runtime.json:reason_for_supplement",
+      "finding": "首个runtime辅助谓词只对bear_short_overlay放行clock import替换，因此对另外6个同样需要替换的纯模块返回false。补充检查逐一确认7个模块均为同一精确import映射后全部通过；这是检查白名单原先过窄，不是发现函数体被额外改写。原始检查结果与补充说明均保留。"
+    }
+  ],
+  "counterevidence": [
+    "代码/AST等价不等于独立重新实现账户核算或验证真实交易成本；相同源逻辑可能共享原有假设或缺陷。",
+    "root的verification/native-replay-initial.json为另行产生的36本对照收据，本角色本轮未读取或使用它作自行验证证据，也没有重放账户。",
+    "本轮_runtime源码等价支持修复方向，但未在新进程、旧工程不可读的环境复测models导入，因此不能改写第05轮结论。",
+    "instrument常量是原研究的固定paper metadata，即使精确一致也不说明它等于当前交易所filter或实时借贷条件。"
+  ],
+  "recommendations": [
+    {
+      "priority": "P0",
+      "action": "把本轮3条execution import映射及源/交付SHA作为适配契约保留在provenance，全局完整性校验同时覆盖execution/costs/instrument/_runtime。后续任何函数体或成本常量变化应单独审查，不在“仅解耦import”的例外下放行。",
+      "acceptance": "最终交付能机械复算只允许3条import变化，MarginResearch/run_account/summarize全AST保持相等；adapter文件hash与最终清单匹配，冻结源原件hash不变。"
+    },
+    {
+      "priority": "P1",
+      "action": "后续复现验收把三类证据分别标识：本轮独立源码/纯函数等价，root原生账户对照收据，以及本角色或指定复核者实际执行的隔离回归。仅在授权轮次执行后者，保留完整订单/成交/融资/marks比较，不用summary近似替代。",
+      "acceptance": "收据说明由谁、何代码hash、何环境及何输入运行；本角色未执行的对照不得标为本角色独立验证。独立回归需旧工程不可读、无内存替身，并比较完整账户与独立decimal核算。"
+    },
+    {
+      "priority": "P1",
+      "action": "将_runtime的19个原样模块、7个单import替换和原函数体clock分别登记，保留_frozen原件；在第10/11轮按计划重测真实运行闭包，不以本轮文本审查提前宣布第05轮导入问题已通过。",
+      "acceptance": "新进程直接导入models/strategies/replay且无旧binance_robot/源仓读取；本轮及第05轮历史证据保留为不可覆盖的快照，新回归形成单独收据。"
+    }
+  ],
+  "checks_performed": [
+    "只读source carry_native与新仓execution全文/AST，证明精确只有3条允许import替换。",
+    "只读native成本与quote函数、外部runner的paper函数及execution的标识符赋值，抽取纯函数而不导入旧交易工程。",
+    "运行60组纯Decimal报价及3组纯instrument metadata对照，全部精确一致；没有创建原生引擎、订单或账户。",
+    "核对26个_runtime模块的逐字差异、7条精确clock导入映射及clock原函数AST；保留一次过窄检查谓词和纠正说明。",
+    "未读取root36账户收据、其他专家/主审意见或2026/V01/V02；未覆盖r05证据、未运行独占writer、训练或策略搜索。",
+    "只写repro私有check_r06.py、checks-r06.json、checks-r06-runtime.json、checks-r06-instrument.json及r06.json。"
+  ],
+  "unresolved": [
+    "完整账户的独立隔离重放与读集回归留待授权轮次；本轮支持仅限代码适配及纯函数/元数据等价。",
+    "源账户逻辑的经济假设是否合理、每日quote是否代表可执行市场、借贷模型是否充分，应由对应执行审查证据判断，不能由AST等价单独推出。",
+    "最终环境/依赖制品及全局hash gate仍须覆盖本轮所核对的运行文件。"
+  ],
+  "independence_statement": "本结果为repro工程复现AI角色的隔离审查，仅使用选定源码、当前新仓适配及自有AST/纯函数检查。未读取其他专家/主审结论或root账户对照收据，未冒充人类专家或新独立市场样本。未读取2026经济数据、V01/V02或2026账户，未修改源/交付仓及冻结spec/model/account/verification/gates，未运行独占writer、账户重放、训练或策略搜索。没有派生代理或预写后轮；第05轮首次失败证据仍保留。"
+}

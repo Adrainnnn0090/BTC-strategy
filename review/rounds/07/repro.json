@@ -1,0 +1,80 @@
+{
+  "round": 7,
+  "role": "repro",
+  "topic": "敞口、止损与跨年风险",
+  "conclusion": "新仓保存快照的已登记family/整数年份入口和本仓训练读集已有有效保护，但公开feature_matrix、完整输入日历和禁读路径别名尚未实现一致的读前拒绝；合成检查发现5个API边界及4个路径谓词缺口，均未打开真实禁读材料。最终风险说明还须明确入场预算不是持续gross cap、止损触发不是保证成交损失上限，跨年仓位沿用入场风险与融资；本轮为构建阶段边界检查，不判定最终交付失败。",
+  "verdict": "qualified",
+  "evidence": [
+    {
+      "source": "/workspace/BTCExpertReview/workspaces/repro/checks-r07.json:code_hashes_at_start,code_hashes_at_end,code_snapshot_stable",
+      "actual_check": "新增check_r07.py保存artifacts/models/training三接口起止SHA，完全一致。本轮仅使用合成路径/日期、只读谓词和内存read/guard-install哨兵；任何需要读数据的异常调用在文件打开前由哨兵终止，没有安装训练audit guard、执行fit或打开真实2026/V01/V02文件。"
+    },
+    {
+      "source": "/workspace/BTCExpertReview/workspaces/repro/checks-r07.json:synthetic_public_api_pre_read_checks",
+      "actual_check": "13个API例中，annual_states/refit的未知family、整数2026/2017，reconstruct未知family及末日2026均以ValueError在read/guard安装前拒绝。5个缺口为：2025.0浮点年被annual_states接受到manifest read、被refit接受到guard安装；首尾合法但中间含合成2026日期的reconstruct接受到manifest read；feature_matrix对未知family和中间合成2026日期均返回3×44矩阵。没有真实数据读取，不能称发生了禁读数据泄漏。"
+    },
+    {
+      "source": "/workspace/BTC-strategy/src/btc_strategy/models.py:11-17,20-22,41-50（保存快照）",
+      "finding": "feature_matrix只检查days[0]和days[-1]，未知family落入通用CAL44；range成员判断允许整数值相等的2025.0。完整日历验证及严格year类型应在计算因子和加载manifest前统一执行，不能仅依赖PRICE47分支自带的更强日历检查。"
+    },
+    {
+      "source": "/workspace/BTCExpertReview/workspaces/repro/checks-r07.json:synthetic_path_predicates",
+      "actual_check": "14个合成路径谓词中，../和绝对/tmp逃逸、artifacts/models/training_inputs/data下的2026+、V01-/V02-完整前缀均在resolve阶段拒绝，合法2019模型路径被允许。4项按本轮禁读合同应拒绝但未拒绝：裸V01、裸V02、小写v01-retained-validation、provenance/folds/2026占位路径。只调用resolve_artifact，不打开这些占位文件。"
+    },
+    {
+      "source": "/workspace/BTCExpertReview/workspaces/repro/checks-r07.json:training_role_predicates,physical_training_files_present_count,outside_root_training_predicate_scope",
+      "actual_check": "14项训练role谓词全部符合预期：仅当前family/year训练输入和模型、manifest/schema可读；本仓回放context、价格缓存、test分集、targets、provenance测试收据、其他family/year及旧源仓均拒绝。48份按年/家族训练输入文件存在，仅做文件存在性清点未读内容。谓词对一般ROOT外文件仍允许，故这属于本仓角色隔离而不是通用文件系统能力沙箱；实际refit的固定相对加载入口另受artifacts路径解析约束。"
+    },
+    {
+      "source": "/workspace/BTCExpertReview/workspaces/repro/checks-r07.json:budget_not_gross_cap_pure_counterexample,risk_document_paths_seen; /workspace/BTCStrategyResearchLedger/lab/carry_native.py:48-61,75-81",
+      "actual_check": "完全合成的持仓未完成平仓情形：100资本以25%预算开空，价格升60%后空头名义额40、净值85，gross/equity约47.06%，已超过25%入场比例，例中还未计手续费/融资。源实现以当前净值在新开仓时定预算，持仓后不连续再平衡到该比例。当前根目录/docs尚未见风险Markdown文档，故未发现可直接核对的“预算即gross cap”文案，也不能宣布风险文档已合格。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/lab/carry_native.py:34-61,75-81,94-120; /workspace/BTCExpertReview/workspaces/repro/checks-r06.json:execution_checks",
+      "finding": "已核实保持不变的执行逻辑把stop_loss用于入场仓位净损益触发，并设置due=i+lag，随后才成交；跨年carry保留entry.risk、debt_at_entry及持续融资，annual_settlement可为false。工程/文档不能将触发百分比称为账户最大损失保证，不能将新年度policy视为自动重置旧仓风险，也不能把研究drawdown门槛称为运行时熔断。"
+    }
+  ],
+  "counterevidence": [
+    "整数2026、未知family及常见路径越界已有读前拒绝，本仓训练角色对test context等14项路径隔离检查均通过；不能把发现的别名/日历缺口笼统描述为完全没有保护。",
+    "本轮缺口来自合成占位路径或日期；没有打开真实禁读数据，也没有证明交付树实际包含任何2026/V01/V02数据。",
+    "48训练文件存在只证明物理分离材料已导出，不证明每份内容或访问日志已独立核验。",
+    "预算反例是纯数学边界说明，不是新市场样本或实际K02账户损失；止损真实成交和敞口数值仍由执行/风险证据及授权回放检验。",
+    "当前代码及文档正在构建，保存快照的缺口应修复后单独回归，不能自动升级为最终验收失败。"
+  ],
+  "recommendations": [
+    {
+      "priority": "P0",
+      "action": "统一公开API的family/year和日历验证：严格type(year)为int且在2018–2025，feature_matrix亦拒绝未知family；验证非空、价格等长、连续唯一递增日历、起点2017-01-01以及每个date均≤2025-12-31。所有验证置于read、guard安装及因子计算之前。",
+      "acceptance": "本轮13个合成API例均按注册合同读前处理；2025.0、未知feature family、中间夹未来/乱序/重复日期均ValueError且read计数为0，合法输入及已有预测精度不变。"
+    },
+    {
+      "priority": "P0",
+      "action": "在解析及全局清单层统一禁读边界，不只靠几个根目录和大小写前缀：对数据/模型/provenance经济文件的未来年度、裸V01/V02及大小写别名一致拒绝；允许的审查说明性metadata应由明确清单区分，不通过任意路径可读来扩大范围。路径规范化后再做拒绝。",
+      "acceptance": "本轮4个路径缺口及大小写/规范化等价例全部在文件打开前拒绝；目录逃逸继续拒绝，合法已登记2018–2025物料仍可读。用合成占位路径验证，不读取真实禁读件。"
+    },
+    {
+      "priority": "P1",
+      "action": "最终风险文档分别列入场预算比例、持仓后实际gross/equity、止损触发/延迟成交、账户drawdown门槛、跨年entry-owned风险与融资。不把预算描述为硬gross cap或把stop_loss描述为最大损失保证；若未来要硬cap则属于新实现，不能悄悄修改本次冻结策略。",
+      "acceptance": "九候选说明中的每个比例均有明确定义/分母/触发时点；文档明确本策略不持续再平衡到入场预算、止损可能因lag/跳价超过阈值，carry时原风险与融资延续。风险指标与预算字段分开呈现。"
+    },
+    {
+      "priority": "P1",
+      "action": "在后续授权复核中对训练guard形成新进程实际访问日志，确认只读当前训练输入/模型，不读test context；将ROOT外读取的用途限定并说明其范围，避免把本仓路径谓词宣称为通用安全沙箱。",
+      "acceptance": "合法refit运行的protected_reads仅含当前fold物料及已锁定代码/库；合成拒绝例在读前失败，未授权测试/回放context不可读，禁读年度始终无打开记录。本轮不执行训练以代替该后续验收。"
+    }
+  ],
+  "checks_performed": [
+    "只读三接口代码并保存稳定起止SHA；检查14个合成路径解析、13个公共API读前行为和14个训练role路径谓词。",
+    "以内存read/guard哨兵阻断所有异常API的数据读取及训练guard安装，未读真实禁读数据、训练内容或账户。",
+    "清点6家族×8年度训练输入文件48份；根/docs文档路径清点为空，未读取review目录或其他角色意见。",
+    "读取catalog字段寻找策略风险说明；其中既有历史绩效摘要未用于本轮计算或验收，未读取账户明细。",
+    "用完全合成持仓算式区分25%入场预算与约47.06%后续gross/equity，不计算新策略或账户表现。",
+    "只写本角色check_r07.py、checks-r07.json及r07.json；没有训练、账户重放、策略搜索、源/交付仓修改或第05轮导入回归。"
+  ],
+  "unresolved": [
+    "本轮4条路径与5条API缺口需在后续代码版本独立回归，当前仅保存稳定构建快照。",
+    "本轮只检查training_read_allowed谓词，未安装训练guard或执行refit，尚无自有真实训练访问日志。",
+    "最终风险文档尚未出现，工程边界与预算/gross/止损/carry语义仍待文档验收；实际账户风险不由本轮纯路径和数学检查替代。"
+  ],
+  "independence_statement": "本结果为repro工程复现AI角色的隔离审查，未读取其他专家/主审意见，未冒充人类专家或独立市场样本。检查当前新仓代码、文件存在性、catalog字段及完全合成路径/日期/预算算式；catalog中历史绩效摘要未用于本轮计算或验收。没有打开2026经济数据、V01/V02或2026账户，也未读训练输入内容或账户明细。未修改源/交付仓、冻结spec/model/account/verification/gates，未执行训练、独占writer、账户重放或新策略搜索。没有派生代理或预写后轮；仅提交第07轮。"
+}

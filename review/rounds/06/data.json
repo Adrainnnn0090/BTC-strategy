@@ -1,0 +1,73 @@
+{
+  "round": 6,
+  "role": "data",
+  "topic": "执行、滑点、融资与净值",
+  "conclusion": "新仓36个benchmark的日期/报价/订单成交和融资数据连接检查通过，LP35的BASE与DELAY两成本在i−lag信号、开仓数量、融资覆盖与逐日净值上可由现有原始账本精确重建；本轮未发现错日连接、缺失或重复借贷字段记录。",
+  "verdict": "supported",
+  "evidence": [
+    {
+      "source": "/workspace/BTC-strategy/artifacts/catalog.json:strategies.source_study,recipe.id；artifacts/accounts/*/{BASE,STRESS,SEVERE,DELAY}.json.gz；/workspace/BTCExpertReview/workspaces/data/r06-checks.json:basic",
+      "fact": "9策略×4成本共36个benchmark文件逐一与catalog所指源账户字节摘要一致。本轮实际检查全部105192个mark；每账户2922行精确覆盖2018-01-01…2025-12-31，没有日期缺失、重复或重排。mark.index与market日期索引、reference_price与对应market价格逐行精确相等。"
+    },
+    {
+      "source": "/workspace/BTC-strategy/src/btc_strategy/costs.py:1–7；artifacts/accounts/*/*.json.gz:marks.bid,marks.ask,fills.price,fee；/workspace/BTCExpertReview/workspaces/data/r06-checks.json:basic",
+      "fact": "36账户所有bid/ask按成本case指定slip与0.01报价tick独立Decimal复核，BUY用ask、SELL用bid；fill费用为USDT且在原冻结1.01e-8收费精度检查内。未用其他成本场景报价串联本账户。"
+    },
+    {
+      "source": "/workspace/BTC-strategy/artifacts/accounts/*/*.json.gz:orders,fills,native_account_report；src/btc_strategy/execution.py:66–79、108–114；/workspace/BTCExpertReview/workspaces/data/r06-checks.json:basic",
+      "fact": "各账户订单与成交一一对应，client_order_id及成交日唯一、index有序，order所有字段均保留在对应fill。fill.ts_event精确等于价格日标签次日UTC00:00+10ms；native原始钱包报告恰为初始行加每次fill一行，事件时间与fill一致。date是原价格日标签，不能直接以UTC事件日期替换其价格连接键。"
+    },
+    {
+      "source": "/workspace/BTC-strategy/artifacts/targets/*.json.gz:targets,entry_permission；src/btc_strategy/execution.py:59、108–114；/workspace/BTCExpertReview/workspaces/data/r06-checks.json:basic.i_minus_lag_open_signals_exact,deep",
+      "fact": "九份targets及权限各3287行并与market对齐。所有36账户OPEN均对应targets[i−lag]方向、entry_permission[i−lag]与正确policy_year，年末不新开仓。深核LP35 BASE首开价格日2018-01-01对应信号2017-12-31；DELAY首开2018-01-02对应同一信号，分别使用lag1/lag2。"
+    },
+    {
+      "source": "/workspace/BTC-strategy/artifacts/accounts/*/*.json.gz:trades,financing；src/btc_strategy/execution.py:34–36；/workspace/BTCExpertReview/workspaces/data/r06-checks.json:basic,missing_or_duplicate_financing_rows",
+      "fact": "全部36账户按已存short交易推导应计日区间(entry_date,exit_date]，与实际financing日期及quantity序列完全一致，无缺失/重复日期；每行六个字段date/quantity/reference/annual/cost/cumulative齐全。逐行重算quantity×当日reference×annual/365及全局累计，精确匹配cost/cumulative和summary.financing_usdt；长交易融资为0。"
+    },
+    {
+      "source": "/workspace/BTC-strategy/artifacts/accounts/LP35/{BASE,DELAY}.json.gz:marks,fills,trades,financing,native_account_report；/workspace/BTCExpertReview/workspaces/data/r06-checks.json:deep",
+      "fact": "LP35两case各2922日、102次fills、51笔trades。根据现有fills独立更新原始现金/持仓，按i−lag目标和扣除累计债务后的预算重新计算开仓数量；逐日重算signed_qty、unrealized_pnl、exit_fee_reserve及equity=raw_cash−financing_total+unrealized_pnl−exit_fee_reserve，所有Decimal差为0，且每次fill原生钱包total精确对应。"
+    },
+    {
+      "source": "/workspace/BTCExpertReview/workspaces/data/r06-checks.json:deep.financing_rows,financing_total,terminal_flat",
+      "fact": "LP35 BASE融资369行，累计42.35031689972103844732876716；DELAY融资368行，累计45.08542197678846527432876718。深核从持仓逐日重建确认开空当日不计、持空至平仓当日计息，期末平仓，交易表gross/fees/financing/pnl与持仓账本逐项精确相等。"
+    }
+  ],
+  "counterevidence": [
+    "原生钱包报告total未直接扣模拟融资；净值通过单独累计debt扣减。读取total作为策略净值会漏融资，但本轮导出marks已正确扣除。",
+    "36账户融资日期基本检查使用已存trades推导；只有LP35 BASE/DELAY另由fills逐日独立重建持仓，因此不能声称本轮已经独立重建其余34账户的所有执行决定。",
+    "价格日标签与实际事件时间相差次日UTC零点再加10ms是冻结日线合约；时间戳出现翌日/翌年不等于读入翌日/翌年的新价格观测。本轮经济日期仍终止2025-12-31。",
+    "数据连接和账本算术通过，不认证日内行情、真实成交流动性或实际可借币费率。"
+  ],
+  "recommendations": [
+    {
+      "priority": "P0",
+      "action": "新交付数据字典分别命名价格日标签、信号日期和UTC事件时间；跨表连接以显式date/index与成本lag进行，禁止按订单ID日期直接合并market价格。",
+      "acceptance": "保留36账户2922个连续价格日与正确index；BASE/DELAY同一2017-12-31信号对应1/1和1/2价格日，fill事件钟均为对应标签次日+10ms。"
+    },
+    {
+      "priority": "P0",
+      "action": "借贷表保持每策略/成本/持空应计日一行，展示净值时明确raw wallet和financing-adjusted equity，并保留开仓日不计/平仓日计息的边界。",
+      "acceptance": "36账户融资日期覆盖无缺失/重复，累计cost精确等于summary融资；LP35两成本逐日净值和原生钱包对账误差均为0。"
+    },
+    {
+      "priority": "P1",
+      "action": "保留本轮只读数据连接脚本和证据，后续执行审计另行验证风险触发与引擎重放，不覆盖benchmark。",
+      "acceptance": "r06-check.py仅在角色证据位置输出；对外不把本轮基于现有fills的复核写成全36账户引擎重放或独立风险触发重建。"
+    }
+  ],
+  "checks_performed": [
+    "新增独占r06-check.py与r06-checks.json，仅读取catalog、原始market/targets、36个benchmark及其原源账户字节摘要。",
+    "36账户105192个mark的日期/index/reference_price/报价检查；订单与fill一一对应、唯一性、手续费币种/精度、事件时间和原生报告逐行连接检查。",
+    "全部36账户OPEN的i−lag目标、权限及policy_year检查；融资字段完整性、按已存short交易推导的日期覆盖和每行Decimal应计/累计检查。",
+    "LP35 BASE与DELAY从fills独立逐日更新现金/持仓/债务/开仓数量/净值并核对交易与原生报告，最大Decimal差0。",
+    "未运行原writer、原生引擎或策略搜索，未读2026经济观测、review/verification结论或其他专家内容。"
+  ],
+  "unresolved": [
+    "深核只覆盖LP35两成本；本轮没有从头独立重建全部36账户的每个止损/止盈/追踪触发决定。",
+    "原始日线报价与真实可执行价格的对应、真实市场滑点与可借币融资条件不能由导出账本连接证明。",
+    "本轮没有重新运行原生引擎或独立writer，结果是冻结账本的只读核验。"
+  ],
+  "independence_statement": "保持角色隔离，仅核对共享原始事实、源账本与新仓raw导出工件；未读其他专家评分、意见、review/verification结论或主审结论，只写data角色目录。AI角色不是真实受聘专家或统计独立市场样本；仅完成第06轮，未预写后续轮次。"
+}

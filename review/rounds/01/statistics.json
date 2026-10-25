@@ -1,0 +1,68 @@
+{
+  "round": 1,
+  "role": "statistics",
+  "topic": "声明边界与研究合同",
+  "conclusion": "LP35满足已冻结的2018–2025历史数值门槛，但该结论仅是已消耗开发历史上的确定性复算；年度预测采用前期模型不使经自适应策略选择后的累计结果成为新鲜样本外证据，不能据此建立持续alpha、未来收益或日内回撤上限。",
+  "verdict": "qualified",
+  "evidence": [
+    {
+      "source": "studies/B109-long-profit-local-coordinate/registration.json:target_return_pct,strict_drawdown_pct,qualification,validation_read",
+      "finding": "冻结目标为STRESS累计净收益率≥10000%，四种成本路径的按日净值峰谷最大回撤均严格<35%；validation_read=false；开发期2018–2025已消耗。"
+    },
+    {
+      "source": "lab/b109.py:120；tools/analyze_b109.py:10–18,31",
+      "finding": "门槛不要求四成本收益都≥10000%。累计净收益定义为100×(末期净值/初始100−1)；原函数因初始资金为100而写作末期净值−100。最大回撤为100×max_t(1−E_t/max(100,E_1,…,E_t))，是日频观测净值相对历史峰值的回撤，不是最大单日亏损，也不是日内最大回撤。10000%目标对应终值至少初值101倍。"
+    },
+    {
+      "source": "studies/B109-long-profit-local-coordinate/accounts/LP35/{BASE,STRESS,SEVERE,DELAY}.json.gz:marks；goal-milestone-audit.json:cases",
+      "finding": "独立Decimal(精度60)只读复算，每本2922个日净值点且日期均在2018-01-01至2025-12-31。四本收益与最大回撤逐值精确等于现存milestone记录。BASE净收益11152.32012604027896155267123%、DD28.0682412334261928406524262795687385346588441625713107065325%；STRESS净收益10127.91836738555674890594521%、DD28.2603557554346826691591549984865358380475175379517078732213%；SEVERE净收益7708.227237306363563476794521%、DD31.2814562302516000779258926102678139709375939815828660395289%；DELAY净收益4133.272288923211534725671233%、DD32.5857194324499245846820256042792994806880067115930205115628%。STRESS收益达标且四本最大DD严格小于35。"
+    },
+    {
+      "source": "studies/B109-long-profit-local-coordinate/spec.md:3,5；result.md:3,24；analysis.json:goal_candidates,unique_four_cost_paths,duplicate_groups",
+      "finding": "本研究固定四个新止盈臂并比较16条配方，四成本合并后为15条独特路径，LP40/LP50重复，唯一目标候选LP35。源材料明确标记历史自适应假设选择、全年2025属开发、没有新validation；原年度模型前期拟合与最终策略已见历史的选择是不同层次。"
+    },
+    {
+      "source": "studies/B109-long-profit-local-coordinate/goal-milestone-audit.json:qualification,period,status；profit-cap-trade-postmortem.json:qualification",
+      "finding": "现有审计自称PASS_HISTORICAL_NUMERICAL_GOAL，明确非fresh OOS、非已建立持续alpha，日频代理不提供日内或未来上限；交易归因也明确只属事后描述。"
+    },
+    {
+      "source": "/workspace/BTCExpertReview/shared/source_manifest.json:files；goal-milestone-audit.json:analysis_sha256",
+      "finding": "registration、verification、goal-milestone-audit和profit-cap-trade-postmortem四个优先冻结JSON的SHA256均与共享manifest一致；analysis虽未列于共享manifest，但实际SHA256 e15b11bc50692af0b43328a03adc1ae033669435dfed674fcbe6bfbc6ec5354f与milestone绑定值一致。verification.status=PASS、validation_read=false；其protected_reads清单未出现/2026/或/V01/、/V02/路径。"
+    }
+  ],
+  "counterevidence": [
+    "完整四成本簿和60位Decimal复算支持历史数字可重复，不能因为缺少新鲜样本外证据而否定历史门槛确已满足。",
+    "B109有四个事先固定的新止盈臂且model_fits=0，降低本次局部更改的自由度；但不消除前序研究与历史反复选择造成的选择偏差。",
+    "STRESS收益虽越过目标约127.918个百分点，DELAY仅4133.272%、SEVERE7708.227%；这些成本结果说明“目标通过”不能改写成“所有成本条件下都达到10000%”。"
+  ],
+  "recommendations": [
+    {
+      "priority": "P0",
+      "action": "在新仓交付的研究合同和结果页同时列出收益公式、初始100、2018–2025累计期限、STRESS收益≥10000%及四成本日频峰谷DD严格<35%的布尔组合。将“最大日回撤”明确写为“按日净值观测的历史峰谷最大回撤”。",
+      "acceptance": "文档公式与lab/b109.py:120及tools/analyze_b109.py:10–18相同；四成本表保留DELAY和SEVERE未达到收益目标的数值；不得改动冻结门槛。"
+    },
+    {
+      "priority": "P0",
+      "action": "把最终LP35历史成绩标记为“已消耗开发集上的历史数值达标”，另列“年度模型的前期拟合”和“最终策略未有新鲜样本外检验”两个层次，避免将逐年预测时序合规替换为最终选择无偏。",
+      "acceptance": "README/交付报告不得称已建立持续alpha或未来收益/回撤保障；未读取2026经济数据，不产生替代验证结果。"
+    },
+    {
+      "priority": "P1",
+      "action": "保留四成本净值、冻结文件哈希与本次只读公式检查的证据链；后续统计显著性或多重检验结论必须先界定完整试验家族与有效独立性。",
+      "acceptance": "本轮不报告p值、未经设计的置信度或六个AI角色投票形成的统计确信；后续若材料不足，明确列为未解决而非推算独立样本数。"
+    }
+  ],
+  "checks_performed": [
+    "读取共享protocol与source_manifest，未读取其他专家目录或评价。",
+    "四个manifest优先JSON进行SHA256确定性比对，全部相符；analysis通过现存milestone的analysis_sha256验证。",
+    "只读源码确认冻结目标逻辑、初始100及日频running-peak最大回撤定义；没有导入或执行独占写入器。",
+    "独立标准库gzip/json/decimal脚本复算LP35四成本既有账户全部2922个2018–2025 marks，收益和DD与既有审计精确相等，布尔门槛为true。",
+    "只统计既有protected_reads清单的禁读路径标记为0；未开启任何2026账户、V01/V02或2026经济文件。未搜索新策略参数、未重跑策略、未修改源仓。"
+  ],
+  "unresolved": [
+    "本轮只核对声明与统计合同，尚未独立验证所有年度拟合、标签成熟和特征时点；现有spec的前期拟合声明不能替代逐项后续证据审查。",
+    "完整前序自适应试验家族、等价路径和有效独立试验数量尚未核定；本轮不对收益显著性或未来胜率作推断。",
+    "没有新鲜样本外经济观察可用于验证最终LP35；2026依合同继续禁读。"
+  ],
+  "independence_statement": "本结论仅依据共享协议、共享源清单及冻结原始资料；未读取任何其他专家目录、评分、意见或主审结论。statistics为模拟AI分析角色，不是真实人类专家，也不是独立市场样本。本轮仅完成第01轮，不预写后续轮次。"
+}

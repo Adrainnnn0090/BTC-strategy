@@ -1,0 +1,54 @@
+{
+  "conclusion": "风险取舍要分别衡量入场预算、持仓gross、单笔basis亏损与连续净值DD；九策略主要共享同一历史危机，较小short gross没有证明整体风险显著更低。",
+  "scope_filter": "排除把不同分母的百分比、重复策略×成本×日期计数混为独立风险样本；不据当前数字向个人账户给仓位建议。",
+  "object_filter": "C02/C04只在合资格2020–2025折缩放；K02匹配post=.25的L05作单冷预算比较，L06只可作同时改变cold/post预算的共同模型参照；raw未启用风险字段不能当实际预算。",
+  "actions": [
+    "策略卡分别写明entry budget、pre/post gross、单笔亏损与日度峰谷DD，不混写为硬上限。",
+    "公开记录退出日前持仓敞口；仅post-fill为0会漏掉最大风险事件。",
+    "修复公开接口的浮点年份、未知family、夹入未来日期、路径别名与越界读前拒绝；保留r07初始失败快照，后续独立回归。",
+    "实盘或paper资格另设含融资保证金、盘中数据、延迟止损与跨年归属的验收；本次不声称已建立。"
+  ],
+  "chair_checks": [
+    "新仓20个边界检查及5个模型/规则检查目前全部通过；全部是合成或开发期数据，不打开2026经济文件",
+    "原完整账户目标与模型状态未为通过风险检查而修改；原SL和成本门槛保持不变"
+  ],
+  "open": [
+    "未来gross/盘中损失硬控制尚未实现和回测",
+    "参数选择后的风险排序缺统计独立证据"
+  ],
+  "round": 7,
+  "submissions": {
+    "statistics": {
+      "verdict": "qualified",
+      "conclusion": "C02/C04、K02和LP35的冻结账本支持多维历史风险取舍，不能支持某一策略统计上全面更安全：单笔入场basis损失、当前gross/equity和日度历史peakDD具有不同分母与时间口径，且C02/C04的同值DD来自同一段共同路径，跨年持仓也未随年度评价重新开始。",
+      "sha256": "2cd44ec0827bdfbb1859be68316c77f89689be65e50d4451dcfe6ac38b20dbb1"
+    },
+    "data": {
+      "verdict": "supported",
+      "conclusion": "只看post-fill仓位会系统漏掉退出日报价前的风险敞口，C02/C04的0.75也仅是2020–2025合资格折新开仓预算倍率；本轮原始字段和独立持仓重建均支持这两个限定，不能把post-fill最大值或0.75写成全期/日内敞口上限。",
+      "sha256": "7cfa5118935f6cdf8caad6980ab31951cf05b32f3a024ead77b88b502e1da87d"
+    },
+    "models": {
+      "verdict": "supported",
+      "conclusion": "六项候选的风险/预算继承符合注册，但风险变化不可混称：ME01/MX03只改冷启动新入场，TS04只收紧冷空头追踪回撤，LP35只改多头止盈；四者继承取消多头波动折扣。K02与median保留原多头折扣，且空头cold/post预算不同。实际跨年长单证明退出后冷却仍归入场年度所有，不能按当前年目标覆盖旧仓风控。",
+      "sha256": "5956b91cfd31e7b3a97d93e2cd2ae6d0a5026c844d387cc99755270e01937f27"
+    },
+    "execution": {
+      "verdict": "qualified",
+      "conclusion": "LP35 BASE的退出前最大gross事件独立核实为118.04558356%，平仓后gross才归零；75%入场预算和12%止损是开仓/触发规则，均不构成持有期敞口或实际亏损硬上限。",
+      "sha256": "d8c15f954c09f58dcab47f59520e2d6e3eff11a0bdb81531f87df5fa4ab09232"
+    },
+    "risk": {
+      "verdict": "qualified",
+      "conclusion": "九项方案主要改变退出、入场许可或入场预算，并非九个独立风险来源：K02/MX03的历史short gross下降未带来对应整体DD改善，九项最差DD均由共同2019—2020多头亏损区间主导；carry、延迟止损和钱包外融资仍要求单独paper风险验收，不能据历史DD<35%给实际风险保证。",
+      "sha256": "a137438d412cd18d47a8ac4afa5873e4bae0dd96c337df040b49a8c6d1124103"
+    },
+    "repro": {
+      "verdict": "qualified",
+      "conclusion": "新仓保存快照的已登记family/整数年份入口和本仓训练读集已有有效保护，但公开feature_matrix、完整输入日历和禁读路径别名尚未实现一致的读前拒绝；合成检查发现5个API边界及4个路径谓词缺口，均未打开真实禁读材料。最终风险说明还须明确入场预算不是持续gross cap、止损触发不是保证成交损失上限，跨年仓位沿用入场风险与融资；本轮为构建阶段边界检查，不判定最终交付失败。",
+      "sha256": "57073bb528a70f5f89cc2eec126efaf62b4df072f9553ede5a422e8a9be8ba97"
+    }
+  },
+  "not_external_human_audit": true,
+  "not_independent_market_samples": true
+}

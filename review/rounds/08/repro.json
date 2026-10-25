@@ -1,0 +1,77 @@
+{
+  "round": 8,
+  "role": "repro",
+  "topic": "多重试验与有效独立性",
+  "conclusion": "交付trial_registry完整、准确索引了115份B登记metadata并保留其原SHA，但115个cohort、1717个recipe条目、266个不同模型文件或九个策略名均不能当作独立试验/市场样本数；其中重复配方、共享模型及技术失败重登已有直接证据。当前选择性导出还需补失败/修正血缘及登记fit值与实际完成证据的区别，保持原FAIL和修正并存，不把消耗历史的重放/重拟合改称盲测。",
+  "verdict": "qualified",
+  "evidence": [
+    {
+      "source": "/workspace/BTCExpertReview/workspaces/repro/checks-r08.json:all_registration_checks_pass,registry_source_path_roster_exact_to_B_registrations,registration_checks",
+      "actual_check": "新增只读check_r08.py逐一重算trial_registry全部115条原B registration SHA，并核对recipe_count/recipe_ids，全部匹配；行路径集合与源studies/B*/registration.json完整相等。只读B登记metadata，不读取V登记或任何2026经济数据。registry自身明确recipe条目含继承/重复、有效总试验数未知、没有PBO/DSR认证。"
+    },
+    {
+      "source": "/workspace/BTCExpertReview/workspaces/repro/checks-r08.json:recipe_entry_count_not_independent_tests,same_full_recipe_array_groups,most_repeated_recipe_names_not_independent_trials",
+      "actual_check": "登记recipe条目合计1717；4对完整recipe数组规范化JSON完全相同：B100/B100A、B60/B60A、B64/B64A、B88/B88A。T12/Y01/L06名字分别出现44/43/40次。配方名字重复可能是继承或其他命名空间复用，不能直接去重为有效试验数；完整数组相同也不代表两次登记产生独立经济样本。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/studies/B88-short-net-loss-families/original-failure.log; /workspace/BTCExpertReview/workspaces/repro/checks-r08.json:technical_failure_registered_vs_actual_model_files",
+      "actual_check": "原B88日志在train进入verify时因read guard拒绝checks.json而中止。B88/B88A在registry的reported_new_fits均为392，但只清点2018–2025源模型文件得到B88为0、B88A为392。登记值是原计划/声明字段，不能当成实际完成fit或独立成功实验数量；没有模型存档也不单独估计隐藏运行次数。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/studies/B64-retained-same-window-comparison/failure.md; /workspace/BTCStrategyResearchLedger/studies/B31-constant-sizing-controls/verifier-correction.md; /workspace/BTCStrategyResearchLedger/studies/B109-long-profit-local-coordinate/spec-metadata-correction.json",
+      "finding": "B64明确保留原verifier FAIL，B64A是观察原结果后的工程参照修复并要求重现原账户；B31修正说明明确不能宣称原冻结verifier通过；B109更正仅为测试耗时文字笔误，绑定原spec/日志SHA且不改经济数值。这些不同性质应分别标注，不统一改写为原试验PASS、也不当作新盲测。"
+    },
+    {
+      "source": "/workspace/BTCExpertReview/workspaces/repro/checks-r08.json:selected_failure_correction_retention,raw_registration_copies_present_in_delivery",
+      "actual_check": "检查14份选定原技术失败/修正材料：源文件均存在，当前provenance仅精确保留3份（B31 verifier correction、B103 original verification failure、B109 spec correction）；另11份缺少对应副本。115份登记中只有15份原JSON在新仓provenance可本地重算，存在的15份SHA均正确。因此registry为有原hash的metadata索引，当前选择性导出不能声称离线完整保留所有登记原件及失败史。"
+    },
+    {
+      "source": "/workspace/BTCExpertReview/workspaces/repro/checks-r08.json:strategy_numeric_family_wiring,same_numeric_family_set_groups,all_current_model_file_digests_match",
+      "actual_check": "只抽取新仓rebuild_context函数，在受控namespace用合成context/_rebuilt回调观察真实分支，不运行模型或策略。LP35/TS04/ME01/MX03都引用base_tree+price47+short_huber；Y01/C02都引用base_tree+stop44；B88A_S03与高收益组共享base_tree+price47，K02也共享base/stop/huber。266模型文件hash均匹配且各自不同，但不同文件/策略名/风险覆盖不是不同训练数据或独立市场样本；本轮未估计有效N。"
+    }
+  ],
+  "counterevidence": [
+    "registry的115条路径、原SHA和recipe计数均正确，且明确不把条目数作为独立试验数；不能据选择性导出缺项断言其伪造登记或宣称已做多重检验认证。",
+    "不同策略即便共享预测模型，也可因入场、风险、预算或止盈规则而产生不同账户；本轮共享家族证据不等于证明所有策略输出相同。",
+    "14份失败/修正只是本轮选定样本，不是完整失败清单；缺11份副本也不代表源文件被删除或改写，原源仍保留。",
+    "技术失败重登、解释性修正、观察后工程reconciliation与经济参数搜索是不同事件，不能全部按一个新策略试验计数或全部从研究历史抹去。",
+    "没有读取新的V/2026经济数据，也没有运行边界修复回归、训练或账户重放，因此本轮不增加新的独立测试证据。"
+  ],
+  "recommendations": [
+    {
+      "priority": "P0",
+      "action": "在registry旁增加append-only事件/证据索引，区分原注册、技术中止、原verifier FAIL、独立参照修正、文字metadata修正、修正版验证和实际完成输出；保留每项source路径及原SHA、与后继登记的关系，至少补齐本轮选定缺失失败/修正原件或明确未随包分发。原FAIL不可被修正版PASS覆盖。",
+      "acceptance": "B31、B64/B64A、B88/B88A、B103/B103A等可从新仓索引追到原失败/修正及原hash；已提供副本hash逐项相等，缺件有明确状态；没有把原失败登记改名为PASS或删掉原证据。"
+    },
+    {
+      "priority": "P0",
+      "action": "将reported_new_fits明确标为登记声明/计划，不与实际完成模型数、训练收据或新独立试验数混用；registry范围说明保留“仅B登记metadata”及有效总试验数未知。若保留1717合计，仅称recipe entries并说明继承控制、命名空间、技术重试和内层搜索未被独立计数。",
+      "acceptance": "B88的392登记声明与0存档模型明确并列、B88A的392状态另有实际证据；界面/文档不存在“115或1717独立试验”“392独立验证”或未经计算的PBO/DSR认证表述。"
+    },
+    {
+      "priority": "P1",
+      "action": "把九候选→模型家族/年度state/policy/风险覆盖的血缘图作为交付metadata；按研究窗口与共享样本说明重放和重拟合的证据性质，避免以九个名字或多个相同pipeline包装出多份独立盲测。",
+      "acceptance": "本轮两组完全相同numeric家族集合及其余共享关系可机器复核；策略差异另在entry/risk/budget字段描述，重拟合仍标为消耗历史上的selected-final-estimator parity，不升级为新alpha/OOS证据。"
+    },
+    {
+      "priority": "P1",
+      "action": "明确registry离线审计的交付层级：若只给115条hash索引而非所有原登记JSON，写明当前15份可本地重算、其他由冻结源commit定位；若承诺离线完整登记审计，再补相应B原JSON及hash。不要把选择性导出称为完整legacy ledger。",
+      "acceptance": "说明与实际文件数相符；可本地核验件全部hash匹配，未分发件有source locator/commit/SHA，不以缺省空文件或重新生成registration代替原件。"
+    }
+  ],
+  "checks_performed": [
+    "只读trial_registry及源115份B registration metadata，逐项核对SHA、recipe名单和源路径集合；不读V文件。",
+    "规范化完整recipe数组识别4对重复，统计原recipe条目/重复名字但不估计独立试验数。",
+    "读取B88原失败、B64失败说明、B31修正、B109/B103A metadata更正；清点14份选定失败/修正副本并记录原SHA，核对15份本地原登记JSON。",
+    "只清点B88/B88A历史模型文件数；核对当前266个模型文件manifest摘要，不拟合、不生成预测。",
+    "用仅合成回调执行抽取的rebuild_context接线函数，得到九策略共享numeric家族；未运行真实模型、账户或边界修复回归。",
+    "14份具体source/destination路径及原SHA完整列于checks-r08.json:selected_failure_correction_retention，并另存failure_provenance_hint.json，供主agent只复制既定小型原日志/修正材料，不扩大检索。",
+    "只写本角色check_r08.py、checks-r08.json、failure_provenance_hint.json及r08.json；未修改源、交付仓或任何冻结件，未读其他角色意见。"
+  ],
+  "unresolved": [
+    "有效多重试验总数、未注册/丢弃假设和自适应搜索深度仍未知；本轮不能仅凭115登记或1717recipe条目计算可信有效N。",
+    "当前原失败/修正保留检查仅为14件样本，完整失败事件史及所有原登记离线副本未验收。",
+    "共享模型家族图不等于全部策略因果/相关性分析，本轮没有计算收益相关、PBO、DSR或新盲测结论。"
+  ],
+  "independence_statement": "本结果为repro工程复现AI角色的隔离审查，未读取其他专家/主审结论，不冒充人类专家或新的独立市场样本。只使用B登记metadata、选定技术失败/修正文件、截至2025模型文件摘要/存在性及新仓接线源码；没有读取V01/V02或2026经济数据/账户。未修改源/交付仓及冻结spec/model/account/verification/gates，未训练、重跑独占writer、重放账户、搜索新策略或回归边界修复。没有派生代理或预写未来轮次；仅提交第08轮。"
+}

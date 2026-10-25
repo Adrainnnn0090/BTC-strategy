@@ -1,0 +1,458 @@
+{
+  "status": "PASS",
+  "families": [
+    {
+      "family": "base_tree",
+      "fold_year": 2025,
+      "status": "PASS",
+      "cutoff": "2024-12-31",
+      "physical_rows": 2922,
+      "training_samples": 2603,
+      "new_fits": 7,
+      "states": [
+        {
+          "seed": 101,
+          "execution_lag": null,
+          "numeric_state_exact": true
+        },
+        {
+          "seed": 307,
+          "execution_lag": null,
+          "numeric_state_exact": true
+        },
+        {
+          "seed": 509,
+          "execution_lag": null,
+          "numeric_state_exact": true
+        },
+        {
+          "seed": 701,
+          "execution_lag": null,
+          "numeric_state_exact": true
+        },
+        {
+          "seed": 907,
+          "execution_lag": null,
+          "numeric_state_exact": true
+        },
+        {
+          "seed": 1103,
+          "execution_lag": null,
+          "numeric_state_exact": true
+        },
+        {
+          "seed": 1701,
+          "execution_lag": null,
+          "numeric_state_exact": true
+        }
+      ],
+      "protected_reads": [
+        "training_inputs/2025/base_tree.json.gz",
+        "models/manifest.json",
+        "models/base_tree/2025/EXTRA_CAL44_H60_S101.json.gz",
+        "models/base_tree/2025/EXTRA_CAL44_H60_S101.json.gz",
+        "models/base_tree/2025/EXTRA_CAL44_H60_S1103.json.gz",
+        "models/base_tree/2025/EXTRA_CAL44_H60_S1103.json.gz",
+        "models/base_tree/2025/EXTRA_CAL44_H60_S1701.json.gz",
+        "models/base_tree/2025/EXTRA_CAL44_H60_S1701.json.gz",
+        "models/base_tree/2025/EXTRA_CAL44_H60_S307.json.gz",
+        "models/base_tree/2025/EXTRA_CAL44_H60_S307.json.gz",
+        "models/base_tree/2025/EXTRA_CAL44_H60_S509.json.gz",
+        "models/base_tree/2025/EXTRA_CAL44_H60_S509.json.gz",
+        "models/base_tree/2025/EXTRA_CAL44_H60_S701.json.gz",
+        "models/base_tree/2025/EXTRA_CAL44_H60_S701.json.gz",
+        "models/base_tree/2025/EXTRA_CAL44_H60_S907.json.gz",
+        "models/base_tree/2025/EXTRA_CAL44_H60_S907.json.gz"
+      ],
+      "qualification": "Selected-final-estimator refit only; no new model/policy selection or OOS evidence."
+    },
+    {
+      "family": "stop44",
+      "fold_year": 2025,
+      "status": "PASS",
+      "cutoff": "2024-12-31",
+      "physical_rows": 2922,
+      "training_samples": 2603,
+      "new_fits": 7,
+      "states": [
+        {
+          "seed": 101,
+          "execution_lag": null,
+          "numeric_state_exact": true
+        },
+        {
+          "seed": 307,
+          "execution_lag": null,
+          "numeric_state_exact": true
+        },
+        {
+          "seed": 509,
+          "execution_lag": null,
+          "numeric_state_exact": true
+        },
+        {
+          "seed": 701,
+          "execution_lag": null,
+          "numeric_state_exact": true
+        },
+        {
+          "seed": 907,
+          "execution_lag": null,
+          "numeric_state_exact": true
+        },
+        {
+          "seed": 1103,
+          "execution_lag": null,
+          "numeric_state_exact": true
+        },
+        {
+          "seed": 1701,
+          "execution_lag": null,
+          "numeric_state_exact": true
+        }
+      ],
+      "protected_reads": [
+        "training_inputs/2025/stop44.json.gz",
+        "models/manifest.json",
+        "models/stop44/2025/CAL44_STOP.json.gz",
+        "models/stop44/2025/CAL44_STOP.json.gz"
+      ],
+      "qualification": "Selected-final-estimator refit only; no new model/policy selection or OOS evidence."
+    },
+    {
+      "family": "price47",
+      "fold_year": 2025,
+      "status": "PASS",
+      "cutoff": "2024-12-31",
+      "physical_rows": 2922,
+      "training_samples": 2603,
+      "new_fits": 7,
+      "states": [
+        {
+          "seed": 101,
+          "execution_lag": null,
+          "numeric_state_exact": true
+        },
+        {
+          "seed": 307,
+          "execution_lag": null,
+          "numeric_state_exact": true
+        },
+        {
+          "seed": 509,
+          "execution_lag": null,
+          "numeric_state_exact": true
+        },
+        {
+          "seed": 701,
+          "execution_lag": null,
+          "numeric_state_exact": true
+        },
+        {
+          "seed": 907,
+          "execution_lag": null,
+          "numeric_state_exact": true
+        },
+        {
+          "seed": 1103,
+          "execution_lag": null,
+          "numeric_state_exact": true
+        },
+        {
+          "seed": 1701,
+          "execution_lag": null,
+          "numeric_state_exact": true
+        }
+      ],
+      "protected_reads": [
+        "training_inputs/2025/price47.json.gz",
+        "models/manifest.json",
+        "models/price47/2025/PRICE_L7.json.gz",
+        "models/price47/2025/PRICE_L7.json.gz"
+      ],
+      "qualification": "Selected-final-estimator refit only; no new model/policy selection or OOS evidence."
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2025,
+      "status": "PASS",
+      "cutoff": "2024-12-31",
+      "physical_rows": 2922,
+      "training_samples": 2588,
+      "new_fits": 14,
+      "states": [
+        {
+          "seed": 101,
+          "execution_lag": 1,
+          "numeric_state_exact": true
+        },
+        {
+          "seed": 307,
+          "execution_lag": 1,
+          "numeric_state_exact": true
+        },
+        {
+          "seed": 509,
+          "execution_lag": 1,
+          "numeric_state_exact": true
+        },
+        {
+          "seed": 701,
+          "execution_lag": 1,
+          "numeric_state_exact": true
+        },
+        {
+          "seed": 907,
+          "execution_lag": 1,
+          "numeric_state_exact": true
+        },
+        {
+          "seed": 1103,
+          "execution_lag": 1,
+          "numeric_state_exact": true
+        },
+        {
+          "seed": 1701,
+          "execution_lag": 1,
+          "numeric_state_exact": true
+        },
+        {
+          "seed": 101,
+          "execution_lag": 2,
+          "numeric_state_exact": true
+        },
+        {
+          "seed": 307,
+          "execution_lag": 2,
+          "numeric_state_exact": true
+        },
+        {
+          "seed": 509,
+          "execution_lag": 2,
+          "numeric_state_exact": true
+        },
+        {
+          "seed": 701,
+          "execution_lag": 2,
+          "numeric_state_exact": true
+        },
+        {
+          "seed": 907,
+          "execution_lag": 2,
+          "numeric_state_exact": true
+        },
+        {
+          "seed": 1103,
+          "execution_lag": 2,
+          "numeric_state_exact": true
+        },
+        {
+          "seed": 1701,
+          "execution_lag": 2,
+          "numeric_state_exact": true
+        }
+      ],
+      "protected_reads": [
+        "training_inputs/2025/short_huber.json.gz",
+        "models/manifest.json",
+        "models/short_huber/2025/L1-101.json.gz",
+        "models/short_huber/2025/L1-101.json.gz",
+        "models/short_huber/2025/L1-1103.json.gz",
+        "models/short_huber/2025/L1-1103.json.gz",
+        "models/short_huber/2025/L1-1701.json.gz",
+        "models/short_huber/2025/L1-1701.json.gz",
+        "models/short_huber/2025/L1-307.json.gz",
+        "models/short_huber/2025/L1-307.json.gz",
+        "models/short_huber/2025/L1-509.json.gz",
+        "models/short_huber/2025/L1-509.json.gz",
+        "models/short_huber/2025/L1-701.json.gz",
+        "models/short_huber/2025/L1-701.json.gz",
+        "models/short_huber/2025/L1-907.json.gz",
+        "models/short_huber/2025/L1-907.json.gz",
+        "models/short_huber/2025/L2-101.json.gz",
+        "models/short_huber/2025/L2-101.json.gz",
+        "models/short_huber/2025/L2-1103.json.gz",
+        "models/short_huber/2025/L2-1103.json.gz",
+        "models/short_huber/2025/L2-1701.json.gz",
+        "models/short_huber/2025/L2-1701.json.gz",
+        "models/short_huber/2025/L2-307.json.gz",
+        "models/short_huber/2025/L2-307.json.gz",
+        "models/short_huber/2025/L2-509.json.gz",
+        "models/short_huber/2025/L2-509.json.gz",
+        "models/short_huber/2025/L2-701.json.gz",
+        "models/short_huber/2025/L2-701.json.gz",
+        "models/short_huber/2025/L2-907.json.gz",
+        "models/short_huber/2025/L2-907.json.gz"
+      ],
+      "qualification": "Selected-final-estimator refit only; no new model/policy selection or OOS evidence."
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2025,
+      "status": "PASS",
+      "cutoff": "2024-12-31",
+      "physical_rows": 2922,
+      "training_samples": 2588,
+      "new_fits": 14,
+      "states": [
+        {
+          "seed": 101,
+          "execution_lag": 1,
+          "numeric_state_exact": true
+        },
+        {
+          "seed": 307,
+          "execution_lag": 1,
+          "numeric_state_exact": true
+        },
+        {
+          "seed": 509,
+          "execution_lag": 1,
+          "numeric_state_exact": true
+        },
+        {
+          "seed": 701,
+          "execution_lag": 1,
+          "numeric_state_exact": true
+        },
+        {
+          "seed": 907,
+          "execution_lag": 1,
+          "numeric_state_exact": true
+        },
+        {
+          "seed": 1103,
+          "execution_lag": 1,
+          "numeric_state_exact": true
+        },
+        {
+          "seed": 1701,
+          "execution_lag": 1,
+          "numeric_state_exact": true
+        },
+        {
+          "seed": 101,
+          "execution_lag": 2,
+          "numeric_state_exact": true
+        },
+        {
+          "seed": 307,
+          "execution_lag": 2,
+          "numeric_state_exact": true
+        },
+        {
+          "seed": 509,
+          "execution_lag": 2,
+          "numeric_state_exact": true
+        },
+        {
+          "seed": 701,
+          "execution_lag": 2,
+          "numeric_state_exact": true
+        },
+        {
+          "seed": 907,
+          "execution_lag": 2,
+          "numeric_state_exact": true
+        },
+        {
+          "seed": 1103,
+          "execution_lag": 2,
+          "numeric_state_exact": true
+        },
+        {
+          "seed": 1701,
+          "execution_lag": 2,
+          "numeric_state_exact": true
+        }
+      ],
+      "protected_reads": [
+        "training_inputs/2025/short_median.json.gz",
+        "models/manifest.json",
+        "models/short_median/2025/MEDIAN_L1-101.json.gz",
+        "models/short_median/2025/MEDIAN_L1-101.json.gz",
+        "models/short_median/2025/MEDIAN_L1-1103.json.gz",
+        "models/short_median/2025/MEDIAN_L1-1103.json.gz",
+        "models/short_median/2025/MEDIAN_L1-1701.json.gz",
+        "models/short_median/2025/MEDIAN_L1-1701.json.gz",
+        "models/short_median/2025/MEDIAN_L1-307.json.gz",
+        "models/short_median/2025/MEDIAN_L1-307.json.gz",
+        "models/short_median/2025/MEDIAN_L1-509.json.gz",
+        "models/short_median/2025/MEDIAN_L1-509.json.gz",
+        "models/short_median/2025/MEDIAN_L1-701.json.gz",
+        "models/short_median/2025/MEDIAN_L1-701.json.gz",
+        "models/short_median/2025/MEDIAN_L1-907.json.gz",
+        "models/short_median/2025/MEDIAN_L1-907.json.gz",
+        "models/short_median/2025/MEDIAN_L2-101.json.gz",
+        "models/short_median/2025/MEDIAN_L2-101.json.gz",
+        "models/short_median/2025/MEDIAN_L2-1103.json.gz",
+        "models/short_median/2025/MEDIAN_L2-1103.json.gz",
+        "models/short_median/2025/MEDIAN_L2-1701.json.gz",
+        "models/short_median/2025/MEDIAN_L2-1701.json.gz",
+        "models/short_median/2025/MEDIAN_L2-307.json.gz",
+        "models/short_median/2025/MEDIAN_L2-307.json.gz",
+        "models/short_median/2025/MEDIAN_L2-509.json.gz",
+        "models/short_median/2025/MEDIAN_L2-509.json.gz",
+        "models/short_median/2025/MEDIAN_L2-701.json.gz",
+        "models/short_median/2025/MEDIAN_L2-701.json.gz",
+        "models/short_median/2025/MEDIAN_L2-907.json.gz",
+        "models/short_median/2025/MEDIAN_L2-907.json.gz"
+      ],
+      "qualification": "Selected-final-estimator refit only; no new model/policy selection or OOS evidence."
+    },
+    {
+      "family": "mining58",
+      "fold_year": 2025,
+      "status": "PASS",
+      "cutoff": "2024-12-31",
+      "physical_rows": 2922,
+      "training_samples": 2603,
+      "new_fits": 7,
+      "states": [
+        {
+          "seed": 101,
+          "execution_lag": null,
+          "numeric_state_exact": true
+        },
+        {
+          "seed": 307,
+          "execution_lag": null,
+          "numeric_state_exact": true
+        },
+        {
+          "seed": 509,
+          "execution_lag": null,
+          "numeric_state_exact": true
+        },
+        {
+          "seed": 701,
+          "execution_lag": null,
+          "numeric_state_exact": true
+        },
+        {
+          "seed": 907,
+          "execution_lag": null,
+          "numeric_state_exact": true
+        },
+        {
+          "seed": 1103,
+          "execution_lag": null,
+          "numeric_state_exact": true
+        },
+        {
+          "seed": 1701,
+          "execution_lag": null,
+          "numeric_state_exact": true
+        }
+      ],
+      "protected_reads": [
+        "training_inputs/2025/mining58.json.gz",
+        "models/manifest.json",
+        "models/mining58/2025/EXTRA_DYNAMICS_L60.json.gz",
+        "models/mining58/2025/EXTRA_DYNAMICS_L60.json.gz"
+      ],
+      "qualification": "Selected-final-estimator refit only; no new model/policy selection or OOS evidence."
+    }
+  ],
+  "scope": "Sampled final2025 selected configurations only; all56 states exact. No inner-selection rerun, other years not refitted."
+}

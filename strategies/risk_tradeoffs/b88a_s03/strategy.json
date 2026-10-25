@@ -1,0 +1,23 @@
+{
+  "id": "B88A_S03",
+  "category": "risk_tradeoffs",
+  "description": "P02多头不变，后冷空头预测由Huber损失改为absolute_error对应中位数目标；仍按种子/lag平均。",
+  "model_families": [
+    "base_tree",
+    "price47",
+    "short_median"
+  ],
+  "implementation": "btc_strategy.strategies.compose",
+  "source_study": "studies/B88A-short-net-loss-families",
+  "period": [
+    "2018-01-01",
+    "2025-12-31"
+  ],
+  "new2026validation": false,
+  "source_recipe": {
+    "id": "S03",
+    "kind": "MODEL",
+    "stream": "MEDIAN"
+  },
+  "risk_qualification": "回撤取舍有限，不代表低风险或未来回撤上限。"
+}

@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/workspace/BTCStrategyResearchLedger/tools/verify_b31.py", line 108, in <module>
+    if __name__=='__main__': main()
+                             ^^^^^^
+  File "/workspace/BTCStrategyResearchLedger/tools/verify_b31.py", line 28, in main
+    assert set(training['protected_reads'])=={
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

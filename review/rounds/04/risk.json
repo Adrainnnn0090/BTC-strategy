@@ -1,0 +1,160 @@
+{
+  "round": 4,
+  "role": "risk",
+  "topic": "因子可得性与来源时点",
+  "conclusion": "缺失不能被统一解释为现金或用数值补齐消除：冻结模型None可触发已注册冷启动空头，CASH、warmup、未覆盖日期和mining过期各有不同语义；保留这些状态及来源掩码才能解释历史风险，不能用补零、后来的模型或来源未知值取得未来交易资格。",
+  "verdict": "qualified",
+  "evidence": [
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/lab/full_retained.py:4-22,36-40; /workspace/BTCStrategyResearchLedger/lab/price_trail_activation.py:35-52; /workspace/BTCStrategyResearchLedger/lab/b82.py:57-79; /workspace/BTCStrategyResearchLedger/lab/exit_coordinate.py:23-26",
+      "finding": "比分数组初始化为None，H03只要任一核心头为None就保持None；available表示相应日期存在封存预测记录，并不等于每个头非空或所有原始因子新鲜。frame即使核心头仍为None也会对已覆盖日期置available=true；history还要求末日双头None且available=false。不能把available当作PIT认证或把未覆盖日期假装为可交易日期。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/lab/b16.py:89-100,113-129; /workspace/BTCStrategyResearchLedger/lab/entry_permissions.py:8-25; /workspace/BTCStrategyResearchLedger/lab/b12_signals.py:43-57; /workspace/BTCStrategyResearchLedger/lab/faster_cold_short.py:24-40",
+      "finding": "训练成熟样本不足时原模型列入cold_models，测试按冻结模型是否存在输出真实预测或整列None；不是调用未来模型补齐。None禁止相应长头active并重置POS1/POS3连续正分数；但LP35/TS04父链另有模型缺失冷启动价格规则，在非CASH、日期available、i>=252与指定MA条件成立时仍可产生空头方向，再由权限门控制新入场。因此模型None不等于整账户必定现金。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/lab/b12_signals.py:45-69; /workspace/BTCStrategyResearchLedger/lab/exit_coordinate.py:55-58; /workspace/BTCStrategyResearchLedger/lab/faster_cold_short.py:35-38; /workspace/BTCStrategyResearchLedger/lab/conditional_short.py:51-66; /workspace/BTCStrategyResearchLedger/lab/carry_native.py:46-60",
+      "finding": "CASH是年度政策的显式选择：长头score视为None且short/cold分支要求model!=CASH；与模型不存在状态不同。后冷启动MODEL空头门要求learner非None且>0，NaN/Inf被拒绝，不能以0或正数替代缺失。新入场权限不修改既有entry的风险快照；方向改变可能按场景lag使旧仓SIGNAL退出，不能据“新入场禁用”保证瞬时零敞口。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/lab/signals.py:99-105; /workspace/BTCStrategyResearchLedger/lab/sgd.py:25-27; /workspace/BTCStrategyResearchLedger/lab/tree_factors.py:74-78; /workspace/BTCStrategyResearchLedger/lab/mining_features.py:77-84; /workspace/BTCStrategyResearchLedger/lab/b12_signals.py:59-64; /workspace/BTCStrategyResearchLedger/lab/conditional_short.py:56-60",
+      "finding": "前252行归零是明确的warmup特征编码，原价格目标在i<252保持long=false、冷价格门也要求i>=252；不代表这些零是观察到的经济信号。波动缺失只在未使用的warmup预算允许scale=1以满足正预算合同；i>=252仍缺波动则抛错。不得扩张此例外为warmup后任意缺失补零或默认放开预算。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/lab/mining_features.py:1,7-15,22-28,48-74; /workspace/BTCStrategyResearchLedger/lab/b16_io.py:59-66; /workspace/BTCStrategyResearchLedger/lab/exit_coordinate.py:24; /workspace/BTCStrategyResearchLedger/studies/B31-constant-sizing-controls/decision.md:11-16",
+      "finding": "mining为observer-bounded重建，非PIT认证。明确使用60/120日lag、额外7200秒buffer、100确认深度、MAX_AGE_DAYS=3，按已观测推进的frontier选择；confirmed>=24192且age<=3才fresh。无观测/过期/确认不足时12个value为0，另保留observation_fresh和age mask及trace；这属于注册编码而非通用补零恢复可用。文件加载还要求manifest中的fold/role/hash与日期完整对齐。C04的H04父头明确取EXTRA_DYNAMICS_L60；不能把全部九项一概描述为直接依赖同一mining头。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/lab/mining_features.py:48-74（本轮纯人工输入执行）；/workspace/BTCStrategyResearchLedger/lab/faster_cold_short.py:10-40（本轮隔离函数执行）",
+      "calculation": {
+        "artificial_mining_cases": [
+          {
+            "case": "无观测",
+            "fresh": false,
+            "observation_fresh_mask": 0.0,
+            "all_12_values_zero": true,
+            "age_days": 90.0
+          },
+          {
+            "case": "观测距cutoff2天",
+            "fresh": true,
+            "observation_fresh_mask": 1.0,
+            "all_12_values_zero": false,
+            "age_days": 2.0
+          },
+          {
+            "case": "恰好3天",
+            "fresh": true,
+            "observation_fresh_mask": 1.0,
+            "age_days": 3.0
+          },
+          {
+            "case": "3天加1毫秒",
+            "fresh": false,
+            "observation_fresh_mask": 0.0,
+            "all_12_values_zero": true
+          },
+          {
+            "case": "cutoff后1毫秒才观测",
+            "fresh": false,
+            "observation_fresh_mask": 0.0,
+            "all_12_values_zero": true,
+            "observed_at_ms": null
+          },
+          {
+            "case": "确认后高度不足24192",
+            "fresh": false,
+            "observation_fresh_mask": 0.0,
+            "all_12_values_zero": true
+          }
+        ],
+        "artificial_cold_gate_i252": {
+          "heads_None_available_nonCASH": {
+            "direction": -1,
+            "new_entry_permission": true
+          },
+          "same_heads_replaced_with_numeric_zero": {
+            "direction": 0,
+            "new_entry_permission": false
+          },
+          "same_None_with_CASH": {
+            "direction": 0,
+            "new_entry_permission": false
+          },
+          "same_None_with_available_false": {
+            "direction": 0,
+            "new_entry_permission": false
+          },
+          "all_i_below_252_permissions_false": true,
+          "NaN_head_rejected": true,
+          "original_inputs_unchanged": true
+        }
+      },
+      "finding": "这些确定性例子证明状态替换会改变交易语义；它们全部是人工日期、价格与链观察，不是新经济样本、账户或策略收益检验。mining mask=0也没有在该模块统一强制交易CASH；已拟合模型可按原缺失编码继续输出，不能推断“旧因子=必定无仓”。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/lab/b109_io.py:13-37; /workspace/BTCStrategyResearchLedger/lab/b82.py:57-66; /workspace/BTCStrategyResearchLedger/lab/full_retained.py:11-18; /workspace/BTCStrategyResearchLedger/lab/b16_io.py:60-65",
+      "finding": "冻结读取检查绑定文件哈希、年度/角色、日期与seal；文件不存在、哈希不符或时钟不符会报错/断言失败，而不是自动变成正常模型None或合法mining缺失。该工程边界不能单独证明原始来源历史可得性；来源身份或时间未知不能拿一个能解析的数值替代证明。"
+    }
+  ],
+  "counterevidence": [
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/lab/mining_features.py:63-72,80-83; /workspace/BTCStrategyResearchLedger/lab/tree_factors.py:75",
+      "finding": "冻结实现本身确实使用有意的零值编码：mining缺失带双mask/trace、warmup前252行归零。不能把所有零值都判为数据造假，也不能为“拒绝补零”而修改既有已注册处理。需要禁止的是丢掉缺失状态或添加未注册插补。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/lab/faster_cold_short.py:35-38; /workspace/BTCStrategyResearchLedger/lab/conditional_short.py:62-66",
+      "finding": "正常历史cold并非无控制任意开空，仍要求非CASH、日期覆盖、价格条件和权限；post MODEL还要求正且存在的learner。合成检查中CASH/available=false分别阻断方向或新入场。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/lab/mining_features.py:1,71-72; /workspace/BTCStrategyResearchLedger/lab/b16.py:72-73",
+      "finding": "源代码主动声明observer-recorded frontier、ancestor access/canonical survival假设与非PIT认证；本轮没有读原观察历史，既不能额外认证未来可得性，也没有证据宣称现有来源时点一定失实。"
+    }
+  ],
+  "recommendations": [
+    {
+      "priority": "P0",
+      "action": "在交付仓增加状态语义表，分别列训练支持不足/model None、年度CASH、warmup、日期未覆盖available=false、mining stale/missing mask=0、文件/来源校验失败；逐项写出方向、入场许可和旧仓处理。",
+      "acceptance": "不出现“None一律现金”“available=true表示全因子新鲜”或“禁新开仓即旧仓立即消失”；保留本轮合成None→0改变冷分支、CASH和available=false不入场的例子。"
+    },
+    {
+      "priority": "P0",
+      "action": "把缺失状态作为可审计输入保存，禁止用0、未来模型预测、后来来源或前后填充把原始None改成存在的预测；只承认冻结规范中已有的mask/warmup编码。",
+      "acceptance": "原预测None位置、available覆盖、mining freshness/age mask与trace可单独检查；不以补零减少cold计数或恢复POS门；已有mining缺失零值必须保留mask=0而非改成fresh=1；不改冻结文件或读取2026验证。"
+    },
+    {
+      "priority": "P1",
+      "action": "在mining来源说明中并列记录lag60/120、7200秒buffer、100确认、age<=3日、最小确认后高度与observer/canonical假设；将时间未知标为未证明可得，不能折算成正常cold。",
+      "acceptance": "引用明确来源/哈希/年角色/观测cutoff；恰好3日仍fresh、3日加1毫秒stale、cutoff后观测不得提前使用；不把该重建认证成实盘数据供应保证。"
+    },
+    {
+      "priority": "P1",
+      "action": "把未来数据中断、来源身份未知或时钟错位列为尚未建立的实盘风险合同，保留现有历史结论的适用范围。",
+      "acceptance": "交付材料明确本轮未实现/验证在线故障处理；加载错误不能被静默吞掉再以默认数值产出“通过”结果，不将历史cold fallback直接宣传为任意未来缺源的安全方案。"
+    }
+  ],
+  "checks_performed": [
+    {
+      "check": "mining新鲜度/未来观测边界的纯人工确定性新检查",
+      "method": "指定Python -B只装载mining_features.py，用人工2000年日期、等间隔链时间、常量targets和人工观察事件，测试缺失、2日、3日、3日+1ms、cutoff+1ms及确认不足六例；不读取任何真实链或市场文件。",
+      "result": "6/6预期状态通过；非fresh12值全0且mask=0，fresh事件observed_at<=cutoff；未把未来观测用作当前fresh。"
+    },
+    {
+      "check": "模型None/零/CASH/可用性/warmup的纯人工确定性新检查",
+      "method": "AST隔离faster_cold_short的纯函数与b05.forecast_year，构造253个2017人工日、252个100及末日50的人工价格、明确flags与政策；分别传None/零/CASH/available=false/NaN。",
+      "result": "i252的None+available+非CASH按CT02得short/entry=true；补零绕过cold分支得flat/entry=false；CASH和unavailable均flat/entry=false；i<252权限全false；NaN明确拒绝、原输入未变。此为状态语义测试，不是LP35全链账户或经济收益测试。"
+    },
+    {
+      "check": "warmup与文件来源约束静态只读新检查",
+      "method": "只读signals、b12_signals、conditional_short、full_retained、b82、b16/b16_io、mining_features及b109_io的相关实现；未执行它们的train/test/replay/verify命令。",
+      "result": "确认warmup后缺波动抛错、年度文件/哈希/日期受约束、available非全因子freshness标志，未改源/模型/账户/验证门。"
+    }
+  ],
+  "unresolved": [
+    "未独立重建原始mining观测、ancestor访问或canonical存活历史；重建来源的PIT条件仍未被本轮认证。",
+    "本轮没有量化未来缺源或stale频率及其收益/回撤影响；合成输入不能当新独立经济样本。",
+    "现有冻结研究实现不是在线数据故障处置合同；未知来源不能只靠None、CASH或mask语义自动获得实盘资格。"
+  ],
+  "independence_statement": "本人为risk AI分析角色，不是人类专家或新独立市场样本；保持角色隔离，未读取其他专家意见/评分/主审结论，未读取V01/V02、2026经济数据或2026账户；无派生代理、无新策略优化、无冻结源/spec/模型/账户/verification/gates改动或独占写入器重跑，仅独占写risk/r04.json，未预写后轮。"
+}

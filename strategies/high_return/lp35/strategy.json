@@ -1,0 +1,26 @@
+{
+  "id": "LP35",
+  "category": "high_return",
+  "description": "TS04上只把多头固定止盈从300%提高至350%。",
+  "model_families": [
+    "base_tree",
+    "price47",
+    "short_huber"
+  ],
+  "implementation": "btc_strategy.strategies.compose",
+  "source_study": "studies/B109-long-profit-local-coordinate",
+  "period": [
+    "2018-01-01",
+    "2025-12-31"
+  ],
+  "new2026validation": false,
+  "source_recipe": {
+    "arm": {
+      "id": "LP35",
+      "take_profit": 3.5
+    },
+    "id": "LP35",
+    "kind": "LONG_PROFIT"
+  },
+  "risk_qualification": "历史收益较高；规则筛选使用已消耗开发历史，冷启动、退出时点和复利贡献大。"
+}

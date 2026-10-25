@@ -1,0 +1,78 @@
+{
+  "round": 4,
+  "role": "data",
+  "topic": "因子可得性与来源时点",
+  "conclusion": "选中PRICE47分支在数值上不依赖外部成交量，C04挖矿lag60的观测截止、确认和缺失mask也与冻结定义一致；这些代码因果性与来源字段检查不能把晚期档案升级为严格历史PIT证据，C04及相关来源结论仍须保持条件性。",
+  "verdict": "qualified",
+  "evidence": [
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/lab/b81.py:23–24、88–89、124–129；lab/volume_short_factors.py:7–21；studies/B81-reported-volume-long-core/folds/2025/models/PRICE_L7.json.gz:feature_spec",
+      "fact": "B81 P02实际stream=PRICE_L7，feature_spec为PRICE47/lag7。47列为CAL44基础44列，加252日暖启动后为1的marker及两个滞后7日的7/30日均价相对90日均价的log比；PRICE47直接用prices，observations不迭代也不取volume。7日滞后只作用新增比值，不是全部CAL44列延迟7天。"
+    },
+    {
+      "source": "/workspace/BTCExpertReview/workspaces/data/r04-check.py；r04-checks.json:price47",
+      "fact": "600×47合成矩阵的只读测试PASS：PRICE47输入不可迭代poison observations或两组完全不同外部成交量值均精确不变；对应VOL47阳性对照确实改变。修改索引401之后价格或直接截去该未来后缀，前401行精确不变；改变的后缀确实影响后部矩阵，检验不是恒零结果。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/studies/B81-reported-volume-long-core/source-clock-addendum.md:3–9；lab/b81.py:105–107",
+      "fact": "整批B81仍同时构造其他VOL47组，故“PRICE47数值不依赖volume”不等于整项研究没有读过volume或没有跨候选筛选。原addendum明确P02为价格控制，不能描述为volume alpha或依赖pre2021volume feed。该附注对历史具体volume字段/覆盖/vintage的可得性保持未核实，未改变冻结数值门槛。"
+    },
+    {
+      "source": "/workspace/BTCExpertReview/workspaces/data/r04-checks.json:c04_lineage；/workspace/BTCStrategyResearchLedger/lab/b31.py:13–21；lab/mining_ablation.py:8–20",
+      "fact": "冻结registration逐级核实C04→B30 P08→B29 Y04→B22 H04→B21 J06→B20 K13→B19 R09→B18 E01→B17 A05=EXTRA_DYNAMICS_L60。C04为匹配冷样本资格下的0.75缩放；其挖矿模型58列保留CAL44、2列观测mask、8列动态，4列协议/水平状态归零。lag60只作用挖矿来源，不是CAL44全部价格列滞后60日。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/lab/mining_features.py:7–10、22–28、48–73；studies/B16-lagged-mining-descendants/data-spec.md:5–15",
+      "fact": "对信号行day，挖矿cutoff_ms=(UTC00:00(day)−60天−7200秒)×1000；只选截至cutoff已记录且使已知高度向前推进的观测，取高度减100确认。fresh需观测存在、年龄≤3日且确认高度≥24192；stale时12个值全部为0，另保留fresh和log(1+min(age,90))/log91两项mask。availability原文是“observer-recorded frontier; ancestor access and canonical survival assumed”，不是公共实时发布证明。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/data/mining-lag-v1/2025/{train,test}.json.gz:lagged.60.trace,mask,values；/workspace/BTCExpertReview/workspaces/data/r04-checks.json:mining",
+      "fact": "实际2017-01-01至2025-12-31共3287行日期/摘要匹配；逐行重算lag60 cutoff、observed_at≤cutoff、confirmed=height−100、age/fresh/mask及stale中性值，全PASS，3244 fresh、43 stale。DYNAMICS拼接保留对应2+8列、4列归零，前252行全零。未重开混合年份原始header/observer档案。"
+    },
+    {
+      "source": "/workspace/BTCExpertReview/workspaces/data/r04-checks.json:mining.future_observation_suffix_invariance,future_header_suffix_invariance,delayed_lower_height_does_not_refresh",
+      "fact": "完全合成区块/观测的确定性检查PASS：添加晚于早期cutoff的更高高度观测、修改未来区块后缀、加入较低高度的迟到消息，均不改变早期因子；后者不能刷新进度年龄。此检查验证实现因果性，不验证原始记录时钟真假。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/data/mining-lag-v1/manifest.json:qualification；studies/B15-observer-arrival-audit/quality.json:status,limitations；studies/B16-lagged-mining-descendants/sources.md:4、8；studies/B79-reported-spot-volume-source-audit/verification.json:qualification,strict_point_in_time_qualified；data/reported-volume-walkforward-v1/manifest.json:strict_PIT",
+      "fact": "来源自评一致保留未认证：挖矿为conditional retrospective observer/ancestor reconstruction/not PIT-certified；节点时钟是记录者主张、运营者非独立、canonical过滤可能保留幸存分叉偏差、历史祖先可访问与实时重组未独立重建。volume审计仅证明源完整性与两个晚期快照一致，strict_PIT=false；不是历史字段发布/修订完整性认证。"
+    }
+  ],
+  "counterevidence": [
+    "未在本轮指定代码与实际lag60 trace检查中发现未来观测被提前使用；价格、挖矿合成后缀不变性及实际来源字段对齐均通过。",
+    "60日滞后、2小时时钟缓冲、100确认和3日stale处理是明确的约束，但无法单独消除档案发布晚、记录时钟未认证、canonical幸存筛选和祖先可访问假设。",
+    "两个晚期volume快照在3287个2017–2025日期数值一致的既有技术PASS可支持完整性，不能反证早期年份字段一定已发布；也不能把PRICE47价格控制的数值改善归因于volume。",
+    "本轮来源资格文件含归档提交/发布日期等元数据；这些不是2026交易行情、验证收益或模型输入，本轮未据其开展训练、参数选择或经济表现筛选。"
+  ],
+  "recommendations": [
+    {
+      "priority": "P0",
+      "action": "在新交付仓按真实特征分支标注P02/后继链为PRICE47价格控制，禁止使用“成交量alpha”或“全模型滞后7日”描述；C04标为lag60条件性观测重建而非PIT认证模型。",
+      "acceptance": "特征说明精确区分CAL44与新增滞后列；说明PRICE47不读取volume数值而整批研究包含VOL47兄弟组；C04显示100确认、2小时缓冲、3日fresh、mask及祖先/幸存链假设。"
+    },
+    {
+      "priority": "P0",
+      "action": "保留严格PIT=false/unknown与技术PASS两个独立字段；历史具体字段发布、vintage完整性、原始价格报价时间及可交易性映射无证据时明确unknown，不从后缀因果性或双快照一致性推定已认证。",
+      "acceptance": "每项来源的event/observed时间、publication/vintage证据、重建假设与未知项均可追溯；对外结论继续使用条件性历史回测表述。"
+    },
+    {
+      "priority": "P1",
+      "action": "把本轮3287行trace字段核验和合成后缀测试保存到新交付证据包，并在数据字典中说明stale值0代表缺失中性化。",
+      "acceptance": "不把43个stale日解释为零产块/真实低挖矿活动；能够复核时间截点和fresh判定，且不重跑冻结来源写入器。"
+    }
+  ],
+  "checks_performed": [
+    "只读相关价格/挖矿因子代码、C04九级registration血缘、来源资格与source-clock-addendum；未调用外部数据服务或下载新档案。",
+    "新增独占r04-check.py与r04-checks.json；用指定Python且禁用字节码，仅提取纯因子函数/价格特征类，无ledger模块整体执行。",
+    "PRICE47数值依赖poison/替换测试、VOL47阳性对照、价格未来后缀扰动与截短前缀不变性测试。",
+    "2017–2025实际lag60 3287行manifest摘要、日期、截止/观测/确认/年龄/fresh/mask/中性化和DYNAMICS列拼接检查。",
+    "合成挖矿未来观测、未来区块后缀、较低高度迟到消息不变性检查；没有拟合模型、重放账户、读取2026经济观测或其他专家工件。"
+  ],
+  "unresolved": [
+    "历史volume字段及其覆盖/修订vintage在2019等早期训练时点的确切发布证据仍未核实；不据后期文档版本断言当时不可观察，也不据回填日期断言当时可用。",
+    "原始价格报价时间/档案vintage与真实可交易性、观测节点墙钟真实性、同运营者来源依赖、历史祖先可取与实时分叉/重组路径未由本轮认证。",
+    "未重新验证原始header和observer档案；实际trace一致性依赖既有源摘要和原来源审计，不能补足未认证的历史公共feed可得性。",
+    "因果性只对本轮指定分支及测试扰动范围成立，不外推为所有研究来源或所有特征已经完成PIT资格审计。"
+  ],
+  "independence_statement": "保持角色隔离，仅用共享原始事实与冻结源证据，未读其他专家目录、评分、意见或主审结论，仅写data角色目录；未修改源仓或新交付仓。AI角色不是受聘真实专家或统计独立市场样本，仅完成第04轮，未预写后续轮次。"
+}

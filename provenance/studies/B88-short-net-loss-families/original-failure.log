@@ -1,0 +1,24 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/workspace/BTCStrategyResearchLedger/lab/b88.py", line 153, in <module>
+    globals()[a.command](a.year)
+  File "/workspace/BTCStrategyResearchLedger/lab/b88.py", line 70, in train
+    reg = read(STUDY/'registration.json'); reads = install_guard(year,'train'); verify(reg); folder = STUDY/'folds'/str(year)
+                                                                                ^^^^^^^^^^^
+  File "/workspace/BTCStrategyResearchLedger/lab/b88.py", line 59, in verify
+    for f,d in {**reg['sources'],**reg['inherited_sources']}.items(): assert sha(ROOT/f) == d, f
+                                                                             ^^^^^^^^^^^
+  File "/workspace/BTCStrategyResearchLedger/lab/io.py", line 9, in sha
+    def sha(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest()
+                                     ^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py", line 1019, in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py", line 1013, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/BTCStrategyResearchLedger/lab/b88_io.py", line 55, in hook
+    if not permitted(p, year, role): raise ValueError('B88 read denied: '+str(p))
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: B88 read denied: /workspace/BTCStrategyResearchLedger/studies/B88-short-net-loss-families/checks.json

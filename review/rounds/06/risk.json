@@ -1,0 +1,221 @@
+{
+  "round": 6,
+  "role": "risk",
+  "topic": "执行、滑点、融资与净值",
+  "conclusion": "冻结SL/TP是日度报价上的触发条件而非成交收益硬限：实际止损可在1/2天延迟及价格跳变后超阈值，且融资虽已扣策略净值和预算却未从Native钱包扣款，所以引擎margin/liquidation配置不能单独证明净融资后保证金安全或实际风险上限。",
+  "verdict": "qualified",
+  "evidence": [
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/lab/native.py:17,22-24; /workspace/BTCStrategyResearchLedger/lab/carry_native.py:47-61,108-120",
+      "finding": "BASE/STRESS/SEVERE的信号和风险到期lag为1天，DELAY为2天；STRESS与DELAY同为fee.003/slip.001/borrow.1。风险在decision报价计算含退出费储备与本笔融资的asset_pnl，再设置due=i+lag；due到期下的是市场单，成交按当日报价和成本，不是挂在SL/TP阈值的限价单。每日只由一个reference price生成decision/fill/mark报价，三阶段相隔10/20毫秒，Native插单延迟1毫秒不替代经济上的1/2日lag；无盘中OHLC路径或真实深度证明。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/studies/B109-long-profit-local-coordinate/accounts/LP35/BASE.json.gz:trades[0],fills[action=OPEN,date=2018-01-01],risk_events[event=CLOSED,date=2018-01-05]",
+      "calculation": {
+        "direction": -1,
+        "entry_date": "2018-01-01",
+        "entry_price": "13457.92",
+        "trigger_date": "2018-01-04",
+        "exit_date": "2018-01-05",
+        "exit_price": "17005.73",
+        "trigger_to_fill_days": 1,
+        "entry_basis": "74.90086124",
+        "net_pnl": "-19.94229556566230442082191781",
+        "financing_in_trade": "0.04709406566230442082191780822",
+        "SL_threshold_pct": 12,
+        "net_loss_pct_of_entry_basis": "26.624921577019645523133263520802741573389149991034201891908713118022886968876194",
+        "loss_excess_pct_points": "14.624921577019645523133263520802741573389149991034201891908713118022886968876194"
+      },
+      "finding": "真实冻结历史中SL12已出现26.6249%入场basis净亏损，足以否定“12%为成交最大亏损”。分母是q*entry_price+开仓fee，不是整个账户或组合DD；金额包括双边手续费与本笔融资。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/studies/B109-long-profit-local-coordinate/accounts/LP35/DELAY.json.gz:trades[6],fills[action=OPEN,date=2018-04-09],risk_events[event=CLOSED,date=2018-04-14]; /workspace/BTCStrategyResearchLedger/studies/B109-long-profit-local-coordinate/accounts/LP35/{BASE,STRESS,SEVERE,DELAY}.json.gz:STOP_LOSS trades",
+      "calculation": {
+        "DELAY_example": {
+          "direction": -1,
+          "entry_date": "2018-04-09",
+          "entry_price": "6730.15",
+          "trigger_date": "2018-04-12",
+          "exit_date": "2018-04-14",
+          "exit_price": "8014.43",
+          "trigger_to_fill_days": 2,
+          "entry_basis": "97.81243312",
+          "net_pnl": "-19.39939647052585288673972603",
+          "SL_threshold_pct": 12,
+          "net_loss_pct_of_entry_basis": "19.833262348893762890109492074354810815077288816552854196088318306829171739143830"
+        },
+        "all_four_case_STOP_LOSS_trades_checked": 12,
+        "realized_loss_greater_than_SL_threshold": 7,
+        "realized_loss_less_than_SL_threshold": 5,
+        "all_stop_due_dates_equal_exit_dates": true
+      },
+      "finding": "7笔短头最终亏损超过SL12；5笔长头止损最终亏损低于SL15，体现到期前可反弹，不能把STOP_LOSS原因反向解释为精确成交亏损。成本也会改变净触发日，BASE最严重的这笔止损不要求在名为SEVERE的情景中最严重，风险结果非简单单调。"
+    },
+    {
+      "source": "本轮隔离执行 /workspace/BTCStrategyResearchLedger/lab/short_payoff.py:44-80 与 /workspace/BTCStrategyResearchLedger/lab/lagged_short.py:11-35",
+      "calculation": {
+        "artificial_reference_prices_indices_0_to_5": [
+          100,
+          100,
+          100,
+          120,
+          140,
+          200
+        ],
+        "fixed_original_parameters": "SL12/TP50/arm10/trail12; fraction.25; fee.003/slip.001/borrow.1; original lot/reserve",
+        "L1": {
+          "entry_index": 1,
+          "entry_price": "99.90",
+          "trigger_index": 3,
+          "due_index": 4,
+          "exit_index": 4,
+          "exit_price": "140.14",
+          "entry_basis": "24.98980518",
+          "net_pnl": "-10.24005228616438356164383562",
+          "net_loss_pct_of_basis": "40.97691923728868206264197703"
+        },
+        "L2": {
+          "entry_index": 2,
+          "entry_price": "99.90",
+          "trigger_index": 3,
+          "due_index": 5,
+          "exit_index": 5,
+          "exit_price": "200.20",
+          "entry_basis": "24.98980518",
+          "net_pnl": "-25.27078605287671232876712329",
+          "net_loss_pct_of_basis": "101.1243820063935061408394833"
+        }
+      },
+      "finding": "同一人工日度跳变路径、同一原风险/成本，SL12在两种lag均正常触发和按due执行，但亏损分别约40.98%和101.12%入场basis。它是原固定标签方程的反例，不是市场预测、Native新账户、参数搜索或实盘爆仓证明；.25预算下basis亏损>100%也不等于整个100USDT账户已损失>100%。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/lab/carry_native.py:34-41,48,60,76-79,92,119-120",
+      "finding": "空头每个decision按q*当日reference_price*annual/365累计self.debt；净值=raw Native USDT cash - self.debt + unrealized_pnl - exit_fee_reserve，本笔止损净PnL也扣入场以来融资；后续entry budget因此扣融资。Native钱包本身未收到该debt扣款，adapter只保留独立debt/financing ledger；Native账户以MARGIN、leverage1、margin_init1、margin_maint.5、liquidation_enabled=true运行。因此融资并非遗漏净业绩，但引擎保证金/清算余额与融资后经济净值不是同一账本。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/studies/B109-long-profit-local-coordinate/accounts/LP35/{BASE,STRESS,SEVERE,DELAY}.json.gz:marks[-1],marks[*].financing_total/equity",
+      "calculation": {
+        "all_end_positions_flat": true,
+        "end_balance_reconciliations": [
+          {
+            "case": "BASE",
+            "native_raw_cash": "11294.67044294",
+            "adjusted_equity": "11252.32012604027896155267123",
+            "financing": "42.35031689972103844732876716",
+            "abs_reconciliation_error": "2.84E-24"
+          },
+          {
+            "case": "STRESS",
+            "native_raw_cash": "10308.70673705",
+            "adjusted_equity": "10227.91836738555674890594521",
+            "financing": "80.78836966444325109405479448",
+            "abs_reconciliation_error": "4.48E-24"
+          },
+          {
+            "case": "SEVERE",
+            "native_raw_cash": "8006.65491798",
+            "adjusted_equity": "7808.227237306363563476794521",
+            "financing": "198.4276806736364365232054793",
+            "abs_reconciliation_error": "3E-25"
+          },
+          {
+            "case": "DELAY",
+            "native_raw_cash": "4278.35771090",
+            "adjusted_equity": "4233.272288923211534725671233",
+            "financing": "45.08542197678846527432876718",
+            "abs_reconciliation_error": "1.8E-25"
+          }
+        ],
+        "max_cumulative_external_financing_div_adjusted_equity_pct": {
+          "BASE": "1.1373310510637930393651757183799728847296551572650735628910179219004466187935672",
+          "STRESS": "2.3296750559576568006701278722895466425401517591687261317511880340115826641906121",
+          "SEVERE": "7.3466863751151829662716457254173409581296374898451580337947774850341371336322091",
+          "DELAY": "2.6108950537007750271767240121369284021145404566066879078348770023973361299904779"
+        },
+        "max_ratio_date_each_case": "2019-03-04"
+      },
+      "finding": "平仓末日wallet cash减adjusted equity与外部融资对账，误差远小于原2e-8USDT容差；SEVERE历史累计融资与调整净值差异最大比率约7.35%。这些是可量化的账本差异，不是发现真实维持保证金违规。"
+    },
+    {
+      "source": "本轮人工保证金比较额算术反例；/workspace/BTCStrategyResearchLedger/lab/carry_native.py:34-41,119-120为账本结构依据",
+      "calculation": {
+        "hypothetical_native_equity": 60,
+        "external_financing": 15,
+        "fixed_maintenance_comparison_amount": 50,
+        "economic_equity_after_external_financing": 45,
+        "native_equity_ge_requirement": true,
+        "adjusted_equity_ge_requirement": false
+      },
+      "finding": "固定比较额50时，Native权益60会过线，而未入钱包融资15后的经济权益45会不过线；说明一般不能忽略外部融资来证明保证金安全。该反例不复现Native维持保证金公式，也不宣称实际LP35存在清算漏判。"
+    }
+  ],
+  "counterevidence": [
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/lab/carry_native.py:40-41,48,60,78,92; LP35四情景marks[-1]对账",
+      "finding": "策略净值、交易净PnL、后续预算确实扣融资，并有非正调整净值时报错；不能把“融资未入Native钱包”描述成回报完全漏算融资或净值未扣成本。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/studies/B109-long-profit-local-coordinate/accounts/LP35/{BASE,STRESS,SEVERE,DELAY}.json.gz:STOP_LOSS trades",
+      "finding": "12笔止损中5笔最终净亏损小于触发阈值，价格反弹可改善延迟成交；新反例证明的是没有固定成交亏损硬保证，不是延迟必然恶化每一笔交易。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/lab/carry_native.py:119-121; /workspace/BTCStrategyResearchLedger/studies/B109-long-profit-local-coordinate/goal-milestone-audit.json:qualification",
+      "finding": "原模拟确实启用Native liquidation并按注册执行/融资净值完成；但账本未完全合一和日度报价限制已限定外推。本轮未发现可证明历史实际清算应发生而未发生的具体违例，也未推翻既有日度历史目标。"
+    }
+  ],
+  "recommendations": [
+    {
+      "priority": "P0",
+      "action": "在交付仓风险合同把SL/TP改述为净入场basis上的触发阈值，并明确pending due=trigger+lag、到期市场成交、可能越过或回到阈值内。",
+      "acceptance": "必须保留BASE2018-01-01→01-05 SL12净亏26.6249215770%与DELAY2018-04-09→04-14 SL12净亏19.8332623489%的交易/触发/成交日期；分母写清entry basis，不当作组合DD或全账户亏损；不得把SL/TP写成保证成交价。"
+    },
+    {
+      "priority": "P0",
+      "action": "在净值和保证金说明中分列Native raw钱包、累计外部融资、融资后equity、退出费储备及Native margin/liquidation状态；引用既有账户对账。",
+      "acceptance": "末日flat时四情景raw_cash-equity≈financing，沿用原容差而不改冻结门；不能把融资说成未计收益，也不能仅凭liquidation_enabled=true宣称经济净融资保证金安全。"
+    },
+    {
+      "priority": "P1",
+      "action": "保留日度代理报价限制，展示原固定SL12/L1/L2人工跳变反例，不增设新策略参数或重新拟合。",
+      "acceptance": "示例明确40.9769%/101.1244%是人工单笔basis损失，非实际账户爆仓或未来损失预测；不把1ms Native延迟或fill/mark的10/20ms时序写成经济执行只有毫秒。"
+    },
+    {
+      "priority": "P1",
+      "action": "将真正的净融资后保证金/清算一致性列为未建立的实盘风险条件，本轮只作账本边界披露。",
+      "acceptance": "没有独立复现Native保证金公式与外部debt联动前，不给“融资后无清算风险”结论，也不反向指控LP35已发生漏清算；不修改冻结账户、融资账或重跑原writer来补齐叙述。"
+    }
+  ],
+  "checks_performed": [
+    {
+      "check": "LP35实际止损越界的确定性只读新检查",
+      "method": "指定Python -B读取四份2018—2025 LP35账户，连接trades STOP_LOSS、OPEN fill fee、CLOSED risk_event和marks索引；以80位Decimal重算basis=q*entry_px+open_fee及-net_pnl/basis，核对event due对应实际exit_date。",
+      "result": "12/12 due日期等于退出日；BASE/STRESS/SEVERE均trigger+1、DELAY trigger+2；7笔短头亏损>12%，5笔长头最终亏损<15%。最大已查越界BASE26.6249215770%对SL12。"
+    },
+    {
+      "check": "既有净值与钱包外融资差额只读新检查",
+      "method": "在四账户末日flat记录算raw_cash-equity-financing，并扫描全部marks的累计finance/equity比例；日期均先限制2018—2025。",
+      "result": "最大末日对账误差4.48e-24USDT，小于原2e-8容差；max融资/调整equity在SEVERE为7.3466863751%。最初用零误差精确相等断言被已存Decimal末位舍入触发，随后改为80位计算和既有2e-8容差，未改任何源或门。"
+    },
+    {
+      "check": "固定SL12下1/2日延迟人工跳变反例",
+      "method": "AST仅提取short_payoff常量/quote/commission/path_label与lagged_short.label，使用全人工64个2000年日期与[100,100,100,120,140,200,...]价格；原SL/TP/trail/fee/slip/borrow/lot不变。",
+      "result": "同在index3触发SL，L1按due4成交、basis损失40.9769192373%；L2按due5成交、损失101.1243820064%。没有Native账户、真实经济数据或参数搜索。"
+    },
+    {
+      "check": "外部融资与固定保证金比较额的人工算术边界",
+      "method": "Decimal计算Native equity60、外部融资15、比较额50时的前后权益比较，不调用Native引擎。",
+      "result": "60>=50而60-15=45<50，证明引擎权益与净融资权益比较结论可不同；不构成实际LP35 margin违例证据。"
+    },
+    {
+      "check": "日度风险/融资/引擎配置静态只读检查",
+      "method": "读取carry_native、native及lagged_short相关实现；未执行原freeze/train/test/replay/verify或其他账户写入程序。",
+      "result": "确认trigger+lag、日报价市场单、外部融资只进策略debt、引擎保证金参数/清算开启但钱包未扣该debt；未改任何冻结文件。"
+    }
+  ],
+  "unresolved": [
+    "本轮未重建Native保证金/清算算法的全部状态，不能判定真实历史曾有融资后保证金越线或漏清算；只读差额与人工边界证明账本非同一。",
+    "日度代理报价没有盘中价格/深度、真实借贷供给/利率跳变、真实滑点/清算路径证据，1/2日延迟情景不能保证未来极端缺口受控。",
+    "历史止损越界和人工极端路径不推翻原四成本日度数值目标，也不产生未来风险上限或新的独立市场验证样本。"
+  ],
+  "independence_statement": "本人为risk AI分析角色，不是人类专家或新的独立市场样本；未读取其他专家意见/评分/主审结论，未读V01/V02或2026经济数据/账户；未派生代理、新策略/参数搜索、修改冻结代码/spec/模型/账户/verification/gates或重跑独占writer，只独占写risk/r06.json，未预写后轮。"
+}

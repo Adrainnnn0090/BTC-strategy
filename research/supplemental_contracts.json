@@ -1,0 +1,40 @@
+{
+  "scope": "Nonstandard B-study contract filenames; not independent experiments",
+  "contracts": [
+    {
+      "source": "studies/B02-direct-sgd/controls-registration.json",
+      "destination": "provenance/studies/B02-direct-sgd/controls-registration.json",
+      "sha256": "ea4c636ae2674845f5c39dd33f4f0af5c91d5c76a08f5e67b7f21579179af154"
+    },
+    {
+      "source": "studies/B16-lagged-mining-descendants/data-registration.json",
+      "destination": "provenance/studies/B16-lagged-mining-descendants/data-registration.json",
+      "sha256": "a288157cfccb6b7f5430462bcbedd9e7a59d7710231fdcd26844675f9a6d618a"
+    },
+    {
+      "source": "studies/B49-cross-market-models/preparation-registration.json",
+      "destination": "provenance/studies/B49-cross-market-models/preparation-registration.json",
+      "sha256": "c44557b9a088457c24bb7bf72b19a9985251b7c7f18fb4fb0e1c11f2315aaa6b"
+    },
+    {
+      "source": "studies/B58-cross-count-long-models/source-preparation-registration.json",
+      "destination": "provenance/studies/B58-cross-count-long-models/source-preparation-registration.json",
+      "sha256": "e5dc21b5532c3a56897bdacb2131a1c2e3f213c5eef82f1aa3b10b067cc253cb"
+    },
+    {
+      "source": "studies/B74-funding-short-net-models/preparation-registration.json",
+      "destination": "provenance/studies/B74-funding-short-net-models/preparation-registration.json",
+      "sha256": "5c4a46969ae4f53368ca928ac5e5b426afca01c95451847e95329263ed2e0151"
+    },
+    {
+      "source": "studies/B80-reported-volume-short-models/preparation-registration.json",
+      "destination": "provenance/studies/B80-reported-volume-short-models/preparation-registration.json",
+      "sha256": "7b3d32e9abf3c1912637dae0b831626c0a41c60b94526734d07314f87704cf8a"
+    },
+    {
+      "source": "studies/B86-eth-short-net-transfer/preparation-registration.json",
+      "destination": "provenance/studies/B86-eth-short-net-transfer/preparation-registration.json",
+      "sha256": "b8992cb59f87aa598ef1b0712a737e8cf619f60247cf2b3870307ad1e8190d23"
+    }
+  ]
+}

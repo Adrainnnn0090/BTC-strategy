@@ -1,0 +1,144 @@
+{
+  "round": 2,
+  "role": "execution",
+  "topic": "年度分集与封存：年度信号时钟、i-lag、policy_year和跨年持仓",
+  "conclusion": "已检查的年度信号时钟与跨年持仓语义一致：年度信号状态重置不等于年度账户重置，B109关闭年末强平，已有仓位沿用开仓风险并接受滞后后的新年度方向；因此各年度收益不能视为独立清仓账户的收益样本。",
+  "verdict": "qualified",
+  "evidence": [
+    {
+      "来源": "/workspace/BTCStrategyResearchLedger/lab/b05.py:48—49；lab/price_trail_activation.py:35—51；lab/carry_native.py:108—114",
+      "事实": "forecast_year将12月31日信号分配给下一年度，年度预测包的代码断言区间为上一年12月31日至当年12月30日；Native在账户日i使用targets[i-lag]及entry_permission[i-lag]。账户日与合成引擎时间不同：日i报价被打在下一UTC日零点附近，本报告的入场日期均按保存的账户日期口径。"
+    },
+    {
+      "来源": "/workspace/BTCStrategyResearchLedger/lab/b12_signals.py:42—51；lab/entry_permissions.py:13—24；lab/exit_coordinate.py:55—58；lab/bear_short_overlay.py:24—25；lab/conditional_short.py:45—49",
+      "事实": "LP35继承的长仓方向链调用SignalFactory.targets；forecast_year变更时active重置。POS1权限的正分数连续计数也按forecast_year重置。重置后当日正分数和父趋势仍可立即重新激活，故重置不必产生空仓日。"
+    },
+    {
+      "来源": "/workspace/BTCStrategyResearchLedger/lab/b109.py:89—102、114；lab/carry_native.py:47—62、75—82",
+      "事实": "B109调用run_account(...annual_settlement=False)。持仓仅因最终账户日、启用时的年末结算、方向改变或风险到期而退出；禁用年末结算后，日期跨年本身不使仓位平仓。新入场始终禁止12月31日，且要求滞后target的policy_year与入场账户自然年一致。"
+    },
+    {
+      "来源": "/workspace/BTCStrategyResearchLedger/lab/carry_native.py:24、48—55、76—82；lab/long_profit_local_coordinate.py:14—20",
+      "事实": "入场时记录该target的risk和policy_year；持仓期止盈/止损/追踪及风控后冷却使用entry.risk。entry、peak、pending、allowed和融资debt不按年度清零。下一年度direction可以使旧仓退出，但不会以新年度预算或risk自动重平衡旧仓。LP35仅将long.take_profit改为3.5，风险目标数组在回放前构成。"
+    },
+    {
+      "来源": "/workspace/BTCStrategyResearchLedger/studies/B109-long-profit-local-coordinate/accounts/LP35/{BASE,STRESS,DELAY,SEVERE}.json.gz:trades、fills、marks",
+      "实际计算": "四情景共检查204笔交易；每种情景3笔跨年长仓，共12笔。每笔跨年交易在12/31与次年1/1的signed_qty相同并等于交易数量×方向；204笔交易的policy_year均等于实际入场账户年份。12/31新入场共0笔，PERIOD_CLOSE共0笔。DELAY另有2019-12-31的SIGNAL平仓，证明禁止的是新入场而非所有年末成交。",
+      "例证": [
+        {
+          "情景": "BASE",
+          "入场": "2020-04-30",
+          "退出": "2021-01-08",
+          "policy_year": 2020,
+          "quantity": "0.03944",
+          "退出原因": "TAKE_PROFIT"
+        },
+        {
+          "情景": "STRESS",
+          "入场": "2024-12-23",
+          "退出": "2025-02-25",
+          "policy_year": 2024,
+          "quantity": "0.10130",
+          "退出原因": "SIGNAL"
+        },
+        {
+          "情景": "DELAY",
+          "入场": "2020-05-01",
+          "退出": "2021-01-10",
+          "policy_year": 2020,
+          "quantity": "0.02806",
+          "退出原因": "TAKE_PROFIT"
+        }
+      ]
+    },
+    {
+      "来源": "/workspace/BTCStrategyResearchLedger/lab/b05.py:48—49；lab/carry_native.py:59、114；本轮纯逻辑计算",
+      "实际计算": [
+        {
+          "lag": 1,
+          "账户日": "2020-12-31",
+          "信号日": "2020-12-30",
+          "policy_year": 2020,
+          "仅日期和年度门允许新入场": false
+        },
+        {
+          "lag": 1,
+          "账户日": "2021-01-01",
+          "信号日": "2020-12-31",
+          "policy_year": 2021,
+          "仅日期和年度门允许新入场": true
+        },
+        {
+          "lag": 2,
+          "账户日": "2021-01-01",
+          "信号日": "2020-12-30",
+          "policy_year": 2020,
+          "仅日期和年度门允许新入场": false
+        },
+        {
+          "lag": 2,
+          "账户日": "2021-01-02",
+          "信号日": "2020-12-31",
+          "policy_year": 2021,
+          "仅日期和年度门允许新入场": true
+        }
+      ],
+      "含义": "DELAY的1月1日旧年度信号不能开新仓，但已有旧仓仍可依该方向继续或退出；以上true只表示日期/年度门通过，不替代方向、权限、冷却和终日等其他门。"
+    },
+    {
+      "来源": "/workspace/BTCStrategyResearchLedger/studies/B109-long-profit-local-coordinate/folds/{2018,...,2025}/{training.json,seal.json,test-receipt.json,predictions.json.gz}；lab/b109.py:61—84",
+      "实际计算": "8个年度封存链均通过：training.cutoff=seal.cutoff=上一年12月31日；seal.training_sha256匹配实际training文件；receipt.seal_sha256及predictions_sha256匹配实际文件；current_test_read均false，training.model_fits均0，receipt.validation_read均false。预测文件仅按字节计算hash，未分析经济内容。",
+      "限制": "这是保存文件和引用的一致性检查，不是模型在历史时点已真实存在的独立时间戳证明；也不能使已消耗开发历史成为全新验证。"
+    },
+    {
+      "来源": "/workspace/BTCStrategyResearchLedger/lab/carry_native.py:85—92；lab/carry_audit.py:53—55",
+      "事实": "年度收益以连续账户上一年最后一个净值为分母、当前年最后一个净值为分子，包含跨年仓位市值变化；没有每年重新注入100或按开仓policy_year归属全部交易盈亏。"
+    }
+  ],
+  "counterevidence": [
+    "未观察到LP35年末强平或以新年度risk覆盖旧仓的证据；12笔跨年仓位的数量连续性支持持仓沿用，而不是单凭代码注释推断。",
+    "年度信号状态重置仍是真实存在的逻辑，不能把账户连续持仓写成信号状态也永远连续；同方向新信号可在重置后立即重新激活，二者共存并无矛盾。",
+    "新年度政策不能在DELAY的1月1日仅因日期变新就替代滞后旧政策开仓；policy_year门明确阻止此情况。",
+    "封存链8/8通过支持文件自洽，但历史候选选择仍属已消耗开发过程，hash一致并不消除此限制。"
+  ],
+  "recommendations": [
+    {
+      "行动": "将年度分集表写成“按年封存的预测/政策，连续跨年账户”，并区分年度信号重置、12/31禁入场和annual_settlement=False三条独立规则。",
+      "优先级": "P0",
+      "验收方法": "交付文案不能出现“每年账户归零/年末必清仓”；以BASE 2020-04-30至2021-01-08跨年仓为可核对例证，且保持冻结源文件不变。"
+    },
+    {
+      "行动": "在账户时钟说明加入lag=1与lag=2的年界映射，明确旧policy_year不能在新年度开仓而不妨碍已有仓位使用方向信号。",
+      "优先级": "P1",
+      "验收方法": "上述四行纯逻辑年界结果可按forecast_year及carry_native条件复算；任何“允许入场”均注明只是日期/年度门通过，且使用账户日期而非混同合成ts_event。"
+    },
+    {
+      "行动": "年度收益分析保留连续净值口径，避免把8个年度当作8个独立、期末清仓的账户样本；交易归属政策年和日历年市值收益分别标明。",
+      "优先级": "P1",
+      "验收方法": "年收益按相邻年末equity比值核对；跨年交易risk/policy_year仍归入场，收益不整笔搬到入场年或退出年，统计独立性不由年度切片推定。"
+    }
+  ],
+  "checks_performed": [
+    {
+      "检查": "新的确定性只读账户跨年检查",
+      "方法": "/workspace/BinanceTradingRobot/backend/.venv/bin/python -B，标准库gzip/json/decimal；枚举LP35四情景的跨年trades，核对年界marks数量相等、policy_year入场归属、12/31入场和PERIOD_CLOSE计数。",
+      "结果": "204笔交易检查通过，12笔跨年持仓数量连续；年末新入场0，PERIOD_CLOSE 0。未运行账户回放或writer。"
+    },
+    {
+      "检查": "新的合成年界时钟",
+      "方法": "仅从b05.py的AST隔离编译forecast_year函数，不导入项目；对2020-12-31、2021-01-01、2021-01-02和lag1/lag2计算信号日及入场日期/年度门。",
+      "结果": "lag1于1/1可使用12/31的新年度target；lag2于1/1因旧policy_year不能新入场，1/2才在该日期门允许。"
+    },
+    {
+      "检查": "年度封存文件链",
+      "方法": "读取2018—2025 B109训练/封存/回执元数据，hash对应training/seal/predictions字节，检查上一年cutoff、current_test_read与model_fits/validation_read标记。",
+      "结果": "8/8通过；该检查未审计祖先所有训练过程、标签或实际历史时间戳。"
+    }
+  ],
+  "unresolved": [
+    "本轮未重建全部九候选的每一年度target数组；结论的账户实证部分限定LP35四情景，代码语义部分限定已引用调用链。",
+    "LP35抽样中的12笔跨年交易均为长仓；短仓跨年融资和可能的跨年待执行退出仅有状态机静态支持，未据此声称存在对应实证样本。",
+    "年度封存hash链不证明真实历史生成时刻或完全无选择偏差；完整祖先训练/标签边界应由相应后续主题验收。"
+  ],
+  "independence_statement": "execution为AI分析角色，不是真实专家或新增独立市场样本。仅完成被分配的第02轮；未读取其他专家目录、评分、意见或主审意见，未读2026经济数据/V01/V02/2026账户，未改源仓或交付仓，未拟合/优化/下单/部署，未运行原writer。仅独占创建execution/r02.json，未预写后轮。"
+}

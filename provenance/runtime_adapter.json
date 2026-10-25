@@ -1,0 +1,12 @@
+{
+  "original_source": "lab/carry_native.py",
+  "original_sha256": "b4c159df393aa16622bc8a0ee2b409b2f52a103e1517b5b6fe1addde79f0569b",
+  "allowed_changes": [
+    "instrument constants import destination",
+    "paper_instrument import destination",
+    "CASES/quote_prices import destination"
+  ],
+  "economic_algorithm_changed": false,
+  "adapted_sha256": "43f8d2a786096f49ac04677a57ab5b5122608a49e97b35f37731880315bfea38",
+  "paper_instrument_source_sha256": "90830353cf89d7112020e4d3d76c7cb16da195c2dd52e4006e6d032e1de71e84"
+}

@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/workspace/BTCStrategyResearchLedger/tools/verify_b60.py", line 78, in <module>
+    main()
+  File "/workspace/BTCStrategyResearchLedger/tools/verify_b60.py", line 55, in main
+    raise AssertionError('missing registered account: ' + str(p))
+AssertionError: missing registered account: /workspace/BTCStrategyResearchLedger/studies/B60-trend-alpha-controls/accounts/C01/BASE.json.gz

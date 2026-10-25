@@ -1,0 +1,88 @@
+{
+  "round": 1,
+  "role": "repro",
+  "topic": "声明边界与研究合同",
+  "conclusion": "“完整模型代码”应按九个候选的可追溯执行依赖闭包定义，必须包含因子/预测/年度策略参数/执行核算及其冻结数值状态和运行环境证据；只复制候选入口或封存预测不足以成立。现有源有良好哈希与numeric状态基础，但外部工程导入和登记中的绝对路径绑定尚未在独立新仓完成解耦与复现，因此本轮仅有条件支持交付研究合同，不确认已满足独立复现验收。",
+  "verdict": "qualified",
+  "evidence": [
+    {
+      "source": "/workspace/BTCExpertReview/shared/source_manifest.json:files",
+      "actual_check": "由自有check_r01.py只读重算7项SHA256，全部与共享冻结清单相等；结果见checks-r01.json:shared_manifest_all_7_match=true。未执行任何源仓研究模块或writer。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/lab/io.py:4-7",
+      "finding": "ROOT=Path(__file__).resolve().parents[1]，DATA=ROOT/data，经济端点截至2025-12-31。因此ROOT本身是相对文件位置求根，不是硬编码旧仓绝对地址；迁仓必须保留约定的包/数据布局，不能把此行误报为绝对路径故障。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/lab/b109.py:4-20,89-106",
+      "actual_check": "对b109、b88a、b72、b31四入口只做AST相对导入递归，得到98个本地.py及175处/workspace字符串；结果见checks-r01.json:static_local_import_closure。此集合是研究入口的静态依赖上界，包含freeze/train/audit等角色，不等同于九候选推理所必需的最小闭包。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/lab/carry_native.py:14-16; /workspace/BTCStrategyResearchLedger/lab/b109.py:48-53",
+      "finding": "carry_native从binance_robot.execution及runner导入INSTRUMENT/VENUE/paper_instrument；verify又逐条对project_runtime_sources的原绝对路径计算SHA。B109/B72/B88A登记的路径位于/workspace/BinanceTradingRobot/backend/.venv/lib/python3.12/site-packages/binance_robot/。原路径消失会使验证失败，即使等价包已安装在另一目录。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/studies/B88A-short-net-loss-families/registration.json:project_runtime_sources,estimator_runtime_sources,versions",
+      "actual_check": "登记的binance_robot execution.py、runner.py与sklearn _gb.py、_tree.cpython-312-x86_64-linux-gnu.so共4项当前SHA全部匹配；只AST解析前两项，不导入、不执行。runner顶层还导入contracts/execution/journal/portfolio/settings/strategies.registry，故仅打包两个外部文件仍不能证明导入闭合。见runtime-check-r01.json。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/lab/b109_io.py:39-40; /workspace/BTCStrategyResearchLedger/lab/b88a_io.py:42-44",
+      "finding": "读守卫对/workspace外部依赖使用旧工程.venv/src和/workspace/.venvs白名单。此类路径应与禁止访问研究/策略目录的规则区分：前者涉及迁仓适配，后者是需要保留其隔离语义的拒绝策略；不能把175处字符串都视为175个真实缺陷。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/lab/b88a.py:69-110; /workspace/BTCStrategyResearchLedger/studies/B88A-short-net-loss-families/folds/2018..2025/training.json:model_states",
+      "actual_check": "2018 fits=0/state=0；2019至2025各56个状态，共392个模型文件逐一重算SHA均匹配training.model_states。抽查2025 HUBER_L1-101.json.gz结构含initial/weight/trees，96树的节点字段为feature,left,right,threshold,value；未输出系数或读取预测/账户/价格。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/lab/tree_factors.py:81-108,122-133",
+      "finding": "树状态可由纯数值节点重建，预测分支明确转float32，训练导出时有2e-12一致性阈值。完整模型交付需携带这一数值语义、状态与验证证据；只保留模型训练超参数无法重建已拟合模型。"
+    },
+    {
+      "source": "/workspace/BTCExpertReview/workspaces/repro/checks-r01.json:installed_versions_match_b109",
+      "actual_check": "通过importlib.metadata而非导入研究代码核对nautilus-trader/numpy/pandas/scikit-learn/threadpoolctl/torch六项版本，当前环境全部等于B109登记。版本相等不证明操作系统、Python ABI、wheel或整个传递依赖相等。"
+    }
+  ],
+  "counterevidence": [
+    "原仓已有登记、哈希、年度training/seal/receipt和numeric树状态，当前选定状态完整性检查通过；不能据绝对路径问题断言模型缺失或历史结果不可复现。",
+    "lab/io.py的ROOT随包位置求根，原则上可迁移；数据目录约定本身不是外部绝对路径依赖。",
+    "B109及B72登记model_fits=0表示继承年度预测/策略，不代表其完整代码可以省去上游训练与模型状态；推理重放交付与训练复现交付应分别声明。",
+    "本轮未运行新仓模型推理或账户重放，没有证据声称新仓已通过冷启动、路径独立或经济结果一致性验收。"
+  ],
+  "recommendations": [
+    {
+      "priority": "P0",
+      "action": "在新仓定义九候选ID到冻结来源/recipe/年度fold的映射，并为两类能力分别列材料：A已拟合模型离线预测及账户重放；B原训练过程复现。A至少含本地执行依赖、2018–2025已选状态/策略参数、特征顺序与数值语义、允许的历史输入、成本/融资/延迟/仓位/终结处理、全部血缘哈希。B另含训练/标签/调参规则、成熟样本索引、种子与训练运行环境；未交付者明确标为不支持，不用预测缓存冒称训练复现。",
+      "acceptance": "九个候选均有唯一可机器读取的source_recipe/parent/fold/state/policy映射，所需文件逐一存在且digest匹配；没有未解释的动态文件读取，也没有因父策略和当前候选同名造成的ID混淆。"
+    },
+    {
+      "priority": "P0",
+      "action": "保持冻结原仓完全不变；只在新仓的适配层用包内路径解析/内容地址映射替代原路径绑定，并以来源SHA记录原件。对仅需INSTRUMENT/VENUE/paper_instrument的回测，优先做精确、可核验的局部适配，避免盲目导入整套交易runner；若沿用原包，则必须交付其真实传递依赖与可离线安装制品。保留原读隔离语义。",
+      "acceptance": "在旧仓与BinanceTradingRobot旧绝对路径不可见、无网络、无凭据的隔离环境中，新仓可加载全部九候选并生成自有临时输出；source/frozen状态和原登记均不改写；对2026/V01/V02的打开尝试确定性拒绝。"
+    },
+    {
+      "priority": "P0",
+      "action": "预先冻结最小复现验收：完整性校验→截止2025的既有年度预测重建→目标/权限/风险重建→已授权案例的账户核算比较。所有重放只写新仓临时目录，不调用原独占写入器、不搜索新策略；在获得相应轮次授权前不实施经济重放。",
+      "acceptance": "逐年state/policy哈希精确相等；预测与原receipt使用预先声明的原有容差（B88A score_tolerance=2e-12）；target/entry/risk离散结构精确相等；账户订单/成交/融资/mark及summary按原核算精度一致，所有差异形成失败报告，不能仅以汇总收益近似或“运行无异常”通过。"
+    },
+    {
+      "priority": "P1",
+      "action": "补齐可离线安装的运行环境清单：Python版本/ABI、OS架构、直接与传递依赖的精确制品哈希、原外部源码及适配diff；将环境来源与模型/数据来源分别登记。",
+      "acceptance": "从干净环境使用固定制品完成安装和只读自检，列明每项制品SHA及其来源；安装后版本/导入路径/关键二进制均可核验，不依赖现有虚拟环境已存在这一条件。"
+    }
+  ],
+  "checks_performed": [
+    "只读共享protocol/source_manifest，并按清单重算7项文件SHA。",
+    "只AST解析4入口静态相对导入闭包98个lab源，不导入执行研究模块。",
+    "读取4项选定registration的配方、环境与路径元数据，不读取价格、预测数值、账户或2026/V01/V02材料。",
+    "读取B88A 2018–2025 training状态清单，重算392个年度numeric模型SHA，抽查一个2025数值状态结构。",
+    "核对4项登记外部运行时源码/二进制SHA，只AST解析2项binance_robot源码的导入依赖。",
+    "核对6项已登记包版本；只在本角色目录新增check_r01.py、checks-r01.json、runtime-check-r01.json、r01.json及export_plan_hint.md。"
+  ],
+  "unresolved": [
+    "本轮静态闭包是4个研究入口的依赖上界，尚未得到九候选逐项推理最小闭包；B31原训练血缘与其他年度模型类型亦未全量核验。",
+    "未验证新仓完整性、离线安装、旧路径隔离或年度预测/账户一致性；这些属于后续明确授权的复现验收工作。",
+    "环境包版本匹配，但尚无平台/ABI/传递依赖制品锁定的充分证据。",
+    "对2018无模型的暖启动/不可用语义，交付合同需明确保持，不能补拟合或用后来模型回填。"
+  ],
+  "independence_statement": "本结果为repro工程复现AI角色的独立隔离审查，只使用共享冻结事实源、自有检查结果和选定源码/元数据；未读取其他专家目录、意见、评分或主审结论。未冒充人类专家，不代表新的独立市场样本；未读取2026经济数据、V01/V02或2026账户；未修改冻结代码/spec/model/account/verification/gates，未运行独占写入器或新策略搜索；没有代理派生或预写后续轮次。"
+}

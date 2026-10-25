@@ -1,0 +1,27 @@
+B60 POLICY 2018
+B60 TEST 2018
+B60 POLICY 2019
+B60 TEST 2019
+B60 POLICY 2020
+B60 TEST 2020
+B60 POLICY 2021
+B60 TEST 2021
+B60 POLICY 2022
+B60 TEST 2022
+B60 POLICY 2023
+B60 TEST 2023
+B60 POLICY 2024
+B60 TEST 2024
+B60 RESULT C01 Y01 None None {'BASE': {'type': 'ValueError', 'message': 'target cannot be shortened'}, 'STRESS': {'type': 'ValueError', 'message': 'target cannot be shortened'}, 'SEVERE': {'type': 'ValueError', 'message': 'target cannot be shortened'}, 'DELAY': {'type': 'ValueError', 'message': 'target cannot be shortened'}}
+B60 RESULT C02 T12 None None {'BASE': {'type': 'ValueError', 'message': 'target cannot be shortened'}, 'STRESS': {'type': 'ValueError', 'message': 'target cannot be shortened'}, 'SEVERE': {'type': 'ValueError', 'message': 'target cannot be shortened'}, 'DELAY': {'type': 'ValueError', 'message': 'target cannot be shortened'}}
+B60 RESULT N01 BAND_AVAILABLE None None {'BASE': {'type': 'ValueError', 'message': 'target cannot be shortened'}, 'STRESS': {'type': 'ValueError', 'message': 'target cannot be shortened'}, 'SEVERE': {'type': 'ValueError', 'message': 'target cannot be shortened'}, 'DELAY': {'type': 'ValueError', 'message': 'target cannot be shortened'}}
+B60 RESULT N02 BAND_FULL None None {'BASE': {'type': 'ValueError', 'message': 'target cannot be shortened'}, 'STRESS': {'type': 'ValueError', 'message': 'target cannot be shortened'}, 'SEVERE': {'type': 'ValueError', 'message': 'target cannot be shortened'}, 'DELAY': {'type': 'ValueError', 'message': 'target cannot be shortened'}}
+B60 RESULT N03 MOM63 None None {'BASE': {'type': 'ValueError', 'message': 'target cannot be shortened'}, 'STRESS': {'type': 'ValueError', 'message': 'target cannot be shortened'}, 'SEVERE': {'type': 'ValueError', 'message': 'target cannot be shortened'}, 'DELAY': {'type': 'ValueError', 'message': 'target cannot be shortened'}}
+B60 RESULT N04 MOM126 None None {'BASE': {'type': 'ValueError', 'message': 'target cannot be shortened'}, 'STRESS': {'type': 'ValueError', 'message': 'target cannot be shortened'}, 'SEVERE': {'type': 'ValueError', 'message': 'target cannot be shortened'}, 'DELAY': {'type': 'ValueError', 'message': 'target cannot be shortened'}}
+B60 RESULT N05 MOM252 None None {'BASE': {'type': 'ValueError', 'message': 'target cannot be shortened'}, 'STRESS': {'type': 'ValueError', 'message': 'target cannot be shortened'}, 'SEVERE': {'type': 'ValueError', 'message': 'target cannot be shortened'}, 'DELAY': {'type': 'ValueError', 'message': 'target cannot be shortened'}}
+B60 RESULT N06 MOM_VOTE None None {'BASE': {'type': 'ValueError', 'message': 'target cannot be shortened'}, 'STRESS': {'type': 'ValueError', 'message': 'target cannot be shortened'}, 'SEVERE': {'type': 'ValueError', 'message': 'target cannot be shortened'}, 'DELAY': {'type': 'ValueError', 'message': 'target cannot be shortened'}}
+B60 RESULT N07 GATE63 None None {'BASE': {'type': 'ValueError', 'message': 'target cannot be shortened'}, 'STRESS': {'type': 'ValueError', 'message': 'target cannot be shortened'}, 'SEVERE': {'type': 'ValueError', 'message': 'target cannot be shortened'}, 'DELAY': {'type': 'ValueError', 'message': 'target cannot be shortened'}}
+B60 RESULT N08 GATE126 None None {'BASE': {'type': 'ValueError', 'message': 'target cannot be shortened'}, 'STRESS': {'type': 'ValueError', 'message': 'target cannot be shortened'}, 'SEVERE': {'type': 'ValueError', 'message': 'target cannot be shortened'}, 'DELAY': {'type': 'ValueError', 'message': 'target cannot be shortened'}}
+B60 RESULT N09 GATE_VOTE None None {'BASE': {'type': 'ValueError', 'message': 'target cannot be shortened'}, 'STRESS': {'type': 'ValueError', 'message': 'target cannot be shortened'}, 'SEVERE': {'type': 'ValueError', 'message': 'target cannot be shortened'}, 'DELAY': {'type': 'ValueError', 'message': 'target cannot be shortened'}}
+B60 RESULT N10 FIXED_BAND None None {'BASE': {'type': 'ValueError', 'message': 'target cannot be shortened'}, 'STRESS': {'type': 'ValueError', 'message': 'target cannot be shortened'}, 'SEVERE': {'type': 'ValueError', 'message': 'target cannot be shortened'}, 'DELAY': {'type': 'ValueError', 'message': 'target cannot be shortened'}}
+B60 RESULT N11 FIXED_VOTE None None {'BASE': {'type': 'ValueError', 'message': 'target cannot be shortened'}, 'STRESS': {'type': 'ValueError', 'message': 'target cannot be shortened'}, 'SEVERE': {'type': 'ValueError', 'message': 'target cannot be shortened'}, 'DELAY': {'type': 'ValueError', 'message': 'target cannot be shortened'}}

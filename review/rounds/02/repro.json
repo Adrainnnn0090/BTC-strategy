@@ -1,0 +1,70 @@
+{
+  "round": 2,
+  "role": "repro",
+  "topic": "年度分集与封存",
+  "conclusion": "选定六家族48个年度fold的cutoff、封存摘要链和预测日期窗口全部通过只读核验；新仓的可执行年度合同应以fold_year及显式窗口路由，fold y使用cutoff=y-1年12月31日、预测日期窗口[y-1年12月31日,y年12月31日)，并把2018的有意无状态保留为原流的不可用值，禁止邻年或最后一年模型回填。本轮核实的是冻结源合同，尚未验收新仓路由实现。",
+  "verdict": "qualified",
+  "evidence": [
+    {
+      "source": "/workspace/BTCExpertReview/workspaces/repro/checks-r02.json:folds_checked,all_annual_checks_pass,annual_checks",
+      "actual_check": "新建并运行check_r02.py，只读B31/B50/B67/B81/B88A/B109六家族2018–2025共48个fold的training/seal/test-receipt/predictions及walkforward manifest；每fold的11项断言全部通过。逐一核对training.cutoff=seal.cutoff=y-1-12-31、current_test_read=false、training/registration/seal/prediction摘要、train/test的manifest摘要、test fitting_calls=0、无true验证标志、预测dates精确等于完整日历窗口。未导入执行研究模块、训练或账户重放。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/lab/b81.py:119-131; /workspace/BTCStrategyResearchLedger/lab/b67.py:89-103; /workspace/BTCStrategyResearchLedger/lab/price_trail_activation.py:35-40",
+      "finding": "源代码以first=index(y-1-12-31)、last=index(y-12-31)后取[first:last]，frame亦明确首日为上一年12/31、末日为当年12/30。这是预测/决策date窗口，不是简单的公历年内date.year映射，也不等于执行日期窗口。"
+    },
+    {
+      "source": "/workspace/BTCExpertReview/workspaces/repro/checks-r02.json:annual_checks中fold_year=2018且family=B67/B81/B88A的记录",
+      "actual_check": "这三个已拟合模型家族2018均有fit_count=0、model_states_count=0，而且其所有原scores流非空值数量为0；同时seal/receipt完整且日期365条准确。故无状态是有证据的年度暖启动合同，不是需要用2019或2025模型修补的导出缺件。"
+    },
+    {
+      "source": "/workspace/BTCExpertReview/workspaces/repro/checks-r02.json:sample_2019_state_metadata",
+      "actual_check": "2019抽查B67的L1-101、B81的PAD47、B88A的HUBER_L1-101三项状态hash均等于对应training清单。B81状态内cutoff=2018-12-31；B67/B88A状态无内嵌cutoff，但其训练receipts的cut均为729，等于2017-01-01起2018-12-31的零基下标，且由training→seal链绑定。不能要求所有numeric模型对象必须自带同名cutoff字段而忽略外层封存证据。"
+    },
+    {
+      "source": "/workspace/BTCExpertReview/workspaces/repro/checks-r02.json:synthetic_window_router_boundary_cases,synthetic_outside_window_rejected",
+      "actual_check": "在自有检查脚本中以日历窗口实现一个合同示例路由器：2018-12-30→fold2018，2018-12-31及2019-01-01→fold2019，2024-12-31→fold2025；共6个边界例全通过，2017-12-30和2025-12-31拒绝。此示例不是交付仓实现验收，也没有读取任何禁读年度文件。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/lab/b31.py:80-100,104-120; /workspace/BTCStrategyResearchLedger/lab/b82.py:57-79; /workspace/BTCStrategyResearchLedger/lab/b109.py:78-85",
+      "finding": "下游候选不仅路由numeric树，还继承对应年度parent_policy/active/forecast；源封存链把policy与年度training绑定。不能只给树文件贴year标签、把全部年度替换成末年policy，或把无模型流全None误读为所有候选全年不能持仓。"
+    }
+  ],
+  "counterevidence": [
+    "48个fold的源封存与日期窗口核验全部通过，未发现所检源材料的年度错路由或封存摘要断裂。",
+    "模型对象没有内嵌cutoff不等于缺乏年度绑定；B67/B88A使用training.model_states摘要及receipts.cut、seal.cutoff共同绑定，应审查完整链。",
+    "2018无状态只适用于经核验的B67/B81/B88A已拟合流；某些继承规则或基线流可仍然可用，不能据此擅自让九候选全部2018平仓或补零预测。",
+    "源training/seal中的current_test_read=false与哈希链是封存声明和完整性证据，不单独证明现实写入时间、全程知识可得性或全体上游无泄漏。"
+  ],
+  "recommendations": [
+    {
+      "priority": "P0",
+      "action": "在新仓模型清单中逐家族、逐候选、逐fold登记fold_year、cutoff、decision_start_inclusive、decision_end_exclusive、state路径及hash、training/seal/registration摘要、对应policy/active来源，并显式区分FROZEN_FIT与UNAVAILABLE_BY_DESIGN。年度字段应取源证据，不从路径名或当前日期推定。",
+      "acceptance": "清单覆盖所承诺的2018–2025，日期窗口无空洞/重叠；各fold只可加载其清单允许的state/policy，所有摘要链匹配。2018已证无模型家族清单状态为UNAVAILABLE_BY_DESIGN，必要文件意外缺失则失败，不能将两者混同。"
+    },
+    {
+      "priority": "P0",
+      "action": "以显式决策日期窗口或调用者给定且验证过的fold_year实现路由，分别保存decision_date、fold_year和execution_date；禁止latest模型fallback、邻年借模和将date.year当作fold_year。对无状态年份严格保留原None和可用性标志，继承流按自身年度合同处理。",
+      "acceptance": "在新仓接口执行边界例：2018-12-30路由2018，2018-12-31路由2019，2024-12-31路由2025；最早窗口前和2025-12-31均拒绝而非回落。2018三个无状态流保持365个不可用值，无拟合调用、无后来状态读取；基线/规则流不被擅自归零。"
+    },
+    {
+      "priority": "P0",
+      "action": "为年度加载器实施只在私有测试副本/合成清单中的失败检查：错误cutoff、错误fold/window、缺少已登记state、修改state摘要、缺policy、摘要链断裂时均拒绝。保留原仓与原封存件不变，不通过重跑原freeze/train/test来修补证据。",
+      "acceptance": "每类故障产生确定性失败并指出家族/fold/缺件或摘要差异；运行日志证明未加载其他年度state，未访问2026/V01/V02，未改写原training/seal/receipt。"
+    }
+  ],
+  "checks_performed": [
+    "只读检视b82/b81/b67/b31/walkforward_io等选定源的年度窗口与封存语义。",
+    "对B31/B50/B67/B81/B88A/B109六家族48个fold执行11项年度完整性/日期检查，全部通过；未读取任何账户。",
+    "只输出历史预测的日期及非空计数，不输出预测数值或投资结果。",
+    "抽查3家族2019状态元数据/训练cut索引与hash；运行6项合成日期路由边界和2项窗口外拒绝例。",
+    "交付仓仅列举文件名确认当前尚未消费任何导出路由清单；未读取其他专家或主审内容，也未编辑交付仓。",
+    "只在repro私有目录新增check_r02.py、checks-r02.json及r02.json；未派生代理、未预写后续轮次。"
+  ],
+  "unresolved": [
+    "新仓的最终导出清单/路由加载器尚未接受本轮实现级验收；本轮合成路由器仅把合同转成可复核边界例。",
+    "所检6家族并非九候选全部训练血缘的全量遍历；更深层模型如原始基线家族仍需在导出闭包确认后逐项纳入。",
+    "按日记录的cutoff和决策date不能单独证明日内训练完成时刻、因子发布时间或封存实际发生时间，本轮不外推这一结论。"
+  ],
+  "independence_statement": "本结果为repro工程复现AI角色的隔离审查，未读取其他专家意见、评分或主审结论。只使用冻结源码、截至2025的选定年度metadata/日期与自有确定性检查；未读取2026经济数据、V01/V02或2026账户，未修改原代码/spec/model/account/verification/gates或交付仓，未运行独占writer、新策略搜索、训练或账户重放。本角色不是人类专家，不构成新的独立市场样本；仅提交第02轮。"
+}

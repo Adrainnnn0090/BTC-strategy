@@ -1,0 +1,22 @@
+{
+  "id": "MX03",
+  "category": "high_return",
+  "description": "ME01上只在模型缺失期新开空头另要求1日负动量。",
+  "model_families": [
+    "base_tree",
+    "price47",
+    "short_huber"
+  ],
+  "implementation": "btc_strategy.strategies.compose",
+  "source_study": "studies/B106-shorter-cold-entry-momentum",
+  "period": [
+    "2018-01-01",
+    "2025-12-31"
+  ],
+  "new2026validation": false,
+  "source_recipe": {
+    "id": "MX03",
+    "kind": "LEGACY"
+  },
+  "risk_qualification": "历史收益较高；规则筛选使用已消耗开发历史，冷启动、退出时点和复利贡献大。"
+}

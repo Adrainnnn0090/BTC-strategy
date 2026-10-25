@@ -1,0 +1,53 @@
+{
+  "conclusion": "收益由共同趋势、早期资金和少数大盈利事件集中驱动；年度净值、按退出年PnL和正PnL集中率分母不同，复利代数不等于可交易删单反事实或未来稳健性。",
+  "scope_filter": "排除以年度数量、共同2024赢家或代数归零敏感性当独立证据；任何未执行的冲击情景不报告虚构收益或PASS。",
+  "object_filter": "LP35/C02是四成本最坏DD的取舍，不是每个成本全面支配；K02为较低short敞口参考，不能仅凭分类当较低DD。cold按入场信号可用性，不能仅按退出年归为模型alpha。",
+  "actions": [
+    "补统一结果明细与每卡source/study/local ID、成本、年度与集中度链接，catalog新增结构化model_families/costs/new2026validation=false。",
+    "风险说明记录长时间水下、延迟敏感性与盈利集中，分母精确定义。",
+    "未来研究应预先冻结行情/尾部/输入故障验收，但本轮不据历史归因重新优化参数或解封2026。"
+  ],
+  "chair_checks": [
+    "主agent从LP35原账户以Decimal复算前三正交易/全部正交易PnL约53.09296%，与既有记录一致",
+    "新仓九卡与catalog已补共享明细链接，所有收益仍来自原2018–2025完整账户，无新策略回测"
+  ],
+  "open": [
+    "真实前瞻跨行情与尾部证据仍不足",
+    "完整新仓独立验收和已识别接口修复进入第10/11轮"
+  ],
+  "round": 9,
+  "submissions": {
+    "statistics": {
+      "verdict": "qualified",
+      "conclusion": "冻结净值显示收益集中于共同历史行情并受早期资本和一次长仓退出后的复利放大；LP35的八个正年度和末值达标不能解释为八次独立成功或持续预测优势，事件敏感性只能作保留已观察后续倍率的非可交易代数诊断。",
+      "sha256": "75706fc75fdab4f88aea076116588beced18df96bd5fd6825fd54c97fd873670"
+    },
+    "data": {
+      "verdict": "supported",
+      "conclusion": "LP35与较低四成本最坏回撤参考C02的年度收益均应按年末融资调整后mark端点计算；跨年交易必须按实际经济日拆分，cold又是入场信号可用性归属而非entry_year或行情标签，把这些口径混合会显著误写年度表现与2018资本贡献。",
+      "sha256": "975b69b668d55a823956612ff630ae3014566837dda32c32b38e41cdef43c87a"
+    },
+    "models": {
+      "verdict": "qualified",
+      "conclusion": "2018高收益后代的改进发生在模型头尚不可用于执行的cold规则阶段，不能作为未来持续模型alpha的证据；ME01/MX03/TS04进入模型可用阶段后共享目标/预报且36笔交易时序相同，美元利润差异仍携带早期资本路径。年度归因必须区分净值现金增量、按出场年计的已实现PnL和入场时模型可得性，不能以退出年份替代模型贡献归属。",
+      "sha256": "4273246d70675568791023a15920eb53b7ece2c782a759ceb5a5d29bd1e1858a"
+    },
+    "execution": {
+      "verdict": "qualified",
+      "conclusion": "LP35 STRESS的大盈利集中、年度收益和长短仓贡献可以由费用/融资及跨年mark完整对账，但它们依赖连续资金路径和不同分母；不能把正PnL占比写成总收益贡献，或把年度/后续美元利润变化当成新增预测优势。",
+      "sha256": "d3b7def9939adac24eaac0d8640f38de5b94e2720e333f0b583eee32e78b1052"
+    },
+    "risk": {
+      "verdict": "qualified",
+      "conclusion": "五项已存账户的年度正收益不能代表风险均匀或延迟稳健：盈利的两大美元交易集中在共同2024多头片段，主要回撤可跨数年并反复接近历史35%门，DELAY对全程终值影响显著且年度方向并不单调；未来paper须分别验收regime覆盖、尾部执行和持续水下状态，不能据此再调参数或虚构压力收益。",
+      "sha256": "f3ab3d04fb53061469a5a0889b7970b3e0ce22b12534557a3fbe607a773c162d"
+    },
+    "repro": {
+      "verdict": "qualified",
+      "conclusion": "九张分类卡的2018–2025累计STRESS、四成本最差日度回撤及DELAY数字均与catalog和36本声明源benchmark一致，年度/正收益集中度算式复核也全部通过，B88A_S03命名空间和C02/C04年度缩放资格正确；但卡片与catalog还应补统一成本定义、可点击source/local ID、年度及盈利集中明细入口和结构化validation/model血缘字段。本轮核实存档与文档一致性，不是独立环境原生重放或新2026验证。",
+      "sha256": "d872561fa35c648619d6af146d4610cab6ff68b81e6b4140f2000f7225fa1dae"
+    }
+  },
+  "not_external_human_audit": true,
+  "not_independent_market_samples": true
+}

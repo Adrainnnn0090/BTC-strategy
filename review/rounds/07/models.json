@@ -1,0 +1,72 @@
+{
+  "round": 7,
+  "role": "models",
+  "topic": "敞口、止损与跨年风险",
+  "conclusion": "六项候选的风险/预算继承符合注册，但风险变化不可混称：ME01/MX03只改冷启动新入场，TS04只收紧冷空头追踪回撤，LP35只改多头止盈；四者继承取消多头波动折扣。K02与median保留原多头折扣，且空头cold/post预算不同。实际跨年长单证明退出后冷却仍归入场年度所有，不能按当前年目标覆盖旧仓风控。",
+  "verdict": "supported",
+  "evidence": [
+    {
+      "source": "lab/long_vol_budget.py:9; lab/b109.py:89; r07_checks.json field_change_counts/long_budget_patch_diagnostic",
+      "actual": "由冻结预报与年度策略纯重建3287行：ME01/MX03/TS04/LP35的long_fraction均等于当年原fraction且不高于0.95；相对P02原预算，共316行实际取消波动折扣（政策vol_target>0的行共2193）。这不是新增模型，也不改变原long.stop_loss；原fraction作为入场预算上限仍存在。K02与B88A_S03的long_fraction逐行等于原折扣预算。"
+    },
+    {
+      "source": "lab/cold_entry_momentum.py:6; lab/shorter_cold_momentum.py:6; studies/B105-cold-entry-momentum/registration.json recipes[id=ME01]; studies/B106-shorter-cold-entry-momentum/registration.json recipes[id=MX03]; r07_checks.json field_change_counts",
+      "actual": "CT02、ME01、MX03的3287行target对象完全相同，只有entry_permission不同；ME01相对CT02有48行许可变化，MX03相对ME01有56行变化，均限定原长头缺失且desired方向为空头的cold行。模型可用后许可保持相同。MX03是ME01上的1日下跌与原5日条件相与，不在持仓中改变目标风险/预算。"
+    },
+    {
+      "source": "lab/cold_short_profit_trailing.py:5; lab/long_profit_local_coordinate.py:5; 相应注册arms；r07_checks.json field_change_counts",
+      "actual": "TS04相对ME01只在730个cold目标行将risk.short.trailing_stop由0.12改为0.04，post仍0.12，short.stop_loss仍0.12、trail_arm仍0.1；全部许可、其他字段相同。730包含暖机/终端等非成交行，不是730笔实际仓位改风控。LP35相对TS04只把所有long.take_profit改为3.5，其他目标及许可相同；名称不能误读为0.35或35%止盈。"
+    },
+    {
+      "source": "lab/conditional_short.py:45; lab/cold_budget.py:10; lab/cold_budget.py:28; lab/b88a.py:127; r07_checks.json exposure_contracts",
+      "actual": "逐行检查活动空头预算：ME01/MX03/TS04/LP35为cold 0.75*原波动scale、post 0.5*scale；B88A_S03同样cold 0.75/post 0.5且其风险来自P02原版；K02为cold/post均0.25*scale。short仍保留原波动缩放，没有随long折扣取消而一并取消。原始target里的未启用short_fraction在某些多头行可为0.75，所以应按direction筛选后解释活动预算。"
+    },
+    {
+      "source": "lab/carry_native.py:48; lab/carry_native.py:75; lab/carry_native.py:80; studies/B109-long-profit-local-coordinate/accounts/LP35/BASE.json.gz [entry=2020-04-30]; r07_checks.json entry_owned_cross_year",
+      "actual": "实际长单2020-04-30入、2021-01-08止盈出，trade.policy_year仍2020。入场信号2020-04-29的long风险为stop_loss=.15、take_profit=3.5、trailing_stop=.15、trail_arm=.5、cooldown_days=3；出场时当前年度行的trailing_stop=.1、cooldown_days=1。CLOSED事件next_allowed_index=1472=exit1468+旧cooldown3+1，而按当前年会1470，实证吻合entry-owned旧风险。"
+    },
+    {
+      "source": "lab/carry_native.py:55; lab/carry_native.py:60; lab/carry_native.py:76; lab/b109.py:118",
+      "actual": "目标中的预算只用于新入场数量；持仓时Native使用entry.q及入场捕获risk/peak，不因每个新目标预算而持续调仓。账户annual_settlement=False允许已有仓位跨年，年末禁新入场不等于年末强制平仓。"
+    }
+  ],
+  "counterevidence": [
+    "取消long vol折扣并不突破注册fraction，但它减少了一层随波动下调的约束；“fraction≤0.95”是入场预算合同，不能直接宣称每天实际总敞口或回撤都被同值封顶。",
+    "TS04的4%是盈利后启动的追踪回撤字段，不是4%硬止损；LP35的3.5是止盈倍数条件，不能表述为35%。",
+    "目标风险字段发生变化不意味着已持仓风控同时变化；entry-owned行为应以入场捕获的字段和实际事件为准。",
+    "只读检查LP35四成本已存交易未见跨年空头平仓记录，因此本轮跨年实证是长单冷却归属；空头跨cold/post时仍沿用入场风险的说法来自实现合同，而非该组实际空头案例。"
+  ],
+  "recommendations": [
+    {
+      "priority": "P0",
+      "action": "独立交付规格逐项列出long预算与cold/post活动short预算，并区分stop_loss、trail_arm、trailing_stop和take_profit。",
+      "acceptance": "四高收益后代long=fraction≤.95；K02/median保留原长vol折扣；活动short的cold/post系数分别为.75/.5或K02的.25/.25；TS04只改cold short trail，LP35只改long TP。"
+    },
+    {
+      "priority": "P0",
+      "action": "持仓状态保存入场risk、policy_year、peak及数量，跨年不得用当前目标risk覆盖。",
+      "acceptance": "重现所列跨年例的policy_year=2020和next_allowed=1472，而非1470；目标差异检查仍保持ME01/MX03只动许可。"
+    },
+    {
+      "priority": "P1",
+      "action": "风险摘要分别报告字段层预算、活动方向预算与实际账户敞口，目标行变化计数注明包含非成交行。",
+      "acceptance": "不能把K02未启用字段的0.75解释为活动空头75%，不能把TS04的730行字段变化解释为730笔成交或对旧仓即时重设。"
+    }
+  ],
+  "checks_performed": [
+    {
+      "command": "/workspace/BinanceTradingRobot/backend/.venv/bin/python -B /workspace/BTCExpertReview/workspaces/models/check_r07.py",
+      "result": "exit 0；all_checks_pass=true；重建并比较3287行目标/许可、注册arms、取消长波动折扣行、活动cold/post空头预算及一个实际跨年entry-owned冷却事件。",
+      "artifact": "/workspace/BTCExpertReview/workspaces/models/r07_checks.json"
+    },
+    {
+      "check": "只读列举LP35四个开发期成本账户的跨年空头交易",
+      "result": "均无跨年空头已平仓记录；未将该空缺补写成实际检验。"
+    }
+  ],
+  "unresolved": [
+    "纯目标函数比较与一个实际跨年事件未覆盖全部持仓事件；未独立重放全账户或量化风险覆盖造成的总体收益/回撤贡献。",
+    "未以实际跨cold/post空头案例验证风控归属；可得实现证据已与实际长单证据分开陈述。"
+  ],
+  "independence_statement": "本轮仅白名单读取冻结源码、2018–2025预报/年度策略和指定开发期账户；没有再次检索v01/v02静态适配文件，未读验证账户或2026经济数据。未读其他专家意见/评分/主审结论，未派生agents；未调用原写入器、训练器或账户重放器。新文件仅在models目录首次独占创建，导入以-B禁字节码。AI角色不是人类或独立市场样本。"
+}

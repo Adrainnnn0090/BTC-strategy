@@ -1,0 +1,5 @@
+# Original B64 verification FAIL — retained unchanged
+
+All56Nativeaccounts exist and each primary Decimalaccounting pass completed. The original separate target verifier fails on C04before its final account/replay stage: it incorrectly applies H04exit-coordinate choices. OriginalB29Y04is CONTROL of H04, while Y01is ADAPTEDH03. Consequently C04retains originalU02/H04risk and only applies eligibility-gated.75budget; the original independent reference instead applies an unrelated H04exit calibration.
+
+Diagnosticfirstdifference2021-12-31: actualC04longcooldown1/trail.10 versus incorrectreference3/.08. C02reference/permissions match. No economic input, strategy mapper, objective, source model, cost or account is changed. Keep original registration/source/verifier/logs/results and FAIL. B64Ais a new explicitly post-B64-observation engineering reconciliation with a corrected C04reference and synthetic counterexample before its own registration/replay; it must byte-reproduce all56originalaccounts plus12earliercontrols, not re-optimize outcomes. No original B64PASSclaim.

@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=75", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "btc-strategy-research"
+version = "0.1.0"
+description = "Frozen BTC strategy models, audited historical replay, and isolated expert review"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  "nautilus-trader==2.0.0rc4",
+  "numpy==2.4.6",
+  "pandas==2.3.3",
+  "scikit-learn==1.6.1",
+  "scipy==1.15.3",
+  "threadpoolctl==3.6.0",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=8,<10"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

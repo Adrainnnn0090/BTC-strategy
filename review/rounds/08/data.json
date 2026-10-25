@@ -1,0 +1,84 @@
+{
+  "round": 8,
+  "role": "data",
+  "topic": "多重试验与有效独立性",
+  "conclusion": "trial_registry已正确绑定全部115份标准B-study注册文件，但其recipe/拟合字段不是同一统计单位，继承账户重复、跨study同名歧义与内层搜索记录未归一化均已实证；它可作可追溯索引，尚不足以给出有效独立试验总数或完成多重选择校正。",
+  "verdict": "qualified",
+  "evidence": [
+    {
+      "source": "/workspace/BTC-strategy/research/trial_registry.json:rows.source,registration_sha256,recipe_count,recipe_ids；/workspace/BTCExpertReview/workspaces/data/r08-checks.json:registry_source_hashes_matched,registry_standard_B_registrations_complete",
+      "fact": "新增只读检查115行全部PASS：每个source严格指向本study的registration.json，SHA逐一匹配；recipe_count和recipe_ids顺序与源文件精确相符，study内无重复ID。行集合精确覆盖当前源仓studies/B*/registration.json，无标准文件名注册遗漏。未读取旧研究总表或V01/V02。"
+    },
+    {
+      "source": "/workspace/BTCExpertReview/workspaces/data/r08-checks.json:metadata_recipe_entries,cross_study_reused_recipe_ids,reused_ids_with_different_metadata_descriptors,identical_metadata_descriptor_groups",
+      "fact": "该索引的1717是原recipe元数据行数，含继承控制和重用配置；342个ID拼写跨study重复，其中338个有不同元数据描述，另有136组逐字相同recipe描述。上述都是句法统计，既不能当1717个独立试验，也不能仅据描述相同判定经济路径相同。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/studies/B31-constant-sizing-controls/registration.json:recipes.C04；studies/B85-price-core-consensus-entry/registration.json:recipes.C04；/workspace/BTCExpertReview/workspaces/data/r08-checks.json:c04_namespace_collision_examples",
+      "fact": "确定性同名反例：B31 C04是parent Y04、scale=0.75、source P08的CONSTANT；B85 C04是gate BOTH2的GATE。只用裸C04键合并会混成不同策略，必须保留study和注册摘要命名空间。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/studies/B109-long-profit-local-coordinate/registration.json:recipes,source,exact_controls；accounts/*/*.json.gz；/workspace/BTCExpertReview/workspaces/data/r08-checks.json:inherited_controls",
+      "fact": "B109的16个recipe中4个新LONG_PROFIT坐标、12个LEGACY控制。12×4成本的48个继承账户逐一满足本轮账户SHA=注册绑定旧源账户SHA=旧源文件SHA，证实是完整book重复，而不是新增独立市场证据。四成本又共享市场行情，不能按成本个数制造独立样本。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/studies/B01-price-mechanisms/registration.json:candidate_cap,account_cap；spec.md:3–5；/workspace/BTCExpertReview/workspaces/data/r08-checks.json:zero_recipe_search_example",
+      "fact": "源B01无recipes字段，registry因此recipe_count=0；但原合同明确candidate_cap=360、account_cap=1440及坐标搜索。它们是预算上限，不能当实际完成次数；零recipe也不能解释为没有搜索。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/studies/B29-prior-forecast-exits/registration.json:new_model_fits,training_config_evaluations_cap,training_account_attempts_cap；folds/{2021,2025}/training.json:counts,choices；/workspace/BTCExpertReview/workspaces/data/r08-checks.json:scoped_selection_trace_examples",
+      "fact": "B29新模型拟合声明0，但规则坐标校准并非0：实际2021折22个配置/88账户尝试，2025折32/128。各自evaluation_order唯一、与evaluated/candidate_sha256集合一致，54个这两折候选记录摘要全部匹配。两个局部计数不能外推为全研究有效N，registry行本身未展开这些选择轨迹。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/studies/B81-reported-volume-long-core/registration.json:research_member_fits,final_members,pipeline_estimator_fits,independent_inner_library_fits；/workspace/BTCExpertReview/workspaces/data/r08-checks.json:fit_fields_unrepresented_when_registry_null",
+      "fact": "45个registry reported_new_fits=null的study在源注册仍有其他命名的拟合/成员字段。B81例为research_member_fits=1225、final_members=245、pipeline_estimator_fits=25、independent_inner_library_fits=980；这些分属研究拟合、最终成员和复核口径，不能互加，也不能把null读成0。"
+    },
+    {
+      "source": "/workspace/BTCExpertReview/workspaces/data/r08-checks.json:additional_registration_contract_metadata_outside_standard_inventory；/workspace/BTC-strategy/research/trial_registry.json:interpretation",
+      "fact": "另发现7个非标准文件名的*registration.json合同路径，如B02 controls-registration、B16 data-registration、B80 preparation-registration，不在该标准注册索引内。它们是额外合同元数据覆盖范围，未据文件名断言额外经济试验。registry自身也明确有效测试数未知、未计算PBO/DSR认证。"
+    }
+  ],
+  "counterevidence": [
+    "registry没有虚称其recipe行是独立试验，且对消费历史、继承控制、内层搜索和未记录/自适应选择范围给出限制；本轮未发现115个标准注册的源绑定错误。",
+    "B29抽核表明局部选择顺序与候选摘要可以追溯，部分内层搜索记录是存在的；问题是尚未形成统一、完整且同统计单位的全研究选择与依赖记录。",
+    "句法重复不等于完整路径重复，句法差异也不保证不同市场证据；本轮仅把B109那48个逐字节一致控制book认定为已证实经济重复。",
+    "源审计、数据准备、拟合成员、校准账户、最终策略、四成本压力场景与AI专家角色不构成可直接相加的独立观察单位。"
+  ],
+  "recommendations": [
+    {
+      "priority": "P0",
+      "action": "新仓索引键使用study+registration_sha256+recipe_id，并增加stage/fold/cost等维度；裸ID不得作跨study唯一键。",
+      "acceptance": "B31 C04与B85 C04保留不同实体；每个表格/导出策略均能追溯所属study、父控制和原注册摘要。"
+    },
+    {
+      "priority": "P0",
+      "action": "把recipe元数据行、实际唯一配置、内层拟合、复核重拟合、继承控制、数据审计和账户成本尝试分列；将null、上限和实际次数显式区分，不生成未经证明的总有效N。",
+      "acceptance": "B01的0 recipe与360候选cap可同时表达；B29模型0与局部配置搜索并列；B81各计数不相加；B10948个重复控制book标记为继承重复，effective_independent_tests保持unknown。"
+    },
+    {
+      "priority": "P1",
+      "action": "将现有选择轨迹/候选摘要/原协议时点及新增控制血缘接入索引；对去重优先用源血缘和完整配置/路径证据，而非仅同名或相同recipe描述。",
+      "acceptance": "至少能复核B29两抽核折的唯一evaluation_order和候选摘要；额外7个合同路径注明stage及是否经济，不自动计为7试验；未知/未记录的假设与依赖范围继续公开。"
+    },
+    {
+      "priority": "P1",
+      "action": "若后续需要PBO/DSR或其他多重选择校正，先明确可识别的候选宇宙、完整时序结果及依赖/选择协议；在证据不足时只报告局部有界分析。",
+      "acceptance": "不以115个cohort、1717个recipe行、拟合成员总数或四成本倍数替代所需的有效独立试验信息，不声称全研究已经过校正。"
+    }
+  ],
+  "checks_performed": [
+    "新增独占r08-check.py与r08-checks.json；只读新trial_registry和源B-study注册/指定抽核证据。",
+    "全部115个标准B注册的集合、SHA、recipe数量/ID顺序、study内唯一性检查。",
+    "跨study ID复用与原recipe完整描述的句法碰撞/重复检查，并直接验证B31/B85 C04不同语义。",
+    "B10912个继承控制×4成本共48个完整账户与注册绑定旧源SHA精确相等检查。",
+    "B29 2021/2025两局部选择轨迹与54份候选记录摘要检查；识别其他命名拟合字段及非标准注册合同路径的索引范围。",
+    "未读取含2026验证结果的旧总表、V01/V02、2026经济数据、其他专家评分/意见或主审结论；未拟合、搜索或运行writer。"
+  ],
+  "unresolved": [
+    "全研究实际尝试/失败/重复/人类自适应假设的完整范围和共同选择协议未归一化，因此总有效独立试验数未知。",
+    "本轮没有全候选逐期收益矩阵、完整测试选择轨迹和可识别依赖结构，不能进行全研究PBO/DSR等校正认证。",
+    "除B109精确控制book外，跨cohort经济重复/近重复与不同成本场景的有效相关性未被完整量化。",
+    "7个其他文件名合同仅识别路径范围，未作为额外经济试验分类或计数；45个拟合字段缺口也不是45个新增试验。"
+  ],
+  "independence_statement": "保持角色隔离，只读共享原始事实与源B-study证据，未读其他专家内容、评分、主审结论或旧验证总表，仅写data角色目录。AI角色不是受聘真实专家或独立市场样本，仅完成第08轮，未预写后续轮次。"
+}

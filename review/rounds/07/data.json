@@ -1,0 +1,77 @@
+{
+  "round": 7,
+  "role": "data",
+  "topic": "敞口、止损与跨年风险",
+  "conclusion": "只看post-fill仓位会系统漏掉退出日报价前的风险敞口，C02/C04的0.75也仅是2020–2025合资格折新开仓预算倍率；本轮原始字段和独立持仓重建均支持这两个限定，不能把post-fill最大值或0.75写成全期/日内敞口上限。",
+  "verdict": "supported",
+  "evidence": [
+    {
+      "source": "/workspace/BTCExpertReview/workspaces/data/r07-check.py；r07-checks.json:exposures,total_exit_days_lost_by_post_only,total_risk_exit_days_lost_by_post_only",
+      "fact": "从36账户实际fills独立维护成交前旧仓、现金和累计融资，在当日bid/ask重新计价，再与post-fill mark对齐。共1393个退出日成交前持仓非零而成交后为0，含478个STOP_LOSS/TRAIL_STOP/TAKE_PROFIT退出日；若仅取mark.signed_qty，这些在库风险点全部消失。未运行writer或引擎。"
+    },
+    {
+      "source": "/workspace/BTCExpertReview/workspaces/data/r07-checks.json:accounts_with_whole_max_understated_by_post_only,accounts_with_short_max_understated_by_post_only；/workspace/BTCStrategyResearchLedger/lab/quote_exposure.py:9–28",
+      "fact": "独立计算gross_pct=100×|在库数量|×reference_price/当日报价净值；pre净值用成交前现金减含当日融资债务、加按原入场价计算的浮盈亏、减当前退出费准备。25/36账户的whole最大值、18/36的short最大值高于post-only；whole最小正差仍约0.045109个百分点，非浮点尾数差。"
+    },
+    {
+      "source": "/workspace/BTC-strategy/artifacts/accounts/LP35/DELAY.json.gz:2018-04-14 marks,fills,risk_events；/workspace/BTCExpertReview/workspaces/data/r07-checks.json:LP35/DELAY exposure",
+      "fact": "具体退出日：LP35 DELAY于2018-04-12触发STOP_LOSS（index466，due468），4/14平空。4/14原库存−0.01449、reference_price=8006.41794330801、pre净值111.0912978772846289093972603，故pre gross=104.4303183195187%；该日post signed_qty=0。post-only空头峰仅为4/13的102.09384920484652%，漏掉4/14更高的旧仓暴露。"
+    },
+    {
+      "source": "/workspace/BTCExpertReview/workspaces/data/r07-checks.json:LP35/STRESS exposure,cross_year_examples；/workspace/BTC-strategy/artifacts/accounts/LP35/STRESS.json.gz:marks,fills",
+      "fact": "LP35 STRESS空头post峰93.98665333015029%（2018-04-12），加入退出日报价前后为94.35217034928596%（4/13）。实际跨年库存也存在：2020-04-30开出的0.04030 BTC在2021-01-01报价前仍持有；按年分表不能把旧仓清零。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/studies/B31-constant-sizing-controls/folds/2018…2025/training.json:active,rank_counts；seal.json；/workspace/BTCExpertReview/workspaces/data/r07-checks.json:eligibility",
+      "fact": "逐年复制资格和摘要检查通过：Y01/Y04均2018、2019 inactive且positive=0；2020起active，2020前缀positive分别267/265，后续均≥128；截止固定前一年12/31。资格来自过去预测计数，不由本折结果反推。"
+    },
+    {
+      "source": "/workspace/BTC-strategy/artifacts/contexts/sizing.json.gz:active；artifacts/targets/{C02,C04}.json.gz；/workspace/BTCExpertReview/workspaces/data/r07-checks.json:constants",
+      "fact": "逐行重建父信号/风险/权限后，两个导出target仅按active把long_fraction乘0.75，其余字段全部相等。实际active信号区间为2019-12-31…2025-12-30，共2192日，对应2020–2025折；2018/2019折保持倍率1。2025-12-31是未消费尾行、active=false，不可按日历年粗切数组。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/studies/B31-constant-sizing-controls/accounts/{C11,C12}/*.json.gz；/workspace/BTCExpertReview/workspaces/data/r07-checks.json:constants.per_case",
+      "fact": "所有四成本C02/C04的2018–2019 marks与各自未缩放父账户逐项相等，全部入场/退出日期及原因与父账户相同。BASE/STRESS/SEVERE：C02实际缩放15/19次、C04为17/21次，均4次冷资格开仓不缩放；DELAY两者17/22次、5次不缩放。首次缩放开仓为2020-01-15（lag1）或1/16（lag2）。"
+    },
+    {
+      "source": "/workspace/BTCExpertReview/workspaces/data/r07-checks.json:C02/STRESS,C04/STRESS exposure；/workspace/BTC-strategy/artifacts/accounts/{C02,C04}/STRESS.json.gz:2019-05-14",
+      "fact": "两个常数控制的STRESS在2019-05-14旧仓0.02122 BTC退出前gross均为89.72016523081292%，而当日post为0；同样历史阶段尚未active。这直接反驳将0.75倍率写为“全期75%敞口帽”的数据表述。"
+    }
+  ],
+  "counterevidence": [
+    "部分账户whole峰仍落在成交后或持仓日，例如LP35 STRESS whole峰99.28186240102741%前后相同；退出日漏点并不必然改变每个账户的最大值，因此本轮保留全部36账户而不只展示差异样本。",
+    "pre与post净值在退出日允许原退出费准备和8位实际收费舍入间极小差异，实际最大在既有2e-8对账条件内；本轮敞口差异远大于该数值精度影响。",
+    "0.75只缩新开仓预算，既有数量不会因资格/年份变化自动重平衡；浮动价格、净值变化及冷阶段库存仍影响当前gross。",
+    "报价前后均只覆盖日线代理报价，不能证明日内峰值、跳空最坏损失或未来严格敞口上限。"
+  ],
+  "recommendations": [
+    {
+      "priority": "P0",
+      "action": "新交付风险表并列post-fill与quote-before/after的whole/short最大敞口，保留峰值日期、持仓数量和分母净值；冻结summary旧字段按post-fill口径标识，不覆盖原账本。",
+      "acceptance": "LP35 DELAY显示2018-04-14 pre空头104.430318%而当日post=0；36账户1393个退出前点及478个风险退出前点不再由post-only统计漏掉。"
+    },
+    {
+      "priority": "P0",
+      "action": "C02/C04说明改为“合资格2020–2025折的新开仓预算×0.75，2018/2019 identity”，并写清前一年12/31信号属于下一折、持仓不自动重平衡。",
+      "acceptance": "targets逐行倍率与active对应；STRESS分别显示15/19、17/21次实际缩放；DELAY显示17/22；不得标记为全期75%敞口或日内风险保证。"
+    },
+    {
+      "priority": "P1",
+      "action": "按年度展示时携带期初旧仓及融资状态，在退出日同时保留成交前库存与成交后库存。",
+      "acceptance": "跨年旧仓如LP35 STRESS 2021-01-01的0.04030 BTC可追溯至2020-04-30入场，年表不把其期初风险置零，也不把未消费尾行当成新资格观察。"
+    }
+  ],
+  "checks_performed": [
+    "新增独占r07-check.py和r07-checks.json；36账户根据fills独立构造pre/post在库数量、现金/债务、当前报价净值及whole/short gross。",
+    "逐日确认pre已有仓与post只能保持或归零，现金/融资对应实际mark，pre净值与post净值在原2e-8舍入对账条件内；退出日和跨年在库点均保留。",
+    "B31八个年度封存/资格计数与源预测active复制核验；实际sizing.active数组逐日精确重建。",
+    "独立提取原纯信号规则重建C02/C04父target及权限，核对所有字段和倍率；四成本对照未缩放父账户的冷阶段marks、交易时间和实际缩放开仓数。",
+    "额外直接核实LP35 DELAY 2018-04-12触发、4/14退出的risk_events与当日报价字段；未读取其他专家内容或2026经济观测，未搜索新参数或运行writer/引擎。"
+  ],
+  "unresolved": [
+    "本轮没有日内行情，故无法据此建立日内最大敞口或真实跳空止损损失上界。",
+    "本轮重建成交前后库存及数据口径，没有重新评价每个风险阈值应当何时首次触发。",
+    "资格日历与执行延期边界已核实，但不为0.75预算控制赋予超出实际合约的连续再平衡或严格当前gross约束。"
+  ],
+  "independence_statement": "只读共享原始源代码/账本和新仓raw工件，未读取其他专家评分、意见、review/verification结论或主审结论，仅写本角色data目录。AI角色不是受聘真实专家或统计独立市场样本；仅完成第07轮，未预写后续轮次。"
+}

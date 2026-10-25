@@ -1,0 +1,152 @@
+{
+  "round": 1,
+  "role": "execution",
+  "topic": "声明边界与研究合同：成本、融资代理、日度风险与 Native 保证金证明范围",
+  "conclusion": "现有证据支持冻结的2018—2025年日度合成报价及融资代理下的历史账户核算一致性；不能据此认定真实撮合可成交、融资可获得、盘中回撤或敞口有硬上限，亦不能认定融资调整后的真实保证金安全或实盘资格。",
+  "verdict": "qualified",
+  "evidence": [
+    {
+      "来源": "/workspace/BTCExpertReview/shared/protocol.json:limits、independence；source_manifest.json:economic_development_end、all2026_economic_reads_forbidden",
+      "事实": "只审冻结历史证据，不打开2026经济观察、V01/V02或2026账户，不优化参数、不改冻结产物、不重跑原有写入器；AI角色不是人类专家，也不是独立市场样本。"
+    },
+    {
+      "来源": "/workspace/BTCStrategyResearchLedger/studies/B109-long-profit-local-coordinate/registration.json:costs、financing、strict_drawdown_pct、target_return_pct、qualification；lab/native.py:17、22—24；lab/carry_native.py:108—114",
+      "事实": "STRESS=(单边手续费0.003，报价偏移0.001，滞后1日)，DELAY=(0.003，0.001，滞后2日)，二者短仓融资代理均为年率0.10。BASE为0.001/0.0005/1日及0.05年率；SEVERE为0.005/0.002/1日及0.30年率。登记目标为净收益10000%及严格日度回撤<35%。",
+      "实际计算": "参考价恒为10000且忽略融资时，长仓全成本往返损失=1−bid×(1−fee)/(ask×(1+fee))：BASE 0.299550524438%，STRESS/DELAY 0.796810368097%，SEVERE 1.390254317236%。该算式核对费用与报价偏移同时入账，不代表实测滑点分布。"
+    },
+    {
+      "来源": "/workspace/BTCStrategyResearchLedger/lab/carry_native.py:34—45、60—61、78—79；lab/carry_audit.py:16—20、35—42、45—52",
+      "事实": "短仓持有进入决策日时按上一日持仓数量×当日参考价×年率/365累计融资；开仓日不计该日融资，平仓日仍计。融资债务独立于Native钱包累计，但从全部净值、后续开仓预算和每笔已实现盈亏中扣除。净值=raw_cash−financing_total+unrealized_pnl−exit_fee_reserve。"
+    },
+    {
+      "来源": "/workspace/BTCStrategyResearchLedger/studies/B109-long-profit-local-coordinate/accounts/LP35/{BASE,STRESS,DELAY,SEVERE}.json.gz:marks、financing、trades；goal-milestone-audit.json:cases",
+      "事实": "逐一重算每种情景的2922个日度marks、102个fills与51个trades；四个账户均止于2025-12-31并终值平仓。",
+      "实际计算": [
+        {
+          "情景": "BASE",
+          "期末净值USDT": "11252.32012604027896155267123",
+          "净收益百分比": "11152.32012604027896155267123",
+          "日度最大回撤百分比": "28.06824123342619284065242628",
+          "回撤峰谷": [
+            "2021-11-08",
+            "2022-01-12"
+          ],
+          "融资合计USDT": "42.350316899721038447328767122915"
+        },
+        {
+          "情景": "STRESS",
+          "期末净值USDT": "10227.91836738555674890594521",
+          "净收益百分比": "10127.91836738555674890594521",
+          "日度最大回撤百分比": "28.26035575543468266915915500",
+          "回撤峰谷": [
+            "2021-11-08",
+            "2022-01-12"
+          ],
+          "融资合计USDT": "80.78836966444325109405479452001"
+        },
+        {
+          "情景": "DELAY",
+          "期末净值USDT": "4233.272288923211534725671233",
+          "净收益百分比": "4133.272288923211534725671233",
+          "日度最大回撤百分比": "32.58571943244992458468202560",
+          "回撤峰谷": [
+            "2019-06-26",
+            "2020-05-11"
+          ],
+          "融资合计USDT": "45.08542197678846527432876712311"
+        },
+        {
+          "情景": "SEVERE",
+          "期末净值USDT": "7808.227237306363563476794521",
+          "净收益百分比": "7708.227237306363563476794521",
+          "日度最大回撤百分比": "31.28145623025160007792589261",
+          "回撤峰谷": [
+            "2019-07-09",
+            "2020-05-11"
+          ],
+          "融资合计USDT": "198.42768067363643652320547945461"
+        }
+      ],
+      "含义": "仅BASE和STRESS达到净收益10000%；四情景的日度回撤均<35%。本轮未创造或替换门槛。"
+    },
+    {
+      "来源": "/workspace/BTCStrategyResearchLedger/lab/carry_native.py:85—92、111—120；lab/quote_exposure.py:9—29；studies/B109-long-profit-local-coordinate/accounts/LP35/{BASE,DELAY}.json.gz:marks",
+      "事实": "每天仅一个参考价扩成decision/fill/mark三条相同bid/ask报价；它们相隔10毫秒，非真实盘中轨迹。summary最大敞口只取成交后marks；quote_exposure另外重建退出前报价点，并明确不代表盘中最大值或未来上限。",
+      "实际计算": "BASE成交后最大gross=98.99360891840427%（2021-01-07），报价退出前为118.04558356315240%（2018-01-05）；DELAY分别为102.09384920484652%（2018-04-13）和104.43031831951871%（2018-04-14）。初始short_fraction<=0.75并不是持续gross上限。"
+    },
+    {
+      "来源": "/workspace/BTCStrategyResearchLedger/lab/carry_native.py:43—45、64—79、114—122；studies/B109-long-profit-local-coordinate/verification.json:native_replays、status、qualification；goal-milestone-audit.json:native_complete_replays、independent_decimal_audits、qualification",
+      "事实": "Native以MARGIN账户、初始100 USDT、default_leverage=1、margin_init=1、margin_maint=0.5、liquidation_enabled=True运行；每日虚拟报价买卖数量各10000 BTC，StaticLatencyModel插单延迟1毫秒。策略拒绝部分成交/非登记成交，并核对缓存仓位与跟踪仓位。原verification记录1次Native replay；后续只读里程碑附录记录四情景4次完整重放与4次Decimal审计。本轮只核对已保存账户，没有调用engine或审计写入器。"
+    },
+    {
+      "来源": "/workspace/BTCStrategyResearchLedger/lab/carry_native.py:24、26、35、40、119—120；lab/carry_audit.py:48—60",
+      "事实": "融资debt只在策略变量和独立净值计算中出现，未见向Native钱包记账扣除。因此Native通过并不单独证明引擎清算依据已经包含该融资调整；固定保证金参数也不等同于某交易所逐时、逐档保证金和借币规则。"
+    },
+    {
+      "来源": "/workspace/BTCStrategyResearchLedger/studies/B109-long-profit-local-coordinate/registration.json:qualification、validation_read；verification.json:qualification、validation_read；goal-milestone-audit.json:period、qualification、all2026_excluded",
+      "事实": "来源将2018—2025明确列为已消耗、经自适应选择的开发历史；数值目标通过被限定为历史建模结果，不是新OOS、持续alpha或实盘资格。"
+    }
+  ],
+  "counterevidence": [
+    "不能把这些限制写成账户数学已经失败：四情景融资逐日公式、融资累计、净值恒等式及已实现盈亏守恒均得到本轮独立Decimal重算支持，且三个核心共享JSON的SHA256与source_manifest完全一致。",
+    "Native并非仅有手工收益曲线：代码包含真实引擎的订单、费用、仓位和MARGIN账户配置，附录记录完整重放及独立核算；它支持该合成环境中的实现一致性。",
+    "STRESS历史收益超过登记目标且日度回撤小于35%，不能因DELAY目标未达就抹去这一限定事实；相同费用和融资率的DELAY显著较弱，则反证“费用上调通过便意味着执行时点鲁棒”的解释。",
+    "发现BASE退出前gross超过100%并不说明登记的日度回撤门槛被突破；它反证的是把开仓预算或成交后max_gross误称为持续硬上限。"
+  ],
+  "recommendations": [
+    {
+      "行动": "将研究合同及之后对外结论明确绑定：候选、2018—2025已消耗开发期、具体成本情景、融资代理、日度风险采样和数值门槛；将历史核算一致性与真实撮合/盘中风险/实盘资格分开验收。",
+      "优先级": "P0",
+      "验收方法": "所有通过声明可追溯到registration及对应账户case；不得把PASS_HISTORICAL_NUMERICAL_GOAL改写为全情景收益达标、独立验证或实盘通过。冻结原文件保持不变，可在本审查交付件标注。"
+    },
+    {
+      "行动": "成本表同时列单边手续费、合成报价偏移、信号滞后、风险触发后等待日数与融资代理；明确STRESS和DELAY只差lag，SEVERE并非所有路径风险都更差。",
+      "优先级": "P1",
+      "验收方法": "费用与lag逐项对应native.py:17及carry_native.py:53、108—114；恒价往返损失可由登记参数重算，展示DELAY和SEVERE收益未达10000%的事实，不重选参数。"
+    },
+    {
+      "行动": "将日度回撤和成交后敞口的措辞限定到采样口径，同时展示退出前每日报价敞口；明确35%日度回撤目标不承诺盘中回撤或敞口硬上限。",
+      "优先级": "P1",
+      "验收方法": "展示BASE 118.04558356315240%和DELAY 104.43031831951871%的报价前后最大gross，回撤取2922日净值并包含初始100；不得仅用summary.max_gross_exposure_pct声明持有期上限。"
+    },
+    {
+      "行动": "任何后续关于真实保证金安全或可执行融资的主张，另行提出授权证据要求，覆盖融资调整后的保证金基数、借币可用性/费率及真实报价成交条件；本轮保持未证明状态。",
+      "优先级": "P1",
+      "验收方法": "在该类主张出现前，必须有明确来源、时点、账户口径和验收条件；仅有liquidation_enabled=True或固定年融资代理不足以通过，且本轮不读取新经济样本、不改冻结实现。"
+    }
+  ],
+  "checks_performed": [
+    {
+      "检查": "边界及文件完整性",
+      "方法": "先读共享protocol/source_manifest；只读指定代码、三个B109共享JSON与LP35四个2018—2025账户。三个JSON分别SHA256为c88ed24ab89c7654cf162cce2c7cae44605f41ac1bd0e836aad0a72684e50fe1、43e0b0f959b4d50deb0c590a752716cbf7013bfb1aa20ad2f488922cd3ccb0bc、d70130966473f48da6a74a9e35445398c282c148f5f961a070a9cc73ee535576，与共享manifest一致。carry_native/carry_audit/native的当前hash均与registration.inherited_sources一致；quote_exposure不在该inherited_sources映射中，其本轮读取hash单独记录为538a39a4c3e17111208e61884d91d1dc16375b4978801d5642cd6921df3a36f8，不将缺少映射误报为hash冲突。",
+      "结果": "通过"
+    },
+    {
+      "检查": "确定性只读账户计算",
+      "方法": "使用/workspace/BinanceTradingRobot/backend/.venv/bin/python -B；标准库gzip/json/decimal，Decimal精度80；不导入项目模块、不调用Native、不写源仓。逐日断言日期在2018—2025，按初始100和逐日equity累计峰值重算DD；融资预期=上一日负仓数量绝对值×当日reference_price×年率/365；重算raw_cash−financing_total+unrealized_pnl−exit_fee_reserve及sum(trades.pnl)=ending_equity−100。",
+      "结果": "四账户共11688个marks、408个fills、204个trades；最大净值恒等式误差4.97E-24 USDT，最大逐日融资公式误差4.931506849315069E-28 USDT，最大累计融资误差3.0361E-25 USDT，最大已实现盈亏守恒误差4.470E-24 USDT。误差规模符合原生Decimal28与本轮Decimal80运算舍入差异。"
+    },
+    {
+      "检查": "报价前后gross与费用计算",
+      "方法": "gross=100×abs(q)×reference_price/equity；退出前equity从上一日raw_cash与PnL、当日融资和当前可清算报价独立重建；恒价报价按0.01 tick向外取整，长仓往返使用bid(1−fee)/ask(1+fee)。",
+      "结果": "重算的极值、日期、日度DD及期末净值与已保存goal-milestone-audit相符；未引入优化参数或新策略账户。"
+    },
+    {
+      "检查": "LP35账户本轮读取指纹",
+      "结果": {
+        "BASE": "5f2840245acfa04e23f11ba8dfa8b4f62397da6731bc57709d987ef21b538c39",
+        "STRESS": "3dbac177bddfad29019f2c1297daae92716e78af0a8046d78f1fbcfac098726e",
+        "DELAY": "2d8b9e0c2fc099098addb4467f3d73bdc77f70bf1aa89187b640442b2109767e",
+        "SEVERE": "f0a9d2b7ddb23d34a875cb0c185509a190ae2bf8175f873e71ff43fc113edfef"
+      }
+    }
+  ],
+  "unresolved": [
+    "没有盘中行情路径，无法从日度报价证明盘中最大回撤、跳空止损上限、爆仓路径或持续gross上限。",
+    "固定年率短仓融资代理不证明真实借币可用性、逐时费率、强制回收或实际合约资金费。",
+    "融资未进入Native钱包，融资调整后的清算门槛与真实交易所保证金规则仍未得到验证。",
+    "本轮仅用LP35四情景确立证据口径，其余八个候选的执行和核算细查留待被分配轮次；本轮结论不冒充逐候选全审计。",
+    "quote_exposure.py未包含于B109登记inherited_sources，本轮已记录读取hash并独立重算其关键数值；附录完整依赖绑定仍需在复现主题中核对，本项并非现有hash冲突。"
+  ],
+  "independence_statement": "本报告由execution这一AI分析角色独立形成。未读取其他专家目录、观点、评分或主审意见；未读取2026经济数据、V01/V02或2026账户；未修改源仓、交付仓、冻结spec/model/account/verification/gates；未搜索新策略、未拟合、未优化、未重跑独占写入器、未下单或部署。仅在execution专属目录独占创建本轮报告。角色分工不构成真实专家身份、统计独立性或新增市场样本。"
+}

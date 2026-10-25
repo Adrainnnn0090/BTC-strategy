@@ -1,0 +1,71 @@
+{
+  "round": 6,
+  "role": "models",
+  "topic": "执行、滑点、融资与净值",
+  "conclusion": "四成本scenario重用相同冻结模型与信号，但费用、滑点、融资和执行延迟会改变数量、净值、风险阈值穿越及后续路径，不能等同于同一收益事后减一笔费用。模型标签仅在固定监督假设下定义；预测为正既不是盈利概率，也不是实际账户必然盈利的保证。新只读对照已在同一LP35信号上证实成本引起数量及止盈触发日变化。",
+  "verdict": "supported",
+  "evidence": [
+    {
+      "source": "lab/native.py:17; lab/carry_native.py:17; studies/B109-long-profit-local-coordinate/registration.json costs/financing；lab/b109.py:113",
+      "actual": "四scenario的(单边费率,单边滑点,执行lag天,年借币率)为BASE=(0.001,0.0005,1,0.05)、STRESS=(0.003,0.001,1,0.10)、SEVERE=(0.005,0.002,1,0.30)、DELAY=(0.003,0.001,2,0.10)。B109在进入case循环前生成一次target/entry；并未因四scenario重训练四套模型。"
+    },
+    {
+      "source": "lab/sgd.py:30; lab/execution_labels.py:11; lab/short_payoff.py:13; lab/lagged_short.py:7; lab/b88a.py:99",
+      "actual": "BASE_TREE扣固定解析近似成本；STOP用固定0.3%费/0.1%滑点、1日执行、单位入场basis和路径退出；SHORT_NET固定100USDT/25%预算/数量舍入/年10%借币，并分别训练1日和2日头。B67与B88A分别合成两头均值后用于所有四scenario，因此该合成不是任何单一scenario重新标注得到的逐笔实际收益目标。"
+    },
+    {
+      "source": "lab/carry_native.py:34; lab/carry_native.py:48; lab/carry_native.py:60; lab/carry_native.py:78; r06_checks.json equal_initial_budget_quantity_check",
+      "actual": "融资从每次净清算值和未来入场预算扣除；数量按(budget-0.01)/(成交价*(1+费率))向下舍入至0.00001。独立重算LP35第一笔相同75USDT预算，BASE数量0.00556、STRESS/SEVERE为0.00555、DELAY为0.00507（其入场延后一天，价格亦改变），四种实际quantity均吻合；首条每日融资也与q*reference*annual/365完全吻合。此2018例属于冻结冷启动规则，不声称当时已有模型正预测。"
+    },
+    {
+      "source": "studies/B109-long-profit-local-coordinate/folds/2020/predictions.json.gz [date=2020-04-29]; 同研究accounts/LP35/{BASE,STRESS,SEVERE,DELAY}.json.gz；r06_checks.json same_signal_different_cost_paths",
+      "actual": "同一2020-04-29信号BASE_TREE=0.14276756316885422、PRICE_L7 STOP=0.14644433905267146；BASE/STRESS/SEVERE均2020-04-30入多，数量分别0.03944/0.04030/0.03420；DELAY在2020-05-01入多、数量0.02806。后续数量差异也包含各scenario此前已不同的资金路径，不能解释为费率的单一局部效应。"
+    },
+    {
+      "source": "lab/carry_native.py:48; lab/long_profit_local_coordinate.py:5; r06_checks.json same_signal_different_cost_paths",
+      "actual": "对该共同入场多头，独立以2021-01-07实际bid、入场费及退出费准备重算net_asset_pnl/basis：BASE=3.518759513773385378321397699，STRESS=3.496219807353373652137789252，SEVERE=3.469323694983877436704676008。阈值均为LP35的3.5，故BASE当天触发、2021-01-08退出，另外两者次日触发、2021-01-09退出；DELAY次日触发后按2日lag于2021-01-10退出。存档风险事件吻合，说明费用进入风控触发函数而非仅期末扣费。"
+    },
+    {
+      "source": "studies/B109-long-profit-local-coordinate/folds/2019/predictions.json.gz [date=2019-07-01]; 同研究accounts/LP35/STRESS.json.gz [entry=2019-07-02]; r06_checks.json positive_forecast_negative_trade",
+      "actual": "另一个实样：入场前两长头为正（0.09465620981453528、0.21781035556551936），实际STRESS多头2019-07-02入场、2019-08-29因SIGNAL退出；gross_pnl=-43.3459572，费用2.01929709，融资0，净pnl=-45.36525429。已验证gross-fees-financing=pnl；此例gross也为负，不能把亏损全归因于费用。"
+    },
+    {
+      "source": "lab/carry_native.py:37; r06_checks.json same_signal_different_cost_paths[*].stored_NAV_identity_pass",
+      "actual": "对共同持仓日三scenario的实际mark复核equity=raw_cash-financing_total+unrealized_pnl-exit_fee_reserve，均吻合。预测标签的单位回报不能直接乘以账户初始100USDT当作该净值。"
+    }
+  ],
+  "counterevidence": [
+    "更高成本未必使已存完整路径的每一笔净收益更低：成本改变触发时间和其后价格路径，且前期净值改变未来数量。本轮示例不能用来给成本scenario排序。",
+    "正预测表达的是拟合的监督目标数值；MEDIAN损失更接近条件中位数的估计，Huber是稳健位置目标，均不是获利概率。实际单次收益仍可为负，且标签与账户的退出、预算和融资假设可能不同。",
+    "本轮只读已存账户并复核局部数量/现金/风险恒等式，未独立运行Native引擎或重放四账户全过程，不把该检查等同完整执行认证。"
+  ],
+  "recommendations": [
+    {
+      "priority": "P0",
+      "action": "交付规格分别列监督标签成本与四scenario执行成本，并明确四scenario共用冻结模型，不把STRESS标签或双lag均值当成四场景实盘收益预测。",
+      "acceptance": "四行费/滑点/lag/借币参数与注册一致；列出STOP与SHORT_NET的固定训练假设及实际预算/退出规则差异。"
+    },
+    {
+      "priority": "P0",
+      "action": "保留费用/融资进入净清算风控和后续预算的路径，禁止仅在统一毛收益末尾扣成本来替代四场景执行。",
+      "acceptance": "能重现2021-01-07 BASE跨3.5而STRESS/SEVERE尚未跨越、对应触发/退出日期及DELAY的2日响应；四个第一笔quantity公式一致。"
+    },
+    {
+      "priority": "P1",
+      "action": "使用“模型输出正”描述信号，避免将其表述为单笔盈利保证、盈利概率或账户正收益。",
+      "acceptance": "2019-07-01正信号与后续负净pnl实样被保留为预测任务与实际执行差异的回归证据，且不将该次负gross误归因为纯费用效应。"
+    }
+  ],
+  "checks_performed": [
+    {
+      "command": "/workspace/BinanceTradingRobot/backend/.venv/bin/python -B /workspace/BTCExpertReview/workspaces/models/check_r06.py",
+      "result": "exit 0；all_checks_pass=true；四成本参数、相同初始预算quantity、每日融资、共同暖机后信号的风险阈值/事件/退出日、三条NAV恒等式及正预测负交易现金恒等式均通过。",
+      "artifact": "/workspace/BTCExpertReview/workspaces/models/r06_checks.json"
+    }
+  ],
+  "unresolved": [
+    "未用独立执行器重放全部净值；本轮无法把标签迁移误差分解成预测误差、规则差异和成本差异的总体贡献比例。",
+    "边界记录：一次对lab/*native.py的通配源码检索意外返回v01_native.py/v02_native.py的静态适配代码片段，已告知主agent并停止该通配；没有读取V01/V02研究目录、账户或任何2026经济观测。"
+  ],
+  "independence_statement": "只读冻结开发期资料、四个B109/LP35的2018–2025账户及自身工作区；未读其他专家意见/评分/主审结论，未派生agents，未调用原写入器或Native引擎。一次通配静态源码检索涉及验证适配器代码，已在unresolved如实记录；未访问V01/V02研究数据/账户或2026经济数据。新文件仅在models目录首次独占创建。AI角色不是人类专家或独立市场样本。"
+}

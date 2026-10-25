@@ -1,0 +1,74 @@
+{
+  "round": 5,
+  "role": "statistics",
+  "topic": "模型方程与实现一致性",
+  "conclusion": "六族模型的导出状态、目标单位和分层平均可以核实实现一致性；本轮自行走树复原两种short族2025全部365个决策并与冻结预测误差为0，但复现误差与预测误差是不同量，0复现误差不能证明预测有效、概率校准、独立alpha或未来收益。",
+  "verdict": "qualified",
+  "evidence": [
+    {
+      "source": "/workspace/BTC-strategy/models/manifest.json:family、files、feature_schema；各族2025冻结原始模型状态",
+      "finding": "六个交付模型族为base_tree、stop44、price47、short_huber、short_median、mining58，每族8折、2018折均missing。2025文件数分别7、1、1、14、14、1，共38个，逐文件SHA256均匹配manifest且与其声明的只读源仓原文件字节哈希相同。单文件树ensemble包内含7个种子成员；两个short族各为两种执行lag×7种子。"
+    },
+    {
+      "source": "lab/tree_factors.py:91–115；lab/tree_stability.py:33–46,69–79；lab/label_trees.py:10–24；lab/mining_models.py:16–19；六族2025状态:initial、weight、trees",
+      "finding": "树成员输出统一可写为f_s(x)=initial_s+weight_s×Σ_t tree_st(x_float32)。EXTRA成员初始0、96棵树、weight=1/96；七种子以算术平均形成族输出。short的SGB成员是初值加96棵树的0.03倍逐项增量，不能把96棵boosting树当96个独立模型再平均。原树分支需先把输入转float32并按≤走左右分支。"
+    },
+    {
+      "source": "lab/sgd.py:35–37；lab/execution_labels.py:34–63；lab/short_loss_models.py:9–16,24–36；/workspace/BTC-strategy/training_inputs/2025/{六族}.json.gz:targets",
+      "finding": "独立单位核查：base_tree与mining58的2603个target完全相等，并精确重算为log(P[i+61]/P[i+1])−0.00800901870726449；stop44与price47的2603个target完全相等且逐项等于原STOP路径log_return；short_huber与short_median的L1/L2 targets完全相等且逐项等于原SHORT_NET的pnl/basis简单收益，各头2588条。三种目标虽均为无量纲数值，但机制/变换不同，不应直接跨族解释为同一个预期百分比或概率。"
+    },
+    {
+      "source": "lab/tree_stability.py:52–63；lab/label_trees.py:27–41；lab/short_loss_models.py:8–13,24–25",
+      "finding": "EXTRA族在其对应收益目标上训练，并用相邻内层块的MSE选既定profile。short_huber用Huber稳健回归损失，alpha=.9控制残差损失切换所用分位；short_median用absolute_error位置损失。MEDIAN名称指向训练损失的中位位置目标，不指推理时把所有成员预测取中位数；Huber的.9也不是90%方向概率或置信度。"
+    },
+    {
+      "source": "lab/lagged_short.py:56–60；lab/b88a.py:98–108；studies/B67-lag-matched-short-supervision/folds/2025/predictions.json.gz:scores.MEAN；studies/B88A-short-net-loss-families/folds/2025/predictions.json.gz:scores.MEDIAN",
+      "finding": "本轮自行实现仅依数字树数组的float32分支遍历，按冻结种子顺序先各lag平均7成员，再平均L1/L2；两种short族各365个决策与原冻结预测的最大绝对误差均为0。改成一次性平坦平均14成员仅在实数数学上等价，实际浮点最大差Huber=4.163336342344337e-17、Median=5.551115123125783e-17。若误改为14成员预测中位数，最大差分别0.004913673878364083和0.005845496410947865，属于另一预测方程。"
+    },
+    {
+      "source": "studies/B10-seed-calendar-stability/folds/2025/models/EXTRA_CAL44_H60_S*.json.gz:state；独立树遍历365个决策",
+      "finding": "实值数学事实也经真实状态验证：mean(expm1(f_s))与expm1(mean(f_s))在365个决策全不相等，前者减后者范围为4.052171956973882e-06至0.00032615971967638047。不能将log目标种子预测的算术平均当成简单收益预测的算术平均；这是凸变换顺序差，不是新收益发现。"
+    },
+    {
+      "source": "/workspace/BTC-strategy/verification/model-inference-initial.json:families[].max_error、tolerance、scope",
+      "finding": "既存交付报告声明六族max_error=0、tolerance=2e-12，scope仅当前依赖环境与冻结forecast一致。本轮不以该PASS代替独立检查：实际自行复核了2025两short族预测及六族目标/模型字节。2e-12是预测标量单位上的数值表示一致性容差，不是对真实未来标签的预测精度、统计显著性、收益误差或风险保证。"
+    }
+  ],
+  "counterevidence": [
+    "零复现误差是重要的可复现性成果，表明所核查样本的数学方程、种子顺序和状态表示没有产生额外实现偏离；没有预测有效性证明不应抹去该工程证据。",
+    "七个种子可以减少部分算法随机性，但成员共享数据、标签与研究选择，不能当七次独立市场验证或把置信度乘七。",
+    "层次平均与平坦平均的浮点差在本轮样本远低于2e-12；需要保留原顺序以复现，而不是把这些微小舍入差误述为经济改进。",
+    "absolute_error损失对应的单模型位置目标与跨模型平均是不同算子；平均多个中位位置拟合值一般不等于某个混合条件分布的中位数，也不直接等于正收益概率。"
+  ],
+  "recommendations": [
+    {
+      "priority": "P0",
+      "action": "给六族模型卡分别列出目标公式与单位、成员树方程、种子顺序、lag层次平均、缺失传播、训练损失和数值容差。特别标明MEDIAN仍使用平均ensemble且Huber alpha不是概率。",
+      "acceptance": "模型卡与38个2025原始状态及source公式一致；base/mining、stop/price、short两损失族的目标分组分别可精确核验；禁止把log值直接乘100解释为简单收益概率。"
+    },
+    {
+      "priority": "P0",
+      "action": "将verification中的“与冻结预测一致”与“对未来结果有效”分列；保留当前环境、日期覆盖和容差的范围，缺少新鲜样本外证据时不发布预测效度结论。",
+      "acceptance": "误差0的文字明确比较对象是另一实现/冻结forecast而非真实标签；不把PASS写作alpha证明、胜率校准或收益/回撤保证，不读取2026做补证。"
+    },
+    {
+      "priority": "P1",
+      "action": "保留float32分支、树累加顺序和先种子后lag的原推理路径；将变换后平均与平均后变换作为不同量处理。",
+      "acceptance": "独立两short族2025各365个决策继续精确匹配；log ensemble的展示需说明转换顺序；不通过换平均、阈值、loss或改缺失值来优化现有策略。"
+    }
+  ],
+  "checks_performed": [
+    "读取允许的交付manifest与model-inference-initial报告，并与源模型和源公式交叉核对；没有依赖主审PASS自行作结论。",
+    "独立校验2025六族共38个交付模型文件SHA256与manifest及原源模型三方一致。",
+    "在禁写字节码环境使用准入价格构造CAL44，并独立编写数值树walker，复算两种short族2025各365个决策；逐项对原冻结预测检验误差0。",
+    "量化层次平均与平坦14成员平均的浮点顺序差，并用真实成员预测验证平均不等于取中位数、非线性变换与平均不交换。",
+    "逐项核对2025六族训练target三组等价关系，并由原价格/原STOP与SHORT_NET标签分别独立还原目标；不进行拟合、策略搜索或账户回放。",
+    "未读2026经济数据、V01/V02或其他专家目录/意见；未修改源仓或交付仓，仅独占创建本人r05.json。"
+  ],
+  "unresolved": [
+    "本轮独立预测重建覆盖2025两种short族；不把它外推为已独立重建全部年度和六族的所有推理点。既存六族全期报告的范围与本轮自验范围分别列明。",
+    "模型输出与真实结果之间的预测误差、概率校准与增量因子有效性不能由状态重现误差确定，且已消耗开发集不能自动提供最终选择的无偏效度检验。",
+    "模型损失位置量、种子算法随机性与市场样本随机性属于不同问题；本轮未计算收益显著性或有效独立模型数量。"
+  ],
+  "independence_statement": "本轮按授权仅以允许的交付artifact及冻结原始代码、模型、标签、2017–2025价格作独立数学检查；未读取其他专家目录、评分、意见或主审结论。statistics是模拟AI角色，不是真实人类专家或独立市场样本。2026继续禁读；仅完成第05轮，无后续轮次预写。"
+}

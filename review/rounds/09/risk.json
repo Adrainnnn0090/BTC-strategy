@@ -1,0 +1,952 @@
+{
+  "round": 9,
+  "role": "risk",
+  "topic": "年度、行情与盈利集中",
+  "conclusion": "五项已存账户的年度正收益不能代表风险均匀或延迟稳健：盈利的两大美元交易集中在共同2024多头片段，主要回撤可跨数年并反复接近历史35%门，DELAY对全程终值影响显著且年度方向并不单调；未来paper须分别验收regime覆盖、尾部执行和持续水下状态，不能据此再调参数或虚构压力收益。",
+  "verdict": "qualified",
+  "evidence": [
+    {
+      "source_map": {
+        "LP35": "/workspace/BTCStrategyResearchLedger/studies/B109-long-profit-local-coordinate/accounts/LP35/{case}.json.gz",
+        "ME01": "/workspace/BTCStrategyResearchLedger/studies/B105-cold-entry-momentum/accounts/ME01/{case}.json.gz",
+        "MX03": "/workspace/BTCStrategyResearchLedger/studies/B106-shorter-cold-entry-momentum/accounts/MX03/{case}.json.gz",
+        "C02": "/workspace/BTCStrategyResearchLedger/studies/B31-constant-sizing-controls/accounts/C02/{case}.json.gz",
+        "Y01": "/workspace/BTCStrategyResearchLedger/studies/B29-prior-forecast-exits/accounts/Y01/{case}.json.gz"
+      },
+      "source": "各账户marks[*].equity与summary.annual；/workspace/BTCStrategyResearchLedger/lab/native.py:17及carry_native.py:17",
+      "annual_STRESS_DELAY_table": {
+        "LP35": [
+          {
+            "year": 2018,
+            "STRESS_return_pct_6dp": "76.432733",
+            "DELAY_return_pct_6dp": "31.366524",
+            "DELAY_minus_STRESS_pct_points_6dp": "-45.066209"
+          },
+          {
+            "year": 2019,
+            "STRESS_return_pct_6dp": "134.919355",
+            "DELAY_return_pct_6dp": "121.922549",
+            "DELAY_minus_STRESS_pct_points_6dp": "-12.996806"
+          },
+          {
+            "year": 2020,
+            "STRESS_return_pct_6dp": "185.516370",
+            "DELAY_return_pct_6dp": "182.764833",
+            "DELAY_minus_STRESS_pct_points_6dp": "-2.751537"
+          },
+          {
+            "year": 2021,
+            "STRESS_return_pct_6dp": "125.013123",
+            "DELAY_return_pct_6dp": "111.704550",
+            "DELAY_minus_STRESS_pct_points_6dp": "-13.308573"
+          },
+          {
+            "year": 2022,
+            "STRESS_return_pct_6dp": "4.018676",
+            "DELAY_return_pct_6dp": "-6.326940",
+            "DELAY_minus_STRESS_pct_points_6dp": "-10.345616"
+          },
+          {
+            "year": 2023,
+            "STRESS_return_pct_6dp": "56.663978",
+            "DELAY_return_pct_6dp": "35.641795",
+            "DELAY_minus_STRESS_pct_points_6dp": "-21.022183"
+          },
+          {
+            "year": 2024,
+            "STRESS_return_pct_6dp": "128.854037",
+            "DELAY_return_pct_6dp": "96.393884",
+            "DELAY_minus_STRESS_pct_points_6dp": "-32.460153"
+          },
+          {
+            "year": 2025,
+            "STRESS_return_pct_6dp": "2.993871",
+            "DELAY_return_pct_6dp": "-2.792834",
+            "DELAY_minus_STRESS_pct_points_6dp": "-5.786705"
+          }
+        ],
+        "ME01": [
+          {
+            "year": 2018,
+            "STRESS_return_pct_6dp": "66.233379",
+            "DELAY_return_pct_6dp": "45.663632",
+            "DELAY_minus_STRESS_pct_points_6dp": "-20.569748"
+          },
+          {
+            "year": 2019,
+            "STRESS_return_pct_6dp": "134.885216",
+            "DELAY_return_pct_6dp": "121.916927",
+            "DELAY_minus_STRESS_pct_points_6dp": "-12.968289"
+          },
+          {
+            "year": 2020,
+            "STRESS_return_pct_6dp": "185.490870",
+            "DELAY_return_pct_6dp": "182.809531",
+            "DELAY_minus_STRESS_pct_points_6dp": "-2.681338"
+          },
+          {
+            "year": 2021,
+            "STRESS_return_pct_6dp": "118.643124",
+            "DELAY_return_pct_6dp": "125.059130",
+            "DELAY_minus_STRESS_pct_points_6dp": "6.416006"
+          },
+          {
+            "year": 2022,
+            "STRESS_return_pct_6dp": "4.018200",
+            "DELAY_return_pct_6dp": "-6.326938",
+            "DELAY_minus_STRESS_pct_points_6dp": "-10.345138"
+          },
+          {
+            "year": 2023,
+            "STRESS_return_pct_6dp": "56.664558",
+            "DELAY_return_pct_6dp": "35.637463",
+            "DELAY_minus_STRESS_pct_points_6dp": "-21.027095"
+          },
+          {
+            "year": 2024,
+            "STRESS_return_pct_6dp": "128.849898",
+            "DELAY_return_pct_6dp": "96.389182",
+            "DELAY_minus_STRESS_pct_points_6dp": "-32.460716"
+          },
+          {
+            "year": 2025,
+            "STRESS_return_pct_6dp": "2.994166",
+            "DELAY_return_pct_6dp": "-2.791795",
+            "DELAY_minus_STRESS_pct_points_6dp": "-5.785961"
+          }
+        ],
+        "MX03": [
+          {
+            "year": 2018,
+            "STRESS_return_pct_6dp": "61.693544",
+            "DELAY_return_pct_6dp": "48.223181",
+            "DELAY_minus_STRESS_pct_points_6dp": "-13.470362"
+          },
+          {
+            "year": 2019,
+            "STRESS_return_pct_6dp": "134.898318",
+            "DELAY_return_pct_6dp": "121.940781",
+            "DELAY_minus_STRESS_pct_points_6dp": "-12.957537"
+          },
+          {
+            "year": 2020,
+            "STRESS_return_pct_6dp": "185.516706",
+            "DELAY_return_pct_6dp": "182.807392",
+            "DELAY_minus_STRESS_pct_points_6dp": "-2.709314"
+          },
+          {
+            "year": 2021,
+            "STRESS_return_pct_6dp": "118.656550",
+            "DELAY_return_pct_6dp": "125.045615",
+            "DELAY_minus_STRESS_pct_points_6dp": "6.389065"
+          },
+          {
+            "year": 2022,
+            "STRESS_return_pct_6dp": "4.018197",
+            "DELAY_return_pct_6dp": "-6.327770",
+            "DELAY_minus_STRESS_pct_points_6dp": "-10.345967"
+          },
+          {
+            "year": 2023,
+            "STRESS_return_pct_6dp": "56.669091",
+            "DELAY_return_pct_6dp": "35.641435",
+            "DELAY_minus_STRESS_pct_points_6dp": "-21.027656"
+          },
+          {
+            "year": 2024,
+            "STRESS_return_pct_6dp": "128.856205",
+            "DELAY_return_pct_6dp": "96.392782",
+            "DELAY_minus_STRESS_pct_points_6dp": "-32.463423"
+          },
+          {
+            "year": 2025,
+            "STRESS_return_pct_6dp": "2.993075",
+            "DELAY_return_pct_6dp": "-2.792683",
+            "DELAY_minus_STRESS_pct_points_6dp": "-5.785758"
+          }
+        ],
+        "C02": [
+          {
+            "year": 2018,
+            "STRESS_return_pct_6dp": "0.000000",
+            "DELAY_return_pct_6dp": "0.000000",
+            "DELAY_minus_STRESS_pct_points_6dp": "0.000000"
+          },
+          {
+            "year": 2019,
+            "STRESS_return_pct_6dp": "148.479739",
+            "DELAY_return_pct_6dp": "109.415805",
+            "DELAY_minus_STRESS_pct_points_6dp": "-39.063934"
+          },
+          {
+            "year": 2020,
+            "STRESS_return_pct_6dp": "125.117265",
+            "DELAY_return_pct_6dp": "140.280405",
+            "DELAY_minus_STRESS_pct_points_6dp": "15.163140"
+          },
+          {
+            "year": 2021,
+            "STRESS_return_pct_6dp": "57.743794",
+            "DELAY_return_pct_6dp": "39.921586",
+            "DELAY_minus_STRESS_pct_points_6dp": "-17.822208"
+          },
+          {
+            "year": 2022,
+            "STRESS_return_pct_6dp": "0.000000",
+            "DELAY_return_pct_6dp": "0.000000",
+            "DELAY_minus_STRESS_pct_points_6dp": "0.000000"
+          },
+          {
+            "year": 2023,
+            "STRESS_return_pct_6dp": "51.544238",
+            "DELAY_return_pct_6dp": "38.504653",
+            "DELAY_minus_STRESS_pct_points_6dp": "-13.039585"
+          },
+          {
+            "year": 2024,
+            "STRESS_return_pct_6dp": "91.644117",
+            "DELAY_return_pct_6dp": "70.951527",
+            "DELAY_minus_STRESS_pct_points_6dp": "-20.692590"
+          },
+          {
+            "year": 2025,
+            "STRESS_return_pct_6dp": "-1.772824",
+            "DELAY_return_pct_6dp": "-4.657493",
+            "DELAY_minus_STRESS_pct_points_6dp": "-2.884668"
+          }
+        ],
+        "Y01": [
+          {
+            "year": 2018,
+            "STRESS_return_pct_6dp": "0.000000",
+            "DELAY_return_pct_6dp": "0.000000",
+            "DELAY_minus_STRESS_pct_points_6dp": "0.000000"
+          },
+          {
+            "year": 2019,
+            "STRESS_return_pct_6dp": "148.479739",
+            "DELAY_return_pct_6dp": "109.415805",
+            "DELAY_minus_STRESS_pct_points_6dp": "-39.063934"
+          },
+          {
+            "year": 2020,
+            "STRESS_return_pct_6dp": "161.735814",
+            "DELAY_return_pct_6dp": "182.051336",
+            "DELAY_minus_STRESS_pct_points_6dp": "20.315523"
+          },
+          {
+            "year": 2021,
+            "STRESS_return_pct_6dp": "78.463811",
+            "DELAY_return_pct_6dp": "51.683650",
+            "DELAY_minus_STRESS_pct_points_6dp": "-26.780161"
+          },
+          {
+            "year": 2022,
+            "STRESS_return_pct_6dp": "0.000000",
+            "DELAY_return_pct_6dp": "0.000000",
+            "DELAY_minus_STRESS_pct_points_6dp": "0.000000"
+          },
+          {
+            "year": 2023,
+            "STRESS_return_pct_6dp": "69.578802",
+            "DELAY_return_pct_6dp": "51.465407",
+            "DELAY_minus_STRESS_pct_points_6dp": "-18.113396"
+          },
+          {
+            "year": 2024,
+            "STRESS_return_pct_6dp": "128.847832",
+            "DELAY_return_pct_6dp": "96.378680",
+            "DELAY_minus_STRESS_pct_points_6dp": "-32.469151"
+          },
+          {
+            "year": 2025,
+            "STRESS_return_pct_6dp": "-2.696617",
+            "DELAY_return_pct_6dp": "-6.775024",
+            "DELAY_minus_STRESS_pct_points_6dp": "-4.078407"
+          }
+        ]
+      },
+      "finding": "只读5策略×4成本20份完整2018—2025原账户，独立重算160个年度收益；表显示同fee/slip/borrow、仅lag1→2的STRESS/DELAY配对。LP35/ME01/MX03在BASE/STRESS/SEVERE各8年正收益、DELAY各6正2负，DELAY负年为2022/2025；C02/Y01四情景各5正2零1负，零年2018/2022、负年2025。不能将非正年份删去或把8年正收益当8个独立市场证明，表值为展示四舍五入6位。"
+    },
+    {
+      "source": "source_map对应账户:marks年末、STRESS/DELAY全程终值",
+      "delay_sensitivity_summary": [
+        {
+          "strategy": "LP35",
+          "STRESS_ending_equity": "10227.91836738555674890594521",
+          "DELAY_ending_equity": "4233.272288923211534725671233",
+          "DELAY_terminal_wealth_as_fraction_of_STRESS": "0.413893828329929608234870669549604473904217096134287337962322",
+          "terminal_wealth_shortfall_pct": "58.6106171670070391765129330450395526095782903865712662037678"
+        },
+        {
+          "strategy": "ME01",
+          "STRESS_ending_equity": "9361.499132025308686369671233",
+          "DELAY_ending_equity": "4990.534946741754455892520548",
+          "DELAY_terminal_wealth_as_fraction_of_STRESS": "0.533091428665451337256831428109841095019801871890376184848433",
+          "terminal_wealth_shortfall_pct": "46.6908571334548662743168571890158904980198128109623815151567"
+        },
+        {
+          "strategy": "MX03",
+          "STRESS_ending_equity": "9108.145659141292965474712329",
+          "DELAY_ending_equity": "5078.579646083702825232438356",
+          "DELAY_terminal_wealth_as_fraction_of_STRESS": "0.557586564394327695724909481279812934116646642082515189324118",
+          "terminal_wealth_shortfall_pct": "44.2413435605672304275090518720187065883353357917484810675882"
+        },
+        {
+          "strategy": "C02",
+          "STRESS_ending_equity": "2517.20534581",
+          "DELAY_ending_equity": "1589.41184982",
+          "DELAY_terminal_wealth_as_fraction_of_STRESS": "0.631419225477828638315941126751456062608718395712344278163370",
+          "terminal_wealth_shortfall_pct": "36.8580774522171361684058873248543937391281604287655721836630"
+        },
+        {
+          "strategy": "Y01",
+          "STRESS_ending_equity": "4382.78939871",
+          "DELAY_ending_equity": "2484.37106118",
+          "DELAY_terminal_wealth_as_fraction_of_STRESS": "0.566847008873214998979062819829533912256906240307008374620063",
+          "terminal_wealth_shortfall_pct": "43.3152991126785001020937180170466087743093759692991625379937"
+        }
+      ],
+      "finding": "注册模拟下DELAY相对STRESS终值较低约LP35 58.6106%、ME01 46.6909%、MX03 44.2413%、C02 36.8581%、Y01 43.3153%；它包含lag导致的交易和资本复利路径差，不是现实每延迟一天必损这么多。年度也不单调：ME01/MX03在2021的DELAY收益高于STRESS约6.4160/6.3891点，C02/Y01在2020高约15.1631/20.3155点；不能只挑有利年或假定所有年同向。"
+    },
+    {
+      "source": "source_map对应账户:按前高至恢复前高分割marks的回撤片段；原summary.max_drawdown_pct作对照",
+      "risk_episodes": [
+        {
+          "strategy": "LP35",
+          "worst_four_cost_case": "DELAY",
+          "worst_case_top_three_episodes": [
+            {
+              "peak_date": "2019-06-26",
+              "peak_equity": "375.8062609634471435840547945",
+              "trough_date": "2020-05-11",
+              "DD_pct": "32.5857194324499245846820256042792994806880067115930205115628",
+              "trough_equity": "253.3470871563176725412876712",
+              "recovery_date": "2020-10-22",
+              "peak_to_recovery_or_end_calendar_days": 484
+            },
+            {
+              "peak_date": "2021-11-08",
+              "peak_equity": "2304.998900026751139070602740",
+              "trough_date": "2023-03-10",
+              "DD_pct": "32.0652614571432883240487156125912194741560418627261063862649",
+              "trough_equity": "1565.894976148896549091698630",
+              "recovery_date": "2023-04-13",
+              "peak_to_recovery_or_end_calendar_days": 521
+            },
+            {
+              "peak_date": "2023-04-14",
+              "peak_equity": "2315.179086967896549091698630",
+              "trough_date": "2023-08-29",
+              "DD_pct": "31.8324044383001080239798244448484445403954347279812351887525",
+              "trough_equity": "1578.201916533331930153890411",
+              "recovery_date": "2023-12-08",
+              "peak_to_recovery_or_end_calendar_days": 238
+            }
+          ],
+          "DELAY_top_three_episodes": [
+            {
+              "peak_date": "2019-06-26",
+              "peak_equity": "375.8062609634471435840547945",
+              "trough_date": "2020-05-11",
+              "DD_pct": "32.5857194324499245846820256042792994806880067115930205115628",
+              "trough_equity": "253.3470871563176725412876712",
+              "recovery_date": "2020-10-22",
+              "peak_to_recovery_or_end_calendar_days": 484
+            },
+            {
+              "peak_date": "2021-11-08",
+              "peak_equity": "2304.998900026751139070602740",
+              "trough_date": "2023-03-10",
+              "DD_pct": "32.0652614571432883240487156125912194741560418627261063862649",
+              "trough_equity": "1565.894976148896549091698630",
+              "recovery_date": "2023-04-13",
+              "peak_to_recovery_or_end_calendar_days": 521
+            },
+            {
+              "peak_date": "2023-04-14",
+              "peak_equity": "2315.179086967896549091698630",
+              "trough_date": "2023-08-29",
+              "DD_pct": "31.8324044383001080239798244448484445403954347279812351887525",
+              "trough_equity": "1578.201916533331930153890411",
+              "recovery_date": "2023-12-08",
+              "peak_to_recovery_or_end_calendar_days": 238
+            }
+          ]
+        },
+        {
+          "strategy": "ME01",
+          "worst_four_cost_case": "DELAY",
+          "worst_case_top_three_episodes": [
+            {
+              "peak_date": "2019-06-26",
+              "peak_equity": "416.6971739535561186902191781",
+              "trough_date": "2020-05-11",
+              "DD_pct": "32.5849829691387506904110684593493884089158943249298096166400",
+              "trough_equity": "280.9164707879073832393698630",
+              "recovery_date": "2020-10-22",
+              "peak_to_recovery_or_end_calendar_days": 484
+            },
+            {
+              "peak_date": "2021-11-08",
+              "peak_equity": "2717.382566453803654519369863",
+              "trough_date": "2023-03-10",
+              "DD_pct": "32.0635105284359196800469064589896915342943696475548292495133",
+              "trough_equity": "1846.094321161006118106767123",
+              "recovery_date": "2023-04-13",
+              "peak_to_recovery_or_end_calendar_days": 521
+            },
+            {
+              "peak_date": "2023-04-14",
+              "peak_equity": "2729.419069571506118106767123",
+              "trough_date": "2023-08-29",
+              "DD_pct": "31.8327552936953571439381365163949014113982270318572147271010",
+              "trough_equity": "1860.569776215351941387041096",
+              "recovery_date": "2023-12-08",
+              "peak_to_recovery_or_end_calendar_days": 238
+            }
+          ],
+          "DELAY_top_three_episodes": [
+            {
+              "peak_date": "2019-06-26",
+              "peak_equity": "416.6971739535561186902191781",
+              "trough_date": "2020-05-11",
+              "DD_pct": "32.5849829691387506904110684593493884089158943249298096166400",
+              "trough_equity": "280.9164707879073832393698630",
+              "recovery_date": "2020-10-22",
+              "peak_to_recovery_or_end_calendar_days": 484
+            },
+            {
+              "peak_date": "2021-11-08",
+              "peak_equity": "2717.382566453803654519369863",
+              "trough_date": "2023-03-10",
+              "DD_pct": "32.0635105284359196800469064589896915342943696475548292495133",
+              "trough_equity": "1846.094321161006118106767123",
+              "recovery_date": "2023-04-13",
+              "peak_to_recovery_or_end_calendar_days": 521
+            },
+            {
+              "peak_date": "2023-04-14",
+              "peak_equity": "2729.419069571506118106767123",
+              "trough_date": "2023-08-29",
+              "DD_pct": "31.8327552936953571439381365163949014113982270318572147271010",
+              "trough_equity": "1860.569776215351941387041096",
+              "recovery_date": "2023-12-08",
+              "peak_to_recovery_or_end_calendar_days": 238
+            }
+          ]
+        },
+        {
+          "strategy": "MX03",
+          "worst_four_cost_case": "DELAY",
+          "worst_case_top_three_episodes": [
+            {
+              "peak_date": "2019-06-26",
+              "peak_equity": "424.0592339157271169652328767",
+              "trough_date": "2020-05-11",
+              "DD_pct": "32.5846367613562408039843174044920842679262090691919665570554",
+              "trough_equity": "285.8810728912974470258630137",
+              "recovery_date": "2020-10-22",
+              "peak_to_recovery_or_end_calendar_days": 484
+            },
+            {
+              "peak_date": "2021-11-08",
+              "peak_equity": "2765.306530692430518864767123",
+              "trough_date": "2023-03-10",
+              "DD_pct": "32.0657825851048970837831873832354685309266322457161154069444",
+              "trough_equity": "1878.589350748888727725041096",
+              "recovery_date": "2023-04-13",
+              "peak_to_recovery_or_end_calendar_days": 521
+            },
+            {
+              "peak_date": "2023-04-14",
+              "peak_equity": "2777.486018332888727725041096",
+              "trough_date": "2023-08-29",
+              "DD_pct": "31.8323368638761385125471372784626387517941922920655197934639",
+              "trough_equity": "1893.347312630103026509424658",
+              "recovery_date": "2023-12-08",
+              "peak_to_recovery_or_end_calendar_days": 238
+            }
+          ],
+          "DELAY_top_three_episodes": [
+            {
+              "peak_date": "2019-06-26",
+              "peak_equity": "424.0592339157271169652328767",
+              "trough_date": "2020-05-11",
+              "DD_pct": "32.5846367613562408039843174044920842679262090691919665570554",
+              "trough_equity": "285.8810728912974470258630137",
+              "recovery_date": "2020-10-22",
+              "peak_to_recovery_or_end_calendar_days": 484
+            },
+            {
+              "peak_date": "2021-11-08",
+              "peak_equity": "2765.306530692430518864767123",
+              "trough_date": "2023-03-10",
+              "DD_pct": "32.0657825851048970837831873832354685309266322457161154069444",
+              "trough_equity": "1878.589350748888727725041096",
+              "recovery_date": "2023-04-13",
+              "peak_to_recovery_or_end_calendar_days": 521
+            },
+            {
+              "peak_date": "2023-04-14",
+              "peak_equity": "2777.486018332888727725041096",
+              "trough_date": "2023-08-29",
+              "DD_pct": "31.8323368638761385125471372784626387517941922920655197934639",
+              "trough_equity": "1893.347312630103026509424658",
+              "recovery_date": "2023-12-08",
+              "peak_to_recovery_or_end_calendar_days": 238
+            }
+          ]
+        },
+        {
+          "strategy": "C02",
+          "worst_four_cost_case": "SEVERE",
+          "worst_case_top_three_episodes": [
+            {
+              "peak_date": "2019-07-09",
+              "peak_equity": "323.1124496550",
+              "trough_date": "2020-05-11",
+              "DD_pct": "31.8934482459689796690263652354283965418936868788352846607990",
+              "trough_equity": "220.0607477480",
+              "recovery_date": "2020-11-05",
+              "peak_to_recovery_or_end_calendar_days": 485
+            },
+            {
+              "peak_date": "2021-11-08",
+              "peak_equity": "1071.5759581725",
+              "trough_date": "2023-01-13",
+              "DD_pct": "21.7970320346530320102817685447048774922574444625469945735855",
+              "trough_equity": "838.0042032940",
+              "recovery_date": "2023-03-19",
+              "peak_to_recovery_or_end_calendar_days": 496
+            },
+            {
+              "peak_date": "2021-04-13",
+              "peak_equity": "942.5782332210",
+              "trough_date": "2021-09-21",
+              "DD_pct": "21.7479428904271170679745658077143618449070699389633980052763",
+              "trough_equity": "737.5868573625",
+              "recovery_date": "2021-10-11",
+              "peak_to_recovery_or_end_calendar_days": 181
+            }
+          ],
+          "DELAY_top_three_episodes": [
+            {
+              "peak_date": "2019-06-26",
+              "peak_equity": "274.7624928381",
+              "trough_date": "2020-05-11",
+              "DD_pct": "31.1009326404868549307231020548502237628199538399171189885898",
+              "trough_equity": "189.3087950192",
+              "recovery_date": "2020-11-04",
+              "peak_to_recovery_or_end_calendar_days": 497
+            },
+            {
+              "peak_date": "2021-04-13",
+              "peak_equity": "776.0166790388",
+              "trough_date": "2021-09-21",
+              "DD_pct": "23.8170628370680908546834958876422298644427479905488234718299",
+              "trough_equity": "591.1922989660",
+              "recovery_date": "2021-10-15",
+              "peak_to_recovery_or_end_calendar_days": 185
+            },
+            {
+              "peak_date": "2021-11-08",
+              "peak_equity": "862.4383189695",
+              "trough_date": "2023-03-10",
+              "DD_pct": "20.9419478085002962491967602793870076041012548422318979459539",
+              "trough_equity": "681.8269363304",
+              "recovery_date": "2023-03-19",
+              "peak_to_recovery_or_end_calendar_days": 496
+            }
+          ]
+        },
+        {
+          "strategy": "Y01",
+          "worst_four_cost_case": "SEVERE",
+          "worst_case_top_three_episodes": [
+            {
+              "peak_date": "2019-07-09",
+              "peak_equity": "323.1124496550",
+              "trough_date": "2020-05-11",
+              "DD_pct": "34.2758999497703832912374073963318515016505515899168858969109",
+              "trough_equity": "212.3627496860",
+              "recovery_date": "2020-10-27",
+              "peak_to_recovery_or_end_calendar_days": 476
+            },
+            {
+              "peak_date": "2021-04-13",
+              "peak_equity": "1271.3339234620",
+              "trough_date": "2021-09-21",
+              "DD_pct": "27.7047006021331724677140344975409863755645764314975851459665",
+              "trough_equity": "919.1146663135",
+              "recovery_date": "2021-10-11",
+              "peak_to_recovery_or_end_calendar_days": 181
+            },
+            {
+              "peak_date": "2021-11-08",
+              "peak_equity": "1496.1512573515",
+              "trough_date": "2023-01-13",
+              "DD_pct": "26.9812204462600675495335872022322834558266540060641282587035",
+              "trough_equity": "1092.4713883960",
+              "recovery_date": "2023-03-19",
+              "peak_to_recovery_or_end_calendar_days": 496
+            }
+          ],
+          "DELAY_top_three_episodes": [
+            {
+              "peak_date": "2019-06-26",
+              "peak_equity": "274.7624928381",
+              "trough_date": "2020-05-11",
+              "DD_pct": "33.4762922251903272374891211215989684210168852535583658521802",
+              "trough_equity": "182.7821978104",
+              "recovery_date": "2020-10-27",
+              "peak_to_recovery_or_end_calendar_days": 489
+            },
+            {
+              "peak_date": "2021-04-13",
+              "peak_equity": "1032.2841538158",
+              "trough_date": "2021-09-21",
+              "DD_pct": "30.3536969767445940888833543318851660566449493204503841147086",
+              "trough_equity": "718.9477498276",
+              "recovery_date": "2021-10-15",
+              "peak_to_recovery_or_end_calendar_days": 185
+            },
+            {
+              "peak_date": "2021-11-08",
+              "peak_equity": "1178.9747913327",
+              "trough_date": "2023-03-10",
+              "DD_pct": "27.2083479548612186021012832420103061095758163308719345693956",
+              "trough_equity": "858.1952278068",
+              "recovery_date": "2023-03-23",
+              "peak_to_recovery_or_end_calendar_days": 500
+            }
+          ]
+        }
+      ],
+      "calculation_method": "每次日度净值跌破此前最高净值建立episode，记录最深谷；首次净值>=此前峰值时结束并记录恢复日。duration为峰日到恢复日的calendar日差，未恢复则截至2025-12-31并标censored。只对既有净值分段，不生成新策略或市场情景。",
+      "finding": "LP35/ME01/MX03的DELAY三大episode均约32%：2019-06-26→2020-05-11谷、2020-10-22恢复（峰到恢复484日）；2021-11-08→2023-03-10谷、2023-04-13恢复（521日）；2023-04-14→2023-08-29谷、2023-12-08恢复（238日）。因此风险不只由一个年度负收益行表示，也不是仅有一个历史最大事件。Y01/C02最差SEVERE同为2019—2020，C02虽缩预算仍有约31.89345%回撤及485日恢复期。片段为同一资产重复历史，不当作独立危机样本。"
+    },
+    {
+      "source": "source_map对应账户:trades[pnl>0,terminal=false]及summary.best_two_positive_contribution_fraction",
+      "profit_concentration_and_delay_table": [
+        {
+          "strategy": "LP35",
+          "STRESS_top_two_share_of_positive_natural_pnl": "0.427868492958394650866874204366170981162963510782247580306076",
+          "DELAY_top_two_share_of_positive_natural_pnl": "0.421365709177870564729976393791633783528364755454049111255053",
+          "STRESS_top_two_trades": [
+            {
+              "trade_index": 45,
+              "entry_date": "2024-09-27",
+              "exit_date": "2024-12-21",
+              "direction": 1,
+              "pnl": "3107.577040710000000000000000"
+            },
+            {
+              "trade_index": 43,
+              "entry_date": "2024-01-17",
+              "exit_date": "2024-03-17",
+              "direction": 1,
+              "pnl": "2453.824593220000000000000000"
+            }
+          ],
+          "DELAY_top_two_trades": [
+            {
+              "trade_index": 45,
+              "entry_date": "2024-09-28",
+              "exit_date": "2024-12-22",
+              "direction": 1,
+              "pnl": "1351.693423920000000000000000"
+            },
+            {
+              "trade_index": 43,
+              "entry_date": "2024-01-18",
+              "exit_date": "2024-03-18",
+              "direction": 1,
+              "pnl": "1315.639601740000000000000000"
+            }
+          ],
+          "DELAY_terminal_wealth_shortfall_vs_STRESS_pct": "58.6106171670070391765129330450395526095782903865712662037678"
+        },
+        {
+          "strategy": "ME01",
+          "STRESS_top_two_share_of_positive_natural_pnl": "0.428552985518279672160242651616166938815785118863710716399853",
+          "DELAY_top_two_share_of_positive_natural_pnl": "0.422354283140472991820181305274885234774942454442242992309121",
+          "STRESS_top_two_trades": [
+            {
+              "trade_index": 41,
+              "entry_date": "2024-09-27",
+              "exit_date": "2024-12-21",
+              "direction": 1,
+              "pnl": "2844.394620340000000000000000"
+            },
+            {
+              "trade_index": 39,
+              "entry_date": "2024-01-17",
+              "exit_date": "2024-03-17",
+              "direction": 1,
+              "pnl": "2245.817936940000000000000000"
+            }
+          ],
+          "DELAY_top_two_trades": [
+            {
+              "trade_index": 41,
+              "entry_date": "2024-09-28",
+              "exit_date": "2024-12-22",
+              "direction": 1,
+              "pnl": "1593.354599420000000000000000"
+            },
+            {
+              "trade_index": 39,
+              "entry_date": "2024-01-18",
+              "exit_date": "2024-03-18",
+              "direction": 1,
+              "pnl": "1551.078079810000000000000000"
+            }
+          ],
+          "DELAY_terminal_wealth_shortfall_vs_STRESS_pct": "46.6908571334548662743168571890158904980198128109623815151567"
+        },
+        {
+          "strategy": "MX03",
+          "STRESS_top_two_share_of_positive_natural_pnl": "0.428568242270753785119068873069719363256364973646681534117851",
+          "DELAY_top_two_share_of_positive_natural_pnl": "0.422360313142824029201004504208095848809964022181254601992173",
+          "STRESS_top_two_trades": [
+            {
+              "trade_index": 41,
+              "entry_date": "2024-09-27",
+              "exit_date": "2024-12-21",
+              "direction": 1,
+              "pnl": "2767.403026490000000000000000"
+            },
+            {
+              "trade_index": 39,
+              "entry_date": "2024-01-17",
+              "exit_date": "2024-03-17",
+              "direction": 1,
+              "pnl": "2185.201728770000000000000000"
+            }
+          ],
+          "DELAY_top_two_trades": [
+            {
+              "trade_index": 41,
+              "entry_date": "2024-09-28",
+              "exit_date": "2024-12-22",
+              "direction": 1,
+              "pnl": "1621.514879070000000000000000"
+            },
+            {
+              "trade_index": 39,
+              "entry_date": "2024-01-18",
+              "exit_date": "2024-03-18",
+              "direction": 1,
+              "pnl": "1578.454647020000000000000000"
+            }
+          ],
+          "DELAY_terminal_wealth_shortfall_vs_STRESS_pct": "44.2413435605672304275090518720187065883353357917484810675882"
+        },
+        {
+          "strategy": "C02",
+          "STRESS_top_two_share_of_positive_natural_pnl": "0.415154255617780519876686801452133761208367160271384712733411",
+          "DELAY_top_two_share_of_positive_natural_pnl": "0.387254664408296097588044297248668634440026712448651336161164",
+          "STRESS_top_two_trades": [
+            {
+              "trade_index": 14,
+              "entry_date": "2024-09-27",
+              "exit_date": "2024-12-21",
+              "direction": 1,
+              "pnl": "647.52691077"
+            },
+            {
+              "trade_index": 12,
+              "entry_date": "2024-01-17",
+              "exit_date": "2024-03-17",
+              "direction": 1,
+              "pnl": "565.41591693"
+            }
+          ],
+          "DELAY_top_two_trades": [
+            {
+              "trade_index": 15,
+              "entry_date": "2024-01-18",
+              "exit_date": "2024-03-18",
+              "direction": 1,
+              "pnl": "434.63559574"
+            },
+            {
+              "trade_index": 17,
+              "entry_date": "2024-09-28",
+              "exit_date": "2024-12-22",
+              "direction": 1,
+              "pnl": "412.34695223"
+            }
+          ],
+          "DELAY_terminal_wealth_shortfall_vs_STRESS_pct": "36.8580774522171361684058873248543937391281604287655721836630"
+        },
+        {
+          "strategy": "Y01",
+          "STRESS_top_two_share_of_positive_natural_pnl": "0.471182696857459057207901581065825844076019412415300736470490",
+          "DELAY_top_two_share_of_positive_natural_pnl": "0.438124517751434910924385625164285286382787419569838792621082",
+          "STRESS_top_two_trades": [
+            {
+              "trade_index": 14,
+              "entry_date": "2024-09-27",
+              "exit_date": "2024-12-21",
+              "direction": 1,
+              "pnl": "1409.46762433"
+            },
+            {
+              "trade_index": 12,
+              "entry_date": "2024-01-17",
+              "exit_date": "2024-03-17",
+              "direction": 1,
+              "pnl": "1112.97394680"
+            }
+          ],
+          "DELAY_top_two_trades": [
+            {
+              "trade_index": 17,
+              "entry_date": "2024-09-28",
+              "exit_date": "2024-12-22",
+              "direction": 1,
+              "pnl": "826.99270282"
+            },
+            {
+              "trade_index": 15,
+              "entry_date": "2024-01-18",
+              "exit_date": "2024-03-18",
+              "direction": 1,
+              "pnl": "805.13180542"
+            }
+          ],
+          "DELAY_terminal_wealth_shortfall_vs_STRESS_pct": "43.3152991126785001020937180170466087743093759692991625379937"
+        }
+      ],
+      "finding": "重新排序自然交易的正美元PnL：STRESS两笔最大正盈利占正盈利总额LP35约42.7868%、ME01 42.8553%、MX03 42.8568%、C02 41.5154%、Y01 47.1183%；五者这两笔均为2024-01-17→03-17和2024-09-27→12-21的多头。DELAY对应比例约38.7255%—43.8125%。分母是所有正自然交易PnL，非总净利润或alpha；美元权重受此前资本复利影响，不能简单删除两笔PnL就声称得到“去最佳交易”的反事实收益。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/studies/B31-constant-sizing-controls/accounts/C02/DELAY.json.gz:2022全日marks；/workspace/BTCStrategyResearchLedger/studies/B29-prior-forecast-exits/accounts/Y01/DELAY.json.gz:2022全日marks",
+      "calculation": {
+        "C02": {
+          "all_2022_365_marks_flat_and_equity_constant": true,
+          "2022_annual_return_pct": 0,
+          "2022_ending_equity": "704.06463418",
+          "prior_global_peak_equity": "862.4383189695",
+          "2022_end_global_drawdown_pct": "18.3634796026614004472140954507380021819827199335637044647290"
+        },
+        "Y01": {
+          "all_2022_365_marks_flat_and_equity_constant": true,
+          "2022_annual_return_pct": 0,
+          "2022_ending_equity": "895.93476215",
+          "prior_global_peak_equity": "1178.9747913327",
+          "2022_end_global_drawdown_pct": "24.0073011962159680240516248989059380118111400937243904910753"
+        }
+      },
+      "finding": "2022零收益确实对应现金持有，不是隐瞒交易损失；但从全程前高看仍分别水下18.36%/24.01%，年度零收益或无仓不能重置既有风险过程，也不能算该年检验过实际持仓尾部风险。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/lab/bear_short_overlay.py:14-21; b12_signals.py:42-70; conditional_short.py:45-67; carry_native.py:34-61,76-92",
+      "finding": "未来regime分层可用事前可得的既有状态定义（模型None/cold、CASH、available、原bear=price<.97*MA100、negative20、原20日波动及年度vol_target），但收益不能用于回填行情标签、再选阈值或决定是否排除某年。纸面情景列表与真实已执行情景收益必须分开记录；本轮只计算原账户年度/片段，没有新情景绩效。"
+    }
+  ],
+  "counterevidence": [
+    {
+      "source": "本轮annual_STRESS_DELAY_table与risk_episodes",
+      "finding": "LP35/ME01/MX03在三种1日成本情景中每年都正收益，DELAY总体也保持正终值；不能把敏感性简写为策略在所有年或所有成本亏损。风险限制是延迟后的较弱终值、负年与长水下过程，而非否认原盈利。"
+    },
+    {
+      "source": "本轮年度配对和C02/Y01原账户",
+      "finding": "DELAY在部分年份优于STRESS，C02/Y01的2018/2022现金年真实无仓；这些事实均须保留，不可用统一“延迟必然更差/现金即低风险成功验证”叙事覆盖。"
+    },
+    {
+      "source": "本轮profit_concentration_and_delay_table；/workspace/BTCStrategyResearchLedger/studies/B31-constant-sizing-controls/decision.md:14-16",
+      "finding": "C02对原Y01的预算缩放确实降低历史DD，且两大正PnL占比也低于Y01；但它们共享最大盈利片段与原危机区间，并没有因此成为独立市场样本或证明未来完全分散。"
+    }
+  ],
+  "recommendations": [
+    {
+      "priority": "P0",
+      "action": "paper前注册并固化regime分层表，用原可得状态定义cold/post、CASH/非CASH、available、原bear/negative20和波动状态，固定窗口与报告时间。",
+      "acceptance": "每格同时报告实际敞口日、交易数、净手续费/融资PnL、pre/post gross、DD及水下时长；无成交或无行情覆盖标“未覆盖/不足”，不称该格经济验证通过；不按未来收益调整regime阈值或延长观察起点来挑结果。分层仅为报告，不改原策略交易参数。"
+    },
+    {
+      "priority": "P0",
+      "action": "paper前将连续前高/回撤/恢复状态作为独立风险账本验收，年度收益和CASH状态另列。",
+      "acceptance": "使用既有C02/Y01 2022例子复现全年0收益但仍水下18.36348%/24.00730%；paper年界、模型更新或暂时空仓不得清零前高。日志能区分252天warmup、现金无暴露与真实暴露风险片段。"
+    },
+    {
+      "priority": "P0",
+      "action": "paper前执行已登记的尾部/延迟/断源操作测试，冻结原SL/TP/lag和成本定义，不预填情景收益。",
+      "acceptance": "至少覆盖价格穿过原SL后继续跳变、原1/2日due、退出报价缺失、融资后equity接近/越过登记约束、跨年旧仓risk保持；测试应输出实际可审计trigger/due/fill/fee/borrow/equity与失败状态。未运行的情景仅记“待执行”，不得编造收益、回撤、清算或通过值，也不得把SL价当成交价。"
+    },
+    {
+      "priority": "P1",
+      "action": "paper前固定集中度报告口径与报警合同，分别显示正自然交易PnL集中、年度复利收益和全程终值，不据美元大赢家自动改变仓位。",
+      "acceptance": "至少复现本轮2024两笔共同多头及41.5%—47.1%的STRESS正PnL占比；明确终端金额受资本路径影响。若另行登记集中报警，只作为paper审阅/记录规则，不能隐藏回撤、删除最佳/最差交易后冒充重跑绩效或临时调整参数。"
+    },
+    {
+      "priority": "P1",
+      "action": "paper风险验收把STRESS/DELAY成对保留，并声明数据覆盖与当前系统未验收事项。",
+      "acceptance": "保留全部2018—2025年度原值、负年、零年与延迟有利年；后续paper的执行差异/真实成本单独记录，不直接外推历史终值差为未来损失率。当前只交付验收条件，未建立/执行未来paper系统或新压力收益。"
+    }
+  ],
+  "checks_performed": [
+    {
+      "check": "5策略×4成本年度复利收益只读新核对",
+      "method": "指定Python -B按原2018—2025完整账户，以60位Decimal用本年末equity/上年末equity-1计算160个年度收益，逐一比较summary.annual；不加总年度百分比，不调用原writer。",
+      "result": "20份2922日原账户、160个年度值均与原summary误差<1e-9个百分点；表按6位小数展示，负年/零年全部保留。",
+      "input_book_sha256": {
+        "LP35": {
+          "BASE": "5f2840245acfa04e23f11ba8dfa8b4f62397da6731bc57709d987ef21b538c39",
+          "STRESS": "3dbac177bddfad29019f2c1297daae92716e78af0a8046d78f1fbcfac098726e",
+          "SEVERE": "f0a9d2b7ddb23d34a875cb0c185509a190ae2bf8175f873e71ff43fc113edfef",
+          "DELAY": "2d8b9e0c2fc099098addb4467f3d73bdc77f70bf1aa89187b640442b2109767e"
+        },
+        "ME01": {
+          "BASE": "4660eb2477d56fd0854cc96f65eb2583dc6f46412bd540beb2c665ce51438c7c",
+          "STRESS": "686b27f965bf930bff0e5134cccf4304f773307c969151346856f81d10586b3d",
+          "SEVERE": "de41cc28dccc5a875945ac37061b4f4e94bdc75f6a041975cd888cc9f469be9c",
+          "DELAY": "d615abdbc3e71482f6616284e27fcf852adba37b29c4dccf76b90ad13bd22ee6"
+        },
+        "MX03": {
+          "BASE": "509c49b71380eb75c78971b1eba1b3bbf3a19de4230a1017943bbe446011ee3e",
+          "STRESS": "79a55bf16492edac902aa9f2ba7aa7e99d6d0156649d4ebd541afb703bc824ee",
+          "SEVERE": "9c5917ee37f35fb78ecc91c47830f79d198369254452320e43c4ec356aac1c67",
+          "DELAY": "33446f0dc7ceae38e12523acf6a50413d42a8af208c73ed6d2494f5a026cc3fd"
+        },
+        "C02": {
+          "BASE": "acc5790659bac1798c82bc0dd423f775035fdec359efaf0a3b47bee3f2bcfb4a",
+          "STRESS": "6af367aa64d2e97cd06b610e59d9e615c32509221b5b126175e39331dc4fc76b",
+          "SEVERE": "ae07a559ba68a167fb3462ed71b31a9bb35aeb097f52a95da229d559526d6dae",
+          "DELAY": "7191d56d16a85ea1efb296286eea47c390035de935f9ed951e16257ea538391d"
+        },
+        "Y01": {
+          "BASE": "73ba9509991976923e99ce5aa5dff27850465b30edaae32a50431a64ad7e9567",
+          "STRESS": "c726d5a7302a0c167b26137889454b419c921eb31bf122ffa32e49cf50a4c2ee",
+          "SEVERE": "b152dcba0c989ef3584fa0c3580a3fd4c1bbbf6ae8626d402eb2fbede4b02a83",
+          "DELAY": "ad6d7b37f9528499dfdaefa26626aa5d1f14fba10a94743cdfc17453c9b1b153"
+        }
+      }
+    },
+    {
+      "check": "回撤episode与恢复时长的确定性新分段",
+      "method": "完整marks按跌破此前峰值/恢复此前峰值分段，记录最深谷、恢复日及峰到恢复calendar日差；各case最大episode与原summary.max_drawdown_pct核对。",
+      "result": "20/20最大DD与原summary误差<1e-9点；记录LP35/ME01/MX03 DELAY三个约32%片段及484/521/238日恢复时长，没有新市场/策略情景。"
+    },
+    {
+      "check": "盈利集中与匹配延迟敏感性新核对",
+      "method": "对terminal=false且pnl>0的原自然交易排序，重算前两笔PnL/所有正PnL并与summary比较；逐年和终值比较同fee/slip/borrow的STRESS/DELAY。",
+      "result": "20/20集中比例与summary误差<1e-12；五项STRESS最大两笔均为共同2024多头；终值延迟差及年度非单调性如表。没有删除交易或反事实收益重算。"
+    },
+    {
+      "check": "现金年但全程仍水下的只读新反例",
+      "method": "检查C02/Y01 DELAY的2022所有365日signed_qty=0、equity恒定，再以截至2022年末的全程峰值计算末日回撤。",
+      "result": "两者全年0收益/无仓均通过，但年末全程DD分别18.3634796027%与24.0073011962%；没有把现金期当作有暴露尾部样本。"
+    }
+  ],
+  "unresolved": [
+    "本轮未执行新的行情冲击、滑点、流动性/报价缺失或清算情景，不提供其收益/回撤/通过值；相关paper前情景仍待另行授权并注册执行。",
+    "原历史分段与共同盈利交易不是独立宏观regime样本，也不能提供未来每类行情收益或尾部损失概率。",
+    "盈利集中采用已复利的美元PnL，不是单位风险预测贡献；没有重跑删除最佳交易/某年后的反事实账户。",
+    "未来paper分层窗口、最小覆盖、报警/停止合同和运行证据尚未注册/建立，不能由历史年度表宣布paper或实盘就绪。"
+  ],
+  "independence_statement": "本人为risk AI分析角色，不是人类专家或新的独立市场样本；未读取其他专家意见/评分/主审结论，未读取V01/V02或2026经济数据/账户；本轮仅只读五项既有2018—2025结果与冻结定义，不按结果调参数、不新策略/冲击收益搜索、不改冻结代码/spec/模型/账户/verification/gates、不重跑writer，仅独占写risk/r09.json和/tmp私有中间结果，未预写后轮。"
+}

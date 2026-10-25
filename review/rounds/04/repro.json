@@ -1,0 +1,73 @@
+{
+  "round": 4,
+  "role": "repro",
+  "topic": "因子可得性与来源时点",
+  "conclusion": "新仓当前266个模型文件的392个numeric估计器均与冻结原件一致且输入宽度/树索引符合44、47或58维，但输入交付仍应补可机器读取的feature_order、lag、missing/warmup与来源时点合同；PRICE_L7的47维预测因子严格来自价格/日历，不能因原B81统一读取volume而宣称其依赖volume，mining58则必须保留观测前沿、滞后及缺测语义且不能升级为PIT认证。本轮通过物料一致性与合成因子检查，未验收真实来源时点或完整新数据推理。",
+  "verdict": "qualified",
+  "evidence": [
+    {
+      "source": "/workspace/BTCExpertReview/workspaces/repro/checks-r04.json:model_file_checks,all_model_file_checks_pass",
+      "actual_check": "新增只读check_r04.py逐一核对新仓266个文件及392个内含估计器，全部manifest摘要与原B10/B20/B81/B67/B88A/B17对应文件SHA一致，全部成员n_features及树使用的特征索引在预期宽度内。家族文件数为base_tree49、stop44为7、price47为7、short_huber98、short_median98、mining58为7。其输入宽度分别44/44/47/44/44/58。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/lab/volume_short_factors.py:7-21; /workspace/BTCStrategyResearchLedger/lab/b81.py:23,88-89,120-129",
+      "finding": "选定PRICE_L7的feature_spec={group:PRICE47,lag:7}。append_volume在VOL47分支才使用observations；PRICE47直接series=prices，追加列为252日后常量1以及截至i−7的价格7日/90日、30日/90日均值log比率并clip至[-5,5]。CAL44+3列合计47维。B81统一加载volume是原研究流程/验证依赖，不是此选定PRICE47预测因子的数值依赖。"
+    },
+    {
+      "source": "/workspace/BTCExpertReview/workspaces/repro/checks-r04.json:pure_synthetic_checks",
+      "actual_check": "用800日完全合成的正价格/volume执行11项纯因子检查，全部通过：PRICE47对observations=None、两套完全不同volume、禁止迭代的observations对象逐位相同；VOL47对照随volume变化；PRICE47输出800×47、CAL44前44列精确一致、首252行全零、252日后第44列为1；改变第601日之后价格不会改变截至第600日因子。没有读取原始价格/观测数据、拟合或策略搜索。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/lab/sgd.py:15-28; /workspace/BTCStrategyResearchLedger/lab/tree_factors.py:19-25,28-78",
+      "finding": "CAL44按固定位置拼接PRICE20、PATH16、CAL8，首252行统一置零；不同列各自有rolling、fillna(0)、有限性与裁剪等语义。n_features=44仅证明宽度，不能辨别列顺序互换或同维错误变换，因此需要将实际位置定义和源码摘要共同登记。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/lab/mining_ablation.py:8-19; /workspace/BTCStrategyResearchLedger/lab/mining_features.py:7-15,48-83",
+      "finding": "mining58所选模型是B17的EXTRA_DYNAMICS_L60，58位置为CAL44、观测mask2、动态8、协议/level4；DYNAMICS将54:58四列置零。观测使用lag60日、额外7200秒buffer、100确认、观测age≤3日与足够历史高度；不fresh时12个值置零但保留fresh/age mask，首252行全零。trace含cutoff_ms/observed_at_ms/confirmed_height/age等；源码明示依赖观测前沿和canonical survival等重建假设，非PIT认证。合成DYNAMICS宽度/末4列及暖启动检查通过。"
+    },
+    {
+      "source": "/workspace/BTCExpertReview/workspaces/repro/checks-r04.json:selected_source_copy_hash_matches,manifest_rows_with_explicit_feature_order,model_export_entries_without_source_locator,exported_mining_factor_partition_entries",
+      "actual_check": "6份相关因子源码_frozen副本与原件hash全部匹配。当前构建快照的48条model manifest中无feature_order/feature_names/input_schema显式字段；provenance export_manifest的266项模型条目均无source locator；该清单无mining-lag-v1分区。检查脚本已根据冻结源独立记录family→source文件映射。此结果描述快照缺项，不把后续构建中的补齐视为已完成，也不读取任何其他审查意见。"
+    },
+    {
+      "source": "/workspace/BTC-strategy/src/btc_strategy/strategies.py:16-44; /workspace/BTCStrategyResearchLedger/lab/mining_features.py:1,69-72",
+      "finding": "当前compose主要读取含既有scores的封存context来生成目标；模型状态已复制不等于这些scores已由输入因子重新计算。特别是mining模型的新数据推理还需要对应因子分区或原观测/区块重建物料及其来源时点证据，不能以封存预测代替这些输入后声称完成独立因子重建。"
+    }
+  ],
+  "counterevidence": [
+    "模型和6份关键因子源码的字节一致性均通过，原实现足以供人追溯输入顺序；当前缺显式schema不能直接证明已有历史预测错误。",
+    "PRICE47合成反事实检查强力支持其预测数值不依赖volume，但没有独立认证原价格的现实可得时点。",
+    "mining-lag-v1分区未出现在当前导出清单，不影响使用现有context进行明确标注的历史目标/账户回放；它限制的是从原始输入重建mining预测的声明。",
+    "同维度、hash正确和前缀不变只证明所检实现/物料性质，不能证明真实来源无修订、当时即被观察或严格PIT成立。"
+  ],
+  "recommendations": [
+    {
+      "priority": "P0",
+      "action": "给六家族建立独立input_schema并由manifest逐fold引用schema SHA，逐位置列出feature_order、公式/源码位置与hash、输入字段、观测时点、lag单位、暖启动、缺测/有限性/裁剪及float32树分支语义。CAL44明确为20+16+8列；PRICE47明确再加常量1和两列lag7价格均值比；DYNAMICS58明确mask2、动态8及置零4列。不能只登记n_features。",
+      "acceptance": "所有392个numeric估计器均关联唯一schema，len(feature_order)=n_features，来源到每一位置可追溯；交换同宽两列、错lag、删mask或改变warmup规则时加载/验证确定性失败，不能仅靠宽度通过。"
+    },
+    {
+      "priority": "P0",
+      "action": "分别登记PRICE47的预测所需数据和原研究流程读取依赖。选定PRICE_L7只需日期/价格与lag7价格比率，不将reported volume列为预测因子；若保留原B81训练重现则可在训练归档说明其统一volume文件校验依赖，二者使用不同字段。",
+      "acceptance": "推理接口在volume缺省或任意改变时产生完全相同的PRICE_L7因子/预测，价格/日历缺省仍拒绝；文档、schema及依赖清单均明确其price-only性质，同时保留原研究来源血缘。"
+    },
+    {
+      "priority": "P0",
+      "action": "补模型导出source locator及原source SHA/registration/seal绑定；对mining58声明支持层级：仅封存score回放，或从冻结因子重建预测，或从原观测重建因子。若声称后两项，按授权范围交付mining-lag-v1及manifest或对应observations/verified block prefix和trace；保留重建假设及非PIT限定，不回填或补抓禁读年度。",
+      "acceptance": "在旧仓不可见的环境可定位来源、校验输入及重建所承诺层级；每行mining输入可验证cutoff、observed_at、confirmation_depth、age/fresh与lag，stale/缺测按原mask和零值语义处理。未提供输入的层级明确标为未支持，不以缓存score冒称重建。"
+    }
+  ],
+  "checks_performed": [
+    "逐项读取新仓48条manifest及266模型文件，核对392个估计器的输入宽度、树索引界及对应冻结源摘要。",
+    "只读追溯6家族来源及6份特征源码副本SHA；读取新仓当前策略compose源码和export_manifest字段，不读其他角色意见或主审结论。",
+    "仅调用原纯因子函数处理800日合成价格/volume/观测mask，不调用数据loader、label builder、fit、策略搜索或账户；PRICE47独立于volume和前缀不变等11项检查全部通过。",
+    "检查当前manifest显式schema字段、模型source locator和mining分区导出项；所有缺项判断均限定在构建快照。",
+    "只写repro私有check_r04.py、checks-r04.json、r04.json；未修改源或交付仓，使用PYTHONDONTWRITEBYTECODE避免生成源仓缓存。"
+  ],
+  "unresolved": [
+    "完整输入schema及加载器的schema/顺序校验仍待交付实现，不能以本轮合成检查代替实现级验收。",
+    "真实数据的发布/修订/观察时点未在本轮独立审计；mining严格PIT不成立的原限定仍须保留。",
+    "新仓当前支持封存context组合与模型导出，尚未证明所有六家族均可完全脱离旧仓输入重建因子及预测；构建尚在推进。"
+  ],
+  "independence_statement": "本结果为repro工程复现AI角色的隔离审查，仅使用冻结源、截至2025的选定模型和新仓已授权只读物料及完全合成输入；未读取其他专家/主审意见，不冒充人类专家或新独立市场样本。未读2026经济数据、V01/V02或2026账户，未修改冻结代码/spec/model/account/verification/gates或交付仓，未运行独占writer、训练、账户重放或策略搜索。没有派生代理或预写后续轮次；仅提交第04轮。"
+}

@@ -1,0 +1,159 @@
+{
+  "round": 1,
+  "role": "risk",
+  "topic": "声明边界与研究合同",
+  "conclusion": "冻结证据支持将九项策略作为共享历史和执行假设的研究方案审阅，其中LP35达到2018—2025四成本情景历史日度DD严格小于35%的数值目标；该结论不能解释为实际持仓、盘中或未来回撤的硬保证，入场预算也不能解释为持仓gross敞口上限。",
+  "verdict": "qualified",
+  "evidence": [
+    {
+      "source": "/workspace/BTCExpertReview/shared/protocol.json:scope/limits/independence",
+      "finding": "本轮范围恰为LP35、TS04、ME01、MX03、B88A_S03、K02、Y01、C02、C04；禁止2026经济读取、新优化和冻结文件更改；角色隔离不增加独立市场样本。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/lab/b109.py:114,120",
+      "finding": "历史回放截止2025-12-31，annual_settlement=False；目标门要求无失败、完整四情景、STRESS return_pct>=10000且四情景最大日度DD<35。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/studies/B109-long-profit-local-coordinate/goal-milestone-audit.json:period/status/qualification/cases.*.max_daily_dd_pct",
+      "calculation": {
+        "period": [
+          "2018-01-01",
+          "2025-12-31"
+        ],
+        "BASE_DD_pct": "28.0682412334261928406524262795687385346588441625713107065325",
+        "STRESS_DD_pct": "28.2603557554346826691591549984865358380475175379517078732213",
+        "SEVERE_DD_pct": "31.2814562302516000779258926102678139709375939815828660395289",
+        "DELAY_DD_pct": "32.5857194324499245846820256042792994806880067115930205115628",
+        "worst_case": "DELAY",
+        "headroom_to_35_pct_points_rounded": "2.414280567550075415317974396",
+        "all_four_strictly_below_35": true,
+        "STRESS_return_pct": "10127.91836738555674890594521",
+        "STRESS_return_ge_10000": true
+      },
+      "finding": "现有审计写明消耗过的自适应选择历史、非新鲜OOS、非稳定alpha证明；日度模拟报价DD与敞口不构成盘中/未来上限或实盘资格。本轮仅从现有JSON提取和复算门值，未重放账户。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/lab/carry_native.py:34-61,76,85-92,103,112-120",
+      "finding": "入场预算=扣融资和退出费储备后的equity×long_fraction或short_fraction；仅在新开仓时计算数量。允许输入long_fraction<=.95、short_fraction<=.75不意味着持仓再平衡或gross限额。持仓gross=abs(q)×reference_price/equity。止损按入场名义价值加开仓费衡量净资产PnL，在日度decision报价检查并设置i+lag到期；不是组合DD<35的硬止损。现有持仓保留入场risk和policy_year，跨年不自动换用新政策。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/lab/quote_exposure.py:1,9-29; /workspace/BTCStrategyResearchLedger/studies/B109-long-profit-local-coordinate/goal-milestone-audit.json:cases.BASE.exposure/cases.DELAY.exposure",
+      "finding": "quote_exposure补充退出日下单前的持仓，明确只代表日度代理报价。LP35四情景下单前后全仓gross最大值118.0455835631524%，发生于BASE/2018-01-05；单看日度成交后全仓最大值为102.09384920484652%，发生于DELAY/2018-04-13。BASE当天成交后最大数值98.99360891840426%与其118.04558%的下单前最大值属于不同计量口径，不能混用。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/lab/b72.py:15,75-80; /workspace/BTCStrategyResearchLedger/lab/cold_budget.py:10-25; /workspace/BTCStrategyResearchLedger/studies/B72-cold-budget-exposure/decision.md:9-23; /workspace/BTCStrategyResearchLedger/studies/B72-cold-budget-exposure/analysis.json:stats[id=K02]/qualification",
+      "finding": "K02是cold/post均为.25的空头入场预算分配方案，cold按原始长评分缺失确定并可按波动缩减；不是新预测alpha，也不是全仓25%风险上限。其现有四情景空头下单前后gross最大30.72229059543503%，worst DD32.92404834089216%，STRESS return5027.435519925011%，未达10000%目标。较低空头预算未消除盈利集中和DELAY空头弱点。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/lab/long_profit_local_coordinate.py:1-20; /workspace/BTCStrategyResearchLedger/lab/cold_short_profit_trailing.py:1-22; /workspace/BTCStrategyResearchLedger/lab/b109.py:89-106; /workspace/BTCStrategyResearchLedger/lab/cold_entry_momentum.py:1-19; /workspace/BTCStrategyResearchLedger/lab/shorter_cold_momentum.py:1-19; /workspace/BTCStrategyResearchLedger/studies/B88A-short-net-loss-families/decision.md:11-20; /workspace/BTCStrategyResearchLedger/lab/b29.py:1,8-15; /workspace/BTCStrategyResearchLedger/lab/exit_coordinate.py:8-13,23-27,55-65; /workspace/BTCStrategyResearchLedger/studies/B31-constant-sizing-controls/decision.md:9-16",
+      "risk_category_mapping": [
+        {
+          "strategy": "LP35",
+          "category": "多头退出收益截断/路径与持仓时长风险",
+          "contract": "在TS04目标与权限上把entry-owned long take_profit固定为3.5；不是35%止损或35%组合DD参数。"
+        },
+        {
+          "strategy": "TS04",
+          "category": "冷启动空头利润回撤/退出时机风险",
+          "contract": "在ME01基础上，仅原始核心头缺失时的空头entry-owned trailing_stop为.04；该数值不能当作未来最大亏损。"
+        },
+        {
+          "strategy": "ME01",
+          "category": "冷启动空头新入场资格/择时风险",
+          "contract": "原始核心头缺失且direction=-1时，用price[i]<price[i-5]替换新入场权限；不改已有持仓目标。"
+        },
+        {
+          "strategy": "MX03",
+          "category": "冷启动空头新入场资格/更短窗口择时风险",
+          "contract": "在ME01基础上将已有权限与price[i]<price[i-1]相与；不改已有持仓目标。"
+        },
+        {
+          "strategy": "B88A_S03",
+          "category": "后冷启动空头条件预测/损失函数模型风险",
+          "contract": "Median absolute error替代原短净收益损失汇总，作用于post-short入场许可；长头、目标原字典、预算及风险保持原口径，不能分类为纯仓位缩放。"
+        },
+        {
+          "strategy": "K02",
+          "category": "cold/post空头入场预算与复利路径风险",
+          "contract": "固定预测和信号基础，cold/post均.25，cold可波动缩减；属于历史资金分配方案，不是独立alpha。"
+        },
+        {
+          "strategy": "Y01",
+          "category": "仅多头核心/年度历史校准退出政策风险",
+          "contract": "H03原始多头父评分（CAL44_STOP与BASE_TREE平均），由更早冻结预测折进行年度退出校准；原父policy要求short_mode=NONE。"
+        },
+        {
+          "strategy": "C02",
+          "category": "Y01合资格年度多头预算缩放风险",
+          "contract": "Y01×.75仅对合资格折生效；2018/2019维持identity，不等于2018—2025全时期75%gross。"
+        },
+        {
+          "strategy": "C04",
+          "category": "H04合资格年度多头预算缩放/父模型风险",
+          "contract": "B31的Y04/H04父方案×.75，仅对合资格折生效；与C02共享历史回撤事件，不构成独立危机样本。"
+        }
+      ],
+      "finding": "这些是结构风险类别，不是投资排名、九个独立风险来源或独立验证样本。"
+    }
+  ],
+  "counterevidence": [
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/studies/B109-long-profit-local-coordinate/goal-milestone-audit.json:status/independent_decimal_audits/native_complete_replays",
+      "finding": "原审计已报告PASS_HISTORICAL_NUMERICAL_GOAL、4个独立Decimal审计及4个Native完整重放；本轮没有发现推翻该历史数值里程碑的证据。角色的qualified是对结论外推边界的限制。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/studies/B72-cold-budget-exposure/decision.md:5,21; /workspace/BTCStrategyResearchLedger/studies/B88A-short-net-loss-families/decision.md:14; /workspace/BTCStrategyResearchLedger/studies/B31-constant-sizing-controls/decision.md:14-16",
+      "finding": "现有决策已主动限定盘中/未来风险，指出K02等最差DD改善很小，S03改善约0.289829407个百分点；C02/C04较父方案DD下降2.38245个百分点，但共享2019—2020事件。因此不能把保留方案解释为已证明明显独立的风险分散。"
+    }
+  ],
+  "recommendations": [
+    {
+      "priority": "P0",
+      "action": "在交付仓研究合同中，把目标完整写为2018-01-01—2025-12-31、BASE/STRESS/SEVERE/DELAY、模拟日度净值最差DD严格<35%，并单列STRESS净收益>=10000%的历史数值门；使用“历史里程碑”表述。",
+      "acceptance": "主合同和九项策略卡均不能出现“未来/盘中/实际DD保证<35%”或把LP35名称解释为35%风控参数；不得据本轮审阅改冻结门或读取2026。"
+    },
+    {
+      "priority": "P0",
+      "action": "在交付仓统一分别列入场预算、日度成交后gross、日度下单前后gross三类字段，并为每个最大值保留情景和日期；引用现有审计，不重跑原写入器。",
+      "acceptance": "LP35须保留BASE/2018-01-05下单前后118.0455835631524%与DELAY/2018-04-13成交后102.09384920484652%的区别；K02须标注.25/.25是空头入场预算，30.72229059543503%是历史空头gross观测。"
+    },
+    {
+      "priority": "P1",
+      "action": "在交付仓为九项策略保留本轮结构风险类别及父子关系，并把退出政策、新入场许可、预算缩放、短头损失函数分开说明。",
+      "acceptance": "九项逐一可溯源；明确Y01/C02/C04仅多头，C02/C04的.75不覆盖2018/2019；不把九项计成九个独立历史样本或独立alpha。"
+    },
+    {
+      "priority": "P1",
+      "action": "研究合同中声明止损/追踪止损按日度报价触发并按场景lag到期执行，持仓保留入场风险政策；将跨年与执行风险留作其对应轮次细核。",
+      "acceptance": "本轮合同不承诺按阈值无滑点成交，也不把annual_settlement=False解释为跨年风险消失；不在第01轮预先生成后续轮次结论。"
+    }
+  ],
+  "checks_performed": [
+    {
+      "check": "冻结共享源清单SHA256只读对照",
+      "method": "使用指定Python -B，仅对B109 goal-milestone-audit.json和B72/B88A/B31 decision.md四个文件读字节计算SHA256，与source_manifest.json逐项对照。",
+      "result": "4/4相符；未读取V01/V02或2026账户/经济观察，未运行源仓写入器。"
+    },
+    {
+      "check": "LP35现有审计门值确定性复算",
+      "method": "只解析B109 goal-milestone-audit.json，断言period为2018—2025、all2026_excluded=true、四情景集合完整；Decimal比较四DD与35以及STRESS净收益与10000，提取gross极值。",
+      "result": "四情景DD严格<35；最差DELAY32.5857194324499245846820256042792994806880067115930205115628%；STRESS10127.91836738555674890594521%>=10000。此为现有审计摘要的算术核对，非新账户独立回放或路径重建。"
+    },
+    {
+      "check": "quote_exposure退出日合成只读测试",
+      "method": "runpy只装载无写入行为的lab/quote_exposure.py；输入完全人工数据：E0=100、q=-.75、P0=100，翌日P=125并平仓至E=81.25、q=0、fee=0。",
+      "result": "初日gross75%，退出日成交后gross0%，退出日前gross115.38461538461539%，净值对账误差0。说明入场预算和成交后统计均不能替代持仓/退出日前gross。首次只因误将Decimal零字符串期望为0.00而断言失败，改为Decimal数值比较后通过；未改源文件。"
+    },
+    {
+      "check": "冻结源实现静态检查",
+      "method": "只读carry_native.py、quote_exposure.py、cold_budget.py及九策略相关冻结code/decision切片；未执行freeze/train/test/replay/verify命令。",
+      "result": "代码与本轮合同边界一致；未生成新策略、模型或账户。"
+    }
+  ],
+  "unresolved": [
+    "当前冻结材料不能建立实际盘中或未来DD<35%的硬保证；本轮不扩展成实盘风控工程任务。",
+    "本轮未重建净值全路径、验证所有止损触发或跨年持仓台账；这些属于对应轮次，不能把本轮门值复算说成新独立金融验证。",
+    "九项方案共享价格历史、基础预测/执行结构及多次研究选择；本轮风险分类不衡量联合组合的未来相关性或分散收益。"
+  ],
+  "independence_statement": "本人为risk AI分析角色，不是人类专家或新的独立市场样本；只读共享protocol/source_manifest及冻结事实源，未读取其他专家目录、意见、评分或主审结论；未派生代理，未写交付仓或冻结源仓，仅独占写入risk/r01.json。"
+}

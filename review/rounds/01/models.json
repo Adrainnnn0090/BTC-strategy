@@ -1,0 +1,80 @@
+{
+  "round": 1,
+  "role": "models",
+  "topic": "声明边界与研究合同",
+  "conclusion": "九项候选不是九个新增预测模型：LP35、TS04、ME01、MX03共用B81 PRICE_L7、B50 BASE_TREE和B67 MEAN，K02、Y01、C02、C04也继承既有预报而改变配置或预算；只有B88A_S03在候选对应研究中确实以MEDIAN/absolute_error重新训练空头预测头，且沿用B67共同样本与标签。故合同应分别登记预测模型、年度训练与策略配置的继承关系，不可把配置差异当作独立预测证据。",
+  "verdict": "supported",
+  "evidence": [
+    {
+      "source": "lab/b109.py:89; lab/b107.py:88; lab/b105.py:86; lab/b106.py:87; 相应registration.json recipes/model_fits",
+      "actual": "LP35(B109)在TS04之上把long.take_profit设为3.5；TS04(B107)在ME01之上只把冷启动short.trailing_stop设为0.04；ME01(B105)在CT02之上把新空头入场动量替换为5日下跌；MX03(B106)在ME01之上再要求1日下跌。ME01分叉到MX03与TS04，LP35由TS04派生，TS04不继承MX03。四者2018–2025各8年fits=0、selection_calls=0。"
+    },
+    {
+      "source": "lab/b82.py:57; lab/b81.py:23; lab/b81.py:92; lab/label_trees.py:43; r01_checks.json shared_forecast_identity",
+      "actual": "四项后代32个年度预报对象与由B81 PRICE_L7、B50 BASE_TREE、B67 MEAN及原始bear/negative20标志组装的对象完全相同。PRICE_L7是47列价格扩展ExtraTrees STOP头，不是VOL_L7；B81研究五组每个可训练年175次拟合、5个文件共35个终模型成员，2019–2025共1225次研究拟合/245个终成员；此候选只使用其中PRICE_L7分支。"
+    },
+    {
+      "source": "lab/b72.py:15; lab/b72.py:61; lab/cold_budget.py:28; studies/B72-cold-budget-exposure/registration.json recipes[id=K02]",
+      "actual": "K02的post=0.25、cold=0.25；空头预报为B67 MEAN，冷区由原始H03分数是否可得定义，并保留既有波动预算缩放；注册model_fits=0。"
+    },
+    {
+      "source": "lab/b64a.py:17; lab/b64a.py:182; lab/exit_coordinate.py:23; lab/b50.py:68; lab/b29.py:76",
+      "actual": "Y01在保留候选适配中是CORE：用B50预报银行里的H03=0.5*(CAL44_STOP+BASE_TREE)及继承的年度Y01策略。它不是B81 PRICE_L7替换头，也不能因B50当层fits=0就说整条研究管道没有训练/年度退出校准。"
+    },
+    {
+      "source": "lab/b31.py:13; lab/b31.py:80; lab/b31.py:149; studies/B31-constant-sizing-controls/registration.json recipes; r01_checks.json b31_parent_forecast_identity",
+      "actual": "C02=Y01父策略、P07控制源、scale=0.75；C04=Y04父策略、P08控制源、scale=0.75。只有此前已知active资格为真时缩放long_fraction，否则乘1；新模型与新rank拟合均为0。8年预报删除新增active键后与B30原件完全相同。C04父H04采用EXTRA_DYNAMICS_L60，和C02父H03不相同。"
+    },
+    {
+      "source": "lab/b88a.py:23; lab/b88a.py:69; lab/b88a.py:94; lab/short_loss_models.py:8; studies/B88A-short-net-loss-families/registration.json recipes[id=S03]; r01_checks.json b88a_common_training_support",
+      "actual": "B88A_S03明确映射S03/MEDIAN/absolute_error。训练用原CAL44的44列、B67 L1/L2两执行时钟、相同common_ids和labels SHA；每头7种固定seed后取均值，再将L1/L2取均值。研究四种损失共392次拟合/392个终状态，其中HUBER的98个状态是与B67对照的精确重建；S03本身使用2019–2025共98个MEDIAN状态。2018无模型/预报为None。"
+    },
+    {
+      "source": "lab/b67.py:64; lab/lagged_short.py:7; lab/lagged_short.py:48; r01_checks.json annual_training_inventory.b67",
+      "actual": "B67不是纯预算模块：2019–2025每年14个实际数值模型，合计98个；它在原CAL44共同样本上分别训练lag1/lag2的SHORT_NET Huber梯度树，MEAN和BOTH是两头合成，不是再训练出的模型。"
+    },
+    {
+      "source": "/workspace/BTCExpertReview/workspaces/models/r01_checks.json",
+      "actual": "所有被检查等式通过：7个共享源SHA、9个主lab代码注册绑定、72个年度封存与预报哈希绑定、32个共同预报等式、8个B31原样预报等式、8个B88A共同训练支持等式。未调用任何ledger写入器或训练器。"
+    }
+  ],
+  "counterevidence": [
+    "候选当前层model_fits=0只说明该层没有新增拟合；B81、B67及更早的CAL44/BASE_TREE模型确有训练，B29等更早层还做过年度退出参数校准。",
+    "相同预报不保证相同账户路径：入场许可、持仓预算和入场时绑定的止盈/追踪止损可以改变成交与后续持仓。",
+    "B88A_S03有新增损失函数训练，但共享价格数据、CAL44因子、标签样本、执行时钟和固定种子集合，不能据此认定它与其他候选统计独立。"
+  ],
+  "recommendations": [
+    {
+      "priority": "P0",
+      "action": "在交付仓建立九项候选→预测流→实际年度模型→策略覆盖层的显式映射，保留B88A_S03命名空间，明确ME01/MX03/TS04分支。",
+      "acceptance": "逐项与registration recipes和上述代码引用一致；能看到四项后代预报同源、TS04不含MX03条件、C04与C02父预测不同。"
+    },
+    {
+      "priority": "P0",
+      "action": "把研究合同中的“零新增模型”限定到具体研究层，把内层模型拟合、年度策略校准、固定配置对比的次数分别登记。",
+      "acceptance": "B81五组1225次研究拟合/245终成员、B67 98终状态、B88A四损失392次拟合/392终状态及S03所需98状态不混为同一计数。"
+    },
+    {
+      "priority": "P1",
+      "action": "用工程提示中的具体数值模型状态与年度封存生成离线导出清单，价格头、矿业动态头和空头MEDIAN头须分别列出。",
+      "acceptance": "清单按2018–2025逐年列模型路径、封存SHA、特征顺序、合成顺序与None回退；2018无模型时不凭空补拟合。"
+    }
+  ],
+  "checks_performed": [
+    {
+      "command": "/workspace/BinanceTradingRobot/backend/.venv/bin/python /workspace/BTCExpertReview/workspaces/models/check_r01.py",
+      "result": "exit 0；all_checked_equalities_pass=true；仅显式读取2018–2025年度文件及冻结代码/注册。",
+      "artifact": "/workspace/BTCExpertReview/workspaces/models/r01_checks.json"
+    },
+    {
+      "check": "只读解析2025数值状态包装与成员",
+      "result": "B81 PRICE_L7为7个47列/96树成员；B67 L1-101和B88A MEDIAN_L1-101各为44列/96树状态；B20 CAL44_STOP为7个44列成员；B17 EXTRA_DYNAMICS_L60为7个58列成员；B10单seed文件使用嵌套state包装。"
+    }
+  ],
+  "unresolved": [
+    "本轮只验证继承合同、数值状态位置与有限的确定性相等关系；未重建全因子矩阵、未重新拟合模型、未重放账户，因此不作模型预测能力或最终经济验收结论。",
+    "完整依赖闭包的哈希重验、训练重建和离线逐值预测复现尚待被授权的相应轮次完成。",
+    "所有2018–2025为已消耗开发史；本轮结果不替代任何未查看验证期，也不提供2026经济结果判断。"
+  ],
+  "independence_statement": "仅在models角色工作区写入；只读共享协议、源清单与冻结源仓，未读取其他专家工作区、评分、建议或主审结论，未派生agents。此角色是AI分析视角，不是人类专家，也不是独立市场样本；未读取V01/V02或2026经济观测。"
+}

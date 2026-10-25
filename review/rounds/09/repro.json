@@ -1,0 +1,73 @@
+{
+  "round": 9,
+  "role": "repro",
+  "topic": "年度、行情与盈利集中",
+  "conclusion": "九张分类卡的2018–2025累计STRESS、四成本最差日度回撤及DELAY数字均与catalog和36本声明源benchmark一致，年度/正收益集中度算式复核也全部通过，B88A_S03命名空间和C02/C04年度缩放资格正确；但卡片与catalog还应补统一成本定义、可点击source/local ID、年度及盈利集中明细入口和结构化validation/model血缘字段。本轮核实存档与文档一致性，不是独立环境原生重放或新2026验证。",
+  "verdict": "qualified",
+  "evidence": [
+    {
+      "source": "/workspace/BTCExpertReview/workspaces/repro/checks-r09.json:nine_cards,all_core_card_checks_pass",
+      "actual_check": "新增check_r09.py逐一检查全部9卡，标题/分类路径、2018—2025区间、STRESS累计净收益、四成本最差日度峰谷DD、DELAY累计净收益按5位小数全部精确匹配catalog；9卡均明确尚无新2026验证，现有相对链接全部可解析。没有把DELAY当作新增独立样本。"
+    },
+    {
+      "source": "/workspace/BTCExpertReview/workspaces/repro/checks-r09.json:thirty_six_benchmark_comparisons,all_book_checks_pass",
+      "actual_check": "九候选×BASE/STRESS/SEVERE/DELAY共36本新仓artifact账户，与catalog.source_study及recipe.id定位的原账户逐字节相同；catalog.metrics[case]与其summary完全相同。全部账户marks起止2018-01-01/2025-12-31。只读已存档账本，没有启动原生引擎或重新执行策略。"
+    },
+    {
+      "source": "/workspace/BTCExpertReview/workspaces/repro/checks-r09.json:thirty_six_benchmark_comparisons.daily_drawdown_recomputed_exact,annual_recomputed_exact,positive_trade_top2_fraction_recomputed_exact",
+      "actual_check": "36本均从marks以初始净值100重算逐日峰谷DD及8个年度收益，结果与summary逐值相同；从非terminal自然交易的正pnl排序重算最大两笔/全部正pnl比例，也全部相同。该集中度分母是正收益自然交易总额，不是累计净收益或初始资本，展示时不能改名为总收益贡献率。"
+    },
+    {
+      "source": "/workspace/BTC-strategy/strategies/README.md; /workspace/BTCExpertReview/workspaces/repro/checks-r09.json:nine_cards.namespaced_B88A_card_and_catalog,global_index_disambiguates_B88A_from_B51",
+      "actual_check": "B88A_S03卡标题保持完整命名空间；catalog来源明确studies/B88A-short-net-loss-families、本地recipe=S03、stream=MEDIAN；分类总表明确避免与旧B51同名混用。九卡列出的模型家族与实际rebuild_context分支完全一致，总表指出四个高收益候选共享大量预测/交易、不能当独立alpha组合。"
+    },
+    {
+      "source": "/workspace/BTCExpertReview/workspaces/repro/checks-r09.json:C02_C04_source_eligibility; /workspace/BTC-strategy/strategies/risk_tradeoffs/c02/README.md; /workspace/BTC-strategy/strategies/risk_tradeoffs/c04/README.md",
+      "actual_check": "原B31八年度training.active中Y01/Y04均为2018/2019=false、2020–2025=true。C02/C04卡都明确只在合资格2020–2025折对新开预算乘0.75，与catalog的父Y01/Y04及source P07/P08一致；C02还显式保留2018/2019预算，C04保留来源PIT有条件说明。不能把C04的父Y04/H04控制血缘误套为H04退出参数再校准。"
+    },
+    {
+      "source": "/workspace/BTCExpertReview/workspaces/repro/checks-r09.json:missing_fields_by_card,catalog_root_structured_costs_present,catalog_root_explicit_new2026validation_false",
+      "actual_check": "当前9卡均未显式列出或链接source_study、本地recipe来源、成本参数表、逐年收益明细或正收益集中度明细；卡片虽写STRESS/DELAY名称，尚无手续费/滑点/融资/lag定义链接。catalog有source_study/recipe/验证文字及全部历史metrics，但无结构化model_families、costs或new2026validation=false字段。这是文档/机器metadata缺项，不是已显示数字冲突。"
+    },
+    {
+      "source": "/workspace/BTC-strategy/strategies/exposure_controls/k02/README.md; /workspace/BTC-strategy/docs/REPRODUCIBILITY.md",
+      "finding": "K02卡已明确降低空头入场预算而非实时gross硬上限；复现说明区分模型重建、缓存回放、最终估计器重拟合及新鲜OOS/真实成交，不以已有复现结果推出最后一层。本轮仅审查这些用途说明与卡片口径，不把文档声称的其他验证当本角色自行执行。"
+    }
+  ],
+  "counterevidence": [
+    "九卡数值和四成本/DD/DELAY口径完全一致，验证文字也一致否认新2026验证；缺少机器布尔字段不等于文案宣称已验证2026。",
+    "catalog已含全部36本的年度收益和正收益集中度，缺项主要在用户可发现的卡片链接/定义及结构化metadata，不是数据未保存。",
+    "四成本最差DD是所保存四个历史假设中的最大值，不能视为所有未来情景的最坏DD或运行中硬上限；风险取舍卡已明确不代表未来回撤上限。",
+    "存档账户字节相同和从其marks/trades重算只提供报告/物料完整性证据，不是独立撮合引擎、独立经济数据或新的市场样本。"
+  ],
+  "recommendations": [
+    {
+      "priority": "P0",
+      "action": "给catalog增加规范字段：period精确起止、return_kind=cumulative_net、new2026validation=false、model_families、source_study/local_recipe_id及四成本fee/slip/lag/annual_borrow定义；卡片统一链接共享成本表和每卡source/provenance，不必复制9份成本定义。",
+      "acceptance": "九卡可点击到正确源study/本地recipe和共同成本合同；B88A_S03明确B88A/S03，C02/C04明确B31/C02或C04、父Y01/Y04与P07/P08。结构化字段与现有costs.py、source及验证文字精确一致。"
+    },
+    {
+      "priority": "P1",
+      "action": "在卡片或共享详情页提供逐年收益、四成本逐项DD/收益及自然正收益top2集中度，并说明分母和terminal处理；从卡片链接现有catalog明细即可，不以累计区间收益代替年度/盈利集中风险信息。没有预先登记的行情定义时，不追认有利行情分组。",
+      "acceptance": "36本×8年度数据与本轮重算一致；top2指标明确为两笔最大正pnl/全部正pnl自然交易，不能称累计净收益贡献。所有数字带2018-01-01至2025-12-31及成本case，不出现年化/累计混用。"
+    },
+    {
+      "priority": "P1",
+      "action": "保留缩放和共享模型限定：C02/C04仅合资格2020–2025新开预算0.75，2018/2019及跨年旧仓不得被叙述为无条件缩仓；C04写明Y04/H04控制血缘和PIT条件。共享预测的候选不能按名字计为独立alpha组合。",
+      "acceptance": "卡片/总表/catalog三者同一口径，年度active资格可链接到原training；风险说明不把预算缩放叫持续gross cap、不把四成本历史DD叫未来上限。"
+    }
+  ],
+  "checks_performed": [
+    "完整读取9卡及分类总表、catalog和两份用途/来源说明，不读取review或其他专家内容。",
+    "对36本存档账户逐字节核对声明源映射，并对照全部summary，重算日度DD、年度收益与正收益自然交易top2集中度。",
+    "以受控合成回调读取实际rebuild_context接线，核对9卡模型家族；不运行numeric推理或账户引擎。",
+    "只读原B31八个training.active核对C02/C04缩放资格；检查9卡数值格式、现有相对链接和各缺失文档字段。",
+    "未进行独立环境复现、边界修复回归、新模型训练或账户重放；只写repro私有check_r09.py、checks-r09.json及r09.json。"
+  ],
+  "unresolved": [
+    "source/成本/年度及盈利集中链接、结构化validation/model metadata尚需最终版本补齐后核对。",
+    "本轮benchmark是冻结源账本，不是外部买入持有或独立行情基准；没有另行建立行情分类或新收益试验。",
+    "独立环境运行及第05/07轮修复回归留待第10/11轮，本轮不借文档描述提前认可。"
+  ],
+  "independence_statement": "本结果为repro工程复现AI角色的隔离审查，只使用9卡/catalog、当前接线源码、截至2025的存档账户及原B31资格metadata；未读取其他专家/主审意见，不冒充人类专家或新独立市场样本。没有读取2026经济数据、V01/V02或2026账户，未修改源/交付仓及冻结spec/model/account/verification/gates；未训练、重跑writer、执行账户或新策略搜索，也未进行本轮以外的隔离环境/边界回归。没有派生代理或预写未来轮次。"
+}

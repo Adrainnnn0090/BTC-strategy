@@ -1,0 +1,126 @@
+{
+  "round": 6,
+  "role": "execution",
+  "topic": "执行、滑点、融资与净值：独立完整STRESS账本重建",
+  "conclusion": "以已保存fill日程为条件的LP35完整STRESS独立账本重建支持费用、融资、数量和净权益守恒；Native确有模拟保证金占用，但融资债务未入Native钱包，因而该一致性不能认证融资调整后的真实清算安全。",
+  "verdict": "qualified",
+  "evidence": [
+    {
+      "来源": "/workspace/BTCStrategyResearchLedger/studies/B109-long-profit-local-coordinate/accounts/LP35/STRESS.json.gz:fills、marks、financing、trades、native_account_report；本轮独立Decimal80账本",
+      "实际计算": {
+        "日度净值点": 2922,
+        "fills": 102,
+        "独立复算开仓": 51,
+        "独立复算平仓交易": 51,
+        "融资日数": 368,
+        "累计毛盈亏USDT": "10819.2325973",
+        "累计成交费用USDT": "610.52586025",
+        "Native期末钱包USDT": "10308.70673705",
+        "累计融资USDT": "80.78836966444325109405479452054794520548",
+        "融资后期末净权益USDT": "10227.91836738555674890594520547945205479",
+        "净利润USDT": "10127.91836738555674890594520547945205479"
+      },
+      "守恒式": "100+毛盈亏−开平手续费=Native钱包；Native钱包−累计融资=终值净权益（终值已平仓）。前式差0E-8 USDT，后式与保存终值差约4.5E-24 USDT。"
+    },
+    {
+      "来源": "/workspace/BTCStrategyResearchLedger/lab/carry_native.py:34—45、60—64、72—79；/workspace/BTC-strategy/src/btc_strategy/strategies.py:19—30；本轮逐日独立计算",
+      "方法": "不调用carry_audit或执行引擎。以初始wallet=100、debt=0开始，按已保存fill日程重建：开仓wallet只减入场费用；平仓wallet加direction×q×(exit−entry)再减出场费用。每个持有短仓的决策日按q×参考价×0.10/365加融资；逐日使用bid清算长仓、ask清算短仓，另扣未舍入预计退出手续费。开仓数量由当前wallet−debt、i−1目标fraction及0.01保留额独立推导并向下舍入到0.00001。"
+    },
+    {
+      "来源": "同一账户:fills、marks、trades与native_account_report；本轮复算输出",
+      "实际计算": {
+        "51次开仓数量": "逐笔精确相等",
+        "102笔按q×price×0.003至1e-8 HALF_EVEN手续费": "逐笔精确相等",
+        "raw_cash最大误差USDT": "0",
+        "unrealized_pnl最大误差USDT": "0",
+        "exit_fee_reserve最大误差USDT": "0",
+        "equity最大误差USDT": "4.6575342465753425E-24",
+        "financing_total最大误差USDT": "4.0684931506849315E-26",
+        "单日融资最大误差USDT": "4.7945205479452055E-28",
+        "单笔pnl最大误差USDT": "4.3835616438356164E-26",
+        "单笔融资最大误差USDT": "2.3287671232876712E-26",
+        "Native报告103条total对逐fill独立wallet最大误差USDT": "0E-8"
+      },
+      "解释": "原账本Decimal28与本轮Decimal80累计舍入产生极小差异；全部小于本轮核对容差1e-8 USDT。"
+    },
+    {
+      "来源": "同一账户:2018-01-01 OPEN SELL；本轮独立预算计算",
+      "实际计算": {
+        "开仓前wallet": "100",
+        "融资debt": "0",
+        "short_fraction": "0.75",
+        "预算": "75",
+        "报价bid": "13451.18",
+        "舍入前q": "0.0055583006763217815785825041205804985",
+        "舍入后q": "0.00555",
+        "实际费用USDT": "0.22396215"
+      },
+      "含义": "quantity=((equity×fraction−0.01)/(price×1.003))向下至0.00001；所有现有成交数量都满足精度和5 USDT最小名义金额。它验证保存成交的数量，不证明在所有其他日子应否有交易。"
+    },
+    {
+      "来源": "/workspace/BTCStrategyResearchLedger/lab/carry_native.py:24、26、34—45、60、119—120；同一账户:native_account_report",
+      "事实": "融资只累计到策略debt，未向Native账户发出扣费/借贷记账；它被策略用于净值和后续开仓预算。Native报告终值total/free仍为10308.70673705，而独立融资调整净值为10227.91836739。初始MARGIN账户、margin_init=1、margin_maint=0.5和liquidation_enabled=True不能自动把这一外部debt纳入引擎清算。"
+    },
+    {
+      "来源": "同一账户:native_account_report；本轮数值读取",
+      "实际计算": "103条Native报告中51条含非空margins。第一笔开仓后total=99.77603785、locked=37.32702450、free=62.44901335；maintenance=37.32702450，initial=0。最大数值locked为5116.29652000 USDT。",
+      "含义": "不能把融资未入钱包夸大成“Native完全未运行保证金机制”；保存报告支持模拟保证金占用确实发生，但不证明外部融资后保证金或真实交易所分层规则。"
+    },
+    {
+      "来源": "/workspace/BTCStrategyResearchLedger/lab/carry_native.py与/workspace/BTC-strategy/src/btc_strategy/execution.py；本轮AST比较",
+      "实际计算": "去除顶层import/import-from节点后，两文件完整AST精确相同，包括MarginResearch类及全部方法、summarize、run_account。交付仓3处依赖路径调整未改变执行函数体。该检查没有导入execution或启动Native。"
+    }
+  ],
+  "counterevidence": [
+    "融资没有进入Native钱包，不等于最终回报漏扣融资：累计80.78836966被净值、交易PnL和后续预算一致扣除，独立账本已验证。",
+    "模拟保证金账户实际存在51条非空margin记录，因此不能宣称引擎完全没有保证金占用或把MARGIN当作CASH；准确限制是引擎账本没有这笔外部融资债务。",
+    "完整2922日核算和103条Native total精确对账，比仅调用carry_audit或只核对期末值更强；但它仍以保存fill日程为条件，不能独立证明全部触发/缺单/方向判定正确。",
+    "费用、数量舍入和5 USDT门槛在现有成交中相符，不证明真实场所深度、借币、USDT基差、部分成交、强平执行或盘中跳空均被模拟。"
+  ],
+  "recommendations": [
+    {
+      "行动": "保留双账本表述：Native raw wallet与策略融资调整净权益各自列明，禁止把Native report total直接称策略可用净资产。",
+      "优先级": "P0",
+      "验收方法": "期末两值分别为10308.70673705与10227.9183673856，差值等于累计融资80.7883696644；所有收益/预算使用调整净值，Native报告原字段保持原样。"
+    },
+    {
+      "行动": "将历史账户核算一致性与融资感知的清算资格分开记录；关于真实保证金安全维持未证明。",
+      "优先级": "P0",
+      "验收方法": "后续若提出清算安全主张，需另有明确证据证明融资债务已进入清算权益和保证金可用余额，并覆盖对应场所规则；liquidation_enabled=True或51条margin记录单独不足。本轮不改变冻结引擎配置/债务实现。"
+    },
+    {
+      "行动": "将本轮独立重建作为条件核算验收样例，记录固定fill日程这一前提，不扩大为完整交易决定的独立验证。",
+      "优先级": "P1",
+      "验收方法": "51次开仓q和102笔费用精确相同、103条Native total一致、2922个净值与单笔PnL误差均<=1e-8 USDT；检查程序不能直接调用carry_audit代替独立推导。"
+    },
+    {
+      "行动": "明确实际费用的1e-8舍入与风险mark中预计退出费未舍入的区别，避免重复扣入场费或漏扣融资。",
+      "优先级": "P1",
+      "验收方法": "钱包只在每次fill扣实际费用；open mark的unrealized_pnl尚未扣入口费用但wallet已扣；清算净值再扣退出费reserve和debt。终值全部flat时reserve=0且gross−fees−financing=净利润。"
+    }
+  ],
+  "checks_performed": [
+    {
+      "检查": "新的独立完整STRESS条件账本重建",
+      "方法": "/workspace/BinanceTradingRobot/backend/.venv/bin/python -B，Decimal精度80；只读源LP35 STRESS账户与交付仓compose(LP35)的3287点既有目标。手写钱包/仓位/费用/融资/逐日净值公式，不调用carry_audit、不导入execution、不运行Native或writer。",
+      "结果": "2922日、102 fills、51交易、368融资日全部核对通过；51次q和102费用精确相同，净值最大差4.6575342465753425E-24 USDT。"
+    },
+    {
+      "检查": "Native report独立钱包对账与margin存在性",
+      "方法": "从初始100加每笔fill钱包变动构造103条余额并对照Native报告total；逐值用Decimal检查locked，不以字符串排序。",
+      "结果": "103条total误差0；51条含margins，最大locked5116.29652000；证实模拟margin存在，同时外部融资不在total。"
+    },
+    {
+      "检查": "源与交付执行函数体一致性",
+      "方法": "读取两execution源码，AST移除顶层import后精确比较。",
+      "结果": "非import完整AST相同；无代码写入或引擎运行。"
+    }
+  ],
+  "unresolved": [
+    "条件账本重建使用保存fills日程，未从全部targets/risk事件独立生成一套订单；遗漏或额外交易的完整决定一致性不由本轮单独证明。",
+    "Native清算使用的完整权益估值细节和外部融资的实际注入机制未获证明；本轮无资格声称真实融资后安全。",
+    "按日固定年融资代理仍不覆盖实际借币可用性/回收、费率时变、交易所逐档保证金和盘中强平。",
+    "只完整重建LP35 STRESS，其他八候选或成本情景本轮未逐日全量重建。"
+  ],
+  "independence_statement": "execution为隔离AI分析角色，不是真实专家或独立市场样本。未读其他专家目录/评分/意见或主审意见，未读2026经济数据、V01/V02或2026账户。源仓和交付仓只读，未改冻结代码/spec/model/account/verification/gates；未新拟合/优化/搜索策略，未运行独占writer、Native、下单或部署。仅独占创建r06.json，未预写后轮。"
+}

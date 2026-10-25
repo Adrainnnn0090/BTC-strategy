@@ -1,0 +1,21 @@
+{
+  "id": "Y01",
+  "category": "long_only",
+  "description": "原双ExtraTrees价格收益头等权，BAND100/3%管理趋势，正预测许可，纯多头。",
+  "model_families": [
+    "base_tree",
+    "stop44"
+  ],
+  "implementation": "btc_strategy.strategies.compose",
+  "source_study": "studies/B29-prior-forecast-exits",
+  "period": [
+    "2018-01-01",
+    "2025-12-31"
+  ],
+  "new2026validation": false,
+  "source_recipe": {
+    "id": "Y01",
+    "kind": "LEGACY"
+  },
+  "risk_qualification": "不做空；仍承担多头趋势和跳空风险。"
+}

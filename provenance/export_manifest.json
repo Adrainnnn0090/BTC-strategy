@@ -1,0 +1,2733 @@
+{
+  "source_commit": "ea1256c6",
+  "files": [
+    {
+      "destination": "src/btc_strategy/_frozen/lab/activity_factors.py",
+      "source": "lab/activity_factors.py",
+      "sha256": "67ba8c0b20eb1ebfc916ef2f2d3505669b8080fb0b2e3d4532a12fc34300b469"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/activity_mlp.py",
+      "source": "lab/activity_mlp.py",
+      "sha256": "3f7004f89abe3d970d63a3e99c5fba2ec48d723662fc38bc76e2b584c86bd257"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/architecture_choice.py",
+      "source": "lab/architecture_choice.py",
+      "sha256": "c140f4239c2161bc297cd0aa682313453b3e8914736f4308aafcb0556bf444e1"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/audit.py",
+      "source": "lab/audit.py",
+      "sha256": "11cdf58ea93b22b18d8d43efd696e8ef3b97c9ae13738cbd76459ec78a611012"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/b05.py",
+      "source": "lab/b05.py",
+      "sha256": "0b162759dcce4c1e0af1903e31844166b735afa512f78d9b415daf3ce7092e48"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/b09.py",
+      "source": "lab/b09.py",
+      "sha256": "5a455d4f6ce757869f4d26c7b3b4269762fbbc47ddb046e0beb972c460fe3150"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/b09_io.py",
+      "source": "lab/b09_io.py",
+      "sha256": "b4e298a0de39a34ef78f61e4a0cdf8155ada6f797b09ba23ed0f84a78cb62c08"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/b10.py",
+      "source": "lab/b10.py",
+      "sha256": "d23e5861778cf43098bb076b6d3fba6a382ca2012b7d7b3cf42768ce18ff072c"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/b102_io.py",
+      "source": "lab/b102_io.py",
+      "sha256": "958979ba2fd3acd8a9719a0e2033266b5986392bccc3a887470355a4e4cbf810"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/b103_io.py",
+      "source": "lab/b103_io.py",
+      "sha256": "5183f576154b0c9695cd4f9f46d02d76aec81787677c188010ad71850d141ddd"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/b104_io.py",
+      "source": "lab/b104_io.py",
+      "sha256": "3ce955c64fb83991e213ee0df15ae725917158da9ddc3e4770458388e753b43e"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/b105_io.py",
+      "source": "lab/b105_io.py",
+      "sha256": "045392d70f5d2fb00f5a2b638a6f6fcda26b984a33003b61f2fc731532d7cbad"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/b106_io.py",
+      "source": "lab/b106_io.py",
+      "sha256": "2daa20254fe4c4508afb0652004eea46e93d363f6ece817856b39eb742acedf9"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/b107_io.py",
+      "source": "lab/b107_io.py",
+      "sha256": "736037902fa851569e72bf66cd8939cf09b3a124100919c2480f4bb784c2c662"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/b108_io.py",
+      "source": "lab/b108_io.py",
+      "sha256": "9d634bee51c2ee30a40f3c13ea9dee6991cc7ad3d32752f422571f37924b263e"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/b109.py",
+      "source": "lab/b109.py",
+      "sha256": "7380c1b01970b7991615de298b49c764f04471557573e98efca5ca49c332f640"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/b109_io.py",
+      "source": "lab/b109_io.py",
+      "sha256": "954fbcb02ec6c4421368cae23ade39e34fc3271d85ede435a5bd344d6de7ac36"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/b10_io.py",
+      "source": "lab/b10_io.py",
+      "sha256": "8fc1bfd7adb2976acf66bda75660a6bbef3316bf7395869c8c304ae39a06fbf9"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/b12_signals.py",
+      "source": "lab/b12_signals.py",
+      "sha256": "aa37914babfa3ce5cbc96d9749634da518ac6eca7320f7c91907e7e406925ffe"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/b16.py",
+      "source": "lab/b16.py",
+      "sha256": "790a0c52d343305bba5bc292e1ed36fa3e6c0a9d7cd77f50cd27a6c7e14ab398"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/b16_io.py",
+      "source": "lab/b16_io.py",
+      "sha256": "fc3eb98ee41b7282b14acf2eb0cb2cd0ba8c1221457c144cc3132cf65080cfea"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/b17.py",
+      "source": "lab/b17.py",
+      "sha256": "3a1537fa2df6aea9400ccf8fd4ad7cc661bd9bc32e2545f661b808213309dccf"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/b17_io.py",
+      "source": "lab/b17_io.py",
+      "sha256": "fa68673e901e6d7ef5be9b3352e1a84f15aa5c317e50e0a094be86917e7f3c7b"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/b18.py",
+      "source": "lab/b18.py",
+      "sha256": "ca9c5cf4f79aab91ee1085fe0d0a96a113b23913fd70594ed56a127263b293cb"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/b18_io.py",
+      "source": "lab/b18_io.py",
+      "sha256": "b2adbf55bd3f78cbca4bddef8e73c39c4a5aeb1f52ac43fe720ab60d5f169db4"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/b19.py",
+      "source": "lab/b19.py",
+      "sha256": "9017e2ffa85adc9ca66e85e672fcd4e3e2cbe48e410d16ea16d7dd119d370980"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/b19_io.py",
+      "source": "lab/b19_io.py",
+      "sha256": "0d5db9903a3208a107d555995d02ca6feb9f476e96a6896409d28076f5713947"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/b20.py",
+      "source": "lab/b20.py",
+      "sha256": "a3bb99b19d37af9d726660f536f28be019e71fd058b6ca2e785c7b3b3765c462"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/b20_io.py",
+      "source": "lab/b20_io.py",
+      "sha256": "2c51948cc90c6584e8202e8f007ad72a12956d2e536cec975ab0a0fa79faffaf"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/b21.py",
+      "source": "lab/b21.py",
+      "sha256": "27adce76fd981f7fecbbfa60c80224f149eb606b0f0f1d2f784f11684ed9b9c7"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/b21_io.py",
+      "source": "lab/b21_io.py",
+      "sha256": "3ff05c5467df80dd60b51374b0e623c74733c988fe67960c7435db5fa8520227"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/b22.py",
+      "source": "lab/b22.py",
+      "sha256": "a3b8231000bcb6550dcd9e4879e1bcfa058b2276b993f07d6b3940e3e669521b"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/b22_io.py",
+      "source": "lab/b22_io.py",
+      "sha256": "692a1b2d5fcc9adcc7b7db3f310bd613fc7be23138ef07c75328f4491780d8f3"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/b29.py",
+      "source": "lab/b29.py",
+      "sha256": "85cde0ef270509e88e67fc4bc24d8a2bf989ff1c5f7848dd51b281becf658ea0"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/b29_io.py",
+      "source": "lab/b29_io.py",
+      "sha256": "9f2ac559c1cfee11efec4f24254849b890a895617e246c28207084d74c4158da"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/b30.py",
+      "source": "lab/b30.py",
+      "sha256": "f4e38706e1a7a2c334d976c6c08aabe01d6d0cbcda4051d973a255eb5a12642e"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/b30_io.py",
+      "source": "lab/b30_io.py",
+      "sha256": "968a7a9a6b2e3f55e364bbe623c92dc1327d65c3e5980cc3930f04abeb7f466d"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/b31.py",
+      "source": "lab/b31.py",
+      "sha256": "0844d78bf6821603b29fac3766ca2f756a4042413f46b4e4429b016d8e284866"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/b31_io.py",
+      "source": "lab/b31_io.py",
+      "sha256": "3a6bc47634d09d7e20f3e012359501fcdb578f39aa73f753ea8678b20f496dd0"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/b36.py",
+      "source": "lab/b36.py",
+      "sha256": "94a7a22eeffc00016cfbc2aae2f545cf2bb991b791491b91d37d2ebfad8ddb2e"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/b36_io.py",
+      "source": "lab/b36_io.py",
+      "sha256": "a8effec74c33adbbcf1f6e0332f4eac1254640ca40071b4067057fb1b34d9980"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/b38.py",
+      "source": "lab/b38.py",
+      "sha256": "33f6b92db5f2bd795e10614f547520ec39a9bd9b31269c425216efea17734f1b"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/b38_io.py",
+      "source": "lab/b38_io.py",
+      "sha256": "a58e8acaa111e58acdaa8ca925e8f7f92b33d7c98ec5c04c7f7a4c77c37d375e"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/b39.py",
+      "source": "lab/b39.py",
+      "sha256": "04f2a1596e942af194215dc4e2e2eaf550b6ecde032b4cbda2f739c6d6720c30"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/b39_io.py",
+      "source": "lab/b39_io.py",
+      "sha256": "03230c86cedb8d32938b0e6deb4554419088f8d83df45503c3c94ce6a322db95"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/b40.py",
+      "source": "lab/b40.py",
+      "sha256": "f5ee283507e759a5b2bf0a99c91a9529663beba3a0388a9a798aa86a70eba321"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/b40_io.py",
+      "source": "lab/b40_io.py",
+      "sha256": "463d6938e16e2d3660ce4aca2d26ccf13f0976d6422f279375231a28a9dd837b"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/b41.py",
+      "source": "lab/b41.py",
+      "sha256": "84a73bdfe872f010e7048dc6a2fcaa3b9097f214c56ecb1ff8a7dff51d078477"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/b41_io.py",
+      "source": "lab/b41_io.py",
+      "sha256": "a15bac87307af9d3bd528c32b261dd4f4e5b18ab3edf4ff39599cb0e51a3841f"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/b43.py",
+      "source": "lab/b43.py",
+      "sha256": "fca9996531f1216336408383dbf01c359b5f1308d501ccd2879f1b18c94743d4"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/b43_io.py",
+      "source": "lab/b43_io.py",
+      "sha256": "c29137fac466c5277ff7b145ed1b20152a4e6cf890ab9f0212cd5267336b5f34"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/b45.py",
+      "source": "lab/b45.py",
+      "sha256": "965f8e1c50d0af728eaaaa6519db4ece8144880f816c1a6565c03458636b3ba3"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/b45_io.py",
+      "source": "lab/b45_io.py",
+      "sha256": "55202995dc624c691e50dd9a210fc0982b779ef4b7efebb04f1a8c0877bce939"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/b46.py",
+      "source": "lab/b46.py",
+      "sha256": "31e7228108d2c788242ea120fb374811764e117f9baaf7471c60fb64ca0d15df"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/b46_io.py",
+      "source": "lab/b46_io.py",
+      "sha256": "ed3cb47dfb7b4fa6a0234654c2f090b1ee589c6a5b09c4ec68519dab07c621cc"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/b47.py",
+      "source": "lab/b47.py",
+      "sha256": "8a896989542f89ef6ffc87367acf0c5660d4a669a2439b5fc7c257100a1a6bab"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/b47_io.py",
+      "source": "lab/b47_io.py",
+      "sha256": "5a8c0ba4a5773f013ce9532710a1d51a8670839c173e7a926767853ec97700c4"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/b49.py",
+      "source": "lab/b49.py",
+      "sha256": "5b600cbc3bdca1e559e698d664eeb5ec0a221c2cff71c6ae2f2c1e0a6ebcf62a"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/b49_io.py",
+      "source": "lab/b49_io.py",
+      "sha256": "f6e56c21d6c3f898ed76bdf7296505aa802b978fab76c017826f2fe630bb3183"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/b49_source.py",
+      "source": "lab/b49_source.py",
+      "sha256": "afe97dacb0a175db6199ffa0ec9bad2a3fbf17337b1d0aa13eb49946d9c04ef7"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/b50.py",
+      "source": "lab/b50.py",
+      "sha256": "6199db5378c264fe95e645a0993e0590441d8dfbd3b707f544baab8d43515afd"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/b50_io.py",
+      "source": "lab/b50_io.py",
+      "sha256": "5c55b1b9952063a8a971e8fb779deee0ec9fd3027b7230d5161ec0872d20997e"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/b51.py",
+      "source": "lab/b51.py",
+      "sha256": "fc4efb938d2b2114b48a0ed77e2146c82cdf2fde777410151affac06f3f5c509"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/b51_io.py",
+      "source": "lab/b51_io.py",
+      "sha256": "6dee33460de14b542e7c40038086b19f592a6c94d1caabf0230175f1f52b1456"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/b60a.py",
+      "source": "lab/b60a.py",
+      "sha256": "f77a1ca9fc55df6ad24eccc94dae6f2dfffd4f6fd4db0346f23f1c30caf23d1c"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/b60a_io.py",
+      "source": "lab/b60a_io.py",
+      "sha256": "e5cd528fa79edfa5807a654eaa4d42c10ad22205b6d4c83e6d2e5f70a080b62b"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/b61.py",
+      "source": "lab/b61.py",
+      "sha256": "5778b725e5777f06a9bf6dd24c41684c75fb5540c568be32c053af0281c759fe"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/b61_io.py",
+      "source": "lab/b61_io.py",
+      "sha256": "be661333d576706b283358c96e59d343eeb7ad9b4ac9f45d9fa5da38634a5cd8"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/b62.py",
+      "source": "lab/b62.py",
+      "sha256": "bd80d40eb9942df532ac4727d42a045bd42fa3e8aefedcc6be2ec21c050870f5"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/b62_io.py",
+      "source": "lab/b62_io.py",
+      "sha256": "20c39b2bc53157fbf70a4e0a9365e389665466bb0f80d31d049cdfef080c7427"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/b63.py",
+      "source": "lab/b63.py",
+      "sha256": "f7f3d18758ec8dd7c2433e075bbc209002ca8e5c0171dd7f9a58fa0de6adfcd3"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/b64a.py",
+      "source": "lab/b64a.py",
+      "sha256": "4b9aea263fdcdebdb495d39b4153e4858c966554f63a5c9c3b2f38cbe2441d6f"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/b65_io.py",
+      "source": "lab/b65_io.py",
+      "sha256": "050b6a562b61a5ef756c4de2f9231bb2fbf70c9382fc20cbadca06a7611c11ab"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/b66_io.py",
+      "source": "lab/b66_io.py",
+      "sha256": "bf66993a26194c55e034f485bd98667d6151359704a8307a96590d62a377430f"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/b67.py",
+      "source": "lab/b67.py",
+      "sha256": "469461388ef3607ebff36aca7b970157192c76e9c788f5930841c5c6910f84f3"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/b67_io.py",
+      "source": "lab/b67_io.py",
+      "sha256": "ef5ab30d9e80bf6cb55052ffea5028cd6ccfba0d5faf300ea525a11e94c81bda"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/b71_io.py",
+      "source": "lab/b71_io.py",
+      "sha256": "f485ddc06cfb2535d9c3ebfb7b6a3bf18942ea7f3ff16a16a431b223d8d0b984"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/b72.py",
+      "source": "lab/b72.py",
+      "sha256": "80ba2b49d7a7a8f3b1c85f030897bdef422ac99200992983cb46e8d461c9cf39"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/b72_io.py",
+      "source": "lab/b72_io.py",
+      "sha256": "a4b0a6dfb870449a6d08dac232d37aace81b132fda17373c2011806393c0bba7"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/b81.py",
+      "source": "lab/b81.py",
+      "sha256": "17a9c72f1476d859ea2984d136ef9ef0e94020a8a66eab08c7c2afd039ad56e7"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/b81_io.py",
+      "source": "lab/b81_io.py",
+      "sha256": "6d940dc352e95c908d0d22370c7cd188c322537acceab9cf56c4724cc31704a9"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/b82.py",
+      "source": "lab/b82.py",
+      "sha256": "b3842b3a1d95576db7d9045e2f94c30efd89f35c4fea34388bde4d817eea6576"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/b82_io.py",
+      "source": "lab/b82_io.py",
+      "sha256": "df05b196ff56b265ee7ec1dbe8a2e2ff49b13928134602a60fad454291ae25b7"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/b86.py",
+      "source": "lab/b86.py",
+      "sha256": "8ccc840df92ecfd8740ae9108a12eac3441f799c0f297ad6031cb9d33117fc0b"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/b86_io.py",
+      "source": "lab/b86_io.py",
+      "sha256": "2636240dd3e55dca15995c25a5c549da8d17992d7ffa40d6fee7dc4a61e45be3"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/b86_prepare.py",
+      "source": "lab/b86_prepare.py",
+      "sha256": "9a3ebc117110ebcedf6ff5269f952d1f8e858c2b04f473a43738575292881802"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/b87.py",
+      "source": "lab/b87.py",
+      "sha256": "97a45dc25abbcdf03eeb59da070425b2f30c88adbfeb103fb9b539da4907e4e7"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/b87_io.py",
+      "source": "lab/b87_io.py",
+      "sha256": "412afde8685874ae04a9dd17471b0bee64d15170005d5a95cd5db4c5dd23ebf4"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/b88a.py",
+      "source": "lab/b88a.py",
+      "sha256": "458385a138617f84fa67c8801a405a23eb44e445b6a93f11ec5ccf73192136d4"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/b88a_io.py",
+      "source": "lab/b88a_io.py",
+      "sha256": "f0b0d977e4b04cc770cf1edcefe198e92888ca8ea7e8b47226b83ffc988f777b"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/bear_short_overlay.py",
+      "source": "lab/bear_short_overlay.py",
+      "sha256": "d0f775486985a87d8419bad3b615c120d8eb5f915c6b18731592f05ffc558ff1"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/boosted_stop.py",
+      "source": "lab/boosted_stop.py",
+      "sha256": "903c1fab34f21868b936c480cbf5d2e81155211d33c5f231e68867fdf6cf92f0"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/boosted_stop_depth3.py",
+      "source": "lab/boosted_stop_depth3.py",
+      "sha256": "b318f2812467f964397f2c0209368c7614df31809801b50743bf722186b9bae5"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/calendar_labels.py",
+      "source": "lab/calendar_labels.py",
+      "sha256": "5873762f9bf601a0a5484945eee778e1ed670dfe1087c892868fea49764e5dad"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/carry_audit.py",
+      "source": "lab/carry_audit.py",
+      "sha256": "67b183827063937caf3650a05edc2bc6309e7589bee1cac41d3101b2b938e9ca"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/carry_native.py",
+      "source": "lab/carry_native.py",
+      "sha256": "b4c159df393aa16622bc8a0ee2b409b2f52a103e1517b5b6fe1addde79f0569b"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/cold_budget.py",
+      "source": "lab/cold_budget.py",
+      "sha256": "6ef6e1070b80f353eb5aa17bff9e2704b5e2c704e67c8a9d4685e6f458ba35fc"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/cold_entry_momentum.py",
+      "source": "lab/cold_entry_momentum.py",
+      "sha256": "962a530df1cd79219668fbe42692f1ec0de4bf26123a0158d8b0c161138b5f00"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/cold_short_profit_trailing.py",
+      "source": "lab/cold_short_profit_trailing.py",
+      "sha256": "31cfa9e81bcef91165d527d564f18acbbcada6a00fef606918f67e21be46a7dc"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/conditional_short.py",
+      "source": "lab/conditional_short.py",
+      "sha256": "b5b99c652ed5508fc8241693049e603a3d682525758a76816612642aadb32b6f"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/cross_market_averages.py",
+      "source": "lab/cross_market_averages.py",
+      "sha256": "4aec134d338d92494f9500aa715e77a9095a5b96db5cafa89efbec5d567bda54"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/cross_market_factors.py",
+      "source": "lab/cross_market_factors.py",
+      "sha256": "9a9afe6444f0e48b6840466f2558f764cee6a44ee94c842ace901ec0d5249148"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/entry_permission_audit.py",
+      "source": "lab/entry_permission_audit.py",
+      "sha256": "cd0b6860a5537e8311a6858c04f7bfb857a735b64378a747a276d1bd14259a1f"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/entry_permission_native.py",
+      "source": "lab/entry_permission_native.py",
+      "sha256": "b156b8b3e1fd5fb31c2ed731585ab2fd8e5ee0202bdf676cb772c6b646036691"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/entry_permissions.py",
+      "source": "lab/entry_permissions.py",
+      "sha256": "25978ca543b17303404d0d44d28ac73333e3c6433dd950ca7dc26d0d421a9185"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/eth_factors.py",
+      "source": "lab/eth_factors.py",
+      "sha256": "f67f02c66131be9ccf5404004b8ede9a6b5df1ecca2a923a2915eb77012625e5"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/eth_role_parity.py",
+      "source": "lab/eth_role_parity.py",
+      "sha256": "e08e056ce4cab0921a786265c50cde77e2441ea5ba49944cd78bd4bdd78db935"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/eth_short_transfer.py",
+      "source": "lab/eth_short_transfer.py",
+      "sha256": "8ef3c5b2ee5281f5e6c7b3dfb6d1c9307671ab5ce52feb7d9fbc47c3e66421b9"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/execution_labels.py",
+      "source": "lab/execution_labels.py",
+      "sha256": "9fb5fd23abe7caf5a504177f6d1d43ac67b4e4b08758cf3a506ce7544050074b"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/exit_coordinate.py",
+      "source": "lab/exit_coordinate.py",
+      "sha256": "a1de1510c72786cbc0b2bd24f1bb7c9118265b4f677e882f8a35f34f64d7a2fd"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/faster_cold_short.py",
+      "source": "lab/faster_cold_short.py",
+      "sha256": "6e4c7698f2adc15fbd317e6580b73d3bc43f01dc7b53d8cc25e84d51a6702d51"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/fixed_activity_average.py",
+      "source": "lab/fixed_activity_average.py",
+      "sha256": "f6f7245bf000677dd52e8a7c0e8701815bb5a63a020db45388f4811a2a6ff608"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/forecast_rank.py",
+      "source": "lab/forecast_rank.py",
+      "sha256": "d309de3583668ba06f9eb2d38d4027d92a6a12c8a1ef2d267dfac94474c7d46a"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/full_retained.py",
+      "source": "lab/full_retained.py",
+      "sha256": "c97316bf175aa61f6867238dffef3f6b16176194c1a0036e56c8cc67ad69b5f6"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/holder_stock_factors.py",
+      "source": "lab/holder_stock_factors.py",
+      "sha256": "0942f7f6b8b57f700b2983927eed24a05623ca6d34dc30e458f573ce26d04d8e"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/io.py",
+      "source": "lab/io.py",
+      "sha256": "83d675161c788c7750ffe780d67158e119a78ea89114fd0a18872ea49320daf5"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/kernel_models.py",
+      "source": "lab/kernel_models.py",
+      "sha256": "adcc38d35ea7b4aa8db6a0f9e9b1c9e2b81ffe812364a5079f53a8a74e8be263"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/label_sgd.py",
+      "source": "lab/label_sgd.py",
+      "sha256": "f84798a301da68d8046c983d38a0d56ffa46980ada9390676c53eea6a245de94"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/label_trees.py",
+      "source": "lab/label_trees.py",
+      "sha256": "dce77d8c69400e1b51487ebc767e13871898330a0988e62dac3761437fe045a1"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/lagged_short.py",
+      "source": "lab/lagged_short.py",
+      "sha256": "b0be31b2214cd580ee30153fd58141d6ee70889695e31ba89d73b2c587770490"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/long_profit_local_coordinate.py",
+      "source": "lab/long_profit_local_coordinate.py",
+      "sha256": "5d6ed6605c8546e0e26e986f1a6774e9ebebfbab080ecd081d785650e2ea3cf7"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/long_vol_budget.py",
+      "source": "lab/long_vol_budget.py",
+      "sha256": "4f15a50a61d4626ebf552864dc1d86b72e40d58034a7c64709d3c11d258b0ee4"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/margin_walkforward.py",
+      "source": "lab/margin_walkforward.py",
+      "sha256": "126976b39dac065262e9a4aa0bb193b759060fb330d8ef4e28b67d85e1d3b1c9"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/margin_walkforward_audit.py",
+      "source": "lab/margin_walkforward_audit.py",
+      "sha256": "6c4148aab519b45bb905fc682d20bbb95eba1e0c383fa32937dfa12a60a5491e"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/mining_ablation.py",
+      "source": "lab/mining_ablation.py",
+      "sha256": "e0d02a04b14191771d840669bacc51da7d35022bae997d61d2cb5b6b995a17ae"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/mining_features.py",
+      "source": "lab/mining_features.py",
+      "sha256": "258bcad2aae08f7eabfc390cc941d991abe20f6e31ccd93eab00aa3a545fa338"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/mining_models.py",
+      "source": "lab/mining_models.py",
+      "sha256": "60a321d0eb530f6093bde457376aa2e616be6360ca88b65931e024e9b48c8126"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/native.py",
+      "source": "lab/native.py",
+      "sha256": "07a97ae551adf5585e54eca194e4260a7fb17fc4af6470b648d274e19000079a"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/negative_short_gate.py",
+      "source": "lab/negative_short_gate.py",
+      "sha256": "425f2ea2db93b59d0fa26c6c893a69b0d67b4d2c4015278479fc1a3c4e08ae03"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/patient_profit_exit.py",
+      "source": "lab/patient_profit_exit.py",
+      "sha256": "8eb769aaeadd8cfc8b0c3003b49c807eae36a06013cb96cc8781c322525a0c78"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/price_trail_activation.py",
+      "source": "lab/price_trail_activation.py",
+      "sha256": "13d68c35820c178c05dc76038b961e7f69a7afd5c70da9e6358adb47ea04c5f2"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/quote_exposure.py",
+      "source": "lab/quote_exposure.py",
+      "sha256": "538a39a4c3e17111208e61884d91d1dc16375b4978801d5642cd6921df3a36f8"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/robust_dynamics.py",
+      "source": "lab/robust_dynamics.py",
+      "sha256": "e4bffd4b8e970a97d4c8388b8c9ad3ca5f0cab1350d4ba94d8a93b951136fa79"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/search.py",
+      "source": "lab/search.py",
+      "sha256": "fac0902d074740045bc9a911c0b312fdbb281eee985f4d8b3ef6fe56552245df"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/sgd.py",
+      "source": "lab/sgd.py",
+      "sha256": "b8f7d5a939c49759537c9e6adde70f15c16527b69c65bceae949550d35d91d9e"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/short_forecast_fusion.py",
+      "source": "lab/short_forecast_fusion.py",
+      "sha256": "25c8d43fea791342e6c820bc46398e0fb3f9b8fbdf9ab955db55c43102aaaef3"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/short_loss_models.py",
+      "source": "lab/short_loss_models.py",
+      "sha256": "fcb844a48d3fb18e615abf9b135526f823794face2e47aeb9b021abed1e3263c"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/short_payoff.py",
+      "source": "lab/short_payoff.py",
+      "sha256": "cc73f202662478de85dc558c148f59ce00fe153fb3b4679f2552c59286e082ac"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/short_payoff_models.py",
+      "source": "lab/short_payoff_models.py",
+      "sha256": "0c584a069c9baa83d9bad13555bbead1cc175cd9e14c6c417cd58ebeecf7595a"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/short_payoff_overlay.py",
+      "source": "lab/short_payoff_overlay.py",
+      "sha256": "b0f528ddd18ad3872fdd7eba9df0890943cff016b7f845ff63311b8f651b50ef"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/short_trailing.py",
+      "source": "lab/short_trailing.py",
+      "sha256": "abe519c4757c05bacffee08f8bf7daddc378d783f03bf5008a45dffcc51d243d"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/shorter_cold_momentum.py",
+      "source": "lab/shorter_cold_momentum.py",
+      "sha256": "95adec18015e887a027d16a80aa2bacd3d2be8c913c5678ac6c77489c5bb67e2"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/signals.py",
+      "source": "lab/signals.py",
+      "sha256": "6631bdb8df45789e991b219c7be32f5025891751715a02506d969f041a2deee9"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/stock_direct.py",
+      "source": "lab/stock_direct.py",
+      "sha256": "b0c848abbd1b63a7ed905ec68682c26f7c8ce0982ee26a49773abbb31f053ee0"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/tree_factors.py",
+      "source": "lab/tree_factors.py",
+      "sha256": "39fe1dabc1785738b23b249d4dc5aea3da4e26f4137c82c375407180a5241b5c"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/tree_stability.py",
+      "source": "lab/tree_stability.py",
+      "sha256": "5e8e896088f3dccf7e01ff41116b4c1889f63175aa9313ac08b7f2159ec1a05d"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/volume_long_core.py",
+      "source": "lab/volume_long_core.py",
+      "sha256": "9eddd54e970e2518ab0c6bde4fa8e511e675b856254e18925ff2fc938163c25f"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/volume_short_factors.py",
+      "source": "lab/volume_short_factors.py",
+      "sha256": "f2d5aa6ac0d87f087a0d4cf48dce961b8bbf76b42442db3029171015f583d32e"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/volume_walkforward.py",
+      "source": "lab/volume_walkforward.py",
+      "sha256": "7390b69f6ce45615bd7f6eafdf9ba7c571b8346169daa631c413b9545c206078"
+    },
+    {
+      "destination": "src/btc_strategy/_frozen/lab/walkforward_io.py",
+      "source": "lab/walkforward_io.py",
+      "sha256": "8aae5801af2940cf1876bd38f745ec61ba2631ba2fa390c16e56b663ad2fbe6d"
+    },
+    {
+      "destination": "provenance/studies/B10-seed-calendar-stability/folds/2018/seal.json",
+      "source": "studies/B10-seed-calendar-stability/folds/2018/seal.json",
+      "sha256": "5b06d419e7debd3ef28f05686c62e58d2e0472df73bc70c6f7434791620c71d1"
+    },
+    {
+      "destination": "provenance/studies/B10-seed-calendar-stability/folds/2018/test-receipt.json",
+      "source": "studies/B10-seed-calendar-stability/folds/2018/test-receipt.json",
+      "sha256": "01cde8cee8e3dffc35fa057eb0fd1a747435518a8ef72c8267a8799775d204b8"
+    },
+    {
+      "destination": "provenance/studies/B10-seed-calendar-stability/folds/2018/training.json",
+      "source": "studies/B10-seed-calendar-stability/folds/2018/training.json",
+      "sha256": "9b229191b6cf6a012c79916c32239b50828a136f81fb903db26dadf59e9ea1bd"
+    },
+    {
+      "destination": "provenance/studies/B10-seed-calendar-stability/folds/2019/seal.json",
+      "source": "studies/B10-seed-calendar-stability/folds/2019/seal.json",
+      "sha256": "9b926eb8fa3d36e88abd59a6a2ae5268169a5c34f484f62d66d3b6d3148543a5"
+    },
+    {
+      "destination": "provenance/studies/B10-seed-calendar-stability/folds/2019/test-receipt.json",
+      "source": "studies/B10-seed-calendar-stability/folds/2019/test-receipt.json",
+      "sha256": "9a8c5a9c17738b878a5fd16b192d8229f8b7a2e7e9a96d7c96de91982a508da3"
+    },
+    {
+      "destination": "provenance/studies/B10-seed-calendar-stability/folds/2019/training.json",
+      "source": "studies/B10-seed-calendar-stability/folds/2019/training.json",
+      "sha256": "eaee5d3b98a607e1e902760a98e2a310125619b8889c5258a78aefc3426ddf22"
+    },
+    {
+      "destination": "provenance/studies/B10-seed-calendar-stability/folds/2020/seal.json",
+      "source": "studies/B10-seed-calendar-stability/folds/2020/seal.json",
+      "sha256": "4b99dd27d08583abc07e2e3b10c4997583a2d59f12df46acda7418eb9cb22f61"
+    },
+    {
+      "destination": "provenance/studies/B10-seed-calendar-stability/folds/2020/test-receipt.json",
+      "source": "studies/B10-seed-calendar-stability/folds/2020/test-receipt.json",
+      "sha256": "9757092c2106f38c53fffdc20bcc416ca9437d0e9351f5f98675421ba00d28b9"
+    },
+    {
+      "destination": "provenance/studies/B10-seed-calendar-stability/folds/2020/training.json",
+      "source": "studies/B10-seed-calendar-stability/folds/2020/training.json",
+      "sha256": "0fbc6e75e909c7604a980c93f87aebf358598612f36a9c5addbbce98d0bd4743"
+    },
+    {
+      "destination": "provenance/studies/B10-seed-calendar-stability/folds/2021/seal.json",
+      "source": "studies/B10-seed-calendar-stability/folds/2021/seal.json",
+      "sha256": "3749e777589de5a5f1f4bd3952b732020b5ea59cca42c85c8ae83f31ef8324c0"
+    },
+    {
+      "destination": "provenance/studies/B10-seed-calendar-stability/folds/2021/test-receipt.json",
+      "source": "studies/B10-seed-calendar-stability/folds/2021/test-receipt.json",
+      "sha256": "32ec4ce805433e6dd03ca2066d6821115534c5da809912d31c2238af894bfdb1"
+    },
+    {
+      "destination": "provenance/studies/B10-seed-calendar-stability/folds/2021/training.json",
+      "source": "studies/B10-seed-calendar-stability/folds/2021/training.json",
+      "sha256": "f9a1031341cc9375a0939f69701ee733889c3ad554b36586f09157f6ab2e6516"
+    },
+    {
+      "destination": "provenance/studies/B10-seed-calendar-stability/folds/2022/seal.json",
+      "source": "studies/B10-seed-calendar-stability/folds/2022/seal.json",
+      "sha256": "1e6b1e80c278bf2ad4aa45eb81d553097ebfed843f429433df5e2ff489e7503f"
+    },
+    {
+      "destination": "provenance/studies/B10-seed-calendar-stability/folds/2022/test-receipt.json",
+      "source": "studies/B10-seed-calendar-stability/folds/2022/test-receipt.json",
+      "sha256": "7c7ef584b9acda97a435fe73ccdb9ec996e1597a62c63a87da2bd4c46c7af22a"
+    },
+    {
+      "destination": "provenance/studies/B10-seed-calendar-stability/folds/2022/training.json",
+      "source": "studies/B10-seed-calendar-stability/folds/2022/training.json",
+      "sha256": "62119300ffc7f6e156ede0dba59faef36072d91d01207bea3cb8bfa1545e2880"
+    },
+    {
+      "destination": "provenance/studies/B10-seed-calendar-stability/folds/2023/seal.json",
+      "source": "studies/B10-seed-calendar-stability/folds/2023/seal.json",
+      "sha256": "c672ee05b0cefc7dc640de6c911a721214c4f728b2b98a57a4eb41112e3d958c"
+    },
+    {
+      "destination": "provenance/studies/B10-seed-calendar-stability/folds/2023/test-receipt.json",
+      "source": "studies/B10-seed-calendar-stability/folds/2023/test-receipt.json",
+      "sha256": "6cc94b44a133cbf16d44ef77b5ef092fa126b6ba7c54b45e53f132554cc58f3e"
+    },
+    {
+      "destination": "provenance/studies/B10-seed-calendar-stability/folds/2023/training.json",
+      "source": "studies/B10-seed-calendar-stability/folds/2023/training.json",
+      "sha256": "5e69e19161d5aefa3c1244c755f94920c6b4687501a6e257a509d23bb85b2647"
+    },
+    {
+      "destination": "provenance/studies/B10-seed-calendar-stability/folds/2024/seal.json",
+      "source": "studies/B10-seed-calendar-stability/folds/2024/seal.json",
+      "sha256": "a6b4fdb1b754382e582479de48022119ee8844184bb7e529673b1447242835c5"
+    },
+    {
+      "destination": "provenance/studies/B10-seed-calendar-stability/folds/2024/test-receipt.json",
+      "source": "studies/B10-seed-calendar-stability/folds/2024/test-receipt.json",
+      "sha256": "cc16e8d245fdb751e56c36ec56d8693797f5288d655c58eb90bb95bebb485ce2"
+    },
+    {
+      "destination": "provenance/studies/B10-seed-calendar-stability/folds/2024/training.json",
+      "source": "studies/B10-seed-calendar-stability/folds/2024/training.json",
+      "sha256": "7aa5326f966596dab2d305641c4947b0b6c924de85decdf8700e5ebe73902458"
+    },
+    {
+      "destination": "provenance/studies/B10-seed-calendar-stability/folds/2025/seal.json",
+      "source": "studies/B10-seed-calendar-stability/folds/2025/seal.json",
+      "sha256": "fceb348f42e02e82059be4d6f1e05916b7843ee4ad09c77a2b26cfe020d24380"
+    },
+    {
+      "destination": "provenance/studies/B10-seed-calendar-stability/folds/2025/test-receipt.json",
+      "source": "studies/B10-seed-calendar-stability/folds/2025/test-receipt.json",
+      "sha256": "7fdfb2e229ea74a2e91a48f07ef97be1b7d049cecf55779c64a803b5631d06e5"
+    },
+    {
+      "destination": "provenance/studies/B10-seed-calendar-stability/folds/2025/training.json",
+      "source": "studies/B10-seed-calendar-stability/folds/2025/training.json",
+      "sha256": "9216f0e44db5929330afa8c03975833bac6914718fad3724bbeab3e6b565edae"
+    },
+    {
+      "destination": "provenance/studies/B10-seed-calendar-stability/registration.json",
+      "source": "studies/B10-seed-calendar-stability/registration.json",
+      "sha256": "157ccd265b74d8d37931276d2f330422204c4eec89f95f379ae29b4d71bde6ee"
+    },
+    {
+      "destination": "provenance/studies/B103-faster-cold-short-trend/original-verification-failure.json",
+      "source": "studies/B103-faster-cold-short-trend/original-verification-failure.json",
+      "sha256": "83cc972c748200dffb3a77adc7f0de4a5a725935dae717563aa4429886dd8ea5"
+    },
+    {
+      "destination": "provenance/studies/B103-faster-cold-short-trend/registration.json",
+      "source": "studies/B103-faster-cold-short-trend/registration.json",
+      "sha256": "44df1643501c450a303d13e136622d93ed4f88816922d7619479969feea91aa0"
+    },
+    {
+      "destination": "provenance/studies/B103A-cold-source-mask-independent-audit/decision.json",
+      "source": "studies/B103A-cold-source-mask-independent-audit/decision.json",
+      "sha256": "ca4040602aa1c970d107a9d3c3328b270c324c80426ca53806fc504121847707"
+    },
+    {
+      "destination": "provenance/studies/B103A-cold-source-mask-independent-audit/registration.json",
+      "source": "studies/B103A-cold-source-mask-independent-audit/registration.json",
+      "sha256": "5c58ba0e94c32fb678ce9cba7138ea2e2e79974bcd202f06a0f520c02c544fef"
+    },
+    {
+      "destination": "provenance/studies/B103A-cold-source-mask-independent-audit/verification.json",
+      "source": "studies/B103A-cold-source-mask-independent-audit/verification.json",
+      "sha256": "456f66f2f5bee3391d59ac99a7727838159cb2441da9dfc944c052205680b332"
+    },
+    {
+      "destination": "provenance/studies/B105-cold-entry-momentum/decision.json",
+      "source": "studies/B105-cold-entry-momentum/decision.json",
+      "sha256": "d204740311ab6f489d1dfccbc876b8fe52bf480111682e92cd6c98fa1c874297"
+    },
+    {
+      "destination": "provenance/studies/B105-cold-entry-momentum/registration.json",
+      "source": "studies/B105-cold-entry-momentum/registration.json",
+      "sha256": "931ce7cbcc477918bd2222db544f007c7001b1f9901f32912131ef48055bac56"
+    },
+    {
+      "destination": "provenance/studies/B105-cold-entry-momentum/verification.json",
+      "source": "studies/B105-cold-entry-momentum/verification.json",
+      "sha256": "2d0f3584c30d5ba5912f2a84eee0e1458846ddabeacc220b61e0106c0a347212"
+    },
+    {
+      "destination": "provenance/studies/B106-shorter-cold-entry-momentum/decision.json",
+      "source": "studies/B106-shorter-cold-entry-momentum/decision.json",
+      "sha256": "3c981121eeb8131455a73804755b8135d35f12670ddea7c21a6cec81537ee0cd"
+    },
+    {
+      "destination": "provenance/studies/B106-shorter-cold-entry-momentum/registration.json",
+      "source": "studies/B106-shorter-cold-entry-momentum/registration.json",
+      "sha256": "df9ec98ba7571c026445fbb7af5e9e0d816c326b38eb6bd30d7d9f5a1f3082ab"
+    },
+    {
+      "destination": "provenance/studies/B106-shorter-cold-entry-momentum/verification.json",
+      "source": "studies/B106-shorter-cold-entry-momentum/verification.json",
+      "sha256": "e3f32fbc65f5dbe4cc2c86c5ad2138a9324e1ff53746f9fc280ef18042adb9da"
+    },
+    {
+      "destination": "provenance/studies/B107-cold-short-profit-trailing/decision.json",
+      "source": "studies/B107-cold-short-profit-trailing/decision.json",
+      "sha256": "9e55cd6a26fabc9a6d54a46289f3de65323991c5afaf993fe7739c8fcc2f457a"
+    },
+    {
+      "destination": "provenance/studies/B107-cold-short-profit-trailing/registration.json",
+      "source": "studies/B107-cold-short-profit-trailing/registration.json",
+      "sha256": "4f1833d50547b97a05cc717bf789e6e3b2c0e738c2dcbec78aa2ea39777d5d55"
+    },
+    {
+      "destination": "provenance/studies/B107-cold-short-profit-trailing/verification.json",
+      "source": "studies/B107-cold-short-profit-trailing/verification.json",
+      "sha256": "e367272445deb4c62096a7b3820df155750edf4504850cee834f5ad581001e96"
+    },
+    {
+      "destination": "provenance/studies/B109-long-profit-local-coordinate/decision.json",
+      "source": "studies/B109-long-profit-local-coordinate/decision.json",
+      "sha256": "a59b014efadad7419341cb557490e8e51ffe5c5f61c6a6e408c79fdf6a3f13ae"
+    },
+    {
+      "destination": "provenance/studies/B109-long-profit-local-coordinate/goal-milestone-audit.json",
+      "source": "studies/B109-long-profit-local-coordinate/goal-milestone-audit.json",
+      "sha256": "d70130966473f48da6a74a9e35445398c282c148f5f961a070a9cc73ee535576"
+    },
+    {
+      "destination": "provenance/studies/B109-long-profit-local-coordinate/profit-cap-trade-postmortem.json",
+      "source": "studies/B109-long-profit-local-coordinate/profit-cap-trade-postmortem.json",
+      "sha256": "56f35fb8d8043b980decaa408aed1f2802bee0368670aca3c998c6314dcd3fb8"
+    },
+    {
+      "destination": "provenance/studies/B109-long-profit-local-coordinate/registration.json",
+      "source": "studies/B109-long-profit-local-coordinate/registration.json",
+      "sha256": "c88ed24ab89c7654cf162cce2c7cae44605f41ac1bd0e836aad0a72684e50fe1"
+    },
+    {
+      "destination": "provenance/studies/B109-long-profit-local-coordinate/spec-metadata-correction.json",
+      "source": "studies/B109-long-profit-local-coordinate/spec-metadata-correction.json",
+      "sha256": "92268de0e4ae036e727b0f842e85710ff8b450ecdac7ec82f83e6bdfe0102f47"
+    },
+    {
+      "destination": "provenance/studies/B109-long-profit-local-coordinate/verification.json",
+      "source": "studies/B109-long-profit-local-coordinate/verification.json",
+      "sha256": "43e0b0f959b4d50deb0c590a752716cbf7013bfb1aa20ad2f488922cd3ccb0bc"
+    },
+    {
+      "destination": "provenance/studies/B17-mining-dimension-ablation/folds/2018/seal.json",
+      "source": "studies/B17-mining-dimension-ablation/folds/2018/seal.json",
+      "sha256": "5d6ed558a3bd31b79a9884aff2021acca88d73c1894f56a43a4868d540e09b50"
+    },
+    {
+      "destination": "provenance/studies/B17-mining-dimension-ablation/folds/2018/test-receipt.json",
+      "source": "studies/B17-mining-dimension-ablation/folds/2018/test-receipt.json",
+      "sha256": "8b264145e98f46e8137b23ae6c1127c0a47baf20d96cad1eee5a729dfab6175f"
+    },
+    {
+      "destination": "provenance/studies/B17-mining-dimension-ablation/folds/2018/training.json",
+      "source": "studies/B17-mining-dimension-ablation/folds/2018/training.json",
+      "sha256": "dfc4dac6a1d59b82f235dfd2274674248ae70ce0393dd2670ec80043b81917e3"
+    },
+    {
+      "destination": "provenance/studies/B17-mining-dimension-ablation/folds/2019/seal.json",
+      "source": "studies/B17-mining-dimension-ablation/folds/2019/seal.json",
+      "sha256": "17f0d1ac0de9d7123df64982af1c24268c99ce359fbd3671ed685d5a494152c6"
+    },
+    {
+      "destination": "provenance/studies/B17-mining-dimension-ablation/folds/2019/test-receipt.json",
+      "source": "studies/B17-mining-dimension-ablation/folds/2019/test-receipt.json",
+      "sha256": "9ccac7f7f3399b2944907f6b2de2f3981c277dde3a7857ce0e0cd0a989394a97"
+    },
+    {
+      "destination": "provenance/studies/B17-mining-dimension-ablation/folds/2019/training.json",
+      "source": "studies/B17-mining-dimension-ablation/folds/2019/training.json",
+      "sha256": "30c1f385464df553108618a293ceaf44a4886aca1962840a320c717080ce209c"
+    },
+    {
+      "destination": "provenance/studies/B17-mining-dimension-ablation/folds/2020/seal.json",
+      "source": "studies/B17-mining-dimension-ablation/folds/2020/seal.json",
+      "sha256": "9f0843d7fa946d9831549a9de28284c3594ce33cd178a64e7235ef8bbe87788a"
+    },
+    {
+      "destination": "provenance/studies/B17-mining-dimension-ablation/folds/2020/test-receipt.json",
+      "source": "studies/B17-mining-dimension-ablation/folds/2020/test-receipt.json",
+      "sha256": "16fe972fc742025736716d35a82e8c7c753146ad9d0709c4c30c1e232bb0b45e"
+    },
+    {
+      "destination": "provenance/studies/B17-mining-dimension-ablation/folds/2020/training.json",
+      "source": "studies/B17-mining-dimension-ablation/folds/2020/training.json",
+      "sha256": "a985d8ecf043832bca017a6a4f6de880378535bfdac9bd948dceb294018370dc"
+    },
+    {
+      "destination": "provenance/studies/B17-mining-dimension-ablation/folds/2021/seal.json",
+      "source": "studies/B17-mining-dimension-ablation/folds/2021/seal.json",
+      "sha256": "a55eb9c5b625f941e6e2bccb6f4769506f307cd73a4a1019ad6da3b91954aab0"
+    },
+    {
+      "destination": "provenance/studies/B17-mining-dimension-ablation/folds/2021/test-receipt.json",
+      "source": "studies/B17-mining-dimension-ablation/folds/2021/test-receipt.json",
+      "sha256": "8ec752aecdea027b50c90f99308eb4a6c51fceffa19c0cbe7d5f9df2b225e448"
+    },
+    {
+      "destination": "provenance/studies/B17-mining-dimension-ablation/folds/2021/training.json",
+      "source": "studies/B17-mining-dimension-ablation/folds/2021/training.json",
+      "sha256": "90e86938f01c08a6fa1cff79bd54cf90800259173399ff5f9c841d2b105bde7c"
+    },
+    {
+      "destination": "provenance/studies/B17-mining-dimension-ablation/folds/2022/seal.json",
+      "source": "studies/B17-mining-dimension-ablation/folds/2022/seal.json",
+      "sha256": "0de5b67d9b2f6816cd4a5fe5a7698dce2a6c4ab25cea7fc2f88d5f795518be25"
+    },
+    {
+      "destination": "provenance/studies/B17-mining-dimension-ablation/folds/2022/test-receipt.json",
+      "source": "studies/B17-mining-dimension-ablation/folds/2022/test-receipt.json",
+      "sha256": "e842c3cbd74053f8bd601476ed788db4eac7ca157ad06d844a427ed452a145d8"
+    },
+    {
+      "destination": "provenance/studies/B17-mining-dimension-ablation/folds/2022/training.json",
+      "source": "studies/B17-mining-dimension-ablation/folds/2022/training.json",
+      "sha256": "a0685ab857dc9945e87b392225556583b2fd1ec6327d1d235d780d7f052f3bdf"
+    },
+    {
+      "destination": "provenance/studies/B17-mining-dimension-ablation/folds/2023/seal.json",
+      "source": "studies/B17-mining-dimension-ablation/folds/2023/seal.json",
+      "sha256": "7163c2cb6f0f986bb119617e0f32c3c75b4fcd4b3ce936bf1943953b7705e219"
+    },
+    {
+      "destination": "provenance/studies/B17-mining-dimension-ablation/folds/2023/test-receipt.json",
+      "source": "studies/B17-mining-dimension-ablation/folds/2023/test-receipt.json",
+      "sha256": "a51ddebeabccdcc0e258985e07c16de20fb473424a0444230e04be0a49571bad"
+    },
+    {
+      "destination": "provenance/studies/B17-mining-dimension-ablation/folds/2023/training.json",
+      "source": "studies/B17-mining-dimension-ablation/folds/2023/training.json",
+      "sha256": "85dfe7e02167d5223965a7a0ac79a3253623c4440dcda1dfdee5dc0b8fbbd8f9"
+    },
+    {
+      "destination": "provenance/studies/B17-mining-dimension-ablation/folds/2024/seal.json",
+      "source": "studies/B17-mining-dimension-ablation/folds/2024/seal.json",
+      "sha256": "a95d3c4287f092df11c19e8def711ca36cd9b010e363abedcbad767693f00187"
+    },
+    {
+      "destination": "provenance/studies/B17-mining-dimension-ablation/folds/2024/test-receipt.json",
+      "source": "studies/B17-mining-dimension-ablation/folds/2024/test-receipt.json",
+      "sha256": "f24b902b78e1dcfa36941807611b8e9b1f4e1d553c27db5bfe6f874d2e6614e0"
+    },
+    {
+      "destination": "provenance/studies/B17-mining-dimension-ablation/folds/2024/training.json",
+      "source": "studies/B17-mining-dimension-ablation/folds/2024/training.json",
+      "sha256": "dda9b52899ab6301b428a20194a36159651ad3e5003aadf4148f3a684835c1d8"
+    },
+    {
+      "destination": "provenance/studies/B17-mining-dimension-ablation/folds/2025/seal.json",
+      "source": "studies/B17-mining-dimension-ablation/folds/2025/seal.json",
+      "sha256": "a61dce6df254cf3b69b5b4805ed401adc64269bf6e1e2dd38845b839bc34ccbd"
+    },
+    {
+      "destination": "provenance/studies/B17-mining-dimension-ablation/folds/2025/test-receipt.json",
+      "source": "studies/B17-mining-dimension-ablation/folds/2025/test-receipt.json",
+      "sha256": "0faa04727981f17f0870d191fe22b765d5676299e894a944feb2b60968b88eee"
+    },
+    {
+      "destination": "provenance/studies/B17-mining-dimension-ablation/folds/2025/training.json",
+      "source": "studies/B17-mining-dimension-ablation/folds/2025/training.json",
+      "sha256": "39e8f842a7009b5d399bdb5f0a17dc1415e1aa7f0f87d043d6cf56ea3335f615"
+    },
+    {
+      "destination": "provenance/studies/B17-mining-dimension-ablation/registration.json",
+      "source": "studies/B17-mining-dimension-ablation/registration.json",
+      "sha256": "91c510f1ee28b6be005759efe0726169e19b15815b862a28026ff949aac2dd5f"
+    },
+    {
+      "destination": "provenance/studies/B20-execution-aware-labels/folds/2018/seal.json",
+      "source": "studies/B20-execution-aware-labels/folds/2018/seal.json",
+      "sha256": "0d29e787d5180dbb63ae1ec1d9efd223d73acf7edd30da6b392efe6deca74128"
+    },
+    {
+      "destination": "provenance/studies/B20-execution-aware-labels/folds/2018/test-receipt.json",
+      "source": "studies/B20-execution-aware-labels/folds/2018/test-receipt.json",
+      "sha256": "69cd99720bcfcc4f9682f6d9e7e2a3ec768142aa1f9db4596e69161853a439f5"
+    },
+    {
+      "destination": "provenance/studies/B20-execution-aware-labels/folds/2018/training.json",
+      "source": "studies/B20-execution-aware-labels/folds/2018/training.json",
+      "sha256": "138e43bd75b9b2268a279d698eaefa89a37886e330b3f6b8e3ff5ce869d8e176"
+    },
+    {
+      "destination": "provenance/studies/B20-execution-aware-labels/folds/2019/seal.json",
+      "source": "studies/B20-execution-aware-labels/folds/2019/seal.json",
+      "sha256": "39d3fb8c1980f051b67cdfca3e510a0b941aeb7d06308492eae251c4a5c58f9f"
+    },
+    {
+      "destination": "provenance/studies/B20-execution-aware-labels/folds/2019/test-receipt.json",
+      "source": "studies/B20-execution-aware-labels/folds/2019/test-receipt.json",
+      "sha256": "89e76cd3a12bccd9f7f422c5986a178a0a2d42f1dae30773fa53c2776bb14b7b"
+    },
+    {
+      "destination": "provenance/studies/B20-execution-aware-labels/folds/2019/training.json",
+      "source": "studies/B20-execution-aware-labels/folds/2019/training.json",
+      "sha256": "fb6ac258d0879ba3a38ec59b67222b58cc30f2ecf49368571f43105c1aea0bd1"
+    },
+    {
+      "destination": "provenance/studies/B20-execution-aware-labels/folds/2020/seal.json",
+      "source": "studies/B20-execution-aware-labels/folds/2020/seal.json",
+      "sha256": "82567783dc4fdf464a9d479f23f4416c073780ecc0fdc1d37956073cea454212"
+    },
+    {
+      "destination": "provenance/studies/B20-execution-aware-labels/folds/2020/test-receipt.json",
+      "source": "studies/B20-execution-aware-labels/folds/2020/test-receipt.json",
+      "sha256": "9f5180b6b5a5bcd94a0ea0ed37aaafa65f1f371092dd3e798bab85badcae9084"
+    },
+    {
+      "destination": "provenance/studies/B20-execution-aware-labels/folds/2020/training.json",
+      "source": "studies/B20-execution-aware-labels/folds/2020/training.json",
+      "sha256": "b10adfd72cd8c701c08274ce40c9e3290a3ea7460e3eb43fa380cd85345fe008"
+    },
+    {
+      "destination": "provenance/studies/B20-execution-aware-labels/folds/2021/seal.json",
+      "source": "studies/B20-execution-aware-labels/folds/2021/seal.json",
+      "sha256": "ec4f58df464d191ae268fa3e23e371c981e1c0c676867457a018c4ff2e1441df"
+    },
+    {
+      "destination": "provenance/studies/B20-execution-aware-labels/folds/2021/test-receipt.json",
+      "source": "studies/B20-execution-aware-labels/folds/2021/test-receipt.json",
+      "sha256": "e7b7cee75e89a95d6f4734a24d563448865c089b0013b9a66f1f939867207908"
+    },
+    {
+      "destination": "provenance/studies/B20-execution-aware-labels/folds/2021/training.json",
+      "source": "studies/B20-execution-aware-labels/folds/2021/training.json",
+      "sha256": "a58fb34df14fe57f13e8e00bd129970cced774eb1e38e1f0ad096f42ad35b9e3"
+    },
+    {
+      "destination": "provenance/studies/B20-execution-aware-labels/folds/2022/seal.json",
+      "source": "studies/B20-execution-aware-labels/folds/2022/seal.json",
+      "sha256": "2544c65c229c36a25c2ed44792adde73b3d97d2ae8c1a2ee6473092edf0e1bcf"
+    },
+    {
+      "destination": "provenance/studies/B20-execution-aware-labels/folds/2022/test-receipt.json",
+      "source": "studies/B20-execution-aware-labels/folds/2022/test-receipt.json",
+      "sha256": "655e21d4e92b2a049bfba3abd9c1fb85e74629f25022c29d95f0f868cb91053a"
+    },
+    {
+      "destination": "provenance/studies/B20-execution-aware-labels/folds/2022/training.json",
+      "source": "studies/B20-execution-aware-labels/folds/2022/training.json",
+      "sha256": "99b041381ef6384b1283c18fe6b1f2b4b6da2fffcf7dea70a917c68ad2dc2b3e"
+    },
+    {
+      "destination": "provenance/studies/B20-execution-aware-labels/folds/2023/seal.json",
+      "source": "studies/B20-execution-aware-labels/folds/2023/seal.json",
+      "sha256": "d9e84cf6a10235deef7ed7d8d461aeb8dbd2500c9f9576d4d6bcc7801a786f50"
+    },
+    {
+      "destination": "provenance/studies/B20-execution-aware-labels/folds/2023/test-receipt.json",
+      "source": "studies/B20-execution-aware-labels/folds/2023/test-receipt.json",
+      "sha256": "cdcb98fa96fa161756e5bb60bf4a50f3a14675c7f8ba0e69a52a873cca17fa90"
+    },
+    {
+      "destination": "provenance/studies/B20-execution-aware-labels/folds/2023/training.json",
+      "source": "studies/B20-execution-aware-labels/folds/2023/training.json",
+      "sha256": "e8aef8dedcbd1beeff967b287128b9fec5be40972595ad189b6f2e599b5757b8"
+    },
+    {
+      "destination": "provenance/studies/B20-execution-aware-labels/folds/2024/seal.json",
+      "source": "studies/B20-execution-aware-labels/folds/2024/seal.json",
+      "sha256": "c2ef36df10ca849b15ea7bab7cf1368752e5ec15e37874e5207997cfa19d0c3b"
+    },
+    {
+      "destination": "provenance/studies/B20-execution-aware-labels/folds/2024/test-receipt.json",
+      "source": "studies/B20-execution-aware-labels/folds/2024/test-receipt.json",
+      "sha256": "26e69ef095aa134d96342a34724bfe236caeda3e98cef89bc9e3c238ece0d1a4"
+    },
+    {
+      "destination": "provenance/studies/B20-execution-aware-labels/folds/2024/training.json",
+      "source": "studies/B20-execution-aware-labels/folds/2024/training.json",
+      "sha256": "8552cbbf68597c8360e15982b3e8c78c695de3a541890d10e6475803c00f8040"
+    },
+    {
+      "destination": "provenance/studies/B20-execution-aware-labels/folds/2025/seal.json",
+      "source": "studies/B20-execution-aware-labels/folds/2025/seal.json",
+      "sha256": "84d6692a724ef29d0052aebeb85ff0404920937415b729cac5bf42cbd7428da6"
+    },
+    {
+      "destination": "provenance/studies/B20-execution-aware-labels/folds/2025/test-receipt.json",
+      "source": "studies/B20-execution-aware-labels/folds/2025/test-receipt.json",
+      "sha256": "371084b4a93a4c630e01ea4b7e929f160fd4df4886e9304390b92a4a51e0b695"
+    },
+    {
+      "destination": "provenance/studies/B20-execution-aware-labels/folds/2025/training.json",
+      "source": "studies/B20-execution-aware-labels/folds/2025/training.json",
+      "sha256": "64d6418cd4b1a3ce8a6ada3dc8d8d15b22d40a9e4f6e80e6bfca7d49accc78ba"
+    },
+    {
+      "destination": "provenance/studies/B20-execution-aware-labels/registration.json",
+      "source": "studies/B20-execution-aware-labels/registration.json",
+      "sha256": "36ebe5fa94d7b9cd0db70f01ce7c6b701373e605fd4e74b4fe9c2a51f7dbaed8"
+    },
+    {
+      "destination": "provenance/studies/B29-prior-forecast-exits/decision.json",
+      "source": "studies/B29-prior-forecast-exits/decision.json",
+      "sha256": "9e17e77ad86ffaae92aa4d313502cd18de85ac50d8b2551bcd4ab992cc7ffe16"
+    },
+    {
+      "destination": "provenance/studies/B29-prior-forecast-exits/registration.json",
+      "source": "studies/B29-prior-forecast-exits/registration.json",
+      "sha256": "d1dc9bdcde6177c71d1caba38d7a3636b5fc9c2150258d46cddd561d117010e7"
+    },
+    {
+      "destination": "provenance/studies/B29-prior-forecast-exits/verification.json",
+      "source": "studies/B29-prior-forecast-exits/verification.json",
+      "sha256": "e99bca13db9e1d537359b2072f7d0cb9c5d03185880259f300783c74fac07675"
+    },
+    {
+      "destination": "provenance/studies/B31-constant-sizing-controls/decision.md",
+      "source": "studies/B31-constant-sizing-controls/decision.md",
+      "sha256": "6f2d0a44bb001d92de0964a024bd5020f98c3c611f321d7e1fb9142c66a64275"
+    },
+    {
+      "destination": "provenance/studies/B31-constant-sizing-controls/registration.json",
+      "source": "studies/B31-constant-sizing-controls/registration.json",
+      "sha256": "e73c1a6b9b5fac64f7ec972797caf17e176d305ced13444ad34ccedec54d71fa"
+    },
+    {
+      "destination": "provenance/studies/B31-constant-sizing-controls/verification.json",
+      "source": "studies/B31-constant-sizing-controls/verification.json",
+      "sha256": "9451c45f3b0624a961f6db455da9ba1a517986ca9f38c4ad49a70138a7797b04"
+    },
+    {
+      "destination": "provenance/studies/B31-constant-sizing-controls/verifier-correction.md",
+      "source": "studies/B31-constant-sizing-controls/verifier-correction.md",
+      "sha256": "598a573bad1501d0511b099a46c75eea9ef35ac2378fcffa8ba233b8c7a12ebd"
+    },
+    {
+      "destination": "provenance/studies/B67-lag-matched-short-supervision/folds/2018/seal.json",
+      "source": "studies/B67-lag-matched-short-supervision/folds/2018/seal.json",
+      "sha256": "4b58016de4ee84b1f4444e453ba8fd1cf42f35305694826826099476a56b2080"
+    },
+    {
+      "destination": "provenance/studies/B67-lag-matched-short-supervision/folds/2018/test-receipt.json",
+      "source": "studies/B67-lag-matched-short-supervision/folds/2018/test-receipt.json",
+      "sha256": "e0fb8bc8809b3f600296a2cd0329040913a7c1f9a9f035557b4acdf3e7a2462e"
+    },
+    {
+      "destination": "provenance/studies/B67-lag-matched-short-supervision/folds/2018/training.json",
+      "source": "studies/B67-lag-matched-short-supervision/folds/2018/training.json",
+      "sha256": "b4e9e5354705b7b18fde0bc373be193ca691bdc9275b6b1a8b4fd297b50e6b8e"
+    },
+    {
+      "destination": "provenance/studies/B67-lag-matched-short-supervision/folds/2019/seal.json",
+      "source": "studies/B67-lag-matched-short-supervision/folds/2019/seal.json",
+      "sha256": "72e7921696bb8cd9419ce07b60a1d429f726be0bf7a385428c1058b3ab0f169b"
+    },
+    {
+      "destination": "provenance/studies/B67-lag-matched-short-supervision/folds/2019/test-receipt.json",
+      "source": "studies/B67-lag-matched-short-supervision/folds/2019/test-receipt.json",
+      "sha256": "b707be5c58957ff7f998003430af67b073be849c342ed34caef245605fe297ad"
+    },
+    {
+      "destination": "provenance/studies/B67-lag-matched-short-supervision/folds/2019/training.json",
+      "source": "studies/B67-lag-matched-short-supervision/folds/2019/training.json",
+      "sha256": "7810a921140507db2ce5dddc11f961625478823339fc49c06d7b3017319aa8b9"
+    },
+    {
+      "destination": "provenance/studies/B67-lag-matched-short-supervision/folds/2020/seal.json",
+      "source": "studies/B67-lag-matched-short-supervision/folds/2020/seal.json",
+      "sha256": "d8c9fc2cee91d4ee7036c2ac2b963222ff74bb228d39482911fa6721f7e9ba85"
+    },
+    {
+      "destination": "provenance/studies/B67-lag-matched-short-supervision/folds/2020/test-receipt.json",
+      "source": "studies/B67-lag-matched-short-supervision/folds/2020/test-receipt.json",
+      "sha256": "99feb22e349b1c64c8ab9634fc6082911c1b5f5194fc37297b5f8eee2657537c"
+    },
+    {
+      "destination": "provenance/studies/B67-lag-matched-short-supervision/folds/2020/training.json",
+      "source": "studies/B67-lag-matched-short-supervision/folds/2020/training.json",
+      "sha256": "1c2fd2c6caf571bf87555d2aa70dda223c22608f9d8008376acfb042c2fcd9c6"
+    },
+    {
+      "destination": "provenance/studies/B67-lag-matched-short-supervision/folds/2021/seal.json",
+      "source": "studies/B67-lag-matched-short-supervision/folds/2021/seal.json",
+      "sha256": "f380454d125005fb264ad95f78f3cba01afad31afe170e43918f229f42223951"
+    },
+    {
+      "destination": "provenance/studies/B67-lag-matched-short-supervision/folds/2021/test-receipt.json",
+      "source": "studies/B67-lag-matched-short-supervision/folds/2021/test-receipt.json",
+      "sha256": "626aa836a0d05aa99d25ab55850e61519ce539b265c2f1891aff641b51b26785"
+    },
+    {
+      "destination": "provenance/studies/B67-lag-matched-short-supervision/folds/2021/training.json",
+      "source": "studies/B67-lag-matched-short-supervision/folds/2021/training.json",
+      "sha256": "f6c617fff3de0bc70e37d2cea70a622b87ef1fb0f1d93ed6af7e9963874a6628"
+    },
+    {
+      "destination": "provenance/studies/B67-lag-matched-short-supervision/folds/2022/seal.json",
+      "source": "studies/B67-lag-matched-short-supervision/folds/2022/seal.json",
+      "sha256": "25c05fa3d4f2de493525dedf65275aadc06062b4d8a54f2bd68e2b9440094fab"
+    },
+    {
+      "destination": "provenance/studies/B67-lag-matched-short-supervision/folds/2022/test-receipt.json",
+      "source": "studies/B67-lag-matched-short-supervision/folds/2022/test-receipt.json",
+      "sha256": "850b89e3e349ee4a8d75ffb1139db65904cc41c1fc558317256e74e96044e93f"
+    },
+    {
+      "destination": "provenance/studies/B67-lag-matched-short-supervision/folds/2022/training.json",
+      "source": "studies/B67-lag-matched-short-supervision/folds/2022/training.json",
+      "sha256": "33c835e88d5e0b52a217cbfe02877ddce42fcf3bd6b23412e12fa056ead78acf"
+    },
+    {
+      "destination": "provenance/studies/B67-lag-matched-short-supervision/folds/2023/seal.json",
+      "source": "studies/B67-lag-matched-short-supervision/folds/2023/seal.json",
+      "sha256": "187e05c5d6a60dc41adcd891a9d5c6f29890078dc22bb15d0fe9df95a66da1eb"
+    },
+    {
+      "destination": "provenance/studies/B67-lag-matched-short-supervision/folds/2023/test-receipt.json",
+      "source": "studies/B67-lag-matched-short-supervision/folds/2023/test-receipt.json",
+      "sha256": "1f8c9b890155628e5a4534a0cfc972fa815fa5dddf862dfe849b0228837dc054"
+    },
+    {
+      "destination": "provenance/studies/B67-lag-matched-short-supervision/folds/2023/training.json",
+      "source": "studies/B67-lag-matched-short-supervision/folds/2023/training.json",
+      "sha256": "1d9ffedda794e6fef5f20a1487b5d6d5c1f3d811285d1fd2b5fb810510fa3495"
+    },
+    {
+      "destination": "provenance/studies/B67-lag-matched-short-supervision/folds/2024/seal.json",
+      "source": "studies/B67-lag-matched-short-supervision/folds/2024/seal.json",
+      "sha256": "c1cd435035b84a382388a29f7f334f21c155b9d5816d7fa187b47e851066f799"
+    },
+    {
+      "destination": "provenance/studies/B67-lag-matched-short-supervision/folds/2024/test-receipt.json",
+      "source": "studies/B67-lag-matched-short-supervision/folds/2024/test-receipt.json",
+      "sha256": "493ce2406710ddf67beda8a1daea4659295f0694d1fc50f7cad940d726616e41"
+    },
+    {
+      "destination": "provenance/studies/B67-lag-matched-short-supervision/folds/2024/training.json",
+      "source": "studies/B67-lag-matched-short-supervision/folds/2024/training.json",
+      "sha256": "4ed7b0ea121bc712b1f0b17d8f0e729e7ad156ad0c98bb7e7a87a2378972391e"
+    },
+    {
+      "destination": "provenance/studies/B67-lag-matched-short-supervision/folds/2025/seal.json",
+      "source": "studies/B67-lag-matched-short-supervision/folds/2025/seal.json",
+      "sha256": "c5aa387e3d1d7e98830266586694bde1fd37d52c76eb961caba77039287bc0f0"
+    },
+    {
+      "destination": "provenance/studies/B67-lag-matched-short-supervision/folds/2025/test-receipt.json",
+      "source": "studies/B67-lag-matched-short-supervision/folds/2025/test-receipt.json",
+      "sha256": "a77e13cb36b3c469e49d3f9babb1b3ff33d7db7789adaeff86a7fd9b14d7ba31"
+    },
+    {
+      "destination": "provenance/studies/B67-lag-matched-short-supervision/folds/2025/training.json",
+      "source": "studies/B67-lag-matched-short-supervision/folds/2025/training.json",
+      "sha256": "74c38ea82aae0470e688a42ec38e777dff68229cf7465017db63a28a9ce2653d"
+    },
+    {
+      "destination": "provenance/studies/B67-lag-matched-short-supervision/registration.json",
+      "source": "studies/B67-lag-matched-short-supervision/registration.json",
+      "sha256": "c2de68c7e0f8bd8426fb4b77a19a626527291c5f157501db2796b56a81a5de13"
+    },
+    {
+      "destination": "provenance/studies/B72-cold-budget-exposure/decision.md",
+      "source": "studies/B72-cold-budget-exposure/decision.md",
+      "sha256": "df64b06d35b6a2f0e89479410f231460a4ca4ff081c80585986598d26adfeb99"
+    },
+    {
+      "destination": "provenance/studies/B72-cold-budget-exposure/registration.json",
+      "source": "studies/B72-cold-budget-exposure/registration.json",
+      "sha256": "2f1cd94276348e5eed952211d886393a453cf8fa55d515d1083773c2991d9c55"
+    },
+    {
+      "destination": "provenance/studies/B72-cold-budget-exposure/verification.json",
+      "source": "studies/B72-cold-budget-exposure/verification.json",
+      "sha256": "7acbbd8ca79cb4093f496f48adc17cc6507e646b376b46b3b9d548f1977b8068"
+    },
+    {
+      "destination": "provenance/studies/B81-reported-volume-long-core/folds/2018/seal.json",
+      "source": "studies/B81-reported-volume-long-core/folds/2018/seal.json",
+      "sha256": "36b427cc136347404dfa3bed156e2e24b1ee37ec8e8e8f47e49d54ba46d2b390"
+    },
+    {
+      "destination": "provenance/studies/B81-reported-volume-long-core/folds/2018/test-receipt.json",
+      "source": "studies/B81-reported-volume-long-core/folds/2018/test-receipt.json",
+      "sha256": "ea07b37d0df2e8fe7ecf5d44dcfbe5f34fdeb371aab95decaa6f5d5dc06e96d9"
+    },
+    {
+      "destination": "provenance/studies/B81-reported-volume-long-core/folds/2018/training.json",
+      "source": "studies/B81-reported-volume-long-core/folds/2018/training.json",
+      "sha256": "db2c96eeb0eb986270153349e9e04abf23554012102439f38f9a6aeb3ef46601"
+    },
+    {
+      "destination": "provenance/studies/B81-reported-volume-long-core/folds/2019/seal.json",
+      "source": "studies/B81-reported-volume-long-core/folds/2019/seal.json",
+      "sha256": "637cd61e3e9a6a7f8c9d3287f83e84a720e9f331fe00382dec202f9764e5e034"
+    },
+    {
+      "destination": "provenance/studies/B81-reported-volume-long-core/folds/2019/test-receipt.json",
+      "source": "studies/B81-reported-volume-long-core/folds/2019/test-receipt.json",
+      "sha256": "dca0c92a550462316bc63c6e2726d41c85f318ca7ce82cf12d09b38b240c58fb"
+    },
+    {
+      "destination": "provenance/studies/B81-reported-volume-long-core/folds/2019/training.json",
+      "source": "studies/B81-reported-volume-long-core/folds/2019/training.json",
+      "sha256": "c02d760a36e0dfebe2b111d2cfd35da631d2761df6e4dc67bc48077a25e63e9d"
+    },
+    {
+      "destination": "provenance/studies/B81-reported-volume-long-core/folds/2020/seal.json",
+      "source": "studies/B81-reported-volume-long-core/folds/2020/seal.json",
+      "sha256": "8f2848b3f2c137d80b54faf65d9b080834d1d0789c8f8de947a9b03dc9a7f8e9"
+    },
+    {
+      "destination": "provenance/studies/B81-reported-volume-long-core/folds/2020/test-receipt.json",
+      "source": "studies/B81-reported-volume-long-core/folds/2020/test-receipt.json",
+      "sha256": "e08984a6829a1fccd89701dd6ac87699b71913d96719dfc5e095f835ad297e78"
+    },
+    {
+      "destination": "provenance/studies/B81-reported-volume-long-core/folds/2020/training.json",
+      "source": "studies/B81-reported-volume-long-core/folds/2020/training.json",
+      "sha256": "f5879e5dec49eb063f36ec4f39a428025468dfaf02b1e8340c71bfc16d4f1bad"
+    },
+    {
+      "destination": "provenance/studies/B81-reported-volume-long-core/folds/2021/seal.json",
+      "source": "studies/B81-reported-volume-long-core/folds/2021/seal.json",
+      "sha256": "ac2cb3c446552fb644df69a73068baf30978c1db247fcad3812550b3ac982750"
+    },
+    {
+      "destination": "provenance/studies/B81-reported-volume-long-core/folds/2021/test-receipt.json",
+      "source": "studies/B81-reported-volume-long-core/folds/2021/test-receipt.json",
+      "sha256": "84d2e97d69fe6685eab1ac795d46ea895909048210986ce8226e650bf7cc42be"
+    },
+    {
+      "destination": "provenance/studies/B81-reported-volume-long-core/folds/2021/training.json",
+      "source": "studies/B81-reported-volume-long-core/folds/2021/training.json",
+      "sha256": "deced25238e64c42420381472ae3aae093b2dc4fddc73a6c83de4b750b3abf9e"
+    },
+    {
+      "destination": "provenance/studies/B81-reported-volume-long-core/folds/2022/seal.json",
+      "source": "studies/B81-reported-volume-long-core/folds/2022/seal.json",
+      "sha256": "c123c8ad4b17674d45da2b6c178841d290d94abccf116f75c5f4bc96aaf70096"
+    },
+    {
+      "destination": "provenance/studies/B81-reported-volume-long-core/folds/2022/test-receipt.json",
+      "source": "studies/B81-reported-volume-long-core/folds/2022/test-receipt.json",
+      "sha256": "ce7f27a69241c7dc52d00ad22a5cc9ee100b64e288173236e1fb82f503f7cc54"
+    },
+    {
+      "destination": "provenance/studies/B81-reported-volume-long-core/folds/2022/training.json",
+      "source": "studies/B81-reported-volume-long-core/folds/2022/training.json",
+      "sha256": "e60b6bfbd106a7ca93ec309a41490823e8ca8732595f1d5045b9421f8defd552"
+    },
+    {
+      "destination": "provenance/studies/B81-reported-volume-long-core/folds/2023/seal.json",
+      "source": "studies/B81-reported-volume-long-core/folds/2023/seal.json",
+      "sha256": "dd475533b827ccb96b908cec6121fe06f4253e2f1fda7d91038992fab44d6aaa"
+    },
+    {
+      "destination": "provenance/studies/B81-reported-volume-long-core/folds/2023/test-receipt.json",
+      "source": "studies/B81-reported-volume-long-core/folds/2023/test-receipt.json",
+      "sha256": "06110b52685c3995b8a06506b0616b3915a3cc6127fdd3d36f2a6ed3aaccd65c"
+    },
+    {
+      "destination": "provenance/studies/B81-reported-volume-long-core/folds/2023/training.json",
+      "source": "studies/B81-reported-volume-long-core/folds/2023/training.json",
+      "sha256": "f7c9cbb3685ddeae6f55f47b0d2dfd6ca41d1b9daaf27d9cbac2cfd2495d0042"
+    },
+    {
+      "destination": "provenance/studies/B81-reported-volume-long-core/folds/2024/seal.json",
+      "source": "studies/B81-reported-volume-long-core/folds/2024/seal.json",
+      "sha256": "9b098a9fab5549e9415a6c2860c3a9354aea3525dc4bc1bf67b51889dde45fff"
+    },
+    {
+      "destination": "provenance/studies/B81-reported-volume-long-core/folds/2024/test-receipt.json",
+      "source": "studies/B81-reported-volume-long-core/folds/2024/test-receipt.json",
+      "sha256": "dee02d767409af66dcbfe71672748edbf97101f6a5e4bc2a1d6f4e702d9ec5ff"
+    },
+    {
+      "destination": "provenance/studies/B81-reported-volume-long-core/folds/2024/training.json",
+      "source": "studies/B81-reported-volume-long-core/folds/2024/training.json",
+      "sha256": "3cefdf84b1404c9cc0ed33c651f44cda6811a6c76584106804b662cbd7bb2a8c"
+    },
+    {
+      "destination": "provenance/studies/B81-reported-volume-long-core/folds/2025/seal.json",
+      "source": "studies/B81-reported-volume-long-core/folds/2025/seal.json",
+      "sha256": "6fd73e51b8c51b2a89090343028ec9758558653b2e8d8c9f38759e92a8eeb053"
+    },
+    {
+      "destination": "provenance/studies/B81-reported-volume-long-core/folds/2025/test-receipt.json",
+      "source": "studies/B81-reported-volume-long-core/folds/2025/test-receipt.json",
+      "sha256": "f9b2cc5228fa12f35c13597fdcb5ce941a7c668a246fbcff89448eb03a795f36"
+    },
+    {
+      "destination": "provenance/studies/B81-reported-volume-long-core/folds/2025/training.json",
+      "source": "studies/B81-reported-volume-long-core/folds/2025/training.json",
+      "sha256": "d3ef5b69857f1151923ba8bee19fb4d04815ca88a80c978325178569b3a13bc0"
+    },
+    {
+      "destination": "provenance/studies/B81-reported-volume-long-core/registration.json",
+      "source": "studies/B81-reported-volume-long-core/registration.json",
+      "sha256": "2130b2388849d9be43420e5e6475c9bf46facd4a331b1a4bd7f9133f1bc7adfb"
+    },
+    {
+      "destination": "provenance/studies/B88A-short-net-loss-families/decision.md",
+      "source": "studies/B88A-short-net-loss-families/decision.md",
+      "sha256": "af0ba1663f53f86a3d40f34586ef342a9da3ac3289db00ed4894f7557b5645e9"
+    },
+    {
+      "destination": "provenance/studies/B88A-short-net-loss-families/folds/2018/seal.json",
+      "source": "studies/B88A-short-net-loss-families/folds/2018/seal.json",
+      "sha256": "44e4a93abb280ffe22b987a317420ce37c15bc50b8ab737128c973463f60fee0"
+    },
+    {
+      "destination": "provenance/studies/B88A-short-net-loss-families/folds/2018/test-receipt.json",
+      "source": "studies/B88A-short-net-loss-families/folds/2018/test-receipt.json",
+      "sha256": "6baa3898eea1954dafe328af81910f0847960f4bfb4c0e8d031208754daf92ad"
+    },
+    {
+      "destination": "provenance/studies/B88A-short-net-loss-families/folds/2018/training.json",
+      "source": "studies/B88A-short-net-loss-families/folds/2018/training.json",
+      "sha256": "3b525be90237a128e69fc101f9ea8031cde2d2480b3fbeec7ad2b522390bfdbf"
+    },
+    {
+      "destination": "provenance/studies/B88A-short-net-loss-families/folds/2019/seal.json",
+      "source": "studies/B88A-short-net-loss-families/folds/2019/seal.json",
+      "sha256": "62e692d30145f4a7c24ffde0422518b70ef25a97f2018aec748288dbd00105fd"
+    },
+    {
+      "destination": "provenance/studies/B88A-short-net-loss-families/folds/2019/test-receipt.json",
+      "source": "studies/B88A-short-net-loss-families/folds/2019/test-receipt.json",
+      "sha256": "d93777df28d66a56320fce64070e1f6d622544f7c53ac4c6d94afcf550e13575"
+    },
+    {
+      "destination": "provenance/studies/B88A-short-net-loss-families/folds/2019/training.json",
+      "source": "studies/B88A-short-net-loss-families/folds/2019/training.json",
+      "sha256": "faccbdaa335baec14b63546bab4886e97a0ce74cc1fb314fc9ac2f2bc5c358cd"
+    },
+    {
+      "destination": "provenance/studies/B88A-short-net-loss-families/folds/2020/seal.json",
+      "source": "studies/B88A-short-net-loss-families/folds/2020/seal.json",
+      "sha256": "300031cf07ba96eebfd3a04dd33b832c631cfafbe168dac3cff04edb5113819a"
+    },
+    {
+      "destination": "provenance/studies/B88A-short-net-loss-families/folds/2020/test-receipt.json",
+      "source": "studies/B88A-short-net-loss-families/folds/2020/test-receipt.json",
+      "sha256": "96673515be67b6c06b6a4d742e6d7790622045910f80863ebd047d022c421182"
+    },
+    {
+      "destination": "provenance/studies/B88A-short-net-loss-families/folds/2020/training.json",
+      "source": "studies/B88A-short-net-loss-families/folds/2020/training.json",
+      "sha256": "dea8c670eb3002c065d31c2fbac2fe063856bf6ced3980903c85ab01e53c80a8"
+    },
+    {
+      "destination": "provenance/studies/B88A-short-net-loss-families/folds/2021/seal.json",
+      "source": "studies/B88A-short-net-loss-families/folds/2021/seal.json",
+      "sha256": "624dd1d816b1f51d125867e63e64aa99499a6f9d0bb27285dff2a83ba7cc86c1"
+    },
+    {
+      "destination": "provenance/studies/B88A-short-net-loss-families/folds/2021/test-receipt.json",
+      "source": "studies/B88A-short-net-loss-families/folds/2021/test-receipt.json",
+      "sha256": "ec793f4d7b29868dfb444f53427c5418f6bfacfdc53923462683e76c38c0c98a"
+    },
+    {
+      "destination": "provenance/studies/B88A-short-net-loss-families/folds/2021/training.json",
+      "source": "studies/B88A-short-net-loss-families/folds/2021/training.json",
+      "sha256": "c4a4439ac091b6534c2b5e75508d0997b3b2c3462cb4edb69d4dd843dc136357"
+    },
+    {
+      "destination": "provenance/studies/B88A-short-net-loss-families/folds/2022/seal.json",
+      "source": "studies/B88A-short-net-loss-families/folds/2022/seal.json",
+      "sha256": "3e8ae5f9843e0678c933d9606c58466e007336c813d9cfe82bfaf8516346a1e3"
+    },
+    {
+      "destination": "provenance/studies/B88A-short-net-loss-families/folds/2022/test-receipt.json",
+      "source": "studies/B88A-short-net-loss-families/folds/2022/test-receipt.json",
+      "sha256": "628c2d5185c0f53f7b19cb7ae8276ba206aee6aeff57c9f59cc96cc76ed30376"
+    },
+    {
+      "destination": "provenance/studies/B88A-short-net-loss-families/folds/2022/training.json",
+      "source": "studies/B88A-short-net-loss-families/folds/2022/training.json",
+      "sha256": "6cee32bf0b8ab184cba16ae30de4387392bfd0d7eb952d76a93ed6e324923708"
+    },
+    {
+      "destination": "provenance/studies/B88A-short-net-loss-families/folds/2023/seal.json",
+      "source": "studies/B88A-short-net-loss-families/folds/2023/seal.json",
+      "sha256": "bf443ece5b9867bf0a55047692defc3e45253fd7c4ebc978e6963a7df6b21876"
+    },
+    {
+      "destination": "provenance/studies/B88A-short-net-loss-families/folds/2023/test-receipt.json",
+      "source": "studies/B88A-short-net-loss-families/folds/2023/test-receipt.json",
+      "sha256": "6e6949525db1fe6ef0726ee83874375ec929ab3f5e8202edc17cac305ec5a1bd"
+    },
+    {
+      "destination": "provenance/studies/B88A-short-net-loss-families/folds/2023/training.json",
+      "source": "studies/B88A-short-net-loss-families/folds/2023/training.json",
+      "sha256": "e9a5f9ce68cbddc52791ce80a2ff627222dbf43f604a3adf3abd5f4eafef0084"
+    },
+    {
+      "destination": "provenance/studies/B88A-short-net-loss-families/folds/2024/seal.json",
+      "source": "studies/B88A-short-net-loss-families/folds/2024/seal.json",
+      "sha256": "6423447d045b866af4b23f9e403973142f175c6536a05391aa96b84f95c996ed"
+    },
+    {
+      "destination": "provenance/studies/B88A-short-net-loss-families/folds/2024/test-receipt.json",
+      "source": "studies/B88A-short-net-loss-families/folds/2024/test-receipt.json",
+      "sha256": "a4f6d04f5d783dd7c4cb86861c7f93bc61fbfc3ed1a2fc57e1c7c53cb00b524d"
+    },
+    {
+      "destination": "provenance/studies/B88A-short-net-loss-families/folds/2024/training.json",
+      "source": "studies/B88A-short-net-loss-families/folds/2024/training.json",
+      "sha256": "6c22945ec7bdf86687cade768753f0a0edc5d9c608648ea1882326b94f2cea56"
+    },
+    {
+      "destination": "provenance/studies/B88A-short-net-loss-families/folds/2025/seal.json",
+      "source": "studies/B88A-short-net-loss-families/folds/2025/seal.json",
+      "sha256": "b1f36f453501f751e04fb534410cc3d56a7cee907cbd97e85ad0eb5f853d0c67"
+    },
+    {
+      "destination": "provenance/studies/B88A-short-net-loss-families/folds/2025/test-receipt.json",
+      "source": "studies/B88A-short-net-loss-families/folds/2025/test-receipt.json",
+      "sha256": "fa2c88a012739516a1049d8b728a0eb895a5ab113d9ca2b6251a940f7fef7a27"
+    },
+    {
+      "destination": "provenance/studies/B88A-short-net-loss-families/folds/2025/training.json",
+      "source": "studies/B88A-short-net-loss-families/folds/2025/training.json",
+      "sha256": "cf5986ad9764ade40840e9577df5048de4d44827ccb9df0269232e22bf17d698"
+    },
+    {
+      "destination": "provenance/studies/B88A-short-net-loss-families/registration.json",
+      "source": "studies/B88A-short-net-loss-families/registration.json",
+      "sha256": "48f40d53dc71552ea004284f3e01bb468c421f42eb958f8f0ec55017c4ac5872"
+    },
+    {
+      "destination": "provenance/studies/B88A-short-net-loss-families/verification.json",
+      "source": "studies/B88A-short-net-loss-families/verification.json",
+      "sha256": "2a2c022be7e95addb8c13d04b24c17dd32e2515bcf8464204cbf77548a189e6c"
+    },
+    {
+      "destination": "models/base_tree/2019/EXTRA_CAL44_H60_S101.json.gz",
+      "sha256": "aa37e99c9b6be564b4dd06774e81e52ba0c405459e572f361e2cf209a04cb19a"
+    },
+    {
+      "destination": "models/base_tree/2019/EXTRA_CAL44_H60_S1103.json.gz",
+      "sha256": "ef9b6722255d8ce09b5e5b41335c5569338ade8edec398a015100aa94f43ff68"
+    },
+    {
+      "destination": "models/base_tree/2019/EXTRA_CAL44_H60_S1701.json.gz",
+      "sha256": "dfa0ad52d61b77f89a38ff1d4ee992203cad11cb65ef469cb889fdabe7c65d78"
+    },
+    {
+      "destination": "models/base_tree/2019/EXTRA_CAL44_H60_S307.json.gz",
+      "sha256": "cf5e0b1ea5a43983984b8d93869924c579975f797ff0179ea750ad12e0500e67"
+    },
+    {
+      "destination": "models/base_tree/2019/EXTRA_CAL44_H60_S509.json.gz",
+      "sha256": "c6971b4e619544a80c0e174253a626ab012b55b295931bee8e42f6aa2cdbf5ef"
+    },
+    {
+      "destination": "models/base_tree/2019/EXTRA_CAL44_H60_S701.json.gz",
+      "sha256": "72980e298cabe7e8b6198510e25efff1dee0cad59dfbe5b7645ead6f000a3a67"
+    },
+    {
+      "destination": "models/base_tree/2019/EXTRA_CAL44_H60_S907.json.gz",
+      "sha256": "2b8efcc679f735a37671824886d41e12195d60793f7628e4cfbbcec370821ece"
+    },
+    {
+      "destination": "models/base_tree/2020/EXTRA_CAL44_H60_S101.json.gz",
+      "sha256": "afcdddee3df41fc508f00cdea053b45c549e158d218bdafd5baca317c8522656"
+    },
+    {
+      "destination": "models/base_tree/2020/EXTRA_CAL44_H60_S1103.json.gz",
+      "sha256": "a0f18c2b79c6c60b2590e9a06224d95d236c40689d0660dc52f97b0ced27d8a5"
+    },
+    {
+      "destination": "models/base_tree/2020/EXTRA_CAL44_H60_S1701.json.gz",
+      "sha256": "50f37011ff24ecfea1e1fce37dc0e69207211f4948778bdd48c86d3417a49f5c"
+    },
+    {
+      "destination": "models/base_tree/2020/EXTRA_CAL44_H60_S307.json.gz",
+      "sha256": "c28cea964f6e1313711a0000dc7d650ddef298c108f4c6b0d09bdfbe446b686d"
+    },
+    {
+      "destination": "models/base_tree/2020/EXTRA_CAL44_H60_S509.json.gz",
+      "sha256": "5ec64d525eb5daf80a9f08ff7e23bc5545ded1dd3792cf4cfb483aa6ace1a5a4"
+    },
+    {
+      "destination": "models/base_tree/2020/EXTRA_CAL44_H60_S701.json.gz",
+      "sha256": "fe206df7195c431c87219047c428dd6022d16f742e3e532ee1df9bfe06d7a889"
+    },
+    {
+      "destination": "models/base_tree/2020/EXTRA_CAL44_H60_S907.json.gz",
+      "sha256": "fd87a505c3f9ad55bedf652f07e752b364e9658b90493c53f4ef9d563cd5ae75"
+    },
+    {
+      "destination": "models/base_tree/2021/EXTRA_CAL44_H60_S101.json.gz",
+      "sha256": "c3a7429481b6ae0bb0bfe6fc14f39b159454c11c276569a478b0765dfb51617d"
+    },
+    {
+      "destination": "models/base_tree/2021/EXTRA_CAL44_H60_S1103.json.gz",
+      "sha256": "f754eb43f89f9eebba6a62fb28b3ef1e4b994cbe666d1e9092cabae077b9105d"
+    },
+    {
+      "destination": "models/base_tree/2021/EXTRA_CAL44_H60_S1701.json.gz",
+      "sha256": "63605a7e4a37e2d7a1d7cca3c7260b46a812ba7e93042ed7a702fab1163c0244"
+    },
+    {
+      "destination": "models/base_tree/2021/EXTRA_CAL44_H60_S307.json.gz",
+      "sha256": "f40df661dd747566abfc0550848284893741bf2d7ef96c2efa4fb2dabd59f854"
+    },
+    {
+      "destination": "models/base_tree/2021/EXTRA_CAL44_H60_S509.json.gz",
+      "sha256": "7ca18fac12a0f414cf69b359bde221b5675d813c9e4cb4f5c2822537adbcb04d"
+    },
+    {
+      "destination": "models/base_tree/2021/EXTRA_CAL44_H60_S701.json.gz",
+      "sha256": "38a276d3263700b8c7d70c8e02fd59316702875452e355448a350ad8106029a1"
+    },
+    {
+      "destination": "models/base_tree/2021/EXTRA_CAL44_H60_S907.json.gz",
+      "sha256": "27b9cb6f39521fd7f106186236c37a0fbe36b1ec688c1a12a2e6a447b268cfb7"
+    },
+    {
+      "destination": "models/base_tree/2022/EXTRA_CAL44_H60_S101.json.gz",
+      "sha256": "cadf8f83c75d404ef5d10119e24171928ff99e04c14aff827151f467e48b0168"
+    },
+    {
+      "destination": "models/base_tree/2022/EXTRA_CAL44_H60_S1103.json.gz",
+      "sha256": "ff2dd07b2abc6891ae66cb82d7190cc1a8c76a708ec166cdc125355520b3e96d"
+    },
+    {
+      "destination": "models/base_tree/2022/EXTRA_CAL44_H60_S1701.json.gz",
+      "sha256": "e71cf92ee9bd4f30438655334967de97b16016c26827a91535d90e93c0048833"
+    },
+    {
+      "destination": "models/base_tree/2022/EXTRA_CAL44_H60_S307.json.gz",
+      "sha256": "c41d939bf6a077df1cd2176cf46ead42a29773b3bc15e82a78379ab6de01495d"
+    },
+    {
+      "destination": "models/base_tree/2022/EXTRA_CAL44_H60_S509.json.gz",
+      "sha256": "c1b0531ec78727ac33999526db95f7c5457320be04798b1331d5ce80ddd41f10"
+    },
+    {
+      "destination": "models/base_tree/2022/EXTRA_CAL44_H60_S701.json.gz",
+      "sha256": "3aed672990978e6a728eda31084e1021aba5916fee019b579eee6616f1fd1b03"
+    },
+    {
+      "destination": "models/base_tree/2022/EXTRA_CAL44_H60_S907.json.gz",
+      "sha256": "8bef1319f5ec65824821ceb4f3daaf223c345f4dd4d8abb35eabb520327aaf41"
+    },
+    {
+      "destination": "models/base_tree/2023/EXTRA_CAL44_H60_S101.json.gz",
+      "sha256": "7d6f4e835004c6b331cdc0680d5cac920503cfe21923460d56d47a4b70723039"
+    },
+    {
+      "destination": "models/base_tree/2023/EXTRA_CAL44_H60_S1103.json.gz",
+      "sha256": "23a81f71f3743646830f0ab8874fd056acbf29b845e7b050f80917138b1ea20a"
+    },
+    {
+      "destination": "models/base_tree/2023/EXTRA_CAL44_H60_S1701.json.gz",
+      "sha256": "4050822486df8c4ce23c5c6961bbc66af923812f03520369bffd7adc2860eb9b"
+    },
+    {
+      "destination": "models/base_tree/2023/EXTRA_CAL44_H60_S307.json.gz",
+      "sha256": "1b8cb471fc1c3fe300cd94adf08b9638e6a11bc081f284dfc8c3d27ec44795ae"
+    },
+    {
+      "destination": "models/base_tree/2023/EXTRA_CAL44_H60_S509.json.gz",
+      "sha256": "1b2158b965b68503e41767d8fe0672139c6442541078c4f3dc97b170f93ed7f8"
+    },
+    {
+      "destination": "models/base_tree/2023/EXTRA_CAL44_H60_S701.json.gz",
+      "sha256": "1cddfc9b073b32de86ab0819c0963b1f665db1363efe0a1328900da04779283f"
+    },
+    {
+      "destination": "models/base_tree/2023/EXTRA_CAL44_H60_S907.json.gz",
+      "sha256": "19a642b8969870eb39dc86f30cdf9f46c852535eba1c355783348af34ec2fa07"
+    },
+    {
+      "destination": "models/base_tree/2024/EXTRA_CAL44_H60_S101.json.gz",
+      "sha256": "6f95d696c8b385238778c28dea1054031d41b086ab3c2311c99ee11970d53d13"
+    },
+    {
+      "destination": "models/base_tree/2024/EXTRA_CAL44_H60_S1103.json.gz",
+      "sha256": "1ab3dbb461f964b0584ed01a3e5734b27023c06e4254ff0371d15644e3e0f58c"
+    },
+    {
+      "destination": "models/base_tree/2024/EXTRA_CAL44_H60_S1701.json.gz",
+      "sha256": "b120eadfe2a975c252176080020831e3d665c10aa081e245f5ca84ac49df0aca"
+    },
+    {
+      "destination": "models/base_tree/2024/EXTRA_CAL44_H60_S307.json.gz",
+      "sha256": "189ea53b61d97812fac07b4840ff3eac00fc8bfba85e84b871914a17e8f292a2"
+    },
+    {
+      "destination": "models/base_tree/2024/EXTRA_CAL44_H60_S509.json.gz",
+      "sha256": "17740f58e7a606a44f949bfc2288a94c71acda97690f3f31c0e4ccf0029245cc"
+    },
+    {
+      "destination": "models/base_tree/2024/EXTRA_CAL44_H60_S701.json.gz",
+      "sha256": "8424478b83ba41dea614dc4f577cc2cb4a1c97c7624fecf0269242bca6fac9bb"
+    },
+    {
+      "destination": "models/base_tree/2024/EXTRA_CAL44_H60_S907.json.gz",
+      "sha256": "4cd66214c8020d3588aa7dde25285b91fecabc38aacd027fb989235f6145c6c3"
+    },
+    {
+      "destination": "models/base_tree/2025/EXTRA_CAL44_H60_S101.json.gz",
+      "sha256": "42a1de3cef14cf35688e5c1e1d9d7e703245413007394a1ad7b9c1f6402e526a"
+    },
+    {
+      "destination": "models/base_tree/2025/EXTRA_CAL44_H60_S1103.json.gz",
+      "sha256": "ae4f6c852c6893599752cb99a9f14946e8c70ad24c1499f3bdde8760735e94eb"
+    },
+    {
+      "destination": "models/base_tree/2025/EXTRA_CAL44_H60_S1701.json.gz",
+      "sha256": "87194e012a3140fa6155b9b1f24ec6d679e50689d27a32f9a90477de92bb1968"
+    },
+    {
+      "destination": "models/base_tree/2025/EXTRA_CAL44_H60_S307.json.gz",
+      "sha256": "b0ed2b894d2824e1475b791cd33cc8a137d7c60604628fd78df6f5bc3a0aad6c"
+    },
+    {
+      "destination": "models/base_tree/2025/EXTRA_CAL44_H60_S509.json.gz",
+      "sha256": "8ee4f88e89dbebe3642c51ef614067545fff6a4bf499d6e6d4c0b65a0be5ff5d"
+    },
+    {
+      "destination": "models/base_tree/2025/EXTRA_CAL44_H60_S701.json.gz",
+      "sha256": "04f553f56ebf2aacc3c5b20f495e7ce36e1250df55805b19a5cd2f94c73953e1"
+    },
+    {
+      "destination": "models/base_tree/2025/EXTRA_CAL44_H60_S907.json.gz",
+      "sha256": "9bd8e8080229f78c5b62d1f2f9b5a2ca6b11ff6b5874b8e3a270619dcd1628be"
+    },
+    {
+      "destination": "models/mining58/2019/EXTRA_DYNAMICS_L60.json.gz",
+      "sha256": "f225e47cb780830b6d23104a56440ae9c9c4990ad3aa7ee2860c90e1c4fc74c5"
+    },
+    {
+      "destination": "models/mining58/2020/EXTRA_DYNAMICS_L60.json.gz",
+      "sha256": "37221c2545cad6ee3204bc00a9148ab710d21c4c4430df897a0431196e62ca15"
+    },
+    {
+      "destination": "models/mining58/2021/EXTRA_DYNAMICS_L60.json.gz",
+      "sha256": "45b7538650b07b8eac9ff483133aec07605c977f5776cf150f48a3200d2b5e6a"
+    },
+    {
+      "destination": "models/mining58/2022/EXTRA_DYNAMICS_L60.json.gz",
+      "sha256": "56819cad8c89294ffd96eade197ed34897397dd41650aa0998cde1740dbdb4ec"
+    },
+    {
+      "destination": "models/mining58/2023/EXTRA_DYNAMICS_L60.json.gz",
+      "sha256": "174a43bdbc1efc13f7c07d195b2791573f2425413d39ea0b7b1cf92b998388b8"
+    },
+    {
+      "destination": "models/mining58/2024/EXTRA_DYNAMICS_L60.json.gz",
+      "sha256": "e7121d11ae6756d839cfd4dd9e4cfc23b92ec088b9d1f60dafa60bc92da1d909"
+    },
+    {
+      "destination": "models/mining58/2025/EXTRA_DYNAMICS_L60.json.gz",
+      "sha256": "91ca72ecd542dcd699192e8f43c33e4cfc38728c2638058a0b924d1da14df0a2"
+    },
+    {
+      "destination": "models/price47/2019/PRICE_L7.json.gz",
+      "sha256": "331105cd686c84197733ae1f4b1075610eac661a65989efad95d5ca63ad553b6"
+    },
+    {
+      "destination": "models/price47/2020/PRICE_L7.json.gz",
+      "sha256": "f23f30a24fc1a7d461762e363d9bde76406db6e7a88b12af959a85f3343fe3f9"
+    },
+    {
+      "destination": "models/price47/2021/PRICE_L7.json.gz",
+      "sha256": "f556f8bf9492a48817cc0c5427233875736b12ae520dd574096cf5ae69a1c4c0"
+    },
+    {
+      "destination": "models/price47/2022/PRICE_L7.json.gz",
+      "sha256": "6b59c5b1dcfbed1ba13aa4645a20b793e8d24233037842c19c7efcb0fe0ef179"
+    },
+    {
+      "destination": "models/price47/2023/PRICE_L7.json.gz",
+      "sha256": "fa5981cd174cb42b629ed916b049292a2356ddd54c79dd54305246428e1fb724"
+    },
+    {
+      "destination": "models/price47/2024/PRICE_L7.json.gz",
+      "sha256": "1e99f08f5167cd919eda4c14d2d551301f0066a67c48e5d72fee25fd64bacc01"
+    },
+    {
+      "destination": "models/price47/2025/PRICE_L7.json.gz",
+      "sha256": "e8f1e950dfc64bb100df837cadf013270dbe69df9b4062f72813155a4ee6955b"
+    },
+    {
+      "destination": "models/short_huber/2019/L1-101.json.gz",
+      "sha256": "1d0444516bb35df6651a28359d27dd4de0c0b724bd24a9b7f2552f4ea2dbd5ea"
+    },
+    {
+      "destination": "models/short_huber/2019/L1-1103.json.gz",
+      "sha256": "78d0fc1ca7c1dc60ab3bbf0fb52a2bb7a20665c6533b6a7124b2dbb2f979fb48"
+    },
+    {
+      "destination": "models/short_huber/2019/L1-1701.json.gz",
+      "sha256": "2b2a5492f267cedaeb8e3d5f01d951f24071c6bb0c20f775c0bf3276eeb39b24"
+    },
+    {
+      "destination": "models/short_huber/2019/L1-307.json.gz",
+      "sha256": "2645d19eeae8020f4c51f82906c3e6f395d88baf0864a96f71249ca953a0dd6f"
+    },
+    {
+      "destination": "models/short_huber/2019/L1-509.json.gz",
+      "sha256": "fc15fc4774b23eca53d52a3a8be0b0dbcaef0a28eca30d89ef63cf15bdfcb377"
+    },
+    {
+      "destination": "models/short_huber/2019/L1-701.json.gz",
+      "sha256": "00f1027fe382ce01f1879c11c40aee2d9ac853b110e917b113556d10dd6f2be8"
+    },
+    {
+      "destination": "models/short_huber/2019/L1-907.json.gz",
+      "sha256": "dcd32e097fb9b6991f2f765a83da4b99dc7ec74afab84b53011e3ce41a025747"
+    },
+    {
+      "destination": "models/short_huber/2019/L2-101.json.gz",
+      "sha256": "3d737253d88feaab2aace239128f3200d15fa1d480e1aa61064d9c1cbb2cf7d8"
+    },
+    {
+      "destination": "models/short_huber/2019/L2-1103.json.gz",
+      "sha256": "b3fd423cc7549bf6fd950422157dc75e0447c4e04590381cd831489502e16793"
+    },
+    {
+      "destination": "models/short_huber/2019/L2-1701.json.gz",
+      "sha256": "7d0c621ec234ae7e63f351dc59e0d93a489e845ddadcea353905e3f513a917b6"
+    },
+    {
+      "destination": "models/short_huber/2019/L2-307.json.gz",
+      "sha256": "e9c61d582014754363c8753bbda6f3577075b183c2b342ff6b1be11af453e15f"
+    },
+    {
+      "destination": "models/short_huber/2019/L2-509.json.gz",
+      "sha256": "ae22927d5e14dc6946b99da85ea5374575458d728913d6cbd82ab3a789e704c5"
+    },
+    {
+      "destination": "models/short_huber/2019/L2-701.json.gz",
+      "sha256": "1f98f4f58160872b974379469c567e06dd03399b81e461ee34eb5ed224e990b5"
+    },
+    {
+      "destination": "models/short_huber/2019/L2-907.json.gz",
+      "sha256": "26de72e633f11ef0fa4e6b4b0a88278f8bea7843f173287c4774710b15d5c788"
+    },
+    {
+      "destination": "models/short_huber/2020/L1-101.json.gz",
+      "sha256": "2b7674565b6c984a16748288fcf44fa2fc514e8964f89739891fceae03a1aca5"
+    },
+    {
+      "destination": "models/short_huber/2020/L1-1103.json.gz",
+      "sha256": "b8e9797a4f36af3176d65c6f52be597833ecd5e039c8582abe6f1822efd91633"
+    },
+    {
+      "destination": "models/short_huber/2020/L1-1701.json.gz",
+      "sha256": "f685453b87cef78031c042e75c31f0f028de2903cca874c0b8ca0ba9ff3eee11"
+    },
+    {
+      "destination": "models/short_huber/2020/L1-307.json.gz",
+      "sha256": "f4f43d5d184547eba4c2b81e81d54f33be0b372446b7e6c2c39b1c64cac4722a"
+    },
+    {
+      "destination": "models/short_huber/2020/L1-509.json.gz",
+      "sha256": "31dc47209a3738c13e9b992d4f27d5d14f2e8cab160b7e10ec40fca6aec781d1"
+    },
+    {
+      "destination": "models/short_huber/2020/L1-701.json.gz",
+      "sha256": "049f80ed6c60fda577709e201ad7a07ffba71a9fd63fbbc4eaa1cd6e0c9e6d59"
+    },
+    {
+      "destination": "models/short_huber/2020/L1-907.json.gz",
+      "sha256": "99fff088829b0d92e6ec71941c24e486101258fadbd752abfac6aa54ac980adf"
+    },
+    {
+      "destination": "models/short_huber/2020/L2-101.json.gz",
+      "sha256": "32b172df47f6f92f2d25bf98809a7e98a66a9103f98322c241f68514e0bfb583"
+    },
+    {
+      "destination": "models/short_huber/2020/L2-1103.json.gz",
+      "sha256": "beec675a7ad7da39d440f87b098864289f9eeded83d8c9f7edb4037a55b5168a"
+    },
+    {
+      "destination": "models/short_huber/2020/L2-1701.json.gz",
+      "sha256": "bf359ea4b8b8ff24a46898a54071cd453b3706c62b8afe12f8e088f73283bdcd"
+    },
+    {
+      "destination": "models/short_huber/2020/L2-307.json.gz",
+      "sha256": "e107924b4c86de58b9bb56fcce511011737b8c2514172bf41fcb2252b06dc6da"
+    },
+    {
+      "destination": "models/short_huber/2020/L2-509.json.gz",
+      "sha256": "f354198b547db1525eb4a9fb7392d033f7afbff5c995a87fcd817a328a2390dc"
+    },
+    {
+      "destination": "models/short_huber/2020/L2-701.json.gz",
+      "sha256": "f10e3a1cf26ec7ef1c3509827275f6871dbed969ec421ffc05300f2dc199b510"
+    },
+    {
+      "destination": "models/short_huber/2020/L2-907.json.gz",
+      "sha256": "39e0a5a466db8f73fb5766103260c2b410fa629e7287e0fb954307ae1cab5b9c"
+    },
+    {
+      "destination": "models/short_huber/2021/L1-101.json.gz",
+      "sha256": "15a1bdd585095112ddd8663bb64277503eab186fd308e2eb56eae502d9ae072c"
+    },
+    {
+      "destination": "models/short_huber/2021/L1-1103.json.gz",
+      "sha256": "2a324763af35070e67f470104472afcd93c9a5fbcd76a6f26688ecf080403074"
+    },
+    {
+      "destination": "models/short_huber/2021/L1-1701.json.gz",
+      "sha256": "c5062c4a724670ce70b2fb306880a26624880f5b51d6095a8d72f8085669e6bc"
+    },
+    {
+      "destination": "models/short_huber/2021/L1-307.json.gz",
+      "sha256": "d0508cc37f1fecc6bcd2b79a7d2977c4d49d4d3f54162301241930b26fbb74f6"
+    },
+    {
+      "destination": "models/short_huber/2021/L1-509.json.gz",
+      "sha256": "b2f8af5e23476d1c6444dc5784ee24fd2fa23aa66adf1821c320e22c51e44eef"
+    },
+    {
+      "destination": "models/short_huber/2021/L1-701.json.gz",
+      "sha256": "05a9e7f9055d68fe6e950d994ddaa959bfff77650927137a4b00b19c22c2dc8a"
+    },
+    {
+      "destination": "models/short_huber/2021/L1-907.json.gz",
+      "sha256": "58178b34eb6f614f2356876ca74bdc4ee1e66309c56fcbc49c266db653d412ca"
+    },
+    {
+      "destination": "models/short_huber/2021/L2-101.json.gz",
+      "sha256": "fc8fc90876d751617144658222ca352f39c8743b136f39a798dabf5707ae2628"
+    },
+    {
+      "destination": "models/short_huber/2021/L2-1103.json.gz",
+      "sha256": "ae9e89deea7f03bf5026d0379993c80b4a49f88712f0779bfb773fb7573681e5"
+    },
+    {
+      "destination": "models/short_huber/2021/L2-1701.json.gz",
+      "sha256": "38a3ab2c46dfbfb56eec12b51f66f41b502b8b3e9c9a5b8af3f21d57b80b4956"
+    },
+    {
+      "destination": "models/short_huber/2021/L2-307.json.gz",
+      "sha256": "2296b8de5e88e206ad5b783432357435a9ad35ff8f7254fe88e1d7e979bf2674"
+    },
+    {
+      "destination": "models/short_huber/2021/L2-509.json.gz",
+      "sha256": "c320bffe3939e6c653b2200399dadad5697aae9de487cf862e40de4fc3033ced"
+    },
+    {
+      "destination": "models/short_huber/2021/L2-701.json.gz",
+      "sha256": "8f832f9c2e7326148a0c3d1f5c432b4d58d1d286a94f39c5e8ee6d30d35fc909"
+    },
+    {
+      "destination": "models/short_huber/2021/L2-907.json.gz",
+      "sha256": "2fb2b3108c60dc1bdd4388f4972f954c29c7ab853ad046389dc06bc8d4c58af3"
+    },
+    {
+      "destination": "models/short_huber/2022/L1-101.json.gz",
+      "sha256": "92a958813f593366e34eb39674217ac47ede488fabecd09b8a83292a0ca8488f"
+    },
+    {
+      "destination": "models/short_huber/2022/L1-1103.json.gz",
+      "sha256": "c524fd27f2c0efe62bc041851ad8db14250851ea8f938c63d03b95a455997d62"
+    },
+    {
+      "destination": "models/short_huber/2022/L1-1701.json.gz",
+      "sha256": "27c1d3cc3591c14490064c6bc3efe9295f01b5d84c4871108c06d7ef1c8a3b01"
+    },
+    {
+      "destination": "models/short_huber/2022/L1-307.json.gz",
+      "sha256": "d37e56b490e07f5ce70ab9ab9e73ba0001bfd702059e1611e69e07e2cff775a8"
+    },
+    {
+      "destination": "models/short_huber/2022/L1-509.json.gz",
+      "sha256": "ecbc9da7d0c1e03e4b117ac6e857022905ce652df6e58397b3299647fd7251d3"
+    },
+    {
+      "destination": "models/short_huber/2022/L1-701.json.gz",
+      "sha256": "6d276116746fe3c427bbecf71044dae97702bc98c68ec3ebc913916d609ceb40"
+    },
+    {
+      "destination": "models/short_huber/2022/L1-907.json.gz",
+      "sha256": "3b077ac5bddb7fcd7d26f130e72b8745aed63e4e9d164f7d15c261098ce76db0"
+    },
+    {
+      "destination": "models/short_huber/2022/L2-101.json.gz",
+      "sha256": "17f860c13f4a35b450a8f94eb5fd7f37ca37cab261d933c8d97b9f4f702fa1ee"
+    },
+    {
+      "destination": "models/short_huber/2022/L2-1103.json.gz",
+      "sha256": "07a2172c2044dcce417c6d9a6f15a37b8de6a03043f0465b69f4cdb8f4a27dae"
+    },
+    {
+      "destination": "models/short_huber/2022/L2-1701.json.gz",
+      "sha256": "344035852e366412c1ec09d6bb6225c215edf8d07aa8460f0fb082287761a0dc"
+    },
+    {
+      "destination": "models/short_huber/2022/L2-307.json.gz",
+      "sha256": "3def66ca035e4c4b58b66d339055981b255af61a30c18bd5778b74396d9b211b"
+    },
+    {
+      "destination": "models/short_huber/2022/L2-509.json.gz",
+      "sha256": "351dbf663d5cf275424207a54383ee2d180043109a142f490bcf9d98fdcc6f9f"
+    },
+    {
+      "destination": "models/short_huber/2022/L2-701.json.gz",
+      "sha256": "d8ec46ca0c0e59d445e8e55579859a7d4f9256490844167980b302c04ae780d2"
+    },
+    {
+      "destination": "models/short_huber/2022/L2-907.json.gz",
+      "sha256": "4f66ebffe478e06565a3d52e74607cb57143f263125d865afaa57c9da7993329"
+    },
+    {
+      "destination": "models/short_huber/2023/L1-101.json.gz",
+      "sha256": "0d2c497a398b8aa9fb64facdde624cfa36145bf70e3524db1e679ab80774a5e9"
+    },
+    {
+      "destination": "models/short_huber/2023/L1-1103.json.gz",
+      "sha256": "d100cbff265792350b865fd09beaefd3d3b0e371a1e7a89e04bcdf399fb81a3b"
+    },
+    {
+      "destination": "models/short_huber/2023/L1-1701.json.gz",
+      "sha256": "a67285c5d7e8071cccbf6bff432860a526dca68670987b39acafc98872d56ae8"
+    },
+    {
+      "destination": "models/short_huber/2023/L1-307.json.gz",
+      "sha256": "0cb94eeea5236e94bd2be12bf1e543c211afe3e96e4037e0f9c62427b59ccb07"
+    },
+    {
+      "destination": "models/short_huber/2023/L1-509.json.gz",
+      "sha256": "18c13d92e13d9e1c4812799ddc9a3cdab3f8e8188f318001a35c13ffebdd4d7b"
+    },
+    {
+      "destination": "models/short_huber/2023/L1-701.json.gz",
+      "sha256": "cd3bd5d2f47e6dd9806a1d38753b7ff7127407f2b38ee7dd839f01d57c62ac2c"
+    },
+    {
+      "destination": "models/short_huber/2023/L1-907.json.gz",
+      "sha256": "d6d4d084a5a7444622df6378ebfc46f786b8d0918d22842775a8201db409208a"
+    },
+    {
+      "destination": "models/short_huber/2023/L2-101.json.gz",
+      "sha256": "07a13a76006534ac6bd42ad32fdd2c8c7b50c98e0e27f702f723c95a82ef5bc7"
+    },
+    {
+      "destination": "models/short_huber/2023/L2-1103.json.gz",
+      "sha256": "4f50506bbe9c90d6b04d38b0e5e8f7bc085aa2e429284e67a0f1d4b90114ec93"
+    },
+    {
+      "destination": "models/short_huber/2023/L2-1701.json.gz",
+      "sha256": "2f82641cb47141f5a3f0733c644943ba7a2a90bd76766457132a1f4a3949dea9"
+    },
+    {
+      "destination": "models/short_huber/2023/L2-307.json.gz",
+      "sha256": "4c5fd2a9b48c79851edad45f155d279984a40231e25d8cf800d9676ccf9cd865"
+    },
+    {
+      "destination": "models/short_huber/2023/L2-509.json.gz",
+      "sha256": "2cf06150eece4067e7379e83ac36b040105b84b8619f1e6f55a0f20550140a1b"
+    },
+    {
+      "destination": "models/short_huber/2023/L2-701.json.gz",
+      "sha256": "13ebe772b972e08a362c8f3895ef846ba11d57db51cd93bdf860afeab4386843"
+    },
+    {
+      "destination": "models/short_huber/2023/L2-907.json.gz",
+      "sha256": "53d5039913bb3fce830bdf87ad0d629e7cd0142448414888594ef9c29215be1b"
+    },
+    {
+      "destination": "models/short_huber/2024/L1-101.json.gz",
+      "sha256": "e7d7d2ecc80ff41460d8170d888ffd3179560bfc8e333fd5f61b89877f3a3d01"
+    },
+    {
+      "destination": "models/short_huber/2024/L1-1103.json.gz",
+      "sha256": "0d1e67f12402e296d94992b305634e400cc7b63992c380281bcc08ba10c9672e"
+    },
+    {
+      "destination": "models/short_huber/2024/L1-1701.json.gz",
+      "sha256": "b597a75dba249b7f114743c4fb67cf493ec791f60bcd15b0998a165fdfb07913"
+    },
+    {
+      "destination": "models/short_huber/2024/L1-307.json.gz",
+      "sha256": "0e67d58c925cc7a00f468ea76ee64120948a20421e866c831ba8a81e23130858"
+    },
+    {
+      "destination": "models/short_huber/2024/L1-509.json.gz",
+      "sha256": "a55c08627d8067fc1b565691768ed7189dd16366ef09145284f52e8d51812a5d"
+    },
+    {
+      "destination": "models/short_huber/2024/L1-701.json.gz",
+      "sha256": "6e97f709f072c6cc21b57a2a60e322f69982e2560ee98ab4f136de2293904446"
+    },
+    {
+      "destination": "models/short_huber/2024/L1-907.json.gz",
+      "sha256": "2624399b8e3d855a08ff4e93dc25ce6edabb804c88115329cb8b3aacba79e3df"
+    },
+    {
+      "destination": "models/short_huber/2024/L2-101.json.gz",
+      "sha256": "f4cd730ef7bdb5d658e8bc60fe0a7c3f9aee4bbf312ff856d0dd3e828cd9c62d"
+    },
+    {
+      "destination": "models/short_huber/2024/L2-1103.json.gz",
+      "sha256": "0327c986f384d914632e58e565348ae5d2047e97cdb8979d9084814992608ddd"
+    },
+    {
+      "destination": "models/short_huber/2024/L2-1701.json.gz",
+      "sha256": "e66fca12aae1001d6b2cddfae5fbe215ac15552ee194b9e5c3d67f94b52b45fd"
+    },
+    {
+      "destination": "models/short_huber/2024/L2-307.json.gz",
+      "sha256": "77d3b55e7447201c7a261409b60fa1b78da90851915c84d572e76ce2e7b8105a"
+    },
+    {
+      "destination": "models/short_huber/2024/L2-509.json.gz",
+      "sha256": "8b76f9bfc08b0ecbf266661d5d4513b1d60b931cb59af65c45dd0f8932608f5b"
+    },
+    {
+      "destination": "models/short_huber/2024/L2-701.json.gz",
+      "sha256": "d491509895e64af0eb3fca23ef63791d7a03cea39bde84b09944e4dc141a06ef"
+    },
+    {
+      "destination": "models/short_huber/2024/L2-907.json.gz",
+      "sha256": "2089a75edc00b5b358f2b7b9946cb49480bbf45acd25ee92934fb234ea0704bc"
+    },
+    {
+      "destination": "models/short_huber/2025/L1-101.json.gz",
+      "sha256": "913fd3cabd78b69eafe2c1d6219d35a4b66ea1c948ba650cdb16a567000e26bc"
+    },
+    {
+      "destination": "models/short_huber/2025/L1-1103.json.gz",
+      "sha256": "bf1919e2d04fc61cd8bf44d0039593f6613fa08de9a6691668aa14ee21f02cd8"
+    },
+    {
+      "destination": "models/short_huber/2025/L1-1701.json.gz",
+      "sha256": "ab2505081b0bdb8305911d533a7716f473cafc87aa130fd4ccda86dd318ada8d"
+    },
+    {
+      "destination": "models/short_huber/2025/L1-307.json.gz",
+      "sha256": "bf52ec973457a0fe09499b77bd607c24bd216e6d4d05de17b32813a88f22bdff"
+    },
+    {
+      "destination": "models/short_huber/2025/L1-509.json.gz",
+      "sha256": "eca7a59e47d0b1593629858cfcfd72842a98254a3ea80a3eeb337e8e620655f3"
+    },
+    {
+      "destination": "models/short_huber/2025/L1-701.json.gz",
+      "sha256": "615ffc12219f2ca7f6b468ccd174d82011ac3c15c6f298bcf9148eacc831cb7e"
+    },
+    {
+      "destination": "models/short_huber/2025/L1-907.json.gz",
+      "sha256": "4841f8efa7a14d681c1576238482ae0e9fc31c62ca00c5a8c6c8f3528a6f4be6"
+    },
+    {
+      "destination": "models/short_huber/2025/L2-101.json.gz",
+      "sha256": "11c1572a89d2c0bbde1fb704b73d0485d65d8809d369ed357beb54b493c52c98"
+    },
+    {
+      "destination": "models/short_huber/2025/L2-1103.json.gz",
+      "sha256": "f8d421cdf1f0489cca03916574cebf60067fcb36de79cba3ba431a00ab34dcab"
+    },
+    {
+      "destination": "models/short_huber/2025/L2-1701.json.gz",
+      "sha256": "f615458673ce743d200094659d0b4dab57958544ad8fed6b86a2513742e317ee"
+    },
+    {
+      "destination": "models/short_huber/2025/L2-307.json.gz",
+      "sha256": "f0c260c08579f1c4141066a81ce9edd5352b088cdf69bf89cef13fa43d05cb93"
+    },
+    {
+      "destination": "models/short_huber/2025/L2-509.json.gz",
+      "sha256": "bda0617f11dff6c1c6a9463da5f120db2263086ed4d530f44a4362f24a7b9fc3"
+    },
+    {
+      "destination": "models/short_huber/2025/L2-701.json.gz",
+      "sha256": "8747953938983ec90b9ea91d197ea78dcdf99c7a59e3139c8ebb888c2d633134"
+    },
+    {
+      "destination": "models/short_huber/2025/L2-907.json.gz",
+      "sha256": "5b5d4d6ae03d52167ca038d5eefc16efb92bbe1fd6495ab631a7ba05f9ee5f79"
+    },
+    {
+      "destination": "models/short_median/2019/MEDIAN_L1-101.json.gz",
+      "sha256": "293ba7abdcfe3bfebf8791bb0fe1831d6a459cb0c95b821988be42b40b39036d"
+    },
+    {
+      "destination": "models/short_median/2019/MEDIAN_L1-1103.json.gz",
+      "sha256": "a786bac71e43eb3fd7afcaea379b61e44744d9220eb5ab09dec1e88be965f90d"
+    },
+    {
+      "destination": "models/short_median/2019/MEDIAN_L1-1701.json.gz",
+      "sha256": "3cecdf2daa9e5843186d862615a5320351dd82bb73e792fb86f36dfa4d9f80ac"
+    },
+    {
+      "destination": "models/short_median/2019/MEDIAN_L1-307.json.gz",
+      "sha256": "dc42ded246dd64f502135acf394ef207ca3c03216121e0d5ab32950bdc291d07"
+    },
+    {
+      "destination": "models/short_median/2019/MEDIAN_L1-509.json.gz",
+      "sha256": "80722132ba6a9f5ed2794f2aba23c4369f9e98400e2db7618a26070978913efb"
+    },
+    {
+      "destination": "models/short_median/2019/MEDIAN_L1-701.json.gz",
+      "sha256": "c59fb200117484dc7f71c365ab5bebdc75835e1139e63e3a92757fb9c0ff96a6"
+    },
+    {
+      "destination": "models/short_median/2019/MEDIAN_L1-907.json.gz",
+      "sha256": "b65d7116febc9584e19a591de56e3cedbc852c4ab5c22bb03718d73e642e2246"
+    },
+    {
+      "destination": "models/short_median/2019/MEDIAN_L2-101.json.gz",
+      "sha256": "2098e527d9ffe515f7811ad3b4d368022c5241e4c1de21fd3f9fcbc2c1b7b6f8"
+    },
+    {
+      "destination": "models/short_median/2019/MEDIAN_L2-1103.json.gz",
+      "sha256": "de9f0b8d2472ea081918b65f6181fa82892aa64f9ec8b5cfab7fd01ff8a4ede9"
+    },
+    {
+      "destination": "models/short_median/2019/MEDIAN_L2-1701.json.gz",
+      "sha256": "206b6a80e369d1b84a096b6122bf2fa7484b96a8c9c34b4f5b9d6c584c63eed3"
+    },
+    {
+      "destination": "models/short_median/2019/MEDIAN_L2-307.json.gz",
+      "sha256": "b11e912c1b166240490e52c5d0cbe1dc0b757f7bf5362441919ce138efa05edc"
+    },
+    {
+      "destination": "models/short_median/2019/MEDIAN_L2-509.json.gz",
+      "sha256": "b9601a38c685eb7acd77d18e13c980dfa1ffecfa3138ea2032cdf8a89af06608"
+    },
+    {
+      "destination": "models/short_median/2019/MEDIAN_L2-701.json.gz",
+      "sha256": "69ec646496ae2630de006d6037fb6ae2ee3433e14eb5a68e10a76dac5ca0cef9"
+    },
+    {
+      "destination": "models/short_median/2019/MEDIAN_L2-907.json.gz",
+      "sha256": "b631964bbe3692b35df9783f2a1830124642ce4c8104cb8478875b161197b471"
+    },
+    {
+      "destination": "models/short_median/2020/MEDIAN_L1-101.json.gz",
+      "sha256": "bd8038a1d04a2d0c4f027830321c58120805973b7c735a97f5005524036ca861"
+    },
+    {
+      "destination": "models/short_median/2020/MEDIAN_L1-1103.json.gz",
+      "sha256": "6f6b482e7f2633c3420e3ee59f4d7e06fe1fed038bbf54c79238bbb107dacab6"
+    },
+    {
+      "destination": "models/short_median/2020/MEDIAN_L1-1701.json.gz",
+      "sha256": "c5296a32c86b2f7edc277e1e46187fe5bfb3fe5352e662fdac8419a0128580e0"
+    },
+    {
+      "destination": "models/short_median/2020/MEDIAN_L1-307.json.gz",
+      "sha256": "40e9c6283b7a73eaf1b1253eeeeb9d62694ed3cc9ad360da9d74f08c37faf17c"
+    },
+    {
+      "destination": "models/short_median/2020/MEDIAN_L1-509.json.gz",
+      "sha256": "f655051e611f3086ce84fa6675df2c95d087bf50d7005ade59046b1f715578e6"
+    },
+    {
+      "destination": "models/short_median/2020/MEDIAN_L1-701.json.gz",
+      "sha256": "32ce2220d3cda3d5b8f26bc5fe9657a7da75bbd70f75bdfe8a4e8c6dc54a0b42"
+    },
+    {
+      "destination": "models/short_median/2020/MEDIAN_L1-907.json.gz",
+      "sha256": "5a4e104ce5d324db9fba09b27e6ffa8a927e2e0df3c6302fcd508b15777a625e"
+    },
+    {
+      "destination": "models/short_median/2020/MEDIAN_L2-101.json.gz",
+      "sha256": "fdc3007501d7d8243c1c1516338d95ab5a2a4a3dd2ae9d5c68314739afd6cf85"
+    },
+    {
+      "destination": "models/short_median/2020/MEDIAN_L2-1103.json.gz",
+      "sha256": "e9d3f7f1d5e7e9881165dfc8bd9a45fa208811723d29c7f15f9e79f49f85c5de"
+    },
+    {
+      "destination": "models/short_median/2020/MEDIAN_L2-1701.json.gz",
+      "sha256": "b2d00f89c742df3a9e72d540ebc182e6ce6eac06e9edff95775d8bb1935ba4eb"
+    },
+    {
+      "destination": "models/short_median/2020/MEDIAN_L2-307.json.gz",
+      "sha256": "1d608edc8fe01ddc7fae1a673e4d97ed612d374c51bfacd346a5bd6e061ecfbf"
+    },
+    {
+      "destination": "models/short_median/2020/MEDIAN_L2-509.json.gz",
+      "sha256": "b4f277c2a9a4838948cd38d35f4b39cbb3c6434510c99d2c9802a014f58bb348"
+    },
+    {
+      "destination": "models/short_median/2020/MEDIAN_L2-701.json.gz",
+      "sha256": "831ff8585f291df72da5c92ef5ae832c7eaeed088909559710ff5a7e51f82a86"
+    },
+    {
+      "destination": "models/short_median/2020/MEDIAN_L2-907.json.gz",
+      "sha256": "b4d72413b77746ea526a9e7f288f88c8a191fb60a8136d81780758078f767364"
+    },
+    {
+      "destination": "models/short_median/2021/MEDIAN_L1-101.json.gz",
+      "sha256": "a4a5f5e5e42eaa0cd70c2116641c8ea392d966a133919af65959faf3c3bd48c4"
+    },
+    {
+      "destination": "models/short_median/2021/MEDIAN_L1-1103.json.gz",
+      "sha256": "bb317c4e9356b6c01ebbcab10f61fac6136e1610a6c4548e77eaec3161ee289d"
+    },
+    {
+      "destination": "models/short_median/2021/MEDIAN_L1-1701.json.gz",
+      "sha256": "0666668117e8dbfdb81a432d1a779f91a9cf99ab2eff5846e80cc9a27a00bc98"
+    },
+    {
+      "destination": "models/short_median/2021/MEDIAN_L1-307.json.gz",
+      "sha256": "269a72e8fd134cc04f0addbf7b0fcf2ab88e312a52fb0f2bb1affbd00d9d6f52"
+    },
+    {
+      "destination": "models/short_median/2021/MEDIAN_L1-509.json.gz",
+      "sha256": "fac9a8a2fe8318a23f6b8904a34f1bb7ec7138453f5bdea78e71a26a72b48fc6"
+    },
+    {
+      "destination": "models/short_median/2021/MEDIAN_L1-701.json.gz",
+      "sha256": "144f5df5fe7ffcbd17d4f422e51f0423a37754e7ff86ca5e478b3ae5166408aa"
+    },
+    {
+      "destination": "models/short_median/2021/MEDIAN_L1-907.json.gz",
+      "sha256": "92436f26540783ae2b573fc0f32d644c43c3780564d647bacd16e45a99a51222"
+    },
+    {
+      "destination": "models/short_median/2021/MEDIAN_L2-101.json.gz",
+      "sha256": "e94becb7c808bf236b21c641155297af94943d8aa83beb7edc196f6cf05c25da"
+    },
+    {
+      "destination": "models/short_median/2021/MEDIAN_L2-1103.json.gz",
+      "sha256": "b79a6e516e5e4d9505a088ad0bdb8992c5b840b141e22cd4de4d8778140f78dc"
+    },
+    {
+      "destination": "models/short_median/2021/MEDIAN_L2-1701.json.gz",
+      "sha256": "bf9ca575ff03d892ab31e7665f4d3f57ac5256ae4aa12030136a8df5785a31ea"
+    },
+    {
+      "destination": "models/short_median/2021/MEDIAN_L2-307.json.gz",
+      "sha256": "c79c8f51a3e7fb6990064b4014df84cb9057d9b25f934b6bde453a83e968b66a"
+    },
+    {
+      "destination": "models/short_median/2021/MEDIAN_L2-509.json.gz",
+      "sha256": "52fedd5bed4470a52cfed4ae79e3b187456d209ff62053e31f824e135007ed11"
+    },
+    {
+      "destination": "models/short_median/2021/MEDIAN_L2-701.json.gz",
+      "sha256": "0839d3a1d74e1391e5643b70bf0a7a72d0fe73f36d5993b9b06842670b3e6106"
+    },
+    {
+      "destination": "models/short_median/2021/MEDIAN_L2-907.json.gz",
+      "sha256": "28d0847857d92d4eeba00e57fd47f8a07279a0b7e83591e10a7f81e83e820d01"
+    },
+    {
+      "destination": "models/short_median/2022/MEDIAN_L1-101.json.gz",
+      "sha256": "8ecc3380c2cb014a20c3c30707305a1bc59eadbf6d6891ac196e71c3df627637"
+    },
+    {
+      "destination": "models/short_median/2022/MEDIAN_L1-1103.json.gz",
+      "sha256": "3a07a896405a7f056704f53fa94e332e821096e4fb93810446c6876c79110f32"
+    },
+    {
+      "destination": "models/short_median/2022/MEDIAN_L1-1701.json.gz",
+      "sha256": "53e610d3496f116d2003ef6c7df8c1e128e7286ca6753b7d4fd6e3bd90b355b4"
+    },
+    {
+      "destination": "models/short_median/2022/MEDIAN_L1-307.json.gz",
+      "sha256": "64386e79b23733d473f97f6c5498fc3e0c041bcf1b4e4084a7be61d76aff10f4"
+    },
+    {
+      "destination": "models/short_median/2022/MEDIAN_L1-509.json.gz",
+      "sha256": "fe700c49e62d0b1630903608288fa2265bed35f304367e24eeaa2737a4a7e5b3"
+    },
+    {
+      "destination": "models/short_median/2022/MEDIAN_L1-701.json.gz",
+      "sha256": "46e86de752c9dbd6c03fea053b83454c5023c8cf9d39ca759463ca14cfd55f13"
+    },
+    {
+      "destination": "models/short_median/2022/MEDIAN_L1-907.json.gz",
+      "sha256": "01a45e45a748419e830aabe47fa5962f87890bc7c8645208f0c1258183fa9d54"
+    },
+    {
+      "destination": "models/short_median/2022/MEDIAN_L2-101.json.gz",
+      "sha256": "322a77f0bb9006254c2c484420ba6adefe453fc100568dd327f3c346966ba9ae"
+    },
+    {
+      "destination": "models/short_median/2022/MEDIAN_L2-1103.json.gz",
+      "sha256": "76d3918447ab42dd2b7026cab465bc5520b11b4410e69da9e9a5c8ae44ee80d8"
+    },
+    {
+      "destination": "models/short_median/2022/MEDIAN_L2-1701.json.gz",
+      "sha256": "64f230b6dcf3b430384726071067520543fee7288ccc80e9cdff8d64324a094d"
+    },
+    {
+      "destination": "models/short_median/2022/MEDIAN_L2-307.json.gz",
+      "sha256": "7be7395324353c785a64e8910e5d583d03dd96f7f1b2a33435ddc606b9de8c44"
+    },
+    {
+      "destination": "models/short_median/2022/MEDIAN_L2-509.json.gz",
+      "sha256": "3bcdc4bdb21f8773e16555daba49d0e376c57dff7cb7d12b3f23019cac524742"
+    },
+    {
+      "destination": "models/short_median/2022/MEDIAN_L2-701.json.gz",
+      "sha256": "dc49a97d0dd0c33a836654c4d8f51a7faf4bc7f431c5d2dace1969d56f7b45d1"
+    },
+    {
+      "destination": "models/short_median/2022/MEDIAN_L2-907.json.gz",
+      "sha256": "2e5ea4e892a417308ebcebca52017e09959a0da805514a515ea287afe2d44da4"
+    },
+    {
+      "destination": "models/short_median/2023/MEDIAN_L1-101.json.gz",
+      "sha256": "484da16ae59403126a342919b4a222fc264e04496f50f4aeb40de16149c9578c"
+    },
+    {
+      "destination": "models/short_median/2023/MEDIAN_L1-1103.json.gz",
+      "sha256": "707dbd053b54b7ebb457f96168e4ae9ab4b684e6073bc1d810b1686271adb6f8"
+    },
+    {
+      "destination": "models/short_median/2023/MEDIAN_L1-1701.json.gz",
+      "sha256": "131ecfd4bde43553db6ef3ff7ca2d7ac05af27806f946db9201a64d5dc08712a"
+    },
+    {
+      "destination": "models/short_median/2023/MEDIAN_L1-307.json.gz",
+      "sha256": "3e4556453391ea06e578be3ba74218f74d88ff2c7ba18444b728559dfb01183b"
+    },
+    {
+      "destination": "models/short_median/2023/MEDIAN_L1-509.json.gz",
+      "sha256": "3e12e6c63b21ed18d712f60b5fdb4fec9d7bb84c659a8016d0219fb13d2ffbb1"
+    },
+    {
+      "destination": "models/short_median/2023/MEDIAN_L1-701.json.gz",
+      "sha256": "6a10743dba64a1178e004c96d6bcebb544e33013c101ce2fe125def1fd3db905"
+    },
+    {
+      "destination": "models/short_median/2023/MEDIAN_L1-907.json.gz",
+      "sha256": "8e66e87d9b9ae008f295d3386739237b57d28f9c4a02a7a4e7656eeb67a9c31b"
+    },
+    {
+      "destination": "models/short_median/2023/MEDIAN_L2-101.json.gz",
+      "sha256": "18fd0ed9cd69c649d50dcd94bbd1aa884a21f965e55c091ac019c8c91d1dba95"
+    },
+    {
+      "destination": "models/short_median/2023/MEDIAN_L2-1103.json.gz",
+      "sha256": "23e5f693ab25012b94e77fad84c882ba17639b2ebe7ec9d57b0f12fcadafbf73"
+    },
+    {
+      "destination": "models/short_median/2023/MEDIAN_L2-1701.json.gz",
+      "sha256": "8efe794ca50275c2fa890c95b146d34df08d6c9ee5805e434942792cfd2e0b15"
+    },
+    {
+      "destination": "models/short_median/2023/MEDIAN_L2-307.json.gz",
+      "sha256": "370224d542339aefe0507fde78a17cf0733e73f2bda2e024f0d32fb54e0103c0"
+    },
+    {
+      "destination": "models/short_median/2023/MEDIAN_L2-509.json.gz",
+      "sha256": "8bc6a3f11a298f90d381ba7ce57f2e9021c12fa88f2cfb4252196e5fec84d8b5"
+    },
+    {
+      "destination": "models/short_median/2023/MEDIAN_L2-701.json.gz",
+      "sha256": "33f9e9f9d19ef367ea3c47f6fc28a31ef4a2d22476edc195a8342309e4dc62c2"
+    },
+    {
+      "destination": "models/short_median/2023/MEDIAN_L2-907.json.gz",
+      "sha256": "90e86c23c63259f1563e850a7e1c98f466df1cd31eabd1389f5cdb3a5e644988"
+    },
+    {
+      "destination": "models/short_median/2024/MEDIAN_L1-101.json.gz",
+      "sha256": "c60eb38811b0973d564b5dc0db4ff96a703fcf621d0d9d28d03fc5a1ad34da34"
+    },
+    {
+      "destination": "models/short_median/2024/MEDIAN_L1-1103.json.gz",
+      "sha256": "9d90e1b771885df5798acfeee4e7c68a67f14244062cfa656e63be2a6cb7711d"
+    },
+    {
+      "destination": "models/short_median/2024/MEDIAN_L1-1701.json.gz",
+      "sha256": "441fc4d8b12fdda4a285b88e24ce786f72be2701ee68eab5ac9e6dccb810df99"
+    },
+    {
+      "destination": "models/short_median/2024/MEDIAN_L1-307.json.gz",
+      "sha256": "aa45f90dbe12a8ad9eda20bae74da41934ce32d953a43ea1ff6fdce4c35c70b2"
+    },
+    {
+      "destination": "models/short_median/2024/MEDIAN_L1-509.json.gz",
+      "sha256": "553ecdf03a4782aea8b760c3a0166733b23e8b43ea36d87123a1be8a38e29736"
+    },
+    {
+      "destination": "models/short_median/2024/MEDIAN_L1-701.json.gz",
+      "sha256": "283510e45800aba8b2704ec3f35cdba6a290df431559df251e52282b17bfd34c"
+    },
+    {
+      "destination": "models/short_median/2024/MEDIAN_L1-907.json.gz",
+      "sha256": "6f1d8216fcdf4565a2e24601c2008547730253f19996c00eaa1e9476e88f26af"
+    },
+    {
+      "destination": "models/short_median/2024/MEDIAN_L2-101.json.gz",
+      "sha256": "84cd2cdc95764445e8b83d22b83832c6262fc25ff53ea24e8570e4cfa2694dc8"
+    },
+    {
+      "destination": "models/short_median/2024/MEDIAN_L2-1103.json.gz",
+      "sha256": "2122ac9714d29ef885df19729ec4738151f86e210fc9678095cd8ee75be37503"
+    },
+    {
+      "destination": "models/short_median/2024/MEDIAN_L2-1701.json.gz",
+      "sha256": "f8476fe5d021660b46a3b0f582cc5b8fffe857683fbe1a69c09ee8c38b2cdfdd"
+    },
+    {
+      "destination": "models/short_median/2024/MEDIAN_L2-307.json.gz",
+      "sha256": "b851335495b0781baabbc6c939b84d7854ee7d2cf63d93136456af02416ac071"
+    },
+    {
+      "destination": "models/short_median/2024/MEDIAN_L2-509.json.gz",
+      "sha256": "2eaf0083c2c4a9fdb56d94fc72502d0344ca2ed7c639bd2e681a34d4d2112314"
+    },
+    {
+      "destination": "models/short_median/2024/MEDIAN_L2-701.json.gz",
+      "sha256": "e9ba41cd30bdcc824ee9ed1224be81096bdd543cf0cfb2d39524b2d2c75fd34f"
+    },
+    {
+      "destination": "models/short_median/2024/MEDIAN_L2-907.json.gz",
+      "sha256": "5e6848b9f2be87a789e47dbb97de71baa31f09eb1c46a5e88917a4544a044272"
+    },
+    {
+      "destination": "models/short_median/2025/MEDIAN_L1-101.json.gz",
+      "sha256": "14ade4c9c1dcd59180e0ef3c18202647e73e6accd3e4f327fabd0acc9fef1b3a"
+    },
+    {
+      "destination": "models/short_median/2025/MEDIAN_L1-1103.json.gz",
+      "sha256": "2ef79d0879a5c361150f9eaa92e179f58d5ca964bb49defb3b83f6cbd4f1781f"
+    },
+    {
+      "destination": "models/short_median/2025/MEDIAN_L1-1701.json.gz",
+      "sha256": "f78d33d6160dc1fcbd5b38fc90be7ecad38f12b0d1599a8734e23992ea1b6c0c"
+    },
+    {
+      "destination": "models/short_median/2025/MEDIAN_L1-307.json.gz",
+      "sha256": "a85534b069d5784b287393469fb9cd6e9570a2a8510273de7b66c41fdeac89f6"
+    },
+    {
+      "destination": "models/short_median/2025/MEDIAN_L1-509.json.gz",
+      "sha256": "c4986b535bdf84a6ca76b068d3fe080db22f0fdf8dc074b4eecf62d84c43da28"
+    },
+    {
+      "destination": "models/short_median/2025/MEDIAN_L1-701.json.gz",
+      "sha256": "26379ddf49846dc48ed8cd753790b37563cb46fa619233269c26210a018d8ece"
+    },
+    {
+      "destination": "models/short_median/2025/MEDIAN_L1-907.json.gz",
+      "sha256": "ecffeacab3961ceae85e4ce9cacf45d6279f89333cb9fe296b5e2d451fcb906e"
+    },
+    {
+      "destination": "models/short_median/2025/MEDIAN_L2-101.json.gz",
+      "sha256": "a53b08c25336970c415fcdfe974fb3ef79b0c60f3b5ae27bdeac272e279ce737"
+    },
+    {
+      "destination": "models/short_median/2025/MEDIAN_L2-1103.json.gz",
+      "sha256": "b6da8c4ef53e9968e976e4686ab8007b9f9f51554e500c2939fe6303099c71d0"
+    },
+    {
+      "destination": "models/short_median/2025/MEDIAN_L2-1701.json.gz",
+      "sha256": "cf4d4ae14ec9a7166498f9645e12cf96dd5fe2c7e475465798279acaef1fbca9"
+    },
+    {
+      "destination": "models/short_median/2025/MEDIAN_L2-307.json.gz",
+      "sha256": "1aff0b1a5101c929c54e2154534c5e6f0738f3bbc67a3aadc4d66575c935dc75"
+    },
+    {
+      "destination": "models/short_median/2025/MEDIAN_L2-509.json.gz",
+      "sha256": "7bddc942978f283ed58ce07114a53c1e38bd592ff2031c809e8896697d465e68"
+    },
+    {
+      "destination": "models/short_median/2025/MEDIAN_L2-701.json.gz",
+      "sha256": "cd88de19f76955db02b8c8702b49151229c4ec3657363da666ef9f4eeaaef8a3"
+    },
+    {
+      "destination": "models/short_median/2025/MEDIAN_L2-907.json.gz",
+      "sha256": "04f2f822b0f39f8c25faa19d538e6ab15edf99cf22aa5ab44b59fbe9db56dc7b"
+    },
+    {
+      "destination": "models/stop44/2019/CAL44_STOP.json.gz",
+      "sha256": "1aaf35e578f3f38a69f7fde65d62241f726b1cab5016db3f4eb89f9b621badd5"
+    },
+    {
+      "destination": "models/stop44/2020/CAL44_STOP.json.gz",
+      "sha256": "0f20ee56229604aa7b6d82b614d6cb8f0187f9b5c39c84edc175a04037e2018d"
+    },
+    {
+      "destination": "models/stop44/2021/CAL44_STOP.json.gz",
+      "sha256": "37ec66f51d3b5c1c92d81d54a94c90148b278e7538b1c9de99e7e0002563e91a"
+    },
+    {
+      "destination": "models/stop44/2022/CAL44_STOP.json.gz",
+      "sha256": "b2e5666df7fe41460141bd705035cc3bb793f01509aef27afc65e2856c9c02b8"
+    },
+    {
+      "destination": "models/stop44/2023/CAL44_STOP.json.gz",
+      "sha256": "98da3832deabd5ee5f15d8a6fe669d79eff2078e5f546279ef08f97a3f937bf0"
+    },
+    {
+      "destination": "models/stop44/2024/CAL44_STOP.json.gz",
+      "sha256": "a5c49d281203e237cb21d329bf9a38367f30e78000f3b7a015ea1010565493c0"
+    },
+    {
+      "destination": "models/stop44/2025/CAL44_STOP.json.gz",
+      "sha256": "843337ab9f8661c81b4aec7b1486d9edb7c285ad9a71b91eee379fad5e708a86"
+    }
+  ],
+  "all2026_economic_data_excluded": true,
+  "frozen_originals_edited": false,
+  "selected_export_not_full_legacy_ledger": true,
+  "initial_export_failure": "Duplicate copy of identical registration blocked by exclusive creation; original export log retained in review/protocol/export-initial.log. Completion copies only missing provenance and independently verifies every existing source copy."
+}

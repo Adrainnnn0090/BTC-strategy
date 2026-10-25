@@ -1,0 +1,72 @@
+{
+  "round": 9,
+  "role": "models",
+  "topic": "年度、行情与盈利集中",
+  "conclusion": "2018高收益后代的改进发生在模型头尚不可用于执行的cold规则阶段，不能作为未来持续模型alpha的证据；ME01/MX03/TS04进入模型可用阶段后共享目标/预报且36笔交易时序相同，美元利润差异仍携带早期资本路径。年度归因必须区分净值现金增量、按出场年计的已实现PnL和入场时模型可得性，不能以退出年份替代模型贡献归属。",
+  "verdict": "qualified",
+  "evidence": [
+    {
+      "source": "studies/B109-long-profit-local-coordinate/folds/2018/predictions.json.gz；folds/2019/predictions.json.gz；r09_checks.json model_availability",
+      "actual": "2018预测fold的BASE_TREE、CAL44_STOP及learner全None；首个有限决策日为2018-12-31，STRESS的1日lag使其最早执行在2019-01-01。五个已查账户2018入场记录全为空头cold fallback，不存在把2018新成交归于已训练年度长/短模型的依据。"
+    },
+    {
+      "source": "r09_checks.json results.{P02,ME01,MX03,TS04,LP35}.annual[0]；同研究accounts相应STRESS原件",
+      "actual": "以100USDT起始、费用/融资调整后2018年末净值现金增量分别为P02 20.55084871048678、ME01 66.23337933549009、MX03 61.69354369579420、TS04 76.43273329616244、LP35 76.43273329616244 USDT。四高收益后代年末均平仓，因此其2018增量与当年已实现净PnL一致；LP35与TS04的2018年度账项完全相同，符合当年没有多头交易激活止盈差异的事实。"
+    },
+    {
+      "source": "lab/b109.py:89；lab/cold_entry_momentum.py:14；lab/shorter_cold_momentum.py:14；lab/cold_short_profit_trailing.py:17；r07_checks.json；r09_checks.json same_post2018_trade_schedules",
+      "actual": "ME01/MX03仅在cold改入场、TS04仅在cold改短trail；模型可用后目标/许可及预报共同继承。新增账户事实核对：三者自2019入场的36笔交易在entry_date/exit_date/direction/exit_reason四元组上完全相同。LP35则另改long.take_profit=3.5，不能把其post目标也声称完全相同。"
+    },
+    {
+      "source": "r09_checks.json results.*.post2018_equity_growth_factor",
+      "actual": "ME01/MX03/TS04以各自2018年末净值为起点的2019–2025累计净值倍数分别约56.31540、56.32968、56.32973；它们并非新模型的三次独立成功。起始资本、数量舍入、费用与融资路径不同，可使相同后续交易日程产生不同美元PnL和细微比例差异；本轮没有把该观察当作完整反事实因果分解。"
+    },
+    {
+      "source": "r09_checks.json P02_cold_entry_cross_year_trade；P02 annual[0]/annual[1]",
+      "actual": "控制P02的2018-11-14 cold空头跨年，到2019-01-01才因SIGNAL退出，记录policy_year=2018、净PnL=21.84748765110971719827397260。2018年末signed_qty=-0.01303；因此其2018净值增量与当年退出记账PnL不相等，2019退出记账也包含旧cold仓。高收益四后代年末平仓，不能把这一性质自动推广到控制或所有策略。"
+    },
+    {
+      "source": "r09_checks.json results.*.annual/top2_share_positive_annual_cash_change",
+      "actual": "按实际年末融资/清算费调整净值计算八个年度现金增量，并另列退出年已实现PnL。五账户逐年增量之和均与末值减100吻合、全交易净PnL总和亦吻合；各账户最大的两个正年度现金增量为2024和2023，合计占正年度现金增量总和约70.70%–71.13%。这个口径受复利资本大小影响，不是两个独立市场样本或模型准确率。"
+    }
+  ],
+  "counterevidence": [
+    "2018的cold规则收益属于真实已存开发账户事实，但不是当年可用训练模型的预测效果；此前源头规则和后续筛选同样来自已消耗历史。",
+    "2019以后确有年度模型推断，并不意味着每笔当年退出收益都由当年模型创造；跨年旧仓和早期资金基数会继续影响后续账本。",
+    "36笔同交易日程不说明全部美元PnL严格成比例，数量舍入、费用与资金路径仍存在；LP35的多头风险覆盖也确有额外差异。",
+    "后期绝对现金利润集中在资本较大的年份，不能只据此归因于行情适应能力；本轮没有新定义或搜索最有利的市场regime，也未把八年当作八个独立模型验证样本。"
+  ],
+  "recommendations": [
+    {
+      "priority": "P0",
+      "action": "收益归因同时保留入场日期/模型可得性、policy_year、退出日期及年度净值口径，把2018 cold改进与2019起模型驱动部分明确列出。",
+      "acceptance": "不会出现“2018新模型alpha”的表述；P02跨年cold空头不会只因2019退出就全记为2019年度模型贡献。"
+    },
+    {
+      "priority": "P0",
+      "action": "展示ME01/MX03/TS04依赖关系及相同后续交易日程，比较后期美元收益时同时列2018末资本和后期净值倍数。",
+      "acceptance": "36笔四元组一致性可复核；LP35的额外long TP覆盖被单列，不声称四者post目标全部相同，也不把三条相近增长轨迹当独立alpha复制。"
+    },
+    {
+      "priority": "P1",
+      "action": "盈利集中摘要注明分母和复利口径，保留年度净值现金增量与退出年已实现PnL的双列账。",
+      "acceptance": "top2现金share的分母是正年度现金增量总和；八年净值增量可望远镜核算至末值减100，跨年未平仓差异不被删掉或重分类掩盖。"
+    }
+  ],
+  "checks_performed": [
+    {
+      "command": "/workspace/BinanceTradingRobot/backend/.venv/bin/python -B /workspace/BTCExpertReview/workspaces/models/check_r09.py",
+      "result": "最终exit 0/all_checks_pass=true；五个STRESS开发账户八年度净值增量/退出PnL分开核算，检查2018无模型驱动入场、三后代36笔相同日程和年度集中口径。",
+      "artifact": "/workspace/BTCExpertReview/workspaces/models/r09_checks.json"
+    },
+    {
+      "check": "首次局部检查曾假定所有账户2018末平仓，被P02实际signed_qty拒绝；据原始持仓记录修正为逐账户口径并保留跨年交易。",
+      "result": "没有删除交易、没有重跑账户、没有改变冻结verification或门槛；P02跨年证据作为主报告事实保留。"
+    }
+  ],
+  "unresolved": [
+    "未独立估计cold规则、后期预测模型、风险覆盖和资本路径对全期利润的反事实贡献；本轮未进行删交易或重新缩放回测。",
+    "现有2018–2025均为已消耗开发史，不能据此确认未来持续模型alpha或模型在未见行情中的稳定性。"
+  ],
+  "independence_statement": "仅白名单读取B109开发期冻结预报、五个STRESS账户及models自身既有事实检查；未读其他专家意见/评分/主审结论，未派生agents，未读V01/V02及2026经济数据。未新拟合、未删交易重跑、未用原写入器；所有新文件仅在models目录首次独占创建。AI角色不是人类专家或独立市场样本。"
+}

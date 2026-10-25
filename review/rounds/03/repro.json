@@ -1,0 +1,73 @@
+{
+  "round": 3,
+  "role": "repro",
+  "topic": "标签成熟与隔离期",
+  "conclusion": "选定B67/B88A年度训练样本与标签完整成熟边界通过核验，新仓98个short_median已拟合状态也与原件一致；但可重拟合所需的common_ids、两执行lag标签、物理训练前缀及cut/head/spec/profile/seed不能由超参数或回放context代替，应另行归档并与推理状态、含多年预测的回放context物理分离。本轮未证明新仓训练包完整或角色访问隔离已实现。",
+  "verdict": "qualified",
+  "evidence": [
+    {
+      "source": "/workspace/BTCExpertReview/workspaces/repro/checks-r03.json:source_annual_label_and_export_checks,all_annual_checks_pass",
+      "actual_check": "新增check_r03.py只读B67/B88A的2018–2025训练/标签/状态与新仓导出清单，8个fold各12类断言全部通过。B67标签hash匹配training，B88A绑定同一标签hash和common_ids，common_ids精确等于两head均DEFINED的样本交集，全部标签maturity_index=index+60+lag且不超过cut−6，所有拟合receipt的cut/first/last/count/common_last_label与样本一致。未生成标签、未拟合模型。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/lab/lagged_short.py:39-54; /workspace/BTCStrategyResearchLedger/lab/short_loss_models.py:14-33",
+      "finding": "样本不是仅由超参数决定：records先构造候选索引和两lag标签，再取均DEFINED的共同交集；fit还要求至少128条、252日暖启动、有序ids、完整物理前缀cut+1、44维、有限值及ids[-1]+62≤cut−6。GradientBoosting拟合使用指定head/spec/profile/seed，训练receipt记载边界。"
+    },
+    {
+      "source": "/workspace/BTCExpertReview/workspaces/repro/checks-r03.json:source_annual_label_and_export_checks中fold_year=2019,2025",
+      "actual_check": "2019每head候选410条，共同有效ids为408条；2025每head候选2602条，共同有效ids为2588条。最大完整成熟索引分别723与2915，恰为对应cut−6。脚本另存common_ids与两个已选label向量的规范化SHA，不输出标签收益数值。按range重新猜ids会纳入原来未定义/不可执行样本。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/lab/short_payoff.py:44-50,71-80,101-115; /workspace/BTCStrategyResearchLedger/lab/lagged_short.py:15-17,29-34",
+      "finding": "标签固定maturity_index记录完整60日加执行lag的成熟终点，即便实际exit_index提前仍保留完整成熟期；UNEXECUTABLE的simple_return保持None，target_vector不会把其补零。导出重拟合包必须保留这些状态/索引语义，不能按提前退出日缩短隔离期。"
+    },
+    {
+      "source": "/workspace/BTCExpertReview/workspaces/repro/checks-r03.json:median_export_model_total,source_annual_label_and_export_checks.state_checks",
+      "actual_check": "新仓models/manifest.json的short_median清单与B88A中MEDIAN双head×7seed状态名精确一致：2018为0，2019–2025每年14，共98个。每文件导出hash等于manifest及原training登记hash，且profile、登记seed、MEDIAN absolute_error spec、44维、SHORT_NET/common_sample及head lag逐项匹配。此检查证明选定已拟合状态一致，不等于已重做训练。"
+    },
+    {
+      "source": "/workspace/BTCExpertReview/workspaces/repro/checks-r03.json:context_payload_key_checks,selected_frozen_source_copy_hash_matches,training_data_export_paths_seen",
+      "actual_check": "四个context的递归键检查未发现labels/common_ids/maturity_index/simple_return/labels_sha256/model_states等指定训练payload键；其形状包含多年days/prices/scores/policies等回放上下文。四个选定训练/标签源的_frozen副本hash与原件一致。models/artifacts文件名清点未见标签/training/seal/receipt/common_ids命名的训练物料，此项仅为当时构建快照和有限命名清点，不能据此证明所有文件均已分类或真正不可访问。"
+    },
+    {
+      "source": "/workspace/BTCStrategyResearchLedger/lab/b88a_io.py:14-18,23-39",
+      "finding": "原角色规则为train仅开放当前fold train输入及当前标签/模型，test开放当前train/test与状态但不开放标签；replay只读取封存预测等角色所需材料。新仓应保留同类最小读集，尤其不能让训练过程使用含未来年度预测和价格的完整回放context。"
+    }
+  ],
+  "counterevidence": [
+    "已拟合numeric状态足以在特征实现和年度路由正确时做预测；纯推理分发没有必要附带训练标签，缺少训练包不应自动判定已拟合模型不可用。",
+    "新仓四个context未检出指定训练标签键，模型副本与选定源代码hash也匹配，未发现本次抽查的状态篡改。",
+    "把完整训练/标签源码保存于_frozen可支持血缘审查；源码中存在fit函数并不等于推理实际执行了fit。反过来，目录名或未发现某些键也不足以证明训练与推理读取已隔离。",
+    "本轮验证stored labels的索引、状态和边界，没有重新计算经济标签，也没有独立重拟合，因此不声称其数值内容和训练结果已获独立重建。"
+  ],
+  "recommendations": [
+    {
+      "priority": "P0",
+      "action": "在新仓按用途分物料：推理包保留年度numeric状态、feature schema/实现、policy、路由及hash；历史回放context置于单独replay目录；如承诺训练复现，另设training/<family>/<fold>归档ids/labels/训练前缀和receipt。运行时接口明确infer、replay、refit三种角色，推理读集不依赖训练标签，refit拒绝replay context及本fold test输入。源码归档可保留，但默认分发入口不得自动选择train/run writer。",
+      "acceptance": "在只挂载推理包的隔离环境可加载并预测，缺训练目录仍正常；训练角色只挂载截至cut的物理前缀、指定标签与配置，尝试读取context/test/其他fold状态均确定性拒绝。只记录明确授权角色的访问清单，不修改冻结源。"
+    },
+    {
+      "priority": "P0",
+      "action": "为B88A_S03的每个可拟合fold保留可机器核验的重拟合合同：B67两head label bank及hash、common_ids和其生成规则/交集状态、训练日历与cut、CAL44因子实现/顺序和输入摘要、loss/head/profile/seed、线程及库/ABI环境、原training/seal/receipt与预期numeric状态hash。对其他家族另按其原训练流程定义，不把所有家族套成同一个固定profile模型。",
+      "acceptance": "训练包的ids和标签向量摘要可复核到本轮checks-r03结果；common_ids精确一致、未定义标签保持None、完整maturity≤cut−6；所有注册head/seed/profile都有唯一来源。只有实际授权重拟合并通过原数值容差后，才标为已验证可重拟合；仅导出状态者明确标为已拟合推理。"
+    },
+    {
+      "priority": "P0",
+      "action": "在私有合成训练清单中加入边界拒绝验收：将一个ids越过成熟边界、把UNEXECUTABLE补零、删去任一lag标签或共同样本、替换seed/profile、把cut扩展至test时均拒绝；保留2018空样本/无状态合同，不以2019模型补齐。该验收不需要重跑原研究writer或搜索参数。",
+      "acceptance": "每类故障明确失败并说明family/fold/边界或摘要差异；只读原件hash前后一致，访问日志无2026/V01/V02，且无账户或策略搜索调用。"
+    }
+  ],
+  "checks_performed": [
+    "只读选定训练/标签实现、B88A角色守卫与新仓manifest/context/_frozen副本，不读其他角色意见。",
+    "对B67/B88A 8年度执行共同样本、标签摘要、完整成熟期/6日隔离、fit receipt及新仓所选模型一致性检查。",
+    "核对98个short_median导出状态的manifest/原件摘要、完整所选状态名清单及profile/seed/spec/head/feature元数据。",
+    "仅递归审查4个回放context结构和指定训练payload键，核对4份_frozen源码hash，有限清点models/artifacts训练相关命名文件；未宣称运行时访问隔离。",
+    "只写本角色目录check_r03.py、checks-r03.json、r03.json；未执行fit、标签重建、账户重放、研究writer或参数搜索。"
+  ],
+  "unresolved": [
+    "交付仓正在构建，本轮读取是有限快照；尚未验收训练物料包或运行接口的实际读集/物理挂载隔离。",
+    "本轮只细验SHORT_NET共同样本与MEDIAN导出，未全量重建其余五个模型家族的成熟ids/标签/内部选择流程。",
+    "存储标签的边界/摘要通过不等于数值标签已被独立重新计算；profile/seed相等亦不单独保证跨环境重新拟合完全一致。"
+  ],
+  "independence_statement": "本结果为repro工程复现AI角色的隔离审查，仅使用选定冻结源、截至2025的训练/标签/模型和自有检查，以及被授权只读的新仓物料；未读取其他专家/主审结论。未读2026经济数据、V01/V02或2026账户，未修改冻结代码/spec/model/account/verification/gates或交付仓；未运行独占writer、训练、账户重放或新策略搜索。没有派生代理或预写未来轮次；本角色不是人类专家或新的独立市场样本。"
+}
