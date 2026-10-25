@@ -22,9 +22,10 @@ def feature_matrix(family,market):
 def annual_states(family,year):
  if family not in FAMILIES or type(year)is not int or year not in range(2018,2026):raise ValueError('unknown model family/year')
  m=next(x for x in read('models/manifest.json')if x['family']==family and x['fold_year']==year)
- if m['missing']:
-  if year!=2018 or m['files']:raise ValueError('invalid missing-state contract')
+ if year==2018:
+  if m.get('missing')is not True or m.get('files')!=[]:raise ValueError('2018 must preserve missing model state')
   return []
+ if m.get('missing')is not False:raise ValueError('invalid missing-state contract')
  result=[]
  for item in m['files']:
   if item['path'].split('/')[:3]!=['models',family,str(year)]:raise ValueError('model year/family path mismatch')

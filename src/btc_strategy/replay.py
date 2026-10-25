@@ -9,6 +9,7 @@ from ._runtime.quote_exposure import measure
 
 
 def run(name,case,use_models=True):
+ if not isinstance(case,str)or case not in CASES:raise ValueError('unregistered cost case')
  verify_targets(name)
  if use_models:
   from .models import rebuild_context

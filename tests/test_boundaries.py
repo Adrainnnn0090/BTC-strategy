@@ -8,7 +8,7 @@ from btc_strategy.validation import development_market
 
 def market(n=500):return dict(days=[(date(2017,1,1)+timedelta(days=i)).isoformat()for i in range(n)],prices=[100.+i*.1 for i in range(n)])
 
-@pytest.mark.parametrize('path',['models/base_tree/2026/model.json.gz','artifacts/V01/rows.json','artifacts/v01-unsafe/rows.json','training_inputs/2026/base_tree.json.gz','provenance/studies/X/2026/training.json','../BTCStrategyResearchLedger/data/rows.json'])
+@pytest.mark.parametrize('path',['models/base_tree/2026/model.json.gz','artifacts/V01/rows.json','artifacts/v01-unsafe/rows.json','artifacts/V01.json','artifacts/v02_unsafe.json','training_inputs/2026/base_tree.json.gz','provenance/studies/X/2026/training.json','../BTCStrategyResearchLedger/data/rows.json'])
 def test_forbidden_paths_fail_before_open(path,monkeypatch):
  from pathlib import Path
  monkeypatch.setattr(Path,'read_bytes',lambda self:(_ for _ in ()).throw(AssertionError('must reject before opening')))
@@ -51,3 +51,31 @@ def test_missing_2018_remains_missing():
  assert annual_states('base_tree',2018)==[]
  values=reconstruct('base_tree',market(365))
  assert all(v is None for v in values)
+
+
+def test_manifest_cannot_resurrect_2018_before_reading_model(monkeypatch):
+ from btc_strategy import models
+ monkeypatch.setattr(models,'read',lambda _:[dict(family='base_tree',fold_year=2018,missing=False,files=[dict(path='synthetic')])])
+ monkeypatch.setattr(models,'read_verified',lambda *a:(_ for _ in ()).throw(AssertionError('must not open fabricated 2018 model')))
+ with pytest.raises(ValueError,match='2018'):models.annual_states('base_tree',2018)
+
+
+@pytest.mark.parametrize('fault',['family','duplicate_date','fold_type','cut_index','embargo','missing'])
+def test_training_plan_rejects_broken_identity_and_clock(fault):
+ from btc_strategy.training import validate_training_plan
+ days=market(365)['days'];p=dict(family='price47',fold_year=2018,dates=days,cutoff='2017-12-31',cut_index=364,embargo=6,model_missing=True)
+ validate_training_plan(p,'price47',2018)
+ if fault=='family':p['family']='stop44'
+ elif fault=='duplicate_date':p['dates'][100]=p['dates'][99]
+ elif fault=='fold_type':p['fold_year']=2018.0
+ elif fault=='cut_index':p['cut_index']=363
+ elif fault=='embargo':p['embargo']=0
+ else:p['model_missing']=False
+ with pytest.raises(ValueError):validate_training_plan(p,'price47',2018)
+
+
+@pytest.mark.parametrize('case',['UNKNOWN_CASE',[],None])
+def test_bad_replay_case_rejected_before_targets_or_features(case,monkeypatch):
+ from btc_strategy import replay
+ monkeypatch.setattr(replay,'verify_targets',lambda *a:(_ for _ in ()).throw(AssertionError('must reject before targets')))
+ with pytest.raises(ValueError,match='cost case'):replay.run('LP35',case)

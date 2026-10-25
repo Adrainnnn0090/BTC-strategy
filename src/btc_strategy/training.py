@@ -6,7 +6,7 @@ is parity of selected final estimators, not a new performance experiment.
 import argparse,json,sys,os
 from pathlib import Path
 from copy import deepcopy
-from datetime import date
+from datetime import date,timedelta
 import numpy as np
 from sklearn.ensemble import ExtraTreesRegressor,GradientBoostingRegressor
 from threadpoolctl import threadpool_limits
@@ -38,11 +38,20 @@ def install_training_guard(family,year):
  sys.addaudithook(hook);return reads
 
 
+def validate_training_plan(plan,family,year):
+ if plan.get('family')!=family or type(plan.get('fold_year'))is not int or plan['fold_year']!=year:raise ValueError('training plan family/year mismatch')
+ first,last=date(2017,1,1),date(year-1,12,31)
+ expected=[(first+timedelta(days=i)).isoformat()for i in range((last-first).days+1)]
+ if plan.get('dates')!=expected or plan.get('cutoff')!=last.isoformat():raise ValueError('training plan must be the complete prior-year date prefix')
+ if type(plan.get('cut_index'))is not int or plan['cut_index']!=len(expected)-1:raise ValueError('training plan cut index mismatch')
+ if type(plan.get('embargo'))is not int or plan['embargo']!=6:raise ValueError('training plan embargo mismatch')
+ if plan.get('model_missing')is not(year==2018):raise ValueError('training plan missing-state mismatch')
+
+
 def refit(family,year):
  if family not in FAMILIES or type(year)is not int or year not in range(2018,2026):raise ValueError('unregistered family/year')
  reads=install_training_guard(family,year);plan=read(f'training_inputs/{year}/{family}.json.gz')
- assert plan['cutoff']==plan['dates'][-1]==f'{year-1}-12-31'and plan['fold_year']==year
- assert all(date.fromisoformat(d)<=date(year-1,12,31)for d in plan['dates'])
+ validate_training_plan(plan,family,year)
  states=annual_states(family,year)
  if plan['model_missing']:
   assert year==2018 and not states

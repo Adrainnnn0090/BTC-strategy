@@ -12,7 +12,7 @@ def resolve_artifact(relative):
  if not z or z[0]not in('artifacts','models','training_inputs'):raise ValueError('unapproved artifact role')
  if z[0]in('artifacts','models','training_inputs'):
   if any(any(int(y)>2025 for y in re.findall(r'(?<!\d)(20\d{2})(?!\d)',x))for x in z):raise ValueError('2026+ economic data excluded')
- if any(re.match(r'^v0[12](?:-|$)',x,re.I)for x in z):raise ValueError('validation artifacts excluded')
+ if any(re.match(r'^v0[12](?:[-_.]|$)',x,re.I)for x in z):raise ValueError('validation artifacts excluded')
  return p
 
 def read(relative):
