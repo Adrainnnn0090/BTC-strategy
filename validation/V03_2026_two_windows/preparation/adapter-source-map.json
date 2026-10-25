@@ -1,0 +1,203 @@
+{
+  "companion_rules": [
+    {
+      "source": "src/btc_strategy/_runtime/__init__.py",
+      "destination": "src/btc_validation/_signals/__init__.py",
+      "source_sha256": "f5e2800ad2013d8711cc660777dec26bd152be85adf8eef43ac083c4adb8db2c",
+      "destination_sha256": "f5e2800ad2013d8711cc660777dec26bd152be85adf8eef43ac083c4adb8db2c",
+      "change": "byte-identical"
+    },
+    {
+      "source": "src/btc_strategy/_runtime/audit.py",
+      "destination": "src/btc_validation/_signals/audit.py",
+      "source_sha256": "11cdf58ea93b22b18d8d43efd696e8ef3b97c9ae13738cbd76459ec78a611012",
+      "destination_sha256": "11cdf58ea93b22b18d8d43efd696e8ef3b97c9ae13738cbd76459ec78a611012",
+      "change": "byte-identical"
+    },
+    {
+      "source": "src/btc_strategy/_runtime/b12_signals.py",
+      "destination": "src/btc_validation/_signals/b12_signals.py",
+      "source_sha256": "3492161bc0186220ade667992845706e72d560105af56368ef329bb48b8f8641",
+      "destination_sha256": "3492161bc0186220ade667992845706e72d560105af56368ef329bb48b8f8641",
+      "change": "byte-identical"
+    },
+    {
+      "source": "src/btc_strategy/_runtime/bear_short_overlay.py",
+      "destination": "src/btc_validation/_signals/bear_short_overlay.py",
+      "source_sha256": "262e9e6ad07c30fa082341d338df87edebe120a4a8bfd691a61bb2cfa7fe9d4f",
+      "destination_sha256": "d39645ba28f164050bbb138c4f3af8836a41274efb02079006003ac3abfbe3d5",
+      "change": "validation companion calendar ceiling only"
+    },
+    {
+      "source": "src/btc_strategy/_runtime/boosted_stop.py",
+      "destination": "src/btc_validation/_signals/boosted_stop.py",
+      "source_sha256": "903c1fab34f21868b936c480cbf5d2e81155211d33c5f231e68867fdf6cf92f0",
+      "destination_sha256": "903c1fab34f21868b936c480cbf5d2e81155211d33c5f231e68867fdf6cf92f0",
+      "change": "byte-identical"
+    },
+    {
+      "source": "src/btc_strategy/_runtime/boosted_stop_depth3.py",
+      "destination": "src/btc_validation/_signals/boosted_stop_depth3.py",
+      "source_sha256": "b318f2812467f964397f2c0209368c7614df31809801b50743bf722186b9bae5",
+      "destination_sha256": "b318f2812467f964397f2c0209368c7614df31809801b50743bf722186b9bae5",
+      "change": "byte-identical"
+    },
+    {
+      "source": "src/btc_strategy/_runtime/carry_audit.py",
+      "destination": "src/btc_validation/_signals/carry_audit.py",
+      "source_sha256": "67b183827063937caf3650a05edc2bc6309e7589bee1cac41d3101b2b938e9ca",
+      "destination_sha256": "67b183827063937caf3650a05edc2bc6309e7589bee1cac41d3101b2b938e9ca",
+      "change": "byte-identical"
+    },
+    {
+      "source": "src/btc_strategy/_runtime/clock.py",
+      "destination": "src/btc_validation/_signals/clock.py",
+      "source_sha256": "15a54df6a2386f038f12868991878d8cc6efe35cdc5a50fc36c1cd85ffdc4a42",
+      "destination_sha256": "5ef2429a921e3c69205b5791a7e83b9030ab683a5f53e79a83aa8a5a1a6ce347",
+      "change": "validation companion calendar ceiling only"
+    },
+    {
+      "source": "src/btc_strategy/_runtime/cold_budget.py",
+      "destination": "src/btc_validation/_signals/cold_budget.py",
+      "source_sha256": "f4cb6fddcef0c6692a8c389075a312bb2628ea20ea93b5a405bad9436dfc1ee5",
+      "destination_sha256": "f4cb6fddcef0c6692a8c389075a312bb2628ea20ea93b5a405bad9436dfc1ee5",
+      "change": "byte-identical"
+    },
+    {
+      "source": "src/btc_strategy/_runtime/cold_entry_momentum.py",
+      "destination": "src/btc_validation/_signals/cold_entry_momentum.py",
+      "source_sha256": "962a530df1cd79219668fbe42692f1ec0de4bf26123a0158d8b0c161138b5f00",
+      "destination_sha256": "2cce69e9ca348cabc3d418fc3bb49f7d392ae5a06267d46fc6f11f02782226a7",
+      "change": "validation companion calendar ceiling only"
+    },
+    {
+      "source": "src/btc_strategy/_runtime/cold_short_profit_trailing.py",
+      "destination": "src/btc_validation/_signals/cold_short_profit_trailing.py",
+      "source_sha256": "31cfa9e81bcef91165d527d564f18acbbcada6a00fef606918f67e21be46a7dc",
+      "destination_sha256": "31cfa9e81bcef91165d527d564f18acbbcada6a00fef606918f67e21be46a7dc",
+      "change": "byte-identical"
+    },
+    {
+      "source": "src/btc_strategy/_runtime/conditional_short.py",
+      "destination": "src/btc_validation/_signals/conditional_short.py",
+      "source_sha256": "f00a3e2bc510d8ed71196b79cb7ac9f5a472c6fa263af8592fde4c0bddcf8898",
+      "destination_sha256": "f00a3e2bc510d8ed71196b79cb7ac9f5a472c6fa263af8592fde4c0bddcf8898",
+      "change": "byte-identical"
+    },
+    {
+      "source": "src/btc_strategy/_runtime/entry_permissions.py",
+      "destination": "src/btc_validation/_signals/entry_permissions.py",
+      "source_sha256": "94f84f29138dd3cb03b55197aac9d85bc4d8430779a403fdcd3e10c159ef32e9",
+      "destination_sha256": "94f84f29138dd3cb03b55197aac9d85bc4d8430779a403fdcd3e10c159ef32e9",
+      "change": "byte-identical"
+    },
+    {
+      "source": "src/btc_strategy/_runtime/exit_coordinate.py",
+      "destination": "src/btc_validation/_signals/exit_coordinate.py",
+      "source_sha256": "a1de1510c72786cbc0b2bd24f1bb7c9118265b4f677e882f8a35f34f64d7a2fd",
+      "destination_sha256": "a1de1510c72786cbc0b2bd24f1bb7c9118265b4f677e882f8a35f34f64d7a2fd",
+      "change": "byte-identical"
+    },
+    {
+      "source": "src/btc_strategy/_runtime/faster_cold_short.py",
+      "destination": "src/btc_validation/_signals/faster_cold_short.py",
+      "source_sha256": "3fd03ebc4960130d273aa6d6c43002b1248be19fdb5943814b632cdf791df81d",
+      "destination_sha256": "f656c05c26cf96731195c097103eff8778797a998348080e72b0b99f34b14c3b",
+      "change": "validation companion calendar ceiling only"
+    },
+    {
+      "source": "src/btc_strategy/_runtime/long_profit_local_coordinate.py",
+      "destination": "src/btc_validation/_signals/long_profit_local_coordinate.py",
+      "source_sha256": "5d6ed6605c8546e0e26e986f1a6774e9ebebfbab080ecd081d785650e2ea3cf7",
+      "destination_sha256": "5d6ed6605c8546e0e26e986f1a6774e9ebebfbab080ecd081d785650e2ea3cf7",
+      "change": "byte-identical"
+    },
+    {
+      "source": "src/btc_strategy/_runtime/long_vol_budget.py",
+      "destination": "src/btc_validation/_signals/long_vol_budget.py",
+      "source_sha256": "6c2750d7ec055429acf0d28018ff1bc735b66bcd1a3a412e68e2eea644f0f8d1",
+      "destination_sha256": "6c2750d7ec055429acf0d28018ff1bc735b66bcd1a3a412e68e2eea644f0f8d1",
+      "change": "byte-identical"
+    },
+    {
+      "source": "src/btc_strategy/_runtime/mining_ablation.py",
+      "destination": "src/btc_validation/_signals/mining_ablation.py",
+      "source_sha256": "e0d02a04b14191771d840669bacc51da7d35022bae997d61d2cb5b6b995a17ae",
+      "destination_sha256": "e0d02a04b14191771d840669bacc51da7d35022bae997d61d2cb5b6b995a17ae",
+      "change": "byte-identical"
+    },
+    {
+      "source": "src/btc_strategy/_runtime/mining_features.py",
+      "destination": "src/btc_validation/_signals/mining_features.py",
+      "source_sha256": "258bcad2aae08f7eabfc390cc941d991abe20f6e31ccd93eab00aa3a545fa338",
+      "destination_sha256": "258bcad2aae08f7eabfc390cc941d991abe20f6e31ccd93eab00aa3a545fa338",
+      "change": "byte-identical"
+    },
+    {
+      "source": "src/btc_strategy/_runtime/patient_profit_exit.py",
+      "destination": "src/btc_validation/_signals/patient_profit_exit.py",
+      "source_sha256": "8eb769aaeadd8cfc8b0c3003b49c807eae36a06013cb96cc8781c322525a0c78",
+      "destination_sha256": "8eb769aaeadd8cfc8b0c3003b49c807eae36a06013cb96cc8781c322525a0c78",
+      "change": "byte-identical"
+    },
+    {
+      "source": "src/btc_strategy/_runtime/quote_exposure.py",
+      "destination": "src/btc_validation/_signals/quote_exposure.py",
+      "source_sha256": "538a39a4c3e17111208e61884d91d1dc16375b4978801d5642cd6921df3a36f8",
+      "destination_sha256": "538a39a4c3e17111208e61884d91d1dc16375b4978801d5642cd6921df3a36f8",
+      "change": "byte-identical"
+    },
+    {
+      "source": "src/btc_strategy/_runtime/sgd.py",
+      "destination": "src/btc_validation/_signals/sgd.py",
+      "source_sha256": "b8f7d5a939c49759537c9e6adde70f15c16527b69c65bceae949550d35d91d9e",
+      "destination_sha256": "b8f7d5a939c49759537c9e6adde70f15c16527b69c65bceae949550d35d91d9e",
+      "change": "byte-identical"
+    },
+    {
+      "source": "src/btc_strategy/_runtime/short_payoff.py",
+      "destination": "src/btc_validation/_signals/short_payoff.py",
+      "source_sha256": "cc73f202662478de85dc558c148f59ce00fe153fb3b4679f2552c59286e082ac",
+      "destination_sha256": "cc73f202662478de85dc558c148f59ce00fe153fb3b4679f2552c59286e082ac",
+      "change": "byte-identical"
+    },
+    {
+      "source": "src/btc_strategy/_runtime/short_trailing.py",
+      "destination": "src/btc_validation/_signals/short_trailing.py",
+      "source_sha256": "abe519c4757c05bacffee08f8bf7daddc378d783f03bf5008a45dffcc51d243d",
+      "destination_sha256": "abe519c4757c05bacffee08f8bf7daddc378d783f03bf5008a45dffcc51d243d",
+      "change": "byte-identical"
+    },
+    {
+      "source": "src/btc_strategy/_runtime/shorter_cold_momentum.py",
+      "destination": "src/btc_validation/_signals/shorter_cold_momentum.py",
+      "source_sha256": "95adec18015e887a027d16a80aa2bacd3d2be8c913c5678ac6c77489c5bb67e2",
+      "destination_sha256": "ff857939c5770c4e80bafdd17d6a7ebf797b2cfd6be5bda3519c39559fd1b7cd",
+      "change": "validation companion calendar ceiling only"
+    },
+    {
+      "source": "src/btc_strategy/_runtime/signals.py",
+      "destination": "src/btc_validation/_signals/signals.py",
+      "source_sha256": "6631bdb8df45789e991b219c7be32f5025891751715a02506d969f041a2deee9",
+      "destination_sha256": "6631bdb8df45789e991b219c7be32f5025891751715a02506d969f041a2deee9",
+      "change": "byte-identical"
+    },
+    {
+      "source": "src/btc_strategy/_runtime/tree_factors.py",
+      "destination": "src/btc_validation/_signals/tree_factors.py",
+      "source_sha256": "39fe1dabc1785738b23b249d4dc5aea3da4e26f4137c82c375407180a5241b5c",
+      "destination_sha256": "39fe1dabc1785738b23b249d4dc5aea3da4e26f4137c82c375407180a5241b5c",
+      "change": "byte-identical"
+    },
+    {
+      "source": "src/btc_strategy/_runtime/volume_short_factors.py",
+      "destination": "src/btc_validation/_signals/volume_short_factors.py",
+      "source_sha256": "f2d5aa6ac0d87f087a0d4cf48dce961b8bbf76b42442db3029171015f583d32e",
+      "destination_sha256": "52701373af2cc622cd247f3607613d3223b8e836c1558286d514e21e0e53ead2",
+      "change": "validation companion calendar ceiling only"
+    }
+  ],
+  "native_strategy_and_summarizer_AST_exact": true,
+  "legacy_files_changed": false,
+  "qualification": "Only explicit companion clock/routing and registered validation front doors; no relaxation of legacy loaders."
+}

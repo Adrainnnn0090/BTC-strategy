@@ -1,0 +1,25 @@
+{
+  "phase": "PRE_FIRST_VALIDATION_ACCOUNT_IMPLEMENTATION_CORRECTION",
+  "at_UTC": "2026-10-25T11:48:58.054666+00:00",
+  "original_contract_sha256": "f75137e22930f83bf3f39e7fd1fbb7d774bdcb213a6396cc9afebf2ade6dd619",
+  "changes": [
+    {
+      "path": "src/btc_validation/inference.py",
+      "old_sha256": "f23aab5b63581cff733900b66095ab895b2fe2f8ab2b1c7cdd9143dee05df30e",
+      "new_sha256": "610ccd79d20272df922529a0e4b3e5a06c5e076f825a7b7a5c10795c40c0077d"
+    },
+    {
+      "path": "tests/test_validation2026.py",
+      "old_sha256": "16e548ecc21f0f1957a829c4a1a72ec3567f4aa649f4a8e3d69c69cb97f45844",
+      "new_sha256": "afdd5ca46830afe4820ae4f88756e16b1232d150b4debc9be4cbb1afa6d4553a"
+    }
+  ],
+  "reason": "2025Dec31 is the first2026 decision. Published yearly semantics require both forecast availability and prior-history sizing eligibility from that decision, not from Jan1. Legacy snapshots intentionally had an unused last row; continuation must replace its flags too.",
+  "market_observations_used_for_correction": "Only original2017\u20132025prefix and fixed year-routing contract; no2026 prices or returns used in regression.",
+  "new_2026_source_intake_preceded_amendment": true,
+  "validation_predictions_or_accounts_before_amendment": 0,
+  "model_and_policy_files_changed": false,
+  "hyperparameters_or_economic_thresholds_changed": false,
+  "tests": "50 passed; includes first-next-year decision regression using only prices through2025Dec31",
+  "qualification": "Transparent implementation amendment after Oct23 source intake, before any validation prediction/account. Not claimed to be an untouched pre-intake implementation."
+}

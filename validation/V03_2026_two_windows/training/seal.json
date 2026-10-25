@@ -1,0 +1,37 @@
+{
+  "status": "TRAINING_ONLY_SEALED",
+  "cutoff": "2025-12-31",
+  "rows": 3287,
+  "long_samples": 2968,
+  "short_common_samples": 2951,
+  "long_last_label": 3280,
+  "short_last_label": 3280,
+  "cut_index": 3286,
+  "embargo": 6,
+  "fits": 168,
+  "final_states": 56,
+  "validation_rows": 0,
+  "validation_reads": 0,
+  "validation_fits": 0,
+  "inputs_sha256": "b1185ebcb123c5060350362f63f9241cfe2e992283987e5ff96e06b309b2e021",
+  "input_reads": [
+    "manifest.json",
+    "prices.json.gz",
+    "prices.json.gz",
+    "mining.json.gz",
+    "mining.json.gz",
+    "manifest.json"
+  ],
+  "files": {
+    "base_tree.json.gz": "368d82e0aea05148e8794b13bd53e702a0d17572ea843efa61a7d234f328a035",
+    "label_baselines.json": "22e324d841280fd2cf537687dacfd70b807671f185a84f4af8e4084eb02675c3",
+    "mining58.json.gz": "e9393eea7eb000f069207eb66eb9a2ac93c0457f06bd662cd9ab968a7f57271e",
+    "price47.json.gz": "e2058170ec770ca5175f5214815b442875710c4c2ad582299d0f6971bd269413",
+    "receipts.json": "9e6052d87b8358d83166750ae145bffe5164ebf35c481f5d21ba24cd8fdc0610",
+    "short_huber.json.gz": "a58014b03005ac928eca159d5c7625648e80bf8bab299b3a33a233e34f0e047a",
+    "short_median.json.gz": "db86a10d0b95c0aaefc932ae5346306dd8980128886c74d3927a1589746485cc",
+    "stop44.json.gz": "8f01143cdbaa5ef4674bf2941a4f7f8564d2ffeaefd2ed8b3e7def21f4960e44"
+  },
+  "finished_UTC": "2026-10-25T11:34:24.500136+00:00",
+  "qualification": "Original fixed annual profiles/seeds and inner past-only selection; no validation mounted."
+}

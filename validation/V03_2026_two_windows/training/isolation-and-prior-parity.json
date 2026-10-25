@@ -1,0 +1,25 @@
+{
+  "status": "PASS",
+  "training_only_image_id": "sha256:256dd1e8765793b826aec295f06b8034350d17b2fddafa9a54ac68c4a38fa1aa",
+  "code_commit": "6ecc89fba1636094dfc774482006a3729211e5cc",
+  "network": "none",
+  "readonly_root": true,
+  "only_training_input_mounted": true,
+  "old_projects_mounted": false,
+  "validation_mounted": false,
+  "prior_sealed_2026_numeric_member_parity": {
+    "base_tree": true,
+    "stop44": true
+  },
+  "models_sha256": {
+    "base_tree.json.gz": "368d82e0aea05148e8794b13bd53e702a0d17572ea843efa61a7d234f328a035",
+    "mining58.json.gz": "e9393eea7eb000f069207eb66eb9a2ac93c0457f06bd662cd9ab968a7f57271e",
+    "price47.json.gz": "e2058170ec770ca5175f5214815b442875710c4c2ad582299d0f6971bd269413",
+    "short_huber.json.gz": "a58014b03005ac928eca159d5c7625648e80bf8bab299b3a33a233e34f0e047a",
+    "short_median.json.gz": "db86a10d0b95c0aaefc932ae5346306dd8980128886c74d3927a1589746485cc",
+    "stop44.json.gz": "8f01143cdbaa5ef4674bf2941a4f7f8564d2ffeaefd2ed8b3e7def21f4960e44"
+  },
+  "model_fits": 168,
+  "final_members": 56,
+  "cutoff": "2025-12-31"
+}

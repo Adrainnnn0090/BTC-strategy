@@ -1,0 +1,450 @@
+{
+  "status": "PASS",
+  "method": "Independent standard-library Decimal arithmetic from all saved marks/trades; no inference or fitting",
+  "counts": {
+    "complete": 108,
+    "blocked": 12
+  },
+  "checks": [
+    "120 unique registered rows",
+    "108 prior independent audits PASS",
+    "all output SHA256",
+    "net returns",
+    "daily peak-to-trough drawdown",
+    "long+short net PnL reconciles ending cash"
+  ],
+  "path_identity_checks": [
+    {
+      "window": "H1_TO_JUN29",
+      "case": "BASE",
+      "strategy": "TS04",
+      "equals": "LP35",
+      "fields": [
+        "marks",
+        "fills",
+        "trades",
+        "financing"
+      ]
+    },
+    {
+      "window": "H1_TO_JUN29",
+      "case": "BASE",
+      "strategy": "ME01",
+      "equals": "LP35",
+      "fields": [
+        "marks",
+        "fills",
+        "trades",
+        "financing"
+      ]
+    },
+    {
+      "window": "H1_TO_JUN29",
+      "case": "BASE",
+      "strategy": "MX03",
+      "equals": "LP35",
+      "fields": [
+        "marks",
+        "fills",
+        "trades",
+        "financing"
+      ]
+    },
+    {
+      "window": "H1_TO_JUN29",
+      "case": "STRESS",
+      "strategy": "TS04",
+      "equals": "LP35",
+      "fields": [
+        "marks",
+        "fills",
+        "trades",
+        "financing"
+      ]
+    },
+    {
+      "window": "H1_TO_JUN29",
+      "case": "STRESS",
+      "strategy": "ME01",
+      "equals": "LP35",
+      "fields": [
+        "marks",
+        "fills",
+        "trades",
+        "financing"
+      ]
+    },
+    {
+      "window": "H1_TO_JUN29",
+      "case": "STRESS",
+      "strategy": "MX03",
+      "equals": "LP35",
+      "fields": [
+        "marks",
+        "fills",
+        "trades",
+        "financing"
+      ]
+    },
+    {
+      "window": "H1_TO_JUN29",
+      "case": "SEVERE",
+      "strategy": "TS04",
+      "equals": "LP35",
+      "fields": [
+        "marks",
+        "fills",
+        "trades",
+        "financing"
+      ]
+    },
+    {
+      "window": "H1_TO_JUN29",
+      "case": "SEVERE",
+      "strategy": "ME01",
+      "equals": "LP35",
+      "fields": [
+        "marks",
+        "fills",
+        "trades",
+        "financing"
+      ]
+    },
+    {
+      "window": "H1_TO_JUN29",
+      "case": "SEVERE",
+      "strategy": "MX03",
+      "equals": "LP35",
+      "fields": [
+        "marks",
+        "fills",
+        "trades",
+        "financing"
+      ]
+    },
+    {
+      "window": "H1_TO_JUN29",
+      "case": "DELAY",
+      "strategy": "TS04",
+      "equals": "LP35",
+      "fields": [
+        "marks",
+        "fills",
+        "trades",
+        "financing"
+      ]
+    },
+    {
+      "window": "H1_TO_JUN29",
+      "case": "DELAY",
+      "strategy": "ME01",
+      "equals": "LP35",
+      "fields": [
+        "marks",
+        "fills",
+        "trades",
+        "financing"
+      ]
+    },
+    {
+      "window": "H1_TO_JUN29",
+      "case": "DELAY",
+      "strategy": "MX03",
+      "equals": "LP35",
+      "fields": [
+        "marks",
+        "fills",
+        "trades",
+        "financing"
+      ]
+    },
+    {
+      "window": "JUN30_TO_OCT23",
+      "case": "BASE",
+      "strategy": "TS04",
+      "equals": "LP35",
+      "fields": [
+        "marks",
+        "fills",
+        "trades",
+        "financing"
+      ]
+    },
+    {
+      "window": "JUN30_TO_OCT23",
+      "case": "BASE",
+      "strategy": "ME01",
+      "equals": "LP35",
+      "fields": [
+        "marks",
+        "fills",
+        "trades",
+        "financing"
+      ]
+    },
+    {
+      "window": "JUN30_TO_OCT23",
+      "case": "BASE",
+      "strategy": "MX03",
+      "equals": "LP35",
+      "fields": [
+        "marks",
+        "fills",
+        "trades",
+        "financing"
+      ]
+    },
+    {
+      "window": "JUN30_TO_OCT23",
+      "case": "STRESS",
+      "strategy": "TS04",
+      "equals": "LP35",
+      "fields": [
+        "marks",
+        "fills",
+        "trades",
+        "financing"
+      ]
+    },
+    {
+      "window": "JUN30_TO_OCT23",
+      "case": "STRESS",
+      "strategy": "ME01",
+      "equals": "LP35",
+      "fields": [
+        "marks",
+        "fills",
+        "trades",
+        "financing"
+      ]
+    },
+    {
+      "window": "JUN30_TO_OCT23",
+      "case": "STRESS",
+      "strategy": "MX03",
+      "equals": "LP35",
+      "fields": [
+        "marks",
+        "fills",
+        "trades",
+        "financing"
+      ]
+    },
+    {
+      "window": "JUN30_TO_OCT23",
+      "case": "SEVERE",
+      "strategy": "TS04",
+      "equals": "LP35",
+      "fields": [
+        "marks",
+        "fills",
+        "trades",
+        "financing"
+      ]
+    },
+    {
+      "window": "JUN30_TO_OCT23",
+      "case": "SEVERE",
+      "strategy": "ME01",
+      "equals": "LP35",
+      "fields": [
+        "marks",
+        "fills",
+        "trades",
+        "financing"
+      ]
+    },
+    {
+      "window": "JUN30_TO_OCT23",
+      "case": "SEVERE",
+      "strategy": "MX03",
+      "equals": "LP35",
+      "fields": [
+        "marks",
+        "fills",
+        "trades",
+        "financing"
+      ]
+    },
+    {
+      "window": "JUN30_TO_OCT23",
+      "case": "DELAY",
+      "strategy": "TS04",
+      "equals": "LP35",
+      "fields": [
+        "marks",
+        "fills",
+        "trades",
+        "financing"
+      ]
+    },
+    {
+      "window": "JUN30_TO_OCT23",
+      "case": "DELAY",
+      "strategy": "ME01",
+      "equals": "LP35",
+      "fields": [
+        "marks",
+        "fills",
+        "trades",
+        "financing"
+      ]
+    },
+    {
+      "window": "JUN30_TO_OCT23",
+      "case": "DELAY",
+      "strategy": "MX03",
+      "equals": "LP35",
+      "fields": [
+        "marks",
+        "fills",
+        "trades",
+        "financing"
+      ]
+    },
+    {
+      "window": "CONTINUOUS",
+      "case": "BASE",
+      "strategy": "TS04",
+      "equals": "LP35",
+      "fields": [
+        "marks",
+        "fills",
+        "trades",
+        "financing"
+      ]
+    },
+    {
+      "window": "CONTINUOUS",
+      "case": "BASE",
+      "strategy": "ME01",
+      "equals": "LP35",
+      "fields": [
+        "marks",
+        "fills",
+        "trades",
+        "financing"
+      ]
+    },
+    {
+      "window": "CONTINUOUS",
+      "case": "BASE",
+      "strategy": "MX03",
+      "equals": "LP35",
+      "fields": [
+        "marks",
+        "fills",
+        "trades",
+        "financing"
+      ]
+    },
+    {
+      "window": "CONTINUOUS",
+      "case": "STRESS",
+      "strategy": "TS04",
+      "equals": "LP35",
+      "fields": [
+        "marks",
+        "fills",
+        "trades",
+        "financing"
+      ]
+    },
+    {
+      "window": "CONTINUOUS",
+      "case": "STRESS",
+      "strategy": "ME01",
+      "equals": "LP35",
+      "fields": [
+        "marks",
+        "fills",
+        "trades",
+        "financing"
+      ]
+    },
+    {
+      "window": "CONTINUOUS",
+      "case": "STRESS",
+      "strategy": "MX03",
+      "equals": "LP35",
+      "fields": [
+        "marks",
+        "fills",
+        "trades",
+        "financing"
+      ]
+    },
+    {
+      "window": "CONTINUOUS",
+      "case": "SEVERE",
+      "strategy": "TS04",
+      "equals": "LP35",
+      "fields": [
+        "marks",
+        "fills",
+        "trades",
+        "financing"
+      ]
+    },
+    {
+      "window": "CONTINUOUS",
+      "case": "SEVERE",
+      "strategy": "ME01",
+      "equals": "LP35",
+      "fields": [
+        "marks",
+        "fills",
+        "trades",
+        "financing"
+      ]
+    },
+    {
+      "window": "CONTINUOUS",
+      "case": "SEVERE",
+      "strategy": "MX03",
+      "equals": "LP35",
+      "fields": [
+        "marks",
+        "fills",
+        "trades",
+        "financing"
+      ]
+    },
+    {
+      "window": "CONTINUOUS",
+      "case": "DELAY",
+      "strategy": "TS04",
+      "equals": "LP35",
+      "fields": [
+        "marks",
+        "fills",
+        "trades",
+        "financing"
+      ]
+    },
+    {
+      "window": "CONTINUOUS",
+      "case": "DELAY",
+      "strategy": "ME01",
+      "equals": "LP35",
+      "fields": [
+        "marks",
+        "fills",
+        "trades",
+        "financing"
+      ]
+    },
+    {
+      "window": "CONTINUOUS",
+      "case": "DELAY",
+      "strategy": "MX03",
+      "equals": "LP35",
+      "fields": [
+        "marks",
+        "fills",
+        "trades",
+        "financing"
+      ]
+    }
+  ]
+}

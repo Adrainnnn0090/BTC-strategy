@@ -1,0 +1,6 @@
+{
+  "status": "NEVER_EVALUATED",
+  "reason": "Input manifest drafted before first inference; its common source metadata carried Oct23close. Replaced by sanitized metadata without OHLCvalues, so windowAdoes not open later economic values even as unused provenance.",
+  "training_or_models_changed": false,
+  "predictions_or_accounts_from_draft": 0
+}

@@ -1,0 +1,23 @@
+{
+  "status": "COMPLETED_FIRST_ECONOMIC_RUN",
+  "image_id": "sha256:40c98c1c6636727316156605d1aa52b935c79745f34969073edd5eed1293bace",
+  "code_commit": "8a1047fac919d26d66b9b0a3c0c18c114cd963a3",
+  "network": "none",
+  "readonly_root": true,
+  "cap_drop": "ALL",
+  "security_opt": "no-new-privileges",
+  "nonroot_user": true,
+  "training_mount": false,
+  "old_projects_mounted": false,
+  "input_mount": "/validation:readonly (eval_inputs_v2)",
+  "output_mount": "/out:readwrite",
+  "economic_runs": 1,
+  "complete_accounts": 108,
+  "blocked_rows": 12,
+  "files": {
+    "evaluation.log": "370853ee41a6259435422d6bc891dccdd9eac52a69d2acda5afe914e20d71231",
+    "train.log": "075366156ff8542910a210e42a412b79ab151d523bb2eef1d7651a2864284f69",
+    "pre-first-account-tests.log": "cd322255ca626b78971e44798129bf08f570a639edb455cd36c32a390ba879fc",
+    "installed-code-preflight.json": "13a419661fe1133bddbed0899a76761da0b6d5854ce8b0e8d4799e673e4cb9b3"
+  }
+}
