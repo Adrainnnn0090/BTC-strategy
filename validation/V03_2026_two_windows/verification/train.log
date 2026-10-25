@@ -1,0 +1,7 @@
+{"stage": "fit", "family": "base_tree", "states": 7, "model_fits": 35}
+{"stage": "fit", "family": "mining58", "states": 7, "model_fits": 35}
+{"stage": "fit", "family": "stop44", "states": 7, "model_fits": 35}
+{"stage": "fit", "family": "price47", "states": 7, "model_fits": 35}
+{"stage": "fit", "family": "short_huber", "states": 14, "model_fits": 14}
+{"stage": "fit", "family": "short_median", "states": 14, "model_fits": 14}
+{"status": "TRAINING_ONLY_SEALED", "cutoff": "2025-12-31", "rows": 3287, "long_samples": 2968, "short_common_samples": 2951, "long_last_label": 3280, "short_last_label": 3280, "cut_index": 3286, "embargo": 6, "fits": 168, "final_states": 56, "validation_rows": 0, "validation_reads": 0, "validation_fits": 0, "inputs_sha256": "b1185ebcb123c5060350362f63f9241cfe2e992283987e5ff96e06b309b2e021", "finished_UTC": "2026-10-25T11:34:24.500136+00:00", "qualification": "Original fixed annual profiles/seeds and inner past-only selection; no validation mounted."}

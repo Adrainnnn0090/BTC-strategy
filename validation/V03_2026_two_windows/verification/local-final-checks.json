@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "at_UTC": "2026-10-25T12:08:04.589768+00:00",
+  "tests": {
+    "passed": 50,
+    "seconds": 10.68
+  },
+  "historical_integrity": {
+    "files": 881,
+    "bytes": 56437576
+  },
+  "expert_review": {
+    "rounds": 12,
+    "submissions": 72,
+    "roles": 6
+  },
+  "all_six_legacy_numeric_predictions_max_error": 0.0,
+  "all_nine_legacy_targets_exact": true,
+  "new_validation_seal_verified": true,
+  "complete_accounts_independent_audit_pass": 108,
+  "blocked_c04_rows": 12,
+  "training_cutoff": "2025-12-31",
+  "validation_fitting_calls": 0,
+  "model_selection_calls": 0,
+  "model_contract_sha256": "f75137e22930f83bf3f39e7fd1fbb7d774bdcb213a6396cc9afebf2ade6dd619",
+  "validation_seal_sha256": "298ebcd60b843c70125763a16f8c87f756d4eafff150ab362c48fac86b1887af",
+  "original_projects_unchanged": {
+    "ledger": "ea1256c6b9810569c240823108e7ded552e3c237",
+    "trading_robot": "1aa5cf43d13043f3d78b8dc77de13e90e578cc91"
+  },
+  "training_mount_preparation_reproduced_exact": true,
+  "qualification": "Programmatic checks pass; conditional daily reference data and reused-validation limits remain; C04 not numerically validated."
+}

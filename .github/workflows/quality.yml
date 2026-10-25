@@ -21,6 +21,7 @@ jobs:
       - run: python -m pip install --no-deps .
       - run: python -m pytest -q
       - run: python -m btc_strategy.verify --integrity --review --models --targets
+      - run: python -m btc_validation.verify --outcomes
       - run: python -m btc_strategy.replay --all
       - run: python -m btc_strategy.training --family price47 --year 2025
   isolated-replay:
