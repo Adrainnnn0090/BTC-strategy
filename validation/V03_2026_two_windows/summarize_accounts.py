@@ -6,7 +6,6 @@ import csv
 import gzip
 import hashlib
 import json
-import math
 from decimal import Decimal
 from pathlib import Path
 
@@ -70,7 +69,7 @@ def main():
     def save_csv(name, values):
         fields = list(dict.fromkeys(k for r in values for k in r))
         with (BASE / 'tables' / name).open('w', newline='') as f:
-            w = csv.DictWriter(f, fields); w.writeheader(); w.writerows(values)
+            w = csv.DictWriter(f, fields, lineterminator='\n'); w.writeheader(); w.writerows(values)
     save_csv('all_costs_and_windows.csv', flat)
     save_csv('realized_direction_decomposition.csv', derived)
     save_csv('raw_model_metrics.csv', result['prediction_metrics'])
@@ -94,6 +93,7 @@ def chart():
     import datetime
     import matplotlib
     matplotlib.use('Agg')
+    matplotlib.rcParams['svg.hashsalt'] = 'btc-v03-frozen-validation'
     import matplotlib.pyplot as plt
     fig, axes = plt.subplots(2, 2, figsize=(13, 7), sharex='col', height_ratios=[2, 1])
     for col, (window, title) in enumerate(zip(WINDOWS[:2], ['Jan 1–Jun 29 (180 days)', 'Jun 30–Oct 23 (116 days)'])):
@@ -118,6 +118,8 @@ def chart():
     fig.tight_layout()
     (BASE / 'figures').mkdir(exist_ok=True)
     fig.savefig(BASE / 'figures/stress_equity_and_drawdown.svg', metadata={'Date': None})
+    svg = BASE / 'figures/stress_equity_and_drawdown.svg'
+    svg.write_text('\n'.join(line.rstrip() for line in svg.read_text().splitlines()) + '\n')
     plt.close(fig)
 
 
