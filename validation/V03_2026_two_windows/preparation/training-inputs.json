@@ -1,0 +1,17 @@
+{
+  "cutoff": "2025-12-31",
+  "files": {
+    "mining.json.gz": "fa18af20ce12bc3428600dc72e51e2da182bbc92ae47a8e8d184308081a4ff3a",
+    "policies.json": "5982347030b8feaa0ee9a6a67060da4082ec1cec482daf4db3129416731c3768",
+    "prices.json.gz": "4a4c5972a6832c63bc08924ac28f47303c129343295c607ee0ae73ebb5751974",
+    "prior-policy-source-seal.json": "4b8d1f5c78a4af8ea77a0f690a632285ee573928d45871f69d7e1cb990f573cc",
+    "prior-training-verification.json": "66a44d2bf5c36cd5dfd6aab6587b8f52f8e8b1f7b41a82d3504f4f60b92bed4b"
+  },
+  "training_rows": 3287,
+  "training_dates": [
+    "2017-01-01",
+    "2025-12-31"
+  ],
+  "policies": "Original previously sealed annual2026 U02/Y01; no validation-based reselection",
+  "historical_package": "e2ff55c0f2c23229e018a845e30a6330d96b52e8"
+}
