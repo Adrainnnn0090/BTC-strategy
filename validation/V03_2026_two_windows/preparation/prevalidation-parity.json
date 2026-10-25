@@ -1,0 +1,61 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "strategy": "LP35",
+      "past_3286_targets_exact": true,
+      "past_3286_permissions_exact": true,
+      "dec31_routes_to_2026": true
+    },
+    {
+      "strategy": "TS04",
+      "past_3286_targets_exact": true,
+      "past_3286_permissions_exact": true,
+      "dec31_routes_to_2026": true
+    },
+    {
+      "strategy": "ME01",
+      "past_3286_targets_exact": true,
+      "past_3286_permissions_exact": true,
+      "dec31_routes_to_2026": true
+    },
+    {
+      "strategy": "MX03",
+      "past_3286_targets_exact": true,
+      "past_3286_permissions_exact": true,
+      "dec31_routes_to_2026": true
+    },
+    {
+      "strategy": "B88A_S03",
+      "past_3286_targets_exact": true,
+      "past_3286_permissions_exact": true,
+      "dec31_routes_to_2026": true
+    },
+    {
+      "strategy": "K02",
+      "past_3286_targets_exact": true,
+      "past_3286_permissions_exact": true,
+      "dec31_routes_to_2026": true
+    },
+    {
+      "strategy": "Y01",
+      "past_3286_targets_exact": true,
+      "past_3286_permissions_exact": true,
+      "dec31_routes_to_2026": true
+    },
+    {
+      "strategy": "C02",
+      "past_3286_targets_exact": true,
+      "past_3286_permissions_exact": true,
+      "dec31_routes_to_2026": true
+    },
+    {
+      "strategy": "C04",
+      "past_3286_targets_exact": true,
+      "past_3286_permissions_exact": true,
+      "dec31_routes_to_2026": true
+    }
+  ],
+  "actual2026prices_read": false,
+  "scope": "Only2017\u20132025data;2025Dec31isfirst2026decision, excluded from old unused-last-row parity"
+}

@@ -1,0 +1,3322 @@
+{
+  "base_tree": {
+    "model_fits": 35,
+    "details": [
+      {
+        "selected": 0,
+        "trials": [
+          {
+            "profile": {
+              "n_estimators": 96,
+              "max_depth": 5,
+              "min_samples_leaf": 16,
+              "max_features": 0.7
+            },
+            "folds": [
+              {
+                "first": 3100,
+                "last": 3159,
+                "label_end": 3220,
+                "loss": 0.00461005980290527,
+                "receipt": {
+                  "cut": 3100,
+                  "first": 252,
+                  "last": 3033,
+                  "train_count": 2782,
+                  "last_label": 3094,
+                  "trees": 96,
+                  "serialization_max_error": 5.551115123125783e-16,
+                  "learned_scaler": false
+                }
+              },
+              {
+                "first": 3160,
+                "last": 3219,
+                "label_end": 3280,
+                "loss": 0.08071008793636986,
+                "receipt": {
+                  "cut": 3160,
+                  "first": 252,
+                  "last": 3093,
+                  "train_count": 2842,
+                  "last_label": 3154,
+                  "trees": 96,
+                  "serialization_max_error": 6.661338147750939e-16,
+                  "learned_scaler": false
+                }
+              }
+            ],
+            "loss": 0.04266007386963756
+          },
+          {
+            "profile": {
+              "n_estimators": 96,
+              "max_depth": 8,
+              "min_samples_leaf": 32,
+              "max_features": 0.7
+            },
+            "folds": [
+              {
+                "first": 3100,
+                "last": 3159,
+                "label_end": 3220,
+                "loss": 0.004018950641409275,
+                "receipt": {
+                  "cut": 3100,
+                  "first": 252,
+                  "last": 3033,
+                  "train_count": 2782,
+                  "last_label": 3094,
+                  "trees": 96,
+                  "serialization_max_error": 4.996003610813204e-16,
+                  "learned_scaler": false
+                }
+              },
+              {
+                "first": 3160,
+                "last": 3219,
+                "label_end": 3280,
+                "loss": 0.11753915892295969,
+                "receipt": {
+                  "cut": 3160,
+                  "first": 252,
+                  "last": 3093,
+                  "train_count": 2842,
+                  "last_label": 3154,
+                  "trees": 96,
+                  "serialization_max_error": 5.551115123125783e-16,
+                  "learned_scaler": false
+                }
+              }
+            ],
+            "loss": 0.06077905478218448
+          }
+        ],
+        "receipt": {
+          "cut": 3286,
+          "first": 252,
+          "last": 3219,
+          "train_count": 2968,
+          "last_label": 3280,
+          "trees": 96,
+          "serialization_max_error": 6.661338147750939e-16,
+          "learned_scaler": false
+        }
+      },
+      {
+        "selected": 0,
+        "trials": [
+          {
+            "profile": {
+              "n_estimators": 96,
+              "max_depth": 5,
+              "min_samples_leaf": 16,
+              "max_features": 0.7
+            },
+            "folds": [
+              {
+                "first": 3100,
+                "last": 3159,
+                "label_end": 3220,
+                "loss": 0.004934172621425723,
+                "receipt": {
+                  "cut": 3100,
+                  "first": 252,
+                  "last": 3033,
+                  "train_count": 2782,
+                  "last_label": 3094,
+                  "trees": 96,
+                  "serialization_max_error": 4.440892098500626e-16,
+                  "learned_scaler": false
+                }
+              },
+              {
+                "first": 3160,
+                "last": 3219,
+                "label_end": 3280,
+                "loss": 0.06879875672099228,
+                "receipt": {
+                  "cut": 3160,
+                  "first": 252,
+                  "last": 3093,
+                  "train_count": 2842,
+                  "last_label": 3154,
+                  "trees": 96,
+                  "serialization_max_error": 4.440892098500626e-16,
+                  "learned_scaler": false
+                }
+              }
+            ],
+            "loss": 0.036866464671209
+          },
+          {
+            "profile": {
+              "n_estimators": 96,
+              "max_depth": 8,
+              "min_samples_leaf": 32,
+              "max_features": 0.7
+            },
+            "folds": [
+              {
+                "first": 3100,
+                "last": 3159,
+                "label_end": 3220,
+                "loss": 0.00390307152819186,
+                "receipt": {
+                  "cut": 3100,
+                  "first": 252,
+                  "last": 3033,
+                  "train_count": 2782,
+                  "last_label": 3094,
+                  "trees": 96,
+                  "serialization_max_error": 5.551115123125783e-16,
+                  "learned_scaler": false
+                }
+              },
+              {
+                "first": 3160,
+                "last": 3219,
+                "label_end": 3280,
+                "loss": 0.08255458975617479,
+                "receipt": {
+                  "cut": 3160,
+                  "first": 252,
+                  "last": 3093,
+                  "train_count": 2842,
+                  "last_label": 3154,
+                  "trees": 96,
+                  "serialization_max_error": 3.885780586188048e-16,
+                  "learned_scaler": false
+                }
+              }
+            ],
+            "loss": 0.04322883064218332
+          }
+        ],
+        "receipt": {
+          "cut": 3286,
+          "first": 252,
+          "last": 3219,
+          "train_count": 2968,
+          "last_label": 3280,
+          "trees": 96,
+          "serialization_max_error": 5.551115123125783e-16,
+          "learned_scaler": false
+        }
+      },
+      {
+        "selected": 0,
+        "trials": [
+          {
+            "profile": {
+              "n_estimators": 96,
+              "max_depth": 5,
+              "min_samples_leaf": 16,
+              "max_features": 0.7
+            },
+            "folds": [
+              {
+                "first": 3100,
+                "last": 3159,
+                "label_end": 3220,
+                "loss": 0.004369162507755414,
+                "receipt": {
+                  "cut": 3100,
+                  "first": 252,
+                  "last": 3033,
+                  "train_count": 2782,
+                  "last_label": 3094,
+                  "trees": 96,
+                  "serialization_max_error": 5.551115123125783e-16,
+                  "learned_scaler": false
+                }
+              },
+              {
+                "first": 3160,
+                "last": 3219,
+                "label_end": 3280,
+                "loss": 0.074074515228888,
+                "receipt": {
+                  "cut": 3160,
+                  "first": 252,
+                  "last": 3093,
+                  "train_count": 2842,
+                  "last_label": 3154,
+                  "trees": 96,
+                  "serialization_max_error": 6.661338147750939e-16,
+                  "learned_scaler": false
+                }
+              }
+            ],
+            "loss": 0.03922183886832171
+          },
+          {
+            "profile": {
+              "n_estimators": 96,
+              "max_depth": 8,
+              "min_samples_leaf": 32,
+              "max_features": 0.7
+            },
+            "folds": [
+              {
+                "first": 3100,
+                "last": 3159,
+                "label_end": 3220,
+                "loss": 0.0036944420255101327,
+                "receipt": {
+                  "cut": 3100,
+                  "first": 252,
+                  "last": 3033,
+                  "train_count": 2782,
+                  "last_label": 3094,
+                  "trees": 96,
+                  "serialization_max_error": 4.996003610813204e-16,
+                  "learned_scaler": false
+                }
+              },
+              {
+                "first": 3160,
+                "last": 3219,
+                "label_end": 3280,
+                "loss": 0.08964316018940893,
+                "receipt": {
+                  "cut": 3160,
+                  "first": 252,
+                  "last": 3093,
+                  "train_count": 2842,
+                  "last_label": 3154,
+                  "trees": 96,
+                  "serialization_max_error": 4.996003610813204e-16,
+                  "learned_scaler": false
+                }
+              }
+            ],
+            "loss": 0.04666880110745953
+          }
+        ],
+        "receipt": {
+          "cut": 3286,
+          "first": 252,
+          "last": 3219,
+          "train_count": 2968,
+          "last_label": 3280,
+          "trees": 96,
+          "serialization_max_error": 5.551115123125783e-16,
+          "learned_scaler": false
+        }
+      },
+      {
+        "selected": 0,
+        "trials": [
+          {
+            "profile": {
+              "n_estimators": 96,
+              "max_depth": 5,
+              "min_samples_leaf": 16,
+              "max_features": 0.7
+            },
+            "folds": [
+              {
+                "first": 3100,
+                "last": 3159,
+                "label_end": 3220,
+                "loss": 0.003999896662062397,
+                "receipt": {
+                  "cut": 3100,
+                  "first": 252,
+                  "last": 3033,
+                  "train_count": 2782,
+                  "last_label": 3094,
+                  "trees": 96,
+                  "serialization_max_error": 4.440892098500626e-16,
+                  "learned_scaler": false
+                }
+              },
+              {
+                "first": 3160,
+                "last": 3219,
+                "label_end": 3280,
+                "loss": 0.07187433042101891,
+                "receipt": {
+                  "cut": 3160,
+                  "first": 252,
+                  "last": 3093,
+                  "train_count": 2842,
+                  "last_label": 3154,
+                  "trees": 96,
+                  "serialization_max_error": 3.3306690738754696e-16,
+                  "learned_scaler": false
+                }
+              }
+            ],
+            "loss": 0.037937113541540654
+          },
+          {
+            "profile": {
+              "n_estimators": 96,
+              "max_depth": 8,
+              "min_samples_leaf": 32,
+              "max_features": 0.7
+            },
+            "folds": [
+              {
+                "first": 3100,
+                "last": 3159,
+                "label_end": 3220,
+                "loss": 0.0031166906422958568,
+                "receipt": {
+                  "cut": 3100,
+                  "first": 252,
+                  "last": 3033,
+                  "train_count": 2782,
+                  "last_label": 3094,
+                  "trees": 96,
+                  "serialization_max_error": 5.551115123125783e-16,
+                  "learned_scaler": false
+                }
+              },
+              {
+                "first": 3160,
+                "last": 3219,
+                "label_end": 3280,
+                "loss": 0.08819800734807777,
+                "receipt": {
+                  "cut": 3160,
+                  "first": 252,
+                  "last": 3093,
+                  "train_count": 2842,
+                  "last_label": 3154,
+                  "trees": 96,
+                  "serialization_max_error": 5.551115123125783e-16,
+                  "learned_scaler": false
+                }
+              }
+            ],
+            "loss": 0.045657348995186815
+          }
+        ],
+        "receipt": {
+          "cut": 3286,
+          "first": 252,
+          "last": 3219,
+          "train_count": 2968,
+          "last_label": 3280,
+          "trees": 96,
+          "serialization_max_error": 4.440892098500626e-16,
+          "learned_scaler": false
+        }
+      },
+      {
+        "selected": 0,
+        "trials": [
+          {
+            "profile": {
+              "n_estimators": 96,
+              "max_depth": 5,
+              "min_samples_leaf": 16,
+              "max_features": 0.7
+            },
+            "folds": [
+              {
+                "first": 3100,
+                "last": 3159,
+                "label_end": 3220,
+                "loss": 0.0039433782367069665,
+                "receipt": {
+                  "cut": 3100,
+                  "first": 252,
+                  "last": 3033,
+                  "train_count": 2782,
+                  "last_label": 3094,
+                  "trees": 96,
+                  "serialization_max_error": 4.996003610813204e-16,
+                  "learned_scaler": false
+                }
+              },
+              {
+                "first": 3160,
+                "last": 3219,
+                "label_end": 3280,
+                "loss": 0.07670591428375219,
+                "receipt": {
+                  "cut": 3160,
+                  "first": 252,
+                  "last": 3093,
+                  "train_count": 2842,
+                  "last_label": 3154,
+                  "trees": 96,
+                  "serialization_max_error": 5.551115123125783e-16,
+                  "learned_scaler": false
+                }
+              }
+            ],
+            "loss": 0.04032464626022958
+          },
+          {
+            "profile": {
+              "n_estimators": 96,
+              "max_depth": 8,
+              "min_samples_leaf": 32,
+              "max_features": 0.7
+            },
+            "folds": [
+              {
+                "first": 3100,
+                "last": 3159,
+                "label_end": 3220,
+                "loss": 0.0038955985125506357,
+                "receipt": {
+                  "cut": 3100,
+                  "first": 252,
+                  "last": 3033,
+                  "train_count": 2782,
+                  "last_label": 3094,
+                  "trees": 96,
+                  "serialization_max_error": 6.661338147750939e-16,
+                  "learned_scaler": false
+                }
+              },
+              {
+                "first": 3160,
+                "last": 3219,
+                "label_end": 3280,
+                "loss": 0.10024599755880394,
+                "receipt": {
+                  "cut": 3160,
+                  "first": 252,
+                  "last": 3093,
+                  "train_count": 2842,
+                  "last_label": 3154,
+                  "trees": 96,
+                  "serialization_max_error": 7.771561172376096e-16,
+                  "learned_scaler": false
+                }
+              }
+            ],
+            "loss": 0.05207079803567729
+          }
+        ],
+        "receipt": {
+          "cut": 3286,
+          "first": 252,
+          "last": 3219,
+          "train_count": 2968,
+          "last_label": 3280,
+          "trees": 96,
+          "serialization_max_error": 5.551115123125783e-16,
+          "learned_scaler": false
+        }
+      },
+      {
+        "selected": 0,
+        "trials": [
+          {
+            "profile": {
+              "n_estimators": 96,
+              "max_depth": 5,
+              "min_samples_leaf": 16,
+              "max_features": 0.7
+            },
+            "folds": [
+              {
+                "first": 3100,
+                "last": 3159,
+                "label_end": 3220,
+                "loss": 0.004256380488741884,
+                "receipt": {
+                  "cut": 3100,
+                  "first": 252,
+                  "last": 3033,
+                  "train_count": 2782,
+                  "last_label": 3094,
+                  "trees": 96,
+                  "serialization_max_error": 6.661338147750939e-16,
+                  "learned_scaler": false
+                }
+              },
+              {
+                "first": 3160,
+                "last": 3219,
+                "label_end": 3280,
+                "loss": 0.07015373411891648,
+                "receipt": {
+                  "cut": 3160,
+                  "first": 252,
+                  "last": 3093,
+                  "train_count": 2842,
+                  "last_label": 3154,
+                  "trees": 96,
+                  "serialization_max_error": 5.551115123125783e-16,
+                  "learned_scaler": false
+                }
+              }
+            ],
+            "loss": 0.037205057303829184
+          },
+          {
+            "profile": {
+              "n_estimators": 96,
+              "max_depth": 8,
+              "min_samples_leaf": 32,
+              "max_features": 0.7
+            },
+            "folds": [
+              {
+                "first": 3100,
+                "last": 3159,
+                "label_end": 3220,
+                "loss": 0.0032018899995717555,
+                "receipt": {
+                  "cut": 3100,
+                  "first": 252,
+                  "last": 3033,
+                  "train_count": 2782,
+                  "last_label": 3094,
+                  "trees": 96,
+                  "serialization_max_error": 4.440892098500626e-16,
+                  "learned_scaler": false
+                }
+              },
+              {
+                "first": 3160,
+                "last": 3219,
+                "label_end": 3280,
+                "loss": 0.08926210684660171,
+                "receipt": {
+                  "cut": 3160,
+                  "first": 252,
+                  "last": 3093,
+                  "train_count": 2842,
+                  "last_label": 3154,
+                  "trees": 96,
+                  "serialization_max_error": 4.440892098500626e-16,
+                  "learned_scaler": false
+                }
+              }
+            ],
+            "loss": 0.046231998423086736
+          }
+        ],
+        "receipt": {
+          "cut": 3286,
+          "first": 252,
+          "last": 3219,
+          "train_count": 2968,
+          "last_label": 3280,
+          "trees": 96,
+          "serialization_max_error": 5.551115123125783e-16,
+          "learned_scaler": false
+        }
+      },
+      {
+        "selected": 0,
+        "trials": [
+          {
+            "profile": {
+              "n_estimators": 96,
+              "max_depth": 5,
+              "min_samples_leaf": 16,
+              "max_features": 0.7
+            },
+            "folds": [
+              {
+                "first": 3100,
+                "last": 3159,
+                "label_end": 3220,
+                "loss": 0.004161846419811929,
+                "receipt": {
+                  "cut": 3100,
+                  "first": 252,
+                  "last": 3033,
+                  "train_count": 2782,
+                  "last_label": 3094,
+                  "trees": 96,
+                  "serialization_max_error": 5.551115123125783e-16,
+                  "learned_scaler": false
+                }
+              },
+              {
+                "first": 3160,
+                "last": 3219,
+                "label_end": 3280,
+                "loss": 0.0680988718349448,
+                "receipt": {
+                  "cut": 3160,
+                  "first": 252,
+                  "last": 3093,
+                  "train_count": 2842,
+                  "last_label": 3154,
+                  "trees": 96,
+                  "serialization_max_error": 3.3306690738754696e-16,
+                  "learned_scaler": false
+                }
+              }
+            ],
+            "loss": 0.036130359127378366
+          },
+          {
+            "profile": {
+              "n_estimators": 96,
+              "max_depth": 8,
+              "min_samples_leaf": 32,
+              "max_features": 0.7
+            },
+            "folds": [
+              {
+                "first": 3100,
+                "last": 3159,
+                "label_end": 3220,
+                "loss": 0.003927808239584722,
+                "receipt": {
+                  "cut": 3100,
+                  "first": 252,
+                  "last": 3033,
+                  "train_count": 2782,
+                  "last_label": 3094,
+                  "trees": 96,
+                  "serialization_max_error": 4.440892098500626e-16,
+                  "learned_scaler": false
+                }
+              },
+              {
+                "first": 3160,
+                "last": 3219,
+                "label_end": 3280,
+                "loss": 0.09135447380798863,
+                "receipt": {
+                  "cut": 3160,
+                  "first": 252,
+                  "last": 3093,
+                  "train_count": 2842,
+                  "last_label": 3154,
+                  "trees": 96,
+                  "serialization_max_error": 6.661338147750939e-16,
+                  "learned_scaler": false
+                }
+              }
+            ],
+            "loss": 0.04764114102378667
+          }
+        ],
+        "receipt": {
+          "cut": 3286,
+          "first": 252,
+          "last": 3219,
+          "train_count": 2968,
+          "last_label": 3280,
+          "trees": 96,
+          "serialization_max_error": 3.885780586188048e-16,
+          "learned_scaler": false
+        }
+      }
+    ]
+  },
+  "mining58": {
+    "model_fits": 35,
+    "details": [
+      {
+        "selected": 0,
+        "trials": [
+          {
+            "profile": {
+              "n_estimators": 96,
+              "max_depth": 5,
+              "min_samples_leaf": 16,
+              "max_features": 0.7
+            },
+            "folds": [
+              {
+                "first": 3100,
+                "last": 3159,
+                "label_end": 3220,
+                "loss": 0.00828049175921918,
+                "receipt": {
+                  "cut": 3100,
+                  "first": 252,
+                  "last": 3033,
+                  "train_count": 2782,
+                  "last_label": 3094,
+                  "trees": 96,
+                  "serialization_max_error": 3.3306690738754696e-16,
+                  "learned_scaler": false
+                }
+              },
+              {
+                "first": 3160,
+                "last": 3219,
+                "label_end": 3280,
+                "loss": 0.10769301655510782,
+                "receipt": {
+                  "cut": 3160,
+                  "first": 252,
+                  "last": 3093,
+                  "train_count": 2842,
+                  "last_label": 3154,
+                  "trees": 96,
+                  "serialization_max_error": 4.440892098500626e-16,
+                  "learned_scaler": false
+                }
+              }
+            ],
+            "loss": 0.0579867541571635
+          },
+          {
+            "profile": {
+              "n_estimators": 96,
+              "max_depth": 8,
+              "min_samples_leaf": 32,
+              "max_features": 0.7
+            },
+            "folds": [
+              {
+                "first": 3100,
+                "last": 3159,
+                "label_end": 3220,
+                "loss": 0.006347222719213831,
+                "receipt": {
+                  "cut": 3100,
+                  "first": 252,
+                  "last": 3033,
+                  "train_count": 2782,
+                  "last_label": 3094,
+                  "trees": 96,
+                  "serialization_max_error": 6.661338147750939e-16,
+                  "learned_scaler": false
+                }
+              },
+              {
+                "first": 3160,
+                "last": 3219,
+                "label_end": 3280,
+                "loss": 0.14502160407119277,
+                "receipt": {
+                  "cut": 3160,
+                  "first": 252,
+                  "last": 3093,
+                  "train_count": 2842,
+                  "last_label": 3154,
+                  "trees": 96,
+                  "serialization_max_error": 5.551115123125783e-16,
+                  "learned_scaler": false
+                }
+              }
+            ],
+            "loss": 0.0756844133952033
+          }
+        ],
+        "receipt": {
+          "cut": 3286,
+          "first": 252,
+          "last": 3219,
+          "train_count": 2968,
+          "last_label": 3280,
+          "trees": 96,
+          "serialization_max_error": 4.996003610813204e-16,
+          "learned_scaler": false
+        }
+      },
+      {
+        "selected": 0,
+        "trials": [
+          {
+            "profile": {
+              "n_estimators": 96,
+              "max_depth": 5,
+              "min_samples_leaf": 16,
+              "max_features": 0.7
+            },
+            "folds": [
+              {
+                "first": 3100,
+                "last": 3159,
+                "label_end": 3220,
+                "loss": 0.0080800751990425,
+                "receipt": {
+                  "cut": 3100,
+                  "first": 252,
+                  "last": 3033,
+                  "train_count": 2782,
+                  "last_label": 3094,
+                  "trees": 96,
+                  "serialization_max_error": 4.440892098500626e-16,
+                  "learned_scaler": false
+                }
+              },
+              {
+                "first": 3160,
+                "last": 3219,
+                "label_end": 3280,
+                "loss": 0.10121175727042617,
+                "receipt": {
+                  "cut": 3160,
+                  "first": 252,
+                  "last": 3093,
+                  "train_count": 2842,
+                  "last_label": 3154,
+                  "trees": 96,
+                  "serialization_max_error": 5.551115123125783e-16,
+                  "learned_scaler": false
+                }
+              }
+            ],
+            "loss": 0.05464591623473433
+          },
+          {
+            "profile": {
+              "n_estimators": 96,
+              "max_depth": 8,
+              "min_samples_leaf": 32,
+              "max_features": 0.7
+            },
+            "folds": [
+              {
+                "first": 3100,
+                "last": 3159,
+                "label_end": 3220,
+                "loss": 0.005840343227924097,
+                "receipt": {
+                  "cut": 3100,
+                  "first": 252,
+                  "last": 3033,
+                  "train_count": 2782,
+                  "last_label": 3094,
+                  "trees": 96,
+                  "serialization_max_error": 5.551115123125783e-16,
+                  "learned_scaler": false
+                }
+              },
+              {
+                "first": 3160,
+                "last": 3219,
+                "label_end": 3280,
+                "loss": 0.13813651323396217,
+                "receipt": {
+                  "cut": 3160,
+                  "first": 252,
+                  "last": 3093,
+                  "train_count": 2842,
+                  "last_label": 3154,
+                  "trees": 96,
+                  "serialization_max_error": 5.551115123125783e-16,
+                  "learned_scaler": false
+                }
+              }
+            ],
+            "loss": 0.07198842823094313
+          }
+        ],
+        "receipt": {
+          "cut": 3286,
+          "first": 252,
+          "last": 3219,
+          "train_count": 2968,
+          "last_label": 3280,
+          "trees": 96,
+          "serialization_max_error": 4.996003610813204e-16,
+          "learned_scaler": false
+        }
+      },
+      {
+        "selected": 0,
+        "trials": [
+          {
+            "profile": {
+              "n_estimators": 96,
+              "max_depth": 5,
+              "min_samples_leaf": 16,
+              "max_features": 0.7
+            },
+            "folds": [
+              {
+                "first": 3100,
+                "last": 3159,
+                "label_end": 3220,
+                "loss": 0.008167700780941724,
+                "receipt": {
+                  "cut": 3100,
+                  "first": 252,
+                  "last": 3033,
+                  "train_count": 2782,
+                  "last_label": 3094,
+                  "trees": 96,
+                  "serialization_max_error": 3.3306690738754696e-16,
+                  "learned_scaler": false
+                }
+              },
+              {
+                "first": 3160,
+                "last": 3219,
+                "label_end": 3280,
+                "loss": 0.10606581998287322,
+                "receipt": {
+                  "cut": 3160,
+                  "first": 252,
+                  "last": 3093,
+                  "train_count": 2842,
+                  "last_label": 3154,
+                  "trees": 96,
+                  "serialization_max_error": 4.440892098500626e-16,
+                  "learned_scaler": false
+                }
+              }
+            ],
+            "loss": 0.05711676038190747
+          },
+          {
+            "profile": {
+              "n_estimators": 96,
+              "max_depth": 8,
+              "min_samples_leaf": 32,
+              "max_features": 0.7
+            },
+            "folds": [
+              {
+                "first": 3100,
+                "last": 3159,
+                "label_end": 3220,
+                "loss": 0.006200372755819314,
+                "receipt": {
+                  "cut": 3100,
+                  "first": 252,
+                  "last": 3033,
+                  "train_count": 2782,
+                  "last_label": 3094,
+                  "trees": 96,
+                  "serialization_max_error": 4.996003610813204e-16,
+                  "learned_scaler": false
+                }
+              },
+              {
+                "first": 3160,
+                "last": 3219,
+                "label_end": 3280,
+                "loss": 0.15336572052156863,
+                "receipt": {
+                  "cut": 3160,
+                  "first": 252,
+                  "last": 3093,
+                  "train_count": 2842,
+                  "last_label": 3154,
+                  "trees": 96,
+                  "serialization_max_error": 5.551115123125783e-16,
+                  "learned_scaler": false
+                }
+              }
+            ],
+            "loss": 0.07978304663869397
+          }
+        ],
+        "receipt": {
+          "cut": 3286,
+          "first": 252,
+          "last": 3219,
+          "train_count": 2968,
+          "last_label": 3280,
+          "trees": 96,
+          "serialization_max_error": 5.551115123125783e-16,
+          "learned_scaler": false
+        }
+      },
+      {
+        "selected": 0,
+        "trials": [
+          {
+            "profile": {
+              "n_estimators": 96,
+              "max_depth": 5,
+              "min_samples_leaf": 16,
+              "max_features": 0.7
+            },
+            "folds": [
+              {
+                "first": 3100,
+                "last": 3159,
+                "label_end": 3220,
+                "loss": 0.008592844337113709,
+                "receipt": {
+                  "cut": 3100,
+                  "first": 252,
+                  "last": 3033,
+                  "train_count": 2782,
+                  "last_label": 3094,
+                  "trees": 96,
+                  "serialization_max_error": 3.3306690738754696e-16,
+                  "learned_scaler": false
+                }
+              },
+              {
+                "first": 3160,
+                "last": 3219,
+                "label_end": 3280,
+                "loss": 0.11547762832950378,
+                "receipt": {
+                  "cut": 3160,
+                  "first": 252,
+                  "last": 3093,
+                  "train_count": 2842,
+                  "last_label": 3154,
+                  "trees": 96,
+                  "serialization_max_error": 4.440892098500626e-16,
+                  "learned_scaler": false
+                }
+              }
+            ],
+            "loss": 0.06203523633330875
+          },
+          {
+            "profile": {
+              "n_estimators": 96,
+              "max_depth": 8,
+              "min_samples_leaf": 32,
+              "max_features": 0.7
+            },
+            "folds": [
+              {
+                "first": 3100,
+                "last": 3159,
+                "label_end": 3220,
+                "loss": 0.006887323772926968,
+                "receipt": {
+                  "cut": 3100,
+                  "first": 252,
+                  "last": 3033,
+                  "train_count": 2782,
+                  "last_label": 3094,
+                  "trees": 96,
+                  "serialization_max_error": 5.551115123125783e-16,
+                  "learned_scaler": false
+                }
+              },
+              {
+                "first": 3160,
+                "last": 3219,
+                "label_end": 3280,
+                "loss": 0.15265342953012315,
+                "receipt": {
+                  "cut": 3160,
+                  "first": 252,
+                  "last": 3093,
+                  "train_count": 2842,
+                  "last_label": 3154,
+                  "trees": 96,
+                  "serialization_max_error": 4.440892098500626e-16,
+                  "learned_scaler": false
+                }
+              }
+            ],
+            "loss": 0.07977037665152506
+          }
+        ],
+        "receipt": {
+          "cut": 3286,
+          "first": 252,
+          "last": 3219,
+          "train_count": 2968,
+          "last_label": 3280,
+          "trees": 96,
+          "serialization_max_error": 5.551115123125783e-16,
+          "learned_scaler": false
+        }
+      },
+      {
+        "selected": 0,
+        "trials": [
+          {
+            "profile": {
+              "n_estimators": 96,
+              "max_depth": 5,
+              "min_samples_leaf": 16,
+              "max_features": 0.7
+            },
+            "folds": [
+              {
+                "first": 3100,
+                "last": 3159,
+                "label_end": 3220,
+                "loss": 0.008423549734075294,
+                "receipt": {
+                  "cut": 3100,
+                  "first": 252,
+                  "last": 3033,
+                  "train_count": 2782,
+                  "last_label": 3094,
+                  "trees": 96,
+                  "serialization_max_error": 6.661338147750939e-16,
+                  "learned_scaler": false
+                }
+              },
+              {
+                "first": 3160,
+                "last": 3219,
+                "label_end": 3280,
+                "loss": 0.09638688364540188,
+                "receipt": {
+                  "cut": 3160,
+                  "first": 252,
+                  "last": 3093,
+                  "train_count": 2842,
+                  "last_label": 3154,
+                  "trees": 96,
+                  "serialization_max_error": 8.881784197001252e-16,
+                  "learned_scaler": false
+                }
+              }
+            ],
+            "loss": 0.05240521668973858
+          },
+          {
+            "profile": {
+              "n_estimators": 96,
+              "max_depth": 8,
+              "min_samples_leaf": 32,
+              "max_features": 0.7
+            },
+            "folds": [
+              {
+                "first": 3100,
+                "last": 3159,
+                "label_end": 3220,
+                "loss": 0.0060905711055007725,
+                "receipt": {
+                  "cut": 3100,
+                  "first": 252,
+                  "last": 3033,
+                  "train_count": 2782,
+                  "last_label": 3094,
+                  "trees": 96,
+                  "serialization_max_error": 4.440892098500626e-16,
+                  "learned_scaler": false
+                }
+              },
+              {
+                "first": 3160,
+                "last": 3219,
+                "label_end": 3280,
+                "loss": 0.14101735168356597,
+                "receipt": {
+                  "cut": 3160,
+                  "first": 252,
+                  "last": 3093,
+                  "train_count": 2842,
+                  "last_label": 3154,
+                  "trees": 96,
+                  "serialization_max_error": 7.771561172376096e-16,
+                  "learned_scaler": false
+                }
+              }
+            ],
+            "loss": 0.07355396139453337
+          }
+        ],
+        "receipt": {
+          "cut": 3286,
+          "first": 252,
+          "last": 3219,
+          "train_count": 2968,
+          "last_label": 3280,
+          "trees": 96,
+          "serialization_max_error": 4.440892098500626e-16,
+          "learned_scaler": false
+        }
+      },
+      {
+        "selected": 0,
+        "trials": [
+          {
+            "profile": {
+              "n_estimators": 96,
+              "max_depth": 5,
+              "min_samples_leaf": 16,
+              "max_features": 0.7
+            },
+            "folds": [
+              {
+                "first": 3100,
+                "last": 3159,
+                "label_end": 3220,
+                "loss": 0.005279899381343279,
+                "receipt": {
+                  "cut": 3100,
+                  "first": 252,
+                  "last": 3033,
+                  "train_count": 2782,
+                  "last_label": 3094,
+                  "trees": 96,
+                  "serialization_max_error": 4.440892098500626e-16,
+                  "learned_scaler": false
+                }
+              },
+              {
+                "first": 3160,
+                "last": 3219,
+                "label_end": 3280,
+                "loss": 0.09624203470626483,
+                "receipt": {
+                  "cut": 3160,
+                  "first": 252,
+                  "last": 3093,
+                  "train_count": 2842,
+                  "last_label": 3154,
+                  "trees": 96,
+                  "serialization_max_error": 5.551115123125783e-16,
+                  "learned_scaler": false
+                }
+              }
+            ],
+            "loss": 0.050760967043804055
+          },
+          {
+            "profile": {
+              "n_estimators": 96,
+              "max_depth": 8,
+              "min_samples_leaf": 32,
+              "max_features": 0.7
+            },
+            "folds": [
+              {
+                "first": 3100,
+                "last": 3159,
+                "label_end": 3220,
+                "loss": 0.005063524555633104,
+                "receipt": {
+                  "cut": 3100,
+                  "first": 252,
+                  "last": 3033,
+                  "train_count": 2782,
+                  "last_label": 3094,
+                  "trees": 96,
+                  "serialization_max_error": 4.996003610813204e-16,
+                  "learned_scaler": false
+                }
+              },
+              {
+                "first": 3160,
+                "last": 3219,
+                "label_end": 3280,
+                "loss": 0.12857919861046915,
+                "receipt": {
+                  "cut": 3160,
+                  "first": 252,
+                  "last": 3093,
+                  "train_count": 2842,
+                  "last_label": 3154,
+                  "trees": 96,
+                  "serialization_max_error": 4.996003610813204e-16,
+                  "learned_scaler": false
+                }
+              }
+            ],
+            "loss": 0.06682136158305113
+          }
+        ],
+        "receipt": {
+          "cut": 3286,
+          "first": 252,
+          "last": 3219,
+          "train_count": 2968,
+          "last_label": 3280,
+          "trees": 96,
+          "serialization_max_error": 5.551115123125783e-16,
+          "learned_scaler": false
+        }
+      },
+      {
+        "selected": 0,
+        "trials": [
+          {
+            "profile": {
+              "n_estimators": 96,
+              "max_depth": 5,
+              "min_samples_leaf": 16,
+              "max_features": 0.7
+            },
+            "folds": [
+              {
+                "first": 3100,
+                "last": 3159,
+                "label_end": 3220,
+                "loss": 0.008142596092993561,
+                "receipt": {
+                  "cut": 3100,
+                  "first": 252,
+                  "last": 3033,
+                  "train_count": 2782,
+                  "last_label": 3094,
+                  "trees": 96,
+                  "serialization_max_error": 4.440892098500626e-16,
+                  "learned_scaler": false
+                }
+              },
+              {
+                "first": 3160,
+                "last": 3219,
+                "label_end": 3280,
+                "loss": 0.10640488389472073,
+                "receipt": {
+                  "cut": 3160,
+                  "first": 252,
+                  "last": 3093,
+                  "train_count": 2842,
+                  "last_label": 3154,
+                  "trees": 96,
+                  "serialization_max_error": 3.3306690738754696e-16,
+                  "learned_scaler": false
+                }
+              }
+            ],
+            "loss": 0.057273739993857146
+          },
+          {
+            "profile": {
+              "n_estimators": 96,
+              "max_depth": 8,
+              "min_samples_leaf": 32,
+              "max_features": 0.7
+            },
+            "folds": [
+              {
+                "first": 3100,
+                "last": 3159,
+                "label_end": 3220,
+                "loss": 0.007217856051833526,
+                "receipt": {
+                  "cut": 3100,
+                  "first": 252,
+                  "last": 3033,
+                  "train_count": 2782,
+                  "last_label": 3094,
+                  "trees": 96,
+                  "serialization_max_error": 4.996003610813204e-16,
+                  "learned_scaler": false
+                }
+              },
+              {
+                "first": 3160,
+                "last": 3219,
+                "label_end": 3280,
+                "loss": 0.1499154929390917,
+                "receipt": {
+                  "cut": 3160,
+                  "first": 252,
+                  "last": 3093,
+                  "train_count": 2842,
+                  "last_label": 3154,
+                  "trees": 96,
+                  "serialization_max_error": 4.440892098500626e-16,
+                  "learned_scaler": false
+                }
+              }
+            ],
+            "loss": 0.07856667449546262
+          }
+        ],
+        "receipt": {
+          "cut": 3286,
+          "first": 252,
+          "last": 3219,
+          "train_count": 2968,
+          "last_label": 3280,
+          "trees": 96,
+          "serialization_max_error": 4.440892098500626e-16,
+          "learned_scaler": false
+        }
+      }
+    ]
+  },
+  "stop44": {
+    "details": [
+      {
+        "selected": 0,
+        "trials": [
+          {
+            "profile": {
+              "n_estimators": 96,
+              "max_depth": 5,
+              "min_samples_leaf": 16,
+              "max_features": 0.7
+            },
+            "folds": [
+              {
+                "first": 3100,
+                "last": 3159,
+                "label_end": 3220,
+                "loss": 0.003220944612140641,
+                "receipt": {
+                  "cut": 3100,
+                  "first": 252,
+                  "last": 3033,
+                  "train_count": 2782,
+                  "last_label": 3094,
+                  "learned_scaler": false,
+                  "serialization_max_error": 4.440892098500626e-16,
+                  "label_kind": "STOP",
+                  "trees": 96
+                }
+              },
+              {
+                "first": 3160,
+                "last": 3219,
+                "label_end": 3280,
+                "loss": 0.06550873364794406,
+                "receipt": {
+                  "cut": 3160,
+                  "first": 252,
+                  "last": 3093,
+                  "train_count": 2842,
+                  "last_label": 3154,
+                  "learned_scaler": false,
+                  "serialization_max_error": 4.440892098500626e-16,
+                  "label_kind": "STOP",
+                  "trees": 96
+                }
+              }
+            ],
+            "loss": 0.03436483913004235
+          },
+          {
+            "profile": {
+              "n_estimators": 96,
+              "max_depth": 8,
+              "min_samples_leaf": 32,
+              "max_features": 0.7
+            },
+            "folds": [
+              {
+                "first": 3100,
+                "last": 3159,
+                "label_end": 3220,
+                "loss": 0.0030140506510767245,
+                "receipt": {
+                  "cut": 3100,
+                  "first": 252,
+                  "last": 3033,
+                  "train_count": 2782,
+                  "last_label": 3094,
+                  "learned_scaler": false,
+                  "serialization_max_error": 4.440892098500626e-16,
+                  "label_kind": "STOP",
+                  "trees": 96
+                }
+              },
+              {
+                "first": 3160,
+                "last": 3219,
+                "label_end": 3280,
+                "loss": 0.08930125639619256,
+                "receipt": {
+                  "cut": 3160,
+                  "first": 252,
+                  "last": 3093,
+                  "train_count": 2842,
+                  "last_label": 3154,
+                  "learned_scaler": false,
+                  "serialization_max_error": 4.440892098500626e-16,
+                  "label_kind": "STOP",
+                  "trees": 96
+                }
+              }
+            ],
+            "loss": 0.04615765352363464
+          }
+        ],
+        "receipt": {
+          "cut": 3286,
+          "first": 252,
+          "last": 3219,
+          "train_count": 2968,
+          "last_label": 3280,
+          "learned_scaler": false,
+          "serialization_max_error": 4.996003610813204e-16,
+          "label_kind": "STOP",
+          "trees": 96
+        }
+      },
+      {
+        "selected": 0,
+        "trials": [
+          {
+            "profile": {
+              "n_estimators": 96,
+              "max_depth": 5,
+              "min_samples_leaf": 16,
+              "max_features": 0.7
+            },
+            "folds": [
+              {
+                "first": 3100,
+                "last": 3159,
+                "label_end": 3220,
+                "loss": 0.002965474249406207,
+                "receipt": {
+                  "cut": 3100,
+                  "first": 252,
+                  "last": 3033,
+                  "train_count": 2782,
+                  "last_label": 3094,
+                  "learned_scaler": false,
+                  "serialization_max_error": 6.661338147750939e-16,
+                  "label_kind": "STOP",
+                  "trees": 96
+                }
+              },
+              {
+                "first": 3160,
+                "last": 3219,
+                "label_end": 3280,
+                "loss": 0.05353926114603254,
+                "receipt": {
+                  "cut": 3160,
+                  "first": 252,
+                  "last": 3093,
+                  "train_count": 2842,
+                  "last_label": 3154,
+                  "learned_scaler": false,
+                  "serialization_max_error": 5.551115123125783e-16,
+                  "label_kind": "STOP",
+                  "trees": 96
+                }
+              }
+            ],
+            "loss": 0.028252367697719372
+          },
+          {
+            "profile": {
+              "n_estimators": 96,
+              "max_depth": 8,
+              "min_samples_leaf": 32,
+              "max_features": 0.7
+            },
+            "folds": [
+              {
+                "first": 3100,
+                "last": 3159,
+                "label_end": 3220,
+                "loss": 0.0030330152888829454,
+                "receipt": {
+                  "cut": 3100,
+                  "first": 252,
+                  "last": 3033,
+                  "train_count": 2782,
+                  "last_label": 3094,
+                  "learned_scaler": false,
+                  "serialization_max_error": 4.440892098500626e-16,
+                  "label_kind": "STOP",
+                  "trees": 96
+                }
+              },
+              {
+                "first": 3160,
+                "last": 3219,
+                "label_end": 3280,
+                "loss": 0.0702246973798241,
+                "receipt": {
+                  "cut": 3160,
+                  "first": 252,
+                  "last": 3093,
+                  "train_count": 2842,
+                  "last_label": 3154,
+                  "learned_scaler": false,
+                  "serialization_max_error": 3.885780586188048e-16,
+                  "label_kind": "STOP",
+                  "trees": 96
+                }
+              }
+            ],
+            "loss": 0.036628856334353525
+          }
+        ],
+        "receipt": {
+          "cut": 3286,
+          "first": 252,
+          "last": 3219,
+          "train_count": 2968,
+          "last_label": 3280,
+          "learned_scaler": false,
+          "serialization_max_error": 3.885780586188048e-16,
+          "label_kind": "STOP",
+          "trees": 96
+        }
+      },
+      {
+        "selected": 0,
+        "trials": [
+          {
+            "profile": {
+              "n_estimators": 96,
+              "max_depth": 5,
+              "min_samples_leaf": 16,
+              "max_features": 0.7
+            },
+            "folds": [
+              {
+                "first": 3100,
+                "last": 3159,
+                "label_end": 3220,
+                "loss": 0.003603596900521548,
+                "receipt": {
+                  "cut": 3100,
+                  "first": 252,
+                  "last": 3033,
+                  "train_count": 2782,
+                  "last_label": 3094,
+                  "learned_scaler": false,
+                  "serialization_max_error": 5.551115123125783e-16,
+                  "label_kind": "STOP",
+                  "trees": 96
+                }
+              },
+              {
+                "first": 3160,
+                "last": 3219,
+                "label_end": 3280,
+                "loss": 0.06055628138268841,
+                "receipt": {
+                  "cut": 3160,
+                  "first": 252,
+                  "last": 3093,
+                  "train_count": 2842,
+                  "last_label": 3154,
+                  "learned_scaler": false,
+                  "serialization_max_error": 8.881784197001252e-16,
+                  "label_kind": "STOP",
+                  "trees": 96
+                }
+              }
+            ],
+            "loss": 0.03207993914160498
+          },
+          {
+            "profile": {
+              "n_estimators": 96,
+              "max_depth": 8,
+              "min_samples_leaf": 32,
+              "max_features": 0.7
+            },
+            "folds": [
+              {
+                "first": 3100,
+                "last": 3159,
+                "label_end": 3220,
+                "loss": 0.003281547133846123,
+                "receipt": {
+                  "cut": 3100,
+                  "first": 252,
+                  "last": 3033,
+                  "train_count": 2782,
+                  "last_label": 3094,
+                  "learned_scaler": false,
+                  "serialization_max_error": 3.3306690738754696e-16,
+                  "label_kind": "STOP",
+                  "trees": 96
+                }
+              },
+              {
+                "first": 3160,
+                "last": 3219,
+                "label_end": 3280,
+                "loss": 0.08335932210423597,
+                "receipt": {
+                  "cut": 3160,
+                  "first": 252,
+                  "last": 3093,
+                  "train_count": 2842,
+                  "last_label": 3154,
+                  "learned_scaler": false,
+                  "serialization_max_error": 4.440892098500626e-16,
+                  "label_kind": "STOP",
+                  "trees": 96
+                }
+              }
+            ],
+            "loss": 0.043320434619041046
+          }
+        ],
+        "receipt": {
+          "cut": 3286,
+          "first": 252,
+          "last": 3219,
+          "train_count": 2968,
+          "last_label": 3280,
+          "learned_scaler": false,
+          "serialization_max_error": 4.440892098500626e-16,
+          "label_kind": "STOP",
+          "trees": 96
+        }
+      },
+      {
+        "selected": 0,
+        "trials": [
+          {
+            "profile": {
+              "n_estimators": 96,
+              "max_depth": 5,
+              "min_samples_leaf": 16,
+              "max_features": 0.7
+            },
+            "folds": [
+              {
+                "first": 3100,
+                "last": 3159,
+                "label_end": 3220,
+                "loss": 0.003384251805108534,
+                "receipt": {
+                  "cut": 3100,
+                  "first": 252,
+                  "last": 3033,
+                  "train_count": 2782,
+                  "last_label": 3094,
+                  "learned_scaler": false,
+                  "serialization_max_error": 4.440892098500626e-16,
+                  "label_kind": "STOP",
+                  "trees": 96
+                }
+              },
+              {
+                "first": 3160,
+                "last": 3219,
+                "label_end": 3280,
+                "loss": 0.061198190226778,
+                "receipt": {
+                  "cut": 3160,
+                  "first": 252,
+                  "last": 3093,
+                  "train_count": 2842,
+                  "last_label": 3154,
+                  "learned_scaler": false,
+                  "serialization_max_error": 5.551115123125783e-16,
+                  "label_kind": "STOP",
+                  "trees": 96
+                }
+              }
+            ],
+            "loss": 0.03229122101594327
+          },
+          {
+            "profile": {
+              "n_estimators": 96,
+              "max_depth": 8,
+              "min_samples_leaf": 32,
+              "max_features": 0.7
+            },
+            "folds": [
+              {
+                "first": 3100,
+                "last": 3159,
+                "label_end": 3220,
+                "loss": 0.0033680964509300803,
+                "receipt": {
+                  "cut": 3100,
+                  "first": 252,
+                  "last": 3033,
+                  "train_count": 2782,
+                  "last_label": 3094,
+                  "learned_scaler": false,
+                  "serialization_max_error": 6.106226635438361e-16,
+                  "label_kind": "STOP",
+                  "trees": 96
+                }
+              },
+              {
+                "first": 3160,
+                "last": 3219,
+                "label_end": 3280,
+                "loss": 0.07967603266484675,
+                "receipt": {
+                  "cut": 3160,
+                  "first": 252,
+                  "last": 3093,
+                  "train_count": 2842,
+                  "last_label": 3154,
+                  "learned_scaler": false,
+                  "serialization_max_error": 7.771561172376096e-16,
+                  "label_kind": "STOP",
+                  "trees": 96
+                }
+              }
+            ],
+            "loss": 0.04152206455788842
+          }
+        ],
+        "receipt": {
+          "cut": 3286,
+          "first": 252,
+          "last": 3219,
+          "train_count": 2968,
+          "last_label": 3280,
+          "learned_scaler": false,
+          "serialization_max_error": 3.3306690738754696e-16,
+          "label_kind": "STOP",
+          "trees": 96
+        }
+      },
+      {
+        "selected": 0,
+        "trials": [
+          {
+            "profile": {
+              "n_estimators": 96,
+              "max_depth": 5,
+              "min_samples_leaf": 16,
+              "max_features": 0.7
+            },
+            "folds": [
+              {
+                "first": 3100,
+                "last": 3159,
+                "label_end": 3220,
+                "loss": 0.002673520182465484,
+                "receipt": {
+                  "cut": 3100,
+                  "first": 252,
+                  "last": 3033,
+                  "train_count": 2782,
+                  "last_label": 3094,
+                  "learned_scaler": false,
+                  "serialization_max_error": 6.661338147750939e-16,
+                  "label_kind": "STOP",
+                  "trees": 96
+                }
+              },
+              {
+                "first": 3160,
+                "last": 3219,
+                "label_end": 3280,
+                "loss": 0.058943697306177004,
+                "receipt": {
+                  "cut": 3160,
+                  "first": 252,
+                  "last": 3093,
+                  "train_count": 2842,
+                  "last_label": 3154,
+                  "learned_scaler": false,
+                  "serialization_max_error": 5.551115123125783e-16,
+                  "label_kind": "STOP",
+                  "trees": 96
+                }
+              }
+            ],
+            "loss": 0.030808608744321245
+          },
+          {
+            "profile": {
+              "n_estimators": 96,
+              "max_depth": 8,
+              "min_samples_leaf": 32,
+              "max_features": 0.7
+            },
+            "folds": [
+              {
+                "first": 3100,
+                "last": 3159,
+                "label_end": 3220,
+                "loss": 0.003187659704086251,
+                "receipt": {
+                  "cut": 3100,
+                  "first": 252,
+                  "last": 3033,
+                  "train_count": 2782,
+                  "last_label": 3094,
+                  "learned_scaler": false,
+                  "serialization_max_error": 6.661338147750939e-16,
+                  "label_kind": "STOP",
+                  "trees": 96
+                }
+              },
+              {
+                "first": 3160,
+                "last": 3219,
+                "label_end": 3280,
+                "loss": 0.08536151239037043,
+                "receipt": {
+                  "cut": 3160,
+                  "first": 252,
+                  "last": 3093,
+                  "train_count": 2842,
+                  "last_label": 3154,
+                  "learned_scaler": false,
+                  "serialization_max_error": 3.3306690738754696e-16,
+                  "label_kind": "STOP",
+                  "trees": 96
+                }
+              }
+            ],
+            "loss": 0.044274586047228344
+          }
+        ],
+        "receipt": {
+          "cut": 3286,
+          "first": 252,
+          "last": 3219,
+          "train_count": 2968,
+          "last_label": 3280,
+          "learned_scaler": false,
+          "serialization_max_error": 5.551115123125783e-16,
+          "label_kind": "STOP",
+          "trees": 96
+        }
+      },
+      {
+        "selected": 0,
+        "trials": [
+          {
+            "profile": {
+              "n_estimators": 96,
+              "max_depth": 5,
+              "min_samples_leaf": 16,
+              "max_features": 0.7
+            },
+            "folds": [
+              {
+                "first": 3100,
+                "last": 3159,
+                "label_end": 3220,
+                "loss": 0.0028724826657091835,
+                "receipt": {
+                  "cut": 3100,
+                  "first": 252,
+                  "last": 3033,
+                  "train_count": 2782,
+                  "last_label": 3094,
+                  "learned_scaler": false,
+                  "serialization_max_error": 4.440892098500626e-16,
+                  "label_kind": "STOP",
+                  "trees": 96
+                }
+              },
+              {
+                "first": 3160,
+                "last": 3219,
+                "label_end": 3280,
+                "loss": 0.05343022403983979,
+                "receipt": {
+                  "cut": 3160,
+                  "first": 252,
+                  "last": 3093,
+                  "train_count": 2842,
+                  "last_label": 3154,
+                  "learned_scaler": false,
+                  "serialization_max_error": 5.551115123125783e-16,
+                  "label_kind": "STOP",
+                  "trees": 96
+                }
+              }
+            ],
+            "loss": 0.028151353352774487
+          },
+          {
+            "profile": {
+              "n_estimators": 96,
+              "max_depth": 8,
+              "min_samples_leaf": 32,
+              "max_features": 0.7
+            },
+            "folds": [
+              {
+                "first": 3100,
+                "last": 3159,
+                "label_end": 3220,
+                "loss": 0.0029800578393172736,
+                "receipt": {
+                  "cut": 3100,
+                  "first": 252,
+                  "last": 3033,
+                  "train_count": 2782,
+                  "last_label": 3094,
+                  "learned_scaler": false,
+                  "serialization_max_error": 5.551115123125783e-16,
+                  "label_kind": "STOP",
+                  "trees": 96
+                }
+              },
+              {
+                "first": 3160,
+                "last": 3219,
+                "label_end": 3280,
+                "loss": 0.0806602891866989,
+                "receipt": {
+                  "cut": 3160,
+                  "first": 252,
+                  "last": 3093,
+                  "train_count": 2842,
+                  "last_label": 3154,
+                  "learned_scaler": false,
+                  "serialization_max_error": 5.551115123125783e-16,
+                  "label_kind": "STOP",
+                  "trees": 96
+                }
+              }
+            ],
+            "loss": 0.04182017351300809
+          }
+        ],
+        "receipt": {
+          "cut": 3286,
+          "first": 252,
+          "last": 3219,
+          "train_count": 2968,
+          "last_label": 3280,
+          "learned_scaler": false,
+          "serialization_max_error": 4.996003610813204e-16,
+          "label_kind": "STOP",
+          "trees": 96
+        }
+      },
+      {
+        "selected": 0,
+        "trials": [
+          {
+            "profile": {
+              "n_estimators": 96,
+              "max_depth": 5,
+              "min_samples_leaf": 16,
+              "max_features": 0.7
+            },
+            "folds": [
+              {
+                "first": 3100,
+                "last": 3159,
+                "label_end": 3220,
+                "loss": 0.0031572804130003585,
+                "receipt": {
+                  "cut": 3100,
+                  "first": 252,
+                  "last": 3033,
+                  "train_count": 2782,
+                  "last_label": 3094,
+                  "learned_scaler": false,
+                  "serialization_max_error": 4.440892098500626e-16,
+                  "label_kind": "STOP",
+                  "trees": 96
+                }
+              },
+              {
+                "first": 3160,
+                "last": 3219,
+                "label_end": 3280,
+                "loss": 0.0536772424357811,
+                "receipt": {
+                  "cut": 3160,
+                  "first": 252,
+                  "last": 3093,
+                  "train_count": 2842,
+                  "last_label": 3154,
+                  "learned_scaler": false,
+                  "serialization_max_error": 4.440892098500626e-16,
+                  "label_kind": "STOP",
+                  "trees": 96
+                }
+              }
+            ],
+            "loss": 0.02841726142439073
+          },
+          {
+            "profile": {
+              "n_estimators": 96,
+              "max_depth": 8,
+              "min_samples_leaf": 32,
+              "max_features": 0.7
+            },
+            "folds": [
+              {
+                "first": 3100,
+                "last": 3159,
+                "label_end": 3220,
+                "loss": 0.0032231338401238737,
+                "receipt": {
+                  "cut": 3100,
+                  "first": 252,
+                  "last": 3033,
+                  "train_count": 2782,
+                  "last_label": 3094,
+                  "learned_scaler": false,
+                  "serialization_max_error": 4.440892098500626e-16,
+                  "label_kind": "STOP",
+                  "trees": 96
+                }
+              },
+              {
+                "first": 3160,
+                "last": 3219,
+                "label_end": 3280,
+                "loss": 0.07199052316132125,
+                "receipt": {
+                  "cut": 3160,
+                  "first": 252,
+                  "last": 3093,
+                  "train_count": 2842,
+                  "last_label": 3154,
+                  "learned_scaler": false,
+                  "serialization_max_error": 5.551115123125783e-16,
+                  "label_kind": "STOP",
+                  "trees": 96
+                }
+              }
+            ],
+            "loss": 0.03760682850072256
+          }
+        ],
+        "receipt": {
+          "cut": 3286,
+          "first": 252,
+          "last": 3219,
+          "train_count": 2968,
+          "last_label": 3280,
+          "learned_scaler": false,
+          "serialization_max_error": 4.440892098500626e-16,
+          "label_kind": "STOP",
+          "trees": 96
+        }
+      }
+    ],
+    "model_fits": 35
+  },
+  "price47": {
+    "details": [
+      {
+        "selected": 0,
+        "trials": [
+          {
+            "profile": {
+              "n_estimators": 96,
+              "max_depth": 5,
+              "min_samples_leaf": 16,
+              "max_features": 0.7
+            },
+            "folds": [
+              {
+                "first": 3100,
+                "last": 3159,
+                "label_end": 3220,
+                "loss": 0.003562184478442274,
+                "receipt": {
+                  "cut": 3100,
+                  "first": 252,
+                  "last": 3033,
+                  "train_count": 2782,
+                  "last_label": 3094,
+                  "learned_scaler": false,
+                  "serialization_max_error": 7.771561172376096e-16,
+                  "label_kind": "STOP",
+                  "trees": 96
+                }
+              },
+              {
+                "first": 3160,
+                "last": 3219,
+                "label_end": 3280,
+                "loss": 0.07015313097101246,
+                "receipt": {
+                  "cut": 3160,
+                  "first": 252,
+                  "last": 3093,
+                  "train_count": 2842,
+                  "last_label": 3154,
+                  "learned_scaler": false,
+                  "serialization_max_error": 3.3306690738754696e-16,
+                  "label_kind": "STOP",
+                  "trees": 96
+                }
+              }
+            ],
+            "loss": 0.03685765772472736
+          },
+          {
+            "profile": {
+              "n_estimators": 96,
+              "max_depth": 8,
+              "min_samples_leaf": 32,
+              "max_features": 0.7
+            },
+            "folds": [
+              {
+                "first": 3100,
+                "last": 3159,
+                "label_end": 3220,
+                "loss": 0.0033815017224963447,
+                "receipt": {
+                  "cut": 3100,
+                  "first": 252,
+                  "last": 3033,
+                  "train_count": 2782,
+                  "last_label": 3094,
+                  "learned_scaler": false,
+                  "serialization_max_error": 6.661338147750939e-16,
+                  "label_kind": "STOP",
+                  "trees": 96
+                }
+              },
+              {
+                "first": 3160,
+                "last": 3219,
+                "label_end": 3280,
+                "loss": 0.07592238125536274,
+                "receipt": {
+                  "cut": 3160,
+                  "first": 252,
+                  "last": 3093,
+                  "train_count": 2842,
+                  "last_label": 3154,
+                  "learned_scaler": false,
+                  "serialization_max_error": 5.551115123125783e-16,
+                  "label_kind": "STOP",
+                  "trees": 96
+                }
+              }
+            ],
+            "loss": 0.039651941488929546
+          }
+        ],
+        "receipt": {
+          "cut": 3286,
+          "first": 252,
+          "last": 3219,
+          "train_count": 2968,
+          "last_label": 3280,
+          "learned_scaler": false,
+          "serialization_max_error": 5.551115123125783e-16,
+          "label_kind": "STOP",
+          "trees": 96
+        }
+      },
+      {
+        "selected": 0,
+        "trials": [
+          {
+            "profile": {
+              "n_estimators": 96,
+              "max_depth": 5,
+              "min_samples_leaf": 16,
+              "max_features": 0.7
+            },
+            "folds": [
+              {
+                "first": 3100,
+                "last": 3159,
+                "label_end": 3220,
+                "loss": 0.0032044949694079775,
+                "receipt": {
+                  "cut": 3100,
+                  "first": 252,
+                  "last": 3033,
+                  "train_count": 2782,
+                  "last_label": 3094,
+                  "learned_scaler": false,
+                  "serialization_max_error": 4.440892098500626e-16,
+                  "label_kind": "STOP",
+                  "trees": 96
+                }
+              },
+              {
+                "first": 3160,
+                "last": 3219,
+                "label_end": 3280,
+                "loss": 0.05314146030122408,
+                "receipt": {
+                  "cut": 3160,
+                  "first": 252,
+                  "last": 3093,
+                  "train_count": 2842,
+                  "last_label": 3154,
+                  "learned_scaler": false,
+                  "serialization_max_error": 3.885780586188048e-16,
+                  "label_kind": "STOP",
+                  "trees": 96
+                }
+              }
+            ],
+            "loss": 0.02817297763531603
+          },
+          {
+            "profile": {
+              "n_estimators": 96,
+              "max_depth": 8,
+              "min_samples_leaf": 32,
+              "max_features": 0.7
+            },
+            "folds": [
+              {
+                "first": 3100,
+                "last": 3159,
+                "label_end": 3220,
+                "loss": 0.002976606032491044,
+                "receipt": {
+                  "cut": 3100,
+                  "first": 252,
+                  "last": 3033,
+                  "train_count": 2782,
+                  "last_label": 3094,
+                  "learned_scaler": false,
+                  "serialization_max_error": 4.440892098500626e-16,
+                  "label_kind": "STOP",
+                  "trees": 96
+                }
+              },
+              {
+                "first": 3160,
+                "last": 3219,
+                "label_end": 3280,
+                "loss": 0.07227506287244388,
+                "receipt": {
+                  "cut": 3160,
+                  "first": 252,
+                  "last": 3093,
+                  "train_count": 2842,
+                  "last_label": 3154,
+                  "learned_scaler": false,
+                  "serialization_max_error": 4.440892098500626e-16,
+                  "label_kind": "STOP",
+                  "trees": 96
+                }
+              }
+            ],
+            "loss": 0.03762583445246746
+          }
+        ],
+        "receipt": {
+          "cut": 3286,
+          "first": 252,
+          "last": 3219,
+          "train_count": 2968,
+          "last_label": 3280,
+          "learned_scaler": false,
+          "serialization_max_error": 3.3306690738754696e-16,
+          "label_kind": "STOP",
+          "trees": 96
+        }
+      },
+      {
+        "selected": 0,
+        "trials": [
+          {
+            "profile": {
+              "n_estimators": 96,
+              "max_depth": 5,
+              "min_samples_leaf": 16,
+              "max_features": 0.7
+            },
+            "folds": [
+              {
+                "first": 3100,
+                "last": 3159,
+                "label_end": 3220,
+                "loss": 0.0032009238390850766,
+                "receipt": {
+                  "cut": 3100,
+                  "first": 252,
+                  "last": 3033,
+                  "train_count": 2782,
+                  "last_label": 3094,
+                  "learned_scaler": false,
+                  "serialization_max_error": 2.7755575615628914e-16,
+                  "label_kind": "STOP",
+                  "trees": 96
+                }
+              },
+              {
+                "first": 3160,
+                "last": 3219,
+                "label_end": 3280,
+                "loss": 0.06477660022720247,
+                "receipt": {
+                  "cut": 3160,
+                  "first": 252,
+                  "last": 3093,
+                  "train_count": 2842,
+                  "last_label": 3154,
+                  "learned_scaler": false,
+                  "serialization_max_error": 4.440892098500626e-16,
+                  "label_kind": "STOP",
+                  "trees": 96
+                }
+              }
+            ],
+            "loss": 0.03398876203314377
+          },
+          {
+            "profile": {
+              "n_estimators": 96,
+              "max_depth": 8,
+              "min_samples_leaf": 32,
+              "max_features": 0.7
+            },
+            "folds": [
+              {
+                "first": 3100,
+                "last": 3159,
+                "label_end": 3220,
+                "loss": 0.002601678610446604,
+                "receipt": {
+                  "cut": 3100,
+                  "first": 252,
+                  "last": 3033,
+                  "train_count": 2782,
+                  "last_label": 3094,
+                  "learned_scaler": false,
+                  "serialization_max_error": 4.440892098500626e-16,
+                  "label_kind": "STOP",
+                  "trees": 96
+                }
+              },
+              {
+                "first": 3160,
+                "last": 3219,
+                "label_end": 3280,
+                "loss": 0.07697443114665378,
+                "receipt": {
+                  "cut": 3160,
+                  "first": 252,
+                  "last": 3093,
+                  "train_count": 2842,
+                  "last_label": 3154,
+                  "learned_scaler": false,
+                  "serialization_max_error": 8.881784197001252e-16,
+                  "label_kind": "STOP",
+                  "trees": 96
+                }
+              }
+            ],
+            "loss": 0.039788054878550194
+          }
+        ],
+        "receipt": {
+          "cut": 3286,
+          "first": 252,
+          "last": 3219,
+          "train_count": 2968,
+          "last_label": 3280,
+          "learned_scaler": false,
+          "serialization_max_error": 4.440892098500626e-16,
+          "label_kind": "STOP",
+          "trees": 96
+        }
+      },
+      {
+        "selected": 0,
+        "trials": [
+          {
+            "profile": {
+              "n_estimators": 96,
+              "max_depth": 5,
+              "min_samples_leaf": 16,
+              "max_features": 0.7
+            },
+            "folds": [
+              {
+                "first": 3100,
+                "last": 3159,
+                "label_end": 3220,
+                "loss": 0.0028931415484720027,
+                "receipt": {
+                  "cut": 3100,
+                  "first": 252,
+                  "last": 3033,
+                  "train_count": 2782,
+                  "last_label": 3094,
+                  "learned_scaler": false,
+                  "serialization_max_error": 3.3306690738754696e-16,
+                  "label_kind": "STOP",
+                  "trees": 96
+                }
+              },
+              {
+                "first": 3160,
+                "last": 3219,
+                "label_end": 3280,
+                "loss": 0.058520496844312035,
+                "receipt": {
+                  "cut": 3160,
+                  "first": 252,
+                  "last": 3093,
+                  "train_count": 2842,
+                  "last_label": 3154,
+                  "learned_scaler": false,
+                  "serialization_max_error": 4.440892098500626e-16,
+                  "label_kind": "STOP",
+                  "trees": 96
+                }
+              }
+            ],
+            "loss": 0.03070681919639202
+          },
+          {
+            "profile": {
+              "n_estimators": 96,
+              "max_depth": 8,
+              "min_samples_leaf": 32,
+              "max_features": 0.7
+            },
+            "folds": [
+              {
+                "first": 3100,
+                "last": 3159,
+                "label_end": 3220,
+                "loss": 0.00286980508985478,
+                "receipt": {
+                  "cut": 3100,
+                  "first": 252,
+                  "last": 3033,
+                  "train_count": 2782,
+                  "last_label": 3094,
+                  "learned_scaler": false,
+                  "serialization_max_error": 5.551115123125783e-16,
+                  "label_kind": "STOP",
+                  "trees": 96
+                }
+              },
+              {
+                "first": 3160,
+                "last": 3219,
+                "label_end": 3280,
+                "loss": 0.07946677515217061,
+                "receipt": {
+                  "cut": 3160,
+                  "first": 252,
+                  "last": 3093,
+                  "train_count": 2842,
+                  "last_label": 3154,
+                  "learned_scaler": false,
+                  "serialization_max_error": 4.440892098500626e-16,
+                  "label_kind": "STOP",
+                  "trees": 96
+                }
+              }
+            ],
+            "loss": 0.041168290121012696
+          }
+        ],
+        "receipt": {
+          "cut": 3286,
+          "first": 252,
+          "last": 3219,
+          "train_count": 2968,
+          "last_label": 3280,
+          "learned_scaler": false,
+          "serialization_max_error": 3.3306690738754696e-16,
+          "label_kind": "STOP",
+          "trees": 96
+        }
+      },
+      {
+        "selected": 0,
+        "trials": [
+          {
+            "profile": {
+              "n_estimators": 96,
+              "max_depth": 5,
+              "min_samples_leaf": 16,
+              "max_features": 0.7
+            },
+            "folds": [
+              {
+                "first": 3100,
+                "last": 3159,
+                "label_end": 3220,
+                "loss": 0.003588891172057987,
+                "receipt": {
+                  "cut": 3100,
+                  "first": 252,
+                  "last": 3033,
+                  "train_count": 2782,
+                  "last_label": 3094,
+                  "learned_scaler": false,
+                  "serialization_max_error": 6.661338147750939e-16,
+                  "label_kind": "STOP",
+                  "trees": 96
+                }
+              },
+              {
+                "first": 3160,
+                "last": 3219,
+                "label_end": 3280,
+                "loss": 0.0666544025029156,
+                "receipt": {
+                  "cut": 3160,
+                  "first": 252,
+                  "last": 3093,
+                  "train_count": 2842,
+                  "last_label": 3154,
+                  "learned_scaler": false,
+                  "serialization_max_error": 4.440892098500626e-16,
+                  "label_kind": "STOP",
+                  "trees": 96
+                }
+              }
+            ],
+            "loss": 0.035121646837486795
+          },
+          {
+            "profile": {
+              "n_estimators": 96,
+              "max_depth": 8,
+              "min_samples_leaf": 32,
+              "max_features": 0.7
+            },
+            "folds": [
+              {
+                "first": 3100,
+                "last": 3159,
+                "label_end": 3220,
+                "loss": 0.003586677692621595,
+                "receipt": {
+                  "cut": 3100,
+                  "first": 252,
+                  "last": 3033,
+                  "train_count": 2782,
+                  "last_label": 3094,
+                  "learned_scaler": false,
+                  "serialization_max_error": 4.440892098500626e-16,
+                  "label_kind": "STOP",
+                  "trees": 96
+                }
+              },
+              {
+                "first": 3160,
+                "last": 3219,
+                "label_end": 3280,
+                "loss": 0.08640803090600796,
+                "receipt": {
+                  "cut": 3160,
+                  "first": 252,
+                  "last": 3093,
+                  "train_count": 2842,
+                  "last_label": 3154,
+                  "learned_scaler": false,
+                  "serialization_max_error": 4.440892098500626e-16,
+                  "label_kind": "STOP",
+                  "trees": 96
+                }
+              }
+            ],
+            "loss": 0.04499735429931478
+          }
+        ],
+        "receipt": {
+          "cut": 3286,
+          "first": 252,
+          "last": 3219,
+          "train_count": 2968,
+          "last_label": 3280,
+          "learned_scaler": false,
+          "serialization_max_error": 6.661338147750939e-16,
+          "label_kind": "STOP",
+          "trees": 96
+        }
+      },
+      {
+        "selected": 0,
+        "trials": [
+          {
+            "profile": {
+              "n_estimators": 96,
+              "max_depth": 5,
+              "min_samples_leaf": 16,
+              "max_features": 0.7
+            },
+            "folds": [
+              {
+                "first": 3100,
+                "last": 3159,
+                "label_end": 3220,
+                "loss": 0.0034556962674749192,
+                "receipt": {
+                  "cut": 3100,
+                  "first": 252,
+                  "last": 3033,
+                  "train_count": 2782,
+                  "last_label": 3094,
+                  "learned_scaler": false,
+                  "serialization_max_error": 5.551115123125783e-16,
+                  "label_kind": "STOP",
+                  "trees": 96
+                }
+              },
+              {
+                "first": 3160,
+                "last": 3219,
+                "label_end": 3280,
+                "loss": 0.059081246967167544,
+                "receipt": {
+                  "cut": 3160,
+                  "first": 252,
+                  "last": 3093,
+                  "train_count": 2842,
+                  "last_label": 3154,
+                  "learned_scaler": false,
+                  "serialization_max_error": 4.440892098500626e-16,
+                  "label_kind": "STOP",
+                  "trees": 96
+                }
+              }
+            ],
+            "loss": 0.031268471617321235
+          },
+          {
+            "profile": {
+              "n_estimators": 96,
+              "max_depth": 8,
+              "min_samples_leaf": 32,
+              "max_features": 0.7
+            },
+            "folds": [
+              {
+                "first": 3100,
+                "last": 3159,
+                "label_end": 3220,
+                "loss": 0.0031133927716302124,
+                "receipt": {
+                  "cut": 3100,
+                  "first": 252,
+                  "last": 3033,
+                  "train_count": 2782,
+                  "last_label": 3094,
+                  "learned_scaler": false,
+                  "serialization_max_error": 4.996003610813204e-16,
+                  "label_kind": "STOP",
+                  "trees": 96
+                }
+              },
+              {
+                "first": 3160,
+                "last": 3219,
+                "label_end": 3280,
+                "loss": 0.08043882530216248,
+                "receipt": {
+                  "cut": 3160,
+                  "first": 252,
+                  "last": 3093,
+                  "train_count": 2842,
+                  "last_label": 3154,
+                  "learned_scaler": false,
+                  "serialization_max_error": 4.440892098500626e-16,
+                  "label_kind": "STOP",
+                  "trees": 96
+                }
+              }
+            ],
+            "loss": 0.041776109036896346
+          }
+        ],
+        "receipt": {
+          "cut": 3286,
+          "first": 252,
+          "last": 3219,
+          "train_count": 2968,
+          "last_label": 3280,
+          "learned_scaler": false,
+          "serialization_max_error": 5.551115123125783e-16,
+          "label_kind": "STOP",
+          "trees": 96
+        }
+      },
+      {
+        "selected": 0,
+        "trials": [
+          {
+            "profile": {
+              "n_estimators": 96,
+              "max_depth": 5,
+              "min_samples_leaf": 16,
+              "max_features": 0.7
+            },
+            "folds": [
+              {
+                "first": 3100,
+                "last": 3159,
+                "label_end": 3220,
+                "loss": 0.0036820115883768535,
+                "receipt": {
+                  "cut": 3100,
+                  "first": 252,
+                  "last": 3033,
+                  "train_count": 2782,
+                  "last_label": 3094,
+                  "learned_scaler": false,
+                  "serialization_max_error": 5.551115123125783e-16,
+                  "label_kind": "STOP",
+                  "trees": 96
+                }
+              },
+              {
+                "first": 3160,
+                "last": 3219,
+                "label_end": 3280,
+                "loss": 0.06417995409993217,
+                "receipt": {
+                  "cut": 3160,
+                  "first": 252,
+                  "last": 3093,
+                  "train_count": 2842,
+                  "last_label": 3154,
+                  "learned_scaler": false,
+                  "serialization_max_error": 5.551115123125783e-16,
+                  "label_kind": "STOP",
+                  "trees": 96
+                }
+              }
+            ],
+            "loss": 0.033930982844154516
+          },
+          {
+            "profile": {
+              "n_estimators": 96,
+              "max_depth": 8,
+              "min_samples_leaf": 32,
+              "max_features": 0.7
+            },
+            "folds": [
+              {
+                "first": 3100,
+                "last": 3159,
+                "label_end": 3220,
+                "loss": 0.003475136886612281,
+                "receipt": {
+                  "cut": 3100,
+                  "first": 252,
+                  "last": 3033,
+                  "train_count": 2782,
+                  "last_label": 3094,
+                  "learned_scaler": false,
+                  "serialization_max_error": 4.440892098500626e-16,
+                  "label_kind": "STOP",
+                  "trees": 96
+                }
+              },
+              {
+                "first": 3160,
+                "last": 3219,
+                "label_end": 3280,
+                "loss": 0.08582051171129196,
+                "receipt": {
+                  "cut": 3160,
+                  "first": 252,
+                  "last": 3093,
+                  "train_count": 2842,
+                  "last_label": 3154,
+                  "learned_scaler": false,
+                  "serialization_max_error": 4.440892098500626e-16,
+                  "label_kind": "STOP",
+                  "trees": 96
+                }
+              }
+            ],
+            "loss": 0.04464782429895212
+          }
+        ],
+        "receipt": {
+          "cut": 3286,
+          "first": 252,
+          "last": 3219,
+          "train_count": 2968,
+          "last_label": 3280,
+          "learned_scaler": false,
+          "serialization_max_error": 3.3306690738754696e-16,
+          "label_kind": "STOP",
+          "trees": 96
+        }
+      }
+    ],
+    "model_fits": 35
+  },
+  "short_huber": {
+    "model_fits": 14,
+    "details": [
+      {
+        "cut": 3286,
+        "first": 252,
+        "last": 3218,
+        "count": 2951,
+        "last_label": 3279,
+        "common_last_label": 3280,
+        "serialization_max_error": 0.0,
+        "learned_scaler": false,
+        "random_validation": false,
+        "selection_calls": 0,
+        "label_kind": "SHORT_NET",
+        "execution_lag": 1
+      },
+      {
+        "cut": 3286,
+        "first": 252,
+        "last": 3218,
+        "count": 2951,
+        "last_label": 3279,
+        "common_last_label": 3280,
+        "serialization_max_error": 0.0,
+        "learned_scaler": false,
+        "random_validation": false,
+        "selection_calls": 0,
+        "label_kind": "SHORT_NET",
+        "execution_lag": 1
+      },
+      {
+        "cut": 3286,
+        "first": 252,
+        "last": 3218,
+        "count": 2951,
+        "last_label": 3279,
+        "common_last_label": 3280,
+        "serialization_max_error": 0.0,
+        "learned_scaler": false,
+        "random_validation": false,
+        "selection_calls": 0,
+        "label_kind": "SHORT_NET",
+        "execution_lag": 1
+      },
+      {
+        "cut": 3286,
+        "first": 252,
+        "last": 3218,
+        "count": 2951,
+        "last_label": 3279,
+        "common_last_label": 3280,
+        "serialization_max_error": 0.0,
+        "learned_scaler": false,
+        "random_validation": false,
+        "selection_calls": 0,
+        "label_kind": "SHORT_NET",
+        "execution_lag": 1
+      },
+      {
+        "cut": 3286,
+        "first": 252,
+        "last": 3218,
+        "count": 2951,
+        "last_label": 3279,
+        "common_last_label": 3280,
+        "serialization_max_error": 0.0,
+        "learned_scaler": false,
+        "random_validation": false,
+        "selection_calls": 0,
+        "label_kind": "SHORT_NET",
+        "execution_lag": 1
+      },
+      {
+        "cut": 3286,
+        "first": 252,
+        "last": 3218,
+        "count": 2951,
+        "last_label": 3279,
+        "common_last_label": 3280,
+        "serialization_max_error": 0.0,
+        "learned_scaler": false,
+        "random_validation": false,
+        "selection_calls": 0,
+        "label_kind": "SHORT_NET",
+        "execution_lag": 1
+      },
+      {
+        "cut": 3286,
+        "first": 252,
+        "last": 3218,
+        "count": 2951,
+        "last_label": 3279,
+        "common_last_label": 3280,
+        "serialization_max_error": 0.0,
+        "learned_scaler": false,
+        "random_validation": false,
+        "selection_calls": 0,
+        "label_kind": "SHORT_NET",
+        "execution_lag": 1
+      },
+      {
+        "cut": 3286,
+        "first": 252,
+        "last": 3218,
+        "count": 2951,
+        "last_label": 3280,
+        "common_last_label": 3280,
+        "serialization_max_error": 0.0,
+        "learned_scaler": false,
+        "random_validation": false,
+        "selection_calls": 0,
+        "label_kind": "SHORT_NET",
+        "execution_lag": 2
+      },
+      {
+        "cut": 3286,
+        "first": 252,
+        "last": 3218,
+        "count": 2951,
+        "last_label": 3280,
+        "common_last_label": 3280,
+        "serialization_max_error": 0.0,
+        "learned_scaler": false,
+        "random_validation": false,
+        "selection_calls": 0,
+        "label_kind": "SHORT_NET",
+        "execution_lag": 2
+      },
+      {
+        "cut": 3286,
+        "first": 252,
+        "last": 3218,
+        "count": 2951,
+        "last_label": 3280,
+        "common_last_label": 3280,
+        "serialization_max_error": 0.0,
+        "learned_scaler": false,
+        "random_validation": false,
+        "selection_calls": 0,
+        "label_kind": "SHORT_NET",
+        "execution_lag": 2
+      },
+      {
+        "cut": 3286,
+        "first": 252,
+        "last": 3218,
+        "count": 2951,
+        "last_label": 3280,
+        "common_last_label": 3280,
+        "serialization_max_error": 0.0,
+        "learned_scaler": false,
+        "random_validation": false,
+        "selection_calls": 0,
+        "label_kind": "SHORT_NET",
+        "execution_lag": 2
+      },
+      {
+        "cut": 3286,
+        "first": 252,
+        "last": 3218,
+        "count": 2951,
+        "last_label": 3280,
+        "common_last_label": 3280,
+        "serialization_max_error": 0.0,
+        "learned_scaler": false,
+        "random_validation": false,
+        "selection_calls": 0,
+        "label_kind": "SHORT_NET",
+        "execution_lag": 2
+      },
+      {
+        "cut": 3286,
+        "first": 252,
+        "last": 3218,
+        "count": 2951,
+        "last_label": 3280,
+        "common_last_label": 3280,
+        "serialization_max_error": 0.0,
+        "learned_scaler": false,
+        "random_validation": false,
+        "selection_calls": 0,
+        "label_kind": "SHORT_NET",
+        "execution_lag": 2
+      },
+      {
+        "cut": 3286,
+        "first": 252,
+        "last": 3218,
+        "count": 2951,
+        "last_label": 3280,
+        "common_last_label": 3280,
+        "serialization_max_error": 0.0,
+        "learned_scaler": false,
+        "random_validation": false,
+        "selection_calls": 0,
+        "label_kind": "SHORT_NET",
+        "execution_lag": 2
+      }
+    ]
+  },
+  "short_median": {
+    "model_fits": 14,
+    "details": [
+      {
+        "cut": 3286,
+        "first": 252,
+        "last": 3218,
+        "count": 2951,
+        "last_label": 3279,
+        "common_last_label": 3280,
+        "serialization_max_error": 0.0,
+        "learned_scaler": false,
+        "random_validation": false,
+        "selection_calls": 0,
+        "label_kind": "SHORT_NET",
+        "execution_lag": 1
+      },
+      {
+        "cut": 3286,
+        "first": 252,
+        "last": 3218,
+        "count": 2951,
+        "last_label": 3279,
+        "common_last_label": 3280,
+        "serialization_max_error": 0.0,
+        "learned_scaler": false,
+        "random_validation": false,
+        "selection_calls": 0,
+        "label_kind": "SHORT_NET",
+        "execution_lag": 1
+      },
+      {
+        "cut": 3286,
+        "first": 252,
+        "last": 3218,
+        "count": 2951,
+        "last_label": 3279,
+        "common_last_label": 3280,
+        "serialization_max_error": 0.0,
+        "learned_scaler": false,
+        "random_validation": false,
+        "selection_calls": 0,
+        "label_kind": "SHORT_NET",
+        "execution_lag": 1
+      },
+      {
+        "cut": 3286,
+        "first": 252,
+        "last": 3218,
+        "count": 2951,
+        "last_label": 3279,
+        "common_last_label": 3280,
+        "serialization_max_error": 0.0,
+        "learned_scaler": false,
+        "random_validation": false,
+        "selection_calls": 0,
+        "label_kind": "SHORT_NET",
+        "execution_lag": 1
+      },
+      {
+        "cut": 3286,
+        "first": 252,
+        "last": 3218,
+        "count": 2951,
+        "last_label": 3279,
+        "common_last_label": 3280,
+        "serialization_max_error": 0.0,
+        "learned_scaler": false,
+        "random_validation": false,
+        "selection_calls": 0,
+        "label_kind": "SHORT_NET",
+        "execution_lag": 1
+      },
+      {
+        "cut": 3286,
+        "first": 252,
+        "last": 3218,
+        "count": 2951,
+        "last_label": 3279,
+        "common_last_label": 3280,
+        "serialization_max_error": 0.0,
+        "learned_scaler": false,
+        "random_validation": false,
+        "selection_calls": 0,
+        "label_kind": "SHORT_NET",
+        "execution_lag": 1
+      },
+      {
+        "cut": 3286,
+        "first": 252,
+        "last": 3218,
+        "count": 2951,
+        "last_label": 3279,
+        "common_last_label": 3280,
+        "serialization_max_error": 0.0,
+        "learned_scaler": false,
+        "random_validation": false,
+        "selection_calls": 0,
+        "label_kind": "SHORT_NET",
+        "execution_lag": 1
+      },
+      {
+        "cut": 3286,
+        "first": 252,
+        "last": 3218,
+        "count": 2951,
+        "last_label": 3280,
+        "common_last_label": 3280,
+        "serialization_max_error": 0.0,
+        "learned_scaler": false,
+        "random_validation": false,
+        "selection_calls": 0,
+        "label_kind": "SHORT_NET",
+        "execution_lag": 2
+      },
+      {
+        "cut": 3286,
+        "first": 252,
+        "last": 3218,
+        "count": 2951,
+        "last_label": 3280,
+        "common_last_label": 3280,
+        "serialization_max_error": 0.0,
+        "learned_scaler": false,
+        "random_validation": false,
+        "selection_calls": 0,
+        "label_kind": "SHORT_NET",
+        "execution_lag": 2
+      },
+      {
+        "cut": 3286,
+        "first": 252,
+        "last": 3218,
+        "count": 2951,
+        "last_label": 3280,
+        "common_last_label": 3280,
+        "serialization_max_error": 0.0,
+        "learned_scaler": false,
+        "random_validation": false,
+        "selection_calls": 0,
+        "label_kind": "SHORT_NET",
+        "execution_lag": 2
+      },
+      {
+        "cut": 3286,
+        "first": 252,
+        "last": 3218,
+        "count": 2951,
+        "last_label": 3280,
+        "common_last_label": 3280,
+        "serialization_max_error": 0.0,
+        "learned_scaler": false,
+        "random_validation": false,
+        "selection_calls": 0,
+        "label_kind": "SHORT_NET",
+        "execution_lag": 2
+      },
+      {
+        "cut": 3286,
+        "first": 252,
+        "last": 3218,
+        "count": 2951,
+        "last_label": 3280,
+        "common_last_label": 3280,
+        "serialization_max_error": 0.0,
+        "learned_scaler": false,
+        "random_validation": false,
+        "selection_calls": 0,
+        "label_kind": "SHORT_NET",
+        "execution_lag": 2
+      },
+      {
+        "cut": 3286,
+        "first": 252,
+        "last": 3218,
+        "count": 2951,
+        "last_label": 3280,
+        "common_last_label": 3280,
+        "serialization_max_error": 0.0,
+        "learned_scaler": false,
+        "random_validation": false,
+        "selection_calls": 0,
+        "label_kind": "SHORT_NET",
+        "execution_lag": 2
+      },
+      {
+        "cut": 3286,
+        "first": 252,
+        "last": 3218,
+        "count": 2951,
+        "last_label": 3280,
+        "common_last_label": 3280,
+        "serialization_max_error": 0.0,
+        "learned_scaler": false,
+        "random_validation": false,
+        "selection_calls": 0,
+        "label_kind": "SHORT_NET",
+        "execution_lag": 2
+      }
+    ]
+  }
+}
