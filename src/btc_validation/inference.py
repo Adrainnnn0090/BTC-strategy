@@ -54,8 +54,9 @@ def expanded_context(read,name,market,scores):
    old=bank[key];old[first:]=scores[fam][first:]
  def flags(old):
   ff=price_flags(days,prices)
-  for k in('bear','negative20'):old[k]=list(old[k])+ff[k][old_n:]
-  old['available']=list(old['available'])+[True]*(n-old_n)
+  for k in('bear','negative20'):
+   old[k]=list(old[k])+ff[k][old_n:];old[k][first:]=ff[k][first:]
+  old['available']=list(old['available'])+[True]*(n-old_n);old['available'][first:]=[True]*(n-first)
  def parent(bank):
   bank_scores(bank['scores'],'stop44');bank['policies']['Y01'][2026]=deepcopy(pol['y01']);flags(bank['flags'])
  def values(v):
@@ -76,5 +77,7 @@ def expanded_context(read,name,market,scores):
    if 'mining58'not in scores:raise ValueError('C04 blocked: missing actual mining factors')
    ctx[2]['EXTRA_DYNAMICS_L60'][first:]=scores['mining58'][first:]
   ctx[3]['U02'][2026]=deepcopy(pol['u02']);ctx[4]['H03'][2026]=deepcopy(pol['h03_exit_choice'])
-  for key in ctx[6]:ctx[6][key]=list(ctx[6][key])+[bool(pol['sizing_active_2026'][key])]*(n-old_n)
+  for key in ctx[6]:
+   ctx[6][key]=list(ctx[6][key])+[bool(pol['sizing_active_2026'][key])]*(n-old_n)
+   ctx[6][key][first:]=[bool(pol['sizing_active_2026'][key])]*(n-first)
  return ctx

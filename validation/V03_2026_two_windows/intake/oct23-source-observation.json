@@ -1,0 +1,12 @@
+{
+  "date": "2026-10-23",
+  "open": 81312,
+  "close": 81074,
+  "high": 81956,
+  "low": 80422,
+  "field_used": "closing price, not daily average",
+  "source_url": "https://www.bitcoinbtcsats.com/price/usd/2026/10/",
+  "retrieval_UTC": "2026-10-25 11:48:33 UTC",
+  "provider_close_timezone_verified": false,
+  "qualification": "Public rounded USD reference close; not venue BTCUSDT tick or point-in-time publication certificate. Oct24/25 page rows excluded."
+}

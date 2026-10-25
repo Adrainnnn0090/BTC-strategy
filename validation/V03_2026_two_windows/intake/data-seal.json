@@ -1,0 +1,55 @@
+{
+  "status": "COMPLETE_296_DAY_REFERENCE_PRICE_COVERAGE",
+  "retrieval_UTC": "2026-10-25T11:51:45.387265+00:00",
+  "original_295_rows_sha256": "ca220e2dd64439fcce344a5674bf4da04687c7e30799fa7c8fb74a8903ad31b3",
+  "original_295_rows_unchanged": true,
+  "new_day": {
+    "date": "2026-10-23",
+    "open": 81312,
+    "close": 81074,
+    "high": 81956,
+    "low": 80422,
+    "field_used": "closing price, not daily average",
+    "source_url": "https://www.bitcoinbtcsats.com/price/usd/2026/10/",
+    "retrieval_UTC": "2026-10-25 11:48:33 UTC",
+    "provider_close_timezone_verified": false,
+    "qualification": "Public rounded USD reference close; not venue BTCUSDT tick or point-in-time publication certificate. Oct24/25 page rows excluded."
+  },
+  "windows": {
+    "H1_TO_JUN29": {
+      "start": "2026-01-01",
+      "end": "2026-06-29",
+      "days": 180
+    },
+    "JUN30_TO_OCT23": {
+      "start": "2026-06-30",
+      "end": "2026-10-23",
+      "days": 116
+    }
+  },
+  "overlap_days": 0,
+  "missing_days": 0,
+  "duplicates": 0,
+  "pit_mining_continuation_verified": false,
+  "mining_status": {
+    "status": "BLOCKED",
+    "original_observer_last_UTC": "2025-12-01T18:40:16.307000+00:00",
+    "canonical_header_ceiling": 926039,
+    "required_lag60_through_h1": "2026-04-30",
+    "required_lag60_through_h2": "2026-08-24",
+    "upstream_arrival_HEAD": "1bb1c1b750dcc4633a54f01cbaaed8d789c3f4c0",
+    "upstream_arrival_unchanged": true,
+    "reason": "Original observer/header provenance does not extend through required2026 dates. No fabricated stale/zero/missing-feed counterfactual or unrelated hash-rate substitute."
+  },
+  "data_grade": "CONDITIONAL_DAILY_USD_REFERENCE_PROXY",
+  "provider_close_timezone_verified": false,
+  "historical_publication_vintages_verified": false,
+  "exchange_execution_prices": false,
+  "independent_oct23_close_check": {
+    "yahoo": "Unavailable:directpage inaccessible thenHTTP429; stopped retries",
+    "investing": "Rejected as completed-close confirmation: cachedOct23page is intraday20:12; no primary substitution"
+  },
+  "source_reuse": "2026 historical validation previously consumed; not fresh blind data. No2026 observations enter model fitting, normalization fitting or parameter selection.",
+  "requested_endpoint_complete": true,
+  "qualification": "Coverage completion does not certify provider PIT, USD/USDT parity, venue microstructure, borrow supply or financing-adjusted liquidation safety."
+}

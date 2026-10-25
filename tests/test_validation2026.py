@@ -68,3 +68,21 @@ def test_model_training_proof_and_prior_numeric_parity():
  assert s['fits']==168 and s['final_states']==56 and s['long_last_label']<=s['cut_index']-6 and s['short_last_label']<=s['cut_index']-6
  assert all(q['prior_sealed_2026_numeric_member_parity'].values())
  for name,digest in s['files'].items():assert hashlib.sha256((p/name).read_bytes()).hexdigest()==digest
+
+
+def test_first_next_year_decision_gets_new_availability_and_sizing():
+ from btc_validation.inference import forecast,expanded_context
+ from btc_validation.strategies import compose
+ r=ROOT
+ def read(name):
+  if name=='policies.json':p=r/'validation/V03_2026_two_windows/training/policies.json'
+  elif name.startswith('models/'):p=r/'validation/V03_2026_two_windows/training'/Path(name).name
+  else:p=r/'artifacts'/name
+  b=p.read_bytes();return json.loads(gzip.decompress(b)if p.suffix=='.gz'else b)
+ market=json.loads(gzip.decompress((r/'artifacts/factors/prices.json.gz').read_bytes()))
+ assert market['days'][-1]=='2025-12-31'  # No actual2026 observation in this regression.
+ scores=forecast(read,market);high=expanded_context(read,'LP35',market,scores)
+ assert high[0]['flags']['available'][-1]is True
+ c=expanded_context(read,'C02',market,scores);y=expanded_context(read,'Y01',market,scores)
+ assert c[6]['Y01'][-1]is True
+ assert compose('C02',c)[2][-1]['long_fraction']==pytest.approx(.75*compose('Y01',y)[2][-1]['long_fraction'])
