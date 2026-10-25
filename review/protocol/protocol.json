@@ -1,0 +1,102 @@
+{
+  "version": 1,
+  "roles": {
+    "statistics": "数学、统计与多重检验",
+    "data": "分集、标签与数据泄漏",
+    "models": "模型、因子与预测重建",
+    "execution": "撮合、成本与账户核算",
+    "risk": "敞口、止损与稳健性",
+    "repro": "复现、工程与供应链"
+  },
+  "rounds": [
+    {
+      "round": 1,
+      "topic": "声明边界与研究合同"
+    },
+    {
+      "round": 2,
+      "topic": "年度分集与封存"
+    },
+    {
+      "round": 3,
+      "topic": "标签成熟与隔离期"
+    },
+    {
+      "round": 4,
+      "topic": "因子可得性和来源时点"
+    },
+    {
+      "round": 5,
+      "topic": "模型方程与实现一致性"
+    },
+    {
+      "round": 6,
+      "topic": "执行、滑点、融资与净值"
+    },
+    {
+      "round": 7,
+      "topic": "敞口、止损与跨年风险"
+    },
+    {
+      "round": 8,
+      "topic": "多重试验与有效独立性"
+    },
+    {
+      "round": 9,
+      "topic": "年度、行情与盈利集中"
+    },
+    {
+      "round": 10,
+      "topic": "导出模型与离线复现"
+    },
+    {
+      "round": 11,
+      "topic": "修复和对抗性检查"
+    },
+    {
+      "round": 12,
+      "topic": "最终验收与未解决风险"
+    }
+  ],
+  "scope": [
+    "LP35",
+    "TS04",
+    "ME01",
+    "MX03",
+    "B88A_S03",
+    "K02",
+    "Y01",
+    "C02",
+    "C04"
+  ],
+  "independence": "Role-isolated review artifacts; no other expert files/scores/recommendations read. Shared frozen factual source packet only. AI roles are not humans or statistically independent market samples.",
+  "weights": {
+    "statistics": 0.16666666666666666,
+    "data": 0.16666666666666666,
+    "models": 0.16666666666666666,
+    "execution": 0.16666666666666666,
+    "risk": 0.16666666666666666,
+    "repro": 0.16666666666666666
+  },
+  "aggregation": "No numerical investment ranking. Equal analytical coverage; any material reproducibility or leakage failure is non-overridable by votes. Chair validates evidence and records accept/reject/defer per round; no speculative confidence values.",
+  "limits": [
+    "No 2026 economic observations, no validation peeking",
+    "No modification of frozen source/spec/model/account/verification/gates",
+    "No overwrite of completed audit writers",
+    "No new strategy parameter optimization in panel rounds",
+    "No live orders, credentials export or production deployment"
+  ],
+  "submission_fields": [
+    "round",
+    "role",
+    "topic",
+    "conclusion",
+    "verdict",
+    "evidence",
+    "counterevidence",
+    "recommendations",
+    "checks_performed",
+    "unresolved",
+    "independence_statement"
+  ]
+}
