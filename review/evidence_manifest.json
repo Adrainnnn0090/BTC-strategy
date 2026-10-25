@@ -629,6 +629,55 @@
       "path": "review/evidence/repro/version-bridge-r12.json",
       "sha256": "d59f28f24e28447eb9d5f1c2bbdf7be9d4655d28dbfd2e26b61b6ded77bdcc93",
       "bytes": 3259
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/data/post-packaging-check.py",
+      "path": "review/evidence/data/post-packaging-check.py",
+      "sha256": "394d68b8d6aee890ba9c483cc920160bc02e6723a272f863de1e07f84fc35307",
+      "bytes": 7723,
+      "phase": "post_review_packaging"
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/data/post-packaging-checks.json",
+      "path": "review/evidence/data/post-packaging-checks.json",
+      "sha256": "86af6faf6a3d4b8d864d5142f4990cc737ef494e6bb77bc6e1a100ba92783824",
+      "bytes": 3011,
+      "phase": "post_review_packaging"
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/data/post-packaging.json",
+      "path": "review/evidence/data/post-packaging.json",
+      "sha256": "6de27be7f5c7b404a2ca7252e676742bf02e327478556e918a2cf9c9965bc874",
+      "bytes": 4015,
+      "phase": "post_review_packaging"
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/repro/post-packaging-check.py",
+      "path": "review/evidence/repro/post-packaging-check.py",
+      "sha256": "7d66ec148f0f6d9988d060528559719d729995721932d0df75f5379bd3f4dcfb",
+      "bytes": 8341,
+      "phase": "post_review_packaging"
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/repro/post-packaging-checks.json",
+      "path": "review/evidence/repro/post-packaging-checks.json",
+      "sha256": "f5e2f5cee058ded4068bb5b6c0cd1d67cc716f02afa5d94fadb66e9e01d670ca",
+      "bytes": 24788,
+      "phase": "post_review_packaging"
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/repro/post-packaging-container.jsonl",
+      "path": "review/evidence/repro/post-packaging-container.jsonl",
+      "sha256": "a7256c137b0cbccde3670962a7d61a48b98ec4139e77e84eef169e888608856e",
+      "bytes": 19136,
+      "phase": "post_review_packaging"
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/repro/post-packaging.json",
+      "path": "review/evidence/repro/post-packaging.json",
+      "sha256": "06aed8e64bfecc7ea8a87466f19bf68de7c48afb7c2f1d943442f186e80e1478",
+      "bytes": 3535,
+      "phase": "post_review_packaging"
     }
   ],
   "qualification": "Original support bytes; source-era paths and deliberately failing snapshots are preserved, not current executable entry points."

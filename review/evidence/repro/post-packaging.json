@@ -1,0 +1,42 @@
+{
+  "phase": "post_review_packaging",
+  "role": "repro",
+  "verdict": "supported",
+  "conclusion": "支持57205cb发布打包修正：独立干净Git克隆中881件全部受Git跟踪，实际隔离容器--integrity通过，安装源码与同一不可变镜像一致。仅删除5件生成式egg-info；881件保留物料的hash/bytes逐项不变。此为12轮结束后的打包追加复核，不是第13轮策略研究或新市场验证。",
+  "candidate_commit": "57205cb9935093afec6a80ae1972c22dce4ab55d",
+  "image_id": "sha256:79fcfc5131064b144d98bc625475b0a315bab53781c57a31ba3a28db0ec73640",
+  "manifest_sha256": "6ddeb590696601c9f28ad827dda6a2f866689b6af18fa95caf1bd34228f8e3a7",
+  "evidence": [
+    {
+      "source": "post-packaging-checks.json:clone_command,clone_git_status_before,clone_git_status_after,clone_install_metadata_directories",
+      "actual_check": "使用git clone --no-local --no-hardlinks --no-checkout后detached checkout精确57205cb，未复制工作树。克隆前后git状态干净，无egg-info/dist-info目录；只读取Git路径metadata，不检查真实review内容。"
+    },
+    {
+      "source": "post-packaging-checks.json:all_881_payloads_Git_tracked,all_881_remaining_rows_hash_bytes_unchanged_from_R12,removed_install_metadata_paths",
+      "actual_check": "881件均为Git tracked，清单等于冻结Git blob，总56,437,576 bytes；对R12的886件清单逐项比较，仅删除src/btc_strategy_research.egg-info的PKG-INFO、SOURCES.txt、dependency_links.txt、requires.txt、top_level.txt，保留881件的所有记录逐项相同。"
+    },
+    {
+      "source": "post-packaging-container.jsonl; post-packaging-checks.json:container_isolation,actual_container_preflight,actual_integrity_CLI_receipt,actual_container_audit",
+      "actual_check": "实际使用指定immutable image、python -I、network none、readonly rootfs、非root、cap-drop ALL/no-new-privileges，唯一只读挂载干净clone。193个已安装Python文件与clone源码完全一致；实际仅运行btc_strategy.verify --integrity，退出0/PASS881，未读review、未传--review、无binance_robot。"
+    }
+  ],
+  "prior_failure_and_R12_scope": {
+    "first_main_CI_id_from_task_context": "40186975019",
+    "CI_failure_independently_replayed": false,
+    "statement": "首次CI的安装元数据失败与原R12报告保留。原R12是现有工作树886件的本地镜像完整性验证，不曾证明干净Git安装会保留生成metadata；本追加修正该发布边界，不改写旧结论或把原失败记为通过。",
+    "original_r01_through_r12_hashes_unchanged": true
+  },
+  "checks_performed": [
+    "独立干净Git克隆及冻结commit/manifest锚定；检查881件Git跟踪和无安装metadata。",
+    "881保留记录与原R12清单hash/bytes逐项比较；193个安装源码与干净clone字节比对。",
+    "有界只读无网络容器实际运行--integrity；容器和私有临时clone检查后清理。"
+  ],
+  "not_run": [
+    "--review或真实其他角色/主席内容读取",
+    "模型推理、36本账户重放、训练或新依赖安装",
+    "首次CI失败重演、旧实验writer或新策略搜索"
+  ],
+  "research_rounds_added": 0,
+  "new_market_samples": 0,
+  "independence_statement": "本角色独立生成新收据，不以root既有CI/receipt替代实际检查。原12轮文件SHA前后相同，源ledger及共享交付未写入。未读真实2026经济数据或V01/V02；没有认证盈利、PIT、实盘安全或全体review完成。完成本追加后停止。"
+}

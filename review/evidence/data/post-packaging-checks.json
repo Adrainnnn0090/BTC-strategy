@@ -1,0 +1,63 @@
+{
+  "phase": "post_review_packaging",
+  "role": "data",
+  "status": "PASS_BOUNDED",
+  "candidate_git": "57205cb9935093afec6a80ae1972c22dce4ab55d",
+  "baseline_git": "c7439216d55207a9a480153d7555f6709817e70a",
+  "manifest": {
+    "old_count": 886,
+    "new_count": 881,
+    "verified_clean_git_object_bytes": 56437576,
+    "retained_records_identical": true,
+    "all_current_entries_tracked": true,
+    "all_clean_payload_sha256_and_sizes_match": true,
+    "removed": [
+      {
+        "path": "src/btc_strategy_research.egg-info/PKG-INFO",
+        "sha256": "14c668861771dae6ac29acd92c925c5900eb6fa72c4b95f5aa5d0a1bb39857ee",
+        "bytes": 451
+      },
+      {
+        "path": "src/btc_strategy_research.egg-info/SOURCES.txt",
+        "sha256": "af8b4397fd371bbffa540a1eab70e3c4c5da8cfd3247e4dbe834595aecfc4963",
+        "bytes": 8256
+      },
+      {
+        "path": "src/btc_strategy_research.egg-info/dependency_links.txt",
+        "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+        "bytes": 1
+      },
+      {
+        "path": "src/btc_strategy_research.egg-info/requires.txt",
+        "sha256": "730bebb43d5f9c63e5731d1e2582a78631b0fd983beff0d409ef041ce9e3f186",
+        "bytes": 130
+      },
+      {
+        "path": "src/btc_strategy_research.egg-info/top_level.txt",
+        "sha256": "245f538d4402b7b76d1a400a1c66e5096f841a24dafd43184e720f7b55c5a587",
+        "bytes": 13
+      }
+    ],
+    "removed_records_were_untracked_at_both_commits": true
+  },
+  "original_economic_code_models_raw_data_training_inputs_and_accounts_git_objects_unchanged": true,
+  "clean_materialization": {
+    "path": "/tmp/btc-data-post-packaging-2zhffz9l/checkout",
+    "method": "Selected committed Git blobs checked out with a private GIT_INDEX_FILE; no review/verification files materialized.",
+    "baseline_generator_exact": true,
+    "synthetic_egg_info_does_not_enter_manifest": true,
+    "ordinary_untracked_research_input_rejected": true,
+    "negative_expected_return_code": 1,
+    "negative_error": "Stage intended payload before freezing: src/synthetic-untracked-research-input.json",
+    "rejected_generation_did_not_change_prior_manifest": true
+  },
+  "original_candidate_index_sha256_preserved": "143cc345532b2193a6645310b8b6306977e94780472156d94a37aba02036cc37",
+  "original_r12_sha256_preserved": "3040e4fc31d2672a4c9c87f1f2dc8db316c582cb9f4a310f216302a1833d30b8",
+  "limitations": [
+    "This is a packaging addendum, not a thirteenth strategy-research round.",
+    "Clean materialization contains all 881 release entries plus generator/manifest; unrelated repository history and peer review files were not checked out.",
+    "No market data were deserialized, no 48-matrix recomputation, inference, refit, install, CI rerun or account writer was run.",
+    "Initial CI results were supplied by the parent and are not counted as this role executing those tests.",
+    "No real 2026 economic observation, V01/V02, other expert opinion or chair conclusion was read."
+  ]
+}

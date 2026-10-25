@@ -1,0 +1,31 @@
+{
+  "status": "PASS_RESEARCH_ARCHIVE_ONLY",
+  "phase": "post_review_corrected_release",
+  "recorded_UTC": "2026-10-25T11:09:02.175847+00:00",
+  "economic_runtime_commit": "c7439216d55207a9a480153d7555f6709817e70a",
+  "clean_checkout_candidate": "57205cb9935093afec6a80ae1972c22dce4ab55d",
+  "content": {
+    "status": "PASS",
+    "files": 881,
+    "bytes": 56437576,
+    "scope": "Content equality; not alpha, PIT or live safety certification."
+  },
+  "review": {
+    "status": "PASS",
+    "rounds": 12,
+    "expert_submissions": 72,
+    "roles": 6,
+    "independence": "Blind role reviews; AI roles, shared data, not independent market samples or external human audit."
+  },
+  "support_files_hash_verified": 112,
+  "original_105_support_rows_unchanged": true,
+  "economic_assets_unchanged": true,
+  "clean_checkout_receipt": "verification/clean-checkout-57205cb.json",
+  "packaging_failure_and_fix": "verification/packaging-correction.json",
+  "corrected_remote_CI": "To be observed after this release commit is pushed; not claimed by this local receipt.",
+  "qualifications": [
+    "No new market observations or alpha experiment. All 2026 economics excluded.",
+    "Original 12-round reports and first failed CI remain preserved.",
+    "Research reproduction is not PIT/OOS/live safety certification."
+  ]
+}

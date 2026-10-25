@@ -19,4 +19,6 @@
 
 [最终主审报告](FINAL_REPORT.md) · [附件路径与SHA](evidence_manifest.json) · [事前协议](protocol/CHARTER.md)
 
+发布打包追加（不计新研究轮次）：[数据复核](evidence/data/post-packaging.json) · [独立干净克隆复核](evidence/repro/post-packaging.json)。原12轮记录不回写。
+
 原报告中的`/workspace/BTCExpertReview/workspaces/<role>/...`附件对应本仓`review/evidence/<role>/...`。[顺序轮次时间记录](run_timeline.json)使用观察到的文件时间，非外部签名时间证明。原始报告和失败快照保持逐字节，不回写为后来PASS。源ledger路径由`provenance/export_manifest.json`及各模型manifest映射；本仓不是整个原实验室的镜像。支持脚本保留原审计环境路径，复现入口以README命令为准。

@@ -1,0 +1,51 @@
+{
+  "phase": "post_review_packaging",
+  "role": "data",
+  "topic": "发布打包追加核验",
+  "candidate": "57205cb9935093afec6a80ae1972c22dce4ab55d",
+  "conclusion": "57205cb的清单修正仅移除5个未入Git的生成包装metadata，881项保留物料及原经济输入完全不变；干净Git对象物化和generator正反例支持该修复，未靠排除真正研究输入规避首次打包失败。",
+  "verdict": "supported",
+  "evidence": [
+    {
+      "source": "Git c7439216→57205cb；provenance/release_manifest.json；/workspace/BTCExpertReview/workspaces/data/post-packaging-checks.json:manifest",
+      "fact": "新清单881项、56,437,576bytes；旧886项恰删除PKG-INFO、SOURCES.txt、dependency_links.txt、requires.txt、top_level.txt五个src/btc_strategy_research.egg-info文件，无新增项、无保留记录hash/bytes变化。"
+    },
+    {
+      "source": "上述两提交Git tree与当前git ls-files；post-packaging-checks.json",
+      "fact": "881项全部在当前Git index及提交对象中；被删除5项在两提交均不tracked。原src经济代码、models、artifacts、training_inputs（含48前缀）、strategies的Git对象集合/内容逐项相同，账户未改。"
+    },
+    {
+      "source": "/workspace/BTCExpertReview/workspaces/data/post-packaging-check.py；post-packaging-checks.json:clean_materialization",
+      "fact": "使用私有GIT_INDEX_FILE只物化881个release对象及generator/manifest，不带review/verification。干净副本逐项实际SHA和size匹配，合计56,437,576bytes；generator重建结果与候选清单完全相等。"
+    },
+    {
+      "source": "/workspace/BTC-strategy/scripts/make_manifest.py:9–20；post-packaging-checks.json:clean_materialization",
+      "fact": "私有副本新增未tracked fake egg-info/SOURCES.txt后，清单逐字节不变；新增普通未tracked synthetic研究输入则返回1，明确要求Stage intended payload，且失败未覆盖先前manifest。排除生成metadata与拒绝遗漏普通输入均经实际运行检查。"
+    },
+    {
+      "source": "post-packaging-checks.json:original_candidate_index_sha256_preserved,original_r12_sha256_preserved",
+      "fact": "共享候选.git/index与本人原R12报告SHA前后不变；只在私有目录运行打包generator，未触碰原研究writer或共享候选。"
+    }
+  ],
+  "counterevidence": [
+    "首次CI失败与37测试/isolated-replay通过由父agent提供，本角色未读取该CI收据，也未将其计作自身执行。",
+    "本次是打包完整性追加，不是R13策略研究；它不提高历史PIT、样本独立性、未来泛化或OS沙箱资格。"
+  ],
+  "recommendations": [
+    {
+      "priority": "P0",
+      "action": "保留首次失败和本追加receipt，对57205cb重新运行干净CI；持续要求普通release输入已tracked，生成egg-info/dist-info不得进入研究清单。",
+      "acceptance": "干净安装/构建生成包装metadata后881项研究payload仍一致；普通未tracked研究输入继续显式报错，原模型/数据/48前缀与账户不变。"
+    }
+  ],
+  "checks_performed": [
+    "核对HEAD；比较旧新manifest、当前tracked集合及提交Git对象，验证仅删除5个生成metadata记录。",
+    "私有Git index干净物化并复核881个payload实际SHA/size，基线及fake egg-info生成测试通过，普通未tracked输入负例按预期失败。",
+    "确认共享Git index和原R12不变；只新增本人post-packaging工件及私有临时夹具。"
+  ],
+  "unresolved": [
+    "未执行CI、安装、48矩阵重算、模型推断/拟合或账户回放；本结论不代替新CI结果。",
+    "原R12的PIT、选择历史及hook非OS沙箱限制保持不变。"
+  ],
+  "independence_statement": "不读取其他专家/主席review或真实2026/V01/V02资料；只用指定Git对象、打包代码与manifest，市场数据只作字节哈希、不反序列化。原十二轮报告及失败未回写，本发布打包追加完成即停止。"
+}

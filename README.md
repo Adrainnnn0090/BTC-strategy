@@ -62,7 +62,7 @@ uv run --locked python -m btc_strategy.verify --review
 
 角色隔离属于盲审工作流，不是六个人类专家、外部审计或六份独立市场证据。实际隔离运行另有不挂旧项目、无网络、只读数据的容器收据。
 
-冻结运行物料版本`c7439216`：37项测试通过，六类实际数值模型和九项目标/许可一致；无网络installed-wheel容器完成36个完整Native账户与Decimal核验。六族2025共56个已选最终状态重拟合通过；未重跑全部年度训练或原内层选择。见[当前容器核验](verification/container-candidate-c743921.json)和[边界/模型/目标核验](verification/r11-hardened-c743921.json)。结论为可复现历史研究档案，paper/live尚未取得资格。
+经济运行代码版本`c7439216`：37项测试通过，六类实际数值模型和九项目标/许可一致；无网络installed-wheel容器完成36个完整Native账户与Decimal核验。六族2025共56个已选最终状态重拟合通过；未重跑全部年度训练或原内层选择。见[原运行版本容器核验](verification/container-candidate-c743921.json)、[打包修正后干净克隆核验](verification/clean-checkout-57205cb.json)及[边界/模型/目标核验](verification/r11-hardened-c743921.json)。结论为可复现历史研究档案，paper/live尚未取得资格。
 
 首次远端CI发现原清单误含5个未入Git、安装时生成的`egg-info`文件。打包修正版将其排除，当前清单为881个Git跟踪文件/56,437,576字节，保留的模型、数据和经济代码逐字节不变；原审查中886项是原版本事实，未回写。详见[打包修正记录](verification/packaging-correction.json)。
 
