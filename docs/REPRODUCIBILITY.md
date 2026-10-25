@@ -19,6 +19,8 @@ uv run --locked python -m btc_strategy.training --family price47 --year 2025
 
 这只重拟合封存的最终参数，不重做原内层选择或整段策略搜索；不会覆盖原模型。训练使用`training_inputs/<year>/<family>.json.gz`中的物理过去前缀、共同ids与标签，运行时拒绝读取测试context、账户、其他家族或其他年度训练物料。2018有意无状态，不得用后来模型回填。六家族2025共56个最终估计器已作抽样年度重拟合，其他年度不能据此称全部重拟合通过。
 
+包内artifact角色校验、当前family/year训练读取hook和操作系统隔离是不同层级。正常训练CLI只显式请求当前plan与模型；hook为第三方库保留ROOT外读取，不能充当完整文件系统沙箱。若要阻断任意扩展代码访问外部经济文件，须另外采用容器/OS挂载边界，不能只依赖该hook。
+
 实际数值模型是JSON/gzip树节点、阈值和叶值，不需要pickle。`models/manifest.json`列出年度窗口、source、SHA、因子schema和训练包。原研究注册与失败保存在`provenance/`；`_frozen`是逐字节源码档案，旧driver保留原路径合同，不能当作新仓直接入口。新入口使用26模块纯运行时，只对clock依赖做已记录导入适配，经济函数体不变。
 
 如安装wheel后离开克隆目录运行，显式设置`BTC_STRATEGY_ROOT`为克隆仓根。代码不会隐式搜寻旧研究工程。
@@ -47,3 +49,5 @@ docker run --rm --network none --read-only \
 6. 新鲜样本外泛化、真实成交与融资后清算安全。
 
 前五项有各自限定的执行证据，不能自动推出第六项。全部2026经济数据维持验证身份，本次未重新运行验证。
+
+回放JSON的`metric_scope`明确每个风险字段口径：旧`summary.max_gross_exposure_pct`来自每日成交后marks；外层`max_daily_short_gross`与`max_daily_whole_gross`涵盖订单前后代理点。LP35/BASE两种全仓最大值分别约98.9936%与118.0456%，原summary数值保留用于完整账本核验。`risk_qualification`同时提示这些不是盘中峰值、未来敞口上限或实际止损亏损保证。

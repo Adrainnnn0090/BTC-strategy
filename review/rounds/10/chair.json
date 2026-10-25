@@ -1,0 +1,57 @@
+{
+  "conclusion": "导出数据、48物理训练前缀、266文件392数值状态和实际模型到36个完整账户的离线执行闭包得到有界复现支持；最终估计器拟合不等于全搜索重建，隔离hook不等于OS沙箱。",
+  "scope_filter": "接受角色本人执行的哈希、推断、固定拟合和账户证据，逐层保留范围；不把他人收据计作自己重跑，不从复现推出PIT、未来alpha或真实融资后清算资格。",
+  "object_filter": "只评九固定研究实现及候选1b008bfd；六AI分析角色共享数据，非人类外部审计或独立市场样本。较早专家镜像核心/runtime一致但缺新CLI，不能视为整提交等同。",
+  "actions": [
+    "接受原始字节/48训练前缀/实际模型和Native完整账户的有限复现结论，保留不同角色实际运行范围。",
+    "接受risk建议：下一候选仅为CLI补metric_scope，分别标明旧summary成交后gross与外层订单前后gross，不改经济函数、summary值、模型或原账本。",
+    "接受data建议：明确training audit hook允许库/部分ROOT外读取，不能称完整文件系统沙箱；真正无网络只读隔离使用容器。",
+    "保留R05/R07原失败快照；R11用合成故障独立回归修复，不回写旧轮结论。"
+  ],
+  "chair_checks": [
+    "主审当前候选release manifest独立执行PASS：886files/56,444,740bytes，SHA b9c03b01ef32bd63c6e61f61207f32ee70c6de27560ef4e8df1f33686dca2caa。",
+    "主审从固定Dockerfile和候选构建image sha256:2cba766e82b316f0cf0207ef4f9fc26f2f04a3a6264d797bec6ffe2417513bb7，installed-wheel无网络/只读/非root/只挂新仓，六族与36完整Native/Decimal实际通过；收据verification/container-candidate-1b008bf.json。",
+    "阅读六份R10证据与建议，检查原summary来自post-fill marks而quote_exposure包含退出前代理点，确认标签澄清必要且无需更改账户。",
+    "源ledger ea1256c6和原tradingrepo1aa5cf43工作树仍clean；目标可正常git push dry-run，尚未实际push。"
+  ],
+  "open": [
+    "全部年度/inner-selection和历史全搜索未重跑；2025仅56已选最终state refit，专家另复跑其中2state不是58不同状态。",
+    "有效独立试验数未知、历史来源PIT、盘中/容量/借贷与融资后保证金仍未资格；2026真实经济数据本轮未读取。",
+    "CLI口径标签与hook文档待下一候选修正后R11实测；最终72份审查尚未完成，不预称验收。"
+  ],
+  "round": 10,
+  "submissions": {
+    "statistics": {
+      "verdict": "qualified",
+      "conclusion": "冻结候选1b008bf的交付完整性、选定模型字节和有界训练/经济日期合同得到本角色独立核验；这些证据支持选定研究资产的可追溯与有限复现范围，不等于原始完整自适应选择链重建、有效独立试验计数、新鲜OOS或72次独立回测。",
+      "sha256": "9d7c732a0b809557cc15a194cb0e2a9864d12fff52708d864ce9cc7520726274"
+    },
+    "data": {
+      "verdict": "qualified",
+      "conclusion": "固定候选1b008bf的原始数据/模型复制、48个物理训练前缀与已检经济日期边界通过；私有副本在拒绝原仓和旧项目源码访问、禁网络的条件下成功重建price47与mining58全年度预测，但training读取hook仍非完整文件系统沙箱，结论限于本轮实际数据与离线路径覆盖。",
+      "sha256": "5c1e2f8d7a799c70536b35c73cb46a713ccbc8cf715feec6bcf607b096749ab8"
+    },
+    "models": {
+      "verdict": "qualified",
+      "conclusion": "候选1b008bfd的实际数值模型导出与六族离线推断已由本角色完整核对到原始年度forecast且误差全0；266文件/392状态与源绑定一致。但训练复现范围必须限定：既有收据是2025年56个已选最终估计器，本角色只独立复跑其中2个状态，未复跑全部年度或历史inner-selection，不能将预测重建成功扩大为全研究选择过程重建。",
+      "sha256": "0da54eac42a5c69220591535366da1ab54c7e7c43e28e8b0c356e1bd92557096"
+    },
+    "execution": {
+      "verdict": "qualified",
+      "conclusion": "独立检查支持冻结提交1b008bf的执行逻辑及三处依赖迁移在代码/metadata层与源Native适配器一致；本轮范围是AST、成本、instrument和文件摘要核对，不冒称已独立完成实际模型→Native→完整账本的运行链。",
+      "sha256": "04e3ef6e459880630a0eccd21b27ece2ddcc89f51af0f544112bf80aafcfe799"
+    },
+    "risk": {
+      "verdict": "qualified",
+      "conclusion": "候选1b008bf中所查风险文档、九策略卡与历史API实现口径一致，并可在有界重放中复现预算≠gross、日度DD、止损非保证及2026拒绝边界；该结论仅覆盖明确列出的历史/接口检查，CLI旧summary gross仍需标明成交后口径，不能据此声称模型全链、paper或实盘风险已认证。",
+      "sha256": "8c9d204c11d52e5cd9df757e1fdb5c0acb2468b22fe91b4794c25573da3330b0"
+    },
+    "repro": {
+      "verdict": "supported",
+      "conclusion": "本角色实际执行的一次有界离线容器复现通过：在无网络、只读文件系统、非root且仅挂载新仓的环境，用已安装site-packages包从实际numeric模型重建六家族预测，再重放九策略×四成本36本完整Native账户，全部精确一致且Decimal核对PASS，旧项目不可见、无binance_robot或内存替身。该证据支持冻结提交1b008bf的已比较核心/runtime执行闭包可独立复现；所用较早镜像缺新增integrity/verify模块，不能据此宣称整个镜像、提交和全部release文件是同一已验对象。",
+      "sha256": "fa7bb05cf7004dbaec28696ff187af9d71422fe07e560597a94f330552245241"
+    }
+  },
+  "not_external_human_audit": true,
+  "not_independent_market_samples": true
+}

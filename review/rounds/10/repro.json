@@ -1,0 +1,69 @@
+{
+  "round": 10,
+  "role": "repro",
+  "topic": "导出与离线可复现",
+  "conclusion": "本角色实际执行的一次有界离线容器复现通过：在无网络、只读文件系统、非root且仅挂载新仓的环境，用已安装site-packages包从实际numeric模型重建六家族预测，再重放九策略×四成本36本完整Native账户，全部精确一致且Decimal核对PASS，旧项目不可见、无binance_robot或内存替身。该证据支持冻结提交1b008bf的已比较核心/runtime执行闭包可独立复现；所用较早镜像缺新增integrity/verify模块，不能据此宣称整个镜像、提交和全部release文件是同一已验对象。",
+  "verdict": "supported",
+  "evidence": [
+    {
+      "source": "/workspace/BTCExpertReview/workspaces/repro/checks-r10.json:git_commit_mounted,image_id,image_created,container_config",
+      "actual_check": "自建独立执行收据，挂载commit=1b008bfd4a9d1af9a73ff830fb7f8a1b72425fbf；镜像ID=sha256:5b569cbb6b97e9c985a644f04e163d903d460fba60e658703ba8a27599703bfe，创建于2026-10-25T10:14:09Z。Docker inspect确认NetworkMode=none、ReadonlyRootfs=true、CapDrop=ALL、no-new-privileges、user1000:1000、唯一bind为新仓→/research且RW=false；限制2CPU/4GiB/256pids和600秒总超时，仅/tmp为tmpfs。未构建镜像、下载依赖或挂载旧项目。"
+    },
+    {
+      "source": "/workspace/BTCExpertReview/workspaces/repro/checks-r10.json:preflight; /workspace/BTCExpertReview/workspaces/repro/offline-r10.jsonl:type=independent_preflight",
+      "actual_check": "容器以python -I从/usr/local/lib/python3.12/site-packages/btc_strategy导入，非直接导入/research/src。Python3.12.14/Linux amd64。已安装artifacts/models/strategies/execution/costs/instrument/training七核心文件SHA逐项等于挂载提交源码，28个_runtime Python文件也逐字节相同；源码比镜像多integrity.py与verify.py，明确记录该差异，没有将镜像标签当commit身份。"
+    },
+    {
+      "source": "/workspace/BTCExpertReview/workspaces/repro/offline-r10.jsonl:type=model; /workspace/BTCExpertReview/workspaces/repro/receipt-summary-r10.json:all_six_model_errors_zero",
+      "actual_check": "在同一隔离容器内实际运行scripts/verify_offline.py。六个不同家族均3287位置、2557有限预测、max_error=0.0、None可用性完全一致；使用实际numeric状态与因子重建，不是缓存预测直接冒充模型输出。原2e-12容差未放宽。"
+    },
+    {
+      "source": "/workspace/BTCExpertReview/workspaces/repro/offline-r10.jsonl:type=native; /workspace/BTCExpertReview/workspaces/repro/receipt-summary-r10.json:exact_36_distinct_strategy_case_roster,all_36_complete_account_exact,all_36_decimal_status_PASS",
+      "actual_check": "实际运行的36个不同(strategy,case)精确覆盖九候选×BASE/STRESS/SEVERE/DELAY，所有complete_account_exact=true，独立Decimal status均PASS，逐本2922个日度marks。执行链为实际模型重建→目标/许可→Native账户→完整原账本比较与Decimal核算，没有以summary相近或父agent既有收据代替。"
+    },
+    {
+      "source": "/workspace/BTCExpertReview/workspaces/repro/checks-r10.json:completion,independent_audit,exit_code,git_status_before,git_status_after",
+      "actual_check": "任务退出0、无超时，completion=PASS/models6/native_accounts36/old_projects_visible=false。自有audit hook在运行前禁止读取review和V别名/未来经济路径，记录打开355个新仓文件，未读review或training_inputs；旧源/交易/Polymarket项目路径均不可见，末尾sys.modules没有binance_robot。无instrument替身，本轮新证据可验证第05轮所指依赖在当前核心版本的隔离运行已通过，原第05轮失败仍原样保留。新仓git运行前后均clean。"
+    },
+    {
+      "source": "/workspace/BTCExpertReview/workspaces/repro/receipt-summary-r10.json:actual_run_log_sha256; /workspace/BTCExpertReview/workspaces/repro/check_r10.py",
+      "actual_check": "自有原始JSONL日志SHA=964c89a91b69d90c901153c51d2d8f1e045266447c5b35b9dce2c21af4f4de9c；记录精确容器命令、安装核心hash、实际6+36运行和audit读集。运行结束后读取Docker配置存档再删除本角色容器；只在本角色目录保存日志/收据，未写交付目录。"
+    },
+    {
+      "source": "/workspace/BTC-strategy/Dockerfile; /workspace/BTC-strategy/pyproject.toml; /workspace/BTC-strategy/scripts/verify_offline.py",
+      "finding": "只读检查Dockerfile声明固定Python基础镜像digest、runtime requirements --require-hashes及非editable包安装；离线脚本明确检查旧项目不可见、无binance_robot并逐家族/账户运行。本轮实际使用现有已安装镜像，没有独立重建基础镜像或重做安装，因而只认证本次安装制品的已比较执行闭包。"
+    }
+  ],
+  "counterevidence": [
+    "本次使用的镜像早于冻结提交，缺新增integrity.py/verify.py；核心及runtime字节一致支持本轮运行，但不证明整个镜像与git提交完全一致。",
+    "未独立运行新增CLI的886文件release gate，未重建Docker镜像或从锁文件重新安装，不能把父agent已报告的release_manifest PASS记为本角色自行检查。",
+    "36本Native账户与Decimal精确一致是消耗2018–2025历史的复现证据，不能证明原经济假设适用于真实成交/融资，也不是新的2026/OOS验证。",
+    "本轮没有训练/重拟合；training_inputs无读取记录，不能据6+36通过推论所有年度final estimator均已重拟合。"
+  ],
+  "recommendations": [
+    {
+      "priority": "P1",
+      "action": "最终发布metadata分别记录git commit、数据/模型manifest、安装包/镜像ID和已比较模块SHA；对较早镜像明确缺少新增CLI。若要发布“整镜像对应冻结提交”的更强声明，需从最终提交重建并生成新的安装制品与镜像身份收据，不能复用本次核心比对替代。",
+      "acceptance": "用户可分清本轮实际执行的是哪一镜像及哪一挂载commit，核心/runtime字节比较可复核；任何整镜像同一性声明都有相应最终制品hash及实际运行证据。"
+    },
+    {
+      "priority": "P1",
+      "action": "保留本角色6+36原始JSONL、容器隔离配置和读取审计作为新增不可覆盖证据，继续把第05轮首次失败与本轮新版本通过分开记录。第07轮边界修复及新增完整性CLI在第11轮单独做合成故障回归，不借正常输入运行通过替代。",
+      "acceptance": "本轮日志SHA、36个唯一strategy/case、6个家族与Docker inspect配置可复核；后续对抗回归另有收据，不改写旧失败，也不读取其他专家文件或真实禁读经济材料。"
+    }
+  ],
+  "checks_performed": [
+    "使用cloud-environment-runtime技能及Docker参考，只读核对本地managed daemon、镜像、Dockerfile、pyproject和离线脚本；没有网络构建或下载。",
+    "独立启动一次network-none/只读/非root/降权限且只挂新仓的容器，用python -I和已安装包执行有界真实离线复现。",
+    "对比七个已安装核心文件和28个runtime文件的SHA；实际六家族预测0误差、九候选四成本完整36本账户和Decimal均PASS。",
+    "自有audit明确禁止review及禁读路径，检查旧项目不可见、无binance_robot或内存替身；记录355个只读文件路径，训练输入未读。",
+    "保存Docker实际配置、原始JSONL及摘要，检查挂载仓git前后clean，运行后删除自有容器；没有修改源或交付仓。",
+    "只写repro私有check_r10.py、offline-r10.jsonl、checks-r10.json、receipt-summary-r10.json及r10.json；未读取父agent或其他专家验证收据/结论作自行证据。"
+  ],
+  "unresolved": [
+    "最终整镜像与冻结commit同一性、重新安装/构建过程以及新增integrity/verify CLI不在本轮现有镜像核心复现的认证范围。",
+    "第07轮路径/日期/类型边界及完整性gate的合成故障回归仍待第11轮。",
+    "重新拟合所有年度、严格PIT、真实市场可执行性和新鲜验证均未由本轮离线复现证明。"
+  ],
+  "independence_statement": "本结果为repro工程复现AI角色的隔离审查，本轮实际运行与收据由本角色生成，未读取其他专家/主席结论或把既有receipt作为证明。容器仅挂新仓，只读、无网络、旧项目不可见，audit排除review/V/未来经济路径；未读2026经济数据、V01/V02或2026账户。没有修改源ledger、交付仓或冻结spec/model/account/verification/gates，未运行旧实验writer、训练或策略搜索。仅按本轮授权执行一次6模型+36账户离线复现；没有派生代理或预写后轮，不构成新的独立市场样本。"
+}

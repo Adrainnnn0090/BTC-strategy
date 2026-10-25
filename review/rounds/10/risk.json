@@ -1,0 +1,141 @@
+{
+  "round": 10,
+  "role": "risk",
+  "topic": "交付包风险边界可复现",
+  "conclusion": "候选1b008bf中所查风险文档、九策略卡与历史API实现口径一致，并可在有界重放中复现预算≠gross、日度DD、止损非保证及2026拒绝边界；该结论仅覆盖明确列出的历史/接口检查，CLI旧summary gross仍需标明成交后口径，不能据此声称模型全链、paper或实盘风险已认证。",
+  "verdict": "qualified",
+  "evidence": [
+    {
+      "source": "/workspace/BTC-strategy/docs/RISK_AND_LIMITATIONS.md:5-15,19-31; /workspace/BTC-strategy/README.md:5,13,16,63-65",
+      "finding": "风险文档明确入场预算不等于持续gross，gross/日度DD不等于盘中/未来上限，SL是单笔basis触发阈值，TP3.5为350%不是35%；明确LP35 BASE退出前short gross118.0456%、SL12实亏26.6249%，K02匹配父L05、C02/C04仅2020—2025合资格折缩预算；融资已扣net但未扣Native钱包，paper/live未实施认证，全部2026仍封存。所查文字没有把历史里程碑升级为未来安全保证。"
+    },
+    {
+      "source": "/workspace/BTC-strategy/src/btc_strategy/strategies.py:20-48; execution.py:34-61,75-81,85-120; replay.py:11-22",
+      "finding": "compose先验development_market，再用固定纯规则生成预算/许可/risk；K02 hardcode post/cold=.25/.25，C02/C04仅active折乘.75，LP35只改long TP3.5。执行器开仓budget=equity*fraction，不随持仓动态再平衡；entry保存risk/policy_year，风险trigger+lag到期市场成交；DD从连续日marks算，外部debt减策略净值但无Native钱包扣款。replay固定2018—2025且annual_settlement=false，返回完整原账户相等/Decimal/日度pre-post gross，而非实时下单或paper入口。"
+    },
+    {
+      "source": "/workspace/BTC-strategy/src/btc_strategy/validation.py:5-12; artifacts.py:8-19; models.py:14-26; training.py:41-52,67-68; /workspace/BTCExpertReview/workspaces/risk/r10-checks.json:synthetic_boundary_rejections",
+      "finding": "公共market入口拒绝2017之前起点、2025以后末点及非连续日历；economic artifact路径拒绝2026+与V01/V02，模型/训练年度限2018—2025。实际用五个人工禁用路径与一条内存中人工2026日期追加测试，全部在文件读取/target规则前拒绝，没有读取任何2026经济观察。私有_runtime.clock仍是原夹定路由函数，不能把它单独当2026校验器；安全边界在公共加载/compose/训练入口。"
+    },
+    {
+      "source": "/workspace/BTCExpertReview/workspaces/risk/r10-checks.json:target_results/strategy_cards/historical_replay/packaged_accounts; /workspace/BTCExpertReview/workspaces/risk/r10-api-LP35-BASE.json",
+      "calculation": {
+        "nine_cached_context_target_and_permission_checks": "9/9 exact",
+        "one_cached_forecast_historical_Native_replay": {
+          "strategy": "LP35",
+          "case": "BASE",
+          "complete_original_account_exact": true,
+          "numeric_model_forecast_reconstruction": false,
+          "raw_summary_post_fill_max_whole_gross_pct": 98.99360891840428,
+          "daily_before_or_after_short_gross": {
+            "date": "2018-01-05",
+            "signed_quantity": "-0.00556",
+            "equity": "80.05770443553769557917808219",
+            "gross_pct": 118.0455835631524
+          },
+          "SL12_first_trade_loss_pct_of_entry_basis": "26.62492157701964552313326352"
+        },
+        "four_packaged_reference_accounts": "LP35/BASE, LP35/DELAY, K02/DELAY, C02/SEVERE bytes equal original ledger and release hash; daily pre/post exposure recomputed"
+      },
+      "finding": "本轮确实执行九项缓存context的compose/targets exactness及一个LP35/BASE缓存预报Native+Decimal重放，不运行原writer、不落新账户到交付仓；没有执行numeric模型预测重建或refit、全部36个Native重放、容器隔离或paper/live。"
+    },
+    {
+      "source": "/workspace/BTCExpertReview/workspaces/risk/r10-doc-bindings.json:selected_file_bindings/nine_strategy_card_metric_checks/LP35_vs_TS04_each_cost_one_exit_date_change",
+      "calculation": {
+        "candidate_git": "1b008bfd4a9d1af9a73ff830fb7f8a1b72425fbf",
+        "release_manifest_file_count": 886,
+        "selected_doc_card_code_files_equal_candidate_git_blobs": 28,
+        "selected_files_in_release_manifest_hash_match": 15,
+        "selected_docs_or_READMEs_bound_by_Git_and_separate_hash_not_manifest": 13,
+        "strategy_cards_checked": 9,
+        "card_metric_values_checked": 27,
+        "packaged_account_summaries_referenced": 36,
+        "each_strategy_card_has_2026_exclusion_and_risk_link": true
+      },
+      "finding": "九张卡的STRESS收益/四成本最差日度DD/DELAY收益与包内四成本summary均对到展示5位小数，source_study与catalog一致。LP35/TS04四情景entry日期序列完全相同且各只有2020长头一笔exit日期不同，绑定README/风险文档该项描述。886清单本来不含docs/README；这些28个选择文件另经候选Git blob和SHA绑定，不能声称“886 hash覆盖所有风险文档”。未读取review提交或主席意见。"
+    },
+    {
+      "source": "/workspace/BTC-strategy/src/btc_strategy/replay.py:22,25-30; execution.py:92; /workspace/BTCExpertReview/workspaces/risk/r10-cli-help.txt",
+      "finding": "真实CLI --help只列九策略、四成本和cached-forecasts，无live/paper或2026目标参数；默认use_models=true由代码绑定，cached标志令false。一个可改善的输出歧义是summary.max_gross_exposure_pct沿用原“成交后全仓”字段（LP35/BASE98.9936089184%），而外层max_daily_short_gross/whole_gross是下单前后口径（118.0455835632%）。文档已澄清风险，但CLI wrapper没有显式解释旧summary字段，直接消费JSON可能混口径。"
+    }
+  ],
+  "counterevidence": [
+    {
+      "source": "/workspace/BTC-strategy/docs/RISK_AND_LIMITATIONS.md:7-15,22,26-31; replay.py:22",
+      "finding": "交付文字已经明确前后gross与融资边界，外层CLI字段也名为max_daily；没有发现算法把.25/.75预算直接当gross cap或把SL当保证成交价。CLI问题是旧summary字段标签，不是本轮发现的经济计算错误。"
+    },
+    {
+      "source": "/workspace/BTC-strategy/provenance/release_manifest.json:qualification; /workspace/BTCExpertReview/workspaces/risk/r10-doc-bindings.json",
+      "finding": "清单主动声明review/docs另外演进，故风险文档未在886内不是隐瞒；本轮已用候选Git和独立附件hash限定它们的版本。后续若改文档，需重新绑定而非沿用本结论。"
+    },
+    {
+      "source": "/workspace/BTC-strategy/docs/REPRODUCIBILITY.md:12,20-24,40-49; README.md:35,51,61-65",
+      "finding": "文档区分缓存回放、模型推理、最终估计器refit及未来泛化，2018 None不许回填、旧_frozen driver不是新仓入口；工程复现不自动推出PIT、alpha、成交或清算安全，本轮有限运行与其总体边界相容。"
+    }
+  ],
+  "recommendations": [
+    {
+      "priority": "P1",
+      "action": "在交付CLI wrapper增加显式metric_scope/qualification，标出原summary.max_gross_exposure_pct是daily post-fill whole，外层两个gross是daily before-or-after；保留原summary值用于完整账户相等。",
+      "acceptance": "LP35/BASE输出同时清楚标98.9936089184%与118.0455835632%的不同口径，并显示“daily proxy, not intraday/future cap”；不改冻结账户、summary数值、economic函数或验证容差。"
+    },
+    {
+      "priority": "P1",
+      "action": "最终发布固定文档/策略卡README与代码/数据共同的候选commit或独立文档hash收据，准确说明886清单的覆盖范围。",
+      "acceptance": "不能仅用886-file PASS宣称风险文字也受manifest保护；最终风险文档、九README和CLI若有变化，更新其Git/hash及相关有界检查。当前已绑版本为1b008bf。"
+    },
+    {
+      "priority": "P1",
+      "action": "保持公共入口的经济日历与artifact角色拒绝测试，并明确_runtime纯函数不是任意未来数据的独立入口。",
+      "acceptance": "人工2026+与V01/V02路径在任何真实经济读取/特征计算前拒绝；未来年度支持须另立注册适配，不能直接调用夹定clock把2026路由2025。本轮不扩展日期、不读取2026或改旧source gates。"
+    },
+    {
+      "priority": "P1",
+      "action": "本轮及最终交付按真实执行层级列验证证据，paper/live依旧单独立项。",
+      "acceptance": "本轮报告仅称9 cached-context targets、1 LP35/BASE cached Native+Decimal、4原账本字节对照及9卡27展示数值检查；不称numeric模型全链、56状态refit、36账户重放、容器隔离或paper风控已由本角色执行。"
+    }
+  ],
+  "checks_performed": [
+    {
+      "check": "候选版本与风险文件绑定",
+      "method": "读取候选HEAD及Git tree，选择28个风险相关doc/card/code文件逐一与git show 1b008bf内容比较；其中15个manifest覆盖文件比较SHA，其余13个文档/README另存SHA；未扫描读取其他expert/主席文件。",
+      "result": "28/28候选blob相同、15/15选定manifest项hash相同；886为清单元数据数量，不是本轮全量hash验收。附件r10-doc-bindings.json。"
+    },
+    {
+      "check": "九策略缓存目标/API与人工边界的有界运行",
+      "method": "显式BTC_STRATEGY_ROOT/PYTHONPATH，Python -B，从/tmp运行verify_targets九项；公共compose追加人工日期2026-01-01，resolve_artifact测试5禁用路径。API会话审计hook禁止候选写入和任何review/内容打开。",
+      "result": "9/9 targets/permissions exact；6/6人工拒绝通过；该API会话仅打开62种候选文件，review内容0，未读真实2026。并另实际执行replay --help验证CLI选项。"
+    },
+    {
+      "check": "单份历史Native及风险事实有界运行",
+      "method": "调用新包btc_strategy.replay.run(LP35,BASE,use_models=False)，运行内存Native账户、完整原账户相等、独立Decimal与pre/post exposure；仅附件保存返回值。",
+      "result": "完整账户相等，通过其内置Decimal核算；重现BASE退出前gross118.0455835632%与SL12首笔basis实亏26.6249215770%；明确未执行模型推理重建/refit或paper/live。附件r10-api-LP35-BASE.json。"
+    },
+    {
+      "check": "交付账本与风险/策略卡引用绑定",
+      "method": "四包内账户与原Ledger按字节和release SHA比较并重算quote exposure；另读36包内账户summary比较九README三项显示指标；比较LP35/TS04四情景trade entry/exit日期。",
+      "result": "4/4原字节相同；9卡27数值在5位展示精度一致且2026/风险链接存在；四情景各仅一笔exit日期不同。未声称36个Native重放。"
+    },
+    {
+      "check": "2026封存路径元数据与实现静态检查",
+      "method": "扫描release_manifest的artifacts/models/training_inputs路径名是否含2026+或V01/V02，不读取对应禁用数据；查看公共validation/loader/model/training边界及风险实现。",
+      "result": "禁止角色/年度路径0；边界拒绝与静态实现一致。没有全面解析所有训练/模型payload或全量source-PIT审计。"
+    },
+    {
+      "check": "独占附件完整性",
+      "result": {
+        "r10-checks.json": "547459de0ae31ff8f6de752a864536f34f5ce072e4d8bc9f143b7bae99f1d6e3",
+        "r10-doc-bindings.json": "4885d11712c8810cbd0ce375f6891e35887a6498a200ce32229431ce3073039f",
+        "r10-api-LP35-BASE.json": "3d9810cc2f80b39e8ac9806094fb74dab4306481ebc4f89de949991afdf6903e",
+        "r10-cli-help.txt": "dc1d28c917060a7495e816402c1de55530c0523a5c241944215e1fc0fb35a585"
+      }
+    }
+  ],
+  "unresolved": [
+    "CLI旧summary.max_gross_exposure_pct的post-fill口径缺少直接标签，建议在包装输出澄清；目前文档正确但机器消费者仍可混读。",
+    "本轮不是所有886文件内容、所有模型推理/refit、36账户Native、容器隔离、其他专家审查完成状态或源PIT的全量验收；未调用verify --review或读取任何当轮其他意见。",
+    "所有2026经济数据继续封存，本轮仅人工禁用日期/路径拒绝测试；不能把通过边界测试说成新2026市场验证。",
+    "paper/live系统、盘中风险、真实滑点/容量、借贷供给及外部融资后清算安全仍未由本轮建立/认证。"
+  ],
+  "independence_statement": "本人为risk AI分析角色，不是人类专家或新的独立市场样本；只检查明确风险文档/策略卡和代码/历史物料，未打开其他专家提交或主席意见，API审计0个review文件；未读V01/V02或2026经济数据，未修改共享源/交付仓/冻结模型账户verification gates、未跑旧writer、未新搜索/真实下单，仅独占写risk/r10.json及附件和/tmp私有物料，等待R11。"
+}

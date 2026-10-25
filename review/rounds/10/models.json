@@ -1,0 +1,73 @@
+{
+  "round": 10,
+  "role": "models",
+  "topic": "导出与离线模型复现",
+  "conclusion": "候选1b008bfd的实际数值模型导出与六族离线推断已由本角色完整核对到原始年度forecast且误差全0；266文件/392状态与源绑定一致。但训练复现范围必须限定：既有收据是2025年56个已选最终估计器，本角色只独立复跑其中2个状态，未复跑全部年度或历史inner-selection，不能将预测重建成功扩大为全研究选择过程重建。",
+  "verdict": "qualified",
+  "evidence": [
+    {
+      "source": "/workspace/BTC-strategy git HEAD；provenance/release_manifest.json；r10_checks.json candidate_git/release_declared_files/release_declared_bytes",
+      "actual": "检查前后HEAD均为1b008bfd4a9d1af9a73ff830fb7f8a1b72425fbf。发行清单元数据为886文件、字节之和56,444,740，清单SHA=b9c03b01ef32bd63c6e61f61207f32ee70c6de27560ef4e8df1f33686dca2caa。本轮逐文件全量SHA核验对象是下述266个numeric模型，不声称已重新核尽全部886发行文件。"
+    },
+    {
+      "source": "models/manifest.json；src/btc_strategy/models.py:22；r10_checks.json family_year_entries/numeric_files/numeric_states/numeric_trees/family_counts",
+      "actual": "manifest SHA=6d2132c04d5b5f216aced5607612e89e223ea0dd1120a24264201a7702aca213，48项恰为6家族×2018–2025；每族2018明确missing且无文件。实际266个文件包含392状态、37,632棵树：BASE_TREE 49文件/49状态；STOP44、PRICE47、MINING58各7文件/49状态；两个SHORT家族各98文件/98状态。所有文件唯一、实际目录集合与manifest完全相同。"
+    },
+    {
+      "source": "r10_checks.json all_numeric_files_source_manifest_release_sha_equal；check_r10.py 状态结构检查",
+      "actual": "266个文件的实算SHA逐一等于models manifest、release_manifest及源仓对应文件SHA，字节数匹配发行清单。全部392状态宽度/96树、有限initial/weight、节点数组等长、合法叶/特征索引、向后子节点关系均通过；annual_states返回成员与直接解包排序一致。当前函数已显式执行read_verified及年度/家族路径、cutoff、7/14成员roster、宽度检查。"
+    },
+    {
+      "source": "src/btc_strategy/models.py:43；r10_checks.json full_inference_vs_original_forecasts",
+      "actual": "本角色实际运行六族完整reconstruct，再直接读取源仓B10 MEAN_CAL44、B20 CAL44_STOP、B81 PRICE_L7、B67 MEAN、B88A MEDIAN、B17 EXTRA_DYNAMICS_L60的2018–2025原始forecast拼接作比较；每族3287位置、2557有限输出，None掩码完全一致，最大绝对误差均0，原容差2e-12未放宽。比较基准不是只读取交付context中的预报缓存。"
+    },
+    {
+      "source": "verification/final-estimator-refit-2025.json；src/btc_strategy/training.py:41；r10_checks.json existing_2025_refit_receipt",
+      "actual": "现有收据记录六家族共56状态PASS，物理前缀2017-01-01至2024-12-31共2922行；四长头各2603训练样本、两个短头各2588共同样本。代码使用存档已选profile/seed/损失直接重拟最终模型，未调用tune或重新选年度policy；收据scope也明确“other years not refitted / No inner-selection rerun”。已核六个输入计划的日期末端、cut=2921、6日隔离及样本数量与收据吻合。"
+    },
+    {
+      "source": "r10_checks.json independent_bounded_refits；check_r10.py dump_tree 与有界固定配置refit",
+      "actual": "本角色另实际拟合两状态：2025 STOP44/ExtraTrees seed101（2603样本）和2025 SHORT_MEDIAN/SGB L1 seed101（2588样本），只用所交付2024年末物理训练计划及已选配置、threadpool=1；独立读取sklearn树数组序列化并比较，节点/叶值/initial等numeric state均逐对象exact。未调用原writer或training.refit作为本次 equality oracle，未重新选择profile/seed。"
+    }
+  ],
+  "counterevidence": [
+    "六族全期推断一致证明给定数字状态、因子实现与预报关系可复现，不等同重新学习出所有年度模型。",
+    "56状态是既有收据覆盖，本角色只独立重拟2个状态；不能把两次运行计为58个不同模型，也不能将既有收据写成已由本角色全量独立重跑。",
+    "本次重拟合使用交付的预计算训练features/targets，未独立从源头重生成训练标签和特征，更未重跑内层profile选择、年度策略校准或整个历史试验筛选。",
+    "本次使用当前指定依赖环境；数字精确复现不单独证明全新平台安装兼容、矿业历史来源PIT或未来alpha。"
+  ],
+  "recommendations": [
+    {
+      "priority": "P0",
+      "action": "发布验收说明分别列“数字推断重建”“已选最终估计器refit”“历史inner-selection/策略选择重建”的实际覆盖范围，绑定本次候选与清单SHA。",
+      "acceptance": "六族全期推断0误差/None一致；既有refit明确仅2025六族56state，本角色独立复跑明确为其中2state；不出现“全部年度训练与筛选均重建”表述。"
+    },
+    {
+      "priority": "P0",
+      "action": "保持266模型文件与manifest/发行清单/源SHA的绑定，以及2018 missing、完整成员roster和2e-12推断容差。",
+      "acceptance": "48项、266文件、392状态、37,632树可复核；来源/家族/年度/成员缺失或内容变更时不能静默继续推断。"
+    },
+    {
+      "priority": "P1",
+      "action": "把本轮完整推断收据与两个有界refit结果留作离线复现附件；更广训练复现只能按明确新范围另行记录。",
+      "acceptance": "结果可在候选1b008bfd的指定环境由本角色脚本复查，不将未运行范围通过概括性PASS掩盖。"
+    }
+  ],
+  "checks_performed": [
+    {
+      "command": "/workspace/BinanceTradingRobot/backend/.venv/bin/python -B /workspace/BTCExpertReview/workspaces/models/check_r10.py",
+      "result": "exit 0；all_checks_pass=true；266模型文件全SHA/结构检查、六族全期对原forecast0误差、两个固定最终状态独立refit exact。",
+      "artifact": "/workspace/BTCExpertReview/workspaces/models/r10_checks.json"
+    },
+    {
+      "check": "代码审查现有2025 selected-final-estimator重拟合入口及6份训练计划/收据",
+      "result": "2017–2024物理前缀2922行，56state既有收据范围明确；没有全部年度或inner-selection运行声明。"
+    }
+  ],
+  "unresolved": [
+    "本角色未重跑既有56状态的全部refit，也未独立重训2019–2024年度状态或重新执行历史inner-selection/策略校准。",
+    "完整发行886文件的全部内容/供应链与全新环境安装不由本轮266模型专项核验代替。",
+    "重拟合输入仍是交付的预计算features/targets；来源PIT与研究选择偏差的既有条件限制没有因模型重建而消失。"
+  ],
+  "independence_statement": "按本轮授权只读候选模型/manifest/训练入口/训练计划/指定收据与源仓明确年度数字模型/forecast，不读其他专家或主席意见。未派生agents、未读V01/V02或2026经济值、未运行原独占writer。仅对两已选2025状态做明确有界重拟合，无新策略搜索；审计钩子阻止源仓/交付仓写入，-B禁字节码。新文件仅在models目录首次独占创建；AI角色不是人类或独立市场样本。"
+}

@@ -1,0 +1,76 @@
+{
+  "round": 10,
+  "role": "data",
+  "topic": "新包数据导出与离线边界",
+  "conclusion": "固定候选1b008bf的原始数据/模型复制、48个物理训练前缀与已检经济日期边界通过；私有副本在拒绝原仓和旧项目源码访问、禁网络的条件下成功重建price47与mining58全年度预测，但training读取hook仍非完整文件系统沙箱，结论限于本轮实际数据与离线路径覆盖。",
+  "verdict": "qualified",
+  "evidence": [
+    {
+      "source": "/workspace/BTC-strategy/.git:HEAD；provenance/release_manifest.json:files,source_period；/workspace/BTCExpertReview/workspaces/data/r10-checks.json:release_files_verified,release_actual_bytes_verified",
+      "fact": "本轮前后HEAD均1b008bfd4a9d1af9a73ff830fb7f8a1b72425fbf，bound源码/数据目录相对该候选无diff。独立逐项核验886个唯一清单路径、实际文件大小合计56,444,740字节及SHA全部匹配，路径均在包内且无V01/V02或2026+经济文件路径；清单不包含其他专家review或verification结果，未读取那些内容。"
+    },
+    {
+      "source": "/workspace/BTC-strategy/provenance/export_manifest.json:files；models/manifest.json:files.source,sha256；/workspace/BTCExpertReview/workspaces/data/r10-checks.json:original_file_copies_verified,model_file_copies_verified,benchmark_book_copies_verified",
+      "fact": "598个export记录中332个显式source代码/原始证据复制与原源字节摘要相等；266个模型记录通过models/manifest补齐源路径并逐文件核对原模型字节。另36个benchmark均与catalog指向的原封存账户字节相等。只核对原始源事实和byte复制，没有运行旧writer。"
+    },
+    {
+      "source": "/workspace/BTC-strategy/artifacts/factors/{market,prices,mining}.json.gz；/workspace/BTCExpertReview/workspaces/data/r10-checks.json:market_rows,economic_dates,combined_and_split_factors_exact",
+      "fact": "combined market与拆分prices/mining逐项一致，3287个决策/价格日严格连续覆盖2017-01-01…2025-12-31；价格与原2025 train+test分区、挖矿与原对应lag分区均精确一致。原账户105192个mark及orders/fills/financing/trades的经济日期均只落2018–2025；事件时间钟的翌日标签不作为新行情输入。"
+    },
+    {
+      "source": "/workspace/BTC-strategy/training_inputs/2018…2025/*.json.gz；models/manifest.json:cutoff,training_input；/workspace/BTCExpertReview/workspaces/data/r10-checks.json:physical_training_prefixes,all_48_training_feature_prefixes_exact",
+      "fact": "全部48份family-year输入日期精确为2017-01-01至year−1/12/31，cut_index/embargo=6一致；features长度/宽度/finite性匹配，每份张量逐元素等于纯因子重算矩阵的对应物理前缀。非空ids严格唯一递增，长i+61、短共同i+62均不超cut−6；2018缺失模型保持空ids/targets，不拿当前测试行补样本。"
+    },
+    {
+      "source": "/workspace/BTCExpertReview/workspaces/data/r10-check.py；r10-checks.json:isolated_root,offline_forecasts,network_attempts",
+      "fact": "把可运行src、models、training_inputs、artifacts复制至私有/tmp/btc-data-r10-2us5xvxf，排除pycache，改用该根加载。实际audit hook拒绝原候选、源ledger、旧项目源码/经济目录（仅既有依赖venv可用）和socket连接；在此限制下price47与mining58各3287行/2557个finite年度预测重建完成，数值误差0、None可用性完全一致，网络尝试0，未加载归档_frozen实验驱动。"
+    },
+    {
+      "source": "/workspace/BTC-strategy/src/btc_strategy/artifacts.py:8–19、31–35；models.py:22–40；validation.py:5–12；/workspace/BTCExpertReview/workspaces/data/r10-checks.json:denied_artifact_paths,future_model_year_denied_before_open",
+      "fact": "实际9个路径拒绝测试均在open前失败：包外/越界、provenance/review角色、2026+模型/训练/因子路径和V01/V02路径。未来模型年2026在读manifest前拒绝；仅含合成占位价格的未来日期时钟在计算特征前拒绝。当前模型加载已核对文件SHA、family/year路径、cutoff、种子名单和特征宽度。"
+    },
+    {
+      "source": "/workspace/BTC-strategy/src/btc_strategy/training.py:18–27、41–56；/workspace/BTCExpertReview/workspaces/data/r10-checks.json:training_role_predicates,residual_boundary",
+      "fact": "纯角色谓词确认当前family/year的training_input与模型可读，而其他family、未来训练年、artifacts/provenance/review与旧ledger路径被拒绝。不过对不属于三个旧项目的ROOT外路径返回True；虚构/tmp/data-r10-outside-economic-2026.json仅作为路径谓词返回True，未创建或打开。正常refit函数只显式请求包内当前plan/models，这不能把该hook升级为OS沙箱。"
+    }
+  ],
+  "counterevidence": [
+    "独立全886清单size/hash和已检查原始复制均通过，本轮未发现2026真实经济观测进入所检因子、训练前缀、模型年或benchmark经济日期。文本中的2026排除说明/元数据不等同经济观测。",
+    "私有副本实际运行证明所测官方推断路径不依赖旧仓源码；依赖解释器及已安装第三方包仍来自会话提供环境，不能据此声称本角色已完成全新依赖安装、wheel安装或Docker镜像构建。",
+    "归档_frozen代码为原文证据保存，并未在离线probe中加载；本轮不声称每个归档实验driver都可脱离旧项目执行。",
+    "全部48训练张量前缀通过是物理数据边界证据，不是全部年度标签收益重新定价或所有模型重新拟合的证据。"
+  ],
+  "recommendations": [
+    {
+      "priority": "P0",
+      "action": "在该候选的可复现说明中准确区分包内artifact角色限制、当前family/year训练hook和操作系统隔离；不得把ROOT外通配允许的hook称完整沙箱。",
+      "acceptance": "文档写明正常CLI只请求当前plan/model，以及ROOT外依赖读取仍需容器/OS边界；保留本轮仅路径谓词演示、未打开虚构未来文件的事实。"
+    },
+    {
+      "priority": "P1",
+      "action": "保留release清单、显式原复制与模型manifest三者的源连接，新增导出仍逐项检查size/hash和经济日期/训练前缀，不从经济文件名正确直接推断内容时点正确。",
+      "acceptance": "886个bound文件及598个export源绑定可重复核查，48训练前缀均至上年12/31；复制/生成数据与原模型/账户各自有明确来源，2026真实经济行始终不入包。"
+    },
+    {
+      "priority": "P1",
+      "action": "对外标注实际离线覆盖：本轮两个推断家族、48输入前缀及36账户日期检查；将全新环境安装、其他推断家族、refit和引擎回放留给各自独立receipt。",
+      "acceptance": "不把其他角色/root的容器或wheel结果计作本角色执行，本轮结论始终绑定原1b008bf。"
+    }
+  ],
+  "checks_performed": [
+    "本轮首尾独立读Git HEAD；对manifest-bound目录检查相对1b008bf无diff，未读root容器receipt或其他角色意见。",
+    "独立核验886个release实际size/hash；332个显式源复制、266模型字节源绑定、36benchmark原账本字节相等。",
+    "三份combined/split因子实际字段与原分区精确对应；检查36账户105192个mark和其他经济事件日期范围。",
+    "检查全部48 training_inputs的日期/宽度/finite性、ids成熟隔离及模型missing条件，并在隔离副本中重算所有48张量前缀逐元素相等。",
+    "私有副本在审计拒绝旧仓和旧项目源码、禁网络下完成price47/mining58年度预测，各2557个finite输出误差0；没有模型拟合或账户writer。",
+    "9个artifact拒绝路径、未来模型年/合成未来时钟、8个当前训练角色路径谓词及1个未打开的ROOT外残余路径谓词检查。",
+    "证据独占写入r10-check.py/r10-checks.json与本r10.json，只对原1b008bf候选报告。"
+  ],
+  "unresolved": [
+    "training_read_allowed对非旧项目的任意ROOT外路径仍允许；本轮证明正常路径用法，不证明任意恶意/扩展代码不能从其他外部位置读取经济文件。",
+    "本角色未执行新依赖环境安装、wheel安装、Docker构建或完整6族/36账户离线运行；未读取或计入其他角色/root相关receipt。",
+    "本轮没有重算48份输入的所有标签收益，也未运行refit或原生引擎，不能据此认证这些未执行部分。",
+    "数据/代码复制与时序边界不补足历史PIT资格、未记录搜索范围或未来市场泛化证据。"
+  ],
+  "independence_statement": "仅读取原始源事实、固定候选的manifest/raw工件与代码，未读其他专家/主席意见、review或verification结论，也未读root安装/容器receipt。只写data角色附件及私有/tmp副本，未改共享候选/源冻结工件。AI角色不是受聘真实专家或独立市场样本；仅完成第10轮，等待下一轮。"
+}

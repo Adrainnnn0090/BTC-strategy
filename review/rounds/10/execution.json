@@ -1,0 +1,121 @@
+{
+  "round": 10,
+  "role": "execution",
+  "topic": "离线执行可复现：执行AST、成本和instrument依赖迁移一致性",
+  "conclusion": "独立检查支持冻结提交1b008bf的执行逻辑及三处依赖迁移在代码/metadata层与源Native适配器一致；本轮范围是AST、成本、instrument和文件摘要核对，不冒称已独立完成实际模型→Native→完整账本的运行链。",
+  "verdict": "qualified",
+  "evidence": [
+    {
+      "来源": "/workspace/BTC-strategy:git rev-parse HEAD、git status --short；provenance/release_manifest.json",
+      "实际计算": "HEAD=1b008bfd4a9d1af9a73ff830fb7f8a1b72425fbf，检查时git status干净；release_manifest列886文件，sha256=b9c03b01ef32bd63c6e61f61207f32ee70c6de27560ef4e8df1f33686dca2caa。",
+      "限制": "本角色只核下述3个执行相关文件的hash/bytes，没有把886文件条目数写成886个文件全部验过，也未用docker tag充当提交证据。"
+    },
+    {
+      "来源": "/workspace/BTCStrategyResearchLedger/lab/carry_native.py；/workspace/BTC-strategy/src/btc_strategy/execution.py；本轮AST比较",
+      "实际计算": "去除顶层import/import-from节点后完整AST精确相同。覆盖MarginResearch类及9个方法：__new__、__init__、on_start、raw_cash、on_quote、process、on_order_rejected、on_order_denied、on_order_filled；还覆盖summarize与run_account。",
+      "含义": "融资、预算/舍入、开平仓、entry-owned risk、风控延迟、每日quote生成、MARGIN venue配置和summary函数体均未因依赖迁移改变；这不是运行时执行证明。"
+    },
+    {
+      "来源": "/workspace/BTCStrategyResearchLedger/lab/native.py:17、22—24；lab/carry_native.py:17；/workspace/BTC-strategy/src/btc_strategy/costs.py；本轮literal/AST比较",
+      "实际计算": "CASES四case参数完全相同；costs.BORROW、源carry_native.BORROW与交付execution.BORROW三份映射完全相同。quote_prices函数AST完全相同。以1、10000、13464.6536116306、10000.005四个合成输入×4case做16次报价边界检查，bid/ask均按0.01向外取整。",
+      "限制": "报价边界检查是纯合成算术，不是新市场价格样本或真实交易所滑点验证。"
+    },
+    {
+      "来源": "/workspace/BTCStrategyResearchLedger/studies/B109-long-profit-local-coordinate/registration.json:project_runtime_sources；所绑定installed binance_robot/execution.py和runner.py；/workspace/BTC-strategy/src/btc_strategy/instrument.py",
+      "实际计算": "原installed execution.py当前sha256=79fb78d6fa3d742d5cd025ccba464fb7a9392e4497ff51e184e968f4cf1016d3、runner.py=bab2bda775ebc195da2809eaf7bdc7d4fca3d57458c04d17a7decf8c63378448，均与登记hash相同。INSTRUMENT/VENUE赋值AST完全相同；paper_instrument去docstring后的函数体AST相同。分别隔离编译源/交付函数，在ts=0、1514851200000000000、1735689600000000000生成CurrencyPair.to_dict，三组字典逐字段完全相同。"
+    },
+    {
+      "来源": "同一instrument比较结果；/workspace/BTC-strategy/src/btc_strategy/execution.py:119—120",
+      "事实": "相同metadata包括BTCUSDT.BINANCE、BTC/USDT、价格精度2/增量0.01、数量精度5/增量及min_quantity0.00001、min_notional5 USDT、paper maker/taker0.001、基础margin_init/maint=0；run_account随后同源覆写case费用及margin_init=1、margin_maint=0.5。paper metadata只是本地固定规则，不是当前交易所过滤器。"
+    },
+    {
+      "来源": "/workspace/BTC-strategy/provenance/release_manifest.json对应文件条目；本轮独立sha256/bytes",
+      "实际计算": [
+        {
+          "文件": "src/btc_strategy/execution.py",
+          "sha256": "43f8d2a786096f49ac04677a57ab5b5122608a49e97b35f37731880315bfea38",
+          "manifest_hash及bytes": "一致"
+        },
+        {
+          "文件": "src/btc_strategy/costs.py",
+          "sha256": "2c1cd2b7d1312eac29d0849b6bb7a1079f420491b84927abed7e95f0e6862556",
+          "manifest_hash及bytes": "一致"
+        },
+        {
+          "文件": "src/btc_strategy/instrument.py",
+          "sha256": "fef0cb0d4c94facf4b6f99dd92ddcf423c2544b83c26d6fc5e0a0748988861c1",
+          "manifest_hash及bytes": "一致"
+        }
+      ]
+    },
+    {
+      "来源": "当前指定Python环境importlib.metadata；B109 registration.json:versions",
+      "实际计算": "nautilus-trader2.0.0rc4、numpy2.4.6、pandas2.3.3、scikit-learn1.6.1、threadpoolctl3.6.0、torch2.6.0+cpu的版本metadata与登记相同。",
+      "限制": "没有在docker installed-wheel隔离环境重装/运行；相同版本字符串不证明wheel字节、编译配置或当前镜像的代码提交一致。"
+    }
+  ],
+  "counterevidence": [
+    "三处import路径改变并未导致本次可观察执行函数体、成本或instrument输出改变；不能只因导入路径不同就判为语义漂移。",
+    "AST一致、metadata相同和3文件hash一致为代码层迁移提供强证据，但不替代完整运行链中的真实模型输出、调度、Native状态和全部book逐项比较。",
+    "即使其他人已运行更多完整账本，本角色不能把其范围计入自己的独立检查；本轮未读其专家报告或主席意见。",
+    "执行离线复现成功也不会使外部融资进入Native保证金钱包，或使日度合成价格变成真实venue报价；这些经济边界不因迁移一致而消失。"
+  ],
+  "recommendations": [
+    {
+      "行动": "将本角色R10验收范围标为“执行代码与依赖迁移一致性”，明确区分AST/metadata核对与实际模型→Native→完整book运行。",
+      "优先级": "P0",
+      "验收方法": "本轮列出Native engine运行0次、实际模型推断0次、新完整book运行0次；不得将其他人的36 fullbook运行转为本角色独立完成数。"
+    },
+    {
+      "行动": "将运行证明绑定git完整提交、manifest摘要、代码/产物hash、installed wheel/镜像immutable标识及依赖，而不是可变docker tag。",
+      "优先级": "P1",
+      "验收方法": "记录1b008bfd4a9d1af9a73ff830fb7f8a1b72425fbf及manifest b9c03b01…；若引用btc-strategy-audit:local，另有实际image id/digest和其代码来源证据。未取得则不声称tag等于该提交，本轮未运行镜像。"
+    },
+    {
+      "行动": "保留source-runtime→delivery instrument和costs的单独核对，避免仅比较主类后忽略导入依赖。",
+      "优先级": "P1",
+      "验收方法": "登记的2个原runtime源hash匹配；INSTRUMENT/VENUE、paper_instrument metadata、4case、3份BORROW与quote函数均通过；instrument基础margin与run_account覆写后的margin分别列明。"
+    },
+    {
+      "行动": "完整运行链和经济有效性分别验收，维持原融资/报价/盘中风险限定。",
+      "优先级": "P1",
+      "验收方法": "实际模型重建、target重组、Native完整book及独立Decimal各自有证据和已跑范围；本轮代码一致不能替代未跑项目，更不能据此声称真实借币/清算/成交资格。"
+    }
+  ],
+  "checks_performed": [
+    {
+      "检查": "新的源/交付完整非import AST比较",
+      "方法": "/workspace/BinanceTradingRobot/backend/.venv/bin/python -B，标准库ast/json/hashlib；读取源carry_native和交付execution，将顶层import节点移除后比较完整AST；不导入execution或启动引擎。",
+      "结果": "1类9方法+2个顶层函数及其他非import节点精确相同。"
+    },
+    {
+      "检查": "新的成本、instrument和源runtime绑定检查",
+      "方法": "literal比较4case及3份BORROW；quote函数AST比较及16合成边界；原runtime SHA256对登记；隔离编译原/交付paper_instrument，实际实例化3组CurrencyPair并比较to_dict。",
+      "结果": "全部通过；未导入原runner业务流程，未运行Native或writer。"
+    },
+    {
+      "检查": "新的提交与执行文件manifest检查",
+      "方法": "只读git HEAD/status、886条release_manifest元数据；以其files列表按path索引，仅重算execution/costs/instrument的hash及bytes。",
+      "结果": "HEAD1b008bfd…且状态干净，3/3文件匹配；manifest本身摘要b9c03b01ef32bd63c6e61f61207f32ee70c6de27560ef4e8df1f33686dca2caa。"
+    },
+    {
+      "检查": "本角色实际运行范围声明",
+      "结果": {
+        "本轮NativeEngine运行": 0,
+        "本轮实际模型推断": 0,
+        "本轮新完整book执行": 0,
+        "此前本角色完整STRESS条件账本重建": 1,
+        "此前重建性质": "固定已保存fill日程的独立Decimal账本，非实际模型→Native重放",
+        "其他角色或主审运行": "不计入本角色独立范围",
+        "Docker使用": "本轮未使用"
+      }
+    }
+  ],
+  "unresolved": [
+    "本轮没有独立执行installed-wheel隔离环境的实际模型→Native→完整book链；代码层检查不覆盖全部运行时行为。",
+    "没有验证886个manifest文件的全部hash，仅检查3个执行相关文件；全交付完整性不由本轮单独证明。",
+    "未绑定docker可变tag至immutable image与同一git提交；未将该tag当作代码hash。",
+    "源码一致仍保留日度报价、外部融资、历史可得性及真实场所保证金未资格等既有边界。"
+  ],
+  "independence_statement": "execution为隔离AI分析角色，不是真实专家或独立市场样本。未读其他角色目录/意见/评分或主审意见；仅使用任务提供的提交/路径作为定位，并独立核事实。未读2026经济值、V01/V02或2026账户；源仓、交付仓和原runtime只读，未改冻结源码/model/account/verification/gates，未运行writer/Native/模型拟合/下单/部署。只用合成ts与价格实例，不新增经济样本。仅独占创建r10.json，未预写R11/R12。"
+}

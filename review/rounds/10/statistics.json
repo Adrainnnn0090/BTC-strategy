@@ -1,0 +1,71 @@
+{
+  "round": 10,
+  "role": "statistics",
+  "topic": "交付包统计/实验可复现范围",
+  "conclusion": "冻结候选1b008bf的交付完整性、选定模型字节和有界训练/经济日期合同得到本角色独立核验；这些证据支持选定研究资产的可追溯与有限复现范围，不等于原始完整自适应选择链重建、有效独立试验计数、新鲜OOS或72次独立回测。",
+  "verdict": "qualified",
+  "evidence": [
+    {
+      "source": "/workspace/BTC-strategy/.git HEAD；provenance/release_manifest.json:files、source_period、qualification；本人附件r10-statistical-audit.json",
+      "finding": "独立读取候选完整commit为1b008bfd4a9d1af9a73ff830fb7f8a1b72425fbf，开始核对时git工作树干净。release manifest SHA256=b9c03b01ef32bd63c6e61f61207f32ee70c6de27560ef4e8df1f33686dca2caa，886个唯一相对路径均无逃逸/符号链接，文件大小与SHA256全部匹配；没有review路径，本角色未读取任何review意见。该清单是限定完整性快照，并声明docs/review另行演进，不能解释为每个仓库文件均受此清单认证。"
+    },
+    {
+      "source": "research/trial_registry.json；research/supplemental_contracts.json；provenance/studies/及对应只读源合同",
+      "finding": "115个唯一标准B登记，原源字节、交付副本和登记SHA三方全部匹配；7个非标准文件名补充合同同样三方匹配。recipe计数1717、零recipe登记26，均与本轮逐行检查一致；115+7不是122次独立实验，1717也不是有效选择次数。合同副本保证具体文件可追溯，不能补造未记录的全部选择/停止节点。"
+    },
+    {
+      "source": "models/manifest.json；全部266个原始模型文件及各自source；training_inputs/{2018,…,2025}/{六族}.json.gz",
+      "finding": "本轮独立校验48个家族×fold行的cutoff、决策起止窗口和266个模型字节与只读源模型SHA一致；实际数值成员计392，2019–2025每年56个，2018六族均保留missing且无模型文件。48份训练包日期均精确为2017起至相应测试年前一年的年末，features行数/宽度/有限值、ids有序唯一、targets长度/有限值和61或62日成熟界≤cut−6全部通过。392是数值最终状态数，不是392次独立市场验证。"
+    },
+    {
+      "source": "artifacts/factors/{prices,mining}.json.gz；artifacts/accounts/{九策略}/{四成本}.json.gz",
+      "finding": "独立检查价格与准入矿业投影各3287日，经济日期均2017-01-01至2025-12-31；36个账户各2922个连续marks均为2018-01-01至2025-12-31，orders/fills/financing/risk_events的经济date也均在该区间。只核对既有记录，未新执行任何账户、模型或验证期观察。"
+    },
+    {
+      "source": "README.md；docs/REPRODUCIBILITY.md:验证声明的区别、最终估计器训练命令；research/TRIAL_HISTORY.md",
+      "finding": "交付文字分开文件哈希、实际推理、目标/许可、完整Native/Decimal核验、封存最终估计器重拟合和未来泛化。训练命令明确只重拟合已选最终参数，不重做内层选择/整段策略研究；2025最终状态抽样年度复拟合的root报告不被本轮当作自身执行。本角色本轮未运行模型推理、任何最终估计器重拟合或旧选择writer，也不声称已独立复现完整研究链。"
+    },
+    {
+      "source": "README.md:开头与专家审查说明；docs/RISK_AND_LIMITATIONS.md:资格问题；共享protocol.json:roles、rounds",
+      "finding": "文档把2018–2025标为Consumed开发历史，2026继续保持验证身份且本次禁读/禁训练/禁调参/禁筛选，并明确既有验证消费不改称盲测。共享协议只有6角色×12轮=72个计划角色回合提交；本轮只算这一设计数，未检查他人完成状态或内容。72份AI审查既不是72个独立账户回测，也不是72个市场样本或人类专家。"
+    }
+  ],
+  "counterevidence": [
+    "模型字节/合同/前缀完整性检查具有实质价值，本角色确实独立跑了这些检查，而不是转述root收据；欠缺全研究选择链复现不否定选定资产可追溯。",
+    "已选最终估计器重拟合即使数值一致，也只能证明给定最终规格和数据下的训练可复现，不证明当时为何选它、为何停止，亦不验证未来效度。",
+    "物理训练截止和2018缺失模型保留支持时间合同；目录没有2026数据或当前未读2026，不能抹去已经发生过的历史策略选择，README对此已有边界说明。",
+    "六角色隔离增加分析覆盖和证据交叉检查，不能因角色数、回合数或一致意见数量产生市场统计独立性。"
+  ],
+  "recommendations": [
+    {
+      "priority": "P0",
+      "action": "最终交付保留按层级的已执行/未执行声明：文件完整性、推理、目标、账户、最终估计器拟合、原内层选择、全研究选择过程、未来检验逐项分开，并绑定执行版本。",
+      "acceptance": "本轮附件只为已独立执行的886哈希、115+7合同、266源模型、48训练包及经济日期检查背书；root命令收据以其自身scope呈现，不能借本角色本轮文字升级为全训练/全搜索复现。"
+    },
+    {
+      "priority": "P0",
+      "action": "保持Consumed、PIT未知、有效tests未知与2026验证身份的醒目文字；将72解释为审查工作量设计而非验证样本数。",
+      "acceptance": "无“72次独立回测/72独立验证”表述，不依据审查投票给显著性；115标准登记和7补充合同均不直接当PBO/DSR输入N。"
+    },
+    {
+      "priority": "P1",
+      "action": "发布时对docs/review与运行数据快照分别绑定最终git版本，明确release manifest886条的覆盖范围，避免把后续文字变化误当冻结数据也变化或反过来。",
+      "acceptance": "使用本轮完整commit、release-manifest SHA和附件SHA可重定位本次有限审计；后续变更若影响经济/统计声明需新版本，不改既有冻结原件。"
+    }
+  ],
+  "checks_performed": [
+    "实际执行：独立标准库审计886个manifest条目的安全相对路径、文件大小与SHA256，核对候选git版本。",
+    "实际执行：115标准登记和7补充合同原源/交付/索引SHA三方绑定；registry计数与合同边界检查。",
+    "实际执行：全部266模型源字节、392个最终状态、48训练包的窗口、shape、有限值、ids和成熟界检查；2018缺失状态保留。",
+    "实际执行：准入price/mining日期、36账户全部marks和事件date边界；只读shared protocol进行6×12设计计数，不读review目录。",
+    "未执行：本轮没有模型推理重跑、任何估计器拟合/内层选择、Native/account回放、完整原研究自适应选择链复建、PBO/DSR或任何新显著性检验。root receipts没有被计入本角色已跑范围。",
+    "未读取2026经济值、V01/V02、其他专家/主席意见；未改共享代码或重跑旧writer；仅在本人目录新建r10-statistical-audit.json及r10.json。"
+  ],
+  "unresolved": [
+    "完整内层搜索、未保留/未登记假设及跨study自适应选择链未由本包或本轮重建；有效独立tests保持未知。",
+    "本角色本轮没有复跑推理、拟合或账户，所以不能独立认证root相关执行收据的全过程；先前本角色的有界检查也不能外推为所有层级已复现。",
+    "72份审查的最终完成状态本轮未检查；隔离限制下未读取其他提交，其完成与内容验收不属于本轮统计证据。",
+    "文件和模型一致性不补齐PIT、真实执行/融资安全或未来泛化证据。"
+  ],
+  "independence_statement": "本轮是statistics模拟AI角色的独立有界封装/统计合同审计，非人类外部审计或独立市场试验。仅读取允许的新仓非review资产、原冻结B合同/模型及共享协议；未读取其他专家或主席意见。2026经济观察与V01/V02始终禁读；仅完成第10轮，未预写R11或后续。"
+}
