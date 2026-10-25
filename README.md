@@ -64,6 +64,8 @@ uv run --locked python -m btc_strategy.verify --review
 
 冻结运行物料版本`c7439216`：37项测试通过，六类实际数值模型和九项目标/许可一致；无网络installed-wheel容器完成36个完整Native账户与Decimal核验。六族2025共56个已选最终状态重拟合通过；未重跑全部年度训练或原内层选择。见[当前容器核验](verification/container-candidate-c743921.json)和[边界/模型/目标核验](verification/r11-hardened-c743921.json)。结论为可复现历史研究档案，paper/live尚未取得资格。
 
+首次远端CI发现原清单误含5个未入Git、安装时生成的`egg-info`文件。打包修正版将其排除，当前清单为881个Git跟踪文件/56,437,576字节，保留的模型、数据和经济代码逐字节不变；原审查中886项是原版本事实，未回写。详见[打包修正记录](verification/packaging-correction.json)。
+
 [风险与限制](docs/RISK_AND_LIMITATIONS.md)必须与收益一起阅读：LP35逐日退出前short gross曾超过100%，止损触发并非成交亏损上限；Native有保证金机制，但外置模拟融资没有进入其原生钱包；来源PIT和全流程搜索偏差尚未解决。原研究失败与另立修正分别保留。
 
 [证据与方法来源](docs/EVIDENCE_SOURCES.md)说明用户指定插件的具体用途与不适用部分。本仓仅作一般研究与复现，不含个人投资建议、实盘下单或生产接入。

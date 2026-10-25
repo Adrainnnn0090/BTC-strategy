@@ -967,31 +967,6 @@
       "bytes": 1149
     },
     {
-      "path": "src/btc_strategy_research.egg-info/PKG-INFO",
-      "sha256": "14c668861771dae6ac29acd92c925c5900eb6fa72c4b95f5aa5d0a1bb39857ee",
-      "bytes": 451
-    },
-    {
-      "path": "src/btc_strategy_research.egg-info/SOURCES.txt",
-      "sha256": "af8b4397fd371bbffa540a1eab70e3c4c5da8cfd3247e4dbe834595aecfc4963",
-      "bytes": 8256
-    },
-    {
-      "path": "src/btc_strategy_research.egg-info/dependency_links.txt",
-      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
-      "bytes": 1
-    },
-    {
-      "path": "src/btc_strategy_research.egg-info/requires.txt",
-      "sha256": "730bebb43d5f9c63e5731d1e2582a78631b0fd983beff0d409ef041ce9e3f186",
-      "bytes": 130
-    },
-    {
-      "path": "src/btc_strategy_research.egg-info/top_level.txt",
-      "sha256": "245f538d4402b7b76d1a400a1c66e5096f841a24dafd43184e720f7b55c5a587",
-      "bytes": 13
-    },
-    {
       "path": "artifacts/accounts/B88A_S03/BASE.json.gz",
       "sha256": "b92eb5ed46681abd9f417791b24c5e2896648119b8318a30aaf1f6a8d2ab364f",
       "bytes": 165690

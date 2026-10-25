@@ -53,3 +53,5 @@ docker run --rm --network none --read-only \
 回放JSON的`metric_scope`明确每个风险字段口径：旧`summary.max_gross_exposure_pct`来自每日成交后marks；外层`max_daily_short_gross`与`max_daily_whole_gross`涵盖订单前后代理点。LP35/BASE两种全仓最大值分别约98.9936%与118.0456%，原summary数值保留用于完整账本核验。`risk_qualification`同时提示这些不是盘中峰值、未来敞口上限或实际止损亏损保证。
 
 `verify --integrity`检查可信发行清单内所声明的文件；清单真实性及覆盖范围必须通过冻结Git提交和清单SHA另外锚定。它不是数字签名认证，不能用自给空清单的PASS来认证完整发行。审查文件与演进中的文档不在运行物料清单内，按最终Git版本及各自附件SHA追溯。
+
+清单生成器排除`__pycache__`、`egg-info`和`dist-info`，并要求输入文件已被Git跟踪（新增输入先`git add`）。安装时重建的包元数据不是冻结研究输入。首次远端CI的886项清单包含5个生成文件，已追加修正为881项；原失败及旧版本收据保留，不以修改哈希来掩盖真正数据漂移。

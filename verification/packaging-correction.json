@@ -1,0 +1,51 @@
+{
+  "phase": "post_review_packaging_correction",
+  "original_review_runtime_commit": "c7439216d55207a9a480153d7555f6709817e70a",
+  "first_published_commit": "3e8c0ac1bcc05a203e04169e130cd367334f9b30",
+  "first_CI": {
+    "url": "https://github.com/Adrainnnn0090/BTC-strategy/actions/runs/40186975019",
+    "run_id": 40186975019,
+    "research_job": 121149744208,
+    "research_conclusion": "failure",
+    "pytest": "37 passed in 5.98s",
+    "failure": "ValueError: release content mismatch: src/btc_strategy_research.egg-info/SOURCES.txt",
+    "isolated_replay_job": 121149744357,
+    "isolated_replay_conclusion": "success"
+  },
+  "cause": "Local install generated five ignored egg-info files. The old generator incorrectly treated them as release inputs; a clean CI install regenerates SOURCES.txt.",
+  "fix": "Exclude generated packaging metadata and require all intended manifest inputs to be indexed by Git. No original research artifacts or economic implementation changed.",
+  "removed_generated_files": [
+    {
+      "path": "src/btc_strategy_research.egg-info/PKG-INFO",
+      "sha256": "14c668861771dae6ac29acd92c925c5900eb6fa72c4b95f5aa5d0a1bb39857ee",
+      "bytes": 451
+    },
+    {
+      "path": "src/btc_strategy_research.egg-info/SOURCES.txt",
+      "sha256": "af8b4397fd371bbffa540a1eab70e3c4c5da8cfd3247e4dbe834595aecfc4963",
+      "bytes": 8256
+    },
+    {
+      "path": "src/btc_strategy_research.egg-info/dependency_links.txt",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1
+    },
+    {
+      "path": "src/btc_strategy_research.egg-info/requires.txt",
+      "sha256": "730bebb43d5f9c63e5731d1e2582a78631b0fd983beff0d409ef041ce9e3f186",
+      "bytes": 130
+    },
+    {
+      "path": "src/btc_strategy_research.egg-info/top_level.txt",
+      "sha256": "245f538d4402b7b76d1a400a1c66e5096f841a24dafd43184e720f7b55c5a587",
+      "bytes": 13
+    }
+  ],
+  "original_declared_files": 886,
+  "corrected_files": 881,
+  "corrected_bytes": 56437576,
+  "corrected_manifest_sha256": "6ddeb590696601c9f28ad827dda6a2f866689b6af18fa95caf1bd34228f8e3a7",
+  "all_881_retained_records_byte_metadata_unchanged": true,
+  "all_current_manifest_paths_git_tracked": true,
+  "preservation": "Original 72 role reports, 12 chair records, prior local receipts and failed CI are preserved; additional clean-clone checks are separate receipts, not a thirteenth strategy-review round."
+}
