@@ -1,0 +1,24 @@
+{
+  "candidate": "c7439216d55207a9a480153d7555f6709817e70a",
+  "manifest_files": 886,
+  "manifest_declared_bytes": 56446427,
+  "bounded_current_file_bindings": [
+    {
+      "path": "src/btc_strategy/artifacts.py",
+      "size_sha256_match": true
+    },
+    {
+      "path": "src/btc_strategy/training.py",
+      "size_sha256_match": true
+    },
+    {
+      "path": "models/manifest.json",
+      "size_sha256_match": true
+    }
+  ],
+  "source_period": [
+    "2017-01-01",
+    "2025-12-31"
+  ],
+  "full_manifest_rehashed_this_round": false
+}

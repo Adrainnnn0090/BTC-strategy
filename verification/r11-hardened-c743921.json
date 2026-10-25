@@ -1,0 +1,163 @@
+{
+  "status": "PASS",
+  "candidate_commit": "c7439216d55207a9a480153d7555f6709817e70a",
+  "release_manifest_sha256": "cd4e22c08fc1056866a69bb9f8bfcb78a42d9244dc7cdfe3514ce1d5fb95a439",
+  "manifest_files": 886,
+  "manifest_bytes": 56446427,
+  "pytest_result": ".....................................                                    [100%]\n37 passed in 7.87s",
+  "gates": [
+    {
+      "status": "PASS",
+      "files": 886,
+      "bytes": 56446427,
+      "scope": "Content equality; not alpha, PIT or live safety certification."
+    },
+    {
+      "family": "base_tree",
+      "positions": 3287,
+      "finite": 2557,
+      "max_error": 0.0,
+      "tolerance": 2e-12,
+      "availability_exact": true,
+      "actual_numeric_models_used": true
+    },
+    {
+      "family": "stop44",
+      "positions": 3287,
+      "finite": 2557,
+      "max_error": 0.0,
+      "tolerance": 2e-12,
+      "availability_exact": true,
+      "actual_numeric_models_used": true
+    },
+    {
+      "family": "price47",
+      "positions": 3287,
+      "finite": 2557,
+      "max_error": 0.0,
+      "tolerance": 2e-12,
+      "availability_exact": true,
+      "actual_numeric_models_used": true
+    },
+    {
+      "family": "short_huber",
+      "positions": 3287,
+      "finite": 2557,
+      "max_error": 0.0,
+      "tolerance": 2e-12,
+      "availability_exact": true,
+      "actual_numeric_models_used": true
+    },
+    {
+      "family": "short_median",
+      "positions": 3287,
+      "finite": 2557,
+      "max_error": 0.0,
+      "tolerance": 2e-12,
+      "availability_exact": true,
+      "actual_numeric_models_used": true
+    },
+    {
+      "family": "mining58",
+      "positions": 3287,
+      "finite": 2557,
+      "max_error": 0.0,
+      "tolerance": 2e-12,
+      "availability_exact": true,
+      "actual_numeric_models_used": true
+    },
+    {
+      "strategy": "LP35",
+      "actual_model_targets_exact": true
+    },
+    {
+      "strategy": "TS04",
+      "actual_model_targets_exact": true
+    },
+    {
+      "strategy": "ME01",
+      "actual_model_targets_exact": true
+    },
+    {
+      "strategy": "MX03",
+      "actual_model_targets_exact": true
+    },
+    {
+      "strategy": "B88A_S03",
+      "actual_model_targets_exact": true
+    },
+    {
+      "strategy": "K02",
+      "actual_model_targets_exact": true
+    },
+    {
+      "strategy": "Y01",
+      "actual_model_targets_exact": true
+    },
+    {
+      "strategy": "C02",
+      "actual_model_targets_exact": true
+    },
+    {
+      "strategy": "C04",
+      "actual_model_targets_exact": true
+    }
+  ],
+  "selected_final_estimator_refit": {
+    "family": "price47",
+    "fold_year": 2025,
+    "status": "PASS",
+    "cutoff": "2024-12-31",
+    "physical_rows": 2922,
+    "training_samples": 2603,
+    "new_fits": 7,
+    "states": [
+      {
+        "seed": 101,
+        "execution_lag": null,
+        "numeric_state_exact": true
+      },
+      {
+        "seed": 307,
+        "execution_lag": null,
+        "numeric_state_exact": true
+      },
+      {
+        "seed": 509,
+        "execution_lag": null,
+        "numeric_state_exact": true
+      },
+      {
+        "seed": 701,
+        "execution_lag": null,
+        "numeric_state_exact": true
+      },
+      {
+        "seed": 907,
+        "execution_lag": null,
+        "numeric_state_exact": true
+      },
+      {
+        "seed": 1103,
+        "execution_lag": null,
+        "numeric_state_exact": true
+      },
+      {
+        "seed": 1701,
+        "execution_lag": null,
+        "numeric_state_exact": true
+      }
+    ],
+    "protected_reads": [
+      "training_inputs/2025/price47.json.gz",
+      "models/manifest.json",
+      "models/price47/2025/PRICE_L7.json.gz"
+    ],
+    "qualification": "Selected-final-estimator refit only; no new model/policy selection or OOS evidence."
+  },
+  "qualifications": [
+    "37 existing and adversarial-boundary tests, 6 numeric inference families, 9 target/permission paths and one family-year refit; not full research selection.",
+    "The 7 price47 2025 states are a repeated check within the original 56-state annual scope, not 7 new independent models.",
+    "No 2026 economic observations."
+  ]
+}

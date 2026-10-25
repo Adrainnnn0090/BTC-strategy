@@ -1,0 +1,638 @@
+{
+  "status": "PASS",
+  "checks_scope": "B109 registration, 8 annual training/seal/receipt metadata and <=2025 prediction digests; pure path predicate; no 2026 file opened",
+  "manifest_hash": "PASS",
+  "authorization_hash": "PASS",
+  "selected_source_hashes": {
+    "lab/b109.py": "7380c1b01970b7991615de298b49c764f04471557573e98efca5ca49c332f640",
+    "lab/b109_io.py": "954fbcb02ec6c4421368cae23ade39e34fc3271d85ede435a5bd344d6de7ac36",
+    "lab/b82.py": "b3842b3a1d95576db7d9045e2f94c30efd89f35c4fea34388bde4d817eea6576",
+    "lab/walkforward_io.py": "8aae5801af2940cf1876bd38f745ec61ba2631ba2fa390c16e56b663ad2fbe6d"
+  },
+  "folds": [
+    {
+      "year": 2018,
+      "cutoff": "2017-12-31",
+      "hash_chain": "PASS",
+      "training_read_count": 6,
+      "test_read_count": 20
+    },
+    {
+      "year": 2019,
+      "cutoff": "2018-12-31",
+      "hash_chain": "PASS",
+      "training_read_count": 6,
+      "test_read_count": 20
+    },
+    {
+      "year": 2020,
+      "cutoff": "2019-12-31",
+      "hash_chain": "PASS",
+      "training_read_count": 6,
+      "test_read_count": 20
+    },
+    {
+      "year": 2021,
+      "cutoff": "2020-12-31",
+      "hash_chain": "PASS",
+      "training_read_count": 6,
+      "test_read_count": 20
+    },
+    {
+      "year": 2022,
+      "cutoff": "2021-12-31",
+      "hash_chain": "PASS",
+      "training_read_count": 6,
+      "test_read_count": 20
+    },
+    {
+      "year": 2023,
+      "cutoff": "2022-12-31",
+      "hash_chain": "PASS",
+      "training_read_count": 6,
+      "test_read_count": 20
+    },
+    {
+      "year": 2024,
+      "cutoff": "2023-12-31",
+      "hash_chain": "PASS",
+      "training_read_count": 6,
+      "test_read_count": 20
+    },
+    {
+      "year": 2025,
+      "cutoff": "2024-12-31",
+      "hash_chain": "PASS",
+      "training_read_count": 6,
+      "test_read_count": 20
+    }
+  ],
+  "permission_cases": 80,
+  "permission_results": [
+    {
+      "path": "data/walkforward-v1/2018/train.json",
+      "worker_year": 2018,
+      "role": "train",
+      "expected": true,
+      "actual": true
+    },
+    {
+      "path": "data/walkforward-v1/2018/test.json",
+      "worker_year": 2018,
+      "role": "train",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "path": "data/walkforward-v1/2018/test.json",
+      "worker_year": 2018,
+      "role": "test",
+      "expected": true,
+      "actual": true
+    },
+    {
+      "path": "studies/B109-long-profit-local-coordinate/folds/2018/predictions.json.gz",
+      "worker_year": 2018,
+      "role": "train",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "path": "studies/B109-long-profit-local-coordinate/folds/2018/predictions.json.gz",
+      "worker_year": 2018,
+      "role": "test",
+      "expected": true,
+      "actual": true
+    },
+    {
+      "path": "data/walkforward-v1/2026/test.json",
+      "worker_year": 2018,
+      "role": "train",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "path": "data/walkforward-v1/2026/test.json",
+      "worker_year": 2018,
+      "role": "test",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "path": "data/walkforward-v1/2026/test.json",
+      "worker_year": 2018,
+      "role": "replay",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "path": "data/walkforward-v1/2026/test.json",
+      "worker_year": 2018,
+      "role": "audit",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "path": "studies/B109-long-profit-local-coordinate/folds/2026/training.json",
+      "worker_year": 2018,
+      "role": "audit",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "path": "data/walkforward-v1/2019/train.json",
+      "worker_year": 2019,
+      "role": "train",
+      "expected": true,
+      "actual": true
+    },
+    {
+      "path": "data/walkforward-v1/2019/test.json",
+      "worker_year": 2019,
+      "role": "train",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "path": "data/walkforward-v1/2019/test.json",
+      "worker_year": 2019,
+      "role": "test",
+      "expected": true,
+      "actual": true
+    },
+    {
+      "path": "studies/B109-long-profit-local-coordinate/folds/2019/predictions.json.gz",
+      "worker_year": 2019,
+      "role": "train",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "path": "studies/B109-long-profit-local-coordinate/folds/2019/predictions.json.gz",
+      "worker_year": 2019,
+      "role": "test",
+      "expected": true,
+      "actual": true
+    },
+    {
+      "path": "data/walkforward-v1/2026/test.json",
+      "worker_year": 2019,
+      "role": "train",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "path": "data/walkforward-v1/2026/test.json",
+      "worker_year": 2019,
+      "role": "test",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "path": "data/walkforward-v1/2026/test.json",
+      "worker_year": 2019,
+      "role": "replay",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "path": "data/walkforward-v1/2026/test.json",
+      "worker_year": 2019,
+      "role": "audit",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "path": "studies/B109-long-profit-local-coordinate/folds/2026/training.json",
+      "worker_year": 2019,
+      "role": "audit",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "path": "data/walkforward-v1/2020/train.json",
+      "worker_year": 2020,
+      "role": "train",
+      "expected": true,
+      "actual": true
+    },
+    {
+      "path": "data/walkforward-v1/2020/test.json",
+      "worker_year": 2020,
+      "role": "train",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "path": "data/walkforward-v1/2020/test.json",
+      "worker_year": 2020,
+      "role": "test",
+      "expected": true,
+      "actual": true
+    },
+    {
+      "path": "studies/B109-long-profit-local-coordinate/folds/2020/predictions.json.gz",
+      "worker_year": 2020,
+      "role": "train",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "path": "studies/B109-long-profit-local-coordinate/folds/2020/predictions.json.gz",
+      "worker_year": 2020,
+      "role": "test",
+      "expected": true,
+      "actual": true
+    },
+    {
+      "path": "data/walkforward-v1/2026/test.json",
+      "worker_year": 2020,
+      "role": "train",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "path": "data/walkforward-v1/2026/test.json",
+      "worker_year": 2020,
+      "role": "test",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "path": "data/walkforward-v1/2026/test.json",
+      "worker_year": 2020,
+      "role": "replay",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "path": "data/walkforward-v1/2026/test.json",
+      "worker_year": 2020,
+      "role": "audit",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "path": "studies/B109-long-profit-local-coordinate/folds/2026/training.json",
+      "worker_year": 2020,
+      "role": "audit",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "path": "data/walkforward-v1/2021/train.json",
+      "worker_year": 2021,
+      "role": "train",
+      "expected": true,
+      "actual": true
+    },
+    {
+      "path": "data/walkforward-v1/2021/test.json",
+      "worker_year": 2021,
+      "role": "train",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "path": "data/walkforward-v1/2021/test.json",
+      "worker_year": 2021,
+      "role": "test",
+      "expected": true,
+      "actual": true
+    },
+    {
+      "path": "studies/B109-long-profit-local-coordinate/folds/2021/predictions.json.gz",
+      "worker_year": 2021,
+      "role": "train",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "path": "studies/B109-long-profit-local-coordinate/folds/2021/predictions.json.gz",
+      "worker_year": 2021,
+      "role": "test",
+      "expected": true,
+      "actual": true
+    },
+    {
+      "path": "data/walkforward-v1/2026/test.json",
+      "worker_year": 2021,
+      "role": "train",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "path": "data/walkforward-v1/2026/test.json",
+      "worker_year": 2021,
+      "role": "test",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "path": "data/walkforward-v1/2026/test.json",
+      "worker_year": 2021,
+      "role": "replay",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "path": "data/walkforward-v1/2026/test.json",
+      "worker_year": 2021,
+      "role": "audit",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "path": "studies/B109-long-profit-local-coordinate/folds/2026/training.json",
+      "worker_year": 2021,
+      "role": "audit",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "path": "data/walkforward-v1/2022/train.json",
+      "worker_year": 2022,
+      "role": "train",
+      "expected": true,
+      "actual": true
+    },
+    {
+      "path": "data/walkforward-v1/2022/test.json",
+      "worker_year": 2022,
+      "role": "train",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "path": "data/walkforward-v1/2022/test.json",
+      "worker_year": 2022,
+      "role": "test",
+      "expected": true,
+      "actual": true
+    },
+    {
+      "path": "studies/B109-long-profit-local-coordinate/folds/2022/predictions.json.gz",
+      "worker_year": 2022,
+      "role": "train",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "path": "studies/B109-long-profit-local-coordinate/folds/2022/predictions.json.gz",
+      "worker_year": 2022,
+      "role": "test",
+      "expected": true,
+      "actual": true
+    },
+    {
+      "path": "data/walkforward-v1/2026/test.json",
+      "worker_year": 2022,
+      "role": "train",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "path": "data/walkforward-v1/2026/test.json",
+      "worker_year": 2022,
+      "role": "test",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "path": "data/walkforward-v1/2026/test.json",
+      "worker_year": 2022,
+      "role": "replay",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "path": "data/walkforward-v1/2026/test.json",
+      "worker_year": 2022,
+      "role": "audit",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "path": "studies/B109-long-profit-local-coordinate/folds/2026/training.json",
+      "worker_year": 2022,
+      "role": "audit",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "path": "data/walkforward-v1/2023/train.json",
+      "worker_year": 2023,
+      "role": "train",
+      "expected": true,
+      "actual": true
+    },
+    {
+      "path": "data/walkforward-v1/2023/test.json",
+      "worker_year": 2023,
+      "role": "train",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "path": "data/walkforward-v1/2023/test.json",
+      "worker_year": 2023,
+      "role": "test",
+      "expected": true,
+      "actual": true
+    },
+    {
+      "path": "studies/B109-long-profit-local-coordinate/folds/2023/predictions.json.gz",
+      "worker_year": 2023,
+      "role": "train",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "path": "studies/B109-long-profit-local-coordinate/folds/2023/predictions.json.gz",
+      "worker_year": 2023,
+      "role": "test",
+      "expected": true,
+      "actual": true
+    },
+    {
+      "path": "data/walkforward-v1/2026/test.json",
+      "worker_year": 2023,
+      "role": "train",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "path": "data/walkforward-v1/2026/test.json",
+      "worker_year": 2023,
+      "role": "test",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "path": "data/walkforward-v1/2026/test.json",
+      "worker_year": 2023,
+      "role": "replay",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "path": "data/walkforward-v1/2026/test.json",
+      "worker_year": 2023,
+      "role": "audit",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "path": "studies/B109-long-profit-local-coordinate/folds/2026/training.json",
+      "worker_year": 2023,
+      "role": "audit",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "path": "data/walkforward-v1/2024/train.json",
+      "worker_year": 2024,
+      "role": "train",
+      "expected": true,
+      "actual": true
+    },
+    {
+      "path": "data/walkforward-v1/2024/test.json",
+      "worker_year": 2024,
+      "role": "train",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "path": "data/walkforward-v1/2024/test.json",
+      "worker_year": 2024,
+      "role": "test",
+      "expected": true,
+      "actual": true
+    },
+    {
+      "path": "studies/B109-long-profit-local-coordinate/folds/2024/predictions.json.gz",
+      "worker_year": 2024,
+      "role": "train",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "path": "studies/B109-long-profit-local-coordinate/folds/2024/predictions.json.gz",
+      "worker_year": 2024,
+      "role": "test",
+      "expected": true,
+      "actual": true
+    },
+    {
+      "path": "data/walkforward-v1/2026/test.json",
+      "worker_year": 2024,
+      "role": "train",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "path": "data/walkforward-v1/2026/test.json",
+      "worker_year": 2024,
+      "role": "test",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "path": "data/walkforward-v1/2026/test.json",
+      "worker_year": 2024,
+      "role": "replay",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "path": "data/walkforward-v1/2026/test.json",
+      "worker_year": 2024,
+      "role": "audit",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "path": "studies/B109-long-profit-local-coordinate/folds/2026/training.json",
+      "worker_year": 2024,
+      "role": "audit",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "path": "data/walkforward-v1/2025/train.json",
+      "worker_year": 2025,
+      "role": "train",
+      "expected": true,
+      "actual": true
+    },
+    {
+      "path": "data/walkforward-v1/2025/test.json",
+      "worker_year": 2025,
+      "role": "train",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "path": "data/walkforward-v1/2025/test.json",
+      "worker_year": 2025,
+      "role": "test",
+      "expected": true,
+      "actual": true
+    },
+    {
+      "path": "studies/B109-long-profit-local-coordinate/folds/2025/predictions.json.gz",
+      "worker_year": 2025,
+      "role": "train",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "path": "studies/B109-long-profit-local-coordinate/folds/2025/predictions.json.gz",
+      "worker_year": 2025,
+      "role": "test",
+      "expected": true,
+      "actual": true
+    },
+    {
+      "path": "data/walkforward-v1/2026/test.json",
+      "worker_year": 2025,
+      "role": "train",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "path": "data/walkforward-v1/2026/test.json",
+      "worker_year": 2025,
+      "role": "test",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "path": "data/walkforward-v1/2026/test.json",
+      "worker_year": 2025,
+      "role": "replay",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "path": "data/walkforward-v1/2026/test.json",
+      "worker_year": 2025,
+      "role": "audit",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "path": "studies/B109-long-profit-local-coordinate/folds/2026/training.json",
+      "worker_year": 2025,
+      "role": "audit",
+      "expected": false,
+      "actual": false
+    }
+  ],
+  "limitations": [
+    "Hash and declared receipt checks do not prove the original wall-clock order of model sealing and test access.",
+    "Pure path predicate checks do not establish source observation/publication timing or label maturity.",
+    "No writers or original strategy executors were invoked."
+  ]
+}

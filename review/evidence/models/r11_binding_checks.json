@@ -1,0 +1,14 @@
+{
+  "round": 11,
+  "baseline": "1b008bfd4a9d1af9a73ff830fb7f8a1b72425fbf",
+  "candidate": "a642de16cea72875a99859e9108960b02636c584",
+  "compared_paths": [
+    "models",
+    "src/btc_strategy/models.py",
+    "src/btc_strategy/artifacts.py",
+    "src/btc_strategy/_runtime"
+  ],
+  "git_diff_quiet_exit_code": 0,
+  "model_and_numeric_runtime_unchanged": true,
+  "models_manifest_sha256": "6d2132c04d5b5f216aced5607612e89e223ea0dd1120a24264201a7702aca213"
+}

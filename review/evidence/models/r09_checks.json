@@ -1,0 +1,453 @@
+{
+  "round": 9,
+  "all_checks_pass": true,
+  "cost_case": "STRESS",
+  "model_availability": {
+    "2018_fold_all_model_heads_none": true,
+    "first_finite_decision_date": "2018-12-31",
+    "first_execution_date_at_lag1": "2019-01-01",
+    "2018_entries_all_short_cold_fallback": true
+  },
+  "P02_cold_entry_cross_year_trade": {
+    "direction": -1,
+    "entry_date": "2018-11-14",
+    "entry_price": "5568.68",
+    "exit_date": "2019-01-01",
+    "exit_price": "3811.93",
+    "exit_reason": "SIGNAL",
+    "fees": "0.36668804",
+    "financing": "0.676276808890282801726027396",
+    "gross_pnl": "22.8904525",
+    "pnl": "21.84748765110971719827397260",
+    "policy_year": 2018,
+    "quantity": "0.01303",
+    "terminal": false
+  },
+  "same_post2018_trade_schedules": [
+    "ME01",
+    "MX03",
+    "TS04"
+  ],
+  "post2018_schedule_trades": 36,
+  "LP35_TS04_2018_books_annual_exact": true,
+  "results": {
+    "P02": {
+      "annual": [
+        {
+          "year": 2018,
+          "starting_net_equity": "100",
+          "ending_net_equity": "120.5508487104867787836438356",
+          "net_equity_change_usdt": "20.5508487104867787836438356",
+          "return_pct": "20.55084871048677878364383560",
+          "exit_book_realized_pnl_usdt": "-2.892116049522049719123287680",
+          "year_end_signed_qty": "-0.01303"
+        },
+        {
+          "year": 2019,
+          "starting_net_equity": "120.5508487104867787836438356",
+          "ending_net_equity": "316.3682954244678455374794521",
+          "net_equity_change_usdt": "195.8174467139810667538356165",
+          "return_pct": "162.4355604366199778275598258",
+          "exit_book_realized_pnl_usdt": "219.2604114739898952566027397",
+          "year_end_signed_qty": "0"
+        },
+        {
+          "year": 2020,
+          "starting_net_equity": "316.3682954244678455374794521",
+          "ending_net_equity": "823.1541148718177150929589041",
+          "net_equity_change_usdt": "506.7858194473498695554794520",
+          "return_pct": "160.1885608567068759179935014",
+          "exit_book_realized_pnl_usdt": "506.7858194473498695554794521",
+          "year_end_signed_qty": "0"
+        },
+        {
+          "year": 2021,
+          "starting_net_equity": "823.1541148718177150929589041",
+          "ending_net_equity": "1659.029495250311952586657534",
+          "net_equity_change_usdt": "835.8753803784942374936986299",
+          "return_pct": "101.5454293766918105107702622",
+          "exit_book_realized_pnl_usdt": "835.8753803784942374936986301",
+          "year_end_signed_qty": "0"
+        },
+        {
+          "year": 2022,
+          "starting_net_equity": "1659.029495250311952586657534",
+          "ending_net_equity": "1725.690492837025327400356164",
+          "net_equity_change_usdt": "66.660997586713374813698630",
+          "return_pct": "4.018071877417445229989696700",
+          "exit_book_realized_pnl_usdt": "66.66099758671337481369863013",
+          "year_end_signed_qty": "0"
+        },
+        {
+          "year": 2023,
+          "starting_net_equity": "1725.690492837025327400356164",
+          "ending_net_equity": "2703.595968480877725480904110",
+          "net_equity_change_usdt": "977.905475643852398080547946",
+          "return_pct": "56.66748931531640843678351390",
+          "exit_book_realized_pnl_usdt": "220.2302789074523980805479452",
+          "year_end_signed_qty": "0.06198"
+        },
+        {
+          "year": 2024,
+          "starting_net_equity": "2703.595968480877725480904110",
+          "ending_net_equity": "6187.121184782277725480904110",
+          "net_equity_change_usdt": "3483.525216301400000000000000",
+          "return_pct": "128.8478477151582806538734927",
+          "exit_book_realized_pnl_usdt": "4377.757559660000000000000000",
+          "year_end_signed_qty": "0.06311"
+        },
+        {
+          "year": 2025,
+          "starting_net_equity": "6187.121184782277725480904110",
+          "ending_net_equity": "6372.344993940110402323917808",
+          "net_equity_change_usdt": "185.223809157832676843013698",
+          "return_pct": "2.993699389845563971232442500",
+          "exit_book_realized_pnl_usdt": "48.6666625356326768430136986",
+          "year_end_signed_qty": "0"
+        }
+      ],
+      "2018_entry_short_trades": 12,
+      "post2018_equity_growth_factor": "52.86022505941741176370648882",
+      "top2_years_by_positive_cash_change": [
+        2024,
+        2023
+      ],
+      "top2_share_positive_annual_cash_change": "0.7112859219726540165785006221"
+    },
+    "ME01": {
+      "annual": [
+        {
+          "year": 2018,
+          "starting_net_equity": "100",
+          "ending_net_equity": "166.2333793354900930219726027",
+          "net_equity_change_usdt": "66.2333793354900930219726027",
+          "return_pct": "66.23337933549009302197260270",
+          "exit_book_realized_pnl_usdt": "66.23337933549009302197260274",
+          "year_end_signed_qty": "0"
+        },
+        {
+          "year": 2019,
+          "starting_net_equity": "166.2333793354900930219726027",
+          "ending_net_equity": "390.4576318050213883098082192",
+          "net_equity_change_usdt": "224.2242524695312952878356165",
+          "return_pct": "134.8852158127669168565089378",
+          "exit_book_realized_pnl_usdt": "224.2242524695312952878356165",
+          "year_end_signed_qty": "0"
+        },
+        {
+          "year": 2020,
+          "starting_net_equity": "390.4576318050213883098082192",
+          "ending_net_equity": "1114.720888370589447014602740",
+          "net_equity_change_usdt": "724.2632565655680587047945208",
+          "return_pct": "185.4908695771723527274860600",
+          "exit_book_realized_pnl_usdt": "-43.27298226123194129520547945",
+          "year_end_signed_qty": "0.03796"
+        },
+        {
+          "year": 2021,
+          "starting_net_equity": "1114.720888370589447014602740",
+          "ending_net_equity": "2437.260571132333117684739726",
+          "net_equity_change_usdt": "1322.539682761743670670136986",
+          "return_pct": "118.6431237235472683223095940",
+          "exit_book_realized_pnl_usdt": "2090.075921588543670670136986",
+          "year_end_signed_qty": "0"
+        },
+        {
+          "year": 2022,
+          "starting_net_equity": "2437.260571132333117684739726",
+          "ending_net_equity": "2535.194585989265462730767123",
+          "net_equity_change_usdt": "97.934014856932345046027397",
+          "return_pct": "4.018200434409560517046228900",
+          "exit_book_realized_pnl_usdt": "97.93401485693234504602739727",
+          "year_end_signed_qty": "0"
+        },
+        {
+          "year": 2023,
+          "starting_net_equity": "2535.194585989265462730767123",
+          "ending_net_equity": "3971.751382217208037953232877",
+          "net_equity_change_usdt": "1436.556796227942575222465754",
+          "return_pct": "56.66455759124223900009320940",
+          "exit_book_realized_pnl_usdt": "323.5150623889425752224657534",
+          "year_end_signed_qty": "0.09105"
+        },
+        {
+          "year": 2024,
+          "starting_net_equity": "3971.751382217208037953232877",
+          "ending_net_equity": "9089.348979023808037953232877",
+          "net_equity_change_usdt": "5117.597596806600000000000000",
+          "return_pct": "128.8498977987320472489390153",
+          "exit_book_realized_pnl_usdt": "6431.266467950000000000000000",
+          "year_end_signed_qty": "0.09272"
+        },
+        {
+          "year": 2025,
+          "starting_net_equity": "9089.348979023808037953232877",
+          "ending_net_equity": "9361.499132025308686369671233",
+          "net_equity_change_usdt": "272.150153001500648416438356",
+          "return_pct": "2.994165518669847040465040000",
+          "exit_book_realized_pnl_usdt": "71.5230156971006484164383562",
+          "year_end_signed_qty": "0"
+        }
+      ],
+      "2018_entry_short_trades": 11,
+      "post2018_equity_growth_factor": "56.31539928651784273221246759",
+      "top2_years_by_positive_cash_change": [
+        2024,
+        2023
+      ],
+      "top2_share_positive_annual_cash_change": "0.7076774828354680439394014615"
+    },
+    "MX03": {
+      "annual": [
+        {
+          "year": 2018,
+          "starting_net_equity": "100",
+          "ending_net_equity": "161.6935436957941994220547945",
+          "net_equity_change_usdt": "61.6935436957941994220547945",
+          "return_pct": "61.69354369579419942205479450",
+          "exit_book_realized_pnl_usdt": "61.69354369579419942205479454",
+          "year_end_signed_qty": "0"
+        },
+        {
+          "year": 2019,
+          "starting_net_equity": "161.6935436957941994220547945",
+          "ending_net_equity": "379.8154140784842649610136986",
+          "net_equity_change_usdt": "218.1218703826900655389589041",
+          "return_pct": "134.8983177665142728684109613",
+          "exit_book_realized_pnl_usdt": "218.1218703826900655389589041",
+          "year_end_signed_qty": "0"
+        },
+        {
+          "year": 2020,
+          "starting_net_equity": "379.8154140784842649610136986",
+          "ending_net_equity": "1084.436460024491201515808219",
+          "net_equity_change_usdt": "704.6210459460069365547945204",
+          "return_pct": "185.5167062283589979030139734",
+          "exit_book_realized_pnl_usdt": "-42.08899882839306344520547945",
+          "year_end_signed_qty": "0.03693"
+        },
+        {
+          "year": 2021,
+          "starting_net_equity": "1084.436460024491201515808219",
+          "ending_net_equity": "2371.191355088595690412794521",
+          "net_equity_change_usdt": "1286.754895064104488896986302",
+          "return_pct": "118.6565504294317136865360999",
+          "exit_book_realized_pnl_usdt": "2033.464939838504488896986301",
+          "year_end_signed_qty": "0"
+        },
+        {
+          "year": 2022,
+          "starting_net_equity": "2371.191355088595690412794521",
+          "ending_net_equity": "2466.470495413870260515808219",
+          "net_equity_change_usdt": "95.279140325274570103013698",
+          "return_pct": "4.018197018169991629065283600",
+          "exit_book_realized_pnl_usdt": "95.27914032527457010301369865",
+          "year_end_signed_qty": "0"
+        },
+        {
+          "year": 2023,
+          "starting_net_equity": "2466.470495413870260515808219",
+          "ending_net_equity": "3864.196902380246252940739726",
+          "net_equity_change_usdt": "1397.726406966375992424931507",
+          "return_pct": "56.66909089588924834481648710",
+          "exit_book_realized_pnl_usdt": "314.7569703901759924249315068",
+          "year_end_signed_qty": "0.08859"
+        },
+        {
+          "year": 2024,
+          "starting_net_equity": "3864.196902380246252940739726",
+          "ending_net_equity": "8843.454395289846252940739726",
+          "net_equity_change_usdt": "4979.257492909600000000000000",
+          "return_pct": "128.8562052788382756108733559",
+          "exit_book_realized_pnl_usdt": "6257.422939580000000000000000",
+          "year_end_signed_qty": "0.09021"
+        },
+        {
+          "year": 2025,
+          "starting_net_equity": "8843.454395289846252940739726",
+          "ending_net_equity": "9108.145659141292965474712329",
+          "net_equity_change_usdt": "264.691263851446712533972603",
+          "return_pct": "2.993075465990135808780994000",
+          "exit_book_realized_pnl_usdt": "69.4952537572467125339726028",
+          "year_end_signed_qty": "0"
+        }
+      ],
+      "2018_entry_short_trades": 11,
+      "post2018_equity_growth_factor": "56.32968052377594324674991941",
+      "top2_years_by_positive_cash_change": [
+        2024,
+        2023
+      ],
+      "top2_share_positive_annual_cash_change": "0.7079130534933941011886330103"
+    },
+    "TS04": {
+      "annual": [
+        {
+          "year": 2018,
+          "starting_net_equity": "100",
+          "ending_net_equity": "176.4327332961624370089315069",
+          "net_equity_change_usdt": "76.4327332961624370089315069",
+          "return_pct": "76.43273329616243700893150690",
+          "exit_book_realized_pnl_usdt": "76.43273329616243700893150686",
+          "year_end_signed_qty": "0"
+        },
+        {
+          "year": 2019,
+          "starting_net_equity": "176.4327332961624370089315069",
+          "ending_net_equity": "414.4746384209284760458082192",
+          "net_equity_change_usdt": "238.0419051247660390368767123",
+          "return_pct": "134.9193546331255835382254399",
+          "exit_book_realized_pnl_usdt": "238.0419051247660390368767123",
+          "year_end_signed_qty": "0"
+        },
+        {
+          "year": 2020,
+          "starting_net_equity": "414.4746384209284760458082192",
+          "ending_net_equity": "1183.392940779373576293068493",
+          "net_equity_change_usdt": "768.9183023584451002472602738",
+          "return_pct": "185.5163696596446204323387432",
+          "exit_book_realized_pnl_usdt": "-45.93181420555489975273972603",
+          "year_end_signed_qty": "0.04030"
+        },
+        {
+          "year": 2021,
+          "starting_net_equity": "1183.392940779373576293068493",
+          "ending_net_equity": "2587.382375823173705193342466",
+          "net_equity_change_usdt": "1403.989435043800128900273973",
+          "return_pct": "118.6410182672835095568538547",
+          "exit_book_realized_pnl_usdt": "2218.839551607800128900273973",
+          "year_end_signed_qty": "0"
+        },
+        {
+          "year": 2022,
+          "starting_net_equity": "2587.382375823173705193342466",
+          "ending_net_equity": "2691.351243295700675458821918",
+          "net_equity_change_usdt": "103.968867472526970265479452",
+          "return_pct": "4.018303148542138281811724600",
+          "exit_book_realized_pnl_usdt": "103.9688674725269702654794521",
+          "year_end_signed_qty": "0"
+        },
+        {
+          "year": 2023,
+          "starting_net_equity": "2691.351243295700675458821918",
+          "ending_net_equity": "4216.415616378171301887863014",
+          "net_equity_change_usdt": "1525.064373082470626429041096",
+          "return_pct": "56.66537865993846864752405390",
+          "exit_book_realized_pnl_usdt": "343.4431320936706264290410960",
+          "year_end_signed_qty": "0.09666"
+        },
+        {
+          "year": 2024,
+          "starting_net_equity": "4216.415616378171301887863014",
+          "ending_net_equity": "9649.455345410771301887863014",
+          "net_equity_change_usdt": "5433.039729032600000000000000",
+          "return_pct": "128.8544636806816483709309599",
+          "exit_book_realized_pnl_usdt": "6827.643380770000000000000000",
+          "year_end_signed_qty": "0.09843"
+        },
+        {
+          "year": 2025,
+          "starting_net_equity": "9649.455345410771301887863014",
+          "ending_net_equity": "9938.409007202601220976082192",
+          "net_equity_change_usdt": "288.953661791829919088219178",
+          "return_pct": "2.994507476831370752775990600",
+          "exit_book_realized_pnl_usdt": "75.9712510432299190882191781",
+          "year_end_signed_qty": "0"
+        }
+      ],
+      "2018_entry_short_trades": 15,
+      "post2018_equity_growth_factor": "56.32973440659591099262050714",
+      "top2_years_by_positive_cash_change": [
+        2024,
+        2023
+      ],
+      "top2_share_positive_annual_cash_change": "0.7072387514100208612999952502"
+    },
+    "LP35": {
+      "annual": [
+        {
+          "year": 2018,
+          "starting_net_equity": "100",
+          "ending_net_equity": "176.4327332961624370089315069",
+          "net_equity_change_usdt": "76.4327332961624370089315069",
+          "return_pct": "76.43273329616243700893150690",
+          "exit_book_realized_pnl_usdt": "76.43273329616243700893150686",
+          "year_end_signed_qty": "0"
+        },
+        {
+          "year": 2019,
+          "starting_net_equity": "176.4327332961624370089315069",
+          "ending_net_equity": "414.4746384209284760458082192",
+          "net_equity_change_usdt": "238.0419051247660390368767123",
+          "return_pct": "134.9193546331255835382254399",
+          "exit_book_realized_pnl_usdt": "238.0419051247660390368767123",
+          "year_end_signed_qty": "0"
+        },
+        {
+          "year": 2020,
+          "starting_net_equity": "414.4746384209284760458082192",
+          "ending_net_equity": "1183.392940779373576293068493",
+          "net_equity_change_usdt": "768.9183023584451002472602738",
+          "return_pct": "185.5163696596446204323387432",
+          "exit_book_realized_pnl_usdt": "-45.93181420555489975273972603",
+          "year_end_signed_qty": "0.04030"
+        },
+        {
+          "year": 2021,
+          "starting_net_equity": "1183.392940779373576293068493",
+          "ending_net_equity": "2662.789416259886083928684932",
+          "net_equity_change_usdt": "1479.396475480512507635616439",
+          "return_pct": "125.0131232408901525301840728",
+          "exit_book_realized_pnl_usdt": "2294.246592044512507635616438",
+          "year_end_signed_qty": "0"
+        },
+        {
+          "year": 2022,
+          "starting_net_equity": "2662.789416259886083928684932",
+          "ending_net_equity": "2769.798283702531780141835616",
+          "net_equity_change_usdt": "107.008867442645696213150684",
+          "return_pct": "4.018675558390521921717385400",
+          "exit_book_realized_pnl_usdt": "107.0088674426456962131506849",
+          "year_end_signed_qty": "0"
+        },
+        {
+          "year": 2023,
+          "starting_net_equity": "2769.798283702531780141835616",
+          "ending_net_equity": "4339.276180884114814518273973",
+          "net_equity_change_usdt": "1569.477897181583034376438357",
+          "return_pct": "56.66397825489231048249446720",
+          "exit_book_realized_pnl_usdt": "353.3835349451830343764383562",
+          "year_end_signed_qty": "0.09948"
+        },
+        {
+          "year": 2024,
+          "starting_net_equity": "4339.276180884114814518273973",
+          "ending_net_equity": "9930.60871665171481451827397",
+          "net_equity_change_usdt": "5591.332535767599999999999997",
+          "return_pct": "128.8540370027422953694986255",
+          "exit_book_realized_pnl_usdt": "7026.619402410000000000000000",
+          "year_end_signed_qty": "0.10130"
+        },
+        {
+          "year": 2025,
+          "starting_net_equity": "9930.60871665171481451827397",
+          "ending_net_equity": "10227.91836738555674890594521",
+          "net_equity_change_usdt": "297.30965073384193438767124",
+          "return_pct": "2.993871364957829954385050000",
+          "exit_book_realized_pnl_usdt": "78.1171463278419343876712329",
+          "year_end_signed_qty": "0"
+        }
+      ],
+      "2018_entry_short_trades": 15,
+      "post2018_equity_growth_factor": "57.97063944034030747167918367",
+      "top2_years_by_positive_cash_change": [
+        2024,
+        2023
+      ],
+      "top2_share_positive_annual_cash_change": "0.7070367446887005744896541716"
+    }
+  },
+  "annual_pnl_definition": "net_equity_change_usdt=本年末融资/清算费调整净值-上年末净值；可能包含跨年未实现变化。exit_book_realized_pnl按退出年归集，单独报告。",
+  "concentration_definition": "top2_share分母为正年度净值现金增量之和；不是样本外稳定概率、不是去除交易回测。",
+  "scope": "固定已存STRESS开发期账户算术对比，无新拟合、删交易重跑、再选择策略或2026数据。"
+}

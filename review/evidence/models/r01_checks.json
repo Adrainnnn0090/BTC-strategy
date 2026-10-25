@@ -1,0 +1,1085 @@
+{
+  "shared_manifest_sha256": {
+    "studies/B109-long-profit-local-coordinate/registration.json": true,
+    "studies/B109-long-profit-local-coordinate/verification.json": true,
+    "studies/B109-long-profit-local-coordinate/goal-milestone-audit.json": true,
+    "studies/B109-long-profit-local-coordinate/profit-cap-trade-postmortem.json": true,
+    "studies/B72-cold-budget-exposure/decision.md": true,
+    "studies/B88A-short-net-loss-families/decision.md": true,
+    "studies/B31-constant-sizing-controls/decision.md": true
+  },
+  "nine_lab_source_binding": {
+    "b109": true,
+    "b107": true,
+    "b105": true,
+    "b106": true,
+    "b88a": true,
+    "b72": true,
+    "b31": true,
+    "b81": true,
+    "b67": true
+  },
+  "annual_seal_binding": {
+    "b109": [
+      {
+        "year": 2018,
+        "pass": true
+      },
+      {
+        "year": 2019,
+        "pass": true
+      },
+      {
+        "year": 2020,
+        "pass": true
+      },
+      {
+        "year": 2021,
+        "pass": true
+      },
+      {
+        "year": 2022,
+        "pass": true
+      },
+      {
+        "year": 2023,
+        "pass": true
+      },
+      {
+        "year": 2024,
+        "pass": true
+      },
+      {
+        "year": 2025,
+        "pass": true
+      }
+    ],
+    "b107": [
+      {
+        "year": 2018,
+        "pass": true
+      },
+      {
+        "year": 2019,
+        "pass": true
+      },
+      {
+        "year": 2020,
+        "pass": true
+      },
+      {
+        "year": 2021,
+        "pass": true
+      },
+      {
+        "year": 2022,
+        "pass": true
+      },
+      {
+        "year": 2023,
+        "pass": true
+      },
+      {
+        "year": 2024,
+        "pass": true
+      },
+      {
+        "year": 2025,
+        "pass": true
+      }
+    ],
+    "b105": [
+      {
+        "year": 2018,
+        "pass": true
+      },
+      {
+        "year": 2019,
+        "pass": true
+      },
+      {
+        "year": 2020,
+        "pass": true
+      },
+      {
+        "year": 2021,
+        "pass": true
+      },
+      {
+        "year": 2022,
+        "pass": true
+      },
+      {
+        "year": 2023,
+        "pass": true
+      },
+      {
+        "year": 2024,
+        "pass": true
+      },
+      {
+        "year": 2025,
+        "pass": true
+      }
+    ],
+    "b106": [
+      {
+        "year": 2018,
+        "pass": true
+      },
+      {
+        "year": 2019,
+        "pass": true
+      },
+      {
+        "year": 2020,
+        "pass": true
+      },
+      {
+        "year": 2021,
+        "pass": true
+      },
+      {
+        "year": 2022,
+        "pass": true
+      },
+      {
+        "year": 2023,
+        "pass": true
+      },
+      {
+        "year": 2024,
+        "pass": true
+      },
+      {
+        "year": 2025,
+        "pass": true
+      }
+    ],
+    "b88a": [
+      {
+        "year": 2018,
+        "pass": true
+      },
+      {
+        "year": 2019,
+        "pass": true
+      },
+      {
+        "year": 2020,
+        "pass": true
+      },
+      {
+        "year": 2021,
+        "pass": true
+      },
+      {
+        "year": 2022,
+        "pass": true
+      },
+      {
+        "year": 2023,
+        "pass": true
+      },
+      {
+        "year": 2024,
+        "pass": true
+      },
+      {
+        "year": 2025,
+        "pass": true
+      }
+    ],
+    "b31": [
+      {
+        "year": 2018,
+        "pass": true
+      },
+      {
+        "year": 2019,
+        "pass": true
+      },
+      {
+        "year": 2020,
+        "pass": true
+      },
+      {
+        "year": 2021,
+        "pass": true
+      },
+      {
+        "year": 2022,
+        "pass": true
+      },
+      {
+        "year": 2023,
+        "pass": true
+      },
+      {
+        "year": 2024,
+        "pass": true
+      },
+      {
+        "year": 2025,
+        "pass": true
+      }
+    ],
+    "b81": [
+      {
+        "year": 2018,
+        "pass": true
+      },
+      {
+        "year": 2019,
+        "pass": true
+      },
+      {
+        "year": 2020,
+        "pass": true
+      },
+      {
+        "year": 2021,
+        "pass": true
+      },
+      {
+        "year": 2022,
+        "pass": true
+      },
+      {
+        "year": 2023,
+        "pass": true
+      },
+      {
+        "year": 2024,
+        "pass": true
+      },
+      {
+        "year": 2025,
+        "pass": true
+      }
+    ],
+    "b67": [
+      {
+        "year": 2018,
+        "pass": true
+      },
+      {
+        "year": 2019,
+        "pass": true
+      },
+      {
+        "year": 2020,
+        "pass": true
+      },
+      {
+        "year": 2021,
+        "pass": true
+      },
+      {
+        "year": 2022,
+        "pass": true
+      },
+      {
+        "year": 2023,
+        "pass": true
+      },
+      {
+        "year": 2024,
+        "pass": true
+      },
+      {
+        "year": 2025,
+        "pass": true
+      }
+    ],
+    "b50": [
+      {
+        "year": 2018,
+        "pass": true
+      },
+      {
+        "year": 2019,
+        "pass": true
+      },
+      {
+        "year": 2020,
+        "pass": true
+      },
+      {
+        "year": 2021,
+        "pass": true
+      },
+      {
+        "year": 2022,
+        "pass": true
+      },
+      {
+        "year": 2023,
+        "pass": true
+      },
+      {
+        "year": 2024,
+        "pass": true
+      },
+      {
+        "year": 2025,
+        "pass": true
+      }
+    ]
+  },
+  "annual_training_inventory": {
+    "b109": [
+      {
+        "year": 2018,
+        "fits": 0,
+        "state_files": 0,
+        "selection_calls": 0,
+        "inner_profile_selections": null
+      },
+      {
+        "year": 2019,
+        "fits": 0,
+        "state_files": 0,
+        "selection_calls": 0,
+        "inner_profile_selections": null
+      },
+      {
+        "year": 2020,
+        "fits": 0,
+        "state_files": 0,
+        "selection_calls": 0,
+        "inner_profile_selections": null
+      },
+      {
+        "year": 2021,
+        "fits": 0,
+        "state_files": 0,
+        "selection_calls": 0,
+        "inner_profile_selections": null
+      },
+      {
+        "year": 2022,
+        "fits": 0,
+        "state_files": 0,
+        "selection_calls": 0,
+        "inner_profile_selections": null
+      },
+      {
+        "year": 2023,
+        "fits": 0,
+        "state_files": 0,
+        "selection_calls": 0,
+        "inner_profile_selections": null
+      },
+      {
+        "year": 2024,
+        "fits": 0,
+        "state_files": 0,
+        "selection_calls": 0,
+        "inner_profile_selections": null
+      },
+      {
+        "year": 2025,
+        "fits": 0,
+        "state_files": 0,
+        "selection_calls": 0,
+        "inner_profile_selections": null
+      }
+    ],
+    "b107": [
+      {
+        "year": 2018,
+        "fits": 0,
+        "state_files": 0,
+        "selection_calls": 0,
+        "inner_profile_selections": null
+      },
+      {
+        "year": 2019,
+        "fits": 0,
+        "state_files": 0,
+        "selection_calls": 0,
+        "inner_profile_selections": null
+      },
+      {
+        "year": 2020,
+        "fits": 0,
+        "state_files": 0,
+        "selection_calls": 0,
+        "inner_profile_selections": null
+      },
+      {
+        "year": 2021,
+        "fits": 0,
+        "state_files": 0,
+        "selection_calls": 0,
+        "inner_profile_selections": null
+      },
+      {
+        "year": 2022,
+        "fits": 0,
+        "state_files": 0,
+        "selection_calls": 0,
+        "inner_profile_selections": null
+      },
+      {
+        "year": 2023,
+        "fits": 0,
+        "state_files": 0,
+        "selection_calls": 0,
+        "inner_profile_selections": null
+      },
+      {
+        "year": 2024,
+        "fits": 0,
+        "state_files": 0,
+        "selection_calls": 0,
+        "inner_profile_selections": null
+      },
+      {
+        "year": 2025,
+        "fits": 0,
+        "state_files": 0,
+        "selection_calls": 0,
+        "inner_profile_selections": null
+      }
+    ],
+    "b105": [
+      {
+        "year": 2018,
+        "fits": 0,
+        "state_files": 0,
+        "selection_calls": 0,
+        "inner_profile_selections": null
+      },
+      {
+        "year": 2019,
+        "fits": 0,
+        "state_files": 0,
+        "selection_calls": 0,
+        "inner_profile_selections": null
+      },
+      {
+        "year": 2020,
+        "fits": 0,
+        "state_files": 0,
+        "selection_calls": 0,
+        "inner_profile_selections": null
+      },
+      {
+        "year": 2021,
+        "fits": 0,
+        "state_files": 0,
+        "selection_calls": 0,
+        "inner_profile_selections": null
+      },
+      {
+        "year": 2022,
+        "fits": 0,
+        "state_files": 0,
+        "selection_calls": 0,
+        "inner_profile_selections": null
+      },
+      {
+        "year": 2023,
+        "fits": 0,
+        "state_files": 0,
+        "selection_calls": 0,
+        "inner_profile_selections": null
+      },
+      {
+        "year": 2024,
+        "fits": 0,
+        "state_files": 0,
+        "selection_calls": 0,
+        "inner_profile_selections": null
+      },
+      {
+        "year": 2025,
+        "fits": 0,
+        "state_files": 0,
+        "selection_calls": 0,
+        "inner_profile_selections": null
+      }
+    ],
+    "b106": [
+      {
+        "year": 2018,
+        "fits": 0,
+        "state_files": 0,
+        "selection_calls": 0,
+        "inner_profile_selections": null
+      },
+      {
+        "year": 2019,
+        "fits": 0,
+        "state_files": 0,
+        "selection_calls": 0,
+        "inner_profile_selections": null
+      },
+      {
+        "year": 2020,
+        "fits": 0,
+        "state_files": 0,
+        "selection_calls": 0,
+        "inner_profile_selections": null
+      },
+      {
+        "year": 2021,
+        "fits": 0,
+        "state_files": 0,
+        "selection_calls": 0,
+        "inner_profile_selections": null
+      },
+      {
+        "year": 2022,
+        "fits": 0,
+        "state_files": 0,
+        "selection_calls": 0,
+        "inner_profile_selections": null
+      },
+      {
+        "year": 2023,
+        "fits": 0,
+        "state_files": 0,
+        "selection_calls": 0,
+        "inner_profile_selections": null
+      },
+      {
+        "year": 2024,
+        "fits": 0,
+        "state_files": 0,
+        "selection_calls": 0,
+        "inner_profile_selections": null
+      },
+      {
+        "year": 2025,
+        "fits": 0,
+        "state_files": 0,
+        "selection_calls": 0,
+        "inner_profile_selections": null
+      }
+    ],
+    "b88a": [
+      {
+        "year": 2018,
+        "fits": 0,
+        "state_files": 0,
+        "selection_calls": 0,
+        "inner_profile_selections": null
+      },
+      {
+        "year": 2019,
+        "fits": 56,
+        "state_files": 56,
+        "selection_calls": 0,
+        "inner_profile_selections": null
+      },
+      {
+        "year": 2020,
+        "fits": 56,
+        "state_files": 56,
+        "selection_calls": 0,
+        "inner_profile_selections": null
+      },
+      {
+        "year": 2021,
+        "fits": 56,
+        "state_files": 56,
+        "selection_calls": 0,
+        "inner_profile_selections": null
+      },
+      {
+        "year": 2022,
+        "fits": 56,
+        "state_files": 56,
+        "selection_calls": 0,
+        "inner_profile_selections": null
+      },
+      {
+        "year": 2023,
+        "fits": 56,
+        "state_files": 56,
+        "selection_calls": 0,
+        "inner_profile_selections": null
+      },
+      {
+        "year": 2024,
+        "fits": 56,
+        "state_files": 56,
+        "selection_calls": 0,
+        "inner_profile_selections": null
+      },
+      {
+        "year": 2025,
+        "fits": 56,
+        "state_files": 56,
+        "selection_calls": 0,
+        "inner_profile_selections": null
+      }
+    ],
+    "b31": [
+      {
+        "year": 2018,
+        "fits": 0,
+        "state_files": 0,
+        "selection_calls": 0,
+        "inner_profile_selections": null
+      },
+      {
+        "year": 2019,
+        "fits": 0,
+        "state_files": 0,
+        "selection_calls": 0,
+        "inner_profile_selections": null
+      },
+      {
+        "year": 2020,
+        "fits": 0,
+        "state_files": 0,
+        "selection_calls": 0,
+        "inner_profile_selections": null
+      },
+      {
+        "year": 2021,
+        "fits": 0,
+        "state_files": 0,
+        "selection_calls": 0,
+        "inner_profile_selections": null
+      },
+      {
+        "year": 2022,
+        "fits": 0,
+        "state_files": 0,
+        "selection_calls": 0,
+        "inner_profile_selections": null
+      },
+      {
+        "year": 2023,
+        "fits": 0,
+        "state_files": 0,
+        "selection_calls": 0,
+        "inner_profile_selections": null
+      },
+      {
+        "year": 2024,
+        "fits": 0,
+        "state_files": 0,
+        "selection_calls": 0,
+        "inner_profile_selections": null
+      },
+      {
+        "year": 2025,
+        "fits": 0,
+        "state_files": 0,
+        "selection_calls": 0,
+        "inner_profile_selections": null
+      }
+    ],
+    "b81": [
+      {
+        "year": 2018,
+        "fits": 0,
+        "state_files": 0,
+        "selection_calls": null,
+        "inner_profile_selections": 0
+      },
+      {
+        "year": 2019,
+        "fits": 175,
+        "state_files": 5,
+        "selection_calls": null,
+        "inner_profile_selections": 35
+      },
+      {
+        "year": 2020,
+        "fits": 175,
+        "state_files": 5,
+        "selection_calls": null,
+        "inner_profile_selections": 35
+      },
+      {
+        "year": 2021,
+        "fits": 175,
+        "state_files": 5,
+        "selection_calls": null,
+        "inner_profile_selections": 35
+      },
+      {
+        "year": 2022,
+        "fits": 175,
+        "state_files": 5,
+        "selection_calls": null,
+        "inner_profile_selections": 35
+      },
+      {
+        "year": 2023,
+        "fits": 175,
+        "state_files": 5,
+        "selection_calls": null,
+        "inner_profile_selections": 35
+      },
+      {
+        "year": 2024,
+        "fits": 175,
+        "state_files": 5,
+        "selection_calls": null,
+        "inner_profile_selections": 35
+      },
+      {
+        "year": 2025,
+        "fits": 175,
+        "state_files": 5,
+        "selection_calls": null,
+        "inner_profile_selections": 35
+      }
+    ],
+    "b67": [
+      {
+        "year": 2018,
+        "fits": 0,
+        "state_files": 0,
+        "selection_calls": 0,
+        "inner_profile_selections": null
+      },
+      {
+        "year": 2019,
+        "fits": 14,
+        "state_files": 14,
+        "selection_calls": 0,
+        "inner_profile_selections": null
+      },
+      {
+        "year": 2020,
+        "fits": 14,
+        "state_files": 14,
+        "selection_calls": 0,
+        "inner_profile_selections": null
+      },
+      {
+        "year": 2021,
+        "fits": 14,
+        "state_files": 14,
+        "selection_calls": 0,
+        "inner_profile_selections": null
+      },
+      {
+        "year": 2022,
+        "fits": 14,
+        "state_files": 14,
+        "selection_calls": 0,
+        "inner_profile_selections": null
+      },
+      {
+        "year": 2023,
+        "fits": 14,
+        "state_files": 14,
+        "selection_calls": 0,
+        "inner_profile_selections": null
+      },
+      {
+        "year": 2024,
+        "fits": 14,
+        "state_files": 14,
+        "selection_calls": 0,
+        "inner_profile_selections": null
+      },
+      {
+        "year": 2025,
+        "fits": 14,
+        "state_files": 14,
+        "selection_calls": 0,
+        "inner_profile_selections": null
+      }
+    ],
+    "b50": [
+      {
+        "year": 2018,
+        "fits": 0,
+        "state_files": 0,
+        "selection_calls": 0,
+        "inner_profile_selections": null
+      },
+      {
+        "year": 2019,
+        "fits": 0,
+        "state_files": 0,
+        "selection_calls": 0,
+        "inner_profile_selections": null
+      },
+      {
+        "year": 2020,
+        "fits": 0,
+        "state_files": 0,
+        "selection_calls": 0,
+        "inner_profile_selections": null
+      },
+      {
+        "year": 2021,
+        "fits": 0,
+        "state_files": 0,
+        "selection_calls": 0,
+        "inner_profile_selections": null
+      },
+      {
+        "year": 2022,
+        "fits": 0,
+        "state_files": 0,
+        "selection_calls": 0,
+        "inner_profile_selections": null
+      },
+      {
+        "year": 2023,
+        "fits": 0,
+        "state_files": 0,
+        "selection_calls": 0,
+        "inner_profile_selections": null
+      },
+      {
+        "year": 2024,
+        "fits": 0,
+        "state_files": 0,
+        "selection_calls": 0,
+        "inner_profile_selections": null
+      },
+      {
+        "year": 2025,
+        "fits": 0,
+        "state_files": 0,
+        "selection_calls": 0,
+        "inner_profile_selections": null
+      }
+    ]
+  },
+  "shared_forecast_identity": [
+    {
+      "year": 2018,
+      "study": "b109",
+      "pass": true
+    },
+    {
+      "year": 2018,
+      "study": "b107",
+      "pass": true
+    },
+    {
+      "year": 2018,
+      "study": "b105",
+      "pass": true
+    },
+    {
+      "year": 2018,
+      "study": "b106",
+      "pass": true
+    },
+    {
+      "year": 2019,
+      "study": "b109",
+      "pass": true
+    },
+    {
+      "year": 2019,
+      "study": "b107",
+      "pass": true
+    },
+    {
+      "year": 2019,
+      "study": "b105",
+      "pass": true
+    },
+    {
+      "year": 2019,
+      "study": "b106",
+      "pass": true
+    },
+    {
+      "year": 2020,
+      "study": "b109",
+      "pass": true
+    },
+    {
+      "year": 2020,
+      "study": "b107",
+      "pass": true
+    },
+    {
+      "year": 2020,
+      "study": "b105",
+      "pass": true
+    },
+    {
+      "year": 2020,
+      "study": "b106",
+      "pass": true
+    },
+    {
+      "year": 2021,
+      "study": "b109",
+      "pass": true
+    },
+    {
+      "year": 2021,
+      "study": "b107",
+      "pass": true
+    },
+    {
+      "year": 2021,
+      "study": "b105",
+      "pass": true
+    },
+    {
+      "year": 2021,
+      "study": "b106",
+      "pass": true
+    },
+    {
+      "year": 2022,
+      "study": "b109",
+      "pass": true
+    },
+    {
+      "year": 2022,
+      "study": "b107",
+      "pass": true
+    },
+    {
+      "year": 2022,
+      "study": "b105",
+      "pass": true
+    },
+    {
+      "year": 2022,
+      "study": "b106",
+      "pass": true
+    },
+    {
+      "year": 2023,
+      "study": "b109",
+      "pass": true
+    },
+    {
+      "year": 2023,
+      "study": "b107",
+      "pass": true
+    },
+    {
+      "year": 2023,
+      "study": "b105",
+      "pass": true
+    },
+    {
+      "year": 2023,
+      "study": "b106",
+      "pass": true
+    },
+    {
+      "year": 2024,
+      "study": "b109",
+      "pass": true
+    },
+    {
+      "year": 2024,
+      "study": "b107",
+      "pass": true
+    },
+    {
+      "year": 2024,
+      "study": "b105",
+      "pass": true
+    },
+    {
+      "year": 2024,
+      "study": "b106",
+      "pass": true
+    },
+    {
+      "year": 2025,
+      "study": "b109",
+      "pass": true
+    },
+    {
+      "year": 2025,
+      "study": "b107",
+      "pass": true
+    },
+    {
+      "year": 2025,
+      "study": "b105",
+      "pass": true
+    },
+    {
+      "year": 2025,
+      "study": "b106",
+      "pass": true
+    }
+  ],
+  "b31_parent_forecast_identity": [
+    {
+      "year": 2018,
+      "pass": true
+    },
+    {
+      "year": 2019,
+      "pass": true
+    },
+    {
+      "year": 2020,
+      "pass": true
+    },
+    {
+      "year": 2021,
+      "pass": true
+    },
+    {
+      "year": 2022,
+      "pass": true
+    },
+    {
+      "year": 2023,
+      "pass": true
+    },
+    {
+      "year": 2024,
+      "pass": true
+    },
+    {
+      "year": 2025,
+      "pass": true
+    }
+  ],
+  "b88a_common_training_support": [
+    {
+      "year": 2018,
+      "pass": true
+    },
+    {
+      "year": 2019,
+      "pass": true
+    },
+    {
+      "year": 2020,
+      "pass": true
+    },
+    {
+      "year": 2021,
+      "pass": true
+    },
+    {
+      "year": 2022,
+      "pass": true
+    },
+    {
+      "year": 2023,
+      "pass": true
+    },
+    {
+      "year": 2024,
+      "pass": true
+    },
+    {
+      "year": 2025,
+      "pass": true
+    }
+  ],
+  "all_checked_equalities_pass": true
+}

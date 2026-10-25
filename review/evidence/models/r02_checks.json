@@ -1,0 +1,1141 @@
+{
+  "round": 2,
+  "scope": "六模型家族年度代表状态，不含全部seed的全量模型内容；未重算预测值",
+  "all_checks_pass": true,
+  "annual_family_contracts": 48,
+  "numeric_files_read": 63,
+  "deterministic_inner_profile_selections_checked": 161,
+  "inner_fit_receipt_boundaries_checked": 644,
+  "same_year_retained_seed_reuses_checked": 7,
+  "records": [
+    {
+      "family": "BASE_TREE",
+      "year": 2018,
+      "cutoff": "2017-12-31",
+      "cut_index": 364,
+      "test_first_decision": "2017-12-31",
+      "test_last_decision": "2018-12-30",
+      "all_streams_none": true,
+      "sample_models": []
+    },
+    {
+      "family": "BASE_TREE",
+      "year": 2019,
+      "cutoff": "2018-12-31",
+      "cut_index": 729,
+      "test_first_decision": "2018-12-31",
+      "test_last_decision": "2019-12-30",
+      "all_streams_none": false,
+      "sample_models": [
+        {
+          "path": "studies/B10-seed-calendar-stability/folds/2019/models/EXTRA_CAL44_H60_S101.json.gz",
+          "model_sha256": "aa37e99c9b6be564b4dd06774e81e52ba0c405459e572f361e2cf209a04cb19a",
+          "final_receipt_cut": 729,
+          "selected_profile_indices": [
+            1
+          ]
+        },
+        {
+          "path": "studies/B10-seed-calendar-stability/folds/2019/models/EXTRA_CAL44_H60_S1701.json.gz",
+          "model_sha256": "dfa0ad52d61b77f89a38ff1d4ee992203cad11cb65ef469cb889fdabe7c65d78",
+          "final_receipt_cut": 729,
+          "selected_profile_indices": [
+            1
+          ],
+          "same_year_reused_model": "studies/B09-tree-path-calendar/folds/2019/models/EXTRA_CAL44_H60.json.gz"
+        }
+      ]
+    },
+    {
+      "family": "BASE_TREE",
+      "year": 2020,
+      "cutoff": "2019-12-31",
+      "cut_index": 1094,
+      "test_first_decision": "2019-12-31",
+      "test_last_decision": "2020-12-30",
+      "all_streams_none": false,
+      "sample_models": [
+        {
+          "path": "studies/B10-seed-calendar-stability/folds/2020/models/EXTRA_CAL44_H60_S101.json.gz",
+          "model_sha256": "afcdddee3df41fc508f00cdea053b45c549e158d218bdafd5baca317c8522656",
+          "final_receipt_cut": 1094,
+          "selected_profile_indices": [
+            1
+          ]
+        },
+        {
+          "path": "studies/B10-seed-calendar-stability/folds/2020/models/EXTRA_CAL44_H60_S1701.json.gz",
+          "model_sha256": "50f37011ff24ecfea1e1fce37dc0e69207211f4948778bdd48c86d3417a49f5c",
+          "final_receipt_cut": 1094,
+          "selected_profile_indices": [
+            0
+          ],
+          "same_year_reused_model": "studies/B09-tree-path-calendar/folds/2020/models/EXTRA_CAL44_H60.json.gz"
+        }
+      ]
+    },
+    {
+      "family": "BASE_TREE",
+      "year": 2021,
+      "cutoff": "2020-12-31",
+      "cut_index": 1460,
+      "test_first_decision": "2020-12-31",
+      "test_last_decision": "2021-12-30",
+      "all_streams_none": false,
+      "sample_models": [
+        {
+          "path": "studies/B10-seed-calendar-stability/folds/2021/models/EXTRA_CAL44_H60_S101.json.gz",
+          "model_sha256": "c3a7429481b6ae0bb0bfe6fc14f39b159454c11c276569a478b0765dfb51617d",
+          "final_receipt_cut": 1460,
+          "selected_profile_indices": [
+            1
+          ]
+        },
+        {
+          "path": "studies/B10-seed-calendar-stability/folds/2021/models/EXTRA_CAL44_H60_S1701.json.gz",
+          "model_sha256": "63605a7e4a37e2d7a1d7cca3c7260b46a812ba7e93042ed7a702fab1163c0244",
+          "final_receipt_cut": 1460,
+          "selected_profile_indices": [
+            0
+          ],
+          "same_year_reused_model": "studies/B09-tree-path-calendar/folds/2021/models/EXTRA_CAL44_H60.json.gz"
+        }
+      ]
+    },
+    {
+      "family": "BASE_TREE",
+      "year": 2022,
+      "cutoff": "2021-12-31",
+      "cut_index": 1825,
+      "test_first_decision": "2021-12-31",
+      "test_last_decision": "2022-12-30",
+      "all_streams_none": false,
+      "sample_models": [
+        {
+          "path": "studies/B10-seed-calendar-stability/folds/2022/models/EXTRA_CAL44_H60_S101.json.gz",
+          "model_sha256": "cadf8f83c75d404ef5d10119e24171928ff99e04c14aff827151f467e48b0168",
+          "final_receipt_cut": 1825,
+          "selected_profile_indices": [
+            0
+          ]
+        },
+        {
+          "path": "studies/B10-seed-calendar-stability/folds/2022/models/EXTRA_CAL44_H60_S1701.json.gz",
+          "model_sha256": "e71cf92ee9bd4f30438655334967de97b16016c26827a91535d90e93c0048833",
+          "final_receipt_cut": 1825,
+          "selected_profile_indices": [
+            0
+          ],
+          "same_year_reused_model": "studies/B09-tree-path-calendar/folds/2022/models/EXTRA_CAL44_H60.json.gz"
+        }
+      ]
+    },
+    {
+      "family": "BASE_TREE",
+      "year": 2023,
+      "cutoff": "2022-12-31",
+      "cut_index": 2190,
+      "test_first_decision": "2022-12-31",
+      "test_last_decision": "2023-12-30",
+      "all_streams_none": false,
+      "sample_models": [
+        {
+          "path": "studies/B10-seed-calendar-stability/folds/2023/models/EXTRA_CAL44_H60_S101.json.gz",
+          "model_sha256": "7d6f4e835004c6b331cdc0680d5cac920503cfe21923460d56d47a4b70723039",
+          "final_receipt_cut": 2190,
+          "selected_profile_indices": [
+            1
+          ]
+        },
+        {
+          "path": "studies/B10-seed-calendar-stability/folds/2023/models/EXTRA_CAL44_H60_S1701.json.gz",
+          "model_sha256": "4050822486df8c4ce23c5c6961bbc66af923812f03520369bffd7adc2860eb9b",
+          "final_receipt_cut": 2190,
+          "selected_profile_indices": [
+            0
+          ],
+          "same_year_reused_model": "studies/B09-tree-path-calendar/folds/2023/models/EXTRA_CAL44_H60.json.gz"
+        }
+      ]
+    },
+    {
+      "family": "BASE_TREE",
+      "year": 2024,
+      "cutoff": "2023-12-31",
+      "cut_index": 2555,
+      "test_first_decision": "2023-12-31",
+      "test_last_decision": "2024-12-30",
+      "all_streams_none": false,
+      "sample_models": [
+        {
+          "path": "studies/B10-seed-calendar-stability/folds/2024/models/EXTRA_CAL44_H60_S101.json.gz",
+          "model_sha256": "6f95d696c8b385238778c28dea1054031d41b086ab3c2311c99ee11970d53d13",
+          "final_receipt_cut": 2555,
+          "selected_profile_indices": [
+            0
+          ]
+        },
+        {
+          "path": "studies/B10-seed-calendar-stability/folds/2024/models/EXTRA_CAL44_H60_S1701.json.gz",
+          "model_sha256": "b120eadfe2a975c252176080020831e3d665c10aa081e245f5ca84ac49df0aca",
+          "final_receipt_cut": 2555,
+          "selected_profile_indices": [
+            0
+          ],
+          "same_year_reused_model": "studies/B09-tree-path-calendar/folds/2024/models/EXTRA_CAL44_H60.json.gz"
+        }
+      ]
+    },
+    {
+      "family": "BASE_TREE",
+      "year": 2025,
+      "cutoff": "2024-12-31",
+      "cut_index": 2921,
+      "test_first_decision": "2024-12-31",
+      "test_last_decision": "2025-12-30",
+      "all_streams_none": false,
+      "sample_models": [
+        {
+          "path": "studies/B10-seed-calendar-stability/folds/2025/models/EXTRA_CAL44_H60_S101.json.gz",
+          "model_sha256": "42a1de3cef14cf35688e5c1e1d9d7e703245413007394a1ad7b9c1f6402e526a",
+          "final_receipt_cut": 2921,
+          "selected_profile_indices": [
+            0
+          ]
+        },
+        {
+          "path": "studies/B10-seed-calendar-stability/folds/2025/models/EXTRA_CAL44_H60_S1701.json.gz",
+          "model_sha256": "87194e012a3140fa6155b9b1f24ec6d679e50689d27a32f9a90477de92bb1968",
+          "final_receipt_cut": 2921,
+          "selected_profile_indices": [
+            0
+          ],
+          "same_year_reused_model": "studies/B09-tree-path-calendar/folds/2025/models/EXTRA_CAL44_H60.json.gz"
+        }
+      ]
+    },
+    {
+      "family": "STOP44",
+      "year": 2018,
+      "cutoff": "2017-12-31",
+      "cut_index": 364,
+      "test_first_decision": "2017-12-31",
+      "test_last_decision": "2018-12-30",
+      "all_streams_none": true,
+      "sample_models": []
+    },
+    {
+      "family": "STOP44",
+      "year": 2019,
+      "cutoff": "2018-12-31",
+      "cut_index": 729,
+      "test_first_decision": "2018-12-31",
+      "test_last_decision": "2019-12-30",
+      "all_streams_none": false,
+      "sample_models": [
+        {
+          "path": "studies/B20-execution-aware-labels/folds/2019/models/CAL44_STOP.json.gz",
+          "model_sha256": "1aaf35e578f3f38a69f7fde65d62241f726b1cab5016db3f4eb89f9b621badd5",
+          "final_receipt_cut": 729,
+          "selected_profile_indices": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "family": "STOP44",
+      "year": 2020,
+      "cutoff": "2019-12-31",
+      "cut_index": 1094,
+      "test_first_decision": "2019-12-31",
+      "test_last_decision": "2020-12-30",
+      "all_streams_none": false,
+      "sample_models": [
+        {
+          "path": "studies/B20-execution-aware-labels/folds/2020/models/CAL44_STOP.json.gz",
+          "model_sha256": "0f20ee56229604aa7b6d82b614d6cb8f0187f9b5c39c84edc175a04037e2018d",
+          "final_receipt_cut": 1094,
+          "selected_profile_indices": [
+            1,
+            1,
+            0,
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "family": "STOP44",
+      "year": 2021,
+      "cutoff": "2020-12-31",
+      "cut_index": 1460,
+      "test_first_decision": "2020-12-31",
+      "test_last_decision": "2021-12-30",
+      "all_streams_none": false,
+      "sample_models": [
+        {
+          "path": "studies/B20-execution-aware-labels/folds/2021/models/CAL44_STOP.json.gz",
+          "model_sha256": "37ec66f51d3b5c1c92d81d54a94c90148b278e7538b1c9de99e7e0002563e91a",
+          "final_receipt_cut": 1460,
+          "selected_profile_indices": [
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "family": "STOP44",
+      "year": 2022,
+      "cutoff": "2021-12-31",
+      "cut_index": 1825,
+      "test_first_decision": "2021-12-31",
+      "test_last_decision": "2022-12-30",
+      "all_streams_none": false,
+      "sample_models": [
+        {
+          "path": "studies/B20-execution-aware-labels/folds/2022/models/CAL44_STOP.json.gz",
+          "model_sha256": "b2e5666df7fe41460141bd705035cc3bb793f01509aef27afc65e2856c9c02b8",
+          "final_receipt_cut": 1825,
+          "selected_profile_indices": [
+            1,
+            0,
+            1,
+            0,
+            1,
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "family": "STOP44",
+      "year": 2023,
+      "cutoff": "2022-12-31",
+      "cut_index": 2190,
+      "test_first_decision": "2022-12-31",
+      "test_last_decision": "2023-12-30",
+      "all_streams_none": false,
+      "sample_models": [
+        {
+          "path": "studies/B20-execution-aware-labels/folds/2023/models/CAL44_STOP.json.gz",
+          "model_sha256": "98da3832deabd5ee5f15d8a6fe669d79eff2078e5f546279ef08f97a3f937bf0",
+          "final_receipt_cut": 2190,
+          "selected_profile_indices": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "family": "STOP44",
+      "year": 2024,
+      "cutoff": "2023-12-31",
+      "cut_index": 2555,
+      "test_first_decision": "2023-12-31",
+      "test_last_decision": "2024-12-30",
+      "all_streams_none": false,
+      "sample_models": [
+        {
+          "path": "studies/B20-execution-aware-labels/folds/2024/models/CAL44_STOP.json.gz",
+          "model_sha256": "a5c49d281203e237cb21d329bf9a38367f30e78000f3b7a015ea1010565493c0",
+          "final_receipt_cut": 2555,
+          "selected_profile_indices": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "family": "STOP44",
+      "year": 2025,
+      "cutoff": "2024-12-31",
+      "cut_index": 2921,
+      "test_first_decision": "2024-12-31",
+      "test_last_decision": "2025-12-30",
+      "all_streams_none": false,
+      "sample_models": [
+        {
+          "path": "studies/B20-execution-aware-labels/folds/2025/models/CAL44_STOP.json.gz",
+          "model_sha256": "843337ab9f8661c81b4aec7b1486d9edb7c285ad9a71b91eee379fad5e708a86",
+          "final_receipt_cut": 2921,
+          "selected_profile_indices": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "family": "PRICE_L7",
+      "year": 2018,
+      "cutoff": "2017-12-31",
+      "cut_index": 364,
+      "test_first_decision": "2017-12-31",
+      "test_last_decision": "2018-12-30",
+      "all_streams_none": true,
+      "sample_models": []
+    },
+    {
+      "family": "PRICE_L7",
+      "year": 2019,
+      "cutoff": "2018-12-31",
+      "cut_index": 729,
+      "test_first_decision": "2018-12-31",
+      "test_last_decision": "2019-12-30",
+      "all_streams_none": false,
+      "sample_models": [
+        {
+          "path": "studies/B81-reported-volume-long-core/folds/2019/models/PRICE_L7.json.gz",
+          "model_sha256": "331105cd686c84197733ae1f4b1075610eac661a65989efad95d5ca63ad553b6",
+          "final_receipt_cut": 729,
+          "selected_profile_indices": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "family": "PRICE_L7",
+      "year": 2020,
+      "cutoff": "2019-12-31",
+      "cut_index": 1094,
+      "test_first_decision": "2019-12-31",
+      "test_last_decision": "2020-12-30",
+      "all_streams_none": false,
+      "sample_models": [
+        {
+          "path": "studies/B81-reported-volume-long-core/folds/2020/models/PRICE_L7.json.gz",
+          "model_sha256": "f23f30a24fc1a7d461762e363d9bde76406db6e7a88b12af959a85f3343fe3f9",
+          "final_receipt_cut": 1094,
+          "selected_profile_indices": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "family": "PRICE_L7",
+      "year": 2021,
+      "cutoff": "2020-12-31",
+      "cut_index": 1460,
+      "test_first_decision": "2020-12-31",
+      "test_last_decision": "2021-12-30",
+      "all_streams_none": false,
+      "sample_models": [
+        {
+          "path": "studies/B81-reported-volume-long-core/folds/2021/models/PRICE_L7.json.gz",
+          "model_sha256": "f556f8bf9492a48817cc0c5427233875736b12ae520dd574096cf5ae69a1c4c0",
+          "final_receipt_cut": 1460,
+          "selected_profile_indices": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "family": "PRICE_L7",
+      "year": 2022,
+      "cutoff": "2021-12-31",
+      "cut_index": 1825,
+      "test_first_decision": "2021-12-31",
+      "test_last_decision": "2022-12-30",
+      "all_streams_none": false,
+      "sample_models": [
+        {
+          "path": "studies/B81-reported-volume-long-core/folds/2022/models/PRICE_L7.json.gz",
+          "model_sha256": "6b59c5b1dcfbed1ba13aa4645a20b793e8d24233037842c19c7efcb0fe0ef179",
+          "final_receipt_cut": 1825,
+          "selected_profile_indices": [
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "family": "PRICE_L7",
+      "year": 2023,
+      "cutoff": "2022-12-31",
+      "cut_index": 2190,
+      "test_first_decision": "2022-12-31",
+      "test_last_decision": "2023-12-30",
+      "all_streams_none": false,
+      "sample_models": [
+        {
+          "path": "studies/B81-reported-volume-long-core/folds/2023/models/PRICE_L7.json.gz",
+          "model_sha256": "fa5981cd174cb42b629ed916b049292a2356ddd54c79dd54305246428e1fb724",
+          "final_receipt_cut": 2190,
+          "selected_profile_indices": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "family": "PRICE_L7",
+      "year": 2024,
+      "cutoff": "2023-12-31",
+      "cut_index": 2555,
+      "test_first_decision": "2023-12-31",
+      "test_last_decision": "2024-12-30",
+      "all_streams_none": false,
+      "sample_models": [
+        {
+          "path": "studies/B81-reported-volume-long-core/folds/2024/models/PRICE_L7.json.gz",
+          "model_sha256": "1e99f08f5167cd919eda4c14d2d551301f0066a67c48e5d72fee25fd64bacc01",
+          "final_receipt_cut": 2555,
+          "selected_profile_indices": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "family": "PRICE_L7",
+      "year": 2025,
+      "cutoff": "2024-12-31",
+      "cut_index": 2921,
+      "test_first_decision": "2024-12-31",
+      "test_last_decision": "2025-12-30",
+      "all_streams_none": false,
+      "sample_models": [
+        {
+          "path": "studies/B81-reported-volume-long-core/folds/2025/models/PRICE_L7.json.gz",
+          "model_sha256": "e8f1e950dfc64bb100df837cadf013270dbe69df9b4062f72813155a4ee6955b",
+          "final_receipt_cut": 2921,
+          "selected_profile_indices": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "family": "B67",
+      "year": 2018,
+      "cutoff": "2017-12-31",
+      "cut_index": 364,
+      "test_first_decision": "2017-12-31",
+      "test_last_decision": "2018-12-30",
+      "all_streams_none": true,
+      "sample_models": []
+    },
+    {
+      "family": "B67",
+      "year": 2019,
+      "cutoff": "2018-12-31",
+      "cut_index": 729,
+      "test_first_decision": "2018-12-31",
+      "test_last_decision": "2019-12-30",
+      "all_streams_none": false,
+      "sample_models": [
+        {
+          "path": "studies/B67-lag-matched-short-supervision/folds/2019/models/L1-101.json.gz",
+          "model_sha256": "1d0444516bb35df6651a28359d27dd4de0c0b724bd24a9b7f2552f4ea2dbd5ea",
+          "final_receipt_cut": 729,
+          "fixed_profile_no_inner_selection": true
+        },
+        {
+          "path": "studies/B67-lag-matched-short-supervision/folds/2019/models/L2-101.json.gz",
+          "model_sha256": "3d737253d88feaab2aace239128f3200d15fa1d480e1aa61064d9c1cbb2cf7d8",
+          "final_receipt_cut": 729,
+          "fixed_profile_no_inner_selection": true
+        }
+      ]
+    },
+    {
+      "family": "B67",
+      "year": 2020,
+      "cutoff": "2019-12-31",
+      "cut_index": 1094,
+      "test_first_decision": "2019-12-31",
+      "test_last_decision": "2020-12-30",
+      "all_streams_none": false,
+      "sample_models": [
+        {
+          "path": "studies/B67-lag-matched-short-supervision/folds/2020/models/L1-101.json.gz",
+          "model_sha256": "2b7674565b6c984a16748288fcf44fa2fc514e8964f89739891fceae03a1aca5",
+          "final_receipt_cut": 1094,
+          "fixed_profile_no_inner_selection": true
+        },
+        {
+          "path": "studies/B67-lag-matched-short-supervision/folds/2020/models/L2-101.json.gz",
+          "model_sha256": "32b172df47f6f92f2d25bf98809a7e98a66a9103f98322c241f68514e0bfb583",
+          "final_receipt_cut": 1094,
+          "fixed_profile_no_inner_selection": true
+        }
+      ]
+    },
+    {
+      "family": "B67",
+      "year": 2021,
+      "cutoff": "2020-12-31",
+      "cut_index": 1460,
+      "test_first_decision": "2020-12-31",
+      "test_last_decision": "2021-12-30",
+      "all_streams_none": false,
+      "sample_models": [
+        {
+          "path": "studies/B67-lag-matched-short-supervision/folds/2021/models/L1-101.json.gz",
+          "model_sha256": "15a1bdd585095112ddd8663bb64277503eab186fd308e2eb56eae502d9ae072c",
+          "final_receipt_cut": 1460,
+          "fixed_profile_no_inner_selection": true
+        },
+        {
+          "path": "studies/B67-lag-matched-short-supervision/folds/2021/models/L2-101.json.gz",
+          "model_sha256": "fc8fc90876d751617144658222ca352f39c8743b136f39a798dabf5707ae2628",
+          "final_receipt_cut": 1460,
+          "fixed_profile_no_inner_selection": true
+        }
+      ]
+    },
+    {
+      "family": "B67",
+      "year": 2022,
+      "cutoff": "2021-12-31",
+      "cut_index": 1825,
+      "test_first_decision": "2021-12-31",
+      "test_last_decision": "2022-12-30",
+      "all_streams_none": false,
+      "sample_models": [
+        {
+          "path": "studies/B67-lag-matched-short-supervision/folds/2022/models/L1-101.json.gz",
+          "model_sha256": "92a958813f593366e34eb39674217ac47ede488fabecd09b8a83292a0ca8488f",
+          "final_receipt_cut": 1825,
+          "fixed_profile_no_inner_selection": true
+        },
+        {
+          "path": "studies/B67-lag-matched-short-supervision/folds/2022/models/L2-101.json.gz",
+          "model_sha256": "17f860c13f4a35b450a8f94eb5fd7f37ca37cab261d933c8d97b9f4f702fa1ee",
+          "final_receipt_cut": 1825,
+          "fixed_profile_no_inner_selection": true
+        }
+      ]
+    },
+    {
+      "family": "B67",
+      "year": 2023,
+      "cutoff": "2022-12-31",
+      "cut_index": 2190,
+      "test_first_decision": "2022-12-31",
+      "test_last_decision": "2023-12-30",
+      "all_streams_none": false,
+      "sample_models": [
+        {
+          "path": "studies/B67-lag-matched-short-supervision/folds/2023/models/L1-101.json.gz",
+          "model_sha256": "0d2c497a398b8aa9fb64facdde624cfa36145bf70e3524db1e679ab80774a5e9",
+          "final_receipt_cut": 2190,
+          "fixed_profile_no_inner_selection": true
+        },
+        {
+          "path": "studies/B67-lag-matched-short-supervision/folds/2023/models/L2-101.json.gz",
+          "model_sha256": "07a13a76006534ac6bd42ad32fdd2c8c7b50c98e0e27f702f723c95a82ef5bc7",
+          "final_receipt_cut": 2190,
+          "fixed_profile_no_inner_selection": true
+        }
+      ]
+    },
+    {
+      "family": "B67",
+      "year": 2024,
+      "cutoff": "2023-12-31",
+      "cut_index": 2555,
+      "test_first_decision": "2023-12-31",
+      "test_last_decision": "2024-12-30",
+      "all_streams_none": false,
+      "sample_models": [
+        {
+          "path": "studies/B67-lag-matched-short-supervision/folds/2024/models/L1-101.json.gz",
+          "model_sha256": "e7d7d2ecc80ff41460d8170d888ffd3179560bfc8e333fd5f61b89877f3a3d01",
+          "final_receipt_cut": 2555,
+          "fixed_profile_no_inner_selection": true
+        },
+        {
+          "path": "studies/B67-lag-matched-short-supervision/folds/2024/models/L2-101.json.gz",
+          "model_sha256": "f4cd730ef7bdb5d658e8bc60fe0a7c3f9aee4bbf312ff856d0dd3e828cd9c62d",
+          "final_receipt_cut": 2555,
+          "fixed_profile_no_inner_selection": true
+        }
+      ]
+    },
+    {
+      "family": "B67",
+      "year": 2025,
+      "cutoff": "2024-12-31",
+      "cut_index": 2921,
+      "test_first_decision": "2024-12-31",
+      "test_last_decision": "2025-12-30",
+      "all_streams_none": false,
+      "sample_models": [
+        {
+          "path": "studies/B67-lag-matched-short-supervision/folds/2025/models/L1-101.json.gz",
+          "model_sha256": "913fd3cabd78b69eafe2c1d6219d35a4b66ea1c948ba650cdb16a567000e26bc",
+          "final_receipt_cut": 2921,
+          "fixed_profile_no_inner_selection": true
+        },
+        {
+          "path": "studies/B67-lag-matched-short-supervision/folds/2025/models/L2-101.json.gz",
+          "model_sha256": "11c1572a89d2c0bbde1fb704b73d0485d65d8809d369ed357beb54b493c52c98",
+          "final_receipt_cut": 2921,
+          "fixed_profile_no_inner_selection": true
+        }
+      ]
+    },
+    {
+      "family": "B88A_MEDIAN",
+      "year": 2018,
+      "cutoff": "2017-12-31",
+      "cut_index": 364,
+      "test_first_decision": "2017-12-31",
+      "test_last_decision": "2018-12-30",
+      "all_streams_none": true,
+      "sample_models": []
+    },
+    {
+      "family": "B88A_MEDIAN",
+      "year": 2019,
+      "cutoff": "2018-12-31",
+      "cut_index": 729,
+      "test_first_decision": "2018-12-31",
+      "test_last_decision": "2019-12-30",
+      "all_streams_none": false,
+      "sample_models": [
+        {
+          "path": "studies/B88A-short-net-loss-families/folds/2019/models/MEDIAN_L1-101.json.gz",
+          "model_sha256": "293ba7abdcfe3bfebf8791bb0fe1831d6a459cb0c95b821988be42b40b39036d",
+          "final_receipt_cut": 729,
+          "fixed_profile_no_inner_selection": true
+        },
+        {
+          "path": "studies/B88A-short-net-loss-families/folds/2019/models/MEDIAN_L2-101.json.gz",
+          "model_sha256": "2098e527d9ffe515f7811ad3b4d368022c5241e4c1de21fd3f9fcbc2c1b7b6f8",
+          "final_receipt_cut": 729,
+          "fixed_profile_no_inner_selection": true
+        }
+      ]
+    },
+    {
+      "family": "B88A_MEDIAN",
+      "year": 2020,
+      "cutoff": "2019-12-31",
+      "cut_index": 1094,
+      "test_first_decision": "2019-12-31",
+      "test_last_decision": "2020-12-30",
+      "all_streams_none": false,
+      "sample_models": [
+        {
+          "path": "studies/B88A-short-net-loss-families/folds/2020/models/MEDIAN_L1-101.json.gz",
+          "model_sha256": "bd8038a1d04a2d0c4f027830321c58120805973b7c735a97f5005524036ca861",
+          "final_receipt_cut": 1094,
+          "fixed_profile_no_inner_selection": true
+        },
+        {
+          "path": "studies/B88A-short-net-loss-families/folds/2020/models/MEDIAN_L2-101.json.gz",
+          "model_sha256": "fdc3007501d7d8243c1c1516338d95ab5a2a4a3dd2ae9d5c68314739afd6cf85",
+          "final_receipt_cut": 1094,
+          "fixed_profile_no_inner_selection": true
+        }
+      ]
+    },
+    {
+      "family": "B88A_MEDIAN",
+      "year": 2021,
+      "cutoff": "2020-12-31",
+      "cut_index": 1460,
+      "test_first_decision": "2020-12-31",
+      "test_last_decision": "2021-12-30",
+      "all_streams_none": false,
+      "sample_models": [
+        {
+          "path": "studies/B88A-short-net-loss-families/folds/2021/models/MEDIAN_L1-101.json.gz",
+          "model_sha256": "a4a5f5e5e42eaa0cd70c2116641c8ea392d966a133919af65959faf3c3bd48c4",
+          "final_receipt_cut": 1460,
+          "fixed_profile_no_inner_selection": true
+        },
+        {
+          "path": "studies/B88A-short-net-loss-families/folds/2021/models/MEDIAN_L2-101.json.gz",
+          "model_sha256": "e94becb7c808bf236b21c641155297af94943d8aa83beb7edc196f6cf05c25da",
+          "final_receipt_cut": 1460,
+          "fixed_profile_no_inner_selection": true
+        }
+      ]
+    },
+    {
+      "family": "B88A_MEDIAN",
+      "year": 2022,
+      "cutoff": "2021-12-31",
+      "cut_index": 1825,
+      "test_first_decision": "2021-12-31",
+      "test_last_decision": "2022-12-30",
+      "all_streams_none": false,
+      "sample_models": [
+        {
+          "path": "studies/B88A-short-net-loss-families/folds/2022/models/MEDIAN_L1-101.json.gz",
+          "model_sha256": "8ecc3380c2cb014a20c3c30707305a1bc59eadbf6d6891ac196e71c3df627637",
+          "final_receipt_cut": 1825,
+          "fixed_profile_no_inner_selection": true
+        },
+        {
+          "path": "studies/B88A-short-net-loss-families/folds/2022/models/MEDIAN_L2-101.json.gz",
+          "model_sha256": "322a77f0bb9006254c2c484420ba6adefe453fc100568dd327f3c346966ba9ae",
+          "final_receipt_cut": 1825,
+          "fixed_profile_no_inner_selection": true
+        }
+      ]
+    },
+    {
+      "family": "B88A_MEDIAN",
+      "year": 2023,
+      "cutoff": "2022-12-31",
+      "cut_index": 2190,
+      "test_first_decision": "2022-12-31",
+      "test_last_decision": "2023-12-30",
+      "all_streams_none": false,
+      "sample_models": [
+        {
+          "path": "studies/B88A-short-net-loss-families/folds/2023/models/MEDIAN_L1-101.json.gz",
+          "model_sha256": "484da16ae59403126a342919b4a222fc264e04496f50f4aeb40de16149c9578c",
+          "final_receipt_cut": 2190,
+          "fixed_profile_no_inner_selection": true
+        },
+        {
+          "path": "studies/B88A-short-net-loss-families/folds/2023/models/MEDIAN_L2-101.json.gz",
+          "model_sha256": "18fd0ed9cd69c649d50dcd94bbd1aa884a21f965e55c091ac019c8c91d1dba95",
+          "final_receipt_cut": 2190,
+          "fixed_profile_no_inner_selection": true
+        }
+      ]
+    },
+    {
+      "family": "B88A_MEDIAN",
+      "year": 2024,
+      "cutoff": "2023-12-31",
+      "cut_index": 2555,
+      "test_first_decision": "2023-12-31",
+      "test_last_decision": "2024-12-30",
+      "all_streams_none": false,
+      "sample_models": [
+        {
+          "path": "studies/B88A-short-net-loss-families/folds/2024/models/MEDIAN_L1-101.json.gz",
+          "model_sha256": "c60eb38811b0973d564b5dc0db4ff96a703fcf621d0d9d28d03fc5a1ad34da34",
+          "final_receipt_cut": 2555,
+          "fixed_profile_no_inner_selection": true
+        },
+        {
+          "path": "studies/B88A-short-net-loss-families/folds/2024/models/MEDIAN_L2-101.json.gz",
+          "model_sha256": "84cd2cdc95764445e8b83d22b83832c6262fc25ff53ea24e8570e4cfa2694dc8",
+          "final_receipt_cut": 2555,
+          "fixed_profile_no_inner_selection": true
+        }
+      ]
+    },
+    {
+      "family": "B88A_MEDIAN",
+      "year": 2025,
+      "cutoff": "2024-12-31",
+      "cut_index": 2921,
+      "test_first_decision": "2024-12-31",
+      "test_last_decision": "2025-12-30",
+      "all_streams_none": false,
+      "sample_models": [
+        {
+          "path": "studies/B88A-short-net-loss-families/folds/2025/models/MEDIAN_L1-101.json.gz",
+          "model_sha256": "14ade4c9c1dcd59180e0ef3c18202647e73e6accd3e4f327fabd0acc9fef1b3a",
+          "final_receipt_cut": 2921,
+          "fixed_profile_no_inner_selection": true
+        },
+        {
+          "path": "studies/B88A-short-net-loss-families/folds/2025/models/MEDIAN_L2-101.json.gz",
+          "model_sha256": "a53b08c25336970c415fcdfe974fb3ef79b0c60f3b5ae27bdeac272e279ce737",
+          "final_receipt_cut": 2921,
+          "fixed_profile_no_inner_selection": true
+        }
+      ]
+    },
+    {
+      "family": "H04",
+      "year": 2018,
+      "cutoff": "2017-12-31",
+      "cut_index": 364,
+      "test_first_decision": "2017-12-31",
+      "test_last_decision": "2018-12-30",
+      "all_streams_none": true,
+      "sample_models": []
+    },
+    {
+      "family": "H04",
+      "year": 2019,
+      "cutoff": "2018-12-31",
+      "cut_index": 729,
+      "test_first_decision": "2018-12-31",
+      "test_last_decision": "2019-12-30",
+      "all_streams_none": false,
+      "sample_models": [
+        {
+          "path": "studies/B17-mining-dimension-ablation/folds/2019/models/EXTRA_DYNAMICS_L60.json.gz",
+          "model_sha256": "f225e47cb780830b6d23104a56440ae9c9c4990ad3aa7ee2860c90e1c4fc74c5",
+          "final_receipt_cut": 729,
+          "selected_profile_indices": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "family": "H04",
+      "year": 2020,
+      "cutoff": "2019-12-31",
+      "cut_index": 1094,
+      "test_first_decision": "2019-12-31",
+      "test_last_decision": "2020-12-30",
+      "all_streams_none": false,
+      "sample_models": [
+        {
+          "path": "studies/B17-mining-dimension-ablation/folds/2020/models/EXTRA_DYNAMICS_L60.json.gz",
+          "model_sha256": "37221c2545cad6ee3204bc00a9148ab710d21c4c4430df897a0431196e62ca15",
+          "final_receipt_cut": 1094,
+          "selected_profile_indices": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "family": "H04",
+      "year": 2021,
+      "cutoff": "2020-12-31",
+      "cut_index": 1460,
+      "test_first_decision": "2020-12-31",
+      "test_last_decision": "2021-12-30",
+      "all_streams_none": false,
+      "sample_models": [
+        {
+          "path": "studies/B17-mining-dimension-ablation/folds/2021/models/EXTRA_DYNAMICS_L60.json.gz",
+          "model_sha256": "45b7538650b07b8eac9ff483133aec07605c977f5776cf150f48a3200d2b5e6a",
+          "final_receipt_cut": 1460,
+          "selected_profile_indices": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "family": "H04",
+      "year": 2022,
+      "cutoff": "2021-12-31",
+      "cut_index": 1825,
+      "test_first_decision": "2021-12-31",
+      "test_last_decision": "2022-12-30",
+      "all_streams_none": false,
+      "sample_models": [
+        {
+          "path": "studies/B17-mining-dimension-ablation/folds/2022/models/EXTRA_DYNAMICS_L60.json.gz",
+          "model_sha256": "56819cad8c89294ffd96eade197ed34897397dd41650aa0998cde1740dbdb4ec",
+          "final_receipt_cut": 1825,
+          "selected_profile_indices": [
+            0,
+            1,
+            0,
+            1,
+            1,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "family": "H04",
+      "year": 2023,
+      "cutoff": "2022-12-31",
+      "cut_index": 2190,
+      "test_first_decision": "2022-12-31",
+      "test_last_decision": "2023-12-30",
+      "all_streams_none": false,
+      "sample_models": [
+        {
+          "path": "studies/B17-mining-dimension-ablation/folds/2023/models/EXTRA_DYNAMICS_L60.json.gz",
+          "model_sha256": "174a43bdbc1efc13f7c07d195b2791573f2425413d39ea0b7b1cf92b998388b8",
+          "final_receipt_cut": 2190,
+          "selected_profile_indices": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "family": "H04",
+      "year": 2024,
+      "cutoff": "2023-12-31",
+      "cut_index": 2555,
+      "test_first_decision": "2023-12-31",
+      "test_last_decision": "2024-12-30",
+      "all_streams_none": false,
+      "sample_models": [
+        {
+          "path": "studies/B17-mining-dimension-ablation/folds/2024/models/EXTRA_DYNAMICS_L60.json.gz",
+          "model_sha256": "e7121d11ae6756d839cfd4dd9e4cfc23b92ec088b9d1f60dafa60bc92da1d909",
+          "final_receipt_cut": 2555,
+          "selected_profile_indices": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "family": "H04",
+      "year": 2025,
+      "cutoff": "2024-12-31",
+      "cut_index": 2921,
+      "test_first_decision": "2024-12-31",
+      "test_last_decision": "2025-12-30",
+      "all_streams_none": false,
+      "sample_models": [
+        {
+          "path": "studies/B17-mining-dimension-ablation/folds/2025/models/EXTRA_DYNAMICS_L60.json.gz",
+          "model_sha256": "91ca72ecd542dcd699192e8f43c33e4cfc38728c2638058a0b924d1da14df0a2",
+          "final_receipt_cut": 2921,
+          "selected_profile_indices": [
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            1
+          ]
+        }
+      ]
+    }
+  ],
+  "static_test_checks": [
+    {
+      "family": "BASE_TREE",
+      "test_function_direct_fit_or_tune_calls": []
+    },
+    {
+      "family": "STOP44",
+      "test_function_direct_fit_or_tune_calls": []
+    },
+    {
+      "family": "PRICE_L7",
+      "test_function_direct_fit_or_tune_calls": []
+    },
+    {
+      "family": "B67",
+      "test_function_direct_fit_or_tune_calls": []
+    },
+    {
+      "family": "B88A_MEDIAN",
+      "test_function_direct_fit_or_tune_calls": []
+    },
+    {
+      "family": "H04",
+      "test_function_direct_fit_or_tune_calls": []
+    }
+  ]
+}

@@ -1,0 +1,581 @@
+{
+  "status": "PASS",
+  "strategies": [
+    "LP35",
+    "C02"
+  ],
+  "auxiliary_regime_example": "K02",
+  "primary_case": "STRESS",
+  "results": [
+    {
+      "strategy": "LP35",
+      "case": "STRESS",
+      "annual": [
+        {
+          "year": "2018",
+          "start_equity": "100",
+          "end_equity": "176.4327332961624370089315069",
+          "calendar_mark_return_pct": 76.43273329616245,
+          "calendar_mark_pnl": "76.4327332961624370089315069",
+          "exit_year_realized_pnl": "76.43273329616243700893150686",
+          "entry_year_full_trade_pnl": "76.43273329616243700893150686",
+          "ending_open_trade_accrual": "0",
+          "prior_open_trade_accrual": "0",
+          "boundary_reconciliation_error": "4E-26"
+        },
+        {
+          "year": "2019",
+          "start_equity": "176.4327332961624370089315069",
+          "end_equity": "414.4746384209284760458082192",
+          "calendar_mark_return_pct": 134.91935463312558,
+          "calendar_mark_pnl": "238.0419051247660390368767123",
+          "exit_year_realized_pnl": "238.041905124766039036876712327",
+          "entry_year_full_trade_pnl": "238.041905124766039036876712327",
+          "ending_open_trade_accrual": "0",
+          "prior_open_trade_accrual": "0",
+          "boundary_reconciliation_error": "-2.7E-26"
+        },
+        {
+          "year": "2020",
+          "start_equity": "414.4746384209284760458082192",
+          "end_equity": "1183.392940779373576293068493",
+          "calendar_mark_return_pct": 185.5163696596446,
+          "calendar_mark_pnl": "768.9183023584451002472602738",
+          "exit_year_realized_pnl": "-45.931814205554899752739726027",
+          "entry_year_full_trade_pnl": "1224.415499954445100247260273973",
+          "ending_open_trade_accrual": "814.850116564",
+          "prior_open_trade_accrual": "0",
+          "boundary_reconciliation_error": "-1.73E-25"
+        },
+        {
+          "year": "2021",
+          "start_equity": "1183.392940779373576293068493",
+          "end_equity": "2662.789416259886083928684932",
+          "calendar_mark_return_pct": 125.01312324089015,
+          "calendar_mark_pnl": "1479.396475480512507635616439",
+          "exit_year_realized_pnl": "2294.2465920445125076356164384",
+          "entry_year_full_trade_pnl": "1023.8992778845125076356164384",
+          "ending_open_trade_accrual": "0",
+          "prior_open_trade_accrual": "814.850116564",
+          "boundary_reconciliation_error": "6E-25"
+        },
+        {
+          "year": "2022",
+          "start_equity": "2662.789416259886083928684932",
+          "end_equity": "2769.798283702531780141835616",
+          "calendar_mark_return_pct": 4.018675558390528,
+          "calendar_mark_pnl": "107.008867442645696213150684",
+          "exit_year_realized_pnl": "107.00886744264569621315068494",
+          "entry_year_full_trade_pnl": "107.00886744264569621315068494",
+          "ending_open_trade_accrual": "0",
+          "prior_open_trade_accrual": "0",
+          "boundary_reconciliation_error": "-9.4E-25"
+        },
+        {
+          "year": "2023",
+          "start_equity": "2769.798283702531780141835616",
+          "end_equity": "4339.276180884114814518273973",
+          "calendar_mark_return_pct": 56.663978254892314,
+          "calendar_mark_pnl": "1569.477897181583034376438357",
+          "exit_year_realized_pnl": "353.38353494518303437643835613",
+          "entry_year_full_trade_pnl": "1631.87896747518303437643835613",
+          "ending_open_trade_accrual": "1216.0943622364",
+          "prior_open_trade_accrual": "0",
+          "boundary_reconciliation_error": "8.7E-25"
+        },
+        {
+          "year": "2024",
+          "start_equity": "4339.276180884114814518273973",
+          "end_equity": "9930.60871665171481451827397",
+          "calendar_mark_return_pct": 128.8540370027423,
+          "calendar_mark_pnl": "5591.332535767599999999999997",
+          "exit_year_realized_pnl": "7026.61940241",
+          "entry_year_full_trade_pnl": "5062.79608546",
+          "ending_open_trade_accrual": "-219.192504406",
+          "prior_open_trade_accrual": "1216.0943622364",
+          "boundary_reconciliation_error": "-3E-24"
+        },
+        {
+          "year": "2025",
+          "start_equity": "9930.60871665171481451827397",
+          "end_equity": "10227.91836738555674890594521",
+          "calendar_mark_return_pct": 2.993871364957834,
+          "calendar_mark_pnl": "297.30965073384193438767124",
+          "exit_year_realized_pnl": "78.1171463278419343876712329",
+          "entry_year_full_trade_pnl": "763.4450307478419343876712329",
+          "ending_open_trade_accrual": "0",
+          "prior_open_trade_accrual": "-219.192504406",
+          "boundary_reconciliation_error": "7.1E-24"
+        }
+      ],
+      "cross_year_trades": [
+        {
+          "entry_date": "2020-04-30",
+          "exit_date": "2021-01-09",
+          "direction": 1,
+          "entry_signal_date": "2020-04-29",
+          "entry_signal_availability_regime": "postcold_entry",
+          "full_trade_net_pnl": "1270.347314160000000000000000",
+          "calendar_mark_pnl": {
+            "2020": "814.8501165639999999999999998",
+            "2021": "455.497197596"
+          },
+          "marked_allocation_error": "2E-25"
+        },
+        {
+          "entry_date": "2023-10-20",
+          "exit_date": "2024-01-13",
+          "direction": 1,
+          "entry_signal_date": "2023-10-19",
+          "entry_signal_availability_regime": "postcold_entry",
+          "full_trade_net_pnl": "1278.495432530000000000000000",
+          "calendar_mark_pnl": {
+            "2023": "1216.0943622364",
+            "2024": "62.4010702936"
+          },
+          "marked_allocation_error": "0"
+        },
+        {
+          "entry_date": "2024-12-23",
+          "exit_date": "2025-02-25",
+          "direction": 1,
+          "entry_signal_date": "2024-12-22",
+          "entry_signal_availability_regime": "postcold_entry",
+          "full_trade_net_pnl": "-685.3278844200000000000000000",
+          "calendar_mark_pnl": {
+            "2024": "-219.192504406",
+            "2025": "-466.135380013999999999999997"
+          },
+          "marked_allocation_error": "3E-24"
+        }
+      ],
+      "entry_signal_regime_counts": {
+        "cold_entry": 15,
+        "postcold_entry": 36
+      },
+      "entry_regime_calendar_mark_pnl": {
+        "cold_entry": "76.4327332961624370089315069",
+        "postcold_entry": "10051.4856340893943118970137031"
+      },
+      "day_signal_regime_calendar_mark_pnl": {
+        "cold_signal_day": "76.4327332961624370089315069",
+        "postcold_signal_day": "10051.4856340893943118970137031"
+      },
+      "old_position_new_signal_regime_days": [],
+      "concentration": {
+        "definition": "Top two profitable non-terminal trades / sum of all profitable non-terminal trade net PnL",
+        "positive_trade_count": 31,
+        "positive_pnl_denominator": "12997.922785753666408680136986397",
+        "top_two_positive_pnl": "5561.40163393",
+        "top_two_share": 0.42786849295839463,
+        "top_two_dates": [
+          {
+            "entry_date": "2024-09-27",
+            "exit_date": "2024-12-21",
+            "pnl": "3107.577040710000000000000000"
+          },
+          {
+            "entry_date": "2024-01-17",
+            "exit_date": "2024-03-17",
+            "pnl": "2453.824593220000000000000000"
+          }
+        ]
+      },
+      "capital_2018": {
+        "ending_equity_2018": "176.4327332961624370089315069",
+        "initial_capital_multiplier": "1.764327332961624370089315069",
+        "full_path_growth_factor": "102.2791836738555674890594521",
+        "later_path_rebased_growth_factor": "57.97063944034030747167918366768922005122",
+        "later_path_rebased_return_pct": "5697.063944034030747167918366768922005122",
+        "qualification": "Algebraic rebasing of the same existing equity path, not a rerun deleting 2018 trades or resetting lot-sized strategy capital."
+      }
+    },
+    {
+      "strategy": "C02",
+      "case": "STRESS",
+      "annual": [
+        {
+          "year": "2018",
+          "start_equity": "100",
+          "end_equity": "100.00000000",
+          "calendar_mark_return_pct": 0.0,
+          "calendar_mark_pnl": "0",
+          "exit_year_realized_pnl": "0",
+          "entry_year_full_trade_pnl": "0",
+          "ending_open_trade_accrual": "0",
+          "prior_open_trade_accrual": "0",
+          "boundary_reconciliation_error": "0"
+        },
+        {
+          "year": "2019",
+          "start_equity": "100",
+          "end_equity": "248.47973925",
+          "calendar_mark_return_pct": 148.47973925,
+          "calendar_mark_pnl": "148.47973925",
+          "exit_year_realized_pnl": "148.47973925",
+          "entry_year_full_trade_pnl": "148.47973925",
+          "ending_open_trade_accrual": "0",
+          "prior_open_trade_accrual": "0",
+          "boundary_reconciliation_error": "0"
+        },
+        {
+          "year": "2020",
+          "start_equity": "248.47973925",
+          "end_equity": "559.37079294",
+          "calendar_mark_return_pct": 125.11726494416786,
+          "calendar_mark_pnl": "310.89105369",
+          "exit_year_realized_pnl": "310.89105369",
+          "entry_year_full_trade_pnl": "310.89105369",
+          "ending_open_trade_accrual": "0",
+          "prior_open_trade_accrual": "0",
+          "boundary_reconciliation_error": "0"
+        },
+        {
+          "year": "2021",
+          "start_equity": "559.37079294",
+          "end_equity": "882.37270951",
+          "calendar_mark_return_pct": 57.74379367795242,
+          "calendar_mark_pnl": "323.00191657",
+          "exit_year_realized_pnl": "323.00191657",
+          "entry_year_full_trade_pnl": "323.00191657",
+          "ending_open_trade_accrual": "0",
+          "prior_open_trade_accrual": "0",
+          "boundary_reconciliation_error": "0"
+        },
+        {
+          "year": "2022",
+          "start_equity": "882.37270951",
+          "end_equity": "882.37270951",
+          "calendar_mark_return_pct": 0.0,
+          "calendar_mark_pnl": "0",
+          "exit_year_realized_pnl": "0",
+          "entry_year_full_trade_pnl": "0",
+          "ending_open_trade_accrual": "0",
+          "prior_open_trade_accrual": "0",
+          "boundary_reconciliation_error": "0"
+        },
+        {
+          "year": "2023",
+          "start_equity": "882.37270951",
+          "end_equity": "1337.1850006696",
+          "calendar_mark_return_pct": 51.54423819523686,
+          "calendar_mark_pnl": "454.8122911596",
+          "exit_year_realized_pnl": "152.62237726",
+          "entry_year_full_trade_pnl": "470.31846785",
+          "ending_open_trade_accrual": "302.1899138996",
+          "prior_open_trade_accrual": "0",
+          "boundary_reconciliation_error": "0"
+        },
+        {
+          "year": "2024",
+          "start_equity": "1337.1850006696",
+          "end_equity": "2562.6363903802",
+          "calendar_mark_return_pct": 91.64411723859831,
+          "calendar_mark_pnl": "1225.4513897106",
+          "exit_year_realized_pnl": "1569.8136818",
+          "entry_year_full_trade_pnl": "1120.26131809",
+          "ending_open_trade_accrual": "-42.1723781898",
+          "prior_open_trade_accrual": "302.1899138996",
+          "boundary_reconciliation_error": "0"
+        },
+        {
+          "year": "2025",
+          "start_equity": "2562.6363903802",
+          "end_equity": "2517.20534581",
+          "calendar_mark_return_pct": -1.772824453002464,
+          "calendar_mark_pnl": "-45.4310445702",
+          "exit_year_realized_pnl": "-87.60342276",
+          "entry_year_full_trade_pnl": "44.25285036",
+          "ending_open_trade_accrual": "0",
+          "prior_open_trade_accrual": "-42.1723781898",
+          "boundary_reconciliation_error": "0"
+        }
+      ],
+      "cross_year_trades": [
+        {
+          "entry_date": "2023-10-20",
+          "exit_date": "2024-01-13",
+          "direction": 1,
+          "entry_signal_date": "2023-10-19",
+          "entry_signal_availability_regime": "postcold_entry",
+          "full_trade_net_pnl": "317.69609059",
+          "calendar_mark_pnl": {
+            "2023": "302.1899138996",
+            "2024": "15.5061766904"
+          },
+          "marked_allocation_error": "0"
+        },
+        {
+          "entry_date": "2024-12-23",
+          "exit_date": "2025-02-25",
+          "direction": 1,
+          "entry_signal_date": "2024-12-22",
+          "entry_signal_availability_regime": "postcold_entry",
+          "full_trade_net_pnl": "-131.85627312",
+          "calendar_mark_pnl": {
+            "2024": "-42.1723781898",
+            "2025": "-89.6838949302"
+          },
+          "marked_allocation_error": "0"
+        }
+      ],
+      "entry_signal_regime_counts": {
+        "cold_entry": 0,
+        "postcold_entry": 19
+      },
+      "entry_regime_calendar_mark_pnl": {
+        "postcold_entry": "2417.20534581"
+      },
+      "day_signal_regime_calendar_mark_pnl": {
+        "cold_signal_day": "0",
+        "postcold_signal_day": "2417.20534581"
+      },
+      "old_position_new_signal_regime_days": [],
+      "concentration": {
+        "definition": "Top two profitable non-terminal trades / sum of all profitable non-terminal trade net PnL",
+        "positive_trade_count": 12,
+        "positive_pnl_denominator": "2921.66781693",
+        "top_two_positive_pnl": "1212.9428277",
+        "top_two_share": 0.4151542556177805,
+        "top_two_dates": [
+          {
+            "entry_date": "2024-09-27",
+            "exit_date": "2024-12-21",
+            "pnl": "647.52691077"
+          },
+          {
+            "entry_date": "2024-01-17",
+            "exit_date": "2024-03-17",
+            "pnl": "565.41591693"
+          }
+        ]
+      },
+      "capital_2018": {
+        "ending_equity_2018": "100",
+        "initial_capital_multiplier": "1",
+        "full_path_growth_factor": "25.1720534581",
+        "later_path_rebased_growth_factor": "25.1720534581",
+        "later_path_rebased_return_pct": "2417.20534581",
+        "qualification": "Algebraic rebasing of the same existing equity path, not a rerun deleting 2018 trades or resetting lot-sized strategy capital."
+      }
+    },
+    {
+      "strategy": "K02",
+      "case": "STRESS",
+      "annual": [
+        {
+          "year": "2018",
+          "start_equity": "100",
+          "end_equity": "107.4242715823542010831506849",
+          "calendar_mark_return_pct": 7.424271582354192,
+          "calendar_mark_pnl": "7.4242715823542010831506849",
+          "exit_year_realized_pnl": "-0.5639681335198740167945205507",
+          "entry_year_full_trade_pnl": "6.8806093865589551743287671213",
+          "ending_open_trade_accrual": "7.98823971587407509994520548",
+          "prior_open_trade_accrual": "0",
+          "boundary_reconciliation_error": "-2.93E-26"
+        },
+        {
+          "year": "2019",
+          "start_equity": "107.4242715823542010831506849",
+          "end_equity": "276.3133522395103866928219178",
+          "calendar_mark_return_pct": 157.21687303011547,
+          "calendar_mark_pnl": "168.8890806571561856096712329",
+          "exit_year_realized_pnl": "176.877320373030260709616438357",
+          "entry_year_full_trade_pnl": "169.432742852951431518493150685",
+          "ending_open_trade_accrual": "0",
+          "prior_open_trade_accrual": "7.98823971587407509994520548",
+          "boundary_reconciliation_error": "2.3E-26"
+        },
+        {
+          "year": "2020",
+          "start_equity": "276.3133522395103866928219178",
+          "end_equity": "721.0775387304114423818630137",
+          "calendar_mark_return_pct": 160.96369679065538,
+          "calendar_mark_pnl": "444.7641864909010556890410959",
+          "exit_year_realized_pnl": "444.76418649090105568904109589",
+          "entry_year_full_trade_pnl": "444.76418649090105568904109589",
+          "ending_open_trade_accrual": "0",
+          "prior_open_trade_accrual": "0",
+          "boundary_reconciliation_error": "1E-26"
+        },
+        {
+          "year": "2021",
+          "start_equity": "721.0775387304114423818630137",
+          "end_equity": "1344.959558561263189987890411",
+          "calendar_mark_return_pct": 86.52079510468596,
+          "calendar_mark_pnl": "623.8820198308517476060273973",
+          "exit_year_realized_pnl": "623.88201983085174760602739726",
+          "entry_year_full_trade_pnl": "623.88201983085174760602739726",
+          "ending_open_trade_accrual": "0",
+          "prior_open_trade_accrual": "0",
+          "boundary_reconciliation_error": "4E-26"
+        },
+        {
+          "year": "2022",
+          "start_equity": "1344.959558561263189987890411",
+          "end_equity": "1371.876532498809300651726027",
+          "calendar_mark_return_pct": 2.0013221785151636,
+          "calendar_mark_pnl": "26.916973937546110663835616",
+          "exit_year_realized_pnl": "26.916973937546110663835616441",
+          "entry_year_full_trade_pnl": "26.916973937546110663835616441",
+          "ending_open_trade_accrual": "0",
+          "prior_open_trade_accrual": "0",
+          "boundary_reconciliation_error": "-4.41E-25"
+        },
+        {
+          "year": "2023",
+          "start_equity": "1371.876532498809300651726027",
+          "end_equity": "2237.305424300229536460493151",
+          "calendar_mark_return_pct": 63.08358451362102,
+          "calendar_mark_pnl": "865.428891801420235808767124",
+          "exit_year_realized_pnl": "238.43371850922023580876712326",
+          "entry_year_full_trade_pnl": "897.60169934922023580876712326",
+          "ending_open_trade_accrual": "626.9951732922",
+          "prior_open_trade_accrual": "0",
+          "boundary_reconciliation_error": "7.4E-25"
+        },
+        {
+          "year": "2024",
+          "start_equity": "2237.305424300229536460493151",
+          "end_equity": "5119.984295433429536460493151",
+          "calendar_mark_return_pct": 128.8460144879337,
+          "calendar_mark_pnl": "2882.6788711332",
+          "exit_year_realized_pnl": "3622.68909384",
+          "entry_year_full_trade_pnl": "2610.16795008",
+          "ending_open_trade_accrual": "-113.0150494146",
+          "prior_open_trade_accrual": "626.9951732922",
+          "boundary_reconciliation_error": "0"
+        },
+        {
+          "year": "2025",
+          "start_equity": "5119.984295433429536460493151",
+          "end_equity": "5127.435519925011473791178082",
+          "calendar_mark_return_pct": 0.14553217474178037,
+          "calendar_mark_pnl": "7.451224491581937330684931",
+          "exit_year_realized_pnl": "-105.5638249230180626693150685",
+          "entry_year_full_trade_pnl": "247.7893379969819373306849315",
+          "ending_open_trade_accrual": "0",
+          "prior_open_trade_accrual": "-113.0150494146",
+          "boundary_reconciliation_error": "-5E-25"
+        }
+      ],
+      "cross_year_trades": [
+        {
+          "entry_date": "2018-11-14",
+          "exit_date": "2019-01-01",
+          "direction": -1,
+          "entry_signal_date": "2018-11-13",
+          "entry_signal_availability_regime": "cold_entry",
+          "full_trade_net_pnl": "7.444577520078829191123287672",
+          "calendar_mark_pnl": {
+            "2018": "7.98823971587407509994520545",
+            "2019": "-0.5436621957952459088219178"
+          },
+          "marked_allocation_error": "2.2E-26"
+        },
+        {
+          "entry_date": "2023-10-20",
+          "exit_date": "2024-01-13",
+          "direction": 1,
+          "entry_signal_date": "2023-10-19",
+          "entry_signal_availability_regime": "postcold_entry",
+          "full_trade_net_pnl": "659.1679808400000000000000000",
+          "calendar_mark_pnl": {
+            "2023": "626.9951732922",
+            "2024": "32.1728075478"
+          },
+          "marked_allocation_error": "0"
+        },
+        {
+          "entry_date": "2024-12-23",
+          "exit_date": "2025-02-25",
+          "direction": 1,
+          "entry_signal_date": "2024-12-22",
+          "entry_signal_availability_regime": "postcold_entry",
+          "full_trade_net_pnl": "-353.3531629200000000000000000",
+          "calendar_mark_pnl": {
+            "2024": "-113.0150494146",
+            "2025": "-240.3381135054"
+          },
+          "marked_allocation_error": "0"
+        }
+      ],
+      "entry_signal_regime_counts": {
+        "cold_entry": 12,
+        "postcold_entry": 35
+      },
+      "entry_regime_calendar_mark_pnl": {
+        "cold_entry": "6.8806093865589551743287671",
+        "postcold_entry": "5020.5549105384525186168493149"
+      },
+      "day_signal_regime_calendar_mark_pnl": {
+        "cold_signal_day": "7.4242715823542010831506849",
+        "postcold_signal_day": "5020.0112483426572727080273971"
+      },
+      "old_position_new_signal_regime_days": [
+        {
+          "date": "2019-01-01",
+          "position_entry_regime": "cold_entry",
+          "current_signal_regime": "postcold_signal_day",
+          "marked_pnl": "-0.5436621957952459088219178"
+        }
+      ],
+      "concentration": {
+        "definition": "Top two profitable non-terminal trades / sum of all profitable non-terminal trade net PnL",
+        "positive_trade_count": 25,
+        "positive_pnl_denominator": "6346.939914261888098698410958886",
+        "top_two_positive_pnl": "2867.24324473",
+        "top_two_share": 0.4517520700467264,
+        "top_two_dates": [
+          {
+            "entry_date": "2024-09-27",
+            "exit_date": "2024-12-21",
+            "pnl": "1602.099978650000000000000000"
+          },
+          {
+            "entry_date": "2024-01-17",
+            "exit_date": "2024-03-17",
+            "pnl": "1265.143266080000000000000000"
+          }
+        ]
+      },
+      "capital_2018": {
+        "ending_equity_2018": "107.4242715823542010831506849",
+        "initial_capital_multiplier": "1.074242715823542010831506849",
+        "full_path_growth_factor": "51.27435519925011473791178082",
+        "later_path_rebased_growth_factor": "47.73069851345641129690832773454208096298",
+        "later_path_rebased_return_pct": "4673.069851345641129690832773454208096298",
+        "qualification": "Algebraic rebasing of the same existing equity path, not a rerun deleting 2018 trades or resetting lot-sized strategy capital."
+      }
+    }
+  ],
+  "observed_four_cost_max_drawdown_pct": {
+    "LP35": {
+      "BASE": 28.068241233426193,
+      "STRESS": 28.260355755434684,
+      "SEVERE": 31.281456230251603,
+      "DELAY": 32.58571943244992
+    },
+    "C02": {
+      "BASE": 30.27333575868979,
+      "STRESS": 31.014385272679167,
+      "SEVERE": 31.89344824596897,
+      "DELAY": 31.100932640486857
+    },
+    "K02": {
+      "BASE": 29.3395964412136,
+      "STRESS": 30.74506148242885,
+      "SEVERE": 32.76600923403327,
+      "DELAY": 32.92404834089216
+    }
+  },
+  "cold_definition": "Original H03 core availability: .5*(BASE_TREE+CAL44_STOP) exists only when both heads exist, evaluated at actual entry signal index i-lag; not auxiliary missingness or entry-year as a definition.",
+  "annual_definition": "Year-end marked financing-adjusted equity / preceding year-end marked equity - 1; 2018 starts at capital 100.",
+  "limitations": [
+    "Trade-cohort entry-year and exit-year PnL are alternative ownership views, not calendar mark returns.",
+    "Trade mark allocations telescope from original equity marks; no strategy or source-data changes were run.",
+    "2018 capital decomposition is algebraic path rebasing, not a causal counterfactual or independent sample.",
+    "No writer, refit, account replay, 2026 economic data or expert/chair review artifact was read."
+  ]
+}

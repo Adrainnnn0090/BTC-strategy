@@ -1,0 +1,134 @@
+{
+  "kind": "engineering_suggestion_only",
+  "round": 1,
+  "economic_years": [
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "source_root": "/workspace/BTCStrategyResearchLedger",
+  "no_source_or_delivery_edits": true,
+  "selected_numeric_models": [
+    {
+      "stream": "BASE_TREE",
+      "candidates": [
+        "LP35",
+        "TS04",
+        "ME01",
+        "MX03",
+        "B88A_S03",
+        "K02",
+        "Y01",
+        "C02"
+      ],
+      "paths": "studies/B10-seed-calendar-stability/folds/{year}/models/EXTRA_CAL44_H60_S{seed}.json.gz",
+      "seed_set": [
+        101,
+        307,
+        509,
+        701,
+        907,
+        1103,
+        1701
+      ],
+      "shape": "单seed包装文件中的state字段；7种seed均值。以年度seal.model_sha256列出的实际存在状态为准。",
+      "evidence": "lab/b16.py:125; lab/b10.py:111; lab/tree_stability.py:68"
+    },
+    {
+      "stream": "CAL44_STOP original",
+      "candidates": [
+        "K02",
+        "Y01",
+        "C02"
+      ],
+      "paths": "studies/B20-execution-aware-labels/folds/{year}/models/CAL44_STOP.json.gz",
+      "shape": "members数组，7个44列ExtraTrees状态；须带STOP成熟标签与年度模型选择receipt。",
+      "evidence": "lab/b20.py:118; lab/exit_coordinate.py:23"
+    },
+    {
+      "stream": "CAL44_STOP replaced by PRICE_L7",
+      "candidates": [
+        "LP35",
+        "TS04",
+        "ME01",
+        "MX03",
+        "B88A_S03"
+      ],
+      "paths": "studies/B81-reported-volume-long-core/folds/{year}/models/PRICE_L7.json.gz",
+      "shape": "members数组，7个47列ExtraTrees状态。CAL44+恒定warmup列+滞后7日价格7/30相对90日均值两列。",
+      "evidence": "lab/b82.py:66; lab/volume_short_factors.py:7; lab/b81.py:23"
+    },
+    {
+      "stream": "B67 MEAN short gate",
+      "candidates": [
+        "LP35",
+        "TS04",
+        "ME01",
+        "MX03",
+        "K02"
+      ],
+      "paths": "studies/B67-lag-matched-short-supervision/folds/{year}/models/{L1|L2}-{seed}.json.gz",
+      "seed_set": [
+        101,
+        307,
+        509,
+        701,
+        907,
+        1103,
+        1701
+      ],
+      "shape": "每年14个44列SGB状态，先每头7seed均值，再L1/L2均值。",
+      "evidence": "lab/b67.py:94; lab/lagged_short.py:57"
+    },
+    {
+      "stream": "B88A S03 MEDIAN short gate",
+      "candidates": [
+        "B88A_S03"
+      ],
+      "paths": "studies/B88A-short-net-loss-families/folds/{year}/models/MEDIAN_{L1|L2}-{seed}.json.gz",
+      "seed_set": [
+        101,
+        307,
+        509,
+        701,
+        907,
+        1103,
+        1701
+      ],
+      "shape": "每年14个44列SGB状态，原始树节点与initial/weight必须保留；先seed再时钟均值。",
+      "evidence": "lab/b88a.py:94; lab/short_loss_models.py:14"
+    },
+    {
+      "stream": "H04 / Y04 parent for C04",
+      "candidates": [
+        "C04"
+      ],
+      "paths": "studies/B17-mining-dimension-ablation/folds/{year}/models/EXTRA_DYNAMICS_L60.json.gz",
+      "shape": "members数组，2025确认7个58列ExtraTrees状态；需要矿业动态因子与60日滞后、Y04年度退出配置。",
+      "evidence": "lab/exit_coordinate.py:23; lab/b17.py:20; lab/b31.py:15"
+    }
+  ],
+  "training_and_policy_dependencies": [
+    "全部使用年度training.json、seal.json、test-receipt.json和registration.json绑定；无数值模型的2018年度保留None/冷启动路径。",
+    "BASE_TREE依赖原CAL44矩阵和B10每seed选择/重用记录；B10包装的state是已序列化数字树，不可只导出包装元数据。",
+    "PRICE_L7训练监督取B36的STOP标签；B81研究虽统一载入volume数据，选中分支在features()中对PRICE47传None。只去掉volume运行依赖前，应先在独立导出适配器证明PRICE_L7逐值一致。",
+    "B67与B88A须保留common_ids、L1/L2 labels、62日共同成熟与6日隔离边界；同标签不代表同损失函数模型。",
+    "Y01/Y04年度policy和C02/C04 active/rank_counts是策略依赖，不是数值树参数。active为假时常量缩放退回1。",
+    "LP35/TS04/ME01/MX03的冷入场和风险补丁及PX03/VX04/CT02前置覆盖层也要导出；模型参数不能代替这些规则。"
+  ],
+  "export_traps": [
+    "只有predictions和training摘要不能重建未见价格上的推断；必须包含实际数字模型及因子定义/顺序。",
+    "不要把B81五组245个终成员误写为PRICE_L7单分支245个成员；后者2019–2025合计49个。",
+    "不要把B88A研究392个状态全称为S03状态；S03合计98个，其HUBER同源对照亦为98个。",
+    "源注册可能硬编码工程运行源码路径；导出时只能生成独立适配清单，不改冻结原注册或伪造旧SHA。",
+    "推断必须保留树遍历<=分支规则、叶值、初始常数、learning_rate/weight、均值次序和float精度；不能用仅超参数JSON替代训练后节点。",
+    "后代预报合成中None语义与原始availability不同于统一填零；冷启动预算和入场条件由原始头缺失决定。",
+    "LP35的take_profit=3.5是源码数值，不能按名字误读成0.35；TS04的trailing_stop=0.04。"
+  ],
+  "verification_status": "已确认2025代表模型文件存在并只读解析；未在本轮重训或全量重算预测。"
+}

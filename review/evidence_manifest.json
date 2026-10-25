@@ -1,0 +1,635 @@
+{
+  "files": [
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/statistics/r10-statistical-audit.json",
+      "path": "review/evidence/statistics/r10-statistical-audit.json",
+      "sha256": "3383f4cfbfd68aef18c4d47655900f93309054bf9f37f907552fdbf21df4c84c",
+      "bytes": 12281
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/statistics/r11-statistical-regression.json",
+      "path": "review/evidence/statistics/r11-statistical-regression.json",
+      "sha256": "a5f13c161841ed6407b8d8c337ee31ecacf0a6d81ad5f1edea6ec7dfd45b0187",
+      "bytes": 3999
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/data/r01-checks.json",
+      "path": "review/evidence/data/r01-checks.json",
+      "sha256": "ec755117e90e02dca72781ab70762dc9f4a51d792ac65609fe03250b000078c2",
+      "bytes": 15987
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/data/r02-check.py",
+      "path": "review/evidence/data/r02-check.py",
+      "sha256": "fa75eb10c3d86108f89794a47932be4eeed8c8e47c65bdf1b94bb940a1719162",
+      "bytes": 7052
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/data/r02-checks.json",
+      "path": "review/evidence/data/r02-checks.json",
+      "sha256": "a5204105dc875ed103339cdfa98494ccf649f231365fa4cd543b718cadf8894b",
+      "bytes": 10423
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/data/r03-check.py",
+      "path": "review/evidence/data/r03-check.py",
+      "sha256": "cff0603b77ac40ededbccbb22ec4f44da464093eb36949b72adbae9185570d0f",
+      "bytes": 10027
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/data/r03-checks.json",
+      "path": "review/evidence/data/r03-checks.json",
+      "sha256": "81da26eb3757436520437148af24fc60b22130924711487a6427fd8fa9bdf6d1",
+      "bytes": 4437
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/data/r04-check.py",
+      "path": "review/evidence/data/r04-check.py",
+      "sha256": "422fe6ed453a9a3ce5b5e3ca5ba56552515064e70a7ed73bd8fefe4a30589d3b",
+      "bytes": 10155
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/data/r04-checks.json",
+      "path": "review/evidence/data/r04-checks.json",
+      "sha256": "d2bd2f1917b2a39a98fbd56415f5a52afcf202085901cb319a28b02c88dd7580",
+      "bytes": 3182
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/data/r05-auditor-correction.json",
+      "path": "review/evidence/data/r05-auditor-correction.json",
+      "sha256": "6d9961d2ba846bbbc6d7f44c6cfd10dc74207a5a857b00704b2873125c90ab4b",
+      "bytes": 738
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/data/r05-check.py",
+      "path": "review/evidence/data/r05-check.py",
+      "sha256": "cc7b6aa9164469a08807f62f42f4368309b7e6dc6e09c51dfab03207ffc72b7e",
+      "bytes": 13007
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/data/r05-checks.json",
+      "path": "review/evidence/data/r05-checks.json",
+      "sha256": "75bdbd658226672023943de7e1bf650bc0ba3c9ce36e5ce26e6930ff2bc955bb",
+      "bytes": 8347
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/data/r05-reviewed-input-hashes.json",
+      "path": "review/evidence/data/r05-reviewed-input-hashes.json",
+      "sha256": "fa8d2b2bdf21ea31c6411edb9f6fd3c4358c4321018248b797f24f78810ae48f",
+      "bytes": 625
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/data/r06-check.py",
+      "path": "review/evidence/data/r06-check.py",
+      "sha256": "acce135eb5f192f22c9e53938743ec4d35c52565ddf1af42575b29682f104c15",
+      "bytes": 11474
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/data/r06-checks.json",
+      "path": "review/evidence/data/r06-checks.json",
+      "sha256": "98ee150aaf605f5d726075d1126a0cfc0ba8d4f26e6239a2e4ed29a6e5bf55e9",
+      "bytes": 14069
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/data/r07-check.py",
+      "path": "review/evidence/data/r07-check.py",
+      "sha256": "1007b90f50d9e315b871856e7c00f0badb497ffb2d2f073360a2374cc7f4fba4",
+      "bytes": 11925
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/data/r07-checks.json",
+      "path": "review/evidence/data/r07-checks.json",
+      "sha256": "edb27512c4993181ed3c3f7fa444154c6800b05c3f5245d76ef1b6cc8e52a4f1",
+      "bytes": 64999
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/data/r07-count-grain.json",
+      "path": "review/evidence/data/r07-count-grain.json",
+      "sha256": "936f1aee53b583ba8815a3803fa5e15b8d7be03cd82fca95d7ac65cc2ddcc0d5",
+      "bytes": 371
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/data/r08-check.py",
+      "path": "review/evidence/data/r08-check.py",
+      "sha256": "292439e48781d1b233004e0e9cd5df835a37477f1f31ddc9719591feb5aa9752",
+      "bytes": 8598
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/data/r08-checks.json",
+      "path": "review/evidence/data/r08-checks.json",
+      "sha256": "ab0374a34b39d0445c09893b970aaf1093e4c0fbba3c276d2d655156a0a55d1d",
+      "bytes": 25790
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/data/r09-check.py",
+      "path": "review/evidence/data/r09-check.py",
+      "sha256": "0b83cf2575fc267763282c5a287e7b64102c517e01c45011fcaca5bdfd69c809",
+      "bytes": 10791
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/data/r09-checks.json",
+      "path": "review/evidence/data/r09-checks.json",
+      "sha256": "a75b98098056a3123c4b7b60ac067e2aa540e326c68ae47eef16406244e81f61",
+      "bytes": 23615
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/data/r09-reference-correction.json",
+      "path": "review/evidence/data/r09-reference-correction.json",
+      "sha256": "fe4c4b72784f9fc2b9a40127c7fe5de00677ffc29560865f7d146b013af10255",
+      "bytes": 690
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/data/r10-check.py",
+      "path": "review/evidence/data/r10-check.py",
+      "sha256": "c5a02010baf5ca42fd59591e18c43a03fbf828c95ee1d45eb4fb89a9e5e0d746",
+      "bytes": 12335
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/data/r10-checks.json",
+      "path": "review/evidence/data/r10-checks.json",
+      "sha256": "615a314870b842ab793477e9037d01af14b2d2870ab475f7854c555baf0a580d",
+      "bytes": 20824
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/data/r11-check.py",
+      "path": "review/evidence/data/r11-check.py",
+      "sha256": "026e16994f34013d980a93e7b6554831d684984872a45e01963527d4524fc277",
+      "bytes": 15657
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/data/r11-checks.json",
+      "path": "review/evidence/data/r11-checks.json",
+      "sha256": "aed59d2d27cb9ec520f77b1bd034340359b7da9863538c0bd14341c7121b12ca",
+      "bytes": 8365
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/data/r11-retest-check.py",
+      "path": "review/evidence/data/r11-retest-check.py",
+      "sha256": "8ead22358fe3adf7df4de08be2c02e1f844844468e29327d6d36e7a9bd40a5e5",
+      "bytes": 6840
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/data/r11-retest-checks.json",
+      "path": "review/evidence/data/r11-retest-checks.json",
+      "sha256": "5b0d40e92dea7667a811bab63ccca1f478af7f12466870770ae8d4d64d571737",
+      "bytes": 3082
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/data/r11-retest.json",
+      "path": "review/evidence/data/r11-retest.json",
+      "sha256": "ab9aa631d630dbf54894614fdd94991327759f61fe9b5039fe7cf798f4d95da4",
+      "bytes": 5550
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/data/r12-final-binding.json",
+      "path": "review/evidence/data/r12-final-binding.json",
+      "sha256": "6ba604e854989962f6af0d5ed39f53fab0ae04eb6bd9e16733323ec88da77c5c",
+      "bytes": 539
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/models/check_r01.py",
+      "path": "review/evidence/models/check_r01.py",
+      "sha256": "23787c04c62ab2f70fc2c1fb1715bda075fc946d84e0a0a20da3595ab7f27d66",
+      "bytes": 5474
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/models/check_r02.py",
+      "path": "review/evidence/models/check_r02.py",
+      "sha256": "f6a2c1b59d7b021097e2b1bb1b5ea0512be8788469feb470292d79b2f2ea9e4d",
+      "bytes": 6636
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/models/check_r03.py",
+      "path": "review/evidence/models/check_r03.py",
+      "sha256": "13629aff1085198abfb6381d7861ccf33ec4a47ef5633f9f8dd10ef655432cce",
+      "bytes": 6443
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/models/check_r04.py",
+      "path": "review/evidence/models/check_r04.py",
+      "sha256": "14e9dc6b7183c62942f430f1c9361fd359a46ce24e413e28634c998ebbd55379",
+      "bytes": 6196
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/models/check_r05.py",
+      "path": "review/evidence/models/check_r05.py",
+      "sha256": "74ce6e4a29a65ea5e171782f3316a09ebff31394793d2cc4784edb576beaaa62",
+      "bytes": 8176
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/models/check_r06.py",
+      "path": "review/evidence/models/check_r06.py",
+      "sha256": "316c76271f4af9117f9454c47b7dfc9f30d096f386c8a7e93a2284b8457d4fdb",
+      "bytes": 4998
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/models/check_r07.py",
+      "path": "review/evidence/models/check_r07.py",
+      "sha256": "ff3ec11b412d0d599bb04ca8e61f78aade6c0729c73e888341ace83cb40864b1",
+      "bytes": 7436
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/models/check_r08.py",
+      "path": "review/evidence/models/check_r08.py",
+      "sha256": "fc941e18c09d312306e6f06a4bdd95a40dbc66ca266feba48faea8526cfbca46",
+      "bytes": 4076
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/models/check_r09.py",
+      "path": "review/evidence/models/check_r09.py",
+      "sha256": "8fe1b8c4b0f5af9c125660278652b88582588dd898c985e4ad07ca74be460176",
+      "bytes": 4888
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/models/check_r10.py",
+      "path": "review/evidence/models/check_r10.py",
+      "sha256": "0dad1545d77426ab82bcf0d07bb922697d3dc7c36a13dffdd5a16c4001ee611a",
+      "bytes": 8936
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/models/check_r11.py",
+      "path": "review/evidence/models/check_r11.py",
+      "sha256": "f6db81da7aa98a50a82cc64cc7edb05a3d0d59811cd6afdcd3d0596f61b9803b",
+      "bytes": 7901
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/models/model_inventory_hint.json",
+      "path": "review/evidence/models/model_inventory_hint.json",
+      "sha256": "ce83ddf2dde3d29a22eb86dff12ad14492e36636126e1d85f8776ca4fd643f09",
+      "bytes": 5347
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/models/r01_2018_model_contract.json",
+      "path": "review/evidence/models/r01_2018_model_contract.json",
+      "sha256": "9aee39aa4ff9a19544df10edbb2e8ad78d238efcddb1eeeaada6b2a61261f789",
+      "bytes": 3347
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/models/r01_checks.json",
+      "path": "review/evidence/models/r01_checks.json",
+      "sha256": "58ee1d90acfe5894802a45c47a926d44c678320ac610fcb5bf469159e0400728",
+      "bytes": 20062
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/models/r02_checks.json",
+      "path": "review/evidence/models/r02_checks.json",
+      "sha256": "1a955a67408317bc09e891314d334c3a74bded7ba342d9d1e41e041b8db3255f",
+      "bytes": 35802
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/models/r03_checks.json",
+      "path": "review/evidence/models/r03_checks.json",
+      "sha256": "1f7b228983999ad32b2ef8c94bf2cfebccbfec06e3fbf10f99f500a2398120ac",
+      "bytes": 5713
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/models/r04_checks.json",
+      "path": "review/evidence/models/r04_checks.json",
+      "sha256": "7eebe7a2e8f61f048c7113272eb9812dd15247a8d9f1cb65a609101a72c0540e",
+      "bytes": 1798
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/models/r04_feature_schema.json",
+      "path": "review/evidence/models/r04_feature_schema.json",
+      "sha256": "31400641eb133170dea4e7ac197f8d307c82444831f3758bebfd8fd267f0b1df",
+      "bytes": 11115
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/models/r04_source_trace_checks.json",
+      "path": "review/evidence/models/r04_source_trace_checks.json",
+      "sha256": "4f0fbd3575d49b14c6ab10067613c4847191ef630ffc07766b19fbebcee7b7fb",
+      "bytes": 1161
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/models/r05_checks.json",
+      "path": "review/evidence/models/r05_checks.json",
+      "sha256": "974811b94d069ab4fb7ed88c61350e80f83d98b921e9ff4f13a43afe773dc586",
+      "bytes": 7681
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/models/r06_checks.json",
+      "path": "review/evidence/models/r06_checks.json",
+      "sha256": "42a82a218f4fc76422ae587e75597d68aef04e64336160403f28f9aad17b96fe",
+      "bytes": 4276
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/models/r07_checks.json",
+      "path": "review/evidence/models/r07_checks.json",
+      "sha256": "ee69a25534105013d116d5b0db04dc73d404515a4db62dd1f4c9d9776426bca5",
+      "bytes": 2783
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/models/r08_checks.json",
+      "path": "review/evidence/models/r08_checks.json",
+      "sha256": "957bcfaba2c2138f8c58ef81c2348b5780874804496c88922b6704e8b25ddc35",
+      "bytes": 21958
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/models/r09_checks.json",
+      "path": "review/evidence/models/r09_checks.json",
+      "sha256": "c2eedbe3a4600323a48ad51ef389647bcd6901262a49d68c974b37d24182279c",
+      "bytes": 19396
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/models/r10_checks.json",
+      "path": "review/evidence/models/r10_checks.json",
+      "sha256": "33237566030b8f6fdb65cc42c35f2c40fd71c8be91a9daff8b54255600a41b4c",
+      "bytes": 3676
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/models/r11-retest.json",
+      "path": "review/evidence/models/r11-retest.json",
+      "sha256": "0d7c6f7de894830c283c339670e8da2ef24f08c4ccc5c8cf0ff45a49b831a731",
+      "bytes": 5679
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/models/r11_binding_checks.json",
+      "path": "review/evidence/models/r11_binding_checks.json",
+      "sha256": "cfc56961b417d4572f3382b9cc8d2105e005bbbfbbd5a2b25cacadb27f38029e",
+      "bytes": 454
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/models/r11_checks.json",
+      "path": "review/evidence/models/r11_checks.json",
+      "sha256": "b9e1408f9b65b771c8549c702fa8e248cc453ab13d7bc33cf8a01d32010d8dc6",
+      "bytes": 3904
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/execution/r11_lp35_base_cli.json",
+      "path": "review/evidence/execution/r11_lp35_base_cli.json",
+      "sha256": "949b35a2a494d9dd16d717d776a0284aa37143934e9ce9269036f060bf3ac0f2",
+      "bytes": 2622
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/risk/r10-api-LP35-BASE.json",
+      "path": "review/evidence/risk/r10-api-LP35-BASE.json",
+      "sha256": "3d9810cc2f80b39e8ac9806094fb74dab4306481ebc4f89de949991afdf6903e",
+      "bytes": 2243
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/risk/r10-checks.json",
+      "path": "review/evidence/risk/r10-checks.json",
+      "sha256": "547459de0ae31ff8f6de752a864536f34f5ce072e4d8bc9f143b7bae99f1d6e3",
+      "bytes": 10879
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/risk/r10-cli-help.txt",
+      "path": "review/evidence/risk/r10-cli-help.txt",
+      "sha256": "dc1d28c917060a7495e816402c1de55530c0523a5c241944215e1fc0fb35a585",
+      "bytes": 389
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/risk/r10-doc-bindings.json",
+      "path": "review/evidence/risk/r10-doc-bindings.json",
+      "sha256": "4885d11712c8810cbd0ce375f6891e35887a6498a200ce32229431ce3073039f",
+      "bytes": 8559
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/risk/r11-api-LP35-BASE.json",
+      "path": "review/evidence/risk/r11-api-LP35-BASE.json",
+      "sha256": "12aa74710d78112712c7ad48f52f3901890b3c2991d27653738ac76cf9675356",
+      "bytes": 3063
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/risk/r11-checks.json",
+      "path": "review/evidence/risk/r11-checks.json",
+      "sha256": "4780abd3ce8575e59d945858a5475b7cfa1c869a74bff195f17e0df2e450258b",
+      "bytes": 6646
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/risk/r11-retest-api-LP35-BASE.json",
+      "path": "review/evidence/risk/r11-retest-api-LP35-BASE.json",
+      "sha256": "12aa74710d78112712c7ad48f52f3901890b3c2991d27653738ac76cf9675356",
+      "bytes": 3063
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/risk/r11-retest-checks.json",
+      "path": "review/evidence/risk/r11-retest-checks.json",
+      "sha256": "7f0505a6fb1d783634098d665c0f2cafab06b052bfa95109846d9b308c8ba678",
+      "bytes": 8755
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/risk/r11-retest.json",
+      "path": "review/evidence/risk/r11-retest.json",
+      "sha256": "a0b867c9da4a66d9042f9c39b1a7139c2c9096bf8c776594c021b73e0192ece6",
+      "bytes": 6444
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/risk/r12-binding.json",
+      "path": "review/evidence/risk/r12-binding.json",
+      "sha256": "02eb86f15e37ef05eec1203e70ba0ce1f57f0c98f15988827661a2942d886138",
+      "bytes": 2895
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/repro/check_r01.py",
+      "path": "review/evidence/repro/check_r01.py",
+      "sha256": "61f2e491b1dcdfac495223d447371988b1a829f1b38382eedaaaee9fa087f568",
+      "bytes": 5257
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/repro/check_r02.py",
+      "path": "review/evidence/repro/check_r02.py",
+      "sha256": "367e775a65eb139b26225760c972826eb01960f35f3cf30508e0f318ed2acc78",
+      "bytes": 6363
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/repro/check_r03.py",
+      "path": "review/evidence/repro/check_r03.py",
+      "sha256": "7da3007091d98801714046fb65a6bfc0474f6ed691aba7d445a4c38bda2fa4f4",
+      "bytes": 7663
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/repro/check_r04.py",
+      "path": "review/evidence/repro/check_r04.py",
+      "sha256": "385d9b8a4c1b8561ac26ca4741d4e45b6ffd138f56e29720bd90087ca8a8d863",
+      "bytes": 7075
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/repro/check_r05.py",
+      "path": "review/evidence/repro/check_r05.py",
+      "sha256": "3296782a2c721068d8b3a94d2725d04895565b9a218f4dc16bd4f946ed92af9e",
+      "bytes": 8285
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/repro/check_r06.py",
+      "path": "review/evidence/repro/check_r06.py",
+      "sha256": "35fc0d09df7cc27cc4d33f5e99042420c0d147e360d70551d88d2ff042b0a7b0",
+      "bytes": 7456
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/repro/check_r07.py",
+      "path": "review/evidence/repro/check_r07.py",
+      "sha256": "5a2c2aa5c8de11cd7200ae4a46648e998148b4c147f5c2b34dc2e6c6b5fb5560",
+      "bytes": 8697
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/repro/check_r08.py",
+      "path": "review/evidence/repro/check_r08.py",
+      "sha256": "54889972610cf629cb8970da498f64db45d55f2abc99e413bd92156cf8544fa2",
+      "bytes": 7966
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/repro/check_r09.py",
+      "path": "review/evidence/repro/check_r09.py",
+      "sha256": "547cd523096c357158ae471108737d7264cf5cb5b18feff968d8a0b49fdfebe8",
+      "bytes": 8813
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/repro/check_r10.py",
+      "path": "review/evidence/repro/check_r10.py",
+      "sha256": "a01bfb7ab845660867ec5444795ed9e21372bc209a96303d22c880fe2f5c0d89",
+      "bytes": 7233
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/repro/check_r11.py",
+      "path": "review/evidence/repro/check_r11.py",
+      "sha256": "ea5f6f11508b39517969d7d41102c2190263bc8b02797fd8a057a5045f563604",
+      "bytes": 13492
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/repro/check_r12.py",
+      "path": "review/evidence/repro/check_r12.py",
+      "sha256": "d539df0fff1f6c83f31b47f6adcf728130230ab4a1b067ea87bdc2816d8621f1",
+      "bytes": 5486
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/repro/checks-r01.json",
+      "path": "review/evidence/repro/checks-r01.json",
+      "sha256": "74ee643899543dac733c9cd7eb80065c4c480ef11cedeb392efa5cc574e8f199",
+      "bytes": 36693
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/repro/checks-r02.json",
+      "path": "review/evidence/repro/checks-r02.json",
+      "sha256": "2c873e00ec9742e46bddcecfa95a8f720af993b600d012dceecb9172e4b4797c",
+      "bytes": 62547
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/repro/checks-r03.json",
+      "path": "review/evidence/repro/checks-r03.json",
+      "sha256": "b5bf19d84d6a5fa4e863d9747fb1cc334f5a636312d4c3f17b534457fdf90901",
+      "bytes": 50548
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/repro/checks-r04.json",
+      "path": "review/evidence/repro/checks-r04.json",
+      "sha256": "6bb5079eec5232bc5529c83109f1b23da8b4f4709593773a28b25483d7c7ac7f",
+      "bytes": 172396
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/repro/checks-r05-schema.json",
+      "path": "review/evidence/repro/checks-r05-schema.json",
+      "sha256": "c239fbc0a0efa600db666e98b018cb501284e47e2d283a2626aa16d6fa36627e",
+      "bytes": 984
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/repro/checks-r05.json",
+      "path": "review/evidence/repro/checks-r05.json",
+      "sha256": "f6ad8997fe34bea75509c2c55fc68ddcaa0a2e44b1ce56371f3c1752a2c34716",
+      "bytes": 40214
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/repro/checks-r06-instrument.json",
+      "path": "review/evidence/repro/checks-r06-instrument.json",
+      "sha256": "3d9c5a0c57b35567337df4c6fa1b43aabae36886e16bb5c51957cae1401761c2",
+      "bytes": 199
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/repro/checks-r06-runtime.json",
+      "path": "review/evidence/repro/checks-r06-runtime.json",
+      "sha256": "057acdad223a9ff8438c49ff22f51ae2bfcdb83baf274fffc38035ad4b9b8bff",
+      "bytes": 9689
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/repro/checks-r06.json",
+      "path": "review/evidence/repro/checks-r06.json",
+      "sha256": "575d884ae907f405ea522ad9d7468da766b80ad36b704d8ead2f0d732d39ae91",
+      "bytes": 12126
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/repro/checks-r07.json",
+      "path": "review/evidence/repro/checks-r07.json",
+      "sha256": "cb4b26575feaa948e6431e3dfae9b11cdc87f43faff734b9274b6954a956a429",
+      "bytes": 11293
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/repro/checks-r08.json",
+      "path": "review/evidence/repro/checks-r08.json",
+      "sha256": "48ffc908c1bfa0022348ddcb283be13002d38eb8ebe37af7765d60e1ca1e44e4",
+      "bytes": 35868
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/repro/checks-r09.json",
+      "path": "review/evidence/repro/checks-r09.json",
+      "sha256": "4daea2da47245abeed2af361cfe5fbdd6c22fc62ddf47cf37d321da783165f3e",
+      "bytes": 30764
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/repro/checks-r10.json",
+      "path": "review/evidence/repro/checks-r10.json",
+      "sha256": "477dd4be10e1c5604b9a7c604d62bdf72e37b2874764d0bf262c9df0afaadbe8",
+      "bytes": 22755
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/repro/checks-r11-anchor.json",
+      "path": "review/evidence/repro/checks-r11-anchor.json",
+      "sha256": "abe8941dc097850ad010643bb4624a649f5fb10dff43f06cfdf086261cf9ae9b",
+      "bytes": 635
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/repro/checks-r11.json",
+      "path": "review/evidence/repro/checks-r11.json",
+      "sha256": "84b2decf273f520e69ba67a290ca6d6432f7f9cbbb4caa04bdf08f2a814d2adb",
+      "bytes": 12796
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/repro/checks-r12.json",
+      "path": "review/evidence/repro/checks-r12.json",
+      "sha256": "06fd24ef7892e8c91b3628d3c28f240d3206a6c4d1e4cbf1ccc70ee1f62befc7",
+      "bytes": 21525
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/repro/export_plan_hint.md",
+      "path": "review/evidence/repro/export_plan_hint.md",
+      "sha256": "eb81f143a97edad72140dc4d1e7f95b4f9fdc89091d674e1ac8afbe93af052e1",
+      "bytes": 4024
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/repro/failure_provenance_hint.json",
+      "path": "review/evidence/repro/failure_provenance_hint.json",
+      "sha256": "5515352053c8df2cc3a4b35a217f296322b008ec58fc65189697e45badbdef39",
+      "bytes": 5698
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/repro/image-r12.log",
+      "path": "review/evidence/repro/image-r12.log",
+      "sha256": "b70c9cd1b776d848b56444bd481cffe5673196857263253eeff3ae608397abe8",
+      "bytes": 19233
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/repro/offline-r10.jsonl",
+      "path": "review/evidence/repro/offline-r10.jsonl",
+      "sha256": "964c89a91b69d90c901153c51d2d8f1e045266447c5b35b9dce2c21af4f4de9c",
+      "bytes": 83466
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/repro/receipt-summary-r10.json",
+      "path": "review/evidence/repro/receipt-summary-r10.json",
+      "sha256": "89fb238f4fb007f6d3d2be004711f271047e31f6f22bc074c27d13795bb18e16",
+      "bytes": 392
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/repro/runtime-check-r01.json",
+      "path": "review/evidence/repro/runtime-check-r01.json",
+      "sha256": "297e7a4e4a42f52d98d03bf6fa39a7f77321e5c83ce714b91b233824cd60a8ee",
+      "bytes": 9319
+    },
+    {
+      "original_path": "/workspace/BTCExpertReview/workspaces/repro/version-bridge-r12.json",
+      "path": "review/evidence/repro/version-bridge-r12.json",
+      "sha256": "d59f28f24e28447eb9d5f1c2bbdf7be9d4655d28dbfd2e26b61b6ded77bdcc93",
+      "bytes": 3259
+    }
+  ],
+  "qualification": "Original support bytes; source-era paths and deliberately failing snapshots are preserved, not current executable entry points."
+}

@@ -1,0 +1,828 @@
+{
+  "round": 9,
+  "catalog_period": [
+    "2018-01-01",
+    "2025-12-31"
+  ],
+  "card_count": 9,
+  "book_count": 36,
+  "nine_cards": [
+    {
+      "strategy": "LP35",
+      "card_path": "strategies/high_return/lp35/README.md",
+      "card_sha256": "908f32c04093528aed5851878aa5f633e11d055f217c5e09cd5e13951d759999",
+      "card_title_exact": true,
+      "period_2018_2025_stated": true,
+      "STRESS_rounded5_exact": true,
+      "worst4_daily_DD_rounded5_exact": true,
+      "worst_DD_case": [
+        "DELAY"
+      ],
+      "DELAY_rounded5_exact": true,
+      "new2026_validation_text_false": true,
+      "catalog_explicit_validation_false_boolean": false,
+      "shared_model_families_exact": true,
+      "card_stated_families": [
+        "base_tree",
+        "price47",
+        "short_huber"
+      ],
+      "catalog_structured_model_families_present": false,
+      "catalog_source_study": "studies/B109-long-profit-local-coordinate",
+      "catalog_local_recipe_id": "LP35",
+      "source_study_explicit_in_card": false,
+      "source_local_id_explicit_in_card": false,
+      "explicit_cost_parameter_or_cost_table_link": false,
+      "annual_breakdown_or_link_in_card": false,
+      "positive_trade_concentration_or_link_in_card": false,
+      "all_existing_relative_links_resolve": true,
+      "C02_C04_eligibility_2020_2025_and_new_entries": true,
+      "namespaced_B88A_card_and_catalog": true
+    },
+    {
+      "strategy": "TS04",
+      "card_path": "strategies/high_return/ts04/README.md",
+      "card_sha256": "b9c1021488b1f9ac6d32579c5a2391192b3a11b67f800d67055b90a1365a3335",
+      "card_title_exact": true,
+      "period_2018_2025_stated": true,
+      "STRESS_rounded5_exact": true,
+      "worst4_daily_DD_rounded5_exact": true,
+      "worst_DD_case": [
+        "DELAY"
+      ],
+      "DELAY_rounded5_exact": true,
+      "new2026_validation_text_false": true,
+      "catalog_explicit_validation_false_boolean": false,
+      "shared_model_families_exact": true,
+      "card_stated_families": [
+        "base_tree",
+        "price47",
+        "short_huber"
+      ],
+      "catalog_structured_model_families_present": false,
+      "catalog_source_study": "studies/B107-cold-short-profit-trailing",
+      "catalog_local_recipe_id": "TS04",
+      "source_study_explicit_in_card": false,
+      "source_local_id_explicit_in_card": false,
+      "explicit_cost_parameter_or_cost_table_link": false,
+      "annual_breakdown_or_link_in_card": false,
+      "positive_trade_concentration_or_link_in_card": false,
+      "all_existing_relative_links_resolve": true,
+      "C02_C04_eligibility_2020_2025_and_new_entries": true,
+      "namespaced_B88A_card_and_catalog": true
+    },
+    {
+      "strategy": "ME01",
+      "card_path": "strategies/high_return/me01/README.md",
+      "card_sha256": "20666828eb0933d8f86fda57d3a1220ed200621b93e824dea551f60aa42e38f4",
+      "card_title_exact": true,
+      "period_2018_2025_stated": true,
+      "STRESS_rounded5_exact": true,
+      "worst4_daily_DD_rounded5_exact": true,
+      "worst_DD_case": [
+        "DELAY"
+      ],
+      "DELAY_rounded5_exact": true,
+      "new2026_validation_text_false": true,
+      "catalog_explicit_validation_false_boolean": false,
+      "shared_model_families_exact": true,
+      "card_stated_families": [
+        "base_tree",
+        "price47",
+        "short_huber"
+      ],
+      "catalog_structured_model_families_present": false,
+      "catalog_source_study": "studies/B105-cold-entry-momentum",
+      "catalog_local_recipe_id": "ME01",
+      "source_study_explicit_in_card": false,
+      "source_local_id_explicit_in_card": false,
+      "explicit_cost_parameter_or_cost_table_link": false,
+      "annual_breakdown_or_link_in_card": false,
+      "positive_trade_concentration_or_link_in_card": false,
+      "all_existing_relative_links_resolve": true,
+      "C02_C04_eligibility_2020_2025_and_new_entries": true,
+      "namespaced_B88A_card_and_catalog": true
+    },
+    {
+      "strategy": "MX03",
+      "card_path": "strategies/high_return/mx03/README.md",
+      "card_sha256": "9cbd1db80cb9ef26d8e1298151e4cb24534899df394c485be3edcf35f4c5cf20",
+      "card_title_exact": true,
+      "period_2018_2025_stated": true,
+      "STRESS_rounded5_exact": true,
+      "worst4_daily_DD_rounded5_exact": true,
+      "worst_DD_case": [
+        "DELAY"
+      ],
+      "DELAY_rounded5_exact": true,
+      "new2026_validation_text_false": true,
+      "catalog_explicit_validation_false_boolean": false,
+      "shared_model_families_exact": true,
+      "card_stated_families": [
+        "base_tree",
+        "price47",
+        "short_huber"
+      ],
+      "catalog_structured_model_families_present": false,
+      "catalog_source_study": "studies/B106-shorter-cold-entry-momentum",
+      "catalog_local_recipe_id": "MX03",
+      "source_study_explicit_in_card": false,
+      "source_local_id_explicit_in_card": false,
+      "explicit_cost_parameter_or_cost_table_link": false,
+      "annual_breakdown_or_link_in_card": false,
+      "positive_trade_concentration_or_link_in_card": false,
+      "all_existing_relative_links_resolve": true,
+      "C02_C04_eligibility_2020_2025_and_new_entries": true,
+      "namespaced_B88A_card_and_catalog": true
+    },
+    {
+      "strategy": "B88A_S03",
+      "card_path": "strategies/risk_tradeoffs/b88a_s03/README.md",
+      "card_sha256": "845656269a26da0f9b015c922543b58ca9e86f992c60b26742b044432ad7a92d",
+      "card_title_exact": true,
+      "period_2018_2025_stated": true,
+      "STRESS_rounded5_exact": true,
+      "worst4_daily_DD_rounded5_exact": true,
+      "worst_DD_case": [
+        "DELAY"
+      ],
+      "DELAY_rounded5_exact": true,
+      "new2026_validation_text_false": true,
+      "catalog_explicit_validation_false_boolean": false,
+      "shared_model_families_exact": true,
+      "card_stated_families": [
+        "base_tree",
+        "price47",
+        "short_median"
+      ],
+      "catalog_structured_model_families_present": false,
+      "catalog_source_study": "studies/B88A-short-net-loss-families",
+      "catalog_local_recipe_id": "S03",
+      "source_study_explicit_in_card": false,
+      "source_local_id_explicit_in_card": false,
+      "explicit_cost_parameter_or_cost_table_link": false,
+      "annual_breakdown_or_link_in_card": false,
+      "positive_trade_concentration_or_link_in_card": false,
+      "all_existing_relative_links_resolve": true,
+      "C02_C04_eligibility_2020_2025_and_new_entries": true,
+      "namespaced_B88A_card_and_catalog": true
+    },
+    {
+      "strategy": "K02",
+      "card_path": "strategies/exposure_controls/k02/README.md",
+      "card_sha256": "69efd80a620c044910217daa1b5c65010426d3da4acfa0795080cd98169e5200",
+      "card_title_exact": true,
+      "period_2018_2025_stated": true,
+      "STRESS_rounded5_exact": true,
+      "worst4_daily_DD_rounded5_exact": true,
+      "worst_DD_case": [
+        "DELAY"
+      ],
+      "DELAY_rounded5_exact": true,
+      "new2026_validation_text_false": true,
+      "catalog_explicit_validation_false_boolean": false,
+      "shared_model_families_exact": true,
+      "card_stated_families": [
+        "base_tree",
+        "short_huber",
+        "stop44"
+      ],
+      "catalog_structured_model_families_present": false,
+      "catalog_source_study": "studies/B72-cold-budget-exposure",
+      "catalog_local_recipe_id": "K02",
+      "source_study_explicit_in_card": false,
+      "source_local_id_explicit_in_card": false,
+      "explicit_cost_parameter_or_cost_table_link": false,
+      "annual_breakdown_or_link_in_card": false,
+      "positive_trade_concentration_or_link_in_card": false,
+      "all_existing_relative_links_resolve": true,
+      "C02_C04_eligibility_2020_2025_and_new_entries": true,
+      "namespaced_B88A_card_and_catalog": true
+    },
+    {
+      "strategy": "Y01",
+      "card_path": "strategies/long_only/y01/README.md",
+      "card_sha256": "3279220dd20fe3af3f06eb5306b589090c939c56540bf44eb70091b9ed20fbbd",
+      "card_title_exact": true,
+      "period_2018_2025_stated": true,
+      "STRESS_rounded5_exact": true,
+      "worst4_daily_DD_rounded5_exact": true,
+      "worst_DD_case": [
+        "SEVERE"
+      ],
+      "DELAY_rounded5_exact": true,
+      "new2026_validation_text_false": true,
+      "catalog_explicit_validation_false_boolean": false,
+      "shared_model_families_exact": true,
+      "card_stated_families": [
+        "base_tree",
+        "stop44"
+      ],
+      "catalog_structured_model_families_present": false,
+      "catalog_source_study": "studies/B29-prior-forecast-exits",
+      "catalog_local_recipe_id": "Y01",
+      "source_study_explicit_in_card": false,
+      "source_local_id_explicit_in_card": false,
+      "explicit_cost_parameter_or_cost_table_link": false,
+      "annual_breakdown_or_link_in_card": false,
+      "positive_trade_concentration_or_link_in_card": false,
+      "all_existing_relative_links_resolve": true,
+      "C02_C04_eligibility_2020_2025_and_new_entries": true,
+      "namespaced_B88A_card_and_catalog": true
+    },
+    {
+      "strategy": "C02",
+      "card_path": "strategies/risk_tradeoffs/c02/README.md",
+      "card_sha256": "6462696064c9890545b7e68217b8348048bf35bf643c4de525e14af0733b0ce8",
+      "card_title_exact": true,
+      "period_2018_2025_stated": true,
+      "STRESS_rounded5_exact": true,
+      "worst4_daily_DD_rounded5_exact": true,
+      "worst_DD_case": [
+        "SEVERE"
+      ],
+      "DELAY_rounded5_exact": true,
+      "new2026_validation_text_false": true,
+      "catalog_explicit_validation_false_boolean": false,
+      "shared_model_families_exact": true,
+      "card_stated_families": [
+        "base_tree",
+        "stop44"
+      ],
+      "catalog_structured_model_families_present": false,
+      "catalog_source_study": "studies/B31-constant-sizing-controls",
+      "catalog_local_recipe_id": "C02",
+      "source_study_explicit_in_card": false,
+      "source_local_id_explicit_in_card": false,
+      "explicit_cost_parameter_or_cost_table_link": false,
+      "annual_breakdown_or_link_in_card": false,
+      "positive_trade_concentration_or_link_in_card": false,
+      "all_existing_relative_links_resolve": true,
+      "C02_C04_eligibility_2020_2025_and_new_entries": true,
+      "namespaced_B88A_card_and_catalog": true
+    },
+    {
+      "strategy": "C04",
+      "card_path": "strategies/risk_tradeoffs/c04/README.md",
+      "card_sha256": "bb6d2b184ffa69be36a9b95ec6ff7d44839ca65fa6b8b6897c1fc742614cb6ee",
+      "card_title_exact": true,
+      "period_2018_2025_stated": true,
+      "STRESS_rounded5_exact": true,
+      "worst4_daily_DD_rounded5_exact": true,
+      "worst_DD_case": [
+        "SEVERE"
+      ],
+      "DELAY_rounded5_exact": true,
+      "new2026_validation_text_false": true,
+      "catalog_explicit_validation_false_boolean": false,
+      "shared_model_families_exact": true,
+      "card_stated_families": [
+        "mining58"
+      ],
+      "catalog_structured_model_families_present": false,
+      "catalog_source_study": "studies/B31-constant-sizing-controls",
+      "catalog_local_recipe_id": "C04",
+      "source_study_explicit_in_card": false,
+      "source_local_id_explicit_in_card": false,
+      "explicit_cost_parameter_or_cost_table_link": false,
+      "annual_breakdown_or_link_in_card": false,
+      "positive_trade_concentration_or_link_in_card": false,
+      "all_existing_relative_links_resolve": true,
+      "C02_C04_eligibility_2020_2025_and_new_entries": true,
+      "namespaced_B88A_card_and_catalog": true
+    }
+  ],
+  "thirty_six_benchmark_comparisons": [
+    {
+      "strategy": "LP35",
+      "case": "BASE",
+      "source_path": "studies/B109-long-profit-local-coordinate/accounts/LP35/BASE.json.gz",
+      "artifact_source_bytes_equal": true,
+      "catalog_summary_exact": true,
+      "daily_drawdown_recomputed_exact": true,
+      "annual_recomputed_exact": true,
+      "positive_trade_top2_fraction_recomputed_exact": true,
+      "account_period_exact": true
+    },
+    {
+      "strategy": "LP35",
+      "case": "STRESS",
+      "source_path": "studies/B109-long-profit-local-coordinate/accounts/LP35/STRESS.json.gz",
+      "artifact_source_bytes_equal": true,
+      "catalog_summary_exact": true,
+      "daily_drawdown_recomputed_exact": true,
+      "annual_recomputed_exact": true,
+      "positive_trade_top2_fraction_recomputed_exact": true,
+      "account_period_exact": true
+    },
+    {
+      "strategy": "LP35",
+      "case": "SEVERE",
+      "source_path": "studies/B109-long-profit-local-coordinate/accounts/LP35/SEVERE.json.gz",
+      "artifact_source_bytes_equal": true,
+      "catalog_summary_exact": true,
+      "daily_drawdown_recomputed_exact": true,
+      "annual_recomputed_exact": true,
+      "positive_trade_top2_fraction_recomputed_exact": true,
+      "account_period_exact": true
+    },
+    {
+      "strategy": "LP35",
+      "case": "DELAY",
+      "source_path": "studies/B109-long-profit-local-coordinate/accounts/LP35/DELAY.json.gz",
+      "artifact_source_bytes_equal": true,
+      "catalog_summary_exact": true,
+      "daily_drawdown_recomputed_exact": true,
+      "annual_recomputed_exact": true,
+      "positive_trade_top2_fraction_recomputed_exact": true,
+      "account_period_exact": true
+    },
+    {
+      "strategy": "TS04",
+      "case": "BASE",
+      "source_path": "studies/B107-cold-short-profit-trailing/accounts/TS04/BASE.json.gz",
+      "artifact_source_bytes_equal": true,
+      "catalog_summary_exact": true,
+      "daily_drawdown_recomputed_exact": true,
+      "annual_recomputed_exact": true,
+      "positive_trade_top2_fraction_recomputed_exact": true,
+      "account_period_exact": true
+    },
+    {
+      "strategy": "TS04",
+      "case": "STRESS",
+      "source_path": "studies/B107-cold-short-profit-trailing/accounts/TS04/STRESS.json.gz",
+      "artifact_source_bytes_equal": true,
+      "catalog_summary_exact": true,
+      "daily_drawdown_recomputed_exact": true,
+      "annual_recomputed_exact": true,
+      "positive_trade_top2_fraction_recomputed_exact": true,
+      "account_period_exact": true
+    },
+    {
+      "strategy": "TS04",
+      "case": "SEVERE",
+      "source_path": "studies/B107-cold-short-profit-trailing/accounts/TS04/SEVERE.json.gz",
+      "artifact_source_bytes_equal": true,
+      "catalog_summary_exact": true,
+      "daily_drawdown_recomputed_exact": true,
+      "annual_recomputed_exact": true,
+      "positive_trade_top2_fraction_recomputed_exact": true,
+      "account_period_exact": true
+    },
+    {
+      "strategy": "TS04",
+      "case": "DELAY",
+      "source_path": "studies/B107-cold-short-profit-trailing/accounts/TS04/DELAY.json.gz",
+      "artifact_source_bytes_equal": true,
+      "catalog_summary_exact": true,
+      "daily_drawdown_recomputed_exact": true,
+      "annual_recomputed_exact": true,
+      "positive_trade_top2_fraction_recomputed_exact": true,
+      "account_period_exact": true
+    },
+    {
+      "strategy": "ME01",
+      "case": "BASE",
+      "source_path": "studies/B105-cold-entry-momentum/accounts/ME01/BASE.json.gz",
+      "artifact_source_bytes_equal": true,
+      "catalog_summary_exact": true,
+      "daily_drawdown_recomputed_exact": true,
+      "annual_recomputed_exact": true,
+      "positive_trade_top2_fraction_recomputed_exact": true,
+      "account_period_exact": true
+    },
+    {
+      "strategy": "ME01",
+      "case": "STRESS",
+      "source_path": "studies/B105-cold-entry-momentum/accounts/ME01/STRESS.json.gz",
+      "artifact_source_bytes_equal": true,
+      "catalog_summary_exact": true,
+      "daily_drawdown_recomputed_exact": true,
+      "annual_recomputed_exact": true,
+      "positive_trade_top2_fraction_recomputed_exact": true,
+      "account_period_exact": true
+    },
+    {
+      "strategy": "ME01",
+      "case": "SEVERE",
+      "source_path": "studies/B105-cold-entry-momentum/accounts/ME01/SEVERE.json.gz",
+      "artifact_source_bytes_equal": true,
+      "catalog_summary_exact": true,
+      "daily_drawdown_recomputed_exact": true,
+      "annual_recomputed_exact": true,
+      "positive_trade_top2_fraction_recomputed_exact": true,
+      "account_period_exact": true
+    },
+    {
+      "strategy": "ME01",
+      "case": "DELAY",
+      "source_path": "studies/B105-cold-entry-momentum/accounts/ME01/DELAY.json.gz",
+      "artifact_source_bytes_equal": true,
+      "catalog_summary_exact": true,
+      "daily_drawdown_recomputed_exact": true,
+      "annual_recomputed_exact": true,
+      "positive_trade_top2_fraction_recomputed_exact": true,
+      "account_period_exact": true
+    },
+    {
+      "strategy": "MX03",
+      "case": "BASE",
+      "source_path": "studies/B106-shorter-cold-entry-momentum/accounts/MX03/BASE.json.gz",
+      "artifact_source_bytes_equal": true,
+      "catalog_summary_exact": true,
+      "daily_drawdown_recomputed_exact": true,
+      "annual_recomputed_exact": true,
+      "positive_trade_top2_fraction_recomputed_exact": true,
+      "account_period_exact": true
+    },
+    {
+      "strategy": "MX03",
+      "case": "STRESS",
+      "source_path": "studies/B106-shorter-cold-entry-momentum/accounts/MX03/STRESS.json.gz",
+      "artifact_source_bytes_equal": true,
+      "catalog_summary_exact": true,
+      "daily_drawdown_recomputed_exact": true,
+      "annual_recomputed_exact": true,
+      "positive_trade_top2_fraction_recomputed_exact": true,
+      "account_period_exact": true
+    },
+    {
+      "strategy": "MX03",
+      "case": "SEVERE",
+      "source_path": "studies/B106-shorter-cold-entry-momentum/accounts/MX03/SEVERE.json.gz",
+      "artifact_source_bytes_equal": true,
+      "catalog_summary_exact": true,
+      "daily_drawdown_recomputed_exact": true,
+      "annual_recomputed_exact": true,
+      "positive_trade_top2_fraction_recomputed_exact": true,
+      "account_period_exact": true
+    },
+    {
+      "strategy": "MX03",
+      "case": "DELAY",
+      "source_path": "studies/B106-shorter-cold-entry-momentum/accounts/MX03/DELAY.json.gz",
+      "artifact_source_bytes_equal": true,
+      "catalog_summary_exact": true,
+      "daily_drawdown_recomputed_exact": true,
+      "annual_recomputed_exact": true,
+      "positive_trade_top2_fraction_recomputed_exact": true,
+      "account_period_exact": true
+    },
+    {
+      "strategy": "B88A_S03",
+      "case": "BASE",
+      "source_path": "studies/B88A-short-net-loss-families/accounts/S03/BASE.json.gz",
+      "artifact_source_bytes_equal": true,
+      "catalog_summary_exact": true,
+      "daily_drawdown_recomputed_exact": true,
+      "annual_recomputed_exact": true,
+      "positive_trade_top2_fraction_recomputed_exact": true,
+      "account_period_exact": true
+    },
+    {
+      "strategy": "B88A_S03",
+      "case": "STRESS",
+      "source_path": "studies/B88A-short-net-loss-families/accounts/S03/STRESS.json.gz",
+      "artifact_source_bytes_equal": true,
+      "catalog_summary_exact": true,
+      "daily_drawdown_recomputed_exact": true,
+      "annual_recomputed_exact": true,
+      "positive_trade_top2_fraction_recomputed_exact": true,
+      "account_period_exact": true
+    },
+    {
+      "strategy": "B88A_S03",
+      "case": "SEVERE",
+      "source_path": "studies/B88A-short-net-loss-families/accounts/S03/SEVERE.json.gz",
+      "artifact_source_bytes_equal": true,
+      "catalog_summary_exact": true,
+      "daily_drawdown_recomputed_exact": true,
+      "annual_recomputed_exact": true,
+      "positive_trade_top2_fraction_recomputed_exact": true,
+      "account_period_exact": true
+    },
+    {
+      "strategy": "B88A_S03",
+      "case": "DELAY",
+      "source_path": "studies/B88A-short-net-loss-families/accounts/S03/DELAY.json.gz",
+      "artifact_source_bytes_equal": true,
+      "catalog_summary_exact": true,
+      "daily_drawdown_recomputed_exact": true,
+      "annual_recomputed_exact": true,
+      "positive_trade_top2_fraction_recomputed_exact": true,
+      "account_period_exact": true
+    },
+    {
+      "strategy": "K02",
+      "case": "BASE",
+      "source_path": "studies/B72-cold-budget-exposure/accounts/K02/BASE.json.gz",
+      "artifact_source_bytes_equal": true,
+      "catalog_summary_exact": true,
+      "daily_drawdown_recomputed_exact": true,
+      "annual_recomputed_exact": true,
+      "positive_trade_top2_fraction_recomputed_exact": true,
+      "account_period_exact": true
+    },
+    {
+      "strategy": "K02",
+      "case": "STRESS",
+      "source_path": "studies/B72-cold-budget-exposure/accounts/K02/STRESS.json.gz",
+      "artifact_source_bytes_equal": true,
+      "catalog_summary_exact": true,
+      "daily_drawdown_recomputed_exact": true,
+      "annual_recomputed_exact": true,
+      "positive_trade_top2_fraction_recomputed_exact": true,
+      "account_period_exact": true
+    },
+    {
+      "strategy": "K02",
+      "case": "SEVERE",
+      "source_path": "studies/B72-cold-budget-exposure/accounts/K02/SEVERE.json.gz",
+      "artifact_source_bytes_equal": true,
+      "catalog_summary_exact": true,
+      "daily_drawdown_recomputed_exact": true,
+      "annual_recomputed_exact": true,
+      "positive_trade_top2_fraction_recomputed_exact": true,
+      "account_period_exact": true
+    },
+    {
+      "strategy": "K02",
+      "case": "DELAY",
+      "source_path": "studies/B72-cold-budget-exposure/accounts/K02/DELAY.json.gz",
+      "artifact_source_bytes_equal": true,
+      "catalog_summary_exact": true,
+      "daily_drawdown_recomputed_exact": true,
+      "annual_recomputed_exact": true,
+      "positive_trade_top2_fraction_recomputed_exact": true,
+      "account_period_exact": true
+    },
+    {
+      "strategy": "Y01",
+      "case": "BASE",
+      "source_path": "studies/B29-prior-forecast-exits/accounts/Y01/BASE.json.gz",
+      "artifact_source_bytes_equal": true,
+      "catalog_summary_exact": true,
+      "daily_drawdown_recomputed_exact": true,
+      "annual_recomputed_exact": true,
+      "positive_trade_top2_fraction_recomputed_exact": true,
+      "account_period_exact": true
+    },
+    {
+      "strategy": "Y01",
+      "case": "STRESS",
+      "source_path": "studies/B29-prior-forecast-exits/accounts/Y01/STRESS.json.gz",
+      "artifact_source_bytes_equal": true,
+      "catalog_summary_exact": true,
+      "daily_drawdown_recomputed_exact": true,
+      "annual_recomputed_exact": true,
+      "positive_trade_top2_fraction_recomputed_exact": true,
+      "account_period_exact": true
+    },
+    {
+      "strategy": "Y01",
+      "case": "SEVERE",
+      "source_path": "studies/B29-prior-forecast-exits/accounts/Y01/SEVERE.json.gz",
+      "artifact_source_bytes_equal": true,
+      "catalog_summary_exact": true,
+      "daily_drawdown_recomputed_exact": true,
+      "annual_recomputed_exact": true,
+      "positive_trade_top2_fraction_recomputed_exact": true,
+      "account_period_exact": true
+    },
+    {
+      "strategy": "Y01",
+      "case": "DELAY",
+      "source_path": "studies/B29-prior-forecast-exits/accounts/Y01/DELAY.json.gz",
+      "artifact_source_bytes_equal": true,
+      "catalog_summary_exact": true,
+      "daily_drawdown_recomputed_exact": true,
+      "annual_recomputed_exact": true,
+      "positive_trade_top2_fraction_recomputed_exact": true,
+      "account_period_exact": true
+    },
+    {
+      "strategy": "C02",
+      "case": "BASE",
+      "source_path": "studies/B31-constant-sizing-controls/accounts/C02/BASE.json.gz",
+      "artifact_source_bytes_equal": true,
+      "catalog_summary_exact": true,
+      "daily_drawdown_recomputed_exact": true,
+      "annual_recomputed_exact": true,
+      "positive_trade_top2_fraction_recomputed_exact": true,
+      "account_period_exact": true
+    },
+    {
+      "strategy": "C02",
+      "case": "STRESS",
+      "source_path": "studies/B31-constant-sizing-controls/accounts/C02/STRESS.json.gz",
+      "artifact_source_bytes_equal": true,
+      "catalog_summary_exact": true,
+      "daily_drawdown_recomputed_exact": true,
+      "annual_recomputed_exact": true,
+      "positive_trade_top2_fraction_recomputed_exact": true,
+      "account_period_exact": true
+    },
+    {
+      "strategy": "C02",
+      "case": "SEVERE",
+      "source_path": "studies/B31-constant-sizing-controls/accounts/C02/SEVERE.json.gz",
+      "artifact_source_bytes_equal": true,
+      "catalog_summary_exact": true,
+      "daily_drawdown_recomputed_exact": true,
+      "annual_recomputed_exact": true,
+      "positive_trade_top2_fraction_recomputed_exact": true,
+      "account_period_exact": true
+    },
+    {
+      "strategy": "C02",
+      "case": "DELAY",
+      "source_path": "studies/B31-constant-sizing-controls/accounts/C02/DELAY.json.gz",
+      "artifact_source_bytes_equal": true,
+      "catalog_summary_exact": true,
+      "daily_drawdown_recomputed_exact": true,
+      "annual_recomputed_exact": true,
+      "positive_trade_top2_fraction_recomputed_exact": true,
+      "account_period_exact": true
+    },
+    {
+      "strategy": "C04",
+      "case": "BASE",
+      "source_path": "studies/B31-constant-sizing-controls/accounts/C04/BASE.json.gz",
+      "artifact_source_bytes_equal": true,
+      "catalog_summary_exact": true,
+      "daily_drawdown_recomputed_exact": true,
+      "annual_recomputed_exact": true,
+      "positive_trade_top2_fraction_recomputed_exact": true,
+      "account_period_exact": true
+    },
+    {
+      "strategy": "C04",
+      "case": "STRESS",
+      "source_path": "studies/B31-constant-sizing-controls/accounts/C04/STRESS.json.gz",
+      "artifact_source_bytes_equal": true,
+      "catalog_summary_exact": true,
+      "daily_drawdown_recomputed_exact": true,
+      "annual_recomputed_exact": true,
+      "positive_trade_top2_fraction_recomputed_exact": true,
+      "account_period_exact": true
+    },
+    {
+      "strategy": "C04",
+      "case": "SEVERE",
+      "source_path": "studies/B31-constant-sizing-controls/accounts/C04/SEVERE.json.gz",
+      "artifact_source_bytes_equal": true,
+      "catalog_summary_exact": true,
+      "daily_drawdown_recomputed_exact": true,
+      "annual_recomputed_exact": true,
+      "positive_trade_top2_fraction_recomputed_exact": true,
+      "account_period_exact": true
+    },
+    {
+      "strategy": "C04",
+      "case": "DELAY",
+      "source_path": "studies/B31-constant-sizing-controls/accounts/C04/DELAY.json.gz",
+      "artifact_source_bytes_equal": true,
+      "catalog_summary_exact": true,
+      "daily_drawdown_recomputed_exact": true,
+      "annual_recomputed_exact": true,
+      "positive_trade_top2_fraction_recomputed_exact": true,
+      "account_period_exact": true
+    }
+  ],
+  "all_core_card_checks_pass": true,
+  "all_book_checks_pass": true,
+  "catalog_root_structured_costs_present": false,
+  "catalog_root_explicit_new2026validation_false": false,
+  "global_index_disambiguates_B88A_from_B51": true,
+  "global_index_rejects_shared_high_return_independent_alpha": true,
+  "C02_C04_source_eligibility": [
+    {
+      "fold_year": 2018,
+      "Y01": false,
+      "Y04": false,
+      "matches_2020_onward": true
+    },
+    {
+      "fold_year": 2019,
+      "Y01": false,
+      "Y04": false,
+      "matches_2020_onward": true
+    },
+    {
+      "fold_year": 2020,
+      "Y01": true,
+      "Y04": true,
+      "matches_2020_onward": true
+    },
+    {
+      "fold_year": 2021,
+      "Y01": true,
+      "Y04": true,
+      "matches_2020_onward": true
+    },
+    {
+      "fold_year": 2022,
+      "Y01": true,
+      "Y04": true,
+      "matches_2020_onward": true
+    },
+    {
+      "fold_year": 2023,
+      "Y01": true,
+      "Y04": true,
+      "matches_2020_onward": true
+    },
+    {
+      "fold_year": 2024,
+      "Y01": true,
+      "Y04": true,
+      "matches_2020_onward": true
+    },
+    {
+      "fold_year": 2025,
+      "Y01": true,
+      "Y04": true,
+      "matches_2020_onward": true
+    }
+  ],
+  "missing_fields_by_card": {
+    "LP35": [
+      "catalog_explicit_validation_false_boolean",
+      "catalog_structured_model_families_present",
+      "source_study_explicit_in_card",
+      "explicit_cost_parameter_or_cost_table_link",
+      "annual_breakdown_or_link_in_card",
+      "positive_trade_concentration_or_link_in_card"
+    ],
+    "TS04": [
+      "catalog_explicit_validation_false_boolean",
+      "catalog_structured_model_families_present",
+      "source_study_explicit_in_card",
+      "explicit_cost_parameter_or_cost_table_link",
+      "annual_breakdown_or_link_in_card",
+      "positive_trade_concentration_or_link_in_card"
+    ],
+    "ME01": [
+      "catalog_explicit_validation_false_boolean",
+      "catalog_structured_model_families_present",
+      "source_study_explicit_in_card",
+      "explicit_cost_parameter_or_cost_table_link",
+      "annual_breakdown_or_link_in_card",
+      "positive_trade_concentration_or_link_in_card"
+    ],
+    "MX03": [
+      "catalog_explicit_validation_false_boolean",
+      "catalog_structured_model_families_present",
+      "source_study_explicit_in_card",
+      "explicit_cost_parameter_or_cost_table_link",
+      "annual_breakdown_or_link_in_card",
+      "positive_trade_concentration_or_link_in_card"
+    ],
+    "B88A_S03": [
+      "catalog_explicit_validation_false_boolean",
+      "catalog_structured_model_families_present",
+      "source_study_explicit_in_card",
+      "explicit_cost_parameter_or_cost_table_link",
+      "annual_breakdown_or_link_in_card",
+      "positive_trade_concentration_or_link_in_card"
+    ],
+    "K02": [
+      "catalog_explicit_validation_false_boolean",
+      "catalog_structured_model_families_present",
+      "source_study_explicit_in_card",
+      "explicit_cost_parameter_or_cost_table_link",
+      "annual_breakdown_or_link_in_card",
+      "positive_trade_concentration_or_link_in_card"
+    ],
+    "Y01": [
+      "catalog_explicit_validation_false_boolean",
+      "catalog_structured_model_families_present",
+      "source_study_explicit_in_card",
+      "explicit_cost_parameter_or_cost_table_link",
+      "annual_breakdown_or_link_in_card",
+      "positive_trade_concentration_or_link_in_card"
+    ],
+    "C02": [
+      "catalog_explicit_validation_false_boolean",
+      "catalog_structured_model_families_present",
+      "source_study_explicit_in_card",
+      "explicit_cost_parameter_or_cost_table_link",
+      "annual_breakdown_or_link_in_card",
+      "positive_trade_concentration_or_link_in_card"
+    ],
+    "C04": [
+      "catalog_explicit_validation_false_boolean",
+      "catalog_structured_model_families_present",
+      "source_study_explicit_in_card",
+      "explicit_cost_parameter_or_cost_table_link",
+      "annual_breakdown_or_link_in_card",
+      "positive_trade_concentration_or_link_in_card"
+    ]
+  },
+  "new_model_or_account_execution": false,
+  "boundary_regression_or_independent_environment_test": false,
+  "source_or_delivery_written": false,
+  "forbidden_economic_data_read": false,
+  "limitation": "Stored-book arithmetic/documentation parity only; not an independent native replay, external market benchmark, or fresh validation."
+}

@@ -1,0 +1,157 @@
+{
+  "round": 6,
+  "all_checks_pass": true,
+  "strategy": "LP35",
+  "scenario_costs_fee_slip_lag": {
+    "BASE": [
+      0.001,
+      0.0005,
+      1
+    ],
+    "DELAY": [
+      0.003,
+      0.001,
+      2
+    ],
+    "SEVERE": [
+      0.005,
+      0.002,
+      1
+    ],
+    "STRESS": [
+      0.003,
+      0.001,
+      1
+    ]
+  },
+  "scenario_annual_borrow": {
+    "BASE": 0.05,
+    "DELAY": 0.1,
+    "SEVERE": 0.3,
+    "STRESS": 0.1
+  },
+  "equal_initial_budget_quantity_check": [
+    {
+      "case": "BASE",
+      "date": "2018-01-01",
+      "entry_price": "13457.92",
+      "quantity": "0.00556",
+      "equal_initial_budget": "75",
+      "annual_borrow_rate": "0.05"
+    },
+    {
+      "case": "DELAY",
+      "date": "2018-01-02",
+      "entry_price": "14739.56",
+      "quantity": "0.00507",
+      "equal_initial_budget": "75",
+      "annual_borrow_rate": "0.1"
+    },
+    {
+      "case": "SEVERE",
+      "date": "2018-01-01",
+      "entry_price": "13437.72",
+      "quantity": "0.00555",
+      "equal_initial_budget": "75",
+      "annual_borrow_rate": "0.3"
+    },
+    {
+      "case": "STRESS",
+      "date": "2018-01-01",
+      "entry_price": "13451.18",
+      "quantity": "0.00555",
+      "equal_initial_budget": "75",
+      "annual_borrow_rate": "0.1"
+    }
+  ],
+  "shared_model_scores_2020_04_29": {
+    "BASE_TREE": 0.14276756316885422,
+    "CAL44_STOP": 0.14644433905267146
+  },
+  "same_signal_different_cost_paths": [
+    {
+      "case": "BASE",
+      "shared_signal_date": "2020-04-29",
+      "entry_date": "2020-04-30",
+      "quantity": "0.03944",
+      "entry_price": "8656.74",
+      "trigger_date": "2021-01-07",
+      "trigger_reason": "TAKE_PROFIT",
+      "exit_date": "2021-01-08",
+      "exit_reason": "TAKE_PROFIT",
+      "risk_check_date": "2021-01-07",
+      "net_asset_pnl_on_basis": "3.518759513773385378321397699",
+      "take_profit_threshold": "3.5",
+      "threshold_crossed": true,
+      "stored_NAV_identity_pass": true
+    },
+    {
+      "case": "STRESS",
+      "shared_signal_date": "2020-04-29",
+      "entry_date": "2020-04-30",
+      "quantity": "0.04030",
+      "entry_price": "8661.07",
+      "trigger_date": "2021-01-08",
+      "trigger_reason": "TAKE_PROFIT",
+      "exit_date": "2021-01-09",
+      "exit_reason": "TAKE_PROFIT",
+      "risk_check_date": "2021-01-07",
+      "net_asset_pnl_on_basis": "3.496219807353373652137789252",
+      "take_profit_threshold": "3.5",
+      "threshold_crossed": false,
+      "stored_NAV_identity_pass": true
+    },
+    {
+      "case": "SEVERE",
+      "shared_signal_date": "2020-04-29",
+      "entry_date": "2020-04-30",
+      "quantity": "0.03420",
+      "entry_price": "8669.72",
+      "trigger_date": "2021-01-08",
+      "trigger_reason": "TAKE_PROFIT",
+      "exit_date": "2021-01-09",
+      "exit_reason": "TAKE_PROFIT",
+      "risk_check_date": "2021-01-07",
+      "net_asset_pnl_on_basis": "3.469323694983877436704676008",
+      "take_profit_threshold": "3.5",
+      "threshold_crossed": false,
+      "stored_NAV_identity_pass": true
+    },
+    {
+      "case": "DELAY",
+      "shared_signal_date": "2020-04-29",
+      "entry_date": "2020-05-01",
+      "quantity": "0.02806",
+      "entry_price": "8864.40",
+      "trigger_date": "2021-01-08",
+      "trigger_reason": "TAKE_PROFIT",
+      "exit_date": "2021-01-10",
+      "exit_reason": "TAKE_PROFIT"
+    }
+  ],
+  "positive_forecast_negative_trade": {
+    "signal_date": "2019-07-01",
+    "scores": {
+      "BASE_TREE": 0.09465620981453528,
+      "CAL44_STOP": 0.21781035556551936
+    },
+    "cost_case": "STRESS",
+    "trade": {
+      "direction": 1,
+      "entry_date": "2019-07-02",
+      "entry_price": "10776.85",
+      "exit_date": "2019-08-29",
+      "exit_price": "9472.82",
+      "exit_reason": "SIGNAL",
+      "fees": "2.01929709",
+      "financing": "0E-27",
+      "gross_pnl": "-43.3459572",
+      "pnl": "-45.36525429000000000000000000",
+      "policy_year": 2019,
+      "quantity": "0.03324",
+      "terminal": false
+    },
+    "interpretation": "gross也已为负，不能把该次亏损全归因于费用；监督目标、持仓规则及实现不确定性均不同于利润保证。"
+  },
+  "scope": "仅四成本开发期已存账户及固定模型预报对照/算术重核，未调用native engine或任何原写入器。"
+}

@@ -1,0 +1,452 @@
+{
+  "audit": "R10 bounded independent package-statistics audit",
+  "candidate_git_commit": "1b008bfd4a9d1af9a73ff830fb7f8a1b72425fbf",
+  "release_manifest_sha256": "b9c03b01ef32bd63c6e61f61207f32ee70c6de27560ef4e8df1f33686dca2caa",
+  "release_files_verified_hash_and_size": 886,
+  "review_paths_read": 0,
+  "source_period": [
+    "2017-01-01",
+    "2025-12-31"
+  ],
+  "registry": {
+    "standard_registration_triple_hash_matches": 115,
+    "nonstandard_contract_triple_hash_matches": 7,
+    "recipe_entries": 1717,
+    "recipe_zero_rows": 26,
+    "effective_independent_trials": "unknown; no calculation attempted"
+  },
+  "models": {
+    "fold_family_rows": 48,
+    "raw_model_source_hash_matches": 266,
+    "numeric_final_states_counted": 392,
+    "missing_2018_rows": 6,
+    "numeric_final_states_by_year": {
+      "2019": 56,
+      "2020": 56,
+      "2021": 56,
+      "2022": 56,
+      "2023": 56,
+      "2024": 56,
+      "2025": 56
+    },
+    "new_inference_or_refit_executed": false
+  },
+  "training_packages": [
+    {
+      "family": "base_tree",
+      "fold_year": 2018,
+      "physical_prefix_rows": 365,
+      "selected_training_ids": 0,
+      "target_end_bound_checked": false,
+      "missing_preserved": true
+    },
+    {
+      "family": "base_tree",
+      "fold_year": 2019,
+      "physical_prefix_rows": 730,
+      "selected_training_ids": 411,
+      "target_end_bound_checked": true,
+      "missing_preserved": false
+    },
+    {
+      "family": "base_tree",
+      "fold_year": 2020,
+      "physical_prefix_rows": 1095,
+      "selected_training_ids": 776,
+      "target_end_bound_checked": true,
+      "missing_preserved": false
+    },
+    {
+      "family": "base_tree",
+      "fold_year": 2021,
+      "physical_prefix_rows": 1461,
+      "selected_training_ids": 1142,
+      "target_end_bound_checked": true,
+      "missing_preserved": false
+    },
+    {
+      "family": "base_tree",
+      "fold_year": 2022,
+      "physical_prefix_rows": 1826,
+      "selected_training_ids": 1507,
+      "target_end_bound_checked": true,
+      "missing_preserved": false
+    },
+    {
+      "family": "base_tree",
+      "fold_year": 2023,
+      "physical_prefix_rows": 2191,
+      "selected_training_ids": 1872,
+      "target_end_bound_checked": true,
+      "missing_preserved": false
+    },
+    {
+      "family": "base_tree",
+      "fold_year": 2024,
+      "physical_prefix_rows": 2556,
+      "selected_training_ids": 2237,
+      "target_end_bound_checked": true,
+      "missing_preserved": false
+    },
+    {
+      "family": "base_tree",
+      "fold_year": 2025,
+      "physical_prefix_rows": 2922,
+      "selected_training_ids": 2603,
+      "target_end_bound_checked": true,
+      "missing_preserved": false
+    },
+    {
+      "family": "stop44",
+      "fold_year": 2018,
+      "physical_prefix_rows": 365,
+      "selected_training_ids": 0,
+      "target_end_bound_checked": false,
+      "missing_preserved": true
+    },
+    {
+      "family": "stop44",
+      "fold_year": 2019,
+      "physical_prefix_rows": 730,
+      "selected_training_ids": 411,
+      "target_end_bound_checked": true,
+      "missing_preserved": false
+    },
+    {
+      "family": "stop44",
+      "fold_year": 2020,
+      "physical_prefix_rows": 1095,
+      "selected_training_ids": 776,
+      "target_end_bound_checked": true,
+      "missing_preserved": false
+    },
+    {
+      "family": "stop44",
+      "fold_year": 2021,
+      "physical_prefix_rows": 1461,
+      "selected_training_ids": 1142,
+      "target_end_bound_checked": true,
+      "missing_preserved": false
+    },
+    {
+      "family": "stop44",
+      "fold_year": 2022,
+      "physical_prefix_rows": 1826,
+      "selected_training_ids": 1507,
+      "target_end_bound_checked": true,
+      "missing_preserved": false
+    },
+    {
+      "family": "stop44",
+      "fold_year": 2023,
+      "physical_prefix_rows": 2191,
+      "selected_training_ids": 1872,
+      "target_end_bound_checked": true,
+      "missing_preserved": false
+    },
+    {
+      "family": "stop44",
+      "fold_year": 2024,
+      "physical_prefix_rows": 2556,
+      "selected_training_ids": 2237,
+      "target_end_bound_checked": true,
+      "missing_preserved": false
+    },
+    {
+      "family": "stop44",
+      "fold_year": 2025,
+      "physical_prefix_rows": 2922,
+      "selected_training_ids": 2603,
+      "target_end_bound_checked": true,
+      "missing_preserved": false
+    },
+    {
+      "family": "price47",
+      "fold_year": 2018,
+      "physical_prefix_rows": 365,
+      "selected_training_ids": 0,
+      "target_end_bound_checked": false,
+      "missing_preserved": true
+    },
+    {
+      "family": "price47",
+      "fold_year": 2019,
+      "physical_prefix_rows": 730,
+      "selected_training_ids": 411,
+      "target_end_bound_checked": true,
+      "missing_preserved": false
+    },
+    {
+      "family": "price47",
+      "fold_year": 2020,
+      "physical_prefix_rows": 1095,
+      "selected_training_ids": 776,
+      "target_end_bound_checked": true,
+      "missing_preserved": false
+    },
+    {
+      "family": "price47",
+      "fold_year": 2021,
+      "physical_prefix_rows": 1461,
+      "selected_training_ids": 1142,
+      "target_end_bound_checked": true,
+      "missing_preserved": false
+    },
+    {
+      "family": "price47",
+      "fold_year": 2022,
+      "physical_prefix_rows": 1826,
+      "selected_training_ids": 1507,
+      "target_end_bound_checked": true,
+      "missing_preserved": false
+    },
+    {
+      "family": "price47",
+      "fold_year": 2023,
+      "physical_prefix_rows": 2191,
+      "selected_training_ids": 1872,
+      "target_end_bound_checked": true,
+      "missing_preserved": false
+    },
+    {
+      "family": "price47",
+      "fold_year": 2024,
+      "physical_prefix_rows": 2556,
+      "selected_training_ids": 2237,
+      "target_end_bound_checked": true,
+      "missing_preserved": false
+    },
+    {
+      "family": "price47",
+      "fold_year": 2025,
+      "physical_prefix_rows": 2922,
+      "selected_training_ids": 2603,
+      "target_end_bound_checked": true,
+      "missing_preserved": false
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2018,
+      "physical_prefix_rows": 365,
+      "selected_training_ids": 0,
+      "target_end_bound_checked": false,
+      "missing_preserved": true
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2019,
+      "physical_prefix_rows": 730,
+      "selected_training_ids": 408,
+      "target_end_bound_checked": true,
+      "missing_preserved": false
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2020,
+      "physical_prefix_rows": 1095,
+      "selected_training_ids": 771,
+      "target_end_bound_checked": true,
+      "missing_preserved": false
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2021,
+      "physical_prefix_rows": 1461,
+      "selected_training_ids": 1135,
+      "target_end_bound_checked": true,
+      "missing_preserved": false
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2022,
+      "physical_prefix_rows": 1826,
+      "selected_training_ids": 1498,
+      "target_end_bound_checked": true,
+      "missing_preserved": false
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2023,
+      "physical_prefix_rows": 2191,
+      "selected_training_ids": 1861,
+      "target_end_bound_checked": true,
+      "missing_preserved": false
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2024,
+      "physical_prefix_rows": 2556,
+      "selected_training_ids": 2224,
+      "target_end_bound_checked": true,
+      "missing_preserved": false
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2025,
+      "physical_prefix_rows": 2922,
+      "selected_training_ids": 2588,
+      "target_end_bound_checked": true,
+      "missing_preserved": false
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2018,
+      "physical_prefix_rows": 365,
+      "selected_training_ids": 0,
+      "target_end_bound_checked": false,
+      "missing_preserved": true
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2019,
+      "physical_prefix_rows": 730,
+      "selected_training_ids": 408,
+      "target_end_bound_checked": true,
+      "missing_preserved": false
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2020,
+      "physical_prefix_rows": 1095,
+      "selected_training_ids": 771,
+      "target_end_bound_checked": true,
+      "missing_preserved": false
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2021,
+      "physical_prefix_rows": 1461,
+      "selected_training_ids": 1135,
+      "target_end_bound_checked": true,
+      "missing_preserved": false
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2022,
+      "physical_prefix_rows": 1826,
+      "selected_training_ids": 1498,
+      "target_end_bound_checked": true,
+      "missing_preserved": false
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2023,
+      "physical_prefix_rows": 2191,
+      "selected_training_ids": 1861,
+      "target_end_bound_checked": true,
+      "missing_preserved": false
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2024,
+      "physical_prefix_rows": 2556,
+      "selected_training_ids": 2224,
+      "target_end_bound_checked": true,
+      "missing_preserved": false
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2025,
+      "physical_prefix_rows": 2922,
+      "selected_training_ids": 2588,
+      "target_end_bound_checked": true,
+      "missing_preserved": false
+    },
+    {
+      "family": "mining58",
+      "fold_year": 2018,
+      "physical_prefix_rows": 365,
+      "selected_training_ids": 0,
+      "target_end_bound_checked": false,
+      "missing_preserved": true
+    },
+    {
+      "family": "mining58",
+      "fold_year": 2019,
+      "physical_prefix_rows": 730,
+      "selected_training_ids": 411,
+      "target_end_bound_checked": true,
+      "missing_preserved": false
+    },
+    {
+      "family": "mining58",
+      "fold_year": 2020,
+      "physical_prefix_rows": 1095,
+      "selected_training_ids": 776,
+      "target_end_bound_checked": true,
+      "missing_preserved": false
+    },
+    {
+      "family": "mining58",
+      "fold_year": 2021,
+      "physical_prefix_rows": 1461,
+      "selected_training_ids": 1142,
+      "target_end_bound_checked": true,
+      "missing_preserved": false
+    },
+    {
+      "family": "mining58",
+      "fold_year": 2022,
+      "physical_prefix_rows": 1826,
+      "selected_training_ids": 1507,
+      "target_end_bound_checked": true,
+      "missing_preserved": false
+    },
+    {
+      "family": "mining58",
+      "fold_year": 2023,
+      "physical_prefix_rows": 2191,
+      "selected_training_ids": 1872,
+      "target_end_bound_checked": true,
+      "missing_preserved": false
+    },
+    {
+      "family": "mining58",
+      "fold_year": 2024,
+      "physical_prefix_rows": 2556,
+      "selected_training_ids": 2237,
+      "target_end_bound_checked": true,
+      "missing_preserved": false
+    },
+    {
+      "family": "mining58",
+      "fold_year": 2025,
+      "physical_prefix_rows": 2922,
+      "selected_training_ids": 2603,
+      "target_end_bound_checked": true,
+      "missing_preserved": false
+    }
+  ],
+  "bounded_economic_artifacts": {
+    "price_days": 3287,
+    "price_first": "2017-01-01",
+    "price_last": "2025-12-31",
+    "mining_projected_days": 3287,
+    "accounts_date_checked": 36,
+    "account_marks_each": 2922
+  },
+  "review_design": {
+    "roles": 6,
+    "rounds": 12,
+    "planned_role_round_submissions": 72,
+    "independent_market_backtests_implied": false,
+    "completion_status_audited": false
+  },
+  "executed_by_this_audit": [
+    "Hash and size integrity checks",
+    "Registry and supplemental-contract content binding",
+    "Model bytes/counts and fold windows",
+    "Training-prefix shape/finite/ids/maturity bounds",
+    "Economic record date bounds",
+    "Shared review-design arithmetic only"
+  ],
+  "not_executed_by_this_audit": [
+    "No model inference rerun",
+    "No estimator fit or inner selection rerun",
+    "No Native/account replay",
+    "No original adaptive full research workflow reconstruction",
+    "No PBO/DSR significance calculation",
+    "No other expert or chair submissions inspected",
+    "No 2026 economic observation opened"
+  ]
+}

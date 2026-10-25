@@ -1,0 +1,308 @@
+{
+  "round": 5,
+  "all_checks_pass": true,
+  "tolerance": 2e-12,
+  "delivery_models_py_sha256": "be94b2dd9fc765cd6da3b3b56449795f14e8c872d0c837d274e795366729b29f",
+  "numeric_files_checked": 76,
+  "independent_scalar_state_predictions": 336,
+  "aggregate_predictions_checked": 36,
+  "max_sample_error_vs_original": 1.3877787807814457e-17,
+  "max_state_error_vs_delivery": 0.0,
+  "threshold_float32_canary": {
+    "input_values": [
+      0.5,
+      0.5000000000000001,
+      0.5000000596046448
+    ],
+    "scalar_predictions": [
+      1.16,
+      1.16,
+      1.46
+    ],
+    "pass": true
+  },
+  "complete_pipeline_samples": [
+    {
+      "family": "price47",
+      "sample_count": 6,
+      "max_error_vs_independent_scalar": 3.469446951953614e-18
+    },
+    {
+      "family": "short_median",
+      "sample_count": 6,
+      "max_error_vs_independent_scalar": 1.3877787807814457e-17
+    }
+  ],
+  "results": [
+    {
+      "family": "base_tree",
+      "year": 2019,
+      "dates": [
+        "2018-12-31",
+        "2019-07-01",
+        "2019-12-30"
+      ],
+      "state_count": 7,
+      "scalar_predictions": [
+        -0.10864034724475989,
+        0.09465620981453526,
+        -0.049750874920758206
+      ],
+      "source_predictions": [
+        -0.10864034724475988,
+        0.09465620981453528,
+        -0.049750874920758206
+      ],
+      "max_error_against_source": 1.3877787807814457e-17,
+      "max_error_against_production_state_predict": 0.0
+    },
+    {
+      "family": "base_tree",
+      "year": 2025,
+      "dates": [
+        "2024-12-31",
+        "2025-07-01",
+        "2025-12-30"
+      ],
+      "state_count": 7,
+      "scalar_predictions": [
+        0.040087600594425225,
+        0.02132358496281565,
+        0.02194406997954581
+      ],
+      "source_predictions": [
+        0.040087600594425225,
+        0.02132358496281565,
+        0.02194406997954581
+      ],
+      "max_error_against_source": 0.0,
+      "max_error_against_production_state_predict": 0.0
+    },
+    {
+      "family": "stop44",
+      "year": 2019,
+      "dates": [
+        "2018-12-31",
+        "2019-07-01",
+        "2019-12-30"
+      ],
+      "state_count": 7,
+      "scalar_predictions": [
+        -0.06499423620085122,
+        0.17142519618181634,
+        -0.014040530134726769
+      ],
+      "source_predictions": [
+        -0.06499423620085122,
+        0.17142519618181634,
+        -0.014040530134726769
+      ],
+      "max_error_against_source": 0.0,
+      "max_error_against_production_state_predict": 0.0
+    },
+    {
+      "family": "stop44",
+      "year": 2025,
+      "dates": [
+        "2024-12-31",
+        "2025-07-01",
+        "2025-12-30"
+      ],
+      "state_count": 7,
+      "scalar_predictions": [
+        0.016550182616665902,
+        0.011970163122096967,
+        0.007630980609414352
+      ],
+      "source_predictions": [
+        0.016550182616665902,
+        0.011970163122096967,
+        0.0076309806094143505
+      ],
+      "max_error_against_source": 1.734723475976807e-18,
+      "max_error_against_production_state_predict": 0.0
+    },
+    {
+      "family": "price47",
+      "year": 2019,
+      "dates": [
+        "2018-12-31",
+        "2019-07-01",
+        "2019-12-30"
+      ],
+      "state_count": 7,
+      "scalar_predictions": [
+        -0.07022639348898767,
+        0.21781035556551936,
+        -0.029582701071741064
+      ],
+      "source_predictions": [
+        -0.07022639348898767,
+        0.21781035556551936,
+        -0.029582701071741064
+      ],
+      "max_error_against_source": 0.0,
+      "max_error_against_production_state_predict": 0.0
+    },
+    {
+      "family": "price47",
+      "year": 2025,
+      "dates": [
+        "2024-12-31",
+        "2025-07-01",
+        "2025-12-30"
+      ],
+      "state_count": 7,
+      "scalar_predictions": [
+        0.01976908702524793,
+        0.018848152146981247,
+        -0.003455829360094803
+      ],
+      "source_predictions": [
+        0.01976908702524793,
+        0.01884815214698125,
+        -0.0034558293600948026
+      ],
+      "max_error_against_source": 3.469446951953614e-18,
+      "max_error_against_production_state_predict": 0.0
+    },
+    {
+      "family": "short_huber",
+      "year": 2019,
+      "dates": [
+        "2018-12-31",
+        "2019-07-01",
+        "2019-12-30"
+      ],
+      "state_count": 14,
+      "scalar_predictions": [
+        -0.11871016348513905,
+        -0.07560032788080193,
+        0.2109036837488688
+      ],
+      "source_predictions": [
+        -0.11871016348513905,
+        -0.07560032788080193,
+        0.2109036837488688
+      ],
+      "max_error_against_source": 0.0,
+      "max_error_against_production_state_predict": 0.0
+    },
+    {
+      "family": "short_huber",
+      "year": 2025,
+      "dates": [
+        "2024-12-31",
+        "2025-07-01",
+        "2025-12-30"
+      ],
+      "state_count": 14,
+      "scalar_predictions": [
+        -0.05125775875835624,
+        -0.09777333497250415,
+        -0.03724479364587586
+      ],
+      "source_predictions": [
+        -0.051257758758356246,
+        -0.09777333497250416,
+        -0.03724479364587586
+      ],
+      "max_error_against_source": 1.3877787807814457e-17,
+      "max_error_against_production_state_predict": 0.0
+    },
+    {
+      "family": "short_median",
+      "year": 2019,
+      "dates": [
+        "2018-12-31",
+        "2019-07-01",
+        "2019-12-30"
+      ],
+      "state_count": 14,
+      "scalar_predictions": [
+        -0.11970850135770264,
+        -0.1230270721810329,
+        0.16936169489693353
+      ],
+      "source_predictions": [
+        -0.11970850135770265,
+        -0.1230270721810329,
+        0.16936169489693353
+      ],
+      "max_error_against_source": 1.3877787807814457e-17,
+      "max_error_against_production_state_predict": 0.0
+    },
+    {
+      "family": "short_median",
+      "year": 2025,
+      "dates": [
+        "2024-12-31",
+        "2025-07-01",
+        "2025-12-30"
+      ],
+      "state_count": 14,
+      "scalar_predictions": [
+        -0.1072498187159357,
+        -0.1070890406004361,
+        -0.041874661104082986
+      ],
+      "source_predictions": [
+        -0.1072498187159357,
+        -0.1070890406004361,
+        -0.04187466110408298
+      ],
+      "max_error_against_source": 6.938893903907228e-18,
+      "max_error_against_production_state_predict": 0.0
+    },
+    {
+      "family": "mining58",
+      "year": 2019,
+      "dates": [
+        "2018-12-31",
+        "2019-07-01",
+        "2019-12-30"
+      ],
+      "state_count": 7,
+      "scalar_predictions": [
+        -0.08745210330522023,
+        0.08776429640845394,
+        -0.03407723622206587
+      ],
+      "source_predictions": [
+        -0.08745210330522023,
+        0.08776429640845396,
+        -0.03407723622206587
+      ],
+      "max_error_against_source": 1.3877787807814457e-17,
+      "max_error_against_production_state_predict": 0.0
+    },
+    {
+      "family": "mining58",
+      "year": 2025,
+      "dates": [
+        "2024-12-31",
+        "2025-07-01",
+        "2025-12-30"
+      ],
+      "state_count": 7,
+      "scalar_predictions": [
+        0.09596431801407901,
+        0.03655556166874102,
+        0.05576571432359555
+      ],
+      "source_predictions": [
+        0.09596431801407901,
+        0.03655556166874103,
+        0.05576571432359555
+      ],
+      "max_error_against_source": 6.938893903907228e-18,
+      "max_error_against_production_state_predict": 0.0
+    }
+  ],
+  "root_initial_receipt_observed": {
+    "status": "PASS",
+    "family_count": 6,
+    "max_error": 0.0
+  },
+  "scope": "2019/2025每族首/中/末3个预定决策日；独立struct float32+标量节点遍历；两族完整推理函数抽样核对；无重训/原独占写入器/2026经济数据读取。"
+}

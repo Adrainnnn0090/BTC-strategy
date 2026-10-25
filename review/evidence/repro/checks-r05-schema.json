@@ -1,0 +1,30 @@
+{
+  "feature_schema_sha256": "d832e171f83a62ee61f35a8d72ca78dabc5b2d59601fb79245a9502b11773999",
+  "feature_order_checks": {
+    "CAL44": true,
+    "PRICE47": true,
+    "MINING58_DYNAMICS_L60": true,
+    "mining_forced_zero_flags": true
+  },
+  "all_order_checks_pass": true,
+  "synthetic_path_rejections": {
+    "../repro-outside-placeholder": {
+      "rejected_before_file_open": true,
+      "message": "artifact path escapes repository"
+    },
+    "artifacts/2026/repro-placeholder": {
+      "rejected_before_file_open": true,
+      "message": "2026 economic data excluded"
+    },
+    "artifacts/V01-2026-retained-validation/repro-placeholder": {
+      "rejected_before_file_open": true,
+      "message": "2026 economic data excluded"
+    },
+    "artifacts/V02-buy-and-hold-validation/repro-placeholder": {
+      "rejected_before_file_open": true,
+      "message": "2026 economic data excluded"
+    }
+  },
+  "no_forbidden_file_opened": true,
+  "source_or_delivery_written": false
+}

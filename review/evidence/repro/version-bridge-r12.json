@@ -1,0 +1,88 @@
+{
+  "round": 12,
+  "R10_commit": "1b008bfd4a9d1af9a73ff830fb7f8a1b72425fbf",
+  "R12_commit": "c7439216d55207a9a480153d7555f6709817e70a",
+  "economic_payload_and_execution_paths": [
+    {
+      "path": "artifacts/accounts",
+      "R10_blob_or_tree": "f9b7de2038138d53744198e45c0f13ada6977497",
+      "R12_blob_or_tree": "f9b7de2038138d53744198e45c0f13ada6977497",
+      "identical": true
+    },
+    {
+      "path": "artifacts/factors",
+      "R10_blob_or_tree": "a95afaf91bb9c7f85bbbcaaef5042ad7c322423c",
+      "R12_blob_or_tree": "a95afaf91bb9c7f85bbbcaaef5042ad7c322423c",
+      "identical": true
+    },
+    {
+      "path": "models/base_tree",
+      "R10_blob_or_tree": "863b58dab13669e298b12ac8155dffb69fe437ae",
+      "R12_blob_or_tree": "863b58dab13669e298b12ac8155dffb69fe437ae",
+      "identical": true
+    },
+    {
+      "path": "models/stop44",
+      "R10_blob_or_tree": "da3e96ec4247f118757c79a66d6241c2333fe95f",
+      "R12_blob_or_tree": "da3e96ec4247f118757c79a66d6241c2333fe95f",
+      "identical": true
+    },
+    {
+      "path": "models/price47",
+      "R10_blob_or_tree": "62cb1b3cd6cf71f52edff2781dfdc643ff77ef81",
+      "R12_blob_or_tree": "62cb1b3cd6cf71f52edff2781dfdc643ff77ef81",
+      "identical": true
+    },
+    {
+      "path": "models/short_huber",
+      "R10_blob_or_tree": "399a63008175c6a3f2a69ccb318aeea69a59a75f",
+      "R12_blob_or_tree": "399a63008175c6a3f2a69ccb318aeea69a59a75f",
+      "identical": true
+    },
+    {
+      "path": "models/short_median",
+      "R10_blob_or_tree": "3c0860d455a5de607f2c867bb40f9e155931fa50",
+      "R12_blob_or_tree": "3c0860d455a5de607f2c867bb40f9e155931fa50",
+      "identical": true
+    },
+    {
+      "path": "models/mining58",
+      "R10_blob_or_tree": "65ba1be25f0362670e9d561a455f737103025805",
+      "R12_blob_or_tree": "65ba1be25f0362670e9d561a455f737103025805",
+      "identical": true
+    },
+    {
+      "path": "src/btc_strategy/_runtime",
+      "R10_blob_or_tree": "2c46d608930575e65c1bb6394f49700a93ec9b8c",
+      "R12_blob_or_tree": "2c46d608930575e65c1bb6394f49700a93ec9b8c",
+      "identical": true
+    },
+    {
+      "path": "src/btc_strategy/execution.py",
+      "R10_blob_or_tree": "7ca29d37807694abd74a8cacb2359c1982215dab",
+      "R12_blob_or_tree": "7ca29d37807694abd74a8cacb2359c1982215dab",
+      "identical": true
+    },
+    {
+      "path": "src/btc_strategy/costs.py",
+      "R10_blob_or_tree": "c357d327d2e24980a4c5c3072f982170375b9cd5",
+      "R12_blob_or_tree": "c357d327d2e24980a4c5c3072f982170375b9cd5",
+      "identical": true
+    },
+    {
+      "path": "src/btc_strategy/instrument.py",
+      "R10_blob_or_tree": "02ea31aa06e9a8d5dcfd3e09606bdf11ec12e501",
+      "R12_blob_or_tree": "02ea31aa06e9a8d5dcfd3e09606bdf11ec12e501",
+      "identical": true
+    },
+    {
+      "path": "src/btc_strategy/strategies.py",
+      "R10_blob_or_tree": "39cc9027f992fee815a30155fd4751b687be8345",
+      "R12_blob_or_tree": "39cc9027f992fee815a30155fd4751b687be8345",
+      "identical": true
+    }
+  ],
+  "all_selected_economic_paths_identical": true,
+  "replay_wrapper_diff_reviewed": "Only invalid cost-case precheck and descriptive metric_scope/risk_qualification output; Native run/audit/benchmark comparison body unchanged.",
+  "current_36_accounts_replayed": false
+}

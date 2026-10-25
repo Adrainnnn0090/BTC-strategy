@@ -1,0 +1,73 @@
+{
+  "conclusion": "原候选对抗检查确有缺口，全部保留失败；在c743921定向关闭2018缺失合同、V别名、训练plan身份/完整日期与未知cost早拒绝，并由发现者追加复测。当前实现可进入最终研究归档验收，不获得PIT、OOS或实盘资格。",
+  "scope_filter": "将a642de原19/20和其他残余明确记为未通过，不用正常数据重放或多数supported覆盖它们；只按修复后具体反例的独立重测关闭具体问题。可信manifest的内容一致与其真实性/覆盖范围另分层。",
+  "object_filter": "c743921是修复候选；原模型/训练数据/目标/账户与经济执行函数未变。附加三份retst是原R11问题的版本化关闭证据，不加算为三个市场样本或三轮审查。",
+  "actions": [
+    "接受并实施models的2018反向missing合同：2018不能被manifest改成present，任何numeric state读取前拒绝。",
+    "接受并实施data的V01/V02点号/下划线别名拒绝，以及plan.family/intyear/完整连续唯一过去日期/intcut/embargo6/missing身份检查，states与fit之前执行。",
+    "接受并实施risk的未知cost和坏类型在verify_targets/compose/model/engine之前拒绝；保留原gross标签和全部原summary值。",
+    "三位发现者r11-retest独立通过，原r11失败JSON及原check附件不覆写；补丁不更改权重、风险阈值或历史账户。",
+    "披露integrity信任清单身份、需Git提交/manifestSHA锚定；hook仍非OS sandbox，不扩大安全声明。"
+  ],
+  "chair_checks": [
+    "37项现有及新增关键边界测试通过；六实际模型全期推断0误差/None一致，九策略全部targets和entry permission相等。",
+    "price47/2025在当前严格plan校验下重拟7个封存最终state exact；是先前56state范围内的重复核验，不是新策略或新增7独立模型。",
+    "重建当前c743921的installed-wheel镜像sha256:79fcfc5131064b144d98bc625475b0a315bab53781c57a31ba3a28db0ec73640，networknone/readonly/nonroot/只挂新仓，实际六模型+36完整Native/Decimal通过。",
+    "读取六份原R11及三份追加retst所有证据；Git对比确认模型/原数据/训练prefix/原经济执行及纯运行代码未变，local Markdown链接检查无缺失。"
+  ],
+  "retests": {
+    "models": {
+      "path": "review/evidence/models/r11-retest.json",
+      "sha256": "0d7c6f7de894830c283c339670e8da2ef24f08c4ccc5c8cf0ff45a49b831a731"
+    },
+    "data": {
+      "path": "review/evidence/data/r11-retest.json",
+      "sha256": "ab9aa631d630dbf54894614fdd94991327759f61fe9b5039fe7cf798f4d95da4"
+    },
+    "risk": {
+      "path": "review/evidence/risk/r11-retest.json",
+      "sha256": "a0b867c9da4a66d9042f9c39b1a7139c2c9096bf8c776594c021b73e0192ece6"
+    }
+  },
+  "open": [
+    "历史Consumed与自适应规则选择、有效独立tests未知、严格来源PIT、真实报价/容量/借贷和融资后清算仍未解决。",
+    "refit全年度/inner-selection/历史全搜索不在本次已执行范围；当前56state仅2025抽样年度。",
+    "role-review是AI指令盲审而非OS六重沙箱或人类外部审计；2026真实经济值持续不读取。",
+    "最终R12六角色及主审尚待完成；不能提前称72提交完成。"
+  ],
+  "round": 11,
+  "submissions": {
+    "statistics": {
+      "verdict": "supported",
+      "conclusion": "a642de16相对1b008bf的代码修改仅给既有回放输出增加风险口径与资格文字；独立差异、AST和合成对抗检查支持历史数值/分类/来源绑定不变，Consumed、非新鲜OOS、有效独立tests未知及最终拟合不等于原选择复现的界限均保留，工程修复没有新增经济或统计证据。",
+      "sha256": "c7e80cd01ea020d3ab30e056c3f542bdc4b42f7c27d460365da22ae3be9f623c"
+    },
+    "data": {
+      "verdict": "qualified",
+      "conclusion": "a642de16已准确澄清training hook不是OS沙箱，关键模型/日期拒绝与封存训练前缀抽核通过；但合成测试仍发现验证文件别名未被路径模式拒绝、重复过去日期及错误plan.family可到达fit哨兵，故不能把本次文档修复解释为任意坏输入均被入口完整阻断。",
+      "sha256": "145e0fdc888cc58e4aa5e55a5c3e801dc2350cf82a1ef594c61b95a31a4f4271"
+    },
+    "models": {
+      "verdict": "qualified",
+      "conclusion": "候选a642de16的数字模型/数学运行代码保持R10状态，加载器20项有界合成检查中19项符合预期且无静默零值回退；但仍可把2018 manifest伪设为present并载入7个合成状态，缺少“2018必须missing/None”的强制历史合同。真实manifest未出现该问题，数值结论不因此失效，但此硬化缺口应修复后再验收，不能把本轮结果概括为全部对抗检查通过。",
+      "sha256": "c06c085b0c821ec750901fbb53eea628b33adbfb6e9d0b65b19e6ae314a8ad92"
+    },
+    "execution": {
+      "verdict": "supported",
+      "conclusion": "对a642de16的有界独立回归支持该补丁仅增加metric_scope与risk_qualification输出：LP35/BASE默认数字模型路径重建目标并运行Native后，完整account和summary保持原值，新增标签正确区分成交后/订单前后日度口径且不承诺连续敞口或成交亏损上限。",
+      "sha256": "1607420b4f68f47aaacd3dc9bdef5bcb267c5444e02207e10657af5e2e0d1be8"
+    },
+    "risk": {
+      "verdict": "qualified",
+      "conclusion": "a642de1的gross口径修复已在一份LP35/BASE历史重放中验证，新增说明字段以外的原API结果、账本与Decimal均精确不变；未来输入及CLI未知枚举前置拒绝通过，但Python run API对未知cost仍在目标处理后才拒绝，须限定其“前置”声明，paper/live等未解决风险不因标签修复而获得认证。",
+      "sha256": "52a0dd22cdc9e1c755bb11cad0ccf339b933d0c4e43579f10204ee32f90a8229"
+    },
+    "repro": {
+      "verdict": "supported",
+      "conclusion": "对候选a642de的本角色初始问题回归通过：无旧工程源码读取或替身的清洁导入、13个禁读路径、20个类型/年份/家族/完整日期读前例、2018不可用语义及price-only惰性因子均通过；私有合成模型/清单/审查工件的17项故障均拒绝。原第05/07轮失败保留。verify_integrity只认证所给清单的声明内容，故本轮另将实际886项清单锚定到冻结commit及SHA，不把任意空清单PASS0误称为完整发布验收。",
+      "sha256": "8828dca51bc3134cd5c887d1c2833d36eba48e881c29c9781da3b3d71065e372"
+    }
+  },
+  "not_external_human_audit": true,
+  "not_independent_market_samples": true
+}

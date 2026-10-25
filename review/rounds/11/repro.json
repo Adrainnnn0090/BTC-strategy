@@ -1,0 +1,64 @@
+{
+  "round": 11,
+  "role": "repro",
+  "topic": "修复与对抗性回归",
+  "conclusion": "对候选a642de的本角色初始问题回归通过：无旧工程源码读取或替身的清洁导入、13个禁读路径、20个类型/年份/家族/完整日期读前例、2018不可用语义及price-only惰性因子均通过；私有合成模型/清单/审查工件的17项故障均拒绝。原第05/07轮失败保留。verify_integrity只认证所给清单的声明内容，故本轮另将实际886项清单锚定到冻结commit及SHA，不把任意空清单PASS0误称为完整发布验收。",
+  "verdict": "supported",
+  "evidence": [
+    {
+      "source": "/workspace/BTCExpertReview/workspaces/repro/checks-r11.json:git_commit,code_sha_at_start,code_sha_at_end,clean_import_no_instrument_shim",
+      "actual_check": "独立新进程读取候选a642de16cea72875a99859e9108960b02636c584，artifacts/models/training/validation/integrity五模块起止SHA稳定。audit在导入前拒绝旧ledger、旧binance_robot代码与真实review文件，实际模块直接导入成功、无instrument替身、无被拒旧工程或真实review读取尝试。宿主第三方库仍来自现有虚拟环境；本轮不冒称再次进行了OS/container隔离，后者已有R10真实收据。"
+    },
+    {
+      "source": "/workspace/BTCExpertReview/workspaces/repro/checks-r11.json:path_pre_open_checks,API_pre_read_checks",
+      "actual_check": "13条合成路径（越界、绝对/tmp、未来年份、裸/大小写V01/V02及provenance未来占位）全部resolve阶段ValueError；20个API例全部在read或training guard安装前ValueError：含2026/2017、2025.0、True、字符串年、未知family、中间未来/重复/乱序日期、非有限/布尔价格。read/guard哨兵零触发；未打开真实禁读数据。第07轮记录的四路径与五API缺口在此版本已闭环。"
+    },
+    {
+      "source": "/workspace/BTCExpertReview/workspaces/repro/checks-r11.json:all_six_2018_states_missing,2018_prediction_None_preserved,price_only_lazy_feature_checks,training_role_predicates",
+      "actual_check": "六家族2018 annual_states均为空，合成2017完整前缀的2018预测保持全None；PRICE47仅days/prices即可得到500×47，不需mining或volume，未来扰动不改此前400日，短前缀与长前缀前400日精确相等。本仓test context/账户/其他年度或家族物料的训练路径谓词仍拒绝，合法当前训练包允许；没有运行refit或读取训练输入内容。"
+    },
+    {
+      "source": "/workspace/BTCExpertReview/workspaces/repro/checks-r11.json:synthetic_valid_model_baseline_pass,synthetic_fault_rejections,all_requested_faults_rejected",
+      "actual_check": "所有模型工件均为私有/tmp中手写的最小合成JSON/gzip，不修改共享manifest或真实模型。合法七seed基线可加载；重复seed、漏seed、payload漂移、跨年路径、错家族路径、错cutoff、错宽度、非2018 missing、缺第二head共9项均明确拒绝，复现并关闭第05轮接受重复/漏head/漂移状态的接口缺口。"
+    },
+    {
+      "source": "/workspace/BTCExpertReview/workspaces/repro/checks-r11.json:synthetic_integrity_baseline_pass,synthetic_complete_review_baseline_pass,synthetic_fault_rejections",
+      "actual_check": "只把integrity.ROOT临时指向私有合成根：合法单文件完整性基线及六角色/一轮虚构review基线通过；payload漂移、缺payload、manifest逃逸3项拒绝；缺角色、错role/hash、缺必填字段、缺下一轮、缺chair共5项拒绝。所有“review”均为本角色手写SYNTHETIC PLACEHOLDER，不读取任何真实角色或主席内容。临时工件检查后销毁。"
+    },
+    {
+      "source": "/workspace/BTCExpertReview/workspaces/repro/checks-r11.json:trusted_manifest_inventory_scope_probe; /workspace/BTCExpertReview/workspaces/repro/checks-r11-anchor.json",
+      "actual_check": "额外scope探针显示空的自有manifest得到PASS/files0/bytes0，证明函数信任输入清单而不独立认证其完整性。另只读真实release_manifest及冻结git blob，不读其列出的其他角色文件：当前字节等于a642de内blob b1d883f040fd8b34523c3fc95210c4f054a7e972，SHA256=411278b88c345554484f40a7d9e4b721f37e23a20b4ca7d9db86ca7606bce030；886条均唯一、路径包含于仓根、声明56,445,495 bytes。此项锚定清单身份，没有冒称本轮已重算全部payload。"
+    }
+  ],
+  "counterevidence": [
+    "正常6模型+36本原生账户没有重复全跑；本轮只执行指定的输入/故障回归，R10完整离线运行收据保持独立。",
+    "空清单PASS0是清单信任边界探针，不表示冻结886项清单实际为空或其payload被篡改；本轮已单独核对冻结清单身份，但没有重读所有列出文件。",
+    "训练角色谓词和audit hook并非通用OS安全沙箱，本轮也未安装训练guard或训练模型；不能把谓词通过升级为任意文件系统攻击隔离证明。",
+    "旧问题在新代码上的回归通过不改变最初失败的真实性，也不产生新市场样本、策略优化或2026验证证据。"
+  ],
+  "recommendations": [
+    {
+      "priority": "P1",
+      "action": "最终验证说明同时给出冻结commit、release_manifest SHA/预期886项及payload校验结果，区分“可信清单内内容一致”与“任意输入清单的完整性/真实性”。如CLI要强制认证特定发布，应校验预期清单身份/非空及唯一性，不能只引用无锚定的PASS文本。",
+      "acceptance": "发布者和使用者能复核本轮记录的commit/blob/SHA/886项；不把PASS0或删减后的自给清单声称为完整发布通过。所有payload核对的执行者、实际对象及scope明确。"
+    },
+    {
+      "priority": "P1",
+      "action": "将R05/R07初始失败、R10真实容器通过和R11合成回归作为不同版本/对象的追加证据保留；当前新镜像若用于发布，另记录其实际镜像ID及与提交的核心/CLI差异，不用本轮宿主回归或R10较早镜像标签替代制品身份。",
+      "acceptance": "旧失败文件未覆盖，R11全部原缺口有确定性拒绝记录；最终报告准确区分已运行6+36、仅合成17故障和未运行训练/新验证。"
+    }
+  ],
+  "checks_performed": [
+    "对a642de新进程导入、五接口稳定SHA及旧项目/真实review拒读audit进行独立检查，无替身。",
+    "执行13路径和20 API合成读前拒绝例，六家族2018缺模型/None及price-only惰性/前缀因果检查。",
+    "只在私有临时根制作最小合成状态/manifest和虚构review，合法基线通过，9模型+3完整性+5审查缺项共17故障均拒绝。",
+    "检查当前release_manifest与冻结git blob字节/SHA、886条唯一/包含路径及声明大小，不读取其真实review payload或冒称全部payload重哈希。",
+    "未重跑36本、未训练或安装训练hook、未操作旧writer、未新搜索策略；只写repro私有check_r11.py、checks-r11.json、checks-r11-anchor.json及r11.json。"
+  ],
+  "unresolved": [
+    "verify_integrity依赖可信清单身份；若需要在任意传入/被替换清单下认证特定发布，仍需外部锚定或更强清单合同。",
+    "本轮未测试当前新镜像的完整制品身份或重新安装，未重算所有886个payload；这些不能从局部故障回归自动推出。",
+    "训练所有年度、实际市场安全、严格PIT及新鲜验证均不在本轮支持范围。"
+  ],
+  "independence_statement": "本结果为repro工程复现AI角色独立隔离回归，不读取任何真实其他角色/主席意见；review故障全部是自制虚构fixture。没有打开2026经济数据、真实V01/V02或2026账户。未修改源ledger、交付仓、冻结spec/model/account/verification/gates；所有故障只写私有/tmp工件，且未运行旧writer、训练、原生账户全重放或新策略搜索。原R05/R07失败保留，无派生代理或未来轮次预写；本角色不构成新独立市场样本。"
+}

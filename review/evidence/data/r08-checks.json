@@ -1,0 +1,678 @@
+{
+  "status": "PASS",
+  "registry_source_hashes_matched": 115,
+  "registry_standard_B_registrations_complete": true,
+  "metadata_recipe_entries": 1717,
+  "metadata_recipe_entries_qualification": "Syntactic rows only: inherited controls, repeated configurations, source audits and heterogeneous searches are not independent trials.",
+  "cross_study_reused_recipe_ids": 342,
+  "reused_ids_with_different_metadata_descriptors": 338,
+  "identical_metadata_descriptor_groups": 136,
+  "c04_namespace_collision_examples": [
+    {
+      "study": "B31-constant-sizing-controls",
+      "recipe_id": "C04",
+      "recipe": {
+        "id": "C04",
+        "mode": "CONSTANT",
+        "parent": "Y04",
+        "scale": 0.75,
+        "source": "P08"
+      }
+    },
+    {
+      "study": "B85-price-core-consensus-entry",
+      "recipe_id": "C04",
+      "recipe": {
+        "gate": "BOTH2",
+        "id": "C04",
+        "kind": "GATE"
+      }
+    }
+  ],
+  "inherited_controls": {
+    "study": "B109-long-profit-local-coordinate",
+    "recipe_rows": 16,
+    "new_long_profit_coordinates": 4,
+    "inherited_recipe_controls": 12,
+    "exact_inherited_books": 48,
+    "pairs": [
+      {
+        "descendant": "studies/B109-long-profit-local-coordinate/accounts/P02/BASE.json.gz",
+        "source": "studies/B81-reported-volume-long-core/accounts/P02/BASE.json.gz",
+        "sha256": "411554633a19c3b61d62cce824da388c4b16178e931cb12adbbb317993701d9a"
+      },
+      {
+        "descendant": "studies/B109-long-profit-local-coordinate/accounts/P02/STRESS.json.gz",
+        "source": "studies/B81-reported-volume-long-core/accounts/P02/STRESS.json.gz",
+        "sha256": "ee964cea122aedc2a054d0b1e259e24ce105e44e50bc3f99cf4463d9df563428"
+      },
+      {
+        "descendant": "studies/B109-long-profit-local-coordinate/accounts/P02/SEVERE.json.gz",
+        "source": "studies/B81-reported-volume-long-core/accounts/P02/SEVERE.json.gz",
+        "sha256": "a2ade65c8025e2dde2fc5348e9d3e9c2437031c611b9837d7b2368e020524036"
+      },
+      {
+        "descendant": "studies/B109-long-profit-local-coordinate/accounts/P02/DELAY.json.gz",
+        "source": "studies/B81-reported-volume-long-core/accounts/P02/DELAY.json.gz",
+        "sha256": "e4c39e6281494020cecfb2971bca9c8fe16c3812803b87cc3932522c54ddec11"
+      },
+      {
+        "descendant": "studies/B109-long-profit-local-coordinate/accounts/L06/BASE.json.gz",
+        "source": "studies/B67-lag-matched-short-supervision/accounts/L06/BASE.json.gz",
+        "sha256": "acf277108ee4db87bc98bfc8d37aa28466706ee2372ea81fa7b4fbdd9ccf64b4"
+      },
+      {
+        "descendant": "studies/B109-long-profit-local-coordinate/accounts/L06/STRESS.json.gz",
+        "source": "studies/B67-lag-matched-short-supervision/accounts/L06/STRESS.json.gz",
+        "sha256": "f658181e6690805bb2733ec0393130917621a9e5859960d37eed91c597dbf4f9"
+      },
+      {
+        "descendant": "studies/B109-long-profit-local-coordinate/accounts/L06/SEVERE.json.gz",
+        "source": "studies/B67-lag-matched-short-supervision/accounts/L06/SEVERE.json.gz",
+        "sha256": "dc036bb98d03192f7c62a2ca37c68969dfee371f523f82c2bf4d589fc9e36721"
+      },
+      {
+        "descendant": "studies/B109-long-profit-local-coordinate/accounts/L06/DELAY.json.gz",
+        "source": "studies/B67-lag-matched-short-supervision/accounts/L06/DELAY.json.gz",
+        "sha256": "dc18dc3b862a46fb797f65f6692a79717ca73c6b8df692cd9f73de232b0f2c91"
+      },
+      {
+        "descendant": "studies/B109-long-profit-local-coordinate/accounts/T12/BASE.json.gz",
+        "source": "studies/B46-bear-short-trailing/accounts/T12/BASE.json.gz",
+        "sha256": "8401bb9dab4b64834ee270546d59d88b1ecba14dd0e0da2e5e1fa7c2371cdbd6"
+      },
+      {
+        "descendant": "studies/B109-long-profit-local-coordinate/accounts/T12/STRESS.json.gz",
+        "source": "studies/B46-bear-short-trailing/accounts/T12/STRESS.json.gz",
+        "sha256": "db0b6e25035fa1e76b44790c4ed078eff276ff31dee0ae4df3225e838457480a"
+      },
+      {
+        "descendant": "studies/B109-long-profit-local-coordinate/accounts/T12/SEVERE.json.gz",
+        "source": "studies/B46-bear-short-trailing/accounts/T12/SEVERE.json.gz",
+        "sha256": "34f34e7c6c1a8e651d557e5fcc39ca3add6dbac42ccece6ec1bece3aa669317b"
+      },
+      {
+        "descendant": "studies/B109-long-profit-local-coordinate/accounts/T12/DELAY.json.gz",
+        "source": "studies/B46-bear-short-trailing/accounts/T12/DELAY.json.gz",
+        "sha256": "bcdfdcf5657c38b5d7b319d0d6f5863d5f41b7185c2fffff24674b0fc6368507"
+      },
+      {
+        "descendant": "studies/B109-long-profit-local-coordinate/accounts/Y01/BASE.json.gz",
+        "source": "studies/B29-prior-forecast-exits/accounts/Y01/BASE.json.gz",
+        "sha256": "73ba9509991976923e99ce5aa5dff27850465b30edaae32a50431a64ad7e9567"
+      },
+      {
+        "descendant": "studies/B109-long-profit-local-coordinate/accounts/Y01/STRESS.json.gz",
+        "source": "studies/B29-prior-forecast-exits/accounts/Y01/STRESS.json.gz",
+        "sha256": "c726d5a7302a0c167b26137889454b419c921eb31bf122ffa32e49cf50a4c2ee"
+      },
+      {
+        "descendant": "studies/B109-long-profit-local-coordinate/accounts/Y01/SEVERE.json.gz",
+        "source": "studies/B29-prior-forecast-exits/accounts/Y01/SEVERE.json.gz",
+        "sha256": "b152dcba0c989ef3584fa0c3580a3fd4c1bbbf6ae8626d402eb2fbede4b02a83"
+      },
+      {
+        "descendant": "studies/B109-long-profit-local-coordinate/accounts/Y01/DELAY.json.gz",
+        "source": "studies/B29-prior-forecast-exits/accounts/Y01/DELAY.json.gz",
+        "sha256": "ad6d7b37f9528499dfdaefa26626aa5d1f14fba10a94743cdfc17453c9b1b153"
+      },
+      {
+        "descendant": "studies/B109-long-profit-local-coordinate/accounts/H04/BASE.json.gz",
+        "source": "studies/B22-annual-carry/accounts/H04/BASE.json.gz",
+        "sha256": "fc29041248b7bf079daa7d9abeed7e794963f4f222f11978b6893a3d260b4eca"
+      },
+      {
+        "descendant": "studies/B109-long-profit-local-coordinate/accounts/H04/STRESS.json.gz",
+        "source": "studies/B22-annual-carry/accounts/H04/STRESS.json.gz",
+        "sha256": "79937a273be5384c05ef060203e189cb9809e06f357960fe7bb11873cc9813d6"
+      },
+      {
+        "descendant": "studies/B109-long-profit-local-coordinate/accounts/H04/SEVERE.json.gz",
+        "source": "studies/B22-annual-carry/accounts/H04/SEVERE.json.gz",
+        "sha256": "e5c705f2e9804d40adfbcb8536dd26f7710dd717fd2f5dfc4acb172b1551fa6a"
+      },
+      {
+        "descendant": "studies/B109-long-profit-local-coordinate/accounts/H04/DELAY.json.gz",
+        "source": "studies/B22-annual-carry/accounts/H04/DELAY.json.gz",
+        "sha256": "c78f5fb8beb240af978bdf9ac33af6c70fa73e61144b9f6f8388af6f275266b2"
+      },
+      {
+        "descendant": "studies/B109-long-profit-local-coordinate/accounts/H05/BASE.json.gz",
+        "source": "studies/B22-annual-carry/accounts/H05/BASE.json.gz",
+        "sha256": "fa7852af822bc1a2c3dca370d492ceaf852e2a7a572514e013b681ce8f504303"
+      },
+      {
+        "descendant": "studies/B109-long-profit-local-coordinate/accounts/H05/STRESS.json.gz",
+        "source": "studies/B22-annual-carry/accounts/H05/STRESS.json.gz",
+        "sha256": "f0bbc241a6e1a39ed235a04cbe3c7f47675c20fa22d37a768e3a099f6f143755"
+      },
+      {
+        "descendant": "studies/B109-long-profit-local-coordinate/accounts/H05/SEVERE.json.gz",
+        "source": "studies/B22-annual-carry/accounts/H05/SEVERE.json.gz",
+        "sha256": "94ee60ac6dda8c421d116b65398e6b0c8797b97b3457f828d47dccb8c0b86be5"
+      },
+      {
+        "descendant": "studies/B109-long-profit-local-coordinate/accounts/H05/DELAY.json.gz",
+        "source": "studies/B22-annual-carry/accounts/H05/DELAY.json.gz",
+        "sha256": "bbbf32bc9b0abe367a10c532f13062f493821653d9249422d9de0a9093e8daed"
+      },
+      {
+        "descendant": "studies/B109-long-profit-local-coordinate/accounts/PX03/BASE.json.gz",
+        "source": "studies/B101-patient-long-profit-exits/accounts/PX03/BASE.json.gz",
+        "sha256": "adba02504631473425b867c83b08770a6077e00701793c35fe573f42bc232962"
+      },
+      {
+        "descendant": "studies/B109-long-profit-local-coordinate/accounts/PX03/STRESS.json.gz",
+        "source": "studies/B101-patient-long-profit-exits/accounts/PX03/STRESS.json.gz",
+        "sha256": "8ca19ee53d7dd20db4dad2c41782164d84b56ab644dcb0fbe800d5b4d5580808"
+      },
+      {
+        "descendant": "studies/B109-long-profit-local-coordinate/accounts/PX03/SEVERE.json.gz",
+        "source": "studies/B101-patient-long-profit-exits/accounts/PX03/SEVERE.json.gz",
+        "sha256": "714fe49c1aecf675ece24ff9ed912e5f7f9b21371dbb67839c31731d7d797bae"
+      },
+      {
+        "descendant": "studies/B109-long-profit-local-coordinate/accounts/PX03/DELAY.json.gz",
+        "source": "studies/B101-patient-long-profit-exits/accounts/PX03/DELAY.json.gz",
+        "sha256": "f07e260c805dcec10f097babe187c2be86dcf3e02bfa930d1e530d91498a2a8e"
+      },
+      {
+        "descendant": "studies/B109-long-profit-local-coordinate/accounts/VX04/BASE.json.gz",
+        "source": "studies/B102-long-volatility-budget/accounts/VX04/BASE.json.gz",
+        "sha256": "013f09c219b805f3337a8f058b262204a106e439e72a98db2f7f86233b08cc80"
+      },
+      {
+        "descendant": "studies/B109-long-profit-local-coordinate/accounts/VX04/STRESS.json.gz",
+        "source": "studies/B102-long-volatility-budget/accounts/VX04/STRESS.json.gz",
+        "sha256": "3d6803b274d068dcacb06008b6dacf1738900215c6bc3a02581cc90768250387"
+      },
+      {
+        "descendant": "studies/B109-long-profit-local-coordinate/accounts/VX04/SEVERE.json.gz",
+        "source": "studies/B102-long-volatility-budget/accounts/VX04/SEVERE.json.gz",
+        "sha256": "11161c01466ea8ea426bbc726d11aac66d0823e2277858e8588f1beb5482469d"
+      },
+      {
+        "descendant": "studies/B109-long-profit-local-coordinate/accounts/VX04/DELAY.json.gz",
+        "source": "studies/B102-long-volatility-budget/accounts/VX04/DELAY.json.gz",
+        "sha256": "20b53d644664280dda62fc4ca3fe7cad03e8acc6b103d8f2c78dc3d1f9f5416b"
+      },
+      {
+        "descendant": "studies/B109-long-profit-local-coordinate/accounts/CT02/BASE.json.gz",
+        "source": "studies/B103-faster-cold-short-trend/accounts/CT02/BASE.json.gz",
+        "sha256": "f573f17854904ecb2ca9350d04c7b0932fe4c5ede0ad8d8b6e63d70e4c7c1bc2"
+      },
+      {
+        "descendant": "studies/B109-long-profit-local-coordinate/accounts/CT02/STRESS.json.gz",
+        "source": "studies/B103-faster-cold-short-trend/accounts/CT02/STRESS.json.gz",
+        "sha256": "543fe50b7f001cbfa1d59d2a842d77d9edefa35f6a5bf9d25b809cbe0bbec92c"
+      },
+      {
+        "descendant": "studies/B109-long-profit-local-coordinate/accounts/CT02/SEVERE.json.gz",
+        "source": "studies/B103-faster-cold-short-trend/accounts/CT02/SEVERE.json.gz",
+        "sha256": "15bf4fed79ad8735e98ce73ef1bd2e546dabf9248cd2cf9d4864883be0a1a03b"
+      },
+      {
+        "descendant": "studies/B109-long-profit-local-coordinate/accounts/CT02/DELAY.json.gz",
+        "source": "studies/B103-faster-cold-short-trend/accounts/CT02/DELAY.json.gz",
+        "sha256": "489fdfc6cecbe07065fae7ccc0a4a579ef16fd6914b84b4da530a026af2c20f5"
+      },
+      {
+        "descendant": "studies/B109-long-profit-local-coordinate/accounts/ME01/BASE.json.gz",
+        "source": "studies/B105-cold-entry-momentum/accounts/ME01/BASE.json.gz",
+        "sha256": "4660eb2477d56fd0854cc96f65eb2583dc6f46412bd540beb2c665ce51438c7c"
+      },
+      {
+        "descendant": "studies/B109-long-profit-local-coordinate/accounts/ME01/STRESS.json.gz",
+        "source": "studies/B105-cold-entry-momentum/accounts/ME01/STRESS.json.gz",
+        "sha256": "686b27f965bf930bff0e5134cccf4304f773307c969151346856f81d10586b3d"
+      },
+      {
+        "descendant": "studies/B109-long-profit-local-coordinate/accounts/ME01/SEVERE.json.gz",
+        "source": "studies/B105-cold-entry-momentum/accounts/ME01/SEVERE.json.gz",
+        "sha256": "de41cc28dccc5a875945ac37061b4f4e94bdc75f6a041975cd888cc9f469be9c"
+      },
+      {
+        "descendant": "studies/B109-long-profit-local-coordinate/accounts/ME01/DELAY.json.gz",
+        "source": "studies/B105-cold-entry-momentum/accounts/ME01/DELAY.json.gz",
+        "sha256": "d615abdbc3e71482f6616284e27fcf852adba37b29c4dccf76b90ad13bd22ee6"
+      },
+      {
+        "descendant": "studies/B109-long-profit-local-coordinate/accounts/MX03/BASE.json.gz",
+        "source": "studies/B106-shorter-cold-entry-momentum/accounts/MX03/BASE.json.gz",
+        "sha256": "509c49b71380eb75c78971b1eba1b3bbf3a19de4230a1017943bbe446011ee3e"
+      },
+      {
+        "descendant": "studies/B109-long-profit-local-coordinate/accounts/MX03/STRESS.json.gz",
+        "source": "studies/B106-shorter-cold-entry-momentum/accounts/MX03/STRESS.json.gz",
+        "sha256": "79a55bf16492edac902aa9f2ba7aa7e99d6d0156649d4ebd541afb703bc824ee"
+      },
+      {
+        "descendant": "studies/B109-long-profit-local-coordinate/accounts/MX03/SEVERE.json.gz",
+        "source": "studies/B106-shorter-cold-entry-momentum/accounts/MX03/SEVERE.json.gz",
+        "sha256": "9c5917ee37f35fb78ecc91c47830f79d198369254452320e43c4ec356aac1c67"
+      },
+      {
+        "descendant": "studies/B109-long-profit-local-coordinate/accounts/MX03/DELAY.json.gz",
+        "source": "studies/B106-shorter-cold-entry-momentum/accounts/MX03/DELAY.json.gz",
+        "sha256": "33446f0dc7ceae38e12523acf6a50413d42a8af208c73ed6d2494f5a026cc3fd"
+      },
+      {
+        "descendant": "studies/B109-long-profit-local-coordinate/accounts/TS04/BASE.json.gz",
+        "source": "studies/B107-cold-short-profit-trailing/accounts/TS04/BASE.json.gz",
+        "sha256": "3b0422a11665ebd1ffc40277b15a9db10a7996f45f0ee19e19f1cf05564f7f48"
+      },
+      {
+        "descendant": "studies/B109-long-profit-local-coordinate/accounts/TS04/STRESS.json.gz",
+        "source": "studies/B107-cold-short-profit-trailing/accounts/TS04/STRESS.json.gz",
+        "sha256": "4caab22af9b9bc619e6d3c2986a95360527974d398c24a8d5fe87983082cade6"
+      },
+      {
+        "descendant": "studies/B109-long-profit-local-coordinate/accounts/TS04/SEVERE.json.gz",
+        "source": "studies/B107-cold-short-profit-trailing/accounts/TS04/SEVERE.json.gz",
+        "sha256": "e671c19c68299ed393da99d2bd4847e530c43c069d9fdd2e309bb641c62af257"
+      },
+      {
+        "descendant": "studies/B109-long-profit-local-coordinate/accounts/TS04/DELAY.json.gz",
+        "source": "studies/B107-cold-short-profit-trailing/accounts/TS04/DELAY.json.gz",
+        "sha256": "d4af55a86b7acdb3b507dab3a381ec228338c079cbc13e7c71bb24b0bda9aac2"
+      }
+    ]
+  },
+  "fit_fields_unrepresented_when_registry_null": [
+    {
+      "study": "B06-economic-coordinate",
+      "registry_reported_new_fits": null,
+      "source_fields": {
+        "new_model_fits": 0
+      }
+    },
+    {
+      "study": "B103A-cold-source-mask-independent-audit",
+      "registry_reported_new_fits": null,
+      "source_fields": {
+        "new_model_fits": 0
+      }
+    },
+    {
+      "study": "B11-ensemble-risk-coordinate",
+      "registry_reported_new_fits": null,
+      "source_fields": {
+        "new_model_fits": 0
+      }
+    },
+    {
+      "study": "B12-ensemble-risk-warmup-fix",
+      "registry_reported_new_fits": null,
+      "source_fields": {
+        "new_model_fits": 0
+      }
+    },
+    {
+      "study": "B14-kernel-ensemble-descendants",
+      "registry_reported_new_fits": null,
+      "source_fields": {
+        "new_final_members_cap": 168,
+        "new_member_fits_cap": 1512
+      }
+    },
+    {
+      "study": "B16-lagged-mining-descendants",
+      "registry_reported_new_fits": null,
+      "source_fields": {
+        "new_final_members_cap": 280,
+        "new_member_fits_cap": 1736
+      }
+    },
+    {
+      "study": "B17-mining-dimension-ablation",
+      "registry_reported_new_fits": null,
+      "source_fields": {
+        "new_final_members_cap": 294,
+        "new_member_fits_cap": 1470
+      }
+    },
+    {
+      "study": "B19-robust-dynamics-models",
+      "registry_reported_new_fits": null,
+      "source_fields": {
+        "new_final_members_cap": 84,
+        "new_member_fits_cap": 588
+      }
+    },
+    {
+      "study": "B20-execution-aware-labels",
+      "registry_reported_new_fits": null,
+      "source_fields": {
+        "new_final_members_cap": 294,
+        "new_member_fits_cap": 1470
+      }
+    },
+    {
+      "study": "B21-calendar-label-ablation",
+      "registry_reported_new_fits": null,
+      "source_fields": {
+        "new_final_members_cap": 49,
+        "new_member_fits_cap": 245
+      }
+    },
+    {
+      "study": "B24-eth-relative-factors",
+      "registry_reported_new_fits": null,
+      "source_fields": {
+        "new_final_members_cap": 147,
+        "new_member_fits_cap": 735
+      }
+    },
+    {
+      "study": "B25-eth-sgd-controls",
+      "registry_reported_new_fits": null,
+      "source_fields": {
+        "new_final_members_cap": 84,
+        "new_member_fits_cap": 756
+      }
+    },
+    {
+      "study": "B26-adverse-first-gate",
+      "registry_reported_new_fits": null,
+      "source_fields": {
+        "new_final_members_cap": 28,
+        "new_member_fits_cap": 252
+      }
+    },
+    {
+      "study": "B28-extended-initial-history",
+      "registry_reported_new_fits": null,
+      "source_fields": {
+        "new_final_members_cap": 112,
+        "new_member_fits_cap": 560
+      }
+    },
+    {
+      "study": "B29-prior-forecast-exits",
+      "registry_reported_new_fits": null,
+      "source_fields": {
+        "new_model_fits": 0
+      }
+    },
+    {
+      "study": "B31-constant-sizing-controls",
+      "registry_reported_new_fits": null,
+      "source_fields": {
+        "new_model_fits": 0,
+        "new_rank_fits": 0
+      }
+    },
+    {
+      "study": "B32-prior-forecast-stacking",
+      "registry_reported_new_fits": null,
+      "source_fields": {
+        "new_final_members_cap": 48,
+        "new_member_fits_cap": 240
+      }
+    },
+    {
+      "study": "B33-stack-identity-fallback",
+      "registry_reported_new_fits": null,
+      "source_fields": {
+        "new_model_fits": 0
+      }
+    },
+    {
+      "study": "B34-residual-forecast-models",
+      "registry_reported_new_fits": null,
+      "source_fields": {
+        "new_member_fits_cap": 480
+      }
+    },
+    {
+      "study": "B35-network-activity-audit",
+      "registry_reported_new_fits": null,
+      "source_fields": {
+        "new_model_fits": 0
+      }
+    },
+    {
+      "study": "B36-network-activity-factors",
+      "registry_reported_new_fits": null,
+      "source_fields": {
+        "new_final_members_cap": 147,
+        "new_member_fits_cap": 735
+      }
+    },
+    {
+      "study": "B37-activity-family-ablation",
+      "registry_reported_new_fits": null,
+      "source_fields": {
+        "new_final_members_cap": 196,
+        "new_member_fits_cap": 980
+      }
+    },
+    {
+      "study": "B38-activity-sgd-controls",
+      "registry_reported_new_fits": null,
+      "source_fields": {
+        "new_final_members_cap": 84,
+        "new_member_fits_cap": 756
+      }
+    },
+    {
+      "study": "B39-activity-neural-residuals",
+      "registry_reported_new_fits": null,
+      "source_fields": {
+        "new_final_members_cap": 84,
+        "new_member_fits_cap": 756
+      }
+    },
+    {
+      "study": "B40-activity-architecture-choice",
+      "registry_reported_new_fits": null,
+      "source_fields": {
+        "new_model_fits": 0
+      }
+    },
+    {
+      "study": "B41-activity-fixed-average",
+      "registry_reported_new_fits": null,
+      "source_fields": {
+        "new_model_fits": 0
+      }
+    },
+    {
+      "study": "B42-exchange-flow-source-audit",
+      "registry_reported_new_fits": null,
+      "source_fields": {
+        "new_model_fits": 0
+      }
+    },
+    {
+      "study": "B43-holder-stock-factors",
+      "registry_reported_new_fits": null,
+      "source_fields": {
+        "new_final_members_cap": 147,
+        "new_member_fits_cap": 735
+      }
+    },
+    {
+      "study": "B44-holder-stock-direct-models",
+      "registry_reported_new_fits": null,
+      "source_fields": {
+        "new_final_members_cap": 168,
+        "new_member_fits_cap": 1512
+      }
+    },
+    {
+      "study": "B45-y01-bear-short-component",
+      "registry_reported_new_fits": null,
+      "source_fields": {
+        "new_model_fits": 0
+      }
+    },
+    {
+      "study": "B46-bear-short-trailing",
+      "registry_reported_new_fits": null,
+      "source_fields": {
+        "new_model_fits": 0
+      }
+    },
+    {
+      "study": "B47-negative-score-short-entry",
+      "registry_reported_new_fits": null,
+      "source_fields": {
+        "new_model_fits": 0
+      }
+    },
+    {
+      "study": "B48-ltc-xrp-source-audit",
+      "registry_reported_new_fits": null,
+      "source_fields": {
+        "new_model_fits": 0
+      }
+    },
+    {
+      "study": "B49-cross-market-models",
+      "registry_reported_new_fits": null,
+      "source_fields": {
+        "new_final_members_cap": 231,
+        "new_member_fits_cap": 1491
+      }
+    },
+    {
+      "study": "B50-cross-market-fixed-averages",
+      "registry_reported_new_fits": null,
+      "source_fields": {
+        "new_model_fits": 0
+      }
+    },
+    {
+      "study": "B51-short-specific-payoff",
+      "registry_reported_new_fits": null,
+      "source_fields": {
+        "new_final_members_cap": 126,
+        "new_member_fits_cap": 742
+      }
+    },
+    {
+      "study": "B52-payoff-sign-logit",
+      "registry_reported_new_fits": null,
+      "source_fields": {
+        "new_final_members_cap": 28,
+        "new_member_fits_cap": 252
+      }
+    },
+    {
+      "study": "B53-nonlinear-payoff-classifier",
+      "registry_reported_new_fits": null,
+      "source_fields": {
+        "new_final_members_cap": 98,
+        "new_member_fits_cap": 490
+      }
+    },
+    {
+      "study": "B57-cross-market-count-source-audit",
+      "registry_reported_new_fits": null,
+      "source_fields": {
+        "new_model_fits": 0
+      }
+    },
+    {
+      "study": "B79-reported-spot-volume-source-audit",
+      "registry_reported_new_fits": null,
+      "source_fields": {
+        "new_model_fits": 0
+      }
+    },
+    {
+      "study": "B81-reported-volume-long-core",
+      "registry_reported_new_fits": null,
+      "source_fields": {
+        "research_member_fits": 1225,
+        "final_members": 245,
+        "pipeline_estimator_fits": 25,
+        "independent_inner_library_fits": 980
+      }
+    },
+    {
+      "study": "B92-long-range-price-core",
+      "registry_reported_new_fits": null,
+      "source_fields": {
+        "research_member_fits": 735,
+        "final_members": 147,
+        "pipeline_estimator_fits": 15,
+        "independent_inner_library_fits": 588
+      }
+    },
+    {
+      "study": "B94-price-column-order-stability",
+      "registry_reported_new_fits": null,
+      "source_fields": {
+        "research_member_fits": 980,
+        "final_members": 196,
+        "pipeline_estimator_fits": 20,
+        "independent_inner_library_fits": 784
+      }
+    },
+    {
+      "study": "B95-carry-stop-supervision",
+      "registry_reported_new_fits": null,
+      "source_fields": {
+        "research_member_fits": 980,
+        "final_members": 196,
+        "pipeline_estimator_fits": 20,
+        "independent_inner_library_fits": 784
+      }
+    },
+    {
+      "study": "B99-fed-target-long-core",
+      "registry_reported_new_fits": null,
+      "source_fields": {
+        "research_member_fits": 735,
+        "final_members": 147,
+        "pipeline_estimator_fits": 15,
+        "independent_inner_library_fits": 588
+      }
+    }
+  ],
+  "zero_recipe_search_example": {
+    "study": "B01-price-mechanisms",
+    "recipe_count": 0,
+    "candidate_cap": 360,
+    "account_cap": 1440,
+    "note": "Caps, not actual completed attempts; absence of recipes does not mean zero search."
+  },
+  "scoped_selection_trace_examples": [
+    {
+      "study": "B29-prior-forecast-exits",
+      "fold_year": 2021,
+      "model_fits": 0,
+      "scoped_configurations": 22,
+      "scoped_account_attempts": 88,
+      "unique_evaluation_order_and_candidate_hashes": true
+    },
+    {
+      "study": "B29-prior-forecast-exits",
+      "fold_year": 2025,
+      "model_fits": 0,
+      "scoped_configurations": 32,
+      "scoped_account_attempts": 128,
+      "unique_evaluation_order_and_candidate_hashes": true
+    }
+  ],
+  "additional_registration_contract_metadata_outside_standard_inventory": [
+    "studies/B02-direct-sgd/controls-registration.json",
+    "studies/B16-lagged-mining-descendants/data-registration.json",
+    "studies/B49-cross-market-models/preparation-registration.json",
+    "studies/B58-cross-count-long-models/source-preparation-registration.json",
+    "studies/B74-funding-short-net-models/preparation-registration.json",
+    "studies/B80-reported-volume-short-models/preparation-registration.json",
+    "studies/B86-eth-short-net-transfer/preparation-registration.json"
+  ],
+  "effective_independent_test_count": null,
+  "correction_sufficiency": "Registry provides source-bound registration inventory, not a complete candidate-outcome/dependence/selection history for multiple-testing correction.",
+  "limitations": [
+    "Exact descriptor repetition is metadata repetition; semantic/economic deduplication requires source lineage or complete path equality.",
+    "The 48 B109 inherited books are exact repeats of bound prior books, not 48 independent market samples.",
+    "The two B29 examples describe only those training folds; their counts are not summed into a global test count.",
+    "Additional source/preparation contracts are metadata coverage gaps, not automatically extra economic trials.",
+    "No legacy aggregate result table, V01/V02, 2026 economic record, expert opinion or chair artifact was read."
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "round": 12,
+  "role": "risk",
+  "topic": "最终研究归档与未解决风险",
+  "conclusion": "c743921可在明确限制下作research-only归档：所查风险口径与冻结历史一致，gross标签和未知cost前置拒绝已定向修复；历史DD<35%不构成未来保证，纸面验收草案也不等于paper/live系统已运行或获准。",
+  "verdict": "qualified",
+  "evidence": [
+    {
+      "source": "/workspace/BTCExpertReview/workspaces/risk/r12-binding.json",
+      "finding": "HEAD=c7439216d55207a9a480153d7555f6709817e70a；清单886项/56,446,427字节。8个选定code/card/doc与候选Git一致，6个清单内项SHA一致；文档以Git绑定，不冒称886全量验证。",
+      "attachment_sha256": "02eb86f15e37ef05eec1203e70ba0ce1f57f0c98f15988827661a2942d886138"
+    },
+    {
+      "source": "/workspace/BTC-strategy/artifacts/accounts/LP35/BASE.json.gz:trades[0]；docs/RISK_AND_LIMITATIONS.md:7-31",
+      "finding": "单份包内账户hash匹配，2922日覆盖2018—2025；再次算得SL12首笔实际亏26.6249215770%入场basis，风险文档保留该反例、118.0456%退出前gross和paper/live未认证，未把预算或止损写成硬保证。"
+    },
+    {
+      "source": "risk/r11.json；risk/r11-retest.json；src/btc_strategy/replay.py:11-31",
+      "finding": "原R11与追加收据SHA均未变：原晚拒绝事实保留，新16项坏case在目标/模型前拒绝；合法LP35/BASE完整返回不变。98.9936089%标daily post-fill、118.0455836%标daily before/after，未改原经济结果。"
+    }
+  ],
+  "counterevidence": [
+    "历史账户/标签修复确有可重复证据，已知SL越界不是代码违反“保证止损价”，因为原合同只承诺触发与延迟执行。",
+    "融资已扣策略净值、PnL与后续预算；未扣Native钱包不等于历史收益漏算融资，但也不能证明真实融资后清算安全。"
+  ],
+  "recommendations": [
+    {
+      "priority": "P0",
+      "action": "最终归档固定候选Git、经济物料hash及风险文档版本，保留原失败和追加修复关系。",
+      "acceptance": "若数值/账户/模型hash不符、2026或V01/V02经济内容进入本次训练筛选，或文字升级为盘中/未来DD保证，应否决当前研究归档声明并另立修正版，不回写原事实。"
+    },
+    {
+      "priority": "P0",
+      "action": "paper/live就绪必须另立可执行风险合同并提供运行证据。",
+      "acceptance": "来源/报价时间不可证明、缺失被静默补零、旧仓risk被新年覆盖、调整equity<=0、账本仓位不符或登记gross/margin约束被越过且无预定处理，任一可观察情况即否决就绪声明；本轮不新增实际仓位比例。"
+    },
+    {
+      "priority": "P1",
+      "action": "每次对外引用区分历史重放、待执行条款、真实paper及live。",
+      "acceptance": "本轮只给研究归档限定结论，不因代码/说明通过就声称OS隔离、真实容量/借贷、paper控制或未来泛化通过；全部2026继续封存。"
+    }
+  ],
+  "checks_performed": [
+    {
+      "check": "最终有界绑定/事实复核",
+      "method": "仅核候选HEAD、清单元数据、8个风险相关文件Git/选定SHA、一份LP35/BASE包内book SHA及首笔止损算术；核原R11/追加收据hash。",
+      "result": "全部所列绑定通过；无Native/推理/fit重跑，无全886内容核验。附件r12-binding.json记录路径、hash及执行范围。"
+    }
+  ],
+  "unresolved": [
+    {
+      "kind": "最强失败情景",
+      "finding": "未来跳变/断报价且借贷不可得时，空头无法按日度代理价在due平仓，净值下降又放大gross；Native钱包未含外部融资债务。原35%历史日度门无法约束该实际成交/清算路径，本轮未伪造其收益或概率。"
+    },
+    {
+      "kind": "隐藏假设",
+      "finding": "USD日参考代理可代表BTCUSDT成交、静态深度和固定年化融资可用、来源vintage/链祖先历史可得，以及已反复消费历史上的门槛选择能外推；这些均未被本角色认证。"
+    },
+    {
+      "kind": "范围边界",
+      "finding": "纸面风险条款仍待实现/验收；未对真实盘中尾部、未来PIT或长期alpha给保证，也不判断72份提交是否齐备。"
+    }
+  ],
+  "independence_statement": "risk为AI分析角色，非人类专家或新独立市场样本。未读其他专家/主席review或最终报告，未读真实2026/V01/V02，未改共享源或运行旧writer；仅新增risk/r12.json及绑定附件，完成即停。"
+}

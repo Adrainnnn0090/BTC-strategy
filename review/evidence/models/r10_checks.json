@@ -1,0 +1,143 @@
+{
+  "round": 10,
+  "all_checks_pass": true,
+  "candidate_git": "1b008bfd4a9d1af9a73ff830fb7f8a1b72425fbf",
+  "release_declared_files": 886,
+  "release_declared_bytes": 56444740,
+  "release_manifest_sha256": "b9c03b01ef32bd63c6e61f61207f32ee70c6de27560ef4e8df1f33686dca2caa",
+  "models_manifest_sha256": "6d2132c04d5b5f216aced5607612e89e223ea0dd1120a24264201a7702aca213",
+  "family_year_entries": 48,
+  "numeric_files": 266,
+  "numeric_states": 392,
+  "numeric_trees": 37632,
+  "family_counts": {
+    "base_tree": {
+      "files": 49,
+      "states": 49,
+      "missing_years": [
+        2018
+      ]
+    },
+    "stop44": {
+      "files": 7,
+      "states": 49,
+      "missing_years": [
+        2018
+      ]
+    },
+    "price47": {
+      "files": 7,
+      "states": 49,
+      "missing_years": [
+        2018
+      ]
+    },
+    "short_huber": {
+      "files": 98,
+      "states": 98,
+      "missing_years": [
+        2018
+      ]
+    },
+    "short_median": {
+      "files": 98,
+      "states": 98,
+      "missing_years": [
+        2018
+      ]
+    },
+    "mining58": {
+      "files": 7,
+      "states": 49,
+      "missing_years": [
+        2018
+      ]
+    }
+  },
+  "all_numeric_files_source_manifest_release_sha_equal": true,
+  "full_inference_vs_original_forecasts": [
+    {
+      "family": "base_tree",
+      "positions": 3287,
+      "finite": 2557,
+      "max_error_vs_original_fold_forecasts": 0.0,
+      "tolerance": 2e-12,
+      "availability_exact": true
+    },
+    {
+      "family": "stop44",
+      "positions": 3287,
+      "finite": 2557,
+      "max_error_vs_original_fold_forecasts": 0.0,
+      "tolerance": 2e-12,
+      "availability_exact": true
+    },
+    {
+      "family": "price47",
+      "positions": 3287,
+      "finite": 2557,
+      "max_error_vs_original_fold_forecasts": 0.0,
+      "tolerance": 2e-12,
+      "availability_exact": true
+    },
+    {
+      "family": "short_huber",
+      "positions": 3287,
+      "finite": 2557,
+      "max_error_vs_original_fold_forecasts": 0.0,
+      "tolerance": 2e-12,
+      "availability_exact": true
+    },
+    {
+      "family": "short_median",
+      "positions": 3287,
+      "finite": 2557,
+      "max_error_vs_original_fold_forecasts": 0.0,
+      "tolerance": 2e-12,
+      "availability_exact": true
+    },
+    {
+      "family": "mining58",
+      "positions": 3287,
+      "finite": 2557,
+      "max_error_vs_original_fold_forecasts": 0.0,
+      "tolerance": 2e-12,
+      "availability_exact": true
+    }
+  ],
+  "existing_2025_refit_receipt": {
+    "families": 6,
+    "states": 56,
+    "physical_rows": 2922,
+    "training_period": "2017-01-01..2024-12-31",
+    "scope": "Sampled final2025 selected configurations only; all56 states exact. No inner-selection rerun, other years not refitted.",
+    "independently_reran_all56": false
+  },
+  "independent_bounded_refits": [
+    {
+      "family": "stop44",
+      "fold_year": 2025,
+      "seed": 101,
+      "execution_lag": null,
+      "physical_rows": 2922,
+      "training_samples": 2603,
+      "cutoff": "2024-12-31",
+      "new_fits": 1,
+      "numeric_state_exact": true,
+      "scope": "selected-final-estimator only; no inner-profile selection rerun"
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2025,
+      "seed": 101,
+      "execution_lag": 1,
+      "physical_rows": 2922,
+      "training_samples": 2588,
+      "cutoff": "2024-12-31",
+      "new_fits": 1,
+      "numeric_state_exact": true,
+      "scope": "selected-final-estimator only; no inner-profile selection rerun"
+    }
+  ],
+  "scope": "完整数字状态结构/哈希及六族离线推断；仅独立重拟两个2025已选最终状态，不是全部年度或inner-selection复现。"
+}

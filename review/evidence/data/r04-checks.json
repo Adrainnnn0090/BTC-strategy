@@ -1,0 +1,123 @@
+{
+  "status": "PASS",
+  "price47": {
+    "selected_stream": "P02→PRICE_L7→PRICE47 lag7",
+    "rows": 600,
+    "columns": 47,
+    "external_observation_poison_ignored": true,
+    "changed_external_volume_values_no_effect": true,
+    "vol47_positive_control_changes": true,
+    "future_price_suffix_from_index": 401,
+    "prefix_unchanged_rows": 401,
+    "prefix_truncation_exact": true
+  },
+  "c04_lineage": [
+    {
+      "study": "B31-constant-sizing-controls",
+      "recipe": {
+        "id": "C04",
+        "mode": "CONSTANT",
+        "parent": "Y04",
+        "scale": 0.75,
+        "source": "P08"
+      }
+    },
+    {
+      "study": "B30-forecast-strength-sizing",
+      "recipe": {
+        "control": "Y04",
+        "id": "P08",
+        "mode": "CONTROL",
+        "parent": "Y04"
+      }
+    },
+    {
+      "study": "B29-prior-forecast-exits",
+      "recipe": {
+        "control": "H04",
+        "id": "Y04",
+        "mode": "CONTROL"
+      }
+    },
+    {
+      "study": "B22-annual-carry",
+      "recipe": {
+        "annual_settlement": false,
+        "id": "H04",
+        "mode": "CARRY",
+        "parent": "J06"
+      }
+    },
+    {
+      "study": "B21-calendar-label-ablation",
+      "recipe": {
+        "control": "K13",
+        "id": "J06",
+        "mode": "CONTROL"
+      }
+    },
+    {
+      "study": "B20-execution-aware-labels",
+      "recipe": {
+        "control": "R09",
+        "id": "K13",
+        "mode": "CONTROL"
+      }
+    },
+    {
+      "study": "B19-robust-dynamics-models",
+      "recipe": {
+        "control": "E01",
+        "id": "R09",
+        "mode": "CONTROL"
+      }
+    },
+    {
+      "study": "B18-actual-entry-permission",
+      "recipe": {
+        "gate": "POS1",
+        "id": "E01",
+        "parent": "A05"
+      }
+    },
+    {
+      "study": "B17-mining-dimension-ablation",
+      "recipe": {
+        "family": "EXTRA",
+        "id": "A05",
+        "kind": "DYNAMICS",
+        "lag": 60,
+        "mode": "PURE",
+        "model": "EXTRA_DYNAMICS_L60"
+      }
+    }
+  ],
+  "mining": {
+    "checked_dates": 3287,
+    "first": "2017-01-01",
+    "last": "2025-12-31",
+    "lag_days": 60,
+    "clock_buffer_seconds": 7200,
+    "confirmations": 100,
+    "max_fresh_age_days": 3,
+    "freshness": {
+      "fresh": 3244,
+      "stale": 43
+    },
+    "source_trace_schema_all_pass": true,
+    "dynamics_columns": "CAL44 | masks2 | dynamics8 | zeros4",
+    "future_observation_suffix_invariance": true,
+    "future_header_suffix_invariance": true,
+    "delayed_lower_height_does_not_refresh": true
+  },
+  "qualifications": {
+    "mining": "conditional retrospective observer/ancestor reconstruction; not PIT-certified",
+    "reported_volume_strict_PIT": false
+  },
+  "limitations": [
+    "Synthetic prefix invariance establishes implemented array causality, not historical publication or source-vintage truth.",
+    "Mining actual traces were checked; raw header/observer archives were not reopened.",
+    "PRICE47 does not numerically consume volume; B81 cohort still includes VOL47 siblings and their research history.",
+    "No 2026 economic observations, account files, model fitting, strategy search, or other expert artifacts were read."
+  ]
+}

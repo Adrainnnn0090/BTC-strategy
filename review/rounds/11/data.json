@@ -1,0 +1,79 @@
+{
+  "round": 11,
+  "role": "data",
+  "topic": "修复和对抗性检查",
+  "conclusion": "a642de16已准确澄清training hook不是OS沙箱，关键模型/日期拒绝与封存训练前缀抽核通过；但合成测试仍发现验证文件别名未被路径模式拒绝、重复过去日期及错误plan.family可到达fit哨兵，故不能把本次文档修复解释为任意坏输入均被入口完整阻断。",
+  "verdict": "qualified",
+  "evidence": [
+    {
+      "source": "/workspace/BTC-strategy/.git:HEAD=a642de16cea72875a99859e9108960b02636c584；/workspace/BTCExpertReview/workspaces/data/r11-checks.json:unchanged_economic_data_model_and_guard_paths,release",
+      "fact": "固定候选HEAD匹配。Git树比较显示artifacts/models/training_inputs、运行时/归档模型代码及关键数据guard相对1b008bf未变；886条release路径不变，885条记录相同，仅replay.py记录改变，实际新size/hash匹配，清单总字节56,445,495。未重复重哈希885个未改文件。"
+    },
+    {
+      "source": "/workspace/BTC-strategy/src/btc_strategy/replay.py:run；/workspace/BTCExpertReview/workspaces/data/r11-checks.json:replay_economic_statements_unchanged_after_metadata_normalization",
+      "fact": "独立AST比较删除新增scopes赋值和metric_scope/risk_qualification返回元数据后，run的其余语句与旧候选一致；没有改变模型、账户计算或原summary数值口径。"
+    },
+    {
+      "source": "/workspace/BTC-strategy/docs/REPRODUCIBILITY.md:22；src/btc_strategy/training.py:18–27；/workspace/BTCExpertReview/workspaces/data/r11-checks.json:documentation",
+      "fact": "新增文档明确“正常训练CLI只显式请求当前plan与模型；hook为第三方库保留ROOT外读取，不能充当完整文件系统沙箱”，并要求容器/OS挂载边界以阻断任意扩展外部读取。纯谓词确认虚构ROOT外路径仍允许而包内artifacts和错误家族plan拒绝，文档与实际实现一致。"
+    },
+    {
+      "source": "/workspace/BTC-strategy/src/btc_strategy/artifacts.py:8–19、31–35；/workspace/BTCExpertReview/workspaces/data/r11-checks.json:malformed_path_rejections,symlink_escape_rejected_before_open,model_hash_mismatch_rejected_before_json_parse",
+      "fact": "9个已声明拒绝路径（包外/旧ledger、错误角色、2026+、V01目录和v02-前缀）在read_bytes哨兵前全部拒绝；私有临时symlink逃逸也拒绝。伪造模型SHA测试先抛hash mismatch，未进入JSON解析。所有未来/验证内容均为虚构路径或合成占位，未打开实际经济值。"
+    },
+    {
+      "source": "/workspace/BTC-strategy/src/btc_strategy/models.py:22–40；validation.py:5–12；/workspace/BTCExpertReview/workspaces/data/r11-checks.json:annual_model_tests,date_tests",
+      "fact": "6组非法family/year（未知族、2017/2026、bool/float/string年）均在读manifest前拒绝；合成错文件年/家族在模型文件读取前拒绝，错误cutoff/宽度/种子名单均拒绝。base_tree/price47/mining58对未来日期、重复日期、缺日共9组合成时钟均在特征函数哨兵前拒绝。"
+    },
+    {
+      "source": "/workspace/BTC-strategy/training_inputs/{2018,2019,2025}/price47.json.gz、training_inputs/2025/{short_huber,mining58}.json.gz；/workspace/BTCExpertReview/workspaces/data/r11-checks.json:actual_sample_training_prefixes",
+      "fact": "5份实际代表plan逐一匹配本候选release SHA、family/year和完整2017起连续前缀；2018/2019/2025分别365/730/2922行，截止为上年12/31，成熟ids满足61或62日加6日隔离，2018missing保持空ids/targets。未重复全48特征重算。"
+    },
+    {
+      "source": "/workspace/BTC-strategy/src/btc_strategy/artifacts.py:15；/workspace/BTCExpertReview/workspaces/data/r11-checks.json:residuals.validation_alias_path_predicates",
+      "fact": "实际resolve_artifact纯路径测试允许artifacts/V01.json和artifacts/v02_unsafe.json，说明当前^v0[12](?:-|$)模式不覆盖点号/下划线分隔别名。这里只解析路径，没有调用读取、更未创建或打开真实V01/V02文件。"
+    },
+    {
+      "source": "/workspace/BTC-strategy/src/btc_strategy/training.py:41–59；/workspace/BTCExpertReview/workspaces/data/r11-checks.json:synthetic_plan_tests",
+      "fact": "提取实际refit函数并将模型fit替换为立即抛错哨兵：未来内部date、错误fold_year、错误cutoff及未成熟ids在fit前拒绝；但合法基线、仅把一个过去日期重复、仅把plan.family改错三者均到达哨兵。后两项是字段/连续性验证缺口，实际没有拟合模型或改变任何plan。"
+    }
+  ],
+  "counterevidence": [
+    "当前封存数据/模型未改变，五个实际输入前缀均正确；合成坏数据缺口不等于当前包发生2026泄漏或错误训练。",
+    "正常模型family/year、SHA和经济时钟已有明确拒绝，且future内部date与成熟边界得到实际合成验证；不能因别名/plan元数据缺口否认这些已执行通过部分。",
+    "ROOT外读取不是本候选新引入的行为，现文档已如实限定hook能力；本轮未把文档澄清称作OS级隔离修复。",
+    "合成refit使用显式读取/guard/模型哨兵隔离验证顺序，不能当成完整训练CLI执行；初版探查遗漏threadpool_limits stub产生NameError已在本角色harness补齐并留附件说明，未改共享实现。"
+  ],
+  "recommendations": [
+    {
+      "priority": "P0",
+      "action": "在新候选扩展V01/V02路径token的点号/下划线分隔拒绝，并保留越界、未来年及模型SHA的open前拒绝。",
+      "acceptance": "V01.json、v02_unsafe.json及既有V01目录/v02-命名全部在read_bytes前拒绝；不读取真实验证资料；原a642de16证据保留不覆写。"
+    },
+    {
+      "priority": "P0",
+      "action": "在读取plan之后、读取states和fit之前核对plan.family、严格整数fold_year/cut_index、cutoff、2017起完整连续唯一日期、embargo=6以及2018missing合同。",
+      "acceptance": "原报告中duplicate_past_date和wrong_plan_family反例不再到达states/fit哨兵，未来日期及成熟ids拒绝保持；合法代表plan仍通过元数据门槛。"
+    },
+    {
+      "priority": "P1",
+      "action": "继续区分正常包内plan合同、内容完整性校验和OS/容器访问边界；只对新候选追加重测receipt。",
+      "acceptance": "ROOT外通配读取仍明确披露，不宣称完整沙箱；不把合成哨兵测试写成真实拟合或离线全推断，不覆盖本轮原候选报告。"
+    }
+  ],
+  "checks_performed": [
+    "新增独占r11-check.py/r11-checks.json，仅对a642de16执行本轮检查，原R10附件未覆写。",
+    "Git核心数据/模型/guard路径不变比较；886清单差异定位仅replay一项，并核对该项实际size/hash；AST规范化证明新增仅口径元数据。",
+    "直接读REPRO22行并与ROOT外读取谓词一致性核对；未读其他专家/主席或验证receipt。",
+    "9个read_bytes前路径拒绝、1个私有symlink逃逸、模型SHA先于JSON解析的拒绝；6类非法family/year、5项合成模型包与9项坏时钟检查。",
+    "5个实际plan的SHA/连续物理前缀/成熟ids/missing抽核；7项合成refit验证顺序测试，fit始终被哨兵替代，无模型拟合。",
+    "保留两个验证别名解析允许、重复过去date和错误family可达哨兵的真实反例；未打开实际2026经济值或V01/V02，未改共享代码/源或运行writer。"
+  ],
+  "unresolved": [
+    "本报告候选a642de16仍有点号/下划线验证别名的路径模式缺口，尚未在本轮原候选关闭。",
+    "该候选training.refit尚未完整检验plan.family和过去日期连续唯一性；当前export完整性通过不替代入口处理坏输入的验证。",
+    "ROOT外读取仍允许，需要另外的容器/OS边界；文档正确不等于能力扩展。",
+    "未重做全48前缀因子、全年度推断、真实refit或引擎回放；这些不能计作本轮执行。"
+  ],
+  "independence_statement": "保持角色隔离，仅核对固定候选代码/文档、manifest和代表raw训练输入，未读其他专家或主席意见、review/verification结论及真实2026经济/V01/V02资料。仅写data角色附件和已清理的私有/tmp路径夹具，未改共享工件。AI角色不是真实专家或独立市场样本；原r11报告保留待后续候选另行重测。"
+}

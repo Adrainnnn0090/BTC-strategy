@@ -1,0 +1,94 @@
+{
+  "round": 11,
+  "role": "risk",
+  "topic": "第11轮定向追加复测：未知成本前置拒绝",
+  "conclusion": "c743921已修复原R11记录的Python API未知cost晚拒绝：UNKNOWN_CASE及7种坏类型在两种use_models模式下均先于目标/特征/模型读取被拒绝，合法LP35/BASE返回与原R11完全相同；本次只确认该包装前置校验修复，不扩张为全模型、paper或实盘验收。",
+  "verdict": "supported",
+  "evidence": [
+    {
+      "source": "/workspace/BTC-strategy/src/btc_strategy/replay.py:11-19；/workspace/BTCExpertReview/workspaces/risk/r11-retest-checks.json:negative_results",
+      "finding": "新run入口先检查case为str且属于CASES，否则ValueError(unregistered cost case)，随后才verify_targets/compose或lazy model重建。原UNKNOWN_CASE加None/bool/int/float/dict/list/bytes七种坏类型，各在use_models=False/True下执行，共16项。",
+      "calculation": {
+        "negative_checks": 16,
+        "all_expected_ValueError": true,
+        "verify_targets_calls_each": 0,
+        "compose_calls_each": 0,
+        "run_account_calls_each": 0,
+        "artifact_read_calls_each": 0,
+        "candidate_files_opened_during_each_bad_call": 0,
+        "btc_strategy_models_module_imported_during_bad_calls": false
+      }
+    },
+    {
+      "source": "/workspace/BTCExpertReview/workspaces/risk/r11-retest-api-LP35-BASE.json；r11-retest-checks.json:legal_call",
+      "calculation": {
+        "strategy": "LP35",
+        "case": "BASE",
+        "use_models": false,
+        "complete_old_R11_API_result_exact": true,
+        "complete_account_exact": true,
+        "summary_post_fill_max_gross_pct": 98.99360891840428,
+        "daily_before_or_after_whole_gross_pct": 118.0455835631524,
+        "metric_scope_unchanged": true,
+        "risk_qualification_unchanged": true
+      },
+      "finding": "合法调用仅重放LP35/BASE一份cached-forecast历史账户，内存Native/完整原book相等/包内Decimal通过；包括所有metadata在内的整个返回字典与本人原R11附件精确相同。98.9936089184%仍标daily post-fill，118.0455835632%仍标daily before-or-after-order，风险限定不变。"
+    },
+    {
+      "source": "/workspace/BTCExpertReview/workspaces/risk/r11.json；r11-retest-checks.json:original_r11_candidate/original_r11_sha256_unchanged",
+      "finding": "保留原a642de1的R11晚拒绝事实和原报告，不把原失败改写为当时已通过。原r11.json在本次前后SHA均为52a0dd22cdc9e1c755bb11cad0ccf339b933d0c4e43579f10204ee32f90a8229；新通过仅属于c743921。"
+    }
+  ],
+  "counterevidence": [
+    {
+      "source": "原r11.json:evidence[unknown_case_API_late_rejection]；新r11-retest-checks.json",
+      "finding": "原API并非接受未知case成交，原来已经在engine前拒绝；本次修复将拒绝进一步提前到所有目标/特征工作之前，不能宣称修复了一个并未发生的实盘错误下单。"
+    },
+    {
+      "source": "r11-retest-api-LP35-BASE.json:forecasts_reconstructed_from_numeric_models；r11-retest-checks.json:scope",
+      "finding": "合法回归use_models=false，没有模型预测重建/refit；16项use_models=true只测试前置拒绝，不是16次模型验收。该通过不认证新增2018 missing/alias/trainingplan guard、36本、OS隔离或paper/live。"
+    }
+  ],
+  "recommendations": [
+    {
+      "priority": "P1",
+      "action": "将原R11 P1状态标为在c743921定向修复通过，并保留原报告和本追加收据的版本关系。",
+      "acceptance": "最终引用同时指向原a642de1的晚拒绝事实与c743921的16项早拒绝；不得重写原r11.json或说所有日期/策略/成本/安全边界均被本追加全面审计。"
+    },
+    {
+      "priority": "P1",
+      "action": "保留run入口case校验与此次16项零调用哨兵回归，并在后续wrapper变动时维持合法结果/标签不变。",
+      "acceptance": "不合法cost在verify_targets、compose、model和Native之前拒绝；合法LP35/BASE仍完整原book/Decimal及metric_scope一致；不更改经济参数、旧账户或冻结门。"
+    }
+  ],
+  "checks_performed": [
+    {
+      "check": "16项未知case/坏类型哨兵复测",
+      "method": "指定Python -B，显式指向候选c743921；对UNKNOWN_CASE/None/True/0/1.5/{}/[]/bytes(BASE)分别在use_models False/True下调用实际run，并给verify_targets/compose/run_account/read加失败哨兵；审计候选open事件并检查numeric model模块未导入。",
+      "result": "16/16精确抛unregistered cost case，四个哨兵调用数均0、候选文件读取数0、模型模块未导入；没有真实2026/V01/V02输入。"
+    },
+    {
+      "check": "单份合法历史API保持不变",
+      "method": "只调用run(LP35,BASE,use_models=False)，将完整返回字典与本人r11-api-LP35-BASE.json比较。",
+      "result": "完全相等；包内完整Native账本和Decimal通过，两个gross口径及风险说明不变；未运行36本或模型refit。"
+    },
+    {
+      "check": "原事实与角色隔离保留",
+      "method": "核对原r11.json执行前后SHA；对候选写入和review/内容设置拒绝审计hook，所有输出只写risk追加附件。",
+      "result": "原报告SHA不变，review读取0；未改共享源/候选/原账户，未跑旧writer或扩展其他新guard检查。"
+    },
+    {
+      "check": "附件SHA256",
+      "result": {
+        "r11-retest-checks.json": "7f0505a6fb1d783634098d665c0f2cafab06b052bfa95109846d9b308c8ba678",
+        "r11-retest-api-LP35-BASE.json": "12aa74710d78112712c7ad48f52f3901890b3c2991d27653738ac76cf9675356"
+      }
+    }
+  ],
+  "unresolved": [
+    "定向修复已通过；原R11列出的真实报价/滑点/容量、外置融资后清算、PIT/选择偏差及paper/live未建立条件继续保留。",
+    "没有扩展验证本候选另行修改的2018 missing/alias/trainingplan guard，也不声称全模型、全36账本或OS隔离通过。",
+    "全部2026经济数据继续封存，本追加只处理UNKNOWN_CASE及坏类型，不读取任何真实2026或V01/V02内容。"
+  ],
+  "independence_statement": "本人为risk AI分析角色，不是人类专家或新的独立市场样本；未读其他专家/主席意见，候选review打开为0；未改共享源或原r11、未跑旧writer/新策略搜索，仅新增risk/r11-retest.json及两个独占附件，完成后等待正式R12。"
+}

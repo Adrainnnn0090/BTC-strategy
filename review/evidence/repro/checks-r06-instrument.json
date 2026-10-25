@@ -1,0 +1,9 @@
+{
+  "round": 6,
+  "instrument_identifier_assignment_AST_exact": {
+    "INSTRUMENT": true,
+    "VENUE": true
+  },
+  "original_external_module_imported": false,
+  "source_or_delivery_written": false
+}

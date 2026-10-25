@@ -1,0 +1,5398 @@
+{
+  "round": 4,
+  "model_route_count": 48,
+  "model_file_count": 266,
+  "numeric_estimator_count": 392,
+  "family_file_counts": {
+    "base_tree": 49,
+    "stop44": 7,
+    "price47": 7,
+    "short_huber": 98,
+    "short_median": 98,
+    "mining58": 7
+  },
+  "model_file_checks": [
+    {
+      "family": "base_tree",
+      "fold_year": 2019,
+      "path": "models/base_tree/2019/EXTRA_CAL44_H60_S101.json.gz",
+      "source_path": "studies/B10-seed-calendar-stability/folds/2019/models/EXTRA_CAL44_H60_S101.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "base_tree",
+      "fold_year": 2019,
+      "path": "models/base_tree/2019/EXTRA_CAL44_H60_S1103.json.gz",
+      "source_path": "studies/B10-seed-calendar-stability/folds/2019/models/EXTRA_CAL44_H60_S1103.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "base_tree",
+      "fold_year": 2019,
+      "path": "models/base_tree/2019/EXTRA_CAL44_H60_S1701.json.gz",
+      "source_path": "studies/B10-seed-calendar-stability/folds/2019/models/EXTRA_CAL44_H60_S1701.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "base_tree",
+      "fold_year": 2019,
+      "path": "models/base_tree/2019/EXTRA_CAL44_H60_S307.json.gz",
+      "source_path": "studies/B10-seed-calendar-stability/folds/2019/models/EXTRA_CAL44_H60_S307.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "base_tree",
+      "fold_year": 2019,
+      "path": "models/base_tree/2019/EXTRA_CAL44_H60_S509.json.gz",
+      "source_path": "studies/B10-seed-calendar-stability/folds/2019/models/EXTRA_CAL44_H60_S509.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "base_tree",
+      "fold_year": 2019,
+      "path": "models/base_tree/2019/EXTRA_CAL44_H60_S701.json.gz",
+      "source_path": "studies/B10-seed-calendar-stability/folds/2019/models/EXTRA_CAL44_H60_S701.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "base_tree",
+      "fold_year": 2019,
+      "path": "models/base_tree/2019/EXTRA_CAL44_H60_S907.json.gz",
+      "source_path": "studies/B10-seed-calendar-stability/folds/2019/models/EXTRA_CAL44_H60_S907.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "base_tree",
+      "fold_year": 2020,
+      "path": "models/base_tree/2020/EXTRA_CAL44_H60_S101.json.gz",
+      "source_path": "studies/B10-seed-calendar-stability/folds/2020/models/EXTRA_CAL44_H60_S101.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "base_tree",
+      "fold_year": 2020,
+      "path": "models/base_tree/2020/EXTRA_CAL44_H60_S1103.json.gz",
+      "source_path": "studies/B10-seed-calendar-stability/folds/2020/models/EXTRA_CAL44_H60_S1103.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "base_tree",
+      "fold_year": 2020,
+      "path": "models/base_tree/2020/EXTRA_CAL44_H60_S1701.json.gz",
+      "source_path": "studies/B10-seed-calendar-stability/folds/2020/models/EXTRA_CAL44_H60_S1701.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "base_tree",
+      "fold_year": 2020,
+      "path": "models/base_tree/2020/EXTRA_CAL44_H60_S307.json.gz",
+      "source_path": "studies/B10-seed-calendar-stability/folds/2020/models/EXTRA_CAL44_H60_S307.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "base_tree",
+      "fold_year": 2020,
+      "path": "models/base_tree/2020/EXTRA_CAL44_H60_S509.json.gz",
+      "source_path": "studies/B10-seed-calendar-stability/folds/2020/models/EXTRA_CAL44_H60_S509.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "base_tree",
+      "fold_year": 2020,
+      "path": "models/base_tree/2020/EXTRA_CAL44_H60_S701.json.gz",
+      "source_path": "studies/B10-seed-calendar-stability/folds/2020/models/EXTRA_CAL44_H60_S701.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "base_tree",
+      "fold_year": 2020,
+      "path": "models/base_tree/2020/EXTRA_CAL44_H60_S907.json.gz",
+      "source_path": "studies/B10-seed-calendar-stability/folds/2020/models/EXTRA_CAL44_H60_S907.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "base_tree",
+      "fold_year": 2021,
+      "path": "models/base_tree/2021/EXTRA_CAL44_H60_S101.json.gz",
+      "source_path": "studies/B10-seed-calendar-stability/folds/2021/models/EXTRA_CAL44_H60_S101.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "base_tree",
+      "fold_year": 2021,
+      "path": "models/base_tree/2021/EXTRA_CAL44_H60_S1103.json.gz",
+      "source_path": "studies/B10-seed-calendar-stability/folds/2021/models/EXTRA_CAL44_H60_S1103.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "base_tree",
+      "fold_year": 2021,
+      "path": "models/base_tree/2021/EXTRA_CAL44_H60_S1701.json.gz",
+      "source_path": "studies/B10-seed-calendar-stability/folds/2021/models/EXTRA_CAL44_H60_S1701.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "base_tree",
+      "fold_year": 2021,
+      "path": "models/base_tree/2021/EXTRA_CAL44_H60_S307.json.gz",
+      "source_path": "studies/B10-seed-calendar-stability/folds/2021/models/EXTRA_CAL44_H60_S307.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "base_tree",
+      "fold_year": 2021,
+      "path": "models/base_tree/2021/EXTRA_CAL44_H60_S509.json.gz",
+      "source_path": "studies/B10-seed-calendar-stability/folds/2021/models/EXTRA_CAL44_H60_S509.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "base_tree",
+      "fold_year": 2021,
+      "path": "models/base_tree/2021/EXTRA_CAL44_H60_S701.json.gz",
+      "source_path": "studies/B10-seed-calendar-stability/folds/2021/models/EXTRA_CAL44_H60_S701.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "base_tree",
+      "fold_year": 2021,
+      "path": "models/base_tree/2021/EXTRA_CAL44_H60_S907.json.gz",
+      "source_path": "studies/B10-seed-calendar-stability/folds/2021/models/EXTRA_CAL44_H60_S907.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "base_tree",
+      "fold_year": 2022,
+      "path": "models/base_tree/2022/EXTRA_CAL44_H60_S101.json.gz",
+      "source_path": "studies/B10-seed-calendar-stability/folds/2022/models/EXTRA_CAL44_H60_S101.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "base_tree",
+      "fold_year": 2022,
+      "path": "models/base_tree/2022/EXTRA_CAL44_H60_S1103.json.gz",
+      "source_path": "studies/B10-seed-calendar-stability/folds/2022/models/EXTRA_CAL44_H60_S1103.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "base_tree",
+      "fold_year": 2022,
+      "path": "models/base_tree/2022/EXTRA_CAL44_H60_S1701.json.gz",
+      "source_path": "studies/B10-seed-calendar-stability/folds/2022/models/EXTRA_CAL44_H60_S1701.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "base_tree",
+      "fold_year": 2022,
+      "path": "models/base_tree/2022/EXTRA_CAL44_H60_S307.json.gz",
+      "source_path": "studies/B10-seed-calendar-stability/folds/2022/models/EXTRA_CAL44_H60_S307.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "base_tree",
+      "fold_year": 2022,
+      "path": "models/base_tree/2022/EXTRA_CAL44_H60_S509.json.gz",
+      "source_path": "studies/B10-seed-calendar-stability/folds/2022/models/EXTRA_CAL44_H60_S509.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "base_tree",
+      "fold_year": 2022,
+      "path": "models/base_tree/2022/EXTRA_CAL44_H60_S701.json.gz",
+      "source_path": "studies/B10-seed-calendar-stability/folds/2022/models/EXTRA_CAL44_H60_S701.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "base_tree",
+      "fold_year": 2022,
+      "path": "models/base_tree/2022/EXTRA_CAL44_H60_S907.json.gz",
+      "source_path": "studies/B10-seed-calendar-stability/folds/2022/models/EXTRA_CAL44_H60_S907.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "base_tree",
+      "fold_year": 2023,
+      "path": "models/base_tree/2023/EXTRA_CAL44_H60_S101.json.gz",
+      "source_path": "studies/B10-seed-calendar-stability/folds/2023/models/EXTRA_CAL44_H60_S101.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "base_tree",
+      "fold_year": 2023,
+      "path": "models/base_tree/2023/EXTRA_CAL44_H60_S1103.json.gz",
+      "source_path": "studies/B10-seed-calendar-stability/folds/2023/models/EXTRA_CAL44_H60_S1103.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "base_tree",
+      "fold_year": 2023,
+      "path": "models/base_tree/2023/EXTRA_CAL44_H60_S1701.json.gz",
+      "source_path": "studies/B10-seed-calendar-stability/folds/2023/models/EXTRA_CAL44_H60_S1701.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "base_tree",
+      "fold_year": 2023,
+      "path": "models/base_tree/2023/EXTRA_CAL44_H60_S307.json.gz",
+      "source_path": "studies/B10-seed-calendar-stability/folds/2023/models/EXTRA_CAL44_H60_S307.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "base_tree",
+      "fold_year": 2023,
+      "path": "models/base_tree/2023/EXTRA_CAL44_H60_S509.json.gz",
+      "source_path": "studies/B10-seed-calendar-stability/folds/2023/models/EXTRA_CAL44_H60_S509.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "base_tree",
+      "fold_year": 2023,
+      "path": "models/base_tree/2023/EXTRA_CAL44_H60_S701.json.gz",
+      "source_path": "studies/B10-seed-calendar-stability/folds/2023/models/EXTRA_CAL44_H60_S701.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "base_tree",
+      "fold_year": 2023,
+      "path": "models/base_tree/2023/EXTRA_CAL44_H60_S907.json.gz",
+      "source_path": "studies/B10-seed-calendar-stability/folds/2023/models/EXTRA_CAL44_H60_S907.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "base_tree",
+      "fold_year": 2024,
+      "path": "models/base_tree/2024/EXTRA_CAL44_H60_S101.json.gz",
+      "source_path": "studies/B10-seed-calendar-stability/folds/2024/models/EXTRA_CAL44_H60_S101.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 43,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "base_tree",
+      "fold_year": 2024,
+      "path": "models/base_tree/2024/EXTRA_CAL44_H60_S1103.json.gz",
+      "source_path": "studies/B10-seed-calendar-stability/folds/2024/models/EXTRA_CAL44_H60_S1103.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "base_tree",
+      "fold_year": 2024,
+      "path": "models/base_tree/2024/EXTRA_CAL44_H60_S1701.json.gz",
+      "source_path": "studies/B10-seed-calendar-stability/folds/2024/models/EXTRA_CAL44_H60_S1701.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "base_tree",
+      "fold_year": 2024,
+      "path": "models/base_tree/2024/EXTRA_CAL44_H60_S307.json.gz",
+      "source_path": "studies/B10-seed-calendar-stability/folds/2024/models/EXTRA_CAL44_H60_S307.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "base_tree",
+      "fold_year": 2024,
+      "path": "models/base_tree/2024/EXTRA_CAL44_H60_S509.json.gz",
+      "source_path": "studies/B10-seed-calendar-stability/folds/2024/models/EXTRA_CAL44_H60_S509.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "base_tree",
+      "fold_year": 2024,
+      "path": "models/base_tree/2024/EXTRA_CAL44_H60_S701.json.gz",
+      "source_path": "studies/B10-seed-calendar-stability/folds/2024/models/EXTRA_CAL44_H60_S701.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "base_tree",
+      "fold_year": 2024,
+      "path": "models/base_tree/2024/EXTRA_CAL44_H60_S907.json.gz",
+      "source_path": "studies/B10-seed-calendar-stability/folds/2024/models/EXTRA_CAL44_H60_S907.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "base_tree",
+      "fold_year": 2025,
+      "path": "models/base_tree/2025/EXTRA_CAL44_H60_S101.json.gz",
+      "source_path": "studies/B10-seed-calendar-stability/folds/2025/models/EXTRA_CAL44_H60_S101.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "base_tree",
+      "fold_year": 2025,
+      "path": "models/base_tree/2025/EXTRA_CAL44_H60_S1103.json.gz",
+      "source_path": "studies/B10-seed-calendar-stability/folds/2025/models/EXTRA_CAL44_H60_S1103.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "base_tree",
+      "fold_year": 2025,
+      "path": "models/base_tree/2025/EXTRA_CAL44_H60_S1701.json.gz",
+      "source_path": "studies/B10-seed-calendar-stability/folds/2025/models/EXTRA_CAL44_H60_S1701.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "base_tree",
+      "fold_year": 2025,
+      "path": "models/base_tree/2025/EXTRA_CAL44_H60_S307.json.gz",
+      "source_path": "studies/B10-seed-calendar-stability/folds/2025/models/EXTRA_CAL44_H60_S307.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "base_tree",
+      "fold_year": 2025,
+      "path": "models/base_tree/2025/EXTRA_CAL44_H60_S509.json.gz",
+      "source_path": "studies/B10-seed-calendar-stability/folds/2025/models/EXTRA_CAL44_H60_S509.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "base_tree",
+      "fold_year": 2025,
+      "path": "models/base_tree/2025/EXTRA_CAL44_H60_S701.json.gz",
+      "source_path": "studies/B10-seed-calendar-stability/folds/2025/models/EXTRA_CAL44_H60_S701.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "base_tree",
+      "fold_year": 2025,
+      "path": "models/base_tree/2025/EXTRA_CAL44_H60_S907.json.gz",
+      "source_path": "studies/B10-seed-calendar-stability/folds/2025/models/EXTRA_CAL44_H60_S907.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "stop44",
+      "fold_year": 2019,
+      "path": "models/stop44/2019/CAL44_STOP.json.gz",
+      "source_path": "studies/B20-execution-aware-labels/folds/2019/models/CAL44_STOP.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 7,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "stop44",
+      "fold_year": 2020,
+      "path": "models/stop44/2020/CAL44_STOP.json.gz",
+      "source_path": "studies/B20-execution-aware-labels/folds/2020/models/CAL44_STOP.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 7,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "stop44",
+      "fold_year": 2021,
+      "path": "models/stop44/2021/CAL44_STOP.json.gz",
+      "source_path": "studies/B20-execution-aware-labels/folds/2021/models/CAL44_STOP.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 7,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "stop44",
+      "fold_year": 2022,
+      "path": "models/stop44/2022/CAL44_STOP.json.gz",
+      "source_path": "studies/B20-execution-aware-labels/folds/2022/models/CAL44_STOP.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 7,
+      "largest_used_feature_index": 42,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "stop44",
+      "fold_year": 2023,
+      "path": "models/stop44/2023/CAL44_STOP.json.gz",
+      "source_path": "studies/B20-execution-aware-labels/folds/2023/models/CAL44_STOP.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 7,
+      "largest_used_feature_index": 43,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "stop44",
+      "fold_year": 2024,
+      "path": "models/stop44/2024/CAL44_STOP.json.gz",
+      "source_path": "studies/B20-execution-aware-labels/folds/2024/models/CAL44_STOP.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 7,
+      "largest_used_feature_index": 43,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "stop44",
+      "fold_year": 2025,
+      "path": "models/stop44/2025/CAL44_STOP.json.gz",
+      "source_path": "studies/B20-execution-aware-labels/folds/2025/models/CAL44_STOP.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 7,
+      "largest_used_feature_index": 43,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "price47",
+      "fold_year": 2019,
+      "path": "models/price47/2019/PRICE_L7.json.gz",
+      "source_path": "studies/B81-reported-volume-long-core/folds/2019/models/PRICE_L7.json.gz",
+      "expected_n_features": 47,
+      "member_n_features": [
+        47
+      ],
+      "estimator_count": 7,
+      "largest_used_feature_index": 46,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "price47",
+      "fold_year": 2020,
+      "path": "models/price47/2020/PRICE_L7.json.gz",
+      "source_path": "studies/B81-reported-volume-long-core/folds/2020/models/PRICE_L7.json.gz",
+      "expected_n_features": 47,
+      "member_n_features": [
+        47
+      ],
+      "estimator_count": 7,
+      "largest_used_feature_index": 46,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "price47",
+      "fold_year": 2021,
+      "path": "models/price47/2021/PRICE_L7.json.gz",
+      "source_path": "studies/B81-reported-volume-long-core/folds/2021/models/PRICE_L7.json.gz",
+      "expected_n_features": 47,
+      "member_n_features": [
+        47
+      ],
+      "estimator_count": 7,
+      "largest_used_feature_index": 46,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "price47",
+      "fold_year": 2022,
+      "path": "models/price47/2022/PRICE_L7.json.gz",
+      "source_path": "studies/B81-reported-volume-long-core/folds/2022/models/PRICE_L7.json.gz",
+      "expected_n_features": 47,
+      "member_n_features": [
+        47
+      ],
+      "estimator_count": 7,
+      "largest_used_feature_index": 46,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "price47",
+      "fold_year": 2023,
+      "path": "models/price47/2023/PRICE_L7.json.gz",
+      "source_path": "studies/B81-reported-volume-long-core/folds/2023/models/PRICE_L7.json.gz",
+      "expected_n_features": 47,
+      "member_n_features": [
+        47
+      ],
+      "estimator_count": 7,
+      "largest_used_feature_index": 46,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "price47",
+      "fold_year": 2024,
+      "path": "models/price47/2024/PRICE_L7.json.gz",
+      "source_path": "studies/B81-reported-volume-long-core/folds/2024/models/PRICE_L7.json.gz",
+      "expected_n_features": 47,
+      "member_n_features": [
+        47
+      ],
+      "estimator_count": 7,
+      "largest_used_feature_index": 46,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "price47",
+      "fold_year": 2025,
+      "path": "models/price47/2025/PRICE_L7.json.gz",
+      "source_path": "studies/B81-reported-volume-long-core/folds/2025/models/PRICE_L7.json.gz",
+      "expected_n_features": 47,
+      "member_n_features": [
+        47
+      ],
+      "estimator_count": 7,
+      "largest_used_feature_index": 46,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2019,
+      "path": "models/short_huber/2019/L1-101.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2019/models/L1-101.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2019,
+      "path": "models/short_huber/2019/L1-1103.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2019/models/L1-1103.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2019,
+      "path": "models/short_huber/2019/L1-1701.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2019/models/L1-1701.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2019,
+      "path": "models/short_huber/2019/L1-307.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2019/models/L1-307.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2019,
+      "path": "models/short_huber/2019/L1-509.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2019/models/L1-509.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2019,
+      "path": "models/short_huber/2019/L1-701.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2019/models/L1-701.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2019,
+      "path": "models/short_huber/2019/L1-907.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2019/models/L1-907.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2019,
+      "path": "models/short_huber/2019/L2-101.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2019/models/L2-101.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2019,
+      "path": "models/short_huber/2019/L2-1103.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2019/models/L2-1103.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2019,
+      "path": "models/short_huber/2019/L2-1701.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2019/models/L2-1701.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2019,
+      "path": "models/short_huber/2019/L2-307.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2019/models/L2-307.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2019,
+      "path": "models/short_huber/2019/L2-509.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2019/models/L2-509.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2019,
+      "path": "models/short_huber/2019/L2-701.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2019/models/L2-701.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2019,
+      "path": "models/short_huber/2019/L2-907.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2019/models/L2-907.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2020,
+      "path": "models/short_huber/2020/L1-101.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2020/models/L1-101.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2020,
+      "path": "models/short_huber/2020/L1-1103.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2020/models/L1-1103.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2020,
+      "path": "models/short_huber/2020/L1-1701.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2020/models/L1-1701.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2020,
+      "path": "models/short_huber/2020/L1-307.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2020/models/L1-307.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2020,
+      "path": "models/short_huber/2020/L1-509.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2020/models/L1-509.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2020,
+      "path": "models/short_huber/2020/L1-701.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2020/models/L1-701.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2020,
+      "path": "models/short_huber/2020/L1-907.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2020/models/L1-907.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2020,
+      "path": "models/short_huber/2020/L2-101.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2020/models/L2-101.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2020,
+      "path": "models/short_huber/2020/L2-1103.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2020/models/L2-1103.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2020,
+      "path": "models/short_huber/2020/L2-1701.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2020/models/L2-1701.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2020,
+      "path": "models/short_huber/2020/L2-307.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2020/models/L2-307.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2020,
+      "path": "models/short_huber/2020/L2-509.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2020/models/L2-509.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2020,
+      "path": "models/short_huber/2020/L2-701.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2020/models/L2-701.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2020,
+      "path": "models/short_huber/2020/L2-907.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2020/models/L2-907.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2021,
+      "path": "models/short_huber/2021/L1-101.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2021/models/L1-101.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2021,
+      "path": "models/short_huber/2021/L1-1103.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2021/models/L1-1103.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2021,
+      "path": "models/short_huber/2021/L1-1701.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2021/models/L1-1701.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2021,
+      "path": "models/short_huber/2021/L1-307.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2021/models/L1-307.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2021,
+      "path": "models/short_huber/2021/L1-509.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2021/models/L1-509.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2021,
+      "path": "models/short_huber/2021/L1-701.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2021/models/L1-701.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2021,
+      "path": "models/short_huber/2021/L1-907.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2021/models/L1-907.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2021,
+      "path": "models/short_huber/2021/L2-101.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2021/models/L2-101.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2021,
+      "path": "models/short_huber/2021/L2-1103.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2021/models/L2-1103.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2021,
+      "path": "models/short_huber/2021/L2-1701.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2021/models/L2-1701.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2021,
+      "path": "models/short_huber/2021/L2-307.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2021/models/L2-307.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2021,
+      "path": "models/short_huber/2021/L2-509.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2021/models/L2-509.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2021,
+      "path": "models/short_huber/2021/L2-701.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2021/models/L2-701.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2021,
+      "path": "models/short_huber/2021/L2-907.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2021/models/L2-907.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2022,
+      "path": "models/short_huber/2022/L1-101.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2022/models/L1-101.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2022,
+      "path": "models/short_huber/2022/L1-1103.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2022/models/L1-1103.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2022,
+      "path": "models/short_huber/2022/L1-1701.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2022/models/L1-1701.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2022,
+      "path": "models/short_huber/2022/L1-307.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2022/models/L1-307.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2022,
+      "path": "models/short_huber/2022/L1-509.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2022/models/L1-509.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2022,
+      "path": "models/short_huber/2022/L1-701.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2022/models/L1-701.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2022,
+      "path": "models/short_huber/2022/L1-907.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2022/models/L1-907.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2022,
+      "path": "models/short_huber/2022/L2-101.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2022/models/L2-101.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2022,
+      "path": "models/short_huber/2022/L2-1103.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2022/models/L2-1103.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2022,
+      "path": "models/short_huber/2022/L2-1701.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2022/models/L2-1701.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2022,
+      "path": "models/short_huber/2022/L2-307.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2022/models/L2-307.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2022,
+      "path": "models/short_huber/2022/L2-509.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2022/models/L2-509.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2022,
+      "path": "models/short_huber/2022/L2-701.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2022/models/L2-701.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2022,
+      "path": "models/short_huber/2022/L2-907.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2022/models/L2-907.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2023,
+      "path": "models/short_huber/2023/L1-101.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2023/models/L1-101.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2023,
+      "path": "models/short_huber/2023/L1-1103.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2023/models/L1-1103.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2023,
+      "path": "models/short_huber/2023/L1-1701.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2023/models/L1-1701.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2023,
+      "path": "models/short_huber/2023/L1-307.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2023/models/L1-307.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2023,
+      "path": "models/short_huber/2023/L1-509.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2023/models/L1-509.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2023,
+      "path": "models/short_huber/2023/L1-701.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2023/models/L1-701.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2023,
+      "path": "models/short_huber/2023/L1-907.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2023/models/L1-907.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2023,
+      "path": "models/short_huber/2023/L2-101.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2023/models/L2-101.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2023,
+      "path": "models/short_huber/2023/L2-1103.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2023/models/L2-1103.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2023,
+      "path": "models/short_huber/2023/L2-1701.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2023/models/L2-1701.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2023,
+      "path": "models/short_huber/2023/L2-307.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2023/models/L2-307.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2023,
+      "path": "models/short_huber/2023/L2-509.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2023/models/L2-509.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2023,
+      "path": "models/short_huber/2023/L2-701.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2023/models/L2-701.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2023,
+      "path": "models/short_huber/2023/L2-907.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2023/models/L2-907.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2024,
+      "path": "models/short_huber/2024/L1-101.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2024/models/L1-101.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2024,
+      "path": "models/short_huber/2024/L1-1103.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2024/models/L1-1103.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2024,
+      "path": "models/short_huber/2024/L1-1701.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2024/models/L1-1701.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2024,
+      "path": "models/short_huber/2024/L1-307.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2024/models/L1-307.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2024,
+      "path": "models/short_huber/2024/L1-509.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2024/models/L1-509.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2024,
+      "path": "models/short_huber/2024/L1-701.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2024/models/L1-701.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2024,
+      "path": "models/short_huber/2024/L1-907.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2024/models/L1-907.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2024,
+      "path": "models/short_huber/2024/L2-101.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2024/models/L2-101.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2024,
+      "path": "models/short_huber/2024/L2-1103.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2024/models/L2-1103.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2024,
+      "path": "models/short_huber/2024/L2-1701.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2024/models/L2-1701.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2024,
+      "path": "models/short_huber/2024/L2-307.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2024/models/L2-307.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2024,
+      "path": "models/short_huber/2024/L2-509.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2024/models/L2-509.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2024,
+      "path": "models/short_huber/2024/L2-701.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2024/models/L2-701.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2024,
+      "path": "models/short_huber/2024/L2-907.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2024/models/L2-907.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2025,
+      "path": "models/short_huber/2025/L1-101.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2025/models/L1-101.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2025,
+      "path": "models/short_huber/2025/L1-1103.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2025/models/L1-1103.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2025,
+      "path": "models/short_huber/2025/L1-1701.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2025/models/L1-1701.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2025,
+      "path": "models/short_huber/2025/L1-307.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2025/models/L1-307.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2025,
+      "path": "models/short_huber/2025/L1-509.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2025/models/L1-509.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2025,
+      "path": "models/short_huber/2025/L1-701.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2025/models/L1-701.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2025,
+      "path": "models/short_huber/2025/L1-907.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2025/models/L1-907.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2025,
+      "path": "models/short_huber/2025/L2-101.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2025/models/L2-101.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2025,
+      "path": "models/short_huber/2025/L2-1103.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2025/models/L2-1103.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2025,
+      "path": "models/short_huber/2025/L2-1701.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2025/models/L2-1701.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2025,
+      "path": "models/short_huber/2025/L2-307.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2025/models/L2-307.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2025,
+      "path": "models/short_huber/2025/L2-509.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2025/models/L2-509.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2025,
+      "path": "models/short_huber/2025/L2-701.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2025/models/L2-701.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2025,
+      "path": "models/short_huber/2025/L2-907.json.gz",
+      "source_path": "studies/B67-lag-matched-short-supervision/folds/2025/models/L2-907.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2019,
+      "path": "models/short_median/2019/MEDIAN_L1-101.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2019/models/MEDIAN_L1-101.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 40,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2019,
+      "path": "models/short_median/2019/MEDIAN_L1-1103.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2019/models/MEDIAN_L1-1103.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2019,
+      "path": "models/short_median/2019/MEDIAN_L1-1701.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2019/models/MEDIAN_L1-1701.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2019,
+      "path": "models/short_median/2019/MEDIAN_L1-307.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2019/models/MEDIAN_L1-307.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2019,
+      "path": "models/short_median/2019/MEDIAN_L1-509.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2019/models/MEDIAN_L1-509.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2019,
+      "path": "models/short_median/2019/MEDIAN_L1-701.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2019/models/MEDIAN_L1-701.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2019,
+      "path": "models/short_median/2019/MEDIAN_L1-907.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2019/models/MEDIAN_L1-907.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2019,
+      "path": "models/short_median/2019/MEDIAN_L2-101.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2019/models/MEDIAN_L2-101.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2019,
+      "path": "models/short_median/2019/MEDIAN_L2-1103.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2019/models/MEDIAN_L2-1103.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2019,
+      "path": "models/short_median/2019/MEDIAN_L2-1701.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2019/models/MEDIAN_L2-1701.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2019,
+      "path": "models/short_median/2019/MEDIAN_L2-307.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2019/models/MEDIAN_L2-307.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2019,
+      "path": "models/short_median/2019/MEDIAN_L2-509.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2019/models/MEDIAN_L2-509.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2019,
+      "path": "models/short_median/2019/MEDIAN_L2-701.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2019/models/MEDIAN_L2-701.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2019,
+      "path": "models/short_median/2019/MEDIAN_L2-907.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2019/models/MEDIAN_L2-907.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2020,
+      "path": "models/short_median/2020/MEDIAN_L1-101.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2020/models/MEDIAN_L1-101.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2020,
+      "path": "models/short_median/2020/MEDIAN_L1-1103.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2020/models/MEDIAN_L1-1103.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2020,
+      "path": "models/short_median/2020/MEDIAN_L1-1701.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2020/models/MEDIAN_L1-1701.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2020,
+      "path": "models/short_median/2020/MEDIAN_L1-307.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2020/models/MEDIAN_L1-307.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2020,
+      "path": "models/short_median/2020/MEDIAN_L1-509.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2020/models/MEDIAN_L1-509.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2020,
+      "path": "models/short_median/2020/MEDIAN_L1-701.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2020/models/MEDIAN_L1-701.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2020,
+      "path": "models/short_median/2020/MEDIAN_L1-907.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2020/models/MEDIAN_L1-907.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2020,
+      "path": "models/short_median/2020/MEDIAN_L2-101.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2020/models/MEDIAN_L2-101.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2020,
+      "path": "models/short_median/2020/MEDIAN_L2-1103.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2020/models/MEDIAN_L2-1103.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2020,
+      "path": "models/short_median/2020/MEDIAN_L2-1701.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2020/models/MEDIAN_L2-1701.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2020,
+      "path": "models/short_median/2020/MEDIAN_L2-307.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2020/models/MEDIAN_L2-307.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2020,
+      "path": "models/short_median/2020/MEDIAN_L2-509.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2020/models/MEDIAN_L2-509.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2020,
+      "path": "models/short_median/2020/MEDIAN_L2-701.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2020/models/MEDIAN_L2-701.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2020,
+      "path": "models/short_median/2020/MEDIAN_L2-907.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2020/models/MEDIAN_L2-907.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2021,
+      "path": "models/short_median/2021/MEDIAN_L1-101.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2021/models/MEDIAN_L1-101.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2021,
+      "path": "models/short_median/2021/MEDIAN_L1-1103.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2021/models/MEDIAN_L1-1103.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2021,
+      "path": "models/short_median/2021/MEDIAN_L1-1701.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2021/models/MEDIAN_L1-1701.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2021,
+      "path": "models/short_median/2021/MEDIAN_L1-307.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2021/models/MEDIAN_L1-307.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2021,
+      "path": "models/short_median/2021/MEDIAN_L1-509.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2021/models/MEDIAN_L1-509.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2021,
+      "path": "models/short_median/2021/MEDIAN_L1-701.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2021/models/MEDIAN_L1-701.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2021,
+      "path": "models/short_median/2021/MEDIAN_L1-907.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2021/models/MEDIAN_L1-907.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2021,
+      "path": "models/short_median/2021/MEDIAN_L2-101.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2021/models/MEDIAN_L2-101.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2021,
+      "path": "models/short_median/2021/MEDIAN_L2-1103.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2021/models/MEDIAN_L2-1103.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2021,
+      "path": "models/short_median/2021/MEDIAN_L2-1701.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2021/models/MEDIAN_L2-1701.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2021,
+      "path": "models/short_median/2021/MEDIAN_L2-307.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2021/models/MEDIAN_L2-307.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2021,
+      "path": "models/short_median/2021/MEDIAN_L2-509.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2021/models/MEDIAN_L2-509.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2021,
+      "path": "models/short_median/2021/MEDIAN_L2-701.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2021/models/MEDIAN_L2-701.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2021,
+      "path": "models/short_median/2021/MEDIAN_L2-907.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2021/models/MEDIAN_L2-907.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2022,
+      "path": "models/short_median/2022/MEDIAN_L1-101.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2022/models/MEDIAN_L1-101.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2022,
+      "path": "models/short_median/2022/MEDIAN_L1-1103.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2022/models/MEDIAN_L1-1103.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2022,
+      "path": "models/short_median/2022/MEDIAN_L1-1701.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2022/models/MEDIAN_L1-1701.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2022,
+      "path": "models/short_median/2022/MEDIAN_L1-307.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2022/models/MEDIAN_L1-307.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2022,
+      "path": "models/short_median/2022/MEDIAN_L1-509.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2022/models/MEDIAN_L1-509.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2022,
+      "path": "models/short_median/2022/MEDIAN_L1-701.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2022/models/MEDIAN_L1-701.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2022,
+      "path": "models/short_median/2022/MEDIAN_L1-907.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2022/models/MEDIAN_L1-907.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2022,
+      "path": "models/short_median/2022/MEDIAN_L2-101.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2022/models/MEDIAN_L2-101.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2022,
+      "path": "models/short_median/2022/MEDIAN_L2-1103.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2022/models/MEDIAN_L2-1103.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2022,
+      "path": "models/short_median/2022/MEDIAN_L2-1701.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2022/models/MEDIAN_L2-1701.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2022,
+      "path": "models/short_median/2022/MEDIAN_L2-307.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2022/models/MEDIAN_L2-307.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2022,
+      "path": "models/short_median/2022/MEDIAN_L2-509.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2022/models/MEDIAN_L2-509.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2022,
+      "path": "models/short_median/2022/MEDIAN_L2-701.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2022/models/MEDIAN_L2-701.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2022,
+      "path": "models/short_median/2022/MEDIAN_L2-907.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2022/models/MEDIAN_L2-907.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2023,
+      "path": "models/short_median/2023/MEDIAN_L1-101.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2023/models/MEDIAN_L1-101.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2023,
+      "path": "models/short_median/2023/MEDIAN_L1-1103.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2023/models/MEDIAN_L1-1103.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2023,
+      "path": "models/short_median/2023/MEDIAN_L1-1701.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2023/models/MEDIAN_L1-1701.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2023,
+      "path": "models/short_median/2023/MEDIAN_L1-307.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2023/models/MEDIAN_L1-307.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2023,
+      "path": "models/short_median/2023/MEDIAN_L1-509.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2023/models/MEDIAN_L1-509.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2023,
+      "path": "models/short_median/2023/MEDIAN_L1-701.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2023/models/MEDIAN_L1-701.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2023,
+      "path": "models/short_median/2023/MEDIAN_L1-907.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2023/models/MEDIAN_L1-907.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2023,
+      "path": "models/short_median/2023/MEDIAN_L2-101.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2023/models/MEDIAN_L2-101.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2023,
+      "path": "models/short_median/2023/MEDIAN_L2-1103.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2023/models/MEDIAN_L2-1103.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2023,
+      "path": "models/short_median/2023/MEDIAN_L2-1701.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2023/models/MEDIAN_L2-1701.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2023,
+      "path": "models/short_median/2023/MEDIAN_L2-307.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2023/models/MEDIAN_L2-307.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2023,
+      "path": "models/short_median/2023/MEDIAN_L2-509.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2023/models/MEDIAN_L2-509.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2023,
+      "path": "models/short_median/2023/MEDIAN_L2-701.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2023/models/MEDIAN_L2-701.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2023,
+      "path": "models/short_median/2023/MEDIAN_L2-907.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2023/models/MEDIAN_L2-907.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2024,
+      "path": "models/short_median/2024/MEDIAN_L1-101.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2024/models/MEDIAN_L1-101.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2024,
+      "path": "models/short_median/2024/MEDIAN_L1-1103.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2024/models/MEDIAN_L1-1103.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2024,
+      "path": "models/short_median/2024/MEDIAN_L1-1701.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2024/models/MEDIAN_L1-1701.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2024,
+      "path": "models/short_median/2024/MEDIAN_L1-307.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2024/models/MEDIAN_L1-307.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2024,
+      "path": "models/short_median/2024/MEDIAN_L1-509.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2024/models/MEDIAN_L1-509.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2024,
+      "path": "models/short_median/2024/MEDIAN_L1-701.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2024/models/MEDIAN_L1-701.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2024,
+      "path": "models/short_median/2024/MEDIAN_L1-907.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2024/models/MEDIAN_L1-907.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2024,
+      "path": "models/short_median/2024/MEDIAN_L2-101.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2024/models/MEDIAN_L2-101.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2024,
+      "path": "models/short_median/2024/MEDIAN_L2-1103.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2024/models/MEDIAN_L2-1103.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2024,
+      "path": "models/short_median/2024/MEDIAN_L2-1701.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2024/models/MEDIAN_L2-1701.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2024,
+      "path": "models/short_median/2024/MEDIAN_L2-307.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2024/models/MEDIAN_L2-307.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2024,
+      "path": "models/short_median/2024/MEDIAN_L2-509.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2024/models/MEDIAN_L2-509.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2024,
+      "path": "models/short_median/2024/MEDIAN_L2-701.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2024/models/MEDIAN_L2-701.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2024,
+      "path": "models/short_median/2024/MEDIAN_L2-907.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2024/models/MEDIAN_L2-907.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2025,
+      "path": "models/short_median/2025/MEDIAN_L1-101.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2025/models/MEDIAN_L1-101.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2025,
+      "path": "models/short_median/2025/MEDIAN_L1-1103.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2025/models/MEDIAN_L1-1103.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2025,
+      "path": "models/short_median/2025/MEDIAN_L1-1701.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2025/models/MEDIAN_L1-1701.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2025,
+      "path": "models/short_median/2025/MEDIAN_L1-307.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2025/models/MEDIAN_L1-307.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2025,
+      "path": "models/short_median/2025/MEDIAN_L1-509.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2025/models/MEDIAN_L1-509.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2025,
+      "path": "models/short_median/2025/MEDIAN_L1-701.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2025/models/MEDIAN_L1-701.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2025,
+      "path": "models/short_median/2025/MEDIAN_L1-907.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2025/models/MEDIAN_L1-907.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2025,
+      "path": "models/short_median/2025/MEDIAN_L2-101.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2025/models/MEDIAN_L2-101.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2025,
+      "path": "models/short_median/2025/MEDIAN_L2-1103.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2025/models/MEDIAN_L2-1103.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2025,
+      "path": "models/short_median/2025/MEDIAN_L2-1701.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2025/models/MEDIAN_L2-1701.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2025,
+      "path": "models/short_median/2025/MEDIAN_L2-307.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2025/models/MEDIAN_L2-307.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2025,
+      "path": "models/short_median/2025/MEDIAN_L2-509.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2025/models/MEDIAN_L2-509.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2025,
+      "path": "models/short_median/2025/MEDIAN_L2-701.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2025/models/MEDIAN_L2-701.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2025,
+      "path": "models/short_median/2025/MEDIAN_L2-907.json.gz",
+      "source_path": "studies/B88A-short-net-loss-families/folds/2025/models/MEDIAN_L2-907.json.gz",
+      "expected_n_features": 44,
+      "member_n_features": [
+        44
+      ],
+      "estimator_count": 1,
+      "largest_used_feature_index": 41,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "mining58",
+      "fold_year": 2019,
+      "path": "models/mining58/2019/EXTRA_DYNAMICS_L60.json.gz",
+      "source_path": "studies/B17-mining-dimension-ablation/folds/2019/models/EXTRA_DYNAMICS_L60.json.gz",
+      "expected_n_features": 58,
+      "member_n_features": [
+        58
+      ],
+      "estimator_count": 7,
+      "largest_used_feature_index": 53,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "mining58",
+      "fold_year": 2020,
+      "path": "models/mining58/2020/EXTRA_DYNAMICS_L60.json.gz",
+      "source_path": "studies/B17-mining-dimension-ablation/folds/2020/models/EXTRA_DYNAMICS_L60.json.gz",
+      "expected_n_features": 58,
+      "member_n_features": [
+        58
+      ],
+      "estimator_count": 7,
+      "largest_used_feature_index": 53,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "mining58",
+      "fold_year": 2021,
+      "path": "models/mining58/2021/EXTRA_DYNAMICS_L60.json.gz",
+      "source_path": "studies/B17-mining-dimension-ablation/folds/2021/models/EXTRA_DYNAMICS_L60.json.gz",
+      "expected_n_features": 58,
+      "member_n_features": [
+        58
+      ],
+      "estimator_count": 7,
+      "largest_used_feature_index": 53,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "mining58",
+      "fold_year": 2022,
+      "path": "models/mining58/2022/EXTRA_DYNAMICS_L60.json.gz",
+      "source_path": "studies/B17-mining-dimension-ablation/folds/2022/models/EXTRA_DYNAMICS_L60.json.gz",
+      "expected_n_features": 58,
+      "member_n_features": [
+        58
+      ],
+      "estimator_count": 7,
+      "largest_used_feature_index": 53,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "mining58",
+      "fold_year": 2023,
+      "path": "models/mining58/2023/EXTRA_DYNAMICS_L60.json.gz",
+      "source_path": "studies/B17-mining-dimension-ablation/folds/2023/models/EXTRA_DYNAMICS_L60.json.gz",
+      "expected_n_features": 58,
+      "member_n_features": [
+        58
+      ],
+      "estimator_count": 7,
+      "largest_used_feature_index": 53,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "mining58",
+      "fold_year": 2024,
+      "path": "models/mining58/2024/EXTRA_DYNAMICS_L60.json.gz",
+      "source_path": "studies/B17-mining-dimension-ablation/folds/2024/models/EXTRA_DYNAMICS_L60.json.gz",
+      "expected_n_features": 58,
+      "member_n_features": [
+        58
+      ],
+      "estimator_count": 7,
+      "largest_used_feature_index": 53,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    },
+    {
+      "family": "mining58",
+      "fold_year": 2025,
+      "path": "models/mining58/2025/EXTRA_DYNAMICS_L60.json.gz",
+      "source_path": "studies/B17-mining-dimension-ablation/folds/2025/models/EXTRA_DYNAMICS_L60.json.gz",
+      "expected_n_features": 58,
+      "member_n_features": [
+        58
+      ],
+      "estimator_count": 7,
+      "largest_used_feature_index": 53,
+      "checks": {
+        "manifest_digest": true,
+        "equals_frozen_origin": true,
+        "all_member_widths_match": true,
+        "all_tree_indices_in_bounds": true,
+        "price47_spec_correct": true,
+        "mining58_spec_correct": true
+      }
+    }
+  ],
+  "all_model_file_checks_pass": true,
+  "selected_source_copy_hash_matches": {
+    "signals.py": true,
+    "sgd.py": true,
+    "tree_factors.py": true,
+    "volume_short_factors.py": true,
+    "mining_features.py": true,
+    "mining_ablation.py": true
+  },
+  "pure_synthetic_checks": {
+    "CAL44_shape": true,
+    "PRICE47_shape": true,
+    "PRICE47_independent_of_none_changed_poison_volume": true,
+    "VOL47_control_changes_with_volume": true,
+    "PRICE47_first252_zero": true,
+    "PRICE47_constant_available_column": true,
+    "PRICE47_CAL44_prefix_exact": true,
+    "PRICE47_prior_prefix_unchanged_after_future_price_perturbation": true,
+    "DYNAMICS58_shape": true,
+    "DYNAMICS58_protocol_columns54to57_zero": true,
+    "DYNAMICS58_first252_zero": true
+  },
+  "all_synthetic_checks_pass": true,
+  "known_CAL44_tail_order_from_source": {
+    "PATH_NAMES": [
+      "skew20",
+      "skew60",
+      "kurt20",
+      "kurt60",
+      "autocorr20",
+      "autocorr60",
+      "sign_balance20",
+      "sign_balance60",
+      "down_variance_share20",
+      "down_variance_share60",
+      "log_vol5_60",
+      "log_vol20_120",
+      "signed_streak20",
+      "days_since_high60",
+      "largest_move_share20",
+      "variance_ratio5_100"
+    ],
+    "CAL_NAMES": [
+      "weekday_sin",
+      "weekday_cos",
+      "month_phase_sin",
+      "month_phase_cos",
+      "year_phase_sin",
+      "year_phase_cos",
+      "first3_of_month",
+      "last3_of_month"
+    ]
+  },
+  "manifest_rows_with_explicit_feature_order": 0,
+  "model_export_entries_without_source_locator": 266,
+  "model_export_entry_count": 266,
+  "exported_mining_factor_partition_entries": 0,
+  "raw_source_observation_material_opened": false,
+  "trained_or_refitted": false,
+  "account_replay_or_strategy_search": false,
+  "source_or_delivery_written": false,
+  "snapshot_limitation": "delivery is under construction; assertions cover this read snapshot only"
+}

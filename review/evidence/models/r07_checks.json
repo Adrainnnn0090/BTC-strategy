@@ -1,0 +1,99 @@
+{
+  "round": 7,
+  "all_checks_pass": true,
+  "target_rows_compared": 3287,
+  "field_change_counts": {
+    "ME01_permission_changes_from_CT02": 48,
+    "MX03_permission_changes_from_ME01": 56,
+    "TS04_short_trail_rows_changed": 730,
+    "LP35_long_take_profit_rows_changed": 3287,
+    "positive_long_vol_discount_rows_removed": 316
+  },
+  "long_budget_patch_diagnostic": {
+    "changed_budget_rows": 316,
+    "positive_cap_rows": 2193,
+    "uncapped_policy_rows": 1094
+  },
+  "exposure_contracts": {
+    "LP35": {
+      "cold_active_short_rows": 187,
+      "post_active_short_rows": 652,
+      "max_long_fraction": 0.95,
+      "max_short_fraction": 0.75
+    },
+    "TS04": {
+      "cold_active_short_rows": 187,
+      "post_active_short_rows": 652,
+      "max_long_fraction": 0.95,
+      "max_short_fraction": 0.75
+    },
+    "ME01": {
+      "cold_active_short_rows": 187,
+      "post_active_short_rows": 652,
+      "max_long_fraction": 0.95,
+      "max_short_fraction": 0.75
+    },
+    "MX03": {
+      "cold_active_short_rows": 187,
+      "post_active_short_rows": 652,
+      "max_long_fraction": 0.95,
+      "max_short_fraction": 0.75
+    },
+    "K02": {
+      "cold_active_short_rows": 272,
+      "post_active_short_rows": 652,
+      "max_long_fraction": 0.95,
+      "max_short_fraction": 0.75
+    },
+    "B88A_S03": {
+      "cold_active_short_rows": 272,
+      "post_active_short_rows": 652,
+      "max_long_fraction": 0.95,
+      "max_short_fraction": 0.75
+    }
+  },
+  "entry_owned_cross_year": {
+    "trade": {
+      "direction": 1,
+      "entry_date": "2020-04-30",
+      "entry_price": "8656.74",
+      "exit_date": "2021-01-08",
+      "exit_price": "40755.01",
+      "exit_reason": "TAKE_PROFIT",
+      "fees": "1.94879942",
+      "financing": "0E-27",
+      "gross_pnl": "1265.9557688",
+      "pnl": "1264.006969380000000000000000",
+      "policy_year": 2020,
+      "quantity": "0.03944",
+      "terminal": false
+    },
+    "entry_signal_date": "2020-04-29",
+    "entry_risk": {
+      "stop_loss": 0.15,
+      "take_profit": 3.5,
+      "cooldown_days": 3,
+      "trailing_stop": 0.15,
+      "trail_arm": 0.5
+    },
+    "current_signal_risk_at_exit": {
+      "stop_loss": 0.15,
+      "take_profit": 3.5,
+      "cooldown_days": 1,
+      "trailing_stop": 0.1,
+      "trail_arm": 0.5
+    },
+    "closed_event": {
+      "date": "2021-01-08",
+      "due": 1468,
+      "event": "CLOSED",
+      "next_allowed_index": 1472,
+      "reason": "TAKE_PROFIT",
+      "trigger": 1467
+    },
+    "exit_index": 1468,
+    "entry_owned_next_allowed_index": 1472,
+    "incorrect_current_year_next_allowed_index": 1470
+  },
+  "scope": "由冻结预报/年度策略通过纯目标补丁重建3287行；只读比较一个实际跨年账户事件，无账户重放/模型训练/原写入器。"
+}

@@ -1,0 +1,60 @@
+{
+  "round": 12,
+  "role": "models",
+  "topic": "最终验收与未解决风险",
+  "conclusion": "模型研究交付在限定范围内可验收：冻结数字模型的离线推断已完整复现，两个已选最终状态经本人重拟合一致，2018缺失合同反例已修复关闭；完整年度训练/内层选择及持续alpha证据仍未建立。",
+  "verdict": "qualified",
+  "evidence": [
+    {
+      "source": "候选HEAD及provenance/release_manifest.json",
+      "actual": "c7439216d55207a9a480153d7555f6709817e70a；清单886文件/56,446,427bytes，SHA=cd4e22c08fc1056866a69bb9f8bfcb78a42d9244dc7cdfe3514ce1d5fb95a439。models清单SHA仍6d2132c04d5b5f216aced5607612e89e223ea0dd1120a24264201a7702aca213。"
+    },
+    {
+      "source": "本人r10_checks.json；本轮定向git diff",
+      "actual": "R10核48家族年度项、266文件、392状态/37,632树；六族各3287位置/2557有限输出对原始fold forecast最大误差全0，None一致，容差2e-12。当前models及三项因子/树数学文件相对R10无差异，定向git diff exit0。"
+    },
+    {
+      "source": "本人r10_checks.json independent_bounded_refits",
+      "actual": "本人实际重拟仅2025 STOP44 seed101和MEDIAN L1 seed101，均numeric state exact。既有六族56状态收据已核范围，但没有冒充本人全复跑；均为2017–2024物理前缀的已选最终估计器，不含inner-selection。"
+    },
+    {
+      "source": "本人r11.json/r11_checks.json及r11-retest.json",
+      "actual": "原a642候选保留19/20及2018 present反例；修复c743后原反例ValueError且numeric读取0次。合法2018为None，真实2019长头7成员/2025短头14成员正常；追加4项通过，原失败未覆盖。"
+    },
+    {
+      "source": "docs/ARCHITECTURE.md:9；:16；:22；:24",
+      "actual": "文档与已核数学一致：float32输入、float64阈值、<=左支、96树/状态、成员及双lag均值、年度半开窗口、2018 None、61/62+6成熟界；明确refit使用给定features/targets且不重做选择，矿业PIT未认证。"
+    }
+  ],
+  "counterevidence": [
+    "推断exact和最终状态refit不证明未见行情盈利；2018改善来自cold规则，seed/列序/损失分支也不是独立市场复制。",
+    "本轮只做最终绑定与文档复核，没有再次运行全推断、拟合或账户；其运行证据准确归属本人R10和R11追加。"
+  ],
+  "recommendations": [
+    {
+      "priority": "P0",
+      "action": "最终模型说明保留完整推断、本人2state重拟合、既有56state收据和未重跑选择过程的分层范围。",
+      "acceptance": "不表述为全部年度训练/标签/内层选择已独立重建；绑定上述候选和清单。"
+    },
+    {
+      "priority": "P1",
+      "action": "下一步若扩大复现证明，先界定从原始资料独立重生特征/标签及历史内层选择的复现合同；保留来源与已消耗历史限制。",
+      "acceptance": "当前不新开搜索或使用封存验证值；结果不得直接升级为持续alpha/PIT认证。"
+    }
+  ],
+  "checks_performed": [
+    {
+      "check": "最终HEAD、清单数量/字节和SHA、models/因子树文件相对R10差异",
+      "result": "通过；886/56,446,427，数字模型与被查数学文件不变。"
+    },
+    {
+      "check": "核ARCHITECTURE数学及训练范围措辞",
+      "result": "与本人既有证据一致；“60日持有”须按监督目标的固定终点跨度理解，不是组合强制持仓承诺。"
+    }
+  ],
+  "unresolved": [
+    "最重要：未独立重生全年度训练因子/标签，未重跑历史inner-selection/年度策略选择，研究选择偏差与持续alpha仍未解决。",
+    "矿业observer重建仍依赖来源/祖先与主链假设，严格PIT未认证；当前依赖环境的复现不代替新平台兼容证明。"
+  ],
+  "independence_statement": "本轮仅查冻结候选绑定和指定架构文档，不看他人/主席结论或最终报告；未读真实2026经济、V01/V02，未新训练/搜索/重放或原writer。仅首次独占写本r12；依据本人既有证据，不预判其他角色或整体完成。AI角色不是人类或独立市场样本。"
+}

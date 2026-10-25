@@ -1,0 +1,69 @@
+{
+  "round": 11,
+  "role": "statistics",
+  "topic": "修复与对抗性统计回归",
+  "conclusion": "a642de16相对1b008bf的代码修改仅给既有回放输出增加风险口径与资格文字；独立差异、AST和合成对抗检查支持历史数值/分类/来源绑定不变，Consumed、非新鲜OOS、有效独立tests未知及最终拟合不等于原选择复现的界限均保留，工程修复没有新增经济或统计证据。",
+  "verdict": "supported",
+  "evidence": [
+    {
+      "source": "候选git a642de16cea72875a99859e9108960b02636c584 vs 1b008bf；本人附件r11-statistical-regression.json",
+      "finding": "独立git差异核对：不读review内容时，非review变更仅docs/REPRODUCIBILITY.md、provenance/release_manifest.json、src/btc_strategy/replay.py及verification/container-candidate-1b008bf.json。models、artifacts、training_inputs、research、strategies、provenance/studies和failure_index均无差异。886条manifest路径集合不变，仅replay.py一条hash/bytes更新且与当前实际文件匹配；未重复R10全量审计。"
+    },
+    {
+      "source": "src/btc_strategy/replay.py:run的旧/新AST",
+      "finding": "独立AST比较通过：去掉新增的scopes字符串字典后，return前计算序列与旧版完全相同；原8个return关键字值表达式完全相同，仅新增metric_scope与risk_qualification两个字段。原summary、最大敞口数值和完整账户比较未改。5个metric_scope明确区分post-fill整体gross、订单前后代理short/whole gross和连续日度peakDD。"
+    },
+    {
+      "source": "本人提取run AST并注入合成依赖桩的有界测试",
+      "finding": "实际执行两类合成测试，没有导入或运行Native引擎：正常桩下，新版所有旧输出值与旧版精确相同且增加5个口径说明；把预期账户summary注入不一致值时，两版均以fixture/BASE complete native account mismatch拒绝。此测试验证输出合同与负路径未被注释更改，不是实际策略回放。"
+    },
+    {
+      "source": "artifacts/catalog.json:strategies[].metrics/category/recipe/source_study；36个交付账户summary及对应原源账户summary",
+      "finding": "独立逐项核对9策略×4成本共36组：catalog summary=交付完整账户summary=source_study/原recipe账户summary。9个recipe ID均存在对应原登记，B88A_S03明确绑定B88A内S03而非跨study同名S03；全部new2026validation=false。分类仍为4个high_return、3个risk_tradeoffs、K02 exposure_controls、Y01 long_only，未由本轮修改产生新排名。"
+    },
+    {
+      "source": "research/trial_registry.json、supplemental_contracts.json；provenance/failure_index.json及14个技术失败原件/副本",
+      "finding": "registry与补充合同目录在git层面无变；本轮另独立核对14个既有技术失败来源、交付副本和index SHA三方一致。该检查只认证保存与绑定，不把失败后另立修正改写成原失败通过，也不运行旧失败writer或把登记拟合预算当实际经济试验。"
+    },
+    {
+      "source": "README.md；research/TRIAL_HISTORY.md；docs/{REPRODUCIBILITY,RISK_AND_LIMITATIONS}.md；src/btc_strategy/training.py:training_read_allowed/refit",
+      "finding": "实际文字断言通过：2018–2025已消耗开发历史、不属新鲜OOS、既有验证消费不改称盲测、有效独立tests未知、最终估计器重拟合不重做内层/全策略搜索均保留。新文档准确补明训练读取hook为第三方库保留ROOT外读取，不能当完整文件系统沙箱；该边界澄清没有使统计效度或2026盲测资格升级。"
+    }
+  ],
+  "counterevidence": [
+    "风险口径说明减少把98.9936% post-fill gross与118.0456%订单前后gross混用的风险，是有用的修复；数值保留不意味着旧显示口径已经涵盖日内风险。",
+    "AST和合成桩能确认当前差异没有改变已有输出表达式与失败拒绝路径，但不能替代真实依赖环境的完整Native回放、OS隔离或预测效度验证。",
+    "源文件与失败记录保持绑定支持交付可追溯性，但不补齐全部自适应研究选择过程；有效独立试验数仍不可由登记数推得。"
+  ],
+  "recommendations": [
+    {
+      "priority": "P0",
+      "action": "保留metric_scope与risk_qualification，并让读者同时看到原summary用于完整账本核对、外层gross用于更完整日代理口径的区别。",
+      "acceptance": "旧8字段数值与原账户继续一致；5个scope均注明分母/日频观测相位；不得把新增说明解释为提高历史收益、降低原风险或认证未来上限。"
+    },
+    {
+      "priority": "P0",
+      "action": "发布记录把本轮统计回归与真实回放/拟合/隔离收据分开，继续保留Consumed、OOS身份、未知effectiveN和拟合/选择范围。",
+      "acceptance": "本轮附件只列自身执行的git/AST/合成桩/36 summary/14失败绑定检查；不称本轮已重新进行真实账户回放、完整研究重建或PBO/DSR认证。"
+    },
+    {
+      "priority": "P1",
+      "action": "保持分类值与study命名空间/原recipe绑定，后续工程或文档变更采用同样的选择性差异回归，避免无必要重跑旧writer。",
+      "acceptance": "9策略36成本指标继续对齐原summary，B88A_S03明确source B88A/S03；14失败/修正保留各自来源，工程通过不改写历史研究身份。"
+    }
+  ],
+  "checks_performed": [
+    "实际执行：1b008bf至a642de16的选择性git树/manifest差异；不读取任何review内容。",
+    "实际执行：run函数AST前置计算与旧输出表达式相等；提取函数在合成依赖桩下的正常输出和注入账户不一致拒绝测试。",
+    "实际执行：36个catalog/交付/source summary三方相等及9分类/recipe命名空间绑定；14技术失败原源/副本/index SHA三方相等。",
+    "实际执行：Consumed、OOS/验证身份、未知effectiveN、最终拟合vs内层/整体选择范围和hook/OS边界文字检查。",
+    "未执行：未重复886文件+48训练包全量审计，未运行真实推理、拟合、Native账户、旧writer、策略搜索或PBO/DSR。",
+    "未读取2026经济值、V01/V02、其他专家或主席意见；未改共享代码，仅创建本人r11-statistical-regression.json和r11.json。"
+  ],
+  "unresolved": [
+    "全研究自适应选择偏差、有效独立tests与新鲜样本外效度仍未解决，本次修复没有为其增加独立经济观察。",
+    "合成桩和AST不是实际账户回放或OS文件系统隔离，真实容器/依赖执行须由对应收据按其自身范围呈现。",
+    "原价格/矿业PIT、真实滑点借币与融资后清算安全仍保留既有资格限制。"
+  ],
+  "independence_statement": "statistics为模拟AI分析角色，本轮仅读事实、代码与原source绑定，不读其他专家/主席意见；对git review变更仅排除路径，不读取内容。未访问任何真实2026经济值或V01/V02。合成桩没有真实市场观察，不是新的回测样本；仅完成R11，未预写R12。"
+}

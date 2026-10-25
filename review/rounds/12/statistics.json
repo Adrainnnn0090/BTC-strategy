@@ -1,0 +1,48 @@
+{
+  "round": 12,
+  "role": "statistics",
+  "topic": "最终验收与未解决统计风险",
+  "conclusion": "在绑定本次版本并保留限制声明的条件下，可将该仓作为2018–2025已消耗历史研究档案交付GitHub；本角色未赋予其新鲜样本外预测、持续alpha、未来风险上限或完整选择链复现资格。",
+  "verdict": "qualified",
+  "evidence": [
+    {
+      "source": "HEAD c7439216d55207a9a480153d7555f6709817e70a；provenance/release_manifest.json",
+      "finding": "本轮独立绑定通过：886个唯一路径、合计56,446,427 bytes；manifest SHA256=cd4e22c08fc1056866a69bb9f8bfcb78a42d9244dc7cdfe3514ce1d5fb95a439。相比R11仅4条runtime清单记录变化，实际文件hash/size均匹配；未重做全量审计。"
+    },
+    {
+      "source": "R11至当前git树差异；本人r10-statistical-audit.json、r11-statistical-regression.json",
+      "finding": "models、artifacts、training_inputs、research、strategies、原合同及失败索引树均未变。既有本人886文件/115登记+7合同/266模型/48训练包审计，以及R11的36项指标绑定/14失败来源检查仍对应未变资产；不将其解释为本轮重跑。"
+    },
+    {
+      "source": "README.md；docs/ARCHITECTURE.md；research/TRIAL_HISTORY.md；风险与复现文档",
+      "finding": "当前声明保留Consumed、2026禁读/不回流调参、有效独立tests未知及最终估计器拟合不等于内层/全研究选择复现。架构明确log/simple目标、先head后平均、60日标签重叠；MEDIAN为损失语义，数值一致不被写成预测概率。"
+    },
+    {
+      "source": "本人R08/R09计算；共享protocol；当前研究索引",
+      "finding": "115登记/1717 recipe和固定seed不是独立试验数；共同历史上的9策略强相关，单次退出和早期资本影响末值。6个AI角色×12轮只是审查设计，不能当72次独立回测；本轮不审查他人完成状态。"
+    }
+  ],
+  "counterevidence": [
+    "可追溯模型、完整原账户与独立数值检查支持档案交付，但不使已消费历史重新变成盲测。",
+    "工程guard与标签修复可改善边界表达；它们不增加独立市场观察，也不消除选择偏差。"
+  ],
+  "recommendations": [
+    {
+      "priority": "P0",
+      "action": "最重要统计建议：另立未来未见窗口前，冻结完整候选家族、主指标、成本、停止规则和失败报告；2026继续封存，不作调参来源。当前effectiveN保持unknown，不发布总体PBO/DSR认证。",
+      "acceptance": "GitHub版本保留Consumed及上述资格限制；所有未来结果按事先合同完整披露，不能只保留赢家或把登记数代入独立试验N。"
+    }
+  ],
+  "checks_performed": [
+    "本轮已跑：HEAD、886路径/总字节、4个变化runtime文件hash/size和受保护git树不变检查。",
+    "本轮已跑：当前架构、试验索引及风险/复现声明与本人既有数学证据的范围复核。",
+    "本轮未跑：新推理、拟合、账户、内层选择、搜索、PBO/DSR、886+48全量重审；未把root收据计作自身执行。",
+    "未读review他人/主席意见、最终报告、2026经济值或V01/V02；未改共享资产，仅创建r12.json。"
+  ],
+  "unresolved": [
+    "总体有效独立试验数及完整自适应选择链仍未知，缺乏最终策略的新鲜样本外效度证据。",
+    "来源PIT、真实执行/借币与融资后清算安全仍未获资格；日频风险不保证日内或未来上限。",
+    "最终发布提交若再改变统计声明或经济资产，应重新绑定范围；本角色不预判其他角色或72份提交完成。"
+  ],
+  "independence_statement": "statistics是模拟AI分析角色，非人类外部审计或独立市场样本。仅用本人已执行证据、允许的事实/代码和当前文档，维持角色隔离及2026封存。本轮为R12最终提交，完成即停止。"
+}

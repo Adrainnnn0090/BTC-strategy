@@ -1,0 +1,161 @@
+{
+  "round": 11,
+  "role": "risk",
+  "topic": "修复与对抗性回归",
+  "conclusion": "a642de1的gross口径修复已在一份LP35/BASE历史重放中验证，新增说明字段以外的原API结果、账本与Decimal均精确不变；未来输入及CLI未知枚举前置拒绝通过，但Python run API对未知cost仍在目标处理后才拒绝，须限定其“前置”声明，paper/live等未解决风险不因标签修复而获得认证。",
+  "verdict": "qualified",
+  "evidence": [
+    {
+      "source": "/workspace/BTC-strategy/src/btc_strategy/replay.py:23-30；/workspace/BTCExpertReview/workspaces/risk/r11-api-LP35-BASE.json:metric_scope/risk_qualification/summary/max_daily_whole_gross",
+      "calculation": {
+        "candidate": "a642de16cea72875a99859e9108960b02636c584",
+        "summary_post_fill_max_gross_pct": 98.99360891840428,
+        "daily_before_or_after_whole_gross_pct": 118.0455835631524,
+        "metric_scope": {
+          "summary.max_gross_exposure_pct": "maximum whole-position gross at daily post-fill marks; percent of adjusted equity",
+          "summary.average_gross_exposure_pct": "average whole-position gross at daily post-fill marks; percent of adjusted equity",
+          "summary.max_drawdown_pct": "continuous-account daily adjusted-equity peak-to-trough drawdown; percent",
+          "max_daily_short_gross": "maximum short gross at daily before-or-after-order proxy points; percent of adjusted equity",
+          "max_daily_whole_gross": "maximum whole-position gross at daily before-or-after-order proxy points; percent of adjusted equity"
+        },
+        "risk_qualification": "daily proxy quotes before/after orders;not intraday maximum or future cap; entry budgets and stop triggers are not continuous-exposure or fill-loss caps",
+        "old_R10_result_except_added_metadata_exact": true
+      },
+      "finding": "LP35/BASE98.9936089184%现明确标为daily post-fill whole-position gross，118.0455835632%明确标为daily before-or-after-order whole gross；日度DD有continuous adjusted-equity peak-to-trough说明。risk_qualification同时排除盘中峰值/未来cap、预算持续敞口cap与stop成交亏损保证。R10指出的机器输出口径混读项已修复。"
+    },
+    {
+      "source": "/workspace/BTCExpertReview/workspaces/risk/r11-checks.json:original_R10_API_result_except_added_metadata_exact/economic_and_all_models_accounts_git_tree_unchanged_since_1b008bf；候选Git tree对照",
+      "finding": "调用新包replay.run(LP35,BASE,use_models=False)完成内存Native、完整原账户相等和包内Decimal核算；剔除新增metric_scope/risk_qualification后，整个返回字典与本人R10附件精确相同。Git scoped diff还确认execution/costs/instrument、_runtime、_frozen、全部models及artifacts/accounts相对1b008bf无变化，不是通过修改经济函数/模型/原book让新标签成立。未执行numeric模型重建/refit或36本重放。"
+    },
+    {
+      "source": "/workspace/BTCExpertReview/workspaces/risk/r11-checks.json:rejections/unknown_CLI_early_rejections；/workspace/BTC-strategy/src/btc_strategy/validation.py:5-12；artifacts.py:8-19；replay.py:33-38",
+      "calculation": {
+        "early_API_name_date_path_rejections": 8,
+        "CLI_unknown_enum_rejections": [
+          {
+            "args": [
+              "--strategy",
+              "UNKNOWN"
+            ],
+            "argparse_exit": 2,
+            "run_not_called": true
+          },
+          {
+            "args": [
+              "--strategy",
+              "LP35",
+              "--case",
+              "UNKNOWN_CASE"
+            ],
+            "argparse_exit": 2,
+            "run_not_called": true
+          }
+        ],
+        "review_files_opened": 0
+      },
+      "finding": "未知strategy及带路径穿越/2026文字的未知strategy仅读取catalog即拒绝，没有context/feature或引擎；五个2026/V01/V02人工路径在任何文件read前拒绝。向正常内存context追加人工2026日期被development_market在component规则前拒绝；CLI未知strategy/case均argparse exit2且run未调用。这里只使用合成字面输入，没有真实2026或V01/V02内容。"
+    },
+    {
+      "source": "/workspace/BTC-strategy/src/btc_strategy/replay.py:11-18；execution.py:94-96；/workspace/BTCExpertReview/workspaces/risk/r11-checks.json:unknown_case_API_late_rejection",
+      "observed": {
+        "input": "API run(LP35,UNKNOWN_CASE,use_models=False)",
+        "error": "unregistered role/cost",
+        "rejected_before_engine": true,
+        "rejected_before_context_or_feature_work": false,
+        "verify_targets_call_count": 1,
+        "compose_alias_call_count": 1,
+        "read_paths": [
+          "artifacts/catalog.json",
+          "artifacts/contexts/high_return.json.gz",
+          "artifacts/targets/LP35.json.gz"
+        ],
+        "qualification": "public CLI argparse prevents this case earlier; Python run API validates cost only inside run_account after target work"
+      },
+      "finding": "尚存P1输入边界差异：Python API run(LP35,UNKNOWN_CASE,use_models=False)仍先verify_targets并compose，已读合法high_return context和LP35 targets，之后在run_account的registered role/cost检查才拒绝。BacktestEngine spy证实未启动引擎，故不是接受未知成本成交；但不能把该API描述为“所有未知输入在特征/目标处理前拒绝”。CLI早拒绝不等于Python API也早拒绝。"
+    },
+    {
+      "source": "/workspace/BTC-strategy/docs/REPRODUCIBILITY.md:22,44-53；training.py:18-38；docs/RISK_AND_LIMITATIONS.md:7-31",
+      "finding": "REPRO新增说明准确区分artifact角色、训练读取hook与OS隔离：hook有特定旧工程拒绝名单，但一般ROOT外读取被保留，不能宣称完整文件系统沙箱。本轮只静态核对该文档与函数，不执行外部经济读取或容器试验。风险文档继续保留日度代理/真实滑点容量、外置融资后清算、PIT、重复历史与paper未实施等限制。"
+    },
+    {
+      "source": "/workspace/BTC-strategy/provenance/release_manifest.json:files/source_period/economic2026excluded；src/btc_strategy/replay.py对应SHA",
+      "calculation": {
+        "files": 886,
+        "bytes": 56445495,
+        "replay_wrapper_hash_matches_manifest": true,
+        "source_period": [
+          "2017-01-01",
+          "2025-12-31"
+        ],
+        "economic2026excluded": true
+      },
+      "finding": "清单元数据为886文件/56,445,495字节，replay新wrapper哈希匹配。该计数与单项hash不是本角色全886内容验证，更不是风险doc/README均在manifest内的声明；仍按候选Git限定所查文字。"
+    }
+  ],
+  "counterevidence": [
+    {
+      "source": "r11-checks.json:unknown_case_API_late_rejection/unknown_CLI_early_rejections；replay.py:18；execution.py:96",
+      "finding": "未知cost最终仍在Native初始化之前明确抛ValueError，且正常CLI在run之前拒绝；未发现未知case下单、修改账本、2026数据泄漏或新风险算法错误。该P1是API前置验证时点，不应扩大成历史重放失败。"
+    },
+    {
+      "source": "r11-api-LP35-BASE.json及r10-api-LP35-BASE.json逐项比较；Git scoped diff",
+      "finding": "gross标签修复没有改summary经济数值或原book，所有旧返回字段完全相等，说明本次修复是包装说明；不能因仍有paper风险条件未建立而否认这项修复已完成。"
+    },
+    {
+      "source": "docs/RISK_AND_LIMITATIONS.md:22-31；docs/REPRODUCIBILITY.md:22,49-53",
+      "finding": "候选文档已经明确hook非OS沙箱、工程复现不推出实盘风险、paper/live尚未认证；本轮未看到把这些未解决项重新表述为已安全的文字。"
+    }
+  ],
+  "recommendations": [
+    {
+      "priority": "P1",
+      "action": "在公共Python replay.run入口先校验case类型/注册枚举，置于verify_targets、context或模型重建之前；限于包装输入校验，不改经济函数或旧账户。",
+      "acceptance": "UNKNOWN_CASE/None等不合法case在任何verify_targets/compose/rebuild_context调用和context读取之前抛清楚的ValueError；CLI继续argparse拒绝；合法LP35/BASE仍与本轮原结果（除说明字段）精确相同。若暂不修，文档只声称CLI前置拒绝，API未知cost在引擎前拒绝。"
+    },
+    {
+      "priority": "P1",
+      "action": "最终候选保持metric_scope/risk_qualification绑定与分层验证范围，必要时只针对wrapper变动作有界回归。",
+      "acceptance": "98.9936089与118.0455836始终显式区分post-fill和before/after daily，旧summary和原book不变；本角色只报告一份cached历史重放及人工拒绝，不升级成numeric模型全链、容器隔离或paper/live认证。"
+    },
+    {
+      "priority": "P1",
+      "action": "继续将paper/live的报价细粒度、断源、安全停机、真实借贷及净融资后margin条件保留为独立未完成事项。",
+      "acceptance": "新增风险文字/输入校验修复不触发2026验证数据读取，不新增实际仓位建议或修改冻结源；未来系统验收须另立合同与版本。"
+    }
+  ],
+  "checks_performed": [
+    {
+      "check": "修复后的单本历史重放与元数据回归",
+      "method": "指定Python -B、显式BTC_STRATEGY_ROOT/PYTHONPATH，从/tmp调用新包run(LP35,BASE,use_models=False)，完整Native原book相等、Decimal和pre/post exposure均由该有界API执行；将新返回移除2新增说明字段后与R10本人附件逐项比较。",
+      "result": "精确相等；新增5个metric scope含daily/post-fill或before-or-after-order，并含风险资格说明；没有numeric模型推理重建、refit、36本重放或paper/live。"
+    },
+    {
+      "check": "未来/未知输入对抗性前置拒绝回归",
+      "method": "对2个未知strategy、1个内存人工2026末日、5个人工禁用artifact路径检查读取/规则调用时点；用API审计hook禁止候选写入和review/打开，以component和BacktestEngine spy验证未达规则/引擎；另用argparse真实main处理2个未知CLI枚举。",
+      "result": "8个name/date/path早拒绝，CLI2个早拒绝；API未知cost额外检查则仅引擎前拒绝，前置目标/特征声明不成立，已如实保留。未读真实2026/V01/V02或其他专家/主席意见。"
+    },
+    {
+      "check": "原经济代码/模型/账户不变的Git有界核对",
+      "method": "git diff --quiet比较1b008bf与a642de1在execution/costs/instrument、_runtime、_frozen、models、artifacts/accounts七范围的Git树，不打开其他review材料。",
+      "result": "七范围无变更；单项replay源码哈希匹配新manifest，清单数量886/字节56,445,495为元数据核对，不称全量SHA审计。"
+    },
+    {
+      "check": "风险文档与hook资格静态回归",
+      "method": "只读REPRO新增段、风险文档、replay包装及training_read_allowed/guard；不执行训练、外部文件访问或OS容器。",
+      "result": "hook非完整OS sandbox的说明与代码一致，日度/非保证/外部融资/paper未实施资格持续保留。"
+    },
+    {
+      "check": "独占附件哈希",
+      "result": {
+        "r11-checks.json": "4780abd3ce8575e59d945858a5475b7cfa1c869a74bff195f17e0df2e450258b",
+        "r11-api-LP35-BASE.json": "12aa74710d78112712c7ad48f52f3901890b3c2991d27653738ac76cf9675356"
+      }
+    }
+  ],
+  "unresolved": [
+    "候选a642de1的Python run API未知case在目标工作后拒绝；建议P1前置，CLI正常路径已安全拒绝。",
+    "未执行全模型数值推理/refit、全部36账户重放、训练hook任意外部路径安全测试、OS/容器隔离或paper/live验收；不对这些给新增通过值。",
+    "真实盘中/滑点/容量/融资后清算、来源PIT和重复消费历史风险仍未解决，2026全部经济观察继续封存。"
+  ],
+  "independence_statement": "本人为risk AI分析角色，不是人类专家或新的独立市场样本；未打开其他专家提交或主席意见，审计hook对review/为拒绝且实际0读取；仅人工2026/V01/V02字符串拒绝测试，无真实经济内容；未改共享源/交付仓/冻结模型账户verification gates、未跑旧writer或新参数搜索，只独占写risk/r11.json及附件，从/tmp有界运行，完成后等待R12。"
+}

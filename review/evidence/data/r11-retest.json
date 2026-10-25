@@ -1,0 +1,64 @@
+{
+  "round": 11,
+  "role": "data",
+  "topic": "R11定向追加复测",
+  "conclusion": "新候选c7439216已关闭本角色原R11两类反例：V01/V02点号和下划线别名在open前拒绝，重复过去日期/错误plan.family及未来日期在读取states和fit前拒绝；合法代表plan仍到达拟合哨兵或保持2018missing，训练hook非OS沙箱的限定不变。",
+  "verdict": "supported",
+  "evidence": [
+    {
+      "source": "/workspace/BTC-strategy/.git:HEAD=c7439216d55207a9a480153d7555f6709817e70a；/workspace/BTCExpertReview/workspaces/data/r11-retest-checks.json:raw_models_factors_and_training_inputs_unchanged",
+      "fact": "HEAD匹配指定新候选。Git对比a642de16确认models、artifacts及training_inputs原始模型/数据没有变化；本次不把其他入口代码改动自动计为已验证。"
+    },
+    {
+      "source": "/workspace/BTC-strategy/src/btc_strategy/artifacts.py:15、18–19；/workspace/BTCExpertReview/workspaces/data/r11-retest-checks.json:aliases",
+      "fact": "原两个精确路径artifacts/V01.json与artifacts/v02_unsafe.json重新调用实际提取的read/resolve函数均抛validation artifacts excluded。Path.read_bytes为失败哨兵且调用数0，证明两者在open前拒绝；未创建或读取真实验证文件。"
+    },
+    {
+      "source": "/workspace/BTC-strategy/src/btc_strategy/training.py:41–55；/workspace/BTCExpertReview/workspaces/data/r11-retest-checks.json:training_validation_order_tests",
+      "fact": "新validate_training_plan在annual_states之前执行。使用与原R11相同的duplicate_past_date、wrong_plan_family，并回归future_date_interior，三者计数均read=1、states=0、fit=0；分别因完整过去前缀或family/year不匹配而拒绝，没有模型读取或拟合。"
+    },
+    {
+      "source": "/workspace/BTCExpertReview/workspaces/data/r11-retest-checks.json:valid_price47_2019,valid_short_huber_2025,valid_missing_2018；/workspace/BTC-strategy/training_inputs/{2018,2019}/price47.json.gz及2025/short_huber.json.gz",
+      "fact": "合法2019 price47与2025 short_huber代表输入均通过元数据门槛，read=1、states=1并到达fit哨兵；fit哨兵立即抛错，实际拟合数仍0。合法2018 price47保持PRESERVED_MISSING，states读取后fit=0，未用后来模型回填。"
+    },
+    {
+      "source": "/workspace/BTC-strategy/src/btc_strategy/training.py:18–27；docs/REPRODUCIBILITY.md:22；/workspace/BTCExpertReview/workspaces/data/r11-retest-checks.json:outside_root_predicate_still_allows",
+      "fact": "虚构ROOT外路径纯谓词仍返回True，未打开文件；文档继续明确外部读取为第三方库保留，hook不能当完整文件系统沙箱。本次修复未被解释为OS级隔离。"
+    },
+    {
+      "source": "/workspace/BTCExpertReview/workspaces/data/r11-retest-checks.json:original_r11_artifact_hashes_preserved",
+      "fact": "原r11.json和r11-checks.json在追加复测前后SHA保持不变；原候选失败证据未覆盖，本文件只追加c7439216的定向关闭证据。"
+    }
+  ],
+  "counterevidence": [
+    "合法输入的fit方法均为哨兵，不能把“到达哨兵”写成真实重新拟合通过或模型状态相等。",
+    "此次只关闭两个原别名和两个原plan元数据反例，并确认未来日期拒绝不回归；不声称任意重命名内容、所有异常schema或任意扩展代码均已被阻断。",
+    "ROOT外读取仍允许且已披露，操作系统/容器边界仍需独立保障。"
+  ],
+  "recommendations": [
+    {
+      "priority": "P0",
+      "action": "将本追加receipt与原a642de16的r11失败报告并列保留，按候选哈希标记原反例已在c7439216关闭。",
+      "acceptance": "原r11两文件SHA不变；两alias为open前拒绝，duplicate/wrongfamily/futuredate均states=fit=0。"
+    },
+    {
+      "priority": "P1",
+      "action": "后续正式验收继续保留本次执行范围及hook非OS沙箱限定，不扩展到未执行的全拟合/全推断。",
+      "acceptance": "只引用本次六个plan顺序用例与两个路径用例；真实拟合数0，2018missing保留，其他候选改动由各自证据验收。"
+    }
+  ],
+  "checks_performed": [
+    "独占新增r11-retest-check.py/r11-retest-checks.json和本r11-retest.json，未覆写原R11。",
+    "指定HEAD与raw模型/因子/训练数据Git不变核对。",
+    "原两个验证别名通过read_bytes哨兵验证open前拒绝。",
+    "提取新validate_training_plan与实际refit函数，三坏输入验证states/fit之前拒绝，两个合法非missing输入到达fit哨兵，一个合法2018输入保持missing。",
+    "直接核对ROOT外读取谓词及REPRO限定，原r11附件SHA前后不变。",
+    "未实际拟合、读模型state、安装全局training guard、重复离线推断或全48前缀重算；未读真实2026经济值、V01/V02或他人/主席意见。"
+  ],
+  "unresolved": [
+    "本定向追加不覆盖其他c7439216入口改动、全部异常输入空间、全48训练数据与全年度推断/引擎路径。",
+    "未执行真实重新拟合；合法plan仅验证进入fit哨兵之前的流程。",
+    "训练hook仍不构成完整OS沙箱。"
+  ],
+  "independence_statement": "仅阅读指定新候选代码、三份合法代表训练输入和本人原R11摘要，不读其他专家/主席内容或真实验证经济数据；仅写data角色追加工件，未改共享代码/源。AI角色不是受聘真实专家或独立市场样本。完成R11追加复测，等待正式R12。"
+}

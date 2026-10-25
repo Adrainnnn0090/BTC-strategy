@@ -1,0 +1,121 @@
+{
+  "round": 11,
+  "role": "execution",
+  "topic": "修复与对抗性回归：输出风险标签不改变账户及summary",
+  "conclusion": "对a642de16的有界独立回归支持该补丁仅增加metric_scope与risk_qualification输出：LP35/BASE默认数字模型路径重建目标并运行Native后，完整account和summary保持原值，新增标签正确区分成交后/订单前后日度口径且不承诺连续敞口或成交亏损上限。",
+  "verdict": "supported",
+  "evidence": [
+    {
+      "来源": "/workspace/BTC-strategy:git HEAD；src/btc_strategy/replay.py相对1b008bfd4a9d1af9a73ff830fb7f8a1b72425fbf的diff及本轮AST规范化比较",
+      "实际计算": "HEAD=a642de16cea72875a99859e9108960b02636c584。src/btc_strategy中仅replay.py变化；从新AST去除scopes赋值和return中的metric_scope/risk_qualification两个keyword后，整个模块AST与旧提交精确相同。",
+      "含义": "原有target验证、数字模型重建、Native调用、完整account相等检查、Decimal审计和summary返回逻辑未改变；新文本构造未修改a或a[summary]。"
+    },
+    {
+      "来源": "同一两提交的git diff --name-only -- artifacts models src/btc_strategy/{execution,costs,instrument}.py",
+      "实际计算": "结果为空：模型、经济artifacts、执行引擎适配器、costs和instrument均无跟踪差异。",
+      "限制": "仅列受审范围，并非审读所有其他文档或他人审查产物；不读取主席/其他角色报告。"
+    },
+    {
+      "来源": "/workspace/BTCExpertReview/workspaces/execution/r11_lp35_base_cli.json；/workspace/BTC-strategy/src/btc_strategy/replay.py:11—22、33—38；models.py:43—60、81—85",
+      "实际计算": {
+        "命令": "PYTHONPATH=/workspace/BTC-strategy/src /workspace/BinanceTradingRobot/backend/.venv/bin/python -B -m btc_strategy.replay --strategy LP35 --case BASE",
+        "退出码": 0,
+        "forecasts_reconstructed_from_numeric_models": true,
+        "complete_account_exact": true,
+        "independent_decimal": {
+          "status": "PASS",
+          "marks": 2922,
+          "fills": 102,
+          "financing_rows": 369,
+          "financing_scope": "separate modeled adjustment; raw native wallet reconciled independently"
+        },
+        "本轮Native运行次数": 1
+      },
+      "范围": "没有传--cached-forecasts。当前独立进程按默认路径从base_tree/price47/short_huber的年度数字状态重建预测、重组targets并与保存targets精确比较，再执行完整Native account相等断言。未重新训练；Decimal来自CLI提供的独立carry_audit，本轮不冒称另写了第二套BASE全账公式。"
+    },
+    {
+      "来源": "同一CLI输出；/workspace/BTCStrategyResearchLedger/studies/B109-long-profit-local-coordinate/accounts/LP35/BASE.json.gz；/workspace/BTC-strategy/artifacts/accounts/LP35/BASE.json.gz",
+      "实际计算": "交付saved account与源saved account的完整JSON对象精确相同；CLI summary与源summary精确相同。源账户当前sha256=5f2840245acfa04e23f11ba8dfa8b4f62397da6731bc57709d987ef21b538c39，与本角色此前记录相同。期末融资后equity仍11252.32012604027896155267123。",
+      "链条": "本轮Native a==交付原account；交付原account==源原account；所以该case完整输出与源原account一致，而非只比较期末数。"
+    },
+    {
+      "来源": "同一CLI输出:metric_scope、risk_qualification及gross字段",
+      "实际计算": "metric_scope恰5项：summary.max_gross_exposure_pct和average标daily post-fill；summary.max_drawdown_pct标连续账户daily adjusted-equity peak-to-trough；max_daily_short_gross和whole标daily before-or-after-order proxy points。summary成交后max gross仍98.99360891840428%；max_daily_whole_gross仍为2018-01-05、q−0.00556、预估equity80.05770443553769557917808219、gross118.0455835631524%。",
+      "risk_qualification": "daily proxy quotes before/after orders;not intraday maximum or future cap; entry budgets and stop triggers are not continuous-exposure or fill-loss caps"
+    },
+    {
+      "来源": "/workspace/BTC-strategy/provenance/release_manifest.json；本轮元数据求和",
+      "实际计算": "886条文件、sum(bytes)=56445495；manifest自身sha256=411278b88c345554484f40a7d9e4b721f37e23a20b4ca7d9db86ca7606bce030。",
+      "限制": "本轮并未重算全部886个文件hash，仅独立核对发布条目数/字节总数和manifest摘要。"
+    },
+    {
+      "来源": "本角色CLI附件",
+      "实际计算": "r11_lp35_base_cli.json sha256=949b35a2a494d9dd16d717d776a0284aa37143934e9ce9269036f060bf3ac0f2；内容为本角色实际CLI stdout，非复制他人运行报告。"
+    }
+  ],
+  "counterevidence": [
+    "标签新增修复了解释边界，但没有改变原账户经济事实：118.0456%订单前后gross、外部融资及日度止损延迟仍存在。不能把文案修复说成风险本身降低。",
+    "本轮确实新增独立actual-model→target→Native完整book与项目Decimal链验证1次，比R10仅AST更深入；不能把它扩大为36账本、九候选或隔离wheel全部重跑。",
+    "完整account精确相同是该case未回归的强证据，但静态补丁不增加历史发布时点、真实借币/清算或实盘资格。",
+    "检查末尾git status显示一条未跟踪审查输出路径的元数据，未打开该文件或读取其意见；本角色只使用自己的CLI附件。未据此声称整个工作树无人并发写入。"
+  ],
+  "recommendations": [
+    {
+      "行动": "接受这项输出标签补丁的有界执行验收，同时保留原经济结果和风险限制。",
+      "优先级": "P0",
+      "验收方法": "AST去新增scopes和两keyword后与1b008bf完全相同；LP35/BASE完整account/summary精确保持；risk标签包含daily、not intraday/future cap及非连续敞口/亏损cap。"
+    },
+    {
+      "行动": "交付时同时展示summary的daily post-fill gross和daily before/after-order gross，不只展示较小的成交后数。",
+      "优先级": "P1",
+      "验收方法": "本例98.9936089184%与118.0455835632%并列且字段定义对应；不得修改原summary字段值来合并两个口径。"
+    },
+    {
+      "行动": "将本轮运行绑定当前提交、命令、实际模型/缓存模式及本角色附件，避免范围混淆。",
+      "优先级": "P1",
+      "验收方法": "HEAD a642de16…，命令无--cached-forecasts，模型重建标志true、complete_account_exact true、Decimal PASS且2922/102/369；本角色覆盖1case并注明checkout+指定venv环境，而非docker installed-wheel隔离。"
+    },
+    {
+      "行动": "运行范围之外继续保留未资格状态，标签变更不替代OS sandbox或经济证明。",
+      "优先级": "P1",
+      "验收方法": "文案不把read guard/hook称操作系统隔离，也不将本轮运行当作真实可成交价格、借贷可得性或融资后清算证明；不改冻结模型/账户来追求标签一致。"
+    }
+  ],
+  "checks_performed": [
+    {
+      "检查": "新的补丁AST对抗性归一化",
+      "方法": "只读git show旧replay、当前源码；移除新scopes赋值和metric_scope/risk_qualification返回keyword，比较全模块AST；另查受审经济目录git diff。",
+      "结果": "规范化AST完全相同，经济artifacts/models/execution/costs/instrument跟踪diff为空。"
+    },
+    {
+      "检查": "一次新的默认numeric-model CLI全链",
+      "方法": "指定Python -B与交付checkout PYTHONPATH；无--cached-forecasts；stdout仅写execution专属r11_lp35_base_cli.json。不执行原研究writer，不修改源账户。",
+      "结果": "1次LP35/BASE全Native账本与原账户精确相同；项目独立Decimal PASS 2922marks/102fills/369融资行。"
+    },
+    {
+      "检查": "新的输出标签与源账户独立比对",
+      "方法": "解析本角色CLI stdout；assert5项metric_scope口径、risk文本及118.0456%事件；读取交付及源原账户比较全JSON和summary；记录附件/manifest摘要。",
+      "结果": "原account/summary保持、标签正确，附件sha256949b35a2…；未读取其他审查文件。"
+    },
+    {
+      "检查": "实际范围",
+      "结果": {
+        "策略": "LP35",
+        "成本": "BASE",
+        "本轮Native fullbook运行": 1,
+        "默认数字模型路径": true,
+        "cached_forecasts命令模式": false,
+        "项目Decimal审计": 1,
+        "另写独立BASE全账公式": 0,
+        "Docker或installed-wheel隔离": false,
+        "其他人账本运行": "不计入本角色范围"
+      }
+    }
+  ],
+  "unresolved": [
+    "本轮只实际运行LP35/BASE；其余35组合未由本角色本轮重放。",
+    "没有验证安装wheel/Docker环境的同提交绑定；当前命令使用checkout与指定venv，不夸称隔离安装复现。",
+    "输出标签澄清日度采样边界，不消除融资外置、盘中路径未知、真实成交/保证金和历史PIT资格的限制。"
+  ],
+  "independence_statement": "execution为隔离AI分析角色，不是真实专家或独立市场样本。未打开其他专家/主席审查意见文件；git仅显示文件路径元数据，不使用其结论。未读2026经济值、V01/V02或2026账户。源仓与交付经济内容只读；本轮只运行授权的当前CLI，不运行原writer、训练、参数搜索、下单或部署。仅写execution/r11.json及自己的CLI附件，未预写R12。"
+}

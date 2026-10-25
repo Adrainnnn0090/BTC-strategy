@@ -1,0 +1,97 @@
+{
+  "status": "PASS_TARGETED",
+  "candidate_git": "c7439216d55207a9a480153d7555f6709817e70a",
+  "original_candidate": "a642de16cea72875a99859e9108960b02636c584",
+  "aliases": [
+    {
+      "path": "artifacts/V01.json",
+      "rejected_before_open": true,
+      "error": "validation artifacts excluded"
+    },
+    {
+      "path": "artifacts/v02_unsafe.json",
+      "rejected_before_open": true,
+      "error": "validation artifacts excluded"
+    }
+  ],
+  "training_validation_order_tests": [
+    {
+      "test": "duplicate_past_date",
+      "status": "REJECT_BEFORE_STATES_AND_FIT",
+      "error": "training plan must be the complete prior-year date prefix",
+      "counters": {
+        "read": 1,
+        "states": 0,
+        "fit": 0
+      },
+      "actual_models_fitted": 0
+    },
+    {
+      "test": "wrong_plan_family",
+      "status": "REJECT_BEFORE_STATES_AND_FIT",
+      "error": "training plan family/year mismatch",
+      "counters": {
+        "read": 1,
+        "states": 0,
+        "fit": 0
+      },
+      "actual_models_fitted": 0
+    },
+    {
+      "test": "future_date_interior",
+      "status": "REJECT_BEFORE_STATES_AND_FIT",
+      "error": "training plan must be the complete prior-year date prefix",
+      "counters": {
+        "read": 1,
+        "states": 0,
+        "fit": 0
+      },
+      "actual_models_fitted": 0
+    },
+    {
+      "test": "valid_price47_2019",
+      "status": "VALID_PLAN_REACHES_FIT_SENTINEL",
+      "counters": {
+        "read": 1,
+        "states": 1,
+        "fit": 1
+      },
+      "actual_models_fitted": 0
+    },
+    {
+      "test": "valid_short_huber_2025",
+      "status": "VALID_PLAN_REACHES_FIT_SENTINEL",
+      "counters": {
+        "read": 1,
+        "states": 1,
+        "fit": 1
+      },
+      "actual_models_fitted": 0
+    },
+    {
+      "test": "valid_missing_2018",
+      "status": "PRESERVED_MISSING",
+      "counters": {
+        "read": 1,
+        "states": 1,
+        "fit": 0
+      },
+      "actual_models_fitted": 0
+    }
+  ],
+  "raw_models_factors_and_training_inputs_unchanged": true,
+  "original_r11_artifact_hashes_preserved": {
+    "/workspace/BTCExpertReview/workspaces/data/r11.json": "145e0fdc888cc58e4aa5e55a5c3e801dc2350cf82a1ef594c61b95a31a4f4271",
+    "/workspace/BTCExpertReview/workspaces/data/r11-checks.json": "aed59d2d27cb9ec520f77b1bd034340359b7da9863538c0bd14341c7121b12ca"
+  },
+  "outside_root_predicate_still_allows": true,
+  "operating_system_sandbox_claim": false,
+  "root_external_boundary_documentation_still_present": true,
+  "original_two_gap_classes_closed_for_tested_examples": true,
+  "limitations": [
+    "Only the two original aliases, duplicate-date/wrong-family counterexamples, one future-date regression and three legal plan representatives were tested.",
+    "States, guards and fit were explicit stubs; no actual fitting, model loading or training guard installation occurred.",
+    "No full 48-prefix recomputation, offline inference or engine replay was repeated.",
+    "No real validation artifact, 2026 economic value, other expert opinion or chair artifact was opened."
+  ]
+}

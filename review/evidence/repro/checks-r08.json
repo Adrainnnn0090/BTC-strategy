@@ -1,0 +1,1105 @@
+{
+  "round": 8,
+  "registry_scope": "Only B-study registration metadata, no V01/V02 or2026economic records.",
+  "registry_interpretation": "Recipe entries include inherited controls and repeated configurations; not an independent trial count. Inner searches, repeated history, discarded/unregistered hypotheses and adaptive choices mean total effective tests remains unknown. No PBO/DSR certification computed.",
+  "cohorts_declared": 115,
+  "registry_row_count": 115,
+  "all_registration_checks_pass": true,
+  "registry_source_path_roster_exact_to_B_registrations": true,
+  "source_B_registration_count": 115,
+  "registration_checks": [
+    {
+      "study": "B01-price-mechanisms",
+      "source": "studies/B01-price-mechanisms/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B02-direct-sgd",
+      "source": "studies/B02-direct-sgd/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B03-bounded-short",
+      "source": "studies/B03-bounded-short/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B04-trailing-coordinate",
+      "source": "studies/B04-trailing-coordinate/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B05-annual-walkforward",
+      "source": "studies/B05-annual-walkforward/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B06-economic-coordinate",
+      "source": "studies/B06-economic-coordinate/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B07-direct-utility",
+      "source": "studies/B07-direct-utility/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B09-tree-path-calendar",
+      "source": "studies/B09-tree-path-calendar/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B10-seed-calendar-stability",
+      "source": "studies/B10-seed-calendar-stability/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B100-persistent-negative-long-exits",
+      "source": "studies/B100-persistent-negative-long-exits/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B100A-persistent-negative-long-exits",
+      "source": "studies/B100A-persistent-negative-long-exits/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B101-patient-long-profit-exits",
+      "source": "studies/B101-patient-long-profit-exits/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B102-long-volatility-budget",
+      "source": "studies/B102-long-volatility-budget/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B103-faster-cold-short-trend",
+      "source": "studies/B103-faster-cold-short-trend/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B103A-cold-source-mask-independent-audit",
+      "source": "studies/B103A-cold-source-mask-independent-audit/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B104-cold-trend-local-neighbors",
+      "source": "studies/B104-cold-trend-local-neighbors/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B105-cold-entry-momentum",
+      "source": "studies/B105-cold-entry-momentum/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B106-shorter-cold-entry-momentum",
+      "source": "studies/B106-shorter-cold-entry-momentum/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B107-cold-short-profit-trailing",
+      "source": "studies/B107-cold-short-profit-trailing/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B108-cold-profit-trail-neighbors",
+      "source": "studies/B108-cold-profit-trail-neighbors/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B109-long-profit-local-coordinate",
+      "source": "studies/B109-long-profit-local-coordinate/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B11-ensemble-risk-coordinate",
+      "source": "studies/B11-ensemble-risk-coordinate/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B12-ensemble-risk-warmup-fix",
+      "source": "studies/B12-ensemble-risk-warmup-fix/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B13-header-source-audit",
+      "source": "studies/B13-header-source-audit/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B14-kernel-ensemble-descendants",
+      "source": "studies/B14-kernel-ensemble-descendants/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B15-observer-arrival-audit",
+      "source": "studies/B15-observer-arrival-audit/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B16-lagged-mining-descendants",
+      "source": "studies/B16-lagged-mining-descendants/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B17-mining-dimension-ablation",
+      "source": "studies/B17-mining-dimension-ablation/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B18-actual-entry-permission",
+      "source": "studies/B18-actual-entry-permission/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B19-robust-dynamics-models",
+      "source": "studies/B19-robust-dynamics-models/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B20-execution-aware-labels",
+      "source": "studies/B20-execution-aware-labels/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B21-calendar-label-ablation",
+      "source": "studies/B21-calendar-label-ablation/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B22-annual-carry",
+      "source": "studies/B22-annual-carry/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B23-eth-source-audit",
+      "source": "studies/B23-eth-source-audit/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B24-eth-relative-factors",
+      "source": "studies/B24-eth-relative-factors/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B25-eth-sgd-controls",
+      "source": "studies/B25-eth-sgd-controls/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B26-adverse-first-gate",
+      "source": "studies/B26-adverse-first-gate/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B27-early-btc-source-audit",
+      "source": "studies/B27-early-btc-source-audit/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B28-extended-initial-history",
+      "source": "studies/B28-extended-initial-history/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B29-prior-forecast-exits",
+      "source": "studies/B29-prior-forecast-exits/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B30-forecast-strength-sizing",
+      "source": "studies/B30-forecast-strength-sizing/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B31-constant-sizing-controls",
+      "source": "studies/B31-constant-sizing-controls/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B32-prior-forecast-stacking",
+      "source": "studies/B32-prior-forecast-stacking/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B33-stack-identity-fallback",
+      "source": "studies/B33-stack-identity-fallback/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B34-residual-forecast-models",
+      "source": "studies/B34-residual-forecast-models/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B35-network-activity-audit",
+      "source": "studies/B35-network-activity-audit/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B36-network-activity-factors",
+      "source": "studies/B36-network-activity-factors/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B37-activity-family-ablation",
+      "source": "studies/B37-activity-family-ablation/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B38-activity-sgd-controls",
+      "source": "studies/B38-activity-sgd-controls/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B39-activity-neural-residuals",
+      "source": "studies/B39-activity-neural-residuals/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B40-activity-architecture-choice",
+      "source": "studies/B40-activity-architecture-choice/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B41-activity-fixed-average",
+      "source": "studies/B41-activity-fixed-average/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B42-exchange-flow-source-audit",
+      "source": "studies/B42-exchange-flow-source-audit/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B43-holder-stock-factors",
+      "source": "studies/B43-holder-stock-factors/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B44-holder-stock-direct-models",
+      "source": "studies/B44-holder-stock-direct-models/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B45-y01-bear-short-component",
+      "source": "studies/B45-y01-bear-short-component/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B46-bear-short-trailing",
+      "source": "studies/B46-bear-short-trailing/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B47-negative-score-short-entry",
+      "source": "studies/B47-negative-score-short-entry/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B48-ltc-xrp-source-audit",
+      "source": "studies/B48-ltc-xrp-source-audit/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B49-cross-market-models",
+      "source": "studies/B49-cross-market-models/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B50-cross-market-fixed-averages",
+      "source": "studies/B50-cross-market-fixed-averages/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B51-short-specific-payoff",
+      "source": "studies/B51-short-specific-payoff/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B52-payoff-sign-logit",
+      "source": "studies/B52-payoff-sign-logit/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B53-nonlinear-payoff-classifier",
+      "source": "studies/B53-nonlinear-payoff-classifier/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B54-prior-payoff-moment-gates",
+      "source": "studies/B54-prior-payoff-moment-gates/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B55-small-neural-payoff-classifier",
+      "source": "studies/B55-small-neural-payoff-classifier/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B56-cross-market-transfer-source-audit",
+      "source": "studies/B56-cross-market-transfer-source-audit/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B57-cross-market-count-source-audit",
+      "source": "studies/B57-cross-market-count-source-audit/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B58-cross-count-long-models",
+      "source": "studies/B58-cross-count-long-models/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B59-fixed-count-model-averages",
+      "source": "studies/B59-fixed-count-model-averages/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B60-trend-alpha-controls",
+      "source": "studies/B60-trend-alpha-controls/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B60A-bounded-trend-alpha-controls",
+      "source": "studies/B60A-bounded-trend-alpha-controls/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B61-boosted-stop-losses",
+      "source": "studies/B61-boosted-stop-losses/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B62-depth3-loss-controls",
+      "source": "studies/B62-depth3-loss-controls/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B63-direct-loss-budget-steps",
+      "source": "studies/B63-direct-loss-budget-steps/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B64-retained-same-window-comparison",
+      "source": "studies/B64-retained-same-window-comparison/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B64A-retained-reference-reconciliation",
+      "source": "studies/B64A-retained-reference-reconciliation/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B65-full-window-model-completion",
+      "source": "studies/B65-full-window-model-completion/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B66-conditional-bear-short-models",
+      "source": "studies/B66-conditional-bear-short-models/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B67-lag-matched-short-supervision",
+      "source": "studies/B67-lag-matched-short-supervision/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B68-cross-count-short-models",
+      "source": "studies/B68-cross-count-short-models/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B69-relative-market-short-models",
+      "source": "studies/B69-relative-market-short-models/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B70-sgd-short-net-architectures",
+      "source": "studies/B70-sgd-short-net-architectures/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B71-price-exit-short-supervision",
+      "source": "studies/B71-price-exit-short-supervision/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B72-cold-budget-exposure",
+      "source": "studies/B72-cold-budget-exposure/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B73-funding-source-audit",
+      "source": "studies/B73-funding-source-audit/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B73A-funding-schema-compatibility",
+      "source": "studies/B73A-funding-schema-compatibility/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B74-funding-short-net-models",
+      "source": "studies/B74-funding-short-net-models/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B75-recency-weighted-short-net",
+      "source": "studies/B75-recency-weighted-short-net/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B76-mining-dynamics-short-net",
+      "source": "studies/B76-mining-dynamics-short-net/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B77-extended-short-training-history",
+      "source": "studies/B77-extended-short-training-history/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B78-btc-activity-short-models",
+      "source": "studies/B78-btc-activity-short-models/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B79-reported-spot-volume-source-audit",
+      "source": "studies/B79-reported-spot-volume-source-audit/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B80-reported-volume-short-models",
+      "source": "studies/B80-reported-volume-short-models/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B81-reported-volume-long-core",
+      "source": "studies/B81-reported-volume-long-core/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B82-price-core-trail-activation",
+      "source": "studies/B82-price-core-trail-activation/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B83-price-core-gradient-losses",
+      "source": "studies/B83-price-core-gradient-losses/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B84-bitcoin-attention-source-audit",
+      "source": "studies/B84-bitcoin-attention-source-audit/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B85-price-core-consensus-entry",
+      "source": "studies/B85-price-core-consensus-entry/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B86-eth-short-net-transfer",
+      "source": "studies/B86-eth-short-net-transfer/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B87-fixed-eth-short-fusion",
+      "source": "studies/B87-fixed-eth-short-fusion/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B88-short-net-loss-families",
+      "source": "studies/B88-short-net-loss-families/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B88A-short-net-loss-families",
+      "source": "studies/B88A-short-net-loss-families/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B89-short-net-forest-mechanisms",
+      "source": "studies/B89-short-net-forest-mechanisms/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B90-cftc-bitcoin-source-audit",
+      "source": "studies/B90-cftc-bitcoin-source-audit/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B91-supervised-temporal-short-net",
+      "source": "studies/B91-supervised-temporal-short-net/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B92-long-range-price-core",
+      "source": "studies/B92-long-range-price-core/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B93-histogram-price-long-core",
+      "source": "studies/B93-histogram-price-long-core/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B94-price-column-order-stability",
+      "source": "studies/B94-price-column-order-stability/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B95-carry-stop-supervision",
+      "source": "studies/B95-carry-stop-supervision/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B96-fed-statement-catalogs",
+      "source": "studies/B96-fed-statement-catalogs/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B97-fed-statement-clock-feasibility",
+      "source": "studies/B97-fed-statement-clock-feasibility/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B98-fed-target-rate-source",
+      "source": "studies/B98-fed-target-rate-source/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B98A-fed-target-rate-source-schema",
+      "source": "studies/B98A-fed-target-rate-source-schema/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    },
+    {
+      "study": "B99-fed-target-long-core",
+      "source": "studies/B99-fed-target-long-core/registration.json",
+      "sha256_exact": true,
+      "recipe_count_exact": true,
+      "recipe_ids_exact": true
+    }
+  ],
+  "raw_registration_copies_present_in_delivery": 15,
+  "recipe_entry_count_not_independent_tests": 1717,
+  "same_full_recipe_array_groups": [
+    {
+      "recipe_array_sha256": "0ea45c067fba4ab2fa5b9133b4a9052e2239a07d4171c3da4ada0a189f2889d9",
+      "studies": [
+        "B100-persistent-negative-long-exits",
+        "B100A-persistent-negative-long-exits"
+      ]
+    },
+    {
+      "recipe_array_sha256": "2742c982e6e808902231d321acce11f26750e15449575895b0abbac9f2d383a0",
+      "studies": [
+        "B60-trend-alpha-controls",
+        "B60A-bounded-trend-alpha-controls"
+      ]
+    },
+    {
+      "recipe_array_sha256": "6e4b1e77ba69ef53bf10e18809d6bbae055c1bcb41a38f1a3a8cfccda8b80cdd",
+      "studies": [
+        "B64-retained-same-window-comparison",
+        "B64A-retained-reference-reconciliation"
+      ]
+    },
+    {
+      "recipe_array_sha256": "8ef6ec44a2292f3a822c40feb75b61a5547cdbe30bf83a4bd3b74038e4f5f767",
+      "studies": [
+        "B88-short-net-loss-families",
+        "B88A-short-net-loss-families"
+      ]
+    }
+  ],
+  "most_repeated_recipe_names_not_independent_trials": [
+    [
+      "T12",
+      44
+    ],
+    [
+      "Y01",
+      43
+    ],
+    [
+      "L06",
+      40
+    ],
+    [
+      "P02",
+      33
+    ],
+    [
+      "H05",
+      32
+    ],
+    [
+      "H04",
+      31
+    ],
+    [
+      "Q05",
+      15
+    ],
+    [
+      "L05",
+      15
+    ],
+    [
+      "S03",
+      14
+    ],
+    [
+      "S04",
+      14
+    ],
+    [
+      "E01",
+      13
+    ],
+    [
+      "E02",
+      13
+    ]
+  ],
+  "selected_failure_correction_retention": [
+    {
+      "source": "studies/B31-constant-sizing-controls/original-verifier-failure.txt",
+      "source_exists": true,
+      "source_sha256": "10ad60a74d607fd46339f29435ea834f8807545287ada4c092b4f80090b2fa7c",
+      "expected_delivery": "provenance/studies/B31-constant-sizing-controls/original-verifier-failure.txt",
+      "delivery_exists": false,
+      "delivery_sha256_exact": null
+    },
+    {
+      "source": "studies/B31-constant-sizing-controls/original-report-failure.txt",
+      "source_exists": true,
+      "source_sha256": "95d79014f27bac876bb0ecf150bdc0d05c93a8618615571e3eff34060690a81e",
+      "expected_delivery": "provenance/studies/B31-constant-sizing-controls/original-report-failure.txt",
+      "delivery_exists": false,
+      "delivery_sha256_exact": null
+    },
+    {
+      "source": "studies/B31-constant-sizing-controls/verifier-correction.md",
+      "source_exists": true,
+      "source_sha256": "598a573bad1501d0511b099a46c75eea9ef35ac2378fcffa8ba233b8c7a12ebd",
+      "expected_delivery": "provenance/studies/B31-constant-sizing-controls/verifier-correction.md",
+      "delivery_exists": true,
+      "delivery_sha256_exact": true
+    },
+    {
+      "source": "studies/B60-trend-alpha-controls/run-failed.log",
+      "source_exists": true,
+      "source_sha256": "52946ec527aef206f36431eb73ea8426ceb2a1da5999cbca3df49412bf731ead",
+      "expected_delivery": "provenance/studies/B60-trend-alpha-controls/run-failed.log",
+      "delivery_exists": false,
+      "delivery_sha256_exact": null
+    },
+    {
+      "source": "studies/B60-trend-alpha-controls/verification-failed.log",
+      "source_exists": true,
+      "source_sha256": "7f2ab2f404df75ec76a0e4c2012689c4a3eabdce96749fe2e37d14a94bd5ba14",
+      "expected_delivery": "provenance/studies/B60-trend-alpha-controls/verification-failed.log",
+      "delivery_exists": false,
+      "delivery_sha256_exact": null
+    },
+    {
+      "source": "studies/B64-retained-same-window-comparison/failure.md",
+      "source_exists": true,
+      "source_sha256": "317574be4313e878f7284e0567a33c044fa4e766a6e1f3260da343d1b6dc863c",
+      "expected_delivery": "provenance/studies/B64-retained-same-window-comparison/failure.md",
+      "delivery_exists": false,
+      "delivery_sha256_exact": null
+    },
+    {
+      "source": "studies/B64-retained-same-window-comparison/verification-failed.log",
+      "source_exists": true,
+      "source_sha256": "7eee211d383366b5f59af9354f9ceecf946c21568a462d8e6a2ebca38b366c97",
+      "expected_delivery": "provenance/studies/B64-retained-same-window-comparison/verification-failed.log",
+      "delivery_exists": false,
+      "delivery_sha256_exact": null
+    },
+    {
+      "source": "studies/B88-short-net-loss-families/original-failure.log",
+      "source_exists": true,
+      "source_sha256": "e666fa5290ff8d2194759adbf94b9ee306ebce65e1af21a8101481f094523f08",
+      "expected_delivery": "provenance/studies/B88-short-net-loss-families/original-failure.log",
+      "delivery_exists": false,
+      "delivery_sha256_exact": null
+    },
+    {
+      "source": "studies/B100-persistent-negative-long-exits/original-run-failure.json",
+      "source_exists": true,
+      "source_sha256": "aace264d15a54985d1621a52bffa74cab6026adeaaa473bcbd630b8e59e443a2",
+      "expected_delivery": "provenance/studies/B100-persistent-negative-long-exits/original-run-failure.json",
+      "delivery_exists": false,
+      "delivery_sha256_exact": null
+    },
+    {
+      "source": "studies/B103-faster-cold-short-trend/original-verification-failure.json",
+      "source_exists": true,
+      "source_sha256": "83cc972c748200dffb3a77adc7f0de4a5a725935dae717563aa4429886dd8ea5",
+      "expected_delivery": "provenance/studies/B103-faster-cold-short-trend/original-verification-failure.json",
+      "delivery_exists": true,
+      "delivery_sha256_exact": true
+    },
+    {
+      "source": "studies/B103A-cold-source-mask-independent-audit/analysis-metadata-correction.json",
+      "source_exists": true,
+      "source_sha256": "13355e2c3db7b947e3e41b1fe6ae3f8487e902b29ca684431e9ea99f33ca7622",
+      "expected_delivery": "provenance/studies/B103A-cold-source-mask-independent-audit/analysis-metadata-correction.json",
+      "delivery_exists": false,
+      "delivery_sha256_exact": null
+    },
+    {
+      "source": "studies/B105-cold-entry-momentum/analysis-kind-correction.json",
+      "source_exists": true,
+      "source_sha256": "3899788ff786e3acbdb57f15fe85119fd9d174f5666f10bffd91a9fd69e426f5",
+      "expected_delivery": "provenance/studies/B105-cold-entry-momentum/analysis-kind-correction.json",
+      "delivery_exists": false,
+      "delivery_sha256_exact": null
+    },
+    {
+      "source": "studies/B107-cold-short-profit-trailing/decision-metadata-correction.json",
+      "source_exists": true,
+      "source_sha256": "9d79b0d7973cbd4101a9751e03abdbd9a9274dda2aa62033a28f95a0aa0b26e8",
+      "expected_delivery": "provenance/studies/B107-cold-short-profit-trailing/decision-metadata-correction.json",
+      "delivery_exists": false,
+      "delivery_sha256_exact": null
+    },
+    {
+      "source": "studies/B109-long-profit-local-coordinate/spec-metadata-correction.json",
+      "source_exists": true,
+      "source_sha256": "92268de0e4ae036e727b0f842e85710ff8b450ecdac7ec82f83e6bdfe0102f47",
+      "expected_delivery": "provenance/studies/B109-long-profit-local-coordinate/spec-metadata-correction.json",
+      "delivery_exists": true,
+      "delivery_sha256_exact": true
+    }
+  ],
+  "selected_retention_source_file_count": 14,
+  "selected_retention_exact_copy_count": 3,
+  "technical_failure_registered_vs_actual_model_files": [
+    {
+      "study": "B88-short-net-loss-families",
+      "registered_reported_new_fits": 392,
+      "actual_historical_model_file_count": 0,
+      "has_original_failure_log": true
+    },
+    {
+      "study": "B88A-short-net-loss-families",
+      "registered_reported_new_fits": 392,
+      "actual_historical_model_file_count": 392,
+      "has_original_failure_log": false
+    }
+  ],
+  "physical_model_file_count": 266,
+  "unique_model_file_digest_count": 266,
+  "all_current_model_file_digests_match": true,
+  "strategy_numeric_family_wiring": {
+    "LP35": [
+      "base_tree",
+      "price47",
+      "short_huber"
+    ],
+    "TS04": [
+      "base_tree",
+      "price47",
+      "short_huber"
+    ],
+    "ME01": [
+      "base_tree",
+      "price47",
+      "short_huber"
+    ],
+    "MX03": [
+      "base_tree",
+      "price47",
+      "short_huber"
+    ],
+    "B88A_S03": [
+      "base_tree",
+      "price47",
+      "short_median"
+    ],
+    "K02": [
+      "base_tree",
+      "short_huber",
+      "stop44"
+    ],
+    "Y01": [
+      "base_tree",
+      "stop44"
+    ],
+    "C02": [
+      "base_tree",
+      "stop44"
+    ],
+    "C04": [
+      "mining58"
+    ]
+  },
+  "same_numeric_family_set_groups": [
+    {
+      "families": [
+        "base_tree",
+        "price47",
+        "short_huber"
+      ],
+      "strategies": [
+        "LP35",
+        "TS04",
+        "ME01",
+        "MX03"
+      ]
+    },
+    {
+      "families": [
+        "base_tree",
+        "stop44"
+      ],
+      "strategies": [
+        "Y01",
+        "C02"
+      ]
+    }
+  ],
+  "independent_market_sample_or_effective_trial_count_estimated": false,
+  "boundary_repairs_regression_executed": false,
+  "trained_replayed_account_or_searched_strategy": false,
+  "source_or_delivery_written": false,
+  "scope_limitation": "B registration metadata and selected known failure/correction files only; no V/2026 economic data or other expert review files."
+}

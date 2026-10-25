@@ -1,0 +1,48 @@
+{
+  "round": 12,
+  "role": "data",
+  "topic": "最终验收与未解决风险",
+  "candidate": "c7439216d55207a9a480153d7555f6709817e70a",
+  "conclusion": "候选c7439216可作为有条件的历史研究归档交付：本人覆盖的导出、年度边界与入口缺口修复已有证据支持，历史PIT、选择历史和OS隔离限制必须继续保留。",
+  "verdict": "qualified",
+  "evidence": [
+    {
+      "source": "/workspace/BTCExpertReview/workspaces/data/r12-final-binding.json；Git HEAD",
+      "fact": "最终HEAD匹配。清单为886项、声明56,446,427字节；本轮仅复核artifacts.py、training.py及models/manifest三项实际size/SHA，均匹配。Git确认原模型、artifacts和training_inputs相对本人R10候选未变；本轮未重哈希全部文件。"
+    },
+    {
+      "source": "/workspace/BTCExpertReview/workspaces/data/r10-checks.json",
+      "fact": "本人R10曾全检原886项size/SHA、598项复制源绑定、36账户经济日期和48训练前缀；在私有副本拒绝旧仓源码、禁网络下，两族完整年度推断误差0。该覆盖不是新依赖安装、全部模型重拟合或全账户引擎回放。"
+    },
+    {
+      "source": "/workspace/BTCExpertReview/workspaces/data/r11-retest-checks.json",
+      "fact": "c7439216上原两个验证别名均在open前拒绝；重复过去date、错误family、未来date均在states/fit前拒绝。合法两plan到达fit哨兵、2018保持missing；实际拟合0。原r11失败报告SHA未改，关闭证据另存。"
+    },
+    {
+      "source": "/workspace/BTC-strategy/docs/REPRODUCIBILITY.md:22；本人r04/r08",
+      "fact": "文档准确说明ROOT外读取为第三方库保留，training hook不等于完整OS沙箱。此前已核实的挖矿祖先/时钟重建与volume晚期快照仍未获严格PIT认证；注册元数据也不能给出全研究有效独立试验数。"
+    }
+  ],
+  "counterevidence": [
+    "本人覆盖内未发现当前封存前缀或经济日期含2026真实观测；R11发现的具体入口反例已定向关闭，不应继续当作当前未修缺口。",
+    "正确复制与时序不等于历史发布时间已认证，也不把消费过的2018–2025历史变成新盲测。"
+  ],
+  "recommendations": [
+    {
+      "priority": "P0",
+      "action": "将固定候选、release清单、本人原始失败及追加关闭receipt共同归档；官方运行先验清单，并在只挂发布包/依赖、无网络的容器或OS边界内执行。",
+      "acceptance": "候选哈希和证据引用可追溯；保留PIT未认证、有效试验数未知及hook非OS沙箱说明，不用本交付宣称新样本外验证。"
+    }
+  ],
+  "checks_performed": [
+    "R12独立核对HEAD、三项关键文件size/SHA、清单项数/声明字节及原模型/经济数据Git不变。",
+    "直接复读REPRO的ROOT外读取限定；依据本人R10、原R11及定向retest逐项区分通过范围与残余。",
+    "本轮未重复48矩阵、推断、拟合或账户回放；未读取他人/主席意见、验证receipt或真实2026/V01/V02资料。"
+  ],
+  "unresolved": [
+    "历史字段publication/vintage完整性、节点墙钟及canonical/祖先可得假设未独立认证；代码因果性不能补足PIT。",
+    "消费历史中的完整自适应假设/选择及依赖结构仍未知，无法据注册行数完成全研究多重选择校正。",
+    "ROOT外读取仍允许；本角色未执行新环境安装、Docker构建、全部年度重拟合或全账户引擎回放。"
+  ],
+  "independence_statement": "仅依据本人工作区与共享原始事实，不读取其他专家或主席结论；只写data附件，未改共享代码/封存物料。AI角色不是人类外部专家或独立市场样本。本结论仅限本人覆盖，R12完成即停止。"
+}

@@ -1,0 +1,10 @@
+{
+  "initial_check": "r05-check.py independent audit traversal",
+  "initial_result": "FAIL before evidence output was written",
+  "assertion": "('short_huber', 2019, 0.00011093307708681666)",
+  "cause": "The audit implementation compared a float32 feature array with a weak Python scalar threshold; NumPy coerced the scalar to float32, changing exact split-boundary routing.",
+  "correction": "Only the role-local audit script was changed to promote already-float32 feature values to float64 before threshold comparison, preserving float64 model thresholds.",
+  "source_or_delivery_repository_changes": false,
+  "corrected_result": "12 family-window checks PASS, maximum forecast error 0.0",
+  "frozen_contract_tolerance_changed": false
+}

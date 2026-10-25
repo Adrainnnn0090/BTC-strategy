@@ -1,0 +1,53 @@
+{
+  "round": 12,
+  "role": "execution",
+  "topic": "最终研究交付验收与未获执行/融资资格",
+  "conclusion": "支持该候选作为可追溯、口径受限的历史研究交付；本人代码核对及1个实际模型至Native完整账本支持执行一致性，不授予真实成交、融资或清算安全资格。",
+  "verdict": "qualified",
+  "evidence": [
+    {
+      "来源": "/workspace/BTC-strategy:HEAD；provenance/release_manifest.json",
+      "实际计算": "HEAD=c7439216d55207a9a480153d7555f6709817e70a；manifest 886条/56446427 bytes，SHA256=cd4e22c08fc1056866a69bb9f8bfcb78a42d9244dc7cdfe3514ce1d5fb95a439。独立核execution/costs/instrument/replay/models.py五文件hash及bytes；未声称全886文件已核hash。"
+    },
+    {
+      "来源": "src/btc_strategy/{execution,replay,models}.py；相对a642de16的git diff",
+      "实际计算": "经济execution非import完整AST仍同源；成本/instrument/模型数据/账户未变。replay去新增早拒绝guard后AST精确同R11。models.py加强2018缺失态合同：现有48条manifest、6个family全部满足，数值推断函数未改。"
+    },
+    {
+      "来源": "本人r11_lp35_base_cli.json；replay.py:11—22",
+      "实际计算": "仅本人R11实际跑1个LP35/BASE，非36：默认数字模型重建=true，完整Native account精确相同，项目Decimal PASS 2922 marks/102 fills/369融资行；summary同源。附件SHA256=949b35a2a494d9dd16d717d776a0284aa37143934e9ce9269036f060bf3ac0f2。本轮未重跑模型或账户，未用Docker/wheel隔离。"
+    },
+    {
+      "来源": "本人R06/R07账本计算及R11输出",
+      "事实": "STRESS钱包10308.70673705减外部融资80.7883696644得净权益10227.9183673856；BASE退出前gross118.0455835632%，成交后归零。Native模拟margin存在，但融资债务未进其钱包；入场预算和止损触发不保证连续敞口或实际亏损上限。"
+    }
+  ],
+  "counterevidence": [
+    "Native确实有模拟margin记录，不能误称完全没有保证金机制；最终净值也未漏扣融资。",
+    "代码与历史账本相等支持复现，不证明真实venue价格、历史发布时点或新增独立alpha；输出标签不会降低原有经济风险。"
+  ],
+  "recommendations": [
+    {
+      "行动": "按限定历史研究交付，显式并列成交后与订单前后gross、外部融资后净值及止损延迟口径。",
+      "优先级": "P0",
+      "验收方法": "保留98.9936% post-fill与118.0456% before/after实例及risk_qualification；不得写持续敞口/亏损硬上限、实盘或清算已获资格。"
+    },
+    {
+      "行动": "将融资感知清算与真实可成交性另设证据门槛，保留本人运行范围。",
+      "优先级": "P0",
+      "验收方法": "须有融资债务进入清算权益及借币/venue时点证据方可升级资格；当前注明本人1 book、其余未由本人重放，不把镜像tag、版本号或他人运行当本人的完整验证。"
+    }
+  ],
+  "checks_performed": [
+    "最终HEAD、manifest计数/字节/摘要及五文件绑定通过；execution非import AST仍同源。",
+    "隔离新cost guard：4个登记case接受，未知字符串/None/list/整数4种合成异常均在早期ValueError；未读经济数据。",
+    "模型manifest 48条全部符合新缺失态guard；只读本人R11附件复核实际模型/fullbook/Decimal标记。R12新模型/Native运行均0。"
+  ],
+  "unresolved": [
+    "融资外置，真实借币可用性、费率及融资后清算规则未获资格。",
+    "每日合成报价不证明盘中风险、真实成交、USD/USDT基差或历史发布可得性。",
+    "本人只实际重放LP35/BASE 1 book；没有独立全36或installed-wheel环境重放。",
+    "已消耗2018—2025开发历史及单退出事件复利差异不足一般执行alpha证明。"
+  ],
+  "independence_statement": "仅本角色AI分析，非真实专家或新增市场样本。未读其他专家/主席意见、真实2026经济值或V01/V02；源仓与交付内容只读，无改参/拟合/旧writer/下单/部署。独占创建r12.json后停止，不预判其他角色或全72报告状态。"
+}

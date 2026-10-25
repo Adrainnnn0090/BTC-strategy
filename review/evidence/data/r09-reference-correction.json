@@ -1,0 +1,15 @@
+{
+  "round": 9,
+  "role": "data",
+  "initial_reference": "K02 exposure control",
+  "initial_check": "Reference suitability assertion failed: max four-cost DD(K02) < max four-cost DD(LP35) was false.",
+  "observed_worst_four_cost_dd_pct": {
+    "K02": 32.92404834089216,
+    "LP35": 32.58571943244992,
+    "C02": 31.89344824596897
+  },
+  "correction": "Use existing C02 risk_tradeoffs as the lower worst-four-cost-DD reference; retain K02 only as an auxiliary cold cross-year ownership example.",
+  "qualification": "C02 STRESS DD is higher than LP35 STRESS DD; no across-cost dominance is claimed.",
+  "strategy_parameter_or_source_change": false,
+  "corrected_attribution_result": "PASS"
+}

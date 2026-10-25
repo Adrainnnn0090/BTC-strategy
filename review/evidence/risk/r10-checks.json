@@ -1,0 +1,324 @@
+{
+  "candidate_commit": "1b008bfd4a9d1af9a73ff830fb7f8a1b72425fbf",
+  "manifest_file_count": 886,
+  "scope": "9 cached-context target exactness; 1 LP35/BASE cached-forecast historical Native replay; 4 packaged-account/reference checks; no model reconstruction or refit, no paper/live",
+  "target_results": [
+    {
+      "id": "LP35",
+      "positions": 3287,
+      "targets_exact": true,
+      "permissions_exact": true
+    },
+    {
+      "id": "TS04",
+      "positions": 3287,
+      "targets_exact": true,
+      "permissions_exact": true
+    },
+    {
+      "id": "ME01",
+      "positions": 3287,
+      "targets_exact": true,
+      "permissions_exact": true
+    },
+    {
+      "id": "MX03",
+      "positions": 3287,
+      "targets_exact": true,
+      "permissions_exact": true
+    },
+    {
+      "id": "B88A_S03",
+      "positions": 3287,
+      "targets_exact": true,
+      "permissions_exact": true
+    },
+    {
+      "id": "K02",
+      "positions": 3287,
+      "targets_exact": true,
+      "permissions_exact": true
+    },
+    {
+      "id": "Y01",
+      "positions": 3287,
+      "targets_exact": true,
+      "permissions_exact": true
+    },
+    {
+      "id": "C02",
+      "positions": 3287,
+      "targets_exact": true,
+      "permissions_exact": true
+    },
+    {
+      "id": "C04",
+      "positions": 3287,
+      "targets_exact": true,
+      "permissions_exact": true
+    }
+  ],
+  "strategy_cards": [
+    {
+      "id": "K02",
+      "source_study_matches_catalog": true,
+      "period_2018_2025": true,
+      "new2026validation_false": true
+    },
+    {
+      "id": "LP35",
+      "source_study_matches_catalog": true,
+      "period_2018_2025": true,
+      "new2026validation_false": true
+    },
+    {
+      "id": "ME01",
+      "source_study_matches_catalog": true,
+      "period_2018_2025": true,
+      "new2026validation_false": true
+    },
+    {
+      "id": "MX03",
+      "source_study_matches_catalog": true,
+      "period_2018_2025": true,
+      "new2026validation_false": true
+    },
+    {
+      "id": "TS04",
+      "source_study_matches_catalog": true,
+      "period_2018_2025": true,
+      "new2026validation_false": true
+    },
+    {
+      "id": "Y01",
+      "source_study_matches_catalog": true,
+      "period_2018_2025": true,
+      "new2026validation_false": true
+    },
+    {
+      "id": "B88A_S03",
+      "source_study_matches_catalog": true,
+      "period_2018_2025": true,
+      "new2026validation_false": true
+    },
+    {
+      "id": "C02",
+      "source_study_matches_catalog": true,
+      "period_2018_2025": true,
+      "new2026validation_false": true
+    },
+    {
+      "id": "C04",
+      "source_study_matches_catalog": true,
+      "period_2018_2025": true,
+      "new2026validation_false": true
+    }
+  ],
+  "synthetic_boundary_rejections": [
+    {
+      "synthetic_path": "artifacts/accounts/LP35/2026/BASE.json.gz",
+      "rejected_before_file_read": true,
+      "error": "2026+ economic data excluded"
+    },
+    {
+      "synthetic_path": "models/price47/2026/state.json.gz",
+      "rejected_before_file_read": true,
+      "error": "2026+ economic data excluded"
+    },
+    {
+      "synthetic_path": "training_inputs/2026/price47.json.gz",
+      "rejected_before_file_read": true,
+      "error": "2026+ economic data excluded"
+    },
+    {
+      "synthetic_path": "artifacts/V01/example.json",
+      "rejected_before_file_read": true,
+      "error": "validation artifacts excluded"
+    },
+    {
+      "synthetic_path": "artifacts/V02/example.json",
+      "rejected_before_file_read": true,
+      "error": "validation artifacts excluded"
+    },
+    {
+      "synthetic_2026_date_appended_to_in_memory_context": true,
+      "rejected_before_target_rules": true,
+      "error": "economic clock outside2017–2025"
+    }
+  ],
+  "historical_replay": {
+    "strategy": "LP35",
+    "case": "BASE",
+    "complete_account_exact": true,
+    "forecasts_reconstructed_from_numeric_models": false,
+    "summary_post_fill_max_gross_pct": 98.99360891840428,
+    "daily_before_or_after_max_short_gross": {
+      "date": "2018-01-05",
+      "signed_quantity": "-0.00556",
+      "equity": "80.05770443553769557917808219",
+      "gross_pct": 118.0455835631524
+    },
+    "actual_SL12_first_trade_loss_basis_pct": "26.62492157701964552313326352"
+  },
+  "packaged_accounts": [
+    {
+      "strategy": "LP35",
+      "case": "BASE",
+      "bytes_equal_frozen_ledger": true,
+      "release_hash_matches": true,
+      "max_daily_short_before_or_after": {
+        "date": "2018-01-05",
+        "signed_quantity": "-0.00556",
+        "equity": "80.05770443553769557917808219",
+        "gross_pct": 118.0455835631524
+      },
+      "max_daily_whole_before_or_after": {
+        "date": "2018-01-05",
+        "signed_quantity": "-0.00556",
+        "equity": "80.05770443553769557917808219",
+        "gross_pct": 118.0455835631524
+      },
+      "post_fill_whole": {
+        "date": "2021-01-07",
+        "signed_quantity": "0.03944",
+        "gross_pct": 98.99360891840426
+      }
+    },
+    {
+      "strategy": "LP35",
+      "case": "DELAY",
+      "bytes_equal_frozen_ledger": true,
+      "release_hash_matches": true,
+      "max_daily_short_before_or_after": {
+        "date": "2018-04-14",
+        "signed_quantity": "-0.01449",
+        "equity": "111.0912978772846289093972603",
+        "gross_pct": 104.4303183195187
+      },
+      "max_daily_whole_before_or_after": {
+        "date": "2018-04-14",
+        "signed_quantity": "-0.01449",
+        "equity": "111.0912978772846289093972603",
+        "gross_pct": 104.4303183195187
+      },
+      "post_fill_whole": {
+        "date": "2018-04-13",
+        "signed_quantity": "-0.01449",
+        "gross_pct": 102.09384920484652
+      }
+    },
+    {
+      "strategy": "K02",
+      "case": "DELAY",
+      "bytes_equal_frozen_ledger": true,
+      "release_hash_matches": true,
+      "max_daily_short_before_or_after": {
+        "date": "2018-02-19",
+        "signed_quantity": "-0.00266",
+        "equity": "96.4468653509537656621917808",
+        "gross_pct": 30.72229059543503
+      },
+      "max_daily_whole_before_or_after": {
+        "date": "2020-12-30",
+        "signed_quantity": "0.02051",
+        "equity": "599.1575441958120283206301370",
+        "gross_pct": 98.73914336402595
+      },
+      "post_fill_whole": {
+        "date": "2020-12-29",
+        "signed_quantity": "0.02051",
+        "gross_pct": 98.64236369900206
+      }
+    },
+    {
+      "strategy": "C02",
+      "case": "SEVERE",
+      "bytes_equal_frozen_ledger": true,
+      "release_hash_matches": true,
+      "max_daily_short_before_or_after": {
+        "date": null,
+        "gross_pct": 0.0
+      },
+      "max_daily_whole_before_or_after": {
+        "date": "2019-05-14",
+        "signed_quantity": "0.02115",
+        "equity": "187.1260142900",
+        "gross_pct": 89.91804032171049
+      },
+      "post_fill_whole": {
+        "date": "2019-05-13",
+        "signed_quantity": "0.02115",
+        "gross_pct": 89.72502424749986
+      }
+    }
+  ],
+  "candidate_files_opened_count": 62,
+  "review_files_opened": 0,
+  "candidate_file_read_list": [
+    "artifacts/accounts/C02/SEVERE.json.gz",
+    "artifacts/accounts/K02/DELAY.json.gz",
+    "artifacts/accounts/LP35/BASE.json.gz",
+    "artifacts/accounts/LP35/DELAY.json.gz",
+    "artifacts/catalog.json",
+    "artifacts/contexts/budget.json.gz",
+    "artifacts/contexts/high_return.json.gz",
+    "artifacts/contexts/median.json.gz",
+    "artifacts/contexts/sizing.json.gz",
+    "artifacts/targets/B88A_S03.json.gz",
+    "artifacts/targets/C02.json.gz",
+    "artifacts/targets/C04.json.gz",
+    "artifacts/targets/K02.json.gz",
+    "artifacts/targets/LP35.json.gz",
+    "artifacts/targets/ME01.json.gz",
+    "artifacts/targets/MX03.json.gz",
+    "artifacts/targets/TS04.json.gz",
+    "artifacts/targets/Y01.json.gz",
+    "src/btc_strategy/__pycache__/__init__.cpython-312.pyc",
+    "src/btc_strategy/__pycache__/artifacts.cpython-312.pyc",
+    "src/btc_strategy/__pycache__/costs.cpython-312.pyc",
+    "src/btc_strategy/__pycache__/execution.cpython-312.pyc",
+    "src/btc_strategy/__pycache__/instrument.cpython-312.pyc",
+    "src/btc_strategy/__pycache__/replay.cpython-312.pyc",
+    "src/btc_strategy/__pycache__/strategies.cpython-312.pyc",
+    "src/btc_strategy/__pycache__/validation.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/__init__.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/audit.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/b12_signals.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/bear_short_overlay.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/boosted_stop.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/boosted_stop_depth3.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/carry_audit.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/clock.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/cold_budget.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/cold_entry_momentum.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/cold_short_profit_trailing.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/conditional_short.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/entry_permissions.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/exit_coordinate.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/faster_cold_short.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/long_profit_local_coordinate.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/long_vol_budget.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/patient_profit_exit.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/quote_exposure.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/sgd.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/short_payoff.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/short_trailing.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/shorter_cold_momentum.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/signals.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/tree_factors.cpython-312.pyc",
+    "src/btc_strategy/_runtime/audit.py",
+    "src/btc_strategy/_runtime/carry_audit.py",
+    "strategies/exposure_controls/k02/strategy.json",
+    "strategies/high_return/lp35/strategy.json",
+    "strategies/high_return/me01/strategy.json",
+    "strategies/high_return/mx03/strategy.json",
+    "strategies/high_return/ts04/strategy.json",
+    "strategies/long_only/y01/strategy.json",
+    "strategies/risk_tradeoffs/b88a_s03/strategy.json",
+    "strategies/risk_tradeoffs/c02/strategy.json",
+    "strategies/risk_tradeoffs/c04/strategy.json"
+  ],
+  "cli_help_pass": true,
+  "manifest_economic_role_forbidden_year_or_v01_v02_path_count": 0,
+  "api_result_attachment": "r10-api-LP35-BASE.json"
+}

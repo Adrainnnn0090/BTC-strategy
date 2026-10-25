@@ -1,0 +1,384 @@
+{
+  "round": 11,
+  "git_commit": "a642de16cea72875a99859e9108960b02636c584",
+  "code_sha_at_start": {
+    "artifacts.py": "d8e78c2467632ac624885c401bbe8de01fd9936069e3890b26d995fafab878aa",
+    "models.py": "51bd349476754539782cf9dc424f9bb7569db56fb820de852e958d297bc29c8a",
+    "training.py": "b15c528f5b9a32f8522de3374797ea2ad96cac615a59da8888f229bd1d5aff6c",
+    "validation.py": "9511f46cd209a9ec720054563050519068c15ccb74042145dbe0cd7394ad4878",
+    "integrity.py": "9c1cf66911ce477db2392eb1f05c41ab50ea2efb4a6d762c16548187e00a3886"
+  },
+  "code_sha_at_end": {
+    "artifacts.py": "d8e78c2467632ac624885c401bbe8de01fd9936069e3890b26d995fafab878aa",
+    "models.py": "51bd349476754539782cf9dc424f9bb7569db56fb820de852e958d297bc29c8a",
+    "training.py": "b15c528f5b9a32f8522de3374797ea2ad96cac615a59da8888f229bd1d5aff6c",
+    "validation.py": "9511f46cd209a9ec720054563050519068c15ccb74042145dbe0cd7394ad4878",
+    "integrity.py": "9c1cf66911ce477db2392eb1f05c41ab50ea2efb4a6d762c16548187e00a3886"
+  },
+  "code_snapshot_stable": true,
+  "clean_import_no_instrument_shim": true,
+  "old_project_or_real_review_read_attempts": [],
+  "path_pre_open_checks": [
+    {
+      "synthetic_path": "../repro-outside",
+      "ValueError_before_open": true
+    },
+    {
+      "synthetic_path": "/tmp/repro-outside",
+      "ValueError_before_open": true
+    },
+    {
+      "synthetic_path": "models/base_tree/2026/repro-placeholder",
+      "ValueError_before_open": true
+    },
+    {
+      "synthetic_path": "models/base_tree/fold2027/repro-placeholder",
+      "ValueError_before_open": true
+    },
+    {
+      "synthetic_path": "training_inputs/2026/base_tree.json.gz",
+      "ValueError_before_open": true
+    },
+    {
+      "synthetic_path": "artifacts/contexts/2026/repro-placeholder",
+      "ValueError_before_open": true
+    },
+    {
+      "synthetic_path": "artifacts/V01/repro-placeholder",
+      "ValueError_before_open": true
+    },
+    {
+      "synthetic_path": "artifacts/V02/repro-placeholder",
+      "ValueError_before_open": true
+    },
+    {
+      "synthetic_path": "artifacts/v01-retained-validation/repro-placeholder",
+      "ValueError_before_open": true
+    },
+    {
+      "synthetic_path": "artifacts/v02-retained-validation/repro-placeholder",
+      "ValueError_before_open": true
+    },
+    {
+      "synthetic_path": "artifacts/V01-pretend/repro-placeholder",
+      "ValueError_before_open": true
+    },
+    {
+      "synthetic_path": "provenance/folds/2026/repro-placeholder",
+      "ValueError_before_open": true
+    },
+    {
+      "synthetic_path": "data/prices_2026.json",
+      "ValueError_before_open": true
+    }
+  ],
+  "all_path_checks_pass": true,
+  "API_pre_read_checks": [
+    {
+      "case": "annual_states_year_2026",
+      "exception": "ValueError",
+      "read_or_guard_attempts": [],
+      "pass": true
+    },
+    {
+      "case": "annual_states_year_2017",
+      "exception": "ValueError",
+      "read_or_guard_attempts": [],
+      "pass": true
+    },
+    {
+      "case": "annual_states_year_2025.0",
+      "exception": "ValueError",
+      "read_or_guard_attempts": [],
+      "pass": true
+    },
+    {
+      "case": "annual_states_year_True",
+      "exception": "ValueError",
+      "read_or_guard_attempts": [],
+      "pass": true
+    },
+    {
+      "case": "annual_states_year_'2025'",
+      "exception": "ValueError",
+      "read_or_guard_attempts": [],
+      "pass": true
+    },
+    {
+      "case": "annual_states_unknown_family",
+      "exception": "ValueError",
+      "read_or_guard_attempts": [],
+      "pass": true
+    },
+    {
+      "case": "refit_year_2026",
+      "exception": "ValueError",
+      "read_or_guard_attempts": [],
+      "pass": true
+    },
+    {
+      "case": "refit_year_2017",
+      "exception": "ValueError",
+      "read_or_guard_attempts": [],
+      "pass": true
+    },
+    {
+      "case": "refit_year_2025.0",
+      "exception": "ValueError",
+      "read_or_guard_attempts": [],
+      "pass": true
+    },
+    {
+      "case": "refit_year_True",
+      "exception": "ValueError",
+      "read_or_guard_attempts": [],
+      "pass": true
+    },
+    {
+      "case": "refit_year_'2025'",
+      "exception": "ValueError",
+      "read_or_guard_attempts": [],
+      "pass": true
+    },
+    {
+      "case": "refit_unknown_family",
+      "exception": "ValueError",
+      "read_or_guard_attempts": [],
+      "pass": true
+    },
+    {
+      "case": "reconstruct_unknown_family",
+      "exception": "ValueError",
+      "read_or_guard_attempts": [],
+      "pass": true
+    },
+    {
+      "case": "feature_unknown_family",
+      "exception": "ValueError",
+      "read_or_guard_attempts": [],
+      "pass": true
+    },
+    {
+      "case": "reconstruct_middle_future",
+      "exception": "ValueError",
+      "read_or_guard_attempts": [],
+      "pass": true
+    },
+    {
+      "case": "feature_middle_future",
+      "exception": "ValueError",
+      "read_or_guard_attempts": [],
+      "pass": true
+    },
+    {
+      "case": "feature_duplicate_date",
+      "exception": "ValueError",
+      "read_or_guard_attempts": [],
+      "pass": true
+    },
+    {
+      "case": "feature_disordered_date",
+      "exception": "ValueError",
+      "read_or_guard_attempts": [],
+      "pass": true
+    },
+    {
+      "case": "feature_nonfinite_price",
+      "exception": "ValueError",
+      "read_or_guard_attempts": [],
+      "pass": true
+    },
+    {
+      "case": "feature_bool_price",
+      "exception": "ValueError",
+      "read_or_guard_attempts": [],
+      "pass": true
+    }
+  ],
+  "all_API_checks_pass": true,
+  "all_six_2018_states_missing": {
+    "base_tree": true,
+    "stop44": true,
+    "price47": true,
+    "short_huber": true,
+    "short_median": true,
+    "mining58": true
+  },
+  "2018_prediction_None_preserved": true,
+  "price_only_lazy_feature_checks": {
+    "no_mining_or_volume_required": true,
+    "future_perturbation_prefix_exact": true,
+    "short_prefix_exact": true
+  },
+  "training_role_predicates": {
+    "artifacts/contexts/high_return.json.gz": true,
+    "artifacts/accounts/LP35/STRESS.json.gz": true,
+    "training_inputs/2025/price47.json.gz": true,
+    "training_inputs/2024/price47.json.gz": true,
+    "training_inputs/2025/short_huber.json.gz": true,
+    "models/base_tree/2025/x.json.gz": true
+  },
+  "synthetic_valid_model_baseline_pass": true,
+  "synthetic_integrity_baseline_pass": true,
+  "synthetic_complete_review_baseline_pass": true,
+  "synthetic_fault_rejections": [
+    {
+      "case": "duplicate_seed_roster",
+      "rejected": true,
+      "exception": "ValueError",
+      "message": "incomplete long member roster"
+    },
+    {
+      "case": "missing_seed_roster",
+      "rejected": true,
+      "exception": "ValueError",
+      "message": "incomplete long member roster"
+    },
+    {
+      "case": "model_payload_hash_drift",
+      "rejected": true,
+      "exception": "ValueError",
+      "message": "model content hash mismatch: models/base_tree/2019/synthetic-101.json.gz"
+    },
+    {
+      "case": "wrong_year_model_path",
+      "rejected": true,
+      "exception": "ValueError",
+      "message": "model year/family path mismatch"
+    },
+    {
+      "case": "wrong_family_model_path",
+      "rejected": true,
+      "exception": "ValueError",
+      "message": "model year/family path mismatch"
+    },
+    {
+      "case": "model_cutoff_drift",
+      "rejected": true,
+      "exception": "ValueError",
+      "message": "model cutoff mismatch"
+    },
+    {
+      "case": "model_width_drift",
+      "rejected": true,
+      "exception": "ValueError",
+      "message": "model feature width mismatch"
+    },
+    {
+      "case": "missing_model_outside_2018",
+      "rejected": true,
+      "exception": "ValueError",
+      "message": "invalid missing-state contract"
+    },
+    {
+      "case": "missing_second_head",
+      "rejected": true,
+      "exception": "ValueError",
+      "message": "incomplete short member roster"
+    },
+    {
+      "case": "integrity_payload_drift",
+      "rejected": true,
+      "exception": "ValueError",
+      "message": "release content mismatch: payload.txt"
+    },
+    {
+      "case": "integrity_missing_payload",
+      "rejected": true,
+      "exception": "FileNotFoundError",
+      "message": "[Errno 2] No such file or directory: '/tmp/btc-repro-r11-56dy7a90/payload.txt'"
+    },
+    {
+      "case": "integrity_path_escape",
+      "rejected": true,
+      "exception": "ValueError",
+      "message": "manifest escape"
+    },
+    {
+      "case": "review_missing_role",
+      "rejected": true,
+      "exception": "FileNotFoundError",
+      "message": "[Errno 2] No such file or directory: '/tmp/btc-repro-r11-56dy7a90/review/rounds/01/data.json'"
+    },
+    {
+      "case": "review_wrong_role_or_hash",
+      "rejected": true,
+      "exception": "AssertionError",
+      "message": ""
+    },
+    {
+      "case": "review_missing_required_field",
+      "rejected": true,
+      "exception": "AssertionError",
+      "message": ""
+    },
+    {
+      "case": "review_missing_next_round",
+      "rejected": true,
+      "exception": "FileNotFoundError",
+      "message": "[Errno 2] No such file or directory: '/tmp/btc-repro-r11-56dy7a90/review/rounds/02/chair.json'"
+    },
+    {
+      "case": "review_missing_chair",
+      "rejected": true,
+      "exception": "FileNotFoundError",
+      "message": "[Errno 2] No such file or directory: '/tmp/btc-repro-r11-56dy7a90/review/rounds/01/chair.json'"
+    }
+  ],
+  "all_requested_faults_rejected": true,
+  "trusted_manifest_inventory_scope_probe": {
+    "empty_synthetic_manifest_result": {
+      "status": "PASS",
+      "files": 0,
+      "bytes": 0,
+      "scope": "Content equality; not alpha, PIT or live safety certification."
+    },
+    "interpretation": "Verifier checks declared file content, not independent authenticity/completeness of its input manifest. Expected inventory must be anchored by the frozen commit/manifest identity; this is separate from payload-drift rejection."
+  },
+  "actual_new_repo_read_paths": [
+    "models/manifest.json",
+    "src/btc_strategy/__pycache__/__init__.cpython-312.pyc",
+    "src/btc_strategy/__pycache__/artifacts.cpython-312.pyc",
+    "src/btc_strategy/__pycache__/integrity.cpython-312.pyc",
+    "src/btc_strategy/__pycache__/models.cpython-312.pyc",
+    "src/btc_strategy/__pycache__/strategies.cpython-312.pyc",
+    "src/btc_strategy/__pycache__/training.cpython-312.pyc",
+    "src/btc_strategy/__pycache__/validation.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/__init__.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/b12_signals.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/bear_short_overlay.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/boosted_stop.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/boosted_stop_depth3.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/clock.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/cold_budget.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/cold_entry_momentum.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/cold_short_profit_trailing.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/conditional_short.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/entry_permissions.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/exit_coordinate.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/faster_cold_short.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/long_profit_local_coordinate.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/long_vol_budget.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/mining_ablation.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/mining_features.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/patient_profit_exit.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/sgd.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/short_payoff.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/short_trailing.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/shorter_cold_momentum.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/signals.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/tree_factors.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/volume_short_factors.cpython-312.pyc",
+    "src/btc_strategy/artifacts.py",
+    "src/btc_strategy/integrity.py",
+    "src/btc_strategy/models.py",
+    "src/btc_strategy/training.py",
+    "src/btc_strategy/validation.py"
+  ],
+  "actual_review_contents_read": false,
+  "real_forbidden_files_opened": false,
+  "shared_code_or_writers_modified": false,
+  "native_36_accounts_repeated": false,
+  "training_or_strategy_search_executed": false,
+  "R05_R07_initial_failure_files_preserved": true
+}

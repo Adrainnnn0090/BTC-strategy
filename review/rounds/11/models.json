@@ -1,0 +1,76 @@
+{
+  "round": 11,
+  "role": "models",
+  "topic": "修复和对抗性检查",
+  "conclusion": "候选a642de16的数字模型/数学运行代码保持R10状态，加载器20项有界合成检查中19项符合预期且无静默零值回退；但仍可把2018 manifest伪设为present并载入7个合成状态，缺少“2018必须missing/None”的强制历史合同。真实manifest未出现该问题，数值结论不因此失效，但此硬化缺口应修复后再验收，不能把本轮结果概括为全部对抗检查通过。",
+  "verdict": "qualified",
+  "evidence": [
+    {
+      "source": "r11_binding_checks.json；models/manifest.json；src/btc_strategy/models.py:22",
+      "actual": "绑定HEAD=a642de16cea72875a99859e9108960b02636c584，发行清单声明886文件/56,445,495字节。相对1b008bfd，models、models.py、artifacts.py和_runtime的定向git diff --quiet返回0；模型清单SHA仍6d2132c04d5b5f216aced5607612e89e223ea0dd1120a24264201a7702aca213。因此未重新训练或全推理运行，也没有将R05/R10数学核验无依据扩大到新经济实现。"
+    },
+    {
+      "source": "src/btc_strategy/artifacts.py:31；r11_checks.json cases hash_mismatch_rejected_before_decode/matching_hash_reaches_and_rejects_malformed_decode",
+      "actual": "在/tmp造非gzip/非JSON载荷：错误SHA先得到ValueError(model content hash mismatch)，未进入解压/解析；同一载荷提供正确SHA后才得到BadGzipFile。证明当前read_verified按hash-before-decode执行。"
+    },
+    {
+      "source": "src/btc_strategy/models.py:29；r11_checks.json wrong_family_path/wrong_year_path",
+      "actual": "manifest项仍声明base_tree/2025但路径分别指stop44/2025或base_tree/2024，均先以ValueError(model year/family path mismatch)拒绝，没有加载错路由或切换备用模型。"
+    },
+    {
+      "source": "src/btc_strategy/models.py:34；r11_checks.json seed/lag相关case",
+      "actual": "正常7seed长头及14成员L1/L2短头可加载；缺长seed、重复长seed、缺短seed、重复短seed、双L1缺L2、非法L3头均因roster拒绝。缺execution_lag字段以KeyError退出，属于fail-closed，未返回部分均值或fallback；异常类型尚未统一成输入域ValueError。"
+    },
+    {
+      "source": "src/btc_strategy/models.py:31；r11_checks.json wrong_numeric_feature_width/wrong_payload_cutoff/illegal_missing_2025",
+      "actual": "数字状态宽度43但manifest44、包装cutoff=2023-12-31但请求2025、把2025声明missing等三类对象均明确拒绝。未发生容差放宽、自动改列、跨年模型替代或静默None回退。"
+    },
+    {
+      "source": "r11_checks.json valid_2018_missing_contract/2018_missing_with_files_rejected/2018_reconstruct_preserves_None_not_zero",
+      "actual": "真实候选六个2018条目均missing=true/files=[]。合成合法2018对象返回空状态；missing却附文件则拒绝；合成2017–2018前缀完整reconstruct返回729个None而非0。"
+    },
+    {
+      "source": "src/btc_strategy/models.py:25；r11_checks.json fabricated_present_2018_states_rejected",
+      "actual": "反例：同一临时2018条目设missing=false，提供cutoff=2017-12-31、合法7seed/44列/正确SHA的合成状态，annual_states实际返回7状态。这项预期拒绝检查失败（20项中唯一失败）。当前代码仅在missing为真时约束“只能2018”，没有反向约束“2018只能missing”。此反例不涉及任何真实未来经济值或真实验证账户。"
+    }
+  ],
+  "counterevidence": [
+    "真实发行manifest的2018条目正确且R10所有模型文件绑定通过；本轮未发现实际2018数字模型被误塞入发行包，反例是合成输入硬化测试。",
+    "19/20正确包括正常路径和拒绝路径，不意味着每个错误对象都返回统一异常；缺lag字段以KeyError退出仍属拒绝，但接口可更清晰。",
+    "模型和数学运行代码相对R10未改，不需要为本轮再跑全部推断/refit；这也不能代替对本次新发现缺口的修复后定向复验。"
+  ],
+  "recommendations": [
+    {
+      "priority": "P0",
+      "action": "在annual_states读取任何2018模型前强制missing=true且files为空；2019–2025则不得missing。",
+      "acceptance": "本轮fabricated_present_2018_states_rejected反例明确ValueError，合法2018仍返回[]及全None；其余19项继续符合预期。不得通过删除该反例或把期望改为接受来消除失败。"
+    },
+    {
+      "priority": "P1",
+      "action": "对缺失执行lag等成员元数据显式校验并给出域错误，同时保持拒绝行为。",
+      "acceptance": "缺lag/seed字段不会返回部分成员或默认head，可使用明确ValueError；固定7seed和L1/L2各7成员仍正常加载。"
+    },
+    {
+      "priority": "P1",
+      "action": "把r11_checks原始19/20证据与修复后的追加回归分开归档，绑定各自候选SHA。",
+      "acceptance": "原始失败附件不覆盖；追加回归记录修复候选及具体拒绝结果，不声称原a642候选20/20通过。"
+    }
+  ],
+  "checks_performed": [
+    {
+      "command": "/workspace/BinanceTradingRobot/backend/.venv/bin/python -B /workspace/BTCExpertReview/workspaces/models/check_r11.py",
+      "result": "脚本exit 0表示成功收集结果，all_checks_pass=false、19/20符合预期；明确保留一个2018 present状态未被拒绝的反例。",
+      "artifact": "/workspace/BTCExpertReview/workspaces/models/r11_checks.json"
+    },
+    {
+      "check": "定向比较R10与R11数字模型/加载/数学运行文件，核真实2018清单",
+      "result": "git diff --quiet exit 0，六个真实2018均missing/0文件，模型manifest SHA相同。",
+      "artifact": "/workspace/BTCExpertReview/workspaces/models/r11_binding_checks.json"
+    }
+  ],
+  "unresolved": [
+    "a642候选的2018反向missing合同缺口尚未在本轮测试版本中修复；已立即告知主agent，未自行修改共享代码。",
+    "修复后需要在新候选上运行定向追加回归；本轮未重跑全部预测、账户或训练。"
+  ],
+  "independence_statement": "只读明确候选源码、清单和定向git文件差异，不读其他专家/主席意见；临时对象仅写/tmp，切换artifact ROOT仅限本进程并在finally恢复。未读真实2026经济值/V01/V02，未进行新模型搜索、refit、原writer或账户重放。审计钩子阻止真实候选/源仓写入，-B禁字节码；报告与附件仅在models目录首次独占创建。AI角色不是人类专家或独立市场样本。"
+}

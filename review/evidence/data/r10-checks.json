@@ -1,0 +1,701 @@
+{
+  "status": "PASS_BOUNDED",
+  "candidate_git": "1b008bfd4a9d1af9a73ff830fb7f8a1b72425fbf",
+  "release_files_verified": 886,
+  "release_actual_bytes_verified": 56444740,
+  "original_file_copies_verified": 332,
+  "model_file_copies_verified": 266,
+  "benchmark_book_copies_verified": 36,
+  "benchmark_mark_rows_date_checked": 105192,
+  "market_rows": 3287,
+  "economic_dates": [
+    "2017-01-01",
+    "2025-12-31"
+  ],
+  "combined_and_split_factors_exact": true,
+  "physical_training_prefixes": [
+    {
+      "family": "base_tree",
+      "fold_year": 2018,
+      "rows": 365,
+      "cutoff": "2017-12-31",
+      "maturity": 61,
+      "training_ids": 0,
+      "physical_prefix_only": true
+    },
+    {
+      "family": "base_tree",
+      "fold_year": 2019,
+      "rows": 730,
+      "cutoff": "2018-12-31",
+      "maturity": 61,
+      "training_ids": 411,
+      "physical_prefix_only": true
+    },
+    {
+      "family": "base_tree",
+      "fold_year": 2020,
+      "rows": 1095,
+      "cutoff": "2019-12-31",
+      "maturity": 61,
+      "training_ids": 776,
+      "physical_prefix_only": true
+    },
+    {
+      "family": "base_tree",
+      "fold_year": 2021,
+      "rows": 1461,
+      "cutoff": "2020-12-31",
+      "maturity": 61,
+      "training_ids": 1142,
+      "physical_prefix_only": true
+    },
+    {
+      "family": "base_tree",
+      "fold_year": 2022,
+      "rows": 1826,
+      "cutoff": "2021-12-31",
+      "maturity": 61,
+      "training_ids": 1507,
+      "physical_prefix_only": true
+    },
+    {
+      "family": "base_tree",
+      "fold_year": 2023,
+      "rows": 2191,
+      "cutoff": "2022-12-31",
+      "maturity": 61,
+      "training_ids": 1872,
+      "physical_prefix_only": true
+    },
+    {
+      "family": "base_tree",
+      "fold_year": 2024,
+      "rows": 2556,
+      "cutoff": "2023-12-31",
+      "maturity": 61,
+      "training_ids": 2237,
+      "physical_prefix_only": true
+    },
+    {
+      "family": "base_tree",
+      "fold_year": 2025,
+      "rows": 2922,
+      "cutoff": "2024-12-31",
+      "maturity": 61,
+      "training_ids": 2603,
+      "physical_prefix_only": true
+    },
+    {
+      "family": "stop44",
+      "fold_year": 2018,
+      "rows": 365,
+      "cutoff": "2017-12-31",
+      "maturity": 61,
+      "training_ids": 0,
+      "physical_prefix_only": true
+    },
+    {
+      "family": "stop44",
+      "fold_year": 2019,
+      "rows": 730,
+      "cutoff": "2018-12-31",
+      "maturity": 61,
+      "training_ids": 411,
+      "physical_prefix_only": true
+    },
+    {
+      "family": "stop44",
+      "fold_year": 2020,
+      "rows": 1095,
+      "cutoff": "2019-12-31",
+      "maturity": 61,
+      "training_ids": 776,
+      "physical_prefix_only": true
+    },
+    {
+      "family": "stop44",
+      "fold_year": 2021,
+      "rows": 1461,
+      "cutoff": "2020-12-31",
+      "maturity": 61,
+      "training_ids": 1142,
+      "physical_prefix_only": true
+    },
+    {
+      "family": "stop44",
+      "fold_year": 2022,
+      "rows": 1826,
+      "cutoff": "2021-12-31",
+      "maturity": 61,
+      "training_ids": 1507,
+      "physical_prefix_only": true
+    },
+    {
+      "family": "stop44",
+      "fold_year": 2023,
+      "rows": 2191,
+      "cutoff": "2022-12-31",
+      "maturity": 61,
+      "training_ids": 1872,
+      "physical_prefix_only": true
+    },
+    {
+      "family": "stop44",
+      "fold_year": 2024,
+      "rows": 2556,
+      "cutoff": "2023-12-31",
+      "maturity": 61,
+      "training_ids": 2237,
+      "physical_prefix_only": true
+    },
+    {
+      "family": "stop44",
+      "fold_year": 2025,
+      "rows": 2922,
+      "cutoff": "2024-12-31",
+      "maturity": 61,
+      "training_ids": 2603,
+      "physical_prefix_only": true
+    },
+    {
+      "family": "price47",
+      "fold_year": 2018,
+      "rows": 365,
+      "cutoff": "2017-12-31",
+      "maturity": 61,
+      "training_ids": 0,
+      "physical_prefix_only": true
+    },
+    {
+      "family": "price47",
+      "fold_year": 2019,
+      "rows": 730,
+      "cutoff": "2018-12-31",
+      "maturity": 61,
+      "training_ids": 411,
+      "physical_prefix_only": true
+    },
+    {
+      "family": "price47",
+      "fold_year": 2020,
+      "rows": 1095,
+      "cutoff": "2019-12-31",
+      "maturity": 61,
+      "training_ids": 776,
+      "physical_prefix_only": true
+    },
+    {
+      "family": "price47",
+      "fold_year": 2021,
+      "rows": 1461,
+      "cutoff": "2020-12-31",
+      "maturity": 61,
+      "training_ids": 1142,
+      "physical_prefix_only": true
+    },
+    {
+      "family": "price47",
+      "fold_year": 2022,
+      "rows": 1826,
+      "cutoff": "2021-12-31",
+      "maturity": 61,
+      "training_ids": 1507,
+      "physical_prefix_only": true
+    },
+    {
+      "family": "price47",
+      "fold_year": 2023,
+      "rows": 2191,
+      "cutoff": "2022-12-31",
+      "maturity": 61,
+      "training_ids": 1872,
+      "physical_prefix_only": true
+    },
+    {
+      "family": "price47",
+      "fold_year": 2024,
+      "rows": 2556,
+      "cutoff": "2023-12-31",
+      "maturity": 61,
+      "training_ids": 2237,
+      "physical_prefix_only": true
+    },
+    {
+      "family": "price47",
+      "fold_year": 2025,
+      "rows": 2922,
+      "cutoff": "2024-12-31",
+      "maturity": 61,
+      "training_ids": 2603,
+      "physical_prefix_only": true
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2018,
+      "rows": 365,
+      "cutoff": "2017-12-31",
+      "maturity": 62,
+      "training_ids": 0,
+      "physical_prefix_only": true
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2019,
+      "rows": 730,
+      "cutoff": "2018-12-31",
+      "maturity": 62,
+      "training_ids": 408,
+      "physical_prefix_only": true
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2020,
+      "rows": 1095,
+      "cutoff": "2019-12-31",
+      "maturity": 62,
+      "training_ids": 771,
+      "physical_prefix_only": true
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2021,
+      "rows": 1461,
+      "cutoff": "2020-12-31",
+      "maturity": 62,
+      "training_ids": 1135,
+      "physical_prefix_only": true
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2022,
+      "rows": 1826,
+      "cutoff": "2021-12-31",
+      "maturity": 62,
+      "training_ids": 1498,
+      "physical_prefix_only": true
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2023,
+      "rows": 2191,
+      "cutoff": "2022-12-31",
+      "maturity": 62,
+      "training_ids": 1861,
+      "physical_prefix_only": true
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2024,
+      "rows": 2556,
+      "cutoff": "2023-12-31",
+      "maturity": 62,
+      "training_ids": 2224,
+      "physical_prefix_only": true
+    },
+    {
+      "family": "short_huber",
+      "fold_year": 2025,
+      "rows": 2922,
+      "cutoff": "2024-12-31",
+      "maturity": 62,
+      "training_ids": 2588,
+      "physical_prefix_only": true
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2018,
+      "rows": 365,
+      "cutoff": "2017-12-31",
+      "maturity": 62,
+      "training_ids": 0,
+      "physical_prefix_only": true
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2019,
+      "rows": 730,
+      "cutoff": "2018-12-31",
+      "maturity": 62,
+      "training_ids": 408,
+      "physical_prefix_only": true
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2020,
+      "rows": 1095,
+      "cutoff": "2019-12-31",
+      "maturity": 62,
+      "training_ids": 771,
+      "physical_prefix_only": true
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2021,
+      "rows": 1461,
+      "cutoff": "2020-12-31",
+      "maturity": 62,
+      "training_ids": 1135,
+      "physical_prefix_only": true
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2022,
+      "rows": 1826,
+      "cutoff": "2021-12-31",
+      "maturity": 62,
+      "training_ids": 1498,
+      "physical_prefix_only": true
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2023,
+      "rows": 2191,
+      "cutoff": "2022-12-31",
+      "maturity": 62,
+      "training_ids": 1861,
+      "physical_prefix_only": true
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2024,
+      "rows": 2556,
+      "cutoff": "2023-12-31",
+      "maturity": 62,
+      "training_ids": 2224,
+      "physical_prefix_only": true
+    },
+    {
+      "family": "short_median",
+      "fold_year": 2025,
+      "rows": 2922,
+      "cutoff": "2024-12-31",
+      "maturity": 62,
+      "training_ids": 2588,
+      "physical_prefix_only": true
+    },
+    {
+      "family": "mining58",
+      "fold_year": 2018,
+      "rows": 365,
+      "cutoff": "2017-12-31",
+      "maturity": 61,
+      "training_ids": 0,
+      "physical_prefix_only": true
+    },
+    {
+      "family": "mining58",
+      "fold_year": 2019,
+      "rows": 730,
+      "cutoff": "2018-12-31",
+      "maturity": 61,
+      "training_ids": 411,
+      "physical_prefix_only": true
+    },
+    {
+      "family": "mining58",
+      "fold_year": 2020,
+      "rows": 1095,
+      "cutoff": "2019-12-31",
+      "maturity": 61,
+      "training_ids": 776,
+      "physical_prefix_only": true
+    },
+    {
+      "family": "mining58",
+      "fold_year": 2021,
+      "rows": 1461,
+      "cutoff": "2020-12-31",
+      "maturity": 61,
+      "training_ids": 1142,
+      "physical_prefix_only": true
+    },
+    {
+      "family": "mining58",
+      "fold_year": 2022,
+      "rows": 1826,
+      "cutoff": "2021-12-31",
+      "maturity": 61,
+      "training_ids": 1507,
+      "physical_prefix_only": true
+    },
+    {
+      "family": "mining58",
+      "fold_year": 2023,
+      "rows": 2191,
+      "cutoff": "2022-12-31",
+      "maturity": 61,
+      "training_ids": 1872,
+      "physical_prefix_only": true
+    },
+    {
+      "family": "mining58",
+      "fold_year": 2024,
+      "rows": 2556,
+      "cutoff": "2023-12-31",
+      "maturity": 61,
+      "training_ids": 2237,
+      "physical_prefix_only": true
+    },
+    {
+      "family": "mining58",
+      "fold_year": 2025,
+      "rows": 2922,
+      "cutoff": "2024-12-31",
+      "maturity": 61,
+      "training_ids": 2603,
+      "physical_prefix_only": true
+    }
+  ],
+  "all_48_training_feature_prefixes_exact": true,
+  "isolated_root": "/tmp/btc-data-r10-2us5xvxf",
+  "offline_forecasts": [
+    {
+      "family": "price47",
+      "positions": 3287,
+      "finite": 2557,
+      "max_error": 0.0,
+      "tolerance": 2e-12,
+      "availability_exact": true,
+      "actual_numeric_models_used": true
+    },
+    {
+      "family": "mining58",
+      "positions": 3287,
+      "finite": 2557,
+      "max_error": 0.0,
+      "tolerance": 2e-12,
+      "availability_exact": true,
+      "actual_numeric_models_used": true
+    }
+  ],
+  "isolated_opened_paths": [
+    "artifacts/catalog.json",
+    "artifacts/contexts/high_return.json.gz",
+    "artifacts/contexts/median.json.gz",
+    "artifacts/contexts/sizing.json.gz",
+    "artifacts/factors/mining.json.gz",
+    "artifacts/factors/prices.json.gz",
+    "models/manifest.json",
+    "models/mining58/2019/EXTRA_DYNAMICS_L60.json.gz",
+    "models/mining58/2020/EXTRA_DYNAMICS_L60.json.gz",
+    "models/mining58/2021/EXTRA_DYNAMICS_L60.json.gz",
+    "models/mining58/2022/EXTRA_DYNAMICS_L60.json.gz",
+    "models/mining58/2023/EXTRA_DYNAMICS_L60.json.gz",
+    "models/mining58/2024/EXTRA_DYNAMICS_L60.json.gz",
+    "models/mining58/2025/EXTRA_DYNAMICS_L60.json.gz",
+    "models/price47/2019/PRICE_L7.json.gz",
+    "models/price47/2020/PRICE_L7.json.gz",
+    "models/price47/2021/PRICE_L7.json.gz",
+    "models/price47/2022/PRICE_L7.json.gz",
+    "models/price47/2023/PRICE_L7.json.gz",
+    "models/price47/2024/PRICE_L7.json.gz",
+    "models/price47/2025/PRICE_L7.json.gz",
+    "src/btc_strategy/__init__.py",
+    "src/btc_strategy/__pycache__/__init__.cpython-312.pyc",
+    "src/btc_strategy/__pycache__/artifacts.cpython-312.pyc",
+    "src/btc_strategy/__pycache__/models.cpython-312.pyc",
+    "src/btc_strategy/__pycache__/strategies.cpython-312.pyc",
+    "src/btc_strategy/__pycache__/training.cpython-312.pyc",
+    "src/btc_strategy/__pycache__/validation.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__init__.py",
+    "src/btc_strategy/_runtime/__pycache__/__init__.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/b12_signals.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/bear_short_overlay.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/boosted_stop.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/boosted_stop_depth3.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/clock.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/cold_budget.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/cold_entry_momentum.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/cold_short_profit_trailing.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/conditional_short.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/entry_permissions.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/exit_coordinate.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/faster_cold_short.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/long_profit_local_coordinate.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/long_vol_budget.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/mining_ablation.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/mining_features.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/patient_profit_exit.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/sgd.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/short_payoff.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/short_trailing.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/shorter_cold_momentum.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/signals.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/tree_factors.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/volume_short_factors.cpython-312.pyc",
+    "src/btc_strategy/_runtime/b12_signals.py",
+    "src/btc_strategy/_runtime/bear_short_overlay.py",
+    "src/btc_strategy/_runtime/boosted_stop.py",
+    "src/btc_strategy/_runtime/boosted_stop_depth3.py",
+    "src/btc_strategy/_runtime/clock.py",
+    "src/btc_strategy/_runtime/cold_budget.py",
+    "src/btc_strategy/_runtime/cold_entry_momentum.py",
+    "src/btc_strategy/_runtime/cold_short_profit_trailing.py",
+    "src/btc_strategy/_runtime/conditional_short.py",
+    "src/btc_strategy/_runtime/entry_permissions.py",
+    "src/btc_strategy/_runtime/exit_coordinate.py",
+    "src/btc_strategy/_runtime/faster_cold_short.py",
+    "src/btc_strategy/_runtime/long_profit_local_coordinate.py",
+    "src/btc_strategy/_runtime/long_vol_budget.py",
+    "src/btc_strategy/_runtime/mining_ablation.py",
+    "src/btc_strategy/_runtime/mining_features.py",
+    "src/btc_strategy/_runtime/patient_profit_exit.py",
+    "src/btc_strategy/_runtime/sgd.py",
+    "src/btc_strategy/_runtime/short_payoff.py",
+    "src/btc_strategy/_runtime/short_trailing.py",
+    "src/btc_strategy/_runtime/shorter_cold_momentum.py",
+    "src/btc_strategy/_runtime/signals.py",
+    "src/btc_strategy/_runtime/tree_factors.py",
+    "src/btc_strategy/_runtime/volume_short_factors.py",
+    "src/btc_strategy/artifacts.py",
+    "src/btc_strategy/models.py",
+    "src/btc_strategy/strategies.py",
+    "src/btc_strategy/training.py",
+    "src/btc_strategy/validation.py",
+    "training_inputs/2018/base_tree.json.gz",
+    "training_inputs/2018/mining58.json.gz",
+    "training_inputs/2018/price47.json.gz",
+    "training_inputs/2018/short_huber.json.gz",
+    "training_inputs/2018/short_median.json.gz",
+    "training_inputs/2018/stop44.json.gz",
+    "training_inputs/2019/base_tree.json.gz",
+    "training_inputs/2019/mining58.json.gz",
+    "training_inputs/2019/price47.json.gz",
+    "training_inputs/2019/short_huber.json.gz",
+    "training_inputs/2019/short_median.json.gz",
+    "training_inputs/2019/stop44.json.gz",
+    "training_inputs/2020/base_tree.json.gz",
+    "training_inputs/2020/mining58.json.gz",
+    "training_inputs/2020/price47.json.gz",
+    "training_inputs/2020/short_huber.json.gz",
+    "training_inputs/2020/short_median.json.gz",
+    "training_inputs/2020/stop44.json.gz",
+    "training_inputs/2021/base_tree.json.gz",
+    "training_inputs/2021/mining58.json.gz",
+    "training_inputs/2021/price47.json.gz",
+    "training_inputs/2021/short_huber.json.gz",
+    "training_inputs/2021/short_median.json.gz",
+    "training_inputs/2021/stop44.json.gz",
+    "training_inputs/2022/base_tree.json.gz",
+    "training_inputs/2022/mining58.json.gz",
+    "training_inputs/2022/price47.json.gz",
+    "training_inputs/2022/short_huber.json.gz",
+    "training_inputs/2022/short_median.json.gz",
+    "training_inputs/2022/stop44.json.gz",
+    "training_inputs/2023/base_tree.json.gz",
+    "training_inputs/2023/mining58.json.gz",
+    "training_inputs/2023/price47.json.gz",
+    "training_inputs/2023/short_huber.json.gz",
+    "training_inputs/2023/short_median.json.gz",
+    "training_inputs/2023/stop44.json.gz",
+    "training_inputs/2024/base_tree.json.gz",
+    "training_inputs/2024/mining58.json.gz",
+    "training_inputs/2024/price47.json.gz",
+    "training_inputs/2024/short_huber.json.gz",
+    "training_inputs/2024/short_median.json.gz",
+    "training_inputs/2024/stop44.json.gz",
+    "training_inputs/2025/base_tree.json.gz",
+    "training_inputs/2025/mining58.json.gz",
+    "training_inputs/2025/price47.json.gz",
+    "training_inputs/2025/short_huber.json.gz",
+    "training_inputs/2025/short_median.json.gz",
+    "training_inputs/2025/stop44.json.gz"
+  ],
+  "network_attempts": 0,
+  "denied_artifact_paths": [
+    {
+      "path": "../BTCStrategyResearchLedger/data/x.json",
+      "error": "artifact path escapes repository",
+      "denied_before_open": true
+    },
+    {
+      "path": "/workspace/BTCStrategyResearchLedger/data/walkforward-v1/2025/train.json",
+      "error": "artifact path escapes repository",
+      "denied_before_open": true
+    },
+    {
+      "path": "provenance/studies/B10/registration.json",
+      "error": "unapproved artifact role",
+      "denied_before_open": true
+    },
+    {
+      "path": "review/rounds/01/chair.json",
+      "error": "unapproved artifact role",
+      "denied_before_open": true
+    },
+    {
+      "path": "models/base_tree/2026/model.json.gz",
+      "error": "2026+ economic data excluded",
+      "denied_before_open": true
+    },
+    {
+      "path": "training_inputs/2027/base_tree.json.gz",
+      "error": "2026+ economic data excluded",
+      "denied_before_open": true
+    },
+    {
+      "path": "artifacts/factors/economic-2028.json",
+      "error": "2026+ economic data excluded",
+      "denied_before_open": true
+    },
+    {
+      "path": "artifacts/V01/rows.json",
+      "error": "validation artifacts excluded",
+      "denied_before_open": true
+    },
+    {
+      "path": "artifacts/v02-unsafe/rows.json",
+      "error": "validation artifacts excluded",
+      "denied_before_open": true
+    }
+  ],
+  "future_model_year_denied_before_open": true,
+  "synthetic_future_clock_rejected_before_features": true,
+  "training_role_predicates": [
+    {
+      "path": "training_inputs/2025/price47.json.gz",
+      "allowed": true
+    },
+    {
+      "path": "models/manifest.json",
+      "allowed": true
+    },
+    {
+      "path": "models/price47/2025/PRICE_L7.json.gz",
+      "allowed": true
+    },
+    {
+      "path": "training_inputs/2025/stop44.json.gz",
+      "allowed": false
+    },
+    {
+      "path": "training_inputs/2026/price47.json.gz",
+      "allowed": false
+    },
+    {
+      "path": "artifacts/factors/prices.json.gz",
+      "allowed": false
+    },
+    {
+      "path": "provenance/export_manifest.json",
+      "allowed": false
+    },
+    {
+      "path": "review/rounds/01/chair.json",
+      "allowed": false
+    }
+  ],
+  "residual_boundary": {
+    "outside_root_training_read_predicate": true,
+    "example_path": "/tmp/data-r10-outside-economic-2026.json",
+    "example_file_opened": false,
+    "interpretation": "training_read_allowed permits arbitrary non-legacy ROOT-external paths; it is not a complete filesystem capability sandbox. Normal refit code explicitly requests current plan/model files."
+  },
+  "limitations": [
+    "The isolated probe uses already installed Python/dependencies from the supplied environment, not a fresh dependency install or Docker build.",
+    "No fit/refit or account writer was run; two inference families were exercised offline and all 48 training prefixes were checked.",
+    "Training label payoff equations were not recomputed for all 48 exports in this round.",
+    "No review/verification conclusions, V01/V02, or actual 2026 economic observations were opened."
+  ]
+}

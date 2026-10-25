@@ -1,0 +1,78 @@
+{
+  "candidate_commit": "c7439216d55207a9a480153d7555f6709817e70a",
+  "manifest_files": 886,
+  "manifest_bytes": 56446427,
+  "economic2026excluded_metadata": true,
+  "selected_bindings": [
+    {
+      "path": "src/btc_strategy/replay.py",
+      "candidate_git_equal": true,
+      "sha256": "471b42b36b527f2d3f841487ee34520862d37b5c2ce3e84ebce4c57bb3a31e15",
+      "in_manifest": true,
+      "manifest_hash_match": true
+    },
+    {
+      "path": "src/btc_strategy/execution.py",
+      "candidate_git_equal": true,
+      "sha256": "43f8d2a786096f49ac04677a57ab5b5122608a49e97b35f37731880315bfea38",
+      "in_manifest": true,
+      "manifest_hash_match": true
+    },
+    {
+      "path": "src/btc_strategy/validation.py",
+      "candidate_git_equal": true,
+      "sha256": "9511f46cd209a9ec720054563050519068c15ccb74042145dbe0cd7394ad4878",
+      "in_manifest": true,
+      "manifest_hash_match": true
+    },
+    {
+      "path": "src/btc_strategy/artifacts.py",
+      "candidate_git_equal": true,
+      "sha256": "ed97deb34669b420399acb871d64d6dc0f976a9fffb06f8b26acddbdc19ea61b",
+      "in_manifest": true,
+      "manifest_hash_match": true
+    },
+    {
+      "path": "strategies/high_return/lp35/strategy.json",
+      "candidate_git_equal": true,
+      "sha256": "ab037b649ea0238162e3dd95729b6d89cc2e4dd357c054f37ac54d96e9dadfa4",
+      "in_manifest": true,
+      "manifest_hash_match": true
+    },
+    {
+      "path": "strategies/exposure_controls/k02/strategy.json",
+      "candidate_git_equal": true,
+      "sha256": "111d13da87a7ca22f7450a60be4cdcc7fc7bd9e40764574bfa8561aa46f0cd20",
+      "in_manifest": true,
+      "manifest_hash_match": true
+    },
+    {
+      "path": "docs/RISK_AND_LIMITATIONS.md",
+      "candidate_git_equal": true,
+      "sha256": "4aa73803927fcf8cc482719c4f795f662d98328ea9f0f57f2765935c0450756d",
+      "in_manifest": false,
+      "manifest_hash_match": null
+    },
+    {
+      "path": "docs/REPRODUCIBILITY.md",
+      "candidate_git_equal": true,
+      "sha256": "7901677296eab4a5a5f295d32c27c12a64aea3a22dd552d17d1f1ce48a6b66f1",
+      "in_manifest": false,
+      "manifest_hash_match": null
+    }
+  ],
+  "one_account_factual_check": {
+    "path": "artifacts/accounts/LP35/BASE.json.gz",
+    "manifest_hash_matches": true,
+    "daily_marks": 2922,
+    "period": [
+      "2018-01-01",
+      "2025-12-31"
+    ],
+    "first_trade_stop_loss_pct_of_entry_basis": "26.6249215770196455231332635208027415733891499910342018919087",
+    "risk_doc_26_6249_and_118_0456_and_no_paper_live_terms_present": true
+  },
+  "original_R11_preserved_sha256": "52a0dd22cdc9e1c755bb11cad0ccf339b933d0c4e43579f10204ee32f90a8229",
+  "R11_retest_preserved_sha256": "a0b867c9da4a66d9042f9c39b1a7139c2c9096bf8c776594c021b73e0192ece6",
+  "scope": "8 selected files Git/hash binding; 1 packaged account factual arithmetic; no Native, inference, refit, full886 hash or peer/chair review read"
+}

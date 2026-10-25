@@ -1,0 +1,1483 @@
+{
+  "round": 5,
+  "code_hashes_at_start": {
+    "models.py": "be94b2dd9fc765cd6da3b3b56449795f14e8c872d0c837d274e795366729b29f",
+    "strategies.py": "f201e1c4e937558df2dc3cba971f3f229cf131e8f6e12bb077a290442031f93b",
+    "artifacts.py": "6b8e3d01f9a9529be1cd1d7e1b8a8b009ba97b26135d6efc8be3f24bd9629072"
+  },
+  "code_hashes_at_end": {
+    "models.py": "be94b2dd9fc765cd6da3b3b56449795f14e8c872d0c837d274e795366729b29f",
+    "strategies.py": "f201e1c4e937558df2dc3cba971f3f229cf131e8f6e12bb077a290442031f93b",
+    "artifacts.py": "6b8e3d01f9a9529be1cd1d7e1b8a8b009ba97b26135d6efc8be3f24bd9629072"
+  },
+  "code_snapshot_stable": true,
+  "clean_independent_import_passed": false,
+  "clean_independent_import_failure": {
+    "type": "AssertionError",
+    "message": "inference must not load external trading project",
+    "blocked_paths": [
+      "/workspace/BinanceTradingRobot/backend/.venv/lib/python3.12/site-packages/binance_robot/__pycache__/__init__.cpython-312.pyc"
+    ]
+  },
+  "in_memory_local_instrument_shim_used_for_continued_checks": true,
+  "roster_schema_digest_checks": [
+    {
+      "family": "base_tree",
+      "year": 2018,
+      "state_count": 0,
+      "seed_groups": {
+        "0": []
+      },
+      "roster_exact": true,
+      "schema_width_exact": true,
+      "schema_indices_exact": true,
+      "files_digest_exact": true
+    },
+    {
+      "family": "base_tree",
+      "year": 2019,
+      "state_count": 7,
+      "seed_groups": {
+        "0": [
+          101,
+          307,
+          509,
+          701,
+          907,
+          1103,
+          1701
+        ]
+      },
+      "roster_exact": true,
+      "schema_width_exact": true,
+      "schema_indices_exact": true,
+      "files_digest_exact": true
+    },
+    {
+      "family": "base_tree",
+      "year": 2020,
+      "state_count": 7,
+      "seed_groups": {
+        "0": [
+          101,
+          307,
+          509,
+          701,
+          907,
+          1103,
+          1701
+        ]
+      },
+      "roster_exact": true,
+      "schema_width_exact": true,
+      "schema_indices_exact": true,
+      "files_digest_exact": true
+    },
+    {
+      "family": "base_tree",
+      "year": 2021,
+      "state_count": 7,
+      "seed_groups": {
+        "0": [
+          101,
+          307,
+          509,
+          701,
+          907,
+          1103,
+          1701
+        ]
+      },
+      "roster_exact": true,
+      "schema_width_exact": true,
+      "schema_indices_exact": true,
+      "files_digest_exact": true
+    },
+    {
+      "family": "base_tree",
+      "year": 2022,
+      "state_count": 7,
+      "seed_groups": {
+        "0": [
+          101,
+          307,
+          509,
+          701,
+          907,
+          1103,
+          1701
+        ]
+      },
+      "roster_exact": true,
+      "schema_width_exact": true,
+      "schema_indices_exact": true,
+      "files_digest_exact": true
+    },
+    {
+      "family": "base_tree",
+      "year": 2023,
+      "state_count": 7,
+      "seed_groups": {
+        "0": [
+          101,
+          307,
+          509,
+          701,
+          907,
+          1103,
+          1701
+        ]
+      },
+      "roster_exact": true,
+      "schema_width_exact": true,
+      "schema_indices_exact": true,
+      "files_digest_exact": true
+    },
+    {
+      "family": "base_tree",
+      "year": 2024,
+      "state_count": 7,
+      "seed_groups": {
+        "0": [
+          101,
+          307,
+          509,
+          701,
+          907,
+          1103,
+          1701
+        ]
+      },
+      "roster_exact": true,
+      "schema_width_exact": true,
+      "schema_indices_exact": true,
+      "files_digest_exact": true
+    },
+    {
+      "family": "base_tree",
+      "year": 2025,
+      "state_count": 7,
+      "seed_groups": {
+        "0": [
+          101,
+          307,
+          509,
+          701,
+          907,
+          1103,
+          1701
+        ]
+      },
+      "roster_exact": true,
+      "schema_width_exact": true,
+      "schema_indices_exact": true,
+      "files_digest_exact": true
+    },
+    {
+      "family": "stop44",
+      "year": 2018,
+      "state_count": 0,
+      "seed_groups": {
+        "0": []
+      },
+      "roster_exact": true,
+      "schema_width_exact": true,
+      "schema_indices_exact": true,
+      "files_digest_exact": true
+    },
+    {
+      "family": "stop44",
+      "year": 2019,
+      "state_count": 7,
+      "seed_groups": {
+        "0": [
+          101,
+          307,
+          509,
+          701,
+          907,
+          1103,
+          1701
+        ]
+      },
+      "roster_exact": true,
+      "schema_width_exact": true,
+      "schema_indices_exact": true,
+      "files_digest_exact": true
+    },
+    {
+      "family": "stop44",
+      "year": 2020,
+      "state_count": 7,
+      "seed_groups": {
+        "0": [
+          101,
+          307,
+          509,
+          701,
+          907,
+          1103,
+          1701
+        ]
+      },
+      "roster_exact": true,
+      "schema_width_exact": true,
+      "schema_indices_exact": true,
+      "files_digest_exact": true
+    },
+    {
+      "family": "stop44",
+      "year": 2021,
+      "state_count": 7,
+      "seed_groups": {
+        "0": [
+          101,
+          307,
+          509,
+          701,
+          907,
+          1103,
+          1701
+        ]
+      },
+      "roster_exact": true,
+      "schema_width_exact": true,
+      "schema_indices_exact": true,
+      "files_digest_exact": true
+    },
+    {
+      "family": "stop44",
+      "year": 2022,
+      "state_count": 7,
+      "seed_groups": {
+        "0": [
+          101,
+          307,
+          509,
+          701,
+          907,
+          1103,
+          1701
+        ]
+      },
+      "roster_exact": true,
+      "schema_width_exact": true,
+      "schema_indices_exact": true,
+      "files_digest_exact": true
+    },
+    {
+      "family": "stop44",
+      "year": 2023,
+      "state_count": 7,
+      "seed_groups": {
+        "0": [
+          101,
+          307,
+          509,
+          701,
+          907,
+          1103,
+          1701
+        ]
+      },
+      "roster_exact": true,
+      "schema_width_exact": true,
+      "schema_indices_exact": true,
+      "files_digest_exact": true
+    },
+    {
+      "family": "stop44",
+      "year": 2024,
+      "state_count": 7,
+      "seed_groups": {
+        "0": [
+          101,
+          307,
+          509,
+          701,
+          907,
+          1103,
+          1701
+        ]
+      },
+      "roster_exact": true,
+      "schema_width_exact": true,
+      "schema_indices_exact": true,
+      "files_digest_exact": true
+    },
+    {
+      "family": "stop44",
+      "year": 2025,
+      "state_count": 7,
+      "seed_groups": {
+        "0": [
+          101,
+          307,
+          509,
+          701,
+          907,
+          1103,
+          1701
+        ]
+      },
+      "roster_exact": true,
+      "schema_width_exact": true,
+      "schema_indices_exact": true,
+      "files_digest_exact": true
+    },
+    {
+      "family": "price47",
+      "year": 2018,
+      "state_count": 0,
+      "seed_groups": {
+        "0": []
+      },
+      "roster_exact": true,
+      "schema_width_exact": true,
+      "schema_indices_exact": true,
+      "files_digest_exact": true
+    },
+    {
+      "family": "price47",
+      "year": 2019,
+      "state_count": 7,
+      "seed_groups": {
+        "0": [
+          101,
+          307,
+          509,
+          701,
+          907,
+          1103,
+          1701
+        ]
+      },
+      "roster_exact": true,
+      "schema_width_exact": true,
+      "schema_indices_exact": true,
+      "files_digest_exact": true
+    },
+    {
+      "family": "price47",
+      "year": 2020,
+      "state_count": 7,
+      "seed_groups": {
+        "0": [
+          101,
+          307,
+          509,
+          701,
+          907,
+          1103,
+          1701
+        ]
+      },
+      "roster_exact": true,
+      "schema_width_exact": true,
+      "schema_indices_exact": true,
+      "files_digest_exact": true
+    },
+    {
+      "family": "price47",
+      "year": 2021,
+      "state_count": 7,
+      "seed_groups": {
+        "0": [
+          101,
+          307,
+          509,
+          701,
+          907,
+          1103,
+          1701
+        ]
+      },
+      "roster_exact": true,
+      "schema_width_exact": true,
+      "schema_indices_exact": true,
+      "files_digest_exact": true
+    },
+    {
+      "family": "price47",
+      "year": 2022,
+      "state_count": 7,
+      "seed_groups": {
+        "0": [
+          101,
+          307,
+          509,
+          701,
+          907,
+          1103,
+          1701
+        ]
+      },
+      "roster_exact": true,
+      "schema_width_exact": true,
+      "schema_indices_exact": true,
+      "files_digest_exact": true
+    },
+    {
+      "family": "price47",
+      "year": 2023,
+      "state_count": 7,
+      "seed_groups": {
+        "0": [
+          101,
+          307,
+          509,
+          701,
+          907,
+          1103,
+          1701
+        ]
+      },
+      "roster_exact": true,
+      "schema_width_exact": true,
+      "schema_indices_exact": true,
+      "files_digest_exact": true
+    },
+    {
+      "family": "price47",
+      "year": 2024,
+      "state_count": 7,
+      "seed_groups": {
+        "0": [
+          101,
+          307,
+          509,
+          701,
+          907,
+          1103,
+          1701
+        ]
+      },
+      "roster_exact": true,
+      "schema_width_exact": true,
+      "schema_indices_exact": true,
+      "files_digest_exact": true
+    },
+    {
+      "family": "price47",
+      "year": 2025,
+      "state_count": 7,
+      "seed_groups": {
+        "0": [
+          101,
+          307,
+          509,
+          701,
+          907,
+          1103,
+          1701
+        ]
+      },
+      "roster_exact": true,
+      "schema_width_exact": true,
+      "schema_indices_exact": true,
+      "files_digest_exact": true
+    },
+    {
+      "family": "short_huber",
+      "year": 2018,
+      "state_count": 0,
+      "seed_groups": {
+        "1": [],
+        "2": []
+      },
+      "roster_exact": true,
+      "schema_width_exact": true,
+      "schema_indices_exact": true,
+      "files_digest_exact": true
+    },
+    {
+      "family": "short_huber",
+      "year": 2019,
+      "state_count": 14,
+      "seed_groups": {
+        "1": [
+          101,
+          307,
+          509,
+          701,
+          907,
+          1103,
+          1701
+        ],
+        "2": [
+          101,
+          307,
+          509,
+          701,
+          907,
+          1103,
+          1701
+        ]
+      },
+      "roster_exact": true,
+      "schema_width_exact": true,
+      "schema_indices_exact": true,
+      "files_digest_exact": true
+    },
+    {
+      "family": "short_huber",
+      "year": 2020,
+      "state_count": 14,
+      "seed_groups": {
+        "1": [
+          101,
+          307,
+          509,
+          701,
+          907,
+          1103,
+          1701
+        ],
+        "2": [
+          101,
+          307,
+          509,
+          701,
+          907,
+          1103,
+          1701
+        ]
+      },
+      "roster_exact": true,
+      "schema_width_exact": true,
+      "schema_indices_exact": true,
+      "files_digest_exact": true
+    },
+    {
+      "family": "short_huber",
+      "year": 2021,
+      "state_count": 14,
+      "seed_groups": {
+        "1": [
+          101,
+          307,
+          509,
+          701,
+          907,
+          1103,
+          1701
+        ],
+        "2": [
+          101,
+          307,
+          509,
+          701,
+          907,
+          1103,
+          1701
+        ]
+      },
+      "roster_exact": true,
+      "schema_width_exact": true,
+      "schema_indices_exact": true,
+      "files_digest_exact": true
+    },
+    {
+      "family": "short_huber",
+      "year": 2022,
+      "state_count": 14,
+      "seed_groups": {
+        "1": [
+          101,
+          307,
+          509,
+          701,
+          907,
+          1103,
+          1701
+        ],
+        "2": [
+          101,
+          307,
+          509,
+          701,
+          907,
+          1103,
+          1701
+        ]
+      },
+      "roster_exact": true,
+      "schema_width_exact": true,
+      "schema_indices_exact": true,
+      "files_digest_exact": true
+    },
+    {
+      "family": "short_huber",
+      "year": 2023,
+      "state_count": 14,
+      "seed_groups": {
+        "1": [
+          101,
+          307,
+          509,
+          701,
+          907,
+          1103,
+          1701
+        ],
+        "2": [
+          101,
+          307,
+          509,
+          701,
+          907,
+          1103,
+          1701
+        ]
+      },
+      "roster_exact": true,
+      "schema_width_exact": true,
+      "schema_indices_exact": true,
+      "files_digest_exact": true
+    },
+    {
+      "family": "short_huber",
+      "year": 2024,
+      "state_count": 14,
+      "seed_groups": {
+        "1": [
+          101,
+          307,
+          509,
+          701,
+          907,
+          1103,
+          1701
+        ],
+        "2": [
+          101,
+          307,
+          509,
+          701,
+          907,
+          1103,
+          1701
+        ]
+      },
+      "roster_exact": true,
+      "schema_width_exact": true,
+      "schema_indices_exact": true,
+      "files_digest_exact": true
+    },
+    {
+      "family": "short_huber",
+      "year": 2025,
+      "state_count": 14,
+      "seed_groups": {
+        "1": [
+          101,
+          307,
+          509,
+          701,
+          907,
+          1103,
+          1701
+        ],
+        "2": [
+          101,
+          307,
+          509,
+          701,
+          907,
+          1103,
+          1701
+        ]
+      },
+      "roster_exact": true,
+      "schema_width_exact": true,
+      "schema_indices_exact": true,
+      "files_digest_exact": true
+    },
+    {
+      "family": "short_median",
+      "year": 2018,
+      "state_count": 0,
+      "seed_groups": {
+        "1": [],
+        "2": []
+      },
+      "roster_exact": true,
+      "schema_width_exact": true,
+      "schema_indices_exact": true,
+      "files_digest_exact": true
+    },
+    {
+      "family": "short_median",
+      "year": 2019,
+      "state_count": 14,
+      "seed_groups": {
+        "1": [
+          101,
+          307,
+          509,
+          701,
+          907,
+          1103,
+          1701
+        ],
+        "2": [
+          101,
+          307,
+          509,
+          701,
+          907,
+          1103,
+          1701
+        ]
+      },
+      "roster_exact": true,
+      "schema_width_exact": true,
+      "schema_indices_exact": true,
+      "files_digest_exact": true
+    },
+    {
+      "family": "short_median",
+      "year": 2020,
+      "state_count": 14,
+      "seed_groups": {
+        "1": [
+          101,
+          307,
+          509,
+          701,
+          907,
+          1103,
+          1701
+        ],
+        "2": [
+          101,
+          307,
+          509,
+          701,
+          907,
+          1103,
+          1701
+        ]
+      },
+      "roster_exact": true,
+      "schema_width_exact": true,
+      "schema_indices_exact": true,
+      "files_digest_exact": true
+    },
+    {
+      "family": "short_median",
+      "year": 2021,
+      "state_count": 14,
+      "seed_groups": {
+        "1": [
+          101,
+          307,
+          509,
+          701,
+          907,
+          1103,
+          1701
+        ],
+        "2": [
+          101,
+          307,
+          509,
+          701,
+          907,
+          1103,
+          1701
+        ]
+      },
+      "roster_exact": true,
+      "schema_width_exact": true,
+      "schema_indices_exact": true,
+      "files_digest_exact": true
+    },
+    {
+      "family": "short_median",
+      "year": 2022,
+      "state_count": 14,
+      "seed_groups": {
+        "1": [
+          101,
+          307,
+          509,
+          701,
+          907,
+          1103,
+          1701
+        ],
+        "2": [
+          101,
+          307,
+          509,
+          701,
+          907,
+          1103,
+          1701
+        ]
+      },
+      "roster_exact": true,
+      "schema_width_exact": true,
+      "schema_indices_exact": true,
+      "files_digest_exact": true
+    },
+    {
+      "family": "short_median",
+      "year": 2023,
+      "state_count": 14,
+      "seed_groups": {
+        "1": [
+          101,
+          307,
+          509,
+          701,
+          907,
+          1103,
+          1701
+        ],
+        "2": [
+          101,
+          307,
+          509,
+          701,
+          907,
+          1103,
+          1701
+        ]
+      },
+      "roster_exact": true,
+      "schema_width_exact": true,
+      "schema_indices_exact": true,
+      "files_digest_exact": true
+    },
+    {
+      "family": "short_median",
+      "year": 2024,
+      "state_count": 14,
+      "seed_groups": {
+        "1": [
+          101,
+          307,
+          509,
+          701,
+          907,
+          1103,
+          1701
+        ],
+        "2": [
+          101,
+          307,
+          509,
+          701,
+          907,
+          1103,
+          1701
+        ]
+      },
+      "roster_exact": true,
+      "schema_width_exact": true,
+      "schema_indices_exact": true,
+      "files_digest_exact": true
+    },
+    {
+      "family": "short_median",
+      "year": 2025,
+      "state_count": 14,
+      "seed_groups": {
+        "1": [
+          101,
+          307,
+          509,
+          701,
+          907,
+          1103,
+          1701
+        ],
+        "2": [
+          101,
+          307,
+          509,
+          701,
+          907,
+          1103,
+          1701
+        ]
+      },
+      "roster_exact": true,
+      "schema_width_exact": true,
+      "schema_indices_exact": true,
+      "files_digest_exact": true
+    },
+    {
+      "family": "mining58",
+      "year": 2018,
+      "state_count": 0,
+      "seed_groups": {
+        "0": []
+      },
+      "roster_exact": true,
+      "schema_width_exact": true,
+      "schema_indices_exact": true,
+      "files_digest_exact": true
+    },
+    {
+      "family": "mining58",
+      "year": 2019,
+      "state_count": 7,
+      "seed_groups": {
+        "0": [
+          101,
+          307,
+          509,
+          701,
+          907,
+          1103,
+          1701
+        ]
+      },
+      "roster_exact": true,
+      "schema_width_exact": true,
+      "schema_indices_exact": true,
+      "files_digest_exact": true
+    },
+    {
+      "family": "mining58",
+      "year": 2020,
+      "state_count": 7,
+      "seed_groups": {
+        "0": [
+          101,
+          307,
+          509,
+          701,
+          907,
+          1103,
+          1701
+        ]
+      },
+      "roster_exact": true,
+      "schema_width_exact": true,
+      "schema_indices_exact": true,
+      "files_digest_exact": true
+    },
+    {
+      "family": "mining58",
+      "year": 2021,
+      "state_count": 7,
+      "seed_groups": {
+        "0": [
+          101,
+          307,
+          509,
+          701,
+          907,
+          1103,
+          1701
+        ]
+      },
+      "roster_exact": true,
+      "schema_width_exact": true,
+      "schema_indices_exact": true,
+      "files_digest_exact": true
+    },
+    {
+      "family": "mining58",
+      "year": 2022,
+      "state_count": 7,
+      "seed_groups": {
+        "0": [
+          101,
+          307,
+          509,
+          701,
+          907,
+          1103,
+          1701
+        ]
+      },
+      "roster_exact": true,
+      "schema_width_exact": true,
+      "schema_indices_exact": true,
+      "files_digest_exact": true
+    },
+    {
+      "family": "mining58",
+      "year": 2023,
+      "state_count": 7,
+      "seed_groups": {
+        "0": [
+          101,
+          307,
+          509,
+          701,
+          907,
+          1103,
+          1701
+        ]
+      },
+      "roster_exact": true,
+      "schema_width_exact": true,
+      "schema_indices_exact": true,
+      "files_digest_exact": true
+    },
+    {
+      "family": "mining58",
+      "year": 2024,
+      "state_count": 7,
+      "seed_groups": {
+        "0": [
+          101,
+          307,
+          509,
+          701,
+          907,
+          1103,
+          1701
+        ]
+      },
+      "roster_exact": true,
+      "schema_width_exact": true,
+      "schema_indices_exact": true,
+      "files_digest_exact": true
+    },
+    {
+      "family": "mining58",
+      "year": 2025,
+      "state_count": 7,
+      "seed_groups": {
+        "0": [
+          101,
+          307,
+          509,
+          701,
+          907,
+          1103,
+          1701
+        ]
+      },
+      "roster_exact": true,
+      "schema_width_exact": true,
+      "schema_indices_exact": true,
+      "files_digest_exact": true
+    }
+  ],
+  "all_roster_schema_digest_checks_pass": true,
+  "six_family_actual_reconstructions": [
+    {
+      "family": "base_tree",
+      "positions": 3287,
+      "finite": 2557,
+      "max_error": 0.0,
+      "tolerance": 2e-12,
+      "availability_exact": true,
+      "actual_numeric_models_used": true
+    },
+    {
+      "family": "stop44",
+      "positions": 3287,
+      "finite": 2557,
+      "max_error": 0.0,
+      "tolerance": 2e-12,
+      "availability_exact": true,
+      "actual_numeric_models_used": true
+    },
+    {
+      "family": "price47",
+      "positions": 3287,
+      "finite": 2557,
+      "max_error": 0.0,
+      "tolerance": 2e-12,
+      "availability_exact": true,
+      "actual_numeric_models_used": true
+    },
+    {
+      "family": "short_huber",
+      "positions": 3287,
+      "finite": 2557,
+      "max_error": 0.0,
+      "tolerance": 2e-12,
+      "availability_exact": true,
+      "actual_numeric_models_used": true
+    },
+    {
+      "family": "short_median",
+      "positions": 3287,
+      "finite": 2557,
+      "max_error": 0.0,
+      "tolerance": 2e-12,
+      "availability_exact": true,
+      "actual_numeric_models_used": true
+    },
+    {
+      "family": "mining58",
+      "positions": 3287,
+      "finite": 2557,
+      "max_error": 0.0,
+      "tolerance": 2e-12,
+      "availability_exact": true,
+      "actual_numeric_models_used": true
+    }
+  ],
+  "all_actual_reconstructions_pass": true,
+  "price_only_market_call_error": {
+    "type": "KeyError",
+    "message": "'mining'"
+  },
+  "in_memory_fault_outcomes": {
+    "duplicate_seed_roster": {
+      "rejected": false,
+      "returned_state_count": 8,
+      "returned_head_lags": [
+        0
+      ]
+    },
+    "missing_second_head": {
+      "rejected": false,
+      "returned_state_count": 7,
+      "returned_head_lags": [
+        1
+      ]
+    },
+    "drifted_model_initial": {
+      "rejected": false,
+      "returned_state_count": 7,
+      "returned_head_lags": [
+        0
+      ]
+    },
+    "unavailable_2019": {
+      "rejected": true,
+      "exception": "ValueError",
+      "message": "invalid missing-state contract"
+    }
+  },
+  "active_interface_absolute_workspace_literals": [],
+  "delivery_read_paths": [
+    "artifacts/catalog.json",
+    "artifacts/contexts/high_return.json.gz",
+    "artifacts/contexts/median.json.gz",
+    "artifacts/contexts/sizing.json.gz",
+    "artifacts/factors/market.json.gz",
+    "models/base_tree/2019/EXTRA_CAL44_H60_S101.json.gz",
+    "models/base_tree/2019/EXTRA_CAL44_H60_S1103.json.gz",
+    "models/base_tree/2019/EXTRA_CAL44_H60_S1701.json.gz",
+    "models/base_tree/2019/EXTRA_CAL44_H60_S307.json.gz",
+    "models/base_tree/2019/EXTRA_CAL44_H60_S509.json.gz",
+    "models/base_tree/2019/EXTRA_CAL44_H60_S701.json.gz",
+    "models/base_tree/2019/EXTRA_CAL44_H60_S907.json.gz",
+    "models/base_tree/2020/EXTRA_CAL44_H60_S101.json.gz",
+    "models/base_tree/2020/EXTRA_CAL44_H60_S1103.json.gz",
+    "models/base_tree/2020/EXTRA_CAL44_H60_S1701.json.gz",
+    "models/base_tree/2020/EXTRA_CAL44_H60_S307.json.gz",
+    "models/base_tree/2020/EXTRA_CAL44_H60_S509.json.gz",
+    "models/base_tree/2020/EXTRA_CAL44_H60_S701.json.gz",
+    "models/base_tree/2020/EXTRA_CAL44_H60_S907.json.gz",
+    "models/base_tree/2021/EXTRA_CAL44_H60_S101.json.gz",
+    "models/base_tree/2021/EXTRA_CAL44_H60_S1103.json.gz",
+    "models/base_tree/2021/EXTRA_CAL44_H60_S1701.json.gz",
+    "models/base_tree/2021/EXTRA_CAL44_H60_S307.json.gz",
+    "models/base_tree/2021/EXTRA_CAL44_H60_S509.json.gz",
+    "models/base_tree/2021/EXTRA_CAL44_H60_S701.json.gz",
+    "models/base_tree/2021/EXTRA_CAL44_H60_S907.json.gz",
+    "models/base_tree/2022/EXTRA_CAL44_H60_S101.json.gz",
+    "models/base_tree/2022/EXTRA_CAL44_H60_S1103.json.gz",
+    "models/base_tree/2022/EXTRA_CAL44_H60_S1701.json.gz",
+    "models/base_tree/2022/EXTRA_CAL44_H60_S307.json.gz",
+    "models/base_tree/2022/EXTRA_CAL44_H60_S509.json.gz",
+    "models/base_tree/2022/EXTRA_CAL44_H60_S701.json.gz",
+    "models/base_tree/2022/EXTRA_CAL44_H60_S907.json.gz",
+    "models/base_tree/2023/EXTRA_CAL44_H60_S101.json.gz",
+    "models/base_tree/2023/EXTRA_CAL44_H60_S1103.json.gz",
+    "models/base_tree/2023/EXTRA_CAL44_H60_S1701.json.gz",
+    "models/base_tree/2023/EXTRA_CAL44_H60_S307.json.gz",
+    "models/base_tree/2023/EXTRA_CAL44_H60_S509.json.gz",
+    "models/base_tree/2023/EXTRA_CAL44_H60_S701.json.gz",
+    "models/base_tree/2023/EXTRA_CAL44_H60_S907.json.gz",
+    "models/base_tree/2024/EXTRA_CAL44_H60_S101.json.gz",
+    "models/base_tree/2024/EXTRA_CAL44_H60_S1103.json.gz",
+    "models/base_tree/2024/EXTRA_CAL44_H60_S1701.json.gz",
+    "models/base_tree/2024/EXTRA_CAL44_H60_S307.json.gz",
+    "models/base_tree/2024/EXTRA_CAL44_H60_S509.json.gz",
+    "models/base_tree/2024/EXTRA_CAL44_H60_S701.json.gz",
+    "models/base_tree/2024/EXTRA_CAL44_H60_S907.json.gz",
+    "models/base_tree/2025/EXTRA_CAL44_H60_S101.json.gz",
+    "models/base_tree/2025/EXTRA_CAL44_H60_S1103.json.gz",
+    "models/base_tree/2025/EXTRA_CAL44_H60_S1701.json.gz",
+    "models/base_tree/2025/EXTRA_CAL44_H60_S307.json.gz",
+    "models/base_tree/2025/EXTRA_CAL44_H60_S509.json.gz",
+    "models/base_tree/2025/EXTRA_CAL44_H60_S701.json.gz",
+    "models/base_tree/2025/EXTRA_CAL44_H60_S907.json.gz",
+    "models/feature_schema.json",
+    "models/manifest.json",
+    "models/mining58/2019/EXTRA_DYNAMICS_L60.json.gz",
+    "models/mining58/2020/EXTRA_DYNAMICS_L60.json.gz",
+    "models/mining58/2021/EXTRA_DYNAMICS_L60.json.gz",
+    "models/mining58/2022/EXTRA_DYNAMICS_L60.json.gz",
+    "models/mining58/2023/EXTRA_DYNAMICS_L60.json.gz",
+    "models/mining58/2024/EXTRA_DYNAMICS_L60.json.gz",
+    "models/mining58/2025/EXTRA_DYNAMICS_L60.json.gz",
+    "models/price47/2019/PRICE_L7.json.gz",
+    "models/price47/2020/PRICE_L7.json.gz",
+    "models/price47/2021/PRICE_L7.json.gz",
+    "models/price47/2022/PRICE_L7.json.gz",
+    "models/price47/2023/PRICE_L7.json.gz",
+    "models/price47/2024/PRICE_L7.json.gz",
+    "models/price47/2025/PRICE_L7.json.gz",
+    "models/short_huber/2019/L1-101.json.gz",
+    "models/short_huber/2019/L1-1103.json.gz",
+    "models/short_huber/2019/L1-1701.json.gz",
+    "models/short_huber/2019/L1-307.json.gz",
+    "models/short_huber/2019/L1-509.json.gz",
+    "models/short_huber/2019/L1-701.json.gz",
+    "models/short_huber/2019/L1-907.json.gz",
+    "models/short_huber/2019/L2-101.json.gz",
+    "models/short_huber/2019/L2-1103.json.gz",
+    "models/short_huber/2019/L2-1701.json.gz",
+    "models/short_huber/2019/L2-307.json.gz",
+    "models/short_huber/2019/L2-509.json.gz",
+    "models/short_huber/2019/L2-701.json.gz",
+    "models/short_huber/2019/L2-907.json.gz",
+    "models/short_huber/2020/L1-101.json.gz",
+    "models/short_huber/2020/L1-1103.json.gz",
+    "models/short_huber/2020/L1-1701.json.gz",
+    "models/short_huber/2020/L1-307.json.gz",
+    "models/short_huber/2020/L1-509.json.gz",
+    "models/short_huber/2020/L1-701.json.gz",
+    "models/short_huber/2020/L1-907.json.gz",
+    "models/short_huber/2020/L2-101.json.gz",
+    "models/short_huber/2020/L2-1103.json.gz",
+    "models/short_huber/2020/L2-1701.json.gz",
+    "models/short_huber/2020/L2-307.json.gz",
+    "models/short_huber/2020/L2-509.json.gz",
+    "models/short_huber/2020/L2-701.json.gz",
+    "models/short_huber/2020/L2-907.json.gz",
+    "models/short_huber/2021/L1-101.json.gz",
+    "models/short_huber/2021/L1-1103.json.gz",
+    "models/short_huber/2021/L1-1701.json.gz",
+    "models/short_huber/2021/L1-307.json.gz",
+    "models/short_huber/2021/L1-509.json.gz",
+    "models/short_huber/2021/L1-701.json.gz",
+    "models/short_huber/2021/L1-907.json.gz",
+    "models/short_huber/2021/L2-101.json.gz",
+    "models/short_huber/2021/L2-1103.json.gz",
+    "models/short_huber/2021/L2-1701.json.gz",
+    "models/short_huber/2021/L2-307.json.gz",
+    "models/short_huber/2021/L2-509.json.gz",
+    "models/short_huber/2021/L2-701.json.gz",
+    "models/short_huber/2021/L2-907.json.gz",
+    "models/short_huber/2022/L1-101.json.gz",
+    "models/short_huber/2022/L1-1103.json.gz",
+    "models/short_huber/2022/L1-1701.json.gz",
+    "models/short_huber/2022/L1-307.json.gz",
+    "models/short_huber/2022/L1-509.json.gz",
+    "models/short_huber/2022/L1-701.json.gz",
+    "models/short_huber/2022/L1-907.json.gz",
+    "models/short_huber/2022/L2-101.json.gz",
+    "models/short_huber/2022/L2-1103.json.gz",
+    "models/short_huber/2022/L2-1701.json.gz",
+    "models/short_huber/2022/L2-307.json.gz",
+    "models/short_huber/2022/L2-509.json.gz",
+    "models/short_huber/2022/L2-701.json.gz",
+    "models/short_huber/2022/L2-907.json.gz",
+    "models/short_huber/2023/L1-101.json.gz",
+    "models/short_huber/2023/L1-1103.json.gz",
+    "models/short_huber/2023/L1-1701.json.gz",
+    "models/short_huber/2023/L1-307.json.gz",
+    "models/short_huber/2023/L1-509.json.gz",
+    "models/short_huber/2023/L1-701.json.gz",
+    "models/short_huber/2023/L1-907.json.gz",
+    "models/short_huber/2023/L2-101.json.gz",
+    "models/short_huber/2023/L2-1103.json.gz",
+    "models/short_huber/2023/L2-1701.json.gz",
+    "models/short_huber/2023/L2-307.json.gz",
+    "models/short_huber/2023/L2-509.json.gz",
+    "models/short_huber/2023/L2-701.json.gz",
+    "models/short_huber/2023/L2-907.json.gz",
+    "models/short_huber/2024/L1-101.json.gz",
+    "models/short_huber/2024/L1-1103.json.gz",
+    "models/short_huber/2024/L1-1701.json.gz",
+    "models/short_huber/2024/L1-307.json.gz",
+    "models/short_huber/2024/L1-509.json.gz",
+    "models/short_huber/2024/L1-701.json.gz",
+    "models/short_huber/2024/L1-907.json.gz",
+    "models/short_huber/2024/L2-101.json.gz",
+    "models/short_huber/2024/L2-1103.json.gz",
+    "models/short_huber/2024/L2-1701.json.gz",
+    "models/short_huber/2024/L2-307.json.gz",
+    "models/short_huber/2024/L2-509.json.gz",
+    "models/short_huber/2024/L2-701.json.gz",
+    "models/short_huber/2024/L2-907.json.gz",
+    "models/short_huber/2025/L1-101.json.gz",
+    "models/short_huber/2025/L1-1103.json.gz",
+    "models/short_huber/2025/L1-1701.json.gz",
+    "models/short_huber/2025/L1-307.json.gz",
+    "models/short_huber/2025/L1-509.json.gz",
+    "models/short_huber/2025/L1-701.json.gz",
+    "models/short_huber/2025/L1-907.json.gz",
+    "models/short_huber/2025/L2-101.json.gz",
+    "models/short_huber/2025/L2-1103.json.gz",
+    "models/short_huber/2025/L2-1701.json.gz",
+    "models/short_huber/2025/L2-307.json.gz",
+    "models/short_huber/2025/L2-509.json.gz",
+    "models/short_huber/2025/L2-701.json.gz",
+    "models/short_huber/2025/L2-907.json.gz",
+    "models/short_median/2019/MEDIAN_L1-101.json.gz",
+    "models/short_median/2019/MEDIAN_L1-1103.json.gz",
+    "models/short_median/2019/MEDIAN_L1-1701.json.gz",
+    "models/short_median/2019/MEDIAN_L1-307.json.gz",
+    "models/short_median/2019/MEDIAN_L1-509.json.gz",
+    "models/short_median/2019/MEDIAN_L1-701.json.gz",
+    "models/short_median/2019/MEDIAN_L1-907.json.gz",
+    "models/short_median/2019/MEDIAN_L2-101.json.gz",
+    "models/short_median/2019/MEDIAN_L2-1103.json.gz",
+    "models/short_median/2019/MEDIAN_L2-1701.json.gz",
+    "models/short_median/2019/MEDIAN_L2-307.json.gz",
+    "models/short_median/2019/MEDIAN_L2-509.json.gz",
+    "models/short_median/2019/MEDIAN_L2-701.json.gz",
+    "models/short_median/2019/MEDIAN_L2-907.json.gz",
+    "models/short_median/2020/MEDIAN_L1-101.json.gz",
+    "models/short_median/2020/MEDIAN_L1-1103.json.gz",
+    "models/short_median/2020/MEDIAN_L1-1701.json.gz",
+    "models/short_median/2020/MEDIAN_L1-307.json.gz",
+    "models/short_median/2020/MEDIAN_L1-509.json.gz",
+    "models/short_median/2020/MEDIAN_L1-701.json.gz",
+    "models/short_median/2020/MEDIAN_L1-907.json.gz",
+    "models/short_median/2020/MEDIAN_L2-101.json.gz",
+    "models/short_median/2020/MEDIAN_L2-1103.json.gz",
+    "models/short_median/2020/MEDIAN_L2-1701.json.gz",
+    "models/short_median/2020/MEDIAN_L2-307.json.gz",
+    "models/short_median/2020/MEDIAN_L2-509.json.gz",
+    "models/short_median/2020/MEDIAN_L2-701.json.gz",
+    "models/short_median/2020/MEDIAN_L2-907.json.gz",
+    "models/short_median/2021/MEDIAN_L1-101.json.gz",
+    "models/short_median/2021/MEDIAN_L1-1103.json.gz",
+    "models/short_median/2021/MEDIAN_L1-1701.json.gz",
+    "models/short_median/2021/MEDIAN_L1-307.json.gz",
+    "models/short_median/2021/MEDIAN_L1-509.json.gz",
+    "models/short_median/2021/MEDIAN_L1-701.json.gz",
+    "models/short_median/2021/MEDIAN_L1-907.json.gz",
+    "models/short_median/2021/MEDIAN_L2-101.json.gz",
+    "models/short_median/2021/MEDIAN_L2-1103.json.gz",
+    "models/short_median/2021/MEDIAN_L2-1701.json.gz",
+    "models/short_median/2021/MEDIAN_L2-307.json.gz",
+    "models/short_median/2021/MEDIAN_L2-509.json.gz",
+    "models/short_median/2021/MEDIAN_L2-701.json.gz",
+    "models/short_median/2021/MEDIAN_L2-907.json.gz",
+    "models/short_median/2022/MEDIAN_L1-101.json.gz",
+    "models/short_median/2022/MEDIAN_L1-1103.json.gz",
+    "models/short_median/2022/MEDIAN_L1-1701.json.gz",
+    "models/short_median/2022/MEDIAN_L1-307.json.gz",
+    "models/short_median/2022/MEDIAN_L1-509.json.gz",
+    "models/short_median/2022/MEDIAN_L1-701.json.gz",
+    "models/short_median/2022/MEDIAN_L1-907.json.gz",
+    "models/short_median/2022/MEDIAN_L2-101.json.gz",
+    "models/short_median/2022/MEDIAN_L2-1103.json.gz",
+    "models/short_median/2022/MEDIAN_L2-1701.json.gz",
+    "models/short_median/2022/MEDIAN_L2-307.json.gz",
+    "models/short_median/2022/MEDIAN_L2-509.json.gz",
+    "models/short_median/2022/MEDIAN_L2-701.json.gz",
+    "models/short_median/2022/MEDIAN_L2-907.json.gz",
+    "models/short_median/2023/MEDIAN_L1-101.json.gz",
+    "models/short_median/2023/MEDIAN_L1-1103.json.gz",
+    "models/short_median/2023/MEDIAN_L1-1701.json.gz",
+    "models/short_median/2023/MEDIAN_L1-307.json.gz",
+    "models/short_median/2023/MEDIAN_L1-509.json.gz",
+    "models/short_median/2023/MEDIAN_L1-701.json.gz",
+    "models/short_median/2023/MEDIAN_L1-907.json.gz",
+    "models/short_median/2023/MEDIAN_L2-101.json.gz",
+    "models/short_median/2023/MEDIAN_L2-1103.json.gz",
+    "models/short_median/2023/MEDIAN_L2-1701.json.gz",
+    "models/short_median/2023/MEDIAN_L2-307.json.gz",
+    "models/short_median/2023/MEDIAN_L2-509.json.gz",
+    "models/short_median/2023/MEDIAN_L2-701.json.gz",
+    "models/short_median/2023/MEDIAN_L2-907.json.gz",
+    "models/short_median/2024/MEDIAN_L1-101.json.gz",
+    "models/short_median/2024/MEDIAN_L1-1103.json.gz",
+    "models/short_median/2024/MEDIAN_L1-1701.json.gz",
+    "models/short_median/2024/MEDIAN_L1-307.json.gz",
+    "models/short_median/2024/MEDIAN_L1-509.json.gz",
+    "models/short_median/2024/MEDIAN_L1-701.json.gz",
+    "models/short_median/2024/MEDIAN_L1-907.json.gz",
+    "models/short_median/2024/MEDIAN_L2-101.json.gz",
+    "models/short_median/2024/MEDIAN_L2-1103.json.gz",
+    "models/short_median/2024/MEDIAN_L2-1701.json.gz",
+    "models/short_median/2024/MEDIAN_L2-307.json.gz",
+    "models/short_median/2024/MEDIAN_L2-509.json.gz",
+    "models/short_median/2024/MEDIAN_L2-701.json.gz",
+    "models/short_median/2024/MEDIAN_L2-907.json.gz",
+    "models/short_median/2025/MEDIAN_L1-101.json.gz",
+    "models/short_median/2025/MEDIAN_L1-1103.json.gz",
+    "models/short_median/2025/MEDIAN_L1-1701.json.gz",
+    "models/short_median/2025/MEDIAN_L1-307.json.gz",
+    "models/short_median/2025/MEDIAN_L1-509.json.gz",
+    "models/short_median/2025/MEDIAN_L1-701.json.gz",
+    "models/short_median/2025/MEDIAN_L1-907.json.gz",
+    "models/short_median/2025/MEDIAN_L2-101.json.gz",
+    "models/short_median/2025/MEDIAN_L2-1103.json.gz",
+    "models/short_median/2025/MEDIAN_L2-1701.json.gz",
+    "models/short_median/2025/MEDIAN_L2-307.json.gz",
+    "models/short_median/2025/MEDIAN_L2-509.json.gz",
+    "models/short_median/2025/MEDIAN_L2-701.json.gz",
+    "models/short_median/2025/MEDIAN_L2-907.json.gz",
+    "models/stop44/2019/CAL44_STOP.json.gz",
+    "models/stop44/2020/CAL44_STOP.json.gz",
+    "models/stop44/2021/CAL44_STOP.json.gz",
+    "models/stop44/2022/CAL44_STOP.json.gz",
+    "models/stop44/2023/CAL44_STOP.json.gz",
+    "models/stop44/2024/CAL44_STOP.json.gz",
+    "models/stop44/2025/CAL44_STOP.json.gz",
+    "src/btc_strategy/__pycache__/__init__.cpython-312.pyc",
+    "src/btc_strategy/__pycache__/artifacts.cpython-312.pyc",
+    "src/btc_strategy/__pycache__/instrument.cpython-312.pyc",
+    "src/btc_strategy/__pycache__/models.cpython-312.pyc",
+    "src/btc_strategy/__pycache__/strategies.cpython-312.pyc",
+    "src/btc_strategy/_frozen/__pycache__/__init__.cpython-312.pyc",
+    "src/btc_strategy/_frozen/lab/__pycache__/__init__.cpython-312.pyc",
+    "src/btc_strategy/_frozen/lab/__pycache__/audit.cpython-312.pyc",
+    "src/btc_strategy/_frozen/lab/__pycache__/b05.cpython-312.pyc",
+    "src/btc_strategy/_frozen/lab/__pycache__/b12_signals.cpython-312.pyc",
+    "src/btc_strategy/_frozen/lab/__pycache__/bear_short_overlay.cpython-312.pyc",
+    "src/btc_strategy/_frozen/lab/__pycache__/boosted_stop.cpython-312.pyc",
+    "src/btc_strategy/_frozen/lab/__pycache__/boosted_stop_depth3.cpython-312.pyc",
+    "src/btc_strategy/_frozen/lab/__pycache__/cold_budget.cpython-312.pyc",
+    "src/btc_strategy/_frozen/lab/__pycache__/cold_entry_momentum.cpython-312.pyc",
+    "src/btc_strategy/_frozen/lab/__pycache__/cold_short_profit_trailing.cpython-312.pyc",
+    "src/btc_strategy/_frozen/lab/__pycache__/conditional_short.cpython-312.pyc",
+    "src/btc_strategy/_frozen/lab/__pycache__/entry_permissions.cpython-312.pyc",
+    "src/btc_strategy/_frozen/lab/__pycache__/exit_coordinate.cpython-312.pyc",
+    "src/btc_strategy/_frozen/lab/__pycache__/faster_cold_short.cpython-312.pyc",
+    "src/btc_strategy/_frozen/lab/__pycache__/io.cpython-312.pyc",
+    "src/btc_strategy/_frozen/lab/__pycache__/long_profit_local_coordinate.cpython-312.pyc",
+    "src/btc_strategy/_frozen/lab/__pycache__/long_vol_budget.cpython-312.pyc",
+    "src/btc_strategy/_frozen/lab/__pycache__/margin_walkforward.cpython-312.pyc",
+    "src/btc_strategy/_frozen/lab/__pycache__/margin_walkforward_audit.cpython-312.pyc",
+    "src/btc_strategy/_frozen/lab/__pycache__/mining_ablation.cpython-312.pyc",
+    "src/btc_strategy/_frozen/lab/__pycache__/mining_features.cpython-312.pyc",
+    "src/btc_strategy/_frozen/lab/__pycache__/native.cpython-312.pyc",
+    "src/btc_strategy/_frozen/lab/__pycache__/patient_profit_exit.cpython-312.pyc",
+    "src/btc_strategy/_frozen/lab/__pycache__/search.cpython-312.pyc",
+    "src/btc_strategy/_frozen/lab/__pycache__/sgd.cpython-312.pyc",
+    "src/btc_strategy/_frozen/lab/__pycache__/short_payoff.cpython-312.pyc",
+    "src/btc_strategy/_frozen/lab/__pycache__/short_trailing.cpython-312.pyc",
+    "src/btc_strategy/_frozen/lab/__pycache__/shorter_cold_momentum.cpython-312.pyc",
+    "src/btc_strategy/_frozen/lab/__pycache__/signals.cpython-312.pyc",
+    "src/btc_strategy/_frozen/lab/__pycache__/tree_factors.cpython-312.pyc",
+    "src/btc_strategy/_frozen/lab/__pycache__/volume_short_factors.cpython-312.pyc",
+    "src/btc_strategy/_frozen/lab/__pycache__/walkforward_io.cpython-312.pyc",
+    "src/btc_strategy/artifacts.py",
+    "src/btc_strategy/models.py",
+    "src/btc_strategy/strategies.py"
+  ],
+  "training_material_read": false,
+  "old_source_and_external_trading_project_reads_blocked": true,
+  "binance_robot_modules_loaded": [
+    "binance_robot",
+    "binance_robot.execution",
+    "binance_robot.runner"
+  ],
+  "forbidden_data_read": false,
+  "on_disk_faults_written": false,
+  "training_or_writer_or_account_executed": false,
+  "snapshot_limitation": "trainer and global hash gate still under development; this is an interface snapshot, not final failure or final acceptance"
+}

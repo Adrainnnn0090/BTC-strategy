@@ -1,0 +1,8 @@
+{
+  "round": 7,
+  "role": "data",
+  "counts_grain": "strategy × prescribed cost case × price-day label",
+  "exit_points": 1393,
+  "risk_exit_points": 478,
+  "interpretation": "These are account-path counts across 36 benchmark books. They reuse market dates and episodes and are not distinct market days, independent crises, or statistically independent observations."
+}

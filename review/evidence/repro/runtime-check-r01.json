@@ -1,0 +1,428 @@
+{
+  "project_runtime_sources": {
+    "/workspace/BinanceTradingRobot/backend/.venv/lib/python3.12/site-packages/binance_robot/execution.py": {
+      "sha256_match": true,
+      "imports": [
+        {
+          "module": "__future__",
+          "level": 0,
+          "names": [
+            "annotations"
+          ]
+        },
+        {
+          "module": "datetime",
+          "level": 0,
+          "names": [
+            "datetime",
+            "timezone"
+          ]
+        },
+        {
+          "module": "decimal",
+          "level": 0,
+          "names": [
+            "Decimal"
+          ]
+        },
+        {
+          "names": [
+            "fcntl"
+          ]
+        },
+        {
+          "names": [
+            "os"
+          ]
+        },
+        {
+          "module": "hashlib",
+          "level": 0,
+          "names": [
+            "sha256"
+          ]
+        },
+        {
+          "module": "typing",
+          "level": 0,
+          "names": [
+            "TYPE_CHECKING"
+          ]
+        },
+        {
+          "module": "nautilus_trader.model",
+          "level": 0,
+          "names": [
+            "AccountType",
+            "ClientOrderId",
+            "InstrumentId",
+            "OrderFilled",
+            "OrderSide",
+            "TimeInForce",
+            "Venue"
+          ]
+        },
+        {
+          "module": "binance_robot.contracts",
+          "level": 0,
+          "names": [
+            "AccountView",
+            "CommandReceipt",
+            "FillEvent",
+            "Health",
+            "MarketView",
+            "Mode",
+            "OrderIntent",
+            "OwnedLot",
+            "PendingOrder",
+            "ReconciliationResult",
+            "Side",
+            "VenueRules"
+          ]
+        },
+        {
+          "module": "binance_robot.portfolio",
+          "level": 0,
+          "names": [
+            "PlanDenied",
+            "plan"
+          ]
+        },
+        {
+          "module": "binance_robot.settings",
+          "level": 0,
+          "names": [
+            "validate_startup"
+          ]
+        },
+        {
+          "module": "binance_robot.control",
+          "level": 0,
+          "names": [
+            "ControlStore",
+            "ExecutionPolicy"
+          ]
+        },
+        {
+          "module": "binance_robot.strategy_bindings",
+          "level": 0,
+          "names": [
+            "entry_exit_rule",
+            "validate_execution_binding"
+          ]
+        },
+        {
+          "module": "nautilus_trader.trading",
+          "level": 0,
+          "names": [
+            "Strategy"
+          ]
+        },
+        {
+          "module": "binance_robot.journal",
+          "level": 0,
+          "names": [
+            "Journal"
+          ]
+        },
+        {
+          "module": "binance_robot.settings",
+          "level": 0,
+          "names": [
+            "Settings"
+          ]
+        }
+      ]
+    },
+    "/workspace/BinanceTradingRobot/backend/.venv/lib/python3.12/site-packages/binance_robot/runner.py": {
+      "sha256_match": true,
+      "imports": [
+        {
+          "module": "datetime",
+          "level": 0,
+          "names": [
+            "datetime",
+            "timedelta",
+            "timezone"
+          ]
+        },
+        {
+          "module": "decimal",
+          "level": 0,
+          "names": [
+            "Decimal"
+          ]
+        },
+        {
+          "names": [
+            "json"
+          ]
+        },
+        {
+          "module": "pathlib",
+          "level": 0,
+          "names": [
+            "Path"
+          ]
+        },
+        {
+          "names": [
+            "time"
+          ]
+        },
+        {
+          "module": "nautilus_trader.backtest",
+          "level": 0,
+          "names": [
+            "BacktestEngine",
+            "BacktestEngineConfig"
+          ]
+        },
+        {
+          "module": "nautilus_trader.common",
+          "level": 0,
+          "names": [
+            "LoggerConfig",
+            "LogLevel"
+          ]
+        },
+        {
+          "module": "nautilus_trader.execution",
+          "level": 0,
+          "names": [
+            "MakerTakerFeeModel",
+            "ProbabilisticFillModel",
+            "StaticLatencyModel"
+          ]
+        },
+        {
+          "module": "nautilus_trader.model",
+          "level": 0,
+          "names": [
+            "AccountType",
+            "AggressorSide",
+            "Currency",
+            "CurrencyPair",
+            "Money",
+            "OmsType",
+            "Price",
+            "Quantity",
+            "QuoteTick",
+            "Symbol",
+            "TradeId",
+            "TradeTick"
+          ]
+        },
+        {
+          "module": "nautilus_trader.trading",
+          "level": 0,
+          "names": [
+            "Strategy"
+          ]
+        },
+        {
+          "module": "binance_robot.contracts",
+          "level": 0,
+          "names": [
+            "ControlCommand",
+            "Health",
+            "Identity",
+            "Mode",
+            "RuntimeView",
+            "Signal"
+          ]
+        },
+        {
+          "module": "binance_robot.execution",
+          "level": 0,
+          "names": [
+            "ExecutionCoordinator",
+            "INSTRUMENT",
+            "VENUE",
+            "utc_ns"
+          ]
+        },
+        {
+          "module": "binance_robot.journal",
+          "level": 0,
+          "names": [
+            "Journal"
+          ]
+        },
+        {
+          "module": "binance_robot.portfolio",
+          "level": 0,
+          "names": [
+            "PlanDenied",
+            "make_target"
+          ]
+        },
+        {
+          "module": "binance_robot.settings",
+          "level": 0,
+          "names": [
+            "Settings",
+            "validate_startup"
+          ]
+        },
+        {
+          "module": "binance_robot.strategies.registry",
+          "level": 0,
+          "names": [
+            "SV09"
+          ]
+        },
+        {
+          "module": "nautilus_trader.adapters.binance",
+          "level": 0,
+          "names": [
+            "BinanceDataClientConfig",
+            "BinanceEnvironment",
+            "BinanceInstrumentProviderConfig",
+            "BinanceProductType",
+            "BinanceSpotMarketDataMode"
+          ]
+        },
+        {
+          "module": "nautilus_trader.adapters.sandbox",
+          "level": 0,
+          "names": [
+            "SandboxExecutionClientConfig"
+          ]
+        },
+        {
+          "module": "nautilus_trader.execution",
+          "level": 0,
+          "names": [
+            "DefaultFillModel"
+          ]
+        },
+        {
+          "module": "nautilus_trader.adapters.binance",
+          "level": 0,
+          "names": [
+            "BinanceDataClientFactory"
+          ]
+        },
+        {
+          "module": "nautilus_trader.adapters.sandbox",
+          "level": 0,
+          "names": [
+            "SandboxExecutionClientFactory"
+          ]
+        },
+        {
+          "module": "nautilus_trader.common",
+          "level": 0,
+          "names": [
+            "Environment"
+          ]
+        },
+        {
+          "module": "nautilus_trader.live",
+          "level": 0,
+          "names": [
+            "LiveNode"
+          ]
+        },
+        {
+          "module": "nautilus_trader.model",
+          "level": 0,
+          "names": [
+            "TraderId"
+          ]
+        },
+        {
+          "module": "nautilus_trader.model",
+          "level": 0,
+          "names": [
+            "BarType"
+          ]
+        },
+        {
+          "module": "binance_robot.strategies.parents",
+          "level": 0,
+          "names": [
+            "sma_frames"
+          ]
+        },
+        {
+          "names": [
+            "asyncio"
+          ]
+        },
+        {
+          "names": [
+            "os"
+          ]
+        },
+        {
+          "names": [
+            "subprocess"
+          ]
+        },
+        {
+          "names": [
+            "sys"
+          ]
+        },
+        {
+          "names": [
+            "os"
+          ]
+        },
+        {
+          "module": "urllib.parse",
+          "level": 0,
+          "names": [
+            "urlsplit"
+          ]
+        },
+        {
+          "module": "nautilus_trader.model",
+          "level": 0,
+          "names": [
+            "BarType"
+          ]
+        },
+        {
+          "module": "binance_robot.strategies.parents",
+          "level": 0,
+          "names": [
+            "evaluate",
+            "entry_budget"
+          ]
+        },
+        {
+          "module": "binance_robot.component_runner",
+          "level": 0,
+          "names": [
+            "PublicComponentStrategy"
+          ]
+        },
+        {
+          "module": "binance_robot.contracts",
+          "level": 0,
+          "names": [
+            "ReconciliationResult"
+          ]
+        },
+        {
+          "module": "hashlib",
+          "level": 0,
+          "names": [
+            "sha256"
+          ]
+        }
+      ]
+    }
+  },
+  "estimator_runtime_sources": {
+    "/workspace/BinanceTradingRobot/backend/.venv/lib/python3.12/site-packages/sklearn/ensemble/_gb.py": {
+      "sha256_match": true
+    },
+    "/workspace/BinanceTradingRobot/backend/.venv/lib/python3.12/site-packages/sklearn/tree/_tree.cpython-312-x86_64-linux-gnu.so": {
+      "sha256_match": true
+    }
+  }
+}

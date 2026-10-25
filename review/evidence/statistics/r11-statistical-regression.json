@@ -1,0 +1,132 @@
+{
+  "audit": "R11 bounded statistical regression",
+  "old_git_commit": "1b008bf",
+  "new_git_commit": "a642de16cea72875a99859e9108960b02636c584",
+  "changed_nonreview_paths": [
+    "docs/REPRODUCIBILITY.md",
+    "provenance/release_manifest.json",
+    "src/btc_strategy/replay.py",
+    "verification/container-candidate-1b008bf.json"
+  ],
+  "review_diff_contents_read": false,
+  "protected_tree_groups_unchanged": [
+    "models",
+    "artifacts",
+    "training_inputs",
+    "research",
+    "strategies",
+    "provenance/studies",
+    "provenance/failure_index.json"
+  ],
+  "release_manifest_path_count_unchanged": 886,
+  "release_manifest_entries_changed": [
+    "src/btc_strategy/replay.py"
+  ],
+  "modified_replay_hash_and_size_verified": true,
+  "replay_ast": {
+    "pre_return_computation_unchanged": true,
+    "existing_output_keyword_values_unchanged": [
+      "strategy",
+      "case",
+      "complete_account_exact",
+      "independent_decimal",
+      "summary",
+      "max_daily_short_gross",
+      "max_daily_whole_gross",
+      "forecasts_reconstructed_from_numeric_models"
+    ],
+    "added_output_keys": [
+      "metric_scope",
+      "risk_qualification"
+    ]
+  },
+  "synthetic_stub_checks": {
+    "existing_values_exactly_preserved": true,
+    "metric_scope_fields": 5,
+    "negative_complete_account_mismatch_still_asserts": true,
+    "real_native_replay_executed": false
+  },
+  "catalog_original_summary_bindings_verified": 36,
+  "catalog_bindings": [
+    {
+      "id": "LP35",
+      "source_study": "studies/B109-long-profit-local-coordinate",
+      "source_recipe_id": "LP35",
+      "classification": "high_return"
+    },
+    {
+      "id": "TS04",
+      "source_study": "studies/B107-cold-short-profit-trailing",
+      "source_recipe_id": "TS04",
+      "classification": "high_return"
+    },
+    {
+      "id": "ME01",
+      "source_study": "studies/B105-cold-entry-momentum",
+      "source_recipe_id": "ME01",
+      "classification": "high_return"
+    },
+    {
+      "id": "MX03",
+      "source_study": "studies/B106-shorter-cold-entry-momentum",
+      "source_recipe_id": "MX03",
+      "classification": "high_return"
+    },
+    {
+      "id": "B88A_S03",
+      "source_study": "studies/B88A-short-net-loss-families",
+      "source_recipe_id": "S03",
+      "classification": "risk_tradeoffs"
+    },
+    {
+      "id": "K02",
+      "source_study": "studies/B72-cold-budget-exposure",
+      "source_recipe_id": "K02",
+      "classification": "exposure_controls"
+    },
+    {
+      "id": "Y01",
+      "source_study": "studies/B29-prior-forecast-exits",
+      "source_recipe_id": "Y01",
+      "classification": "long_only"
+    },
+    {
+      "id": "C02",
+      "source_study": "studies/B31-constant-sizing-controls",
+      "source_recipe_id": "C02",
+      "classification": "risk_tradeoffs"
+    },
+    {
+      "id": "C04",
+      "source_study": "studies/B31-constant-sizing-controls",
+      "source_recipe_id": "C04",
+      "classification": "risk_tradeoffs"
+    }
+  ],
+  "technical_failure_triple_hash_bindings_verified": 14,
+  "statistical_claim_regression": {
+    "consumed_development_retained": true,
+    "no_fresh_OOS_promotion": true,
+    "existing_validation_not_renamed_blind": true,
+    "effective_independent_tests_unknown": true,
+    "final_refit_distinct_from_inner_selection": true,
+    "hook_distinct_from_OS_sandbox": true
+  },
+  "executed": [
+    "Git tree and selective manifest diff",
+    "AST computation/output regression",
+    "Synthetic dependency-stub positive and injected mismatch tests",
+    "36 catalog-summary bindings against source",
+    "14 technical failure provenance triple hashes",
+    "Statistical scope wording assertions"
+  ],
+  "not_executed": [
+    "No 886-file or 48-training-package repeat audit",
+    "No real model inference or fit",
+    "No real account or Native replay",
+    "No original writer or selection search",
+    "No PBO/DSR calculation",
+    "No 2026 economic data or V01/V02",
+    "No other expert or chair content read"
+  ]
+}

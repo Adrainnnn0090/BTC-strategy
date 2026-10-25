@@ -1,0 +1,152 @@
+{
+  "candidate_commit": "a642de16cea72875a99859e9108960b02636c584",
+  "manifest_files": 886,
+  "manifest_bytes": 56445495,
+  "positive_scope": "one LP35/BASE cached-forecast API Native+Decimal historical replay; no numeric model reconstruction/refit or all36 replay",
+  "original_R10_API_result_except_added_metadata_exact": true,
+  "summary_post_fill_max_gross_pct": 98.99360891840428,
+  "daily_before_or_after_whole_gross_pct": 118.0455835631524,
+  "metric_scope": {
+    "summary.max_gross_exposure_pct": "maximum whole-position gross at daily post-fill marks; percent of adjusted equity",
+    "summary.average_gross_exposure_pct": "average whole-position gross at daily post-fill marks; percent of adjusted equity",
+    "summary.max_drawdown_pct": "continuous-account daily adjusted-equity peak-to-trough drawdown; percent",
+    "max_daily_short_gross": "maximum short gross at daily before-or-after-order proxy points; percent of adjusted equity",
+    "max_daily_whole_gross": "maximum whole-position gross at daily before-or-after-order proxy points; percent of adjusted equity"
+  },
+  "risk_qualification": "daily proxy quotes before/after orders;not intraday maximum or future cap; entry budgets and stop triggers are not continuous-exposure or fill-loss caps",
+  "rejections": [
+    {
+      "input": "UNKNOWN",
+      "error": "unknown strategy: UNKNOWN",
+      "rejected_before_context_or_features": true,
+      "read_paths": [
+        "artifacts/catalog.json"
+      ],
+      "engine_started": false
+    },
+    {
+      "input": "../../2026/UNKNOWN",
+      "error": "unknown strategy: ../../2026/UNKNOWN",
+      "rejected_before_context_or_features": true,
+      "read_paths": [
+        "artifacts/catalog.json"
+      ],
+      "engine_started": false
+    },
+    {
+      "input": "in-memory synthetic future date 2026-01-01, not an economic observation",
+      "error": "economic clock outside2017–2025",
+      "rejected_before_target_rules": true
+    },
+    {
+      "input": "artifacts/accounts/LP35/2026/BASE.json.gz",
+      "error": "2026+ economic data excluded",
+      "rejected_before_file_read": true
+    },
+    {
+      "input": "models/price47/2026/state.json.gz",
+      "error": "2026+ economic data excluded",
+      "rejected_before_file_read": true
+    },
+    {
+      "input": "training_inputs/2026/price47.json.gz",
+      "error": "2026+ economic data excluded",
+      "rejected_before_file_read": true
+    },
+    {
+      "input": "artifacts/V01/example.json",
+      "error": "validation artifacts excluded",
+      "rejected_before_file_read": true
+    },
+    {
+      "input": "artifacts/V02/example.json",
+      "error": "validation artifacts excluded",
+      "rejected_before_file_read": true
+    }
+  ],
+  "unknown_case_API_late_rejection": {
+    "input": "API run(LP35,UNKNOWN_CASE,use_models=False)",
+    "error": "unregistered role/cost",
+    "rejected_before_engine": true,
+    "rejected_before_context_or_feature_work": false,
+    "verify_targets_call_count": 1,
+    "compose_alias_call_count": 1,
+    "read_paths": [
+      "artifacts/catalog.json",
+      "artifacts/contexts/high_return.json.gz",
+      "artifacts/targets/LP35.json.gz"
+    ],
+    "qualification": "public CLI argparse prevents this case earlier; Python run API validates cost only inside run_account after target work"
+  },
+  "unknown_CLI_early_rejections": [
+    {
+      "args": [
+        "--strategy",
+        "UNKNOWN"
+      ],
+      "argparse_exit": 2,
+      "run_not_called": true
+    },
+    {
+      "args": [
+        "--strategy",
+        "LP35",
+        "--case",
+        "UNKNOWN_CASE"
+      ],
+      "argparse_exit": 2,
+      "run_not_called": true
+    }
+  ],
+  "economic_and_all_models_accounts_git_tree_unchanged_since_1b008bf": [
+    "src/btc_strategy/execution.py",
+    "src/btc_strategy/costs.py",
+    "src/btc_strategy/instrument.py",
+    "src/btc_strategy/_runtime",
+    "src/btc_strategy/_frozen",
+    "models",
+    "artifacts/accounts"
+  ],
+  "review_files_opened": 0,
+  "candidate_paths_opened": [
+    "artifacts/accounts/LP35/BASE.json.gz",
+    "artifacts/catalog.json",
+    "artifacts/contexts/high_return.json.gz",
+    "artifacts/targets/LP35.json.gz",
+    "provenance/release_manifest.json",
+    "src/btc_strategy/__pycache__/__init__.cpython-312.pyc",
+    "src/btc_strategy/__pycache__/artifacts.cpython-312.pyc",
+    "src/btc_strategy/__pycache__/costs.cpython-312.pyc",
+    "src/btc_strategy/__pycache__/execution.cpython-312.pyc",
+    "src/btc_strategy/__pycache__/instrument.cpython-312.pyc",
+    "src/btc_strategy/__pycache__/replay.cpython-312.pyc",
+    "src/btc_strategy/__pycache__/strategies.cpython-312.pyc",
+    "src/btc_strategy/__pycache__/validation.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/__init__.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/audit.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/b12_signals.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/bear_short_overlay.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/boosted_stop.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/boosted_stop_depth3.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/carry_audit.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/clock.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/cold_budget.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/cold_entry_momentum.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/cold_short_profit_trailing.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/conditional_short.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/entry_permissions.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/exit_coordinate.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/faster_cold_short.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/long_profit_local_coordinate.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/long_vol_budget.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/patient_profit_exit.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/quote_exposure.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/sgd.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/short_payoff.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/short_trailing.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/shorter_cold_momentum.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/signals.cpython-312.pyc",
+    "src/btc_strategy/_runtime/__pycache__/tree_factors.cpython-312.pyc",
+    "src/btc_strategy/replay.py"
+  ]
+}

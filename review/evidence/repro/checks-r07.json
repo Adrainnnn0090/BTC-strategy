@@ -1,0 +1,355 @@
+{
+  "round": 7,
+  "code_hashes_at_start": {
+    "artifacts.py": "7bd9d31d7e2b9bbc5afd296bffcb68d3a4d3f329abb051ffca814be86fb688a6",
+    "models.py": "7e468056a4b1a97c2fe019c3b17cc215fc4c2da10a1f420b775020067bfbf250",
+    "training.py": "b8071a0c762aaed9c562238ee83710120a487095ff406a14ce2018183990d9cf"
+  },
+  "code_hashes_at_end": {
+    "artifacts.py": "7bd9d31d7e2b9bbc5afd296bffcb68d3a4d3f329abb051ffca814be86fb688a6",
+    "models.py": "7e468056a4b1a97c2fe019c3b17cc215fc4c2da10a1f420b775020067bfbf250",
+    "training.py": "b8071a0c762aaed9c562238ee83710120a487095ff406a14ce2018183990d9cf"
+  },
+  "code_snapshot_stable": true,
+  "synthetic_path_predicates": [
+    {
+      "synthetic_path": "../repro-outside-placeholder",
+      "required_reject": true,
+      "rejected_by_resolve_before_open": true,
+      "message": "artifact path escapes repository",
+      "matches_contract": true
+    },
+    {
+      "synthetic_path": "/tmp/repro-outside-placeholder",
+      "required_reject": true,
+      "rejected_by_resolve_before_open": true,
+      "message": "artifact path escapes repository",
+      "matches_contract": true
+    },
+    {
+      "synthetic_path": "models/base_tree/2026/repro-placeholder.json.gz",
+      "required_reject": true,
+      "rejected_by_resolve_before_open": true,
+      "message": "2026+ economic data excluded",
+      "matches_contract": true
+    },
+    {
+      "synthetic_path": "models/base_tree/fold2027/repro-placeholder.json.gz",
+      "required_reject": true,
+      "rejected_by_resolve_before_open": true,
+      "message": "2026+ economic data excluded",
+      "matches_contract": true
+    },
+    {
+      "synthetic_path": "training_inputs/2026/base_tree.json.gz",
+      "required_reject": true,
+      "rejected_by_resolve_before_open": true,
+      "message": "2026+ economic data excluded",
+      "matches_contract": true
+    },
+    {
+      "synthetic_path": "data/prices_2026.json",
+      "required_reject": true,
+      "rejected_by_resolve_before_open": true,
+      "message": "2026+ economic data excluded",
+      "matches_contract": true
+    },
+    {
+      "synthetic_path": "artifacts/contexts/2026/repro-placeholder.json",
+      "required_reject": true,
+      "rejected_by_resolve_before_open": true,
+      "message": "2026+ economic data excluded",
+      "matches_contract": true
+    },
+    {
+      "synthetic_path": "artifacts/V01-pretend/repro-placeholder.json",
+      "required_reject": true,
+      "rejected_by_resolve_before_open": true,
+      "message": "validation artifacts excluded",
+      "matches_contract": true
+    },
+    {
+      "synthetic_path": "artifacts/V02-pretend/repro-placeholder.json",
+      "required_reject": true,
+      "rejected_by_resolve_before_open": true,
+      "message": "validation artifacts excluded",
+      "matches_contract": true
+    },
+    {
+      "synthetic_path": "artifacts/V01/repro-placeholder.json",
+      "required_reject": true,
+      "rejected_by_resolve_before_open": false,
+      "message": null,
+      "matches_contract": false
+    },
+    {
+      "synthetic_path": "artifacts/V02/repro-placeholder.json",
+      "required_reject": true,
+      "rejected_by_resolve_before_open": false,
+      "message": null,
+      "matches_contract": false
+    },
+    {
+      "synthetic_path": "artifacts/v01-retained-validation/repro-placeholder.json",
+      "required_reject": true,
+      "rejected_by_resolve_before_open": false,
+      "message": null,
+      "matches_contract": false
+    },
+    {
+      "synthetic_path": "provenance/folds/2026/repro-placeholder.json",
+      "required_reject": true,
+      "rejected_by_resolve_before_open": false,
+      "message": null,
+      "matches_contract": false
+    },
+    {
+      "synthetic_path": "models/base_tree/2019/repro-placeholder.json.gz",
+      "required_reject": false,
+      "rejected_by_resolve_before_open": false,
+      "message": null,
+      "matches_contract": true
+    }
+  ],
+  "training_role_predicates": [
+    {
+      "name": "current_training_input",
+      "synthetic_path": "training_inputs/2019/base_tree.json.gz",
+      "expected_allowed": true,
+      "actual_allowed": true,
+      "pass": true
+    },
+    {
+      "name": "wrong_year_training_input",
+      "synthetic_path": "training_inputs/2020/base_tree.json.gz",
+      "expected_allowed": false,
+      "actual_allowed": false,
+      "pass": true
+    },
+    {
+      "name": "wrong_family_training_input",
+      "synthetic_path": "training_inputs/2019/short_median.json.gz",
+      "expected_allowed": false,
+      "actual_allowed": false,
+      "pass": true
+    },
+    {
+      "name": "cached_replay_test_context",
+      "synthetic_path": "artifacts/contexts/high_return.json.gz",
+      "expected_allowed": false,
+      "actual_allowed": false,
+      "pass": true
+    },
+    {
+      "name": "cached_factor_market",
+      "synthetic_path": "artifacts/factors/prices.json.gz",
+      "expected_allowed": false,
+      "actual_allowed": false,
+      "pass": true
+    },
+    {
+      "name": "physical_test_input",
+      "synthetic_path": "data/walkforward-v1/2019/test.json",
+      "expected_allowed": false,
+      "actual_allowed": false,
+      "pass": true
+    },
+    {
+      "name": "cached_targets",
+      "synthetic_path": "artifacts/targets/LP35.json.gz",
+      "expected_allowed": false,
+      "actual_allowed": false,
+      "pass": true
+    },
+    {
+      "name": "provenance_current_test_receipt",
+      "synthetic_path": "provenance/studies/example/folds/2019/test-receipt.json",
+      "expected_allowed": false,
+      "actual_allowed": false,
+      "pass": true
+    },
+    {
+      "name": "current_model",
+      "synthetic_path": "models/base_tree/2019/example.json.gz",
+      "expected_allowed": true,
+      "actual_allowed": true,
+      "pass": true
+    },
+    {
+      "name": "wrong_year_model",
+      "synthetic_path": "models/base_tree/2020/example.json.gz",
+      "expected_allowed": false,
+      "actual_allowed": false,
+      "pass": true
+    },
+    {
+      "name": "wrong_family_model",
+      "synthetic_path": "models/short_median/2019/example.json.gz",
+      "expected_allowed": false,
+      "actual_allowed": false,
+      "pass": true
+    },
+    {
+      "name": "manifest",
+      "synthetic_path": "models/manifest.json",
+      "expected_allowed": true,
+      "actual_allowed": true,
+      "pass": true
+    },
+    {
+      "name": "schema",
+      "synthetic_path": "models/feature_schema.json",
+      "expected_allowed": true,
+      "actual_allowed": true,
+      "pass": true
+    },
+    {
+      "name": "old_source_root",
+      "synthetic_path": "/workspace/BTCStrategyResearchLedger/data/repro-placeholder.json",
+      "expected_allowed": false,
+      "actual_allowed": false
+    }
+  ],
+  "outside_root_training_predicate_scope": {
+    "synthetic_path": "/tmp/repro-copied-test-context.json",
+    "allowed_by_training_predicate": true,
+    "qualification": "Predicate permits general outside-root library/filesystem reads except explicitly denied old projects; not a universal data capability sandbox."
+  },
+  "synthetic_public_api_pre_read_checks": [
+    {
+      "case": "annual_states_unknown_family",
+      "exception": "ValueError",
+      "message": "unknown model family/year",
+      "attempts_before_rejection": [],
+      "rejected_as_ValueError_before_read_or_guard": true
+    },
+    {
+      "case": "annual_states_2026",
+      "exception": "ValueError",
+      "message": "unknown model family/year",
+      "attempts_before_rejection": [],
+      "rejected_as_ValueError_before_read_or_guard": true
+    },
+    {
+      "case": "annual_states_2017",
+      "exception": "ValueError",
+      "message": "unknown model family/year",
+      "attempts_before_rejection": [],
+      "rejected_as_ValueError_before_read_or_guard": true
+    },
+    {
+      "case": "annual_states_float_year",
+      "exception": "ReadAttempt",
+      "message": "synthetic guard stopped before any file read",
+      "attempts_before_rejection": [
+        {
+          "operation": "read",
+          "args": [
+            "models/manifest.json"
+          ]
+        }
+      ],
+      "rejected_as_ValueError_before_read_or_guard": false
+    },
+    {
+      "case": "refit_unknown_family",
+      "exception": "ValueError",
+      "message": "unregistered family/year",
+      "attempts_before_rejection": [],
+      "rejected_as_ValueError_before_read_or_guard": true
+    },
+    {
+      "case": "refit_2026",
+      "exception": "ValueError",
+      "message": "unregistered family/year",
+      "attempts_before_rejection": [],
+      "rejected_as_ValueError_before_read_or_guard": true
+    },
+    {
+      "case": "refit_2017",
+      "exception": "ValueError",
+      "message": "unregistered family/year",
+      "attempts_before_rejection": [],
+      "rejected_as_ValueError_before_read_or_guard": true
+    },
+    {
+      "case": "refit_float_year",
+      "exception": "GuardInstallAttempt",
+      "message": "unexpected guard install after invalid parameter",
+      "attempts_before_rejection": [
+        {
+          "operation": "install_training_guard",
+          "args": [
+            "base_tree",
+            "2025.0"
+          ]
+        }
+      ],
+      "rejected_as_ValueError_before_read_or_guard": false
+    },
+    {
+      "case": "reconstruct_unknown_family",
+      "exception": "ValueError",
+      "message": "unknown family",
+      "attempts_before_rejection": [],
+      "rejected_as_ValueError_before_read_or_guard": true
+    },
+    {
+      "case": "reconstruct_future_end_date",
+      "exception": "ValueError",
+      "message": "feature clock outside development",
+      "attempts_before_rejection": [],
+      "rejected_as_ValueError_before_read_or_guard": true
+    },
+    {
+      "case": "reconstruct_future_middle_date",
+      "exception": "ReadAttempt",
+      "message": "synthetic guard stopped before any file read",
+      "attempts_before_rejection": [
+        {
+          "operation": "read",
+          "args": [
+            "models/manifest.json"
+          ]
+        }
+      ],
+      "rejected_as_ValueError_before_read_or_guard": false
+    },
+    {
+      "case": "feature_matrix_unknown_family",
+      "exception": null,
+      "returned_shape": [
+        3,
+        44
+      ],
+      "attempts_before_rejection": [],
+      "rejected_as_ValueError_before_read_or_guard": false
+    },
+    {
+      "case": "feature_matrix_future_middle_date",
+      "exception": null,
+      "returned_shape": [
+        3,
+        44
+      ],
+      "attempts_before_rejection": [],
+      "rejected_as_ValueError_before_read_or_guard": false
+    }
+  ],
+  "physical_training_file_expected_count": 48,
+  "physical_training_files_present_count": 48,
+  "risk_document_paths_seen": [],
+  "budget_not_gross_cap_pure_counterexample": {
+    "synthetic_only": true,
+    "entry_budget_fraction": "0.25",
+    "after_adverse_move_gross_fraction": "0.4705882352941176470588235294",
+    "fees_and_financing_omitted_for_simple_demonstration": true
+  },
+  "real_forbidden_file_opened": false,
+  "physical_training_input_contents_read": false,
+  "training_guard_installed": false,
+  "trained_or_replayed_account": false,
+  "source_or_delivery_written": false,
+  "r05_import_regression_repeated": false,
+  "snapshot_limitation": "Current construction snapshot; no future forbidden data accessed and no final-release failure inferred."
+}

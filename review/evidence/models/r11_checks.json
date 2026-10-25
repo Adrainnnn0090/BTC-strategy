@@ -1,0 +1,145 @@
+{
+  "round": 11,
+  "candidate_git": "a642de16cea72875a99859e9108960b02636c584",
+  "all_checks_pass": false,
+  "cases": 20,
+  "passed": 19,
+  "results": [
+    {
+      "case": "valid_7_seed_long_roster",
+      "pass": true,
+      "outcome": "accepted",
+      "returned_states": 7
+    },
+    {
+      "case": "valid_14_seed_lag_roster",
+      "pass": true,
+      "outcome": "accepted",
+      "returned_states": 14
+    },
+    {
+      "case": "hash_mismatch_rejected_before_decode",
+      "pass": true,
+      "outcome": "rejected",
+      "exception": "ValueError",
+      "message": "model content hash mismatch: models/base_tree/2025/malformed.json.gz"
+    },
+    {
+      "case": "matching_hash_reaches_and_rejects_malformed_decode",
+      "pass": true,
+      "outcome": "rejected",
+      "exception": "BadGzipFile",
+      "message": "Not a gzipped file (b'no')"
+    },
+    {
+      "case": "wrong_family_path",
+      "pass": true,
+      "outcome": "rejected",
+      "exception": "ValueError",
+      "message": "model year/family path mismatch"
+    },
+    {
+      "case": "wrong_year_path",
+      "pass": true,
+      "outcome": "rejected",
+      "exception": "ValueError",
+      "message": "model year/family path mismatch"
+    },
+    {
+      "case": "missing_long_seed_member",
+      "pass": true,
+      "outcome": "rejected",
+      "exception": "ValueError",
+      "message": "incomplete long member roster"
+    },
+    {
+      "case": "duplicate_long_seed_member",
+      "pass": true,
+      "outcome": "rejected",
+      "exception": "ValueError",
+      "message": "incomplete long member roster"
+    },
+    {
+      "case": "missing_short_seed_member",
+      "pass": true,
+      "outcome": "rejected",
+      "exception": "ValueError",
+      "message": "incomplete short member roster"
+    },
+    {
+      "case": "duplicate_short_seed_member",
+      "pass": true,
+      "outcome": "rejected",
+      "exception": "ValueError",
+      "message": "incomplete short member roster"
+    },
+    {
+      "case": "duplicate_lag1_missing_lag2_head",
+      "pass": true,
+      "outcome": "rejected",
+      "exception": "ValueError",
+      "message": "incomplete short member roster"
+    },
+    {
+      "case": "unsupported_lag3_head",
+      "pass": true,
+      "outcome": "rejected",
+      "exception": "ValueError",
+      "message": "incomplete short member roster"
+    },
+    {
+      "case": "missing_execution_lag_field_fails_closed",
+      "pass": true,
+      "outcome": "rejected",
+      "exception": "KeyError",
+      "message": "'execution_lag'"
+    },
+    {
+      "case": "wrong_numeric_feature_width",
+      "pass": true,
+      "outcome": "rejected",
+      "exception": "ValueError",
+      "message": "model feature width mismatch"
+    },
+    {
+      "case": "wrong_payload_cutoff",
+      "pass": true,
+      "outcome": "rejected",
+      "exception": "ValueError",
+      "message": "model cutoff mismatch"
+    },
+    {
+      "case": "illegal_missing_2025",
+      "pass": true,
+      "outcome": "rejected",
+      "exception": "ValueError",
+      "message": "invalid missing-state contract"
+    },
+    {
+      "case": "valid_2018_missing_contract",
+      "pass": true,
+      "outcome": "accepted",
+      "returned_states": 0
+    },
+    {
+      "case": "2018_missing_with_files_rejected",
+      "pass": true,
+      "outcome": "rejected",
+      "exception": "ValueError",
+      "message": "invalid missing-state contract"
+    },
+    {
+      "case": "2018_reconstruct_preserves_None_not_zero",
+      "pass": true,
+      "outcome": "accepted",
+      "returned_states": 729
+    },
+    {
+      "case": "fabricated_present_2018_states_rejected",
+      "pass": false,
+      "outcome": "accepted",
+      "returned_states": 7
+    }
+  ],
+  "scope": "只以/tmp合成manifest/数字模型对象临时切换artifact ROOT，finally恢复；不修改候选/源仓，不做真实未来数据读取、推断全量重跑或refit。"
+}

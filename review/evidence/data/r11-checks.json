@@ -1,0 +1,285 @@
+{
+  "status": "PASS_BOUNDED_WITH_RESIDUALS",
+  "candidate_git": "a642de16cea72875a99859e9108960b02636c584",
+  "old_candidate": "1b008bfd4a9d1af9a73ff830fb7f8a1b72425fbf",
+  "unchanged_economic_data_model_and_guard_paths": [
+    "artifacts",
+    "models",
+    "training_inputs",
+    "src/btc_strategy/_runtime",
+    "src/btc_strategy/_frozen",
+    "src/btc_strategy/models.py",
+    "src/btc_strategy/artifacts.py",
+    "src/btc_strategy/training.py",
+    "src/btc_strategy/validation.py",
+    "src/btc_strategy/execution.py"
+  ],
+  "release": {
+    "files": 886,
+    "declared_bytes": 56445495,
+    "unchanged_manifest_entries": 885,
+    "changed_manifest_path": "src/btc_strategy/replay.py",
+    "changed_file_actual_size_hash_matched": true
+  },
+  "replay_economic_statements_unchanged_after_metadata_normalization": true,
+  "documentation": {
+    "path": "docs/REPRODUCIBILITY.md",
+    "line": 22,
+    "text": "包内artifact角色校验、当前family/year训练读取hook和操作系统隔离是不同层级。正常训练CLI只显式请求当前plan与模型；hook为第三方库保留ROOT外读取，不能充当完整文件系统沙箱。若要阻断任意扩展代码访问外部经济文件，须另外采用容器/OS挂载边界，不能只依赖该hook。",
+    "matches_root_external_read_policy": true
+  },
+  "malformed_path_rejections": [
+    {
+      "path": "../BTCStrategyResearchLedger/data/x.json",
+      "rejected_before_open": true,
+      "error": "artifact path escapes repository"
+    },
+    {
+      "path": "/workspace/BTCStrategyResearchLedger/data/x.json",
+      "rejected_before_open": true,
+      "error": "artifact path escapes repository"
+    },
+    {
+      "path": "provenance/studies/B10/registration.json",
+      "rejected_before_open": true,
+      "error": "unapproved artifact role"
+    },
+    {
+      "path": "review/rounds/01/chair.json",
+      "rejected_before_open": true,
+      "error": "unapproved artifact role"
+    },
+    {
+      "path": "models/base_tree/2026/model.json.gz",
+      "rejected_before_open": true,
+      "error": "2026+ economic data excluded"
+    },
+    {
+      "path": "training_inputs/2027/price47.json.gz",
+      "rejected_before_open": true,
+      "error": "2026+ economic data excluded"
+    },
+    {
+      "path": "artifacts/economic-2028.json",
+      "rejected_before_open": true,
+      "error": "2026+ economic data excluded"
+    },
+    {
+      "path": "artifacts/V01/rows.json",
+      "rejected_before_open": true,
+      "error": "validation artifacts excluded"
+    },
+    {
+      "path": "artifacts/v02-unsafe/rows.json",
+      "rejected_before_open": true,
+      "error": "validation artifacts excluded"
+    }
+  ],
+  "symlink_escape_rejected_before_open": true,
+  "model_hash_mismatch_rejected_before_json_parse": true,
+  "annual_model_tests": [
+    {
+      "family": "not_a_family",
+      "year": 2025,
+      "rejected_before_manifest": true
+    },
+    {
+      "family": "price47",
+      "year": 2026,
+      "rejected_before_manifest": true
+    },
+    {
+      "family": "price47",
+      "year": 2017,
+      "rejected_before_manifest": true
+    },
+    {
+      "family": "price47",
+      "year": true,
+      "rejected_before_manifest": true
+    },
+    {
+      "family": "price47",
+      "year": 2025.0,
+      "rejected_before_manifest": true
+    },
+    {
+      "family": "price47",
+      "year": "2025",
+      "rejected_before_manifest": true
+    },
+    {
+      "test": "valid_roster",
+      "status": "ACCEPT_VALID_SYNTHETIC"
+    },
+    {
+      "test": "wrong_file_year",
+      "status": "REJECT",
+      "error": "model year/family path mismatch"
+    },
+    {
+      "test": "wrong_file_family",
+      "status": "REJECT",
+      "error": "model year/family path mismatch"
+    },
+    {
+      "test": "wrong_packet_cutoff",
+      "status": "REJECT",
+      "error": "model cutoff mismatch"
+    },
+    {
+      "test": "wrong_width",
+      "status": "REJECT",
+      "error": "model feature width mismatch"
+    },
+    {
+      "test": "duplicate_seed",
+      "status": "REJECT",
+      "error": "incomplete long member roster"
+    }
+  ],
+  "date_tests": [
+    {
+      "family": "base_tree",
+      "test": "future",
+      "rejected_before_features": true
+    },
+    {
+      "family": "base_tree",
+      "test": "duplicate",
+      "rejected_before_features": true
+    },
+    {
+      "family": "base_tree",
+      "test": "gap",
+      "rejected_before_features": true
+    },
+    {
+      "family": "price47",
+      "test": "future",
+      "rejected_before_features": true
+    },
+    {
+      "family": "price47",
+      "test": "duplicate",
+      "rejected_before_features": true
+    },
+    {
+      "family": "price47",
+      "test": "gap",
+      "rejected_before_features": true
+    },
+    {
+      "family": "mining58",
+      "test": "future",
+      "rejected_before_features": true
+    },
+    {
+      "family": "mining58",
+      "test": "duplicate",
+      "rejected_before_features": true
+    },
+    {
+      "family": "mining58",
+      "test": "gap",
+      "rejected_before_features": true
+    }
+  ],
+  "actual_sample_training_prefixes": [
+    {
+      "family": "price47",
+      "year": 2018,
+      "physical_rows": 365,
+      "source_hash_matched": true,
+      "physical_prefix_exact": true
+    },
+    {
+      "family": "price47",
+      "year": 2019,
+      "physical_rows": 730,
+      "source_hash_matched": true,
+      "physical_prefix_exact": true
+    },
+    {
+      "family": "price47",
+      "year": 2025,
+      "physical_rows": 2922,
+      "source_hash_matched": true,
+      "physical_prefix_exact": true
+    },
+    {
+      "family": "short_huber",
+      "year": 2025,
+      "physical_rows": 2922,
+      "source_hash_matched": true,
+      "physical_prefix_exact": true
+    },
+    {
+      "family": "mining58",
+      "year": 2025,
+      "physical_rows": 2922,
+      "source_hash_matched": true,
+      "physical_prefix_exact": true
+    }
+  ],
+  "synthetic_plan_tests": [
+    {
+      "test": "valid_baseline",
+      "status": "REACHES_STUB_FIT",
+      "model_actually_fitted": false
+    },
+    {
+      "test": "future_date_interior",
+      "status": "REJECT_BEFORE_STUB_FIT"
+    },
+    {
+      "test": "wrong_fold_year",
+      "status": "REJECT_BEFORE_STUB_FIT"
+    },
+    {
+      "test": "wrong_cutoff",
+      "status": "REJECT_BEFORE_STUB_FIT"
+    },
+    {
+      "test": "immature_ids",
+      "status": "REJECT_BEFORE_STUB_FIT"
+    },
+    {
+      "test": "duplicate_past_date",
+      "status": "REACHES_STUB_FIT",
+      "model_actually_fitted": false
+    },
+    {
+      "test": "wrong_plan_family",
+      "status": "REACHES_STUB_FIT",
+      "model_actually_fitted": false
+    }
+  ],
+  "residuals": {
+    "validation_alias_path_predicates": [
+      {
+        "path": "artifacts/V01.json",
+        "pure_path_predicate_allows": true,
+        "file_opened": false,
+        "interpretation": "Naming-pattern coverage only; no real validation artifact exists or is read in this probe."
+      },
+      {
+        "path": "artifacts/v02_unsafe.json",
+        "pure_path_predicate_allows": true,
+        "file_opened": false,
+        "interpretation": "Naming-pattern coverage only; no real validation artifact exists or is read in this probe."
+      }
+    ],
+    "malformed_past_date_and_family_metadata_may_reach_fit_stub": true,
+    "outside_root_training_reads_still_allowed_and_now_documented": true,
+    "current_export_prefix_or_model_data_violation": false
+  },
+  "harness_note": "An exploratory extraction initially omitted the threadpool_limits stub and raised NameError; only the role-local harness was completed with nullcontext, then the recorded synthetic tests were run. No source change or model fitting occurred.",
+  "limitations": [
+    "The byte comparison of unchanged core uses Git tree equality and prior R10 full verification; unchanged 885 files were not rehashed again in this round.",
+    "Only five actual training plans were sampled; all 48 feature matrices and offline forecasts were not recomputed.",
+    "Synthetic refit tests replace fit and loading guards with explicit stubs to test validation ordering only; they never fit an estimator or install a new global guard.",
+    "Allowed aliases and external paths were resolved/predicate-tested only; no true V01/V02 or 2026 economic value was opened.",
+    "No other expert, chair, review or verification conclusions were read."
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "round": 11,
+  "commit": "a642de16cea72875a99859e9108960b02636c584",
+  "manifest_git_blob_oid": "b1d883f040fd8b34523c3fc95210c4f054a7e972",
+  "manifest_current_equals_frozen_git_blob": true,
+  "manifest_sha256": "411278b88c345554484f40a7d9e4b721f37e23a20b4ca7d9db86ca7606bce030",
+  "declared_file_count": 886,
+  "declared_bytes": 56445495,
+  "unique_path_count": 886,
+  "all_paths_contained": true,
+  "payloads_rehashed_here": false,
+  "other_review_contents_read": false,
+  "qualification": "Anchor of declared inventory to this frozen candidate only, not proof of all ledger history or substitute for per-payload hash checks."
+}

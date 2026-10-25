@@ -1,0 +1,508 @@
+{
+  "round": 6,
+  "source_carry_native_sha256": "b4c159df393aa16622bc8a0ee2b409b2f52a103e1517b5b6fe1addde79f0569b",
+  "delivery_execution_sha256": "43f8d2a786096f49ac04677a57ab5b5122608a49e97b35f37731880315bfea38",
+  "allowed_import_replacements": {
+    "from binance_robot.execution import INSTRUMENT,VENUE": "from .instrument import INSTRUMENT,VENUE",
+    "from binance_robot.runner import paper_instrument": "from .instrument import paper_instrument",
+    "from .native import CASES,quote_prices": "from .costs import CASES,quote_prices"
+  },
+  "execution_checks": {
+    "exact_text_after_only_three_allowed_import_replacements": true,
+    "entire_ast_after_only_three_allowed_import_replacements": true,
+    "all_top_level_function_asts_unchanged": true,
+    "MarginResearch_class_ast_unchanged": true
+  },
+  "execution_text_diff": "--- source/carry_native.py\n+++ delivery/execution.py\n@@ -11,9 +11,9 @@\n from nautilus_trader.execution import DefaultFillModel,MakerTakerFeeModel,StaticLatencyModel\n from nautilus_trader.model import AccountType,Currency,CurrencyPair,Money,OmsType,OrderSide,Price,Quantity,QuoteTick,TimeInForce\n from nautilus_trader.trading import Strategy\n-from binance_robot.execution import INSTRUMENT,VENUE\n-from binance_robot.runner import paper_instrument\n-from .native import CASES,quote_prices\n+from .instrument import INSTRUMENT,VENUE\n+from .instrument import paper_instrument\n+from .costs import CASES,quote_prices\n D=Decimal;USDT=Currency.from_str('USDT');BORROW={'BASE':.05,'STRESS':.1,'SEVERE':.3,'DELAY':.1}\n \n class MarginResearch(Strategy):\n",
+  "cost_checks": {
+    "CASES_exact": true,
+    "BORROW_exact": true,
+    "quote_prices_function_ast_exact": true
+  },
+  "quote_case_count": 60,
+  "all_quote_cases_exact": true,
+  "quote_cases": [
+    {
+      "price": "5",
+      "slip": 0.0,
+      "equal": true
+    },
+    {
+      "price": "5",
+      "slip": 1e-06,
+      "equal": true
+    },
+    {
+      "price": "5",
+      "slip": 0.0005,
+      "equal": true
+    },
+    {
+      "price": "5",
+      "slip": 0.001,
+      "equal": true
+    },
+    {
+      "price": "5",
+      "slip": 0.002,
+      "equal": true
+    },
+    {
+      "price": "5.00001",
+      "slip": 0.0,
+      "equal": true
+    },
+    {
+      "price": "5.00001",
+      "slip": 1e-06,
+      "equal": true
+    },
+    {
+      "price": "5.00001",
+      "slip": 0.0005,
+      "equal": true
+    },
+    {
+      "price": "5.00001",
+      "slip": 0.001,
+      "equal": true
+    },
+    {
+      "price": "5.00001",
+      "slip": 0.002,
+      "equal": true
+    },
+    {
+      "price": "5.00999",
+      "slip": 0.0,
+      "equal": true
+    },
+    {
+      "price": "5.00999",
+      "slip": 1e-06,
+      "equal": true
+    },
+    {
+      "price": "5.00999",
+      "slip": 0.0005,
+      "equal": true
+    },
+    {
+      "price": "5.00999",
+      "slip": 0.001,
+      "equal": true
+    },
+    {
+      "price": "5.00999",
+      "slip": 0.002,
+      "equal": true
+    },
+    {
+      "price": "99.99999",
+      "slip": 0.0,
+      "equal": true
+    },
+    {
+      "price": "99.99999",
+      "slip": 1e-06,
+      "equal": true
+    },
+    {
+      "price": "99.99999",
+      "slip": 0.0005,
+      "equal": true
+    },
+    {
+      "price": "99.99999",
+      "slip": 0.001,
+      "equal": true
+    },
+    {
+      "price": "99.99999",
+      "slip": 0.002,
+      "equal": true
+    },
+    {
+      "price": "100",
+      "slip": 0.0,
+      "equal": true
+    },
+    {
+      "price": "100",
+      "slip": 1e-06,
+      "equal": true
+    },
+    {
+      "price": "100",
+      "slip": 0.0005,
+      "equal": true
+    },
+    {
+      "price": "100",
+      "slip": 0.001,
+      "equal": true
+    },
+    {
+      "price": "100",
+      "slip": 0.002,
+      "equal": true
+    },
+    {
+      "price": "100.005",
+      "slip": 0.0,
+      "equal": true
+    },
+    {
+      "price": "100.005",
+      "slip": 1e-06,
+      "equal": true
+    },
+    {
+      "price": "100.005",
+      "slip": 0.0005,
+      "equal": true
+    },
+    {
+      "price": "100.005",
+      "slip": 0.001,
+      "equal": true
+    },
+    {
+      "price": "100.005",
+      "slip": 0.002,
+      "equal": true
+    },
+    {
+      "price": "100.009999",
+      "slip": 0.0,
+      "equal": true
+    },
+    {
+      "price": "100.009999",
+      "slip": 1e-06,
+      "equal": true
+    },
+    {
+      "price": "100.009999",
+      "slip": 0.0005,
+      "equal": true
+    },
+    {
+      "price": "100.009999",
+      "slip": 0.001,
+      "equal": true
+    },
+    {
+      "price": "100.009999",
+      "slip": 0.002,
+      "equal": true
+    },
+    {
+      "price": "30000.123456",
+      "slip": 0.0,
+      "equal": true
+    },
+    {
+      "price": "30000.123456",
+      "slip": 1e-06,
+      "equal": true
+    },
+    {
+      "price": "30000.123456",
+      "slip": 0.0005,
+      "equal": true
+    },
+    {
+      "price": "30000.123456",
+      "slip": 0.001,
+      "equal": true
+    },
+    {
+      "price": "30000.123456",
+      "slip": 0.002,
+      "equal": true
+    },
+    {
+      "price": "99999.995",
+      "slip": 0.0,
+      "equal": true
+    },
+    {
+      "price": "99999.995",
+      "slip": 1e-06,
+      "equal": true
+    },
+    {
+      "price": "99999.995",
+      "slip": 0.0005,
+      "equal": true
+    },
+    {
+      "price": "99999.995",
+      "slip": 0.001,
+      "equal": true
+    },
+    {
+      "price": "99999.995",
+      "slip": 0.002,
+      "equal": true
+    },
+    {
+      "price": "1000000.000001",
+      "slip": 0.0,
+      "equal": true
+    },
+    {
+      "price": "1000000.000001",
+      "slip": 1e-06,
+      "equal": true
+    },
+    {
+      "price": "1000000.000001",
+      "slip": 0.0005,
+      "equal": true
+    },
+    {
+      "price": "1000000.000001",
+      "slip": 0.001,
+      "equal": true
+    },
+    {
+      "price": "1000000.000001",
+      "slip": 0.002,
+      "equal": true
+    },
+    {
+      "price": "0.010001",
+      "slip": 0.0,
+      "equal": true
+    },
+    {
+      "price": "0.010001",
+      "slip": 1e-06,
+      "equal": true
+    },
+    {
+      "price": "0.010001",
+      "slip": 0.0005,
+      "equal": true
+    },
+    {
+      "price": "0.010001",
+      "slip": 0.001,
+      "equal": true
+    },
+    {
+      "price": "0.010001",
+      "slip": 0.002,
+      "equal": true
+    },
+    {
+      "price": "0.019999",
+      "slip": 0.0,
+      "equal": true
+    },
+    {
+      "price": "0.019999",
+      "slip": 1e-06,
+      "equal": true
+    },
+    {
+      "price": "0.019999",
+      "slip": 0.0005,
+      "equal": true
+    },
+    {
+      "price": "0.019999",
+      "slip": 0.001,
+      "equal": true
+    },
+    {
+      "price": "0.019999",
+      "slip": 0.002,
+      "equal": true
+    }
+  ],
+  "instrument_function_ast_exact": true,
+  "instrument_pure_metadata_cases": [
+    {
+      "timestamp_ns": 0,
+      "dictionary_exact": true
+    },
+    {
+      "timestamp_ns": 1514764800000000000,
+      "dictionary_exact": true
+    },
+    {
+      "timestamp_ns": 1767139200000000000,
+      "dictionary_exact": true
+    }
+  ],
+  "runtime_original_module_count": 26,
+  "runtime_source_checks": [
+    {
+      "file": "audit.py",
+      "bytes_exact_to_source": true,
+      "only_allowed_clock_import_change": true,
+      "forbidden_trading_or_driver_imports": []
+    },
+    {
+      "file": "b12_signals.py",
+      "bytes_exact_to_source": false,
+      "only_allowed_clock_import_change": false,
+      "forbidden_trading_or_driver_imports": []
+    },
+    {
+      "file": "bear_short_overlay.py",
+      "bytes_exact_to_source": false,
+      "only_allowed_clock_import_change": true,
+      "forbidden_trading_or_driver_imports": []
+    },
+    {
+      "file": "boosted_stop.py",
+      "bytes_exact_to_source": true,
+      "only_allowed_clock_import_change": true,
+      "forbidden_trading_or_driver_imports": []
+    },
+    {
+      "file": "boosted_stop_depth3.py",
+      "bytes_exact_to_source": true,
+      "only_allowed_clock_import_change": true,
+      "forbidden_trading_or_driver_imports": []
+    },
+    {
+      "file": "carry_audit.py",
+      "bytes_exact_to_source": true,
+      "only_allowed_clock_import_change": true,
+      "forbidden_trading_or_driver_imports": []
+    },
+    {
+      "file": "cold_budget.py",
+      "bytes_exact_to_source": false,
+      "only_allowed_clock_import_change": false,
+      "forbidden_trading_or_driver_imports": []
+    },
+    {
+      "file": "cold_entry_momentum.py",
+      "bytes_exact_to_source": true,
+      "only_allowed_clock_import_change": true,
+      "forbidden_trading_or_driver_imports": []
+    },
+    {
+      "file": "cold_short_profit_trailing.py",
+      "bytes_exact_to_source": true,
+      "only_allowed_clock_import_change": true,
+      "forbidden_trading_or_driver_imports": []
+    },
+    {
+      "file": "conditional_short.py",
+      "bytes_exact_to_source": false,
+      "only_allowed_clock_import_change": false,
+      "forbidden_trading_or_driver_imports": []
+    },
+    {
+      "file": "entry_permissions.py",
+      "bytes_exact_to_source": false,
+      "only_allowed_clock_import_change": false,
+      "forbidden_trading_or_driver_imports": []
+    },
+    {
+      "file": "exit_coordinate.py",
+      "bytes_exact_to_source": true,
+      "only_allowed_clock_import_change": true,
+      "forbidden_trading_or_driver_imports": []
+    },
+    {
+      "file": "faster_cold_short.py",
+      "bytes_exact_to_source": false,
+      "only_allowed_clock_import_change": false,
+      "forbidden_trading_or_driver_imports": []
+    },
+    {
+      "file": "long_profit_local_coordinate.py",
+      "bytes_exact_to_source": true,
+      "only_allowed_clock_import_change": true,
+      "forbidden_trading_or_driver_imports": []
+    },
+    {
+      "file": "long_vol_budget.py",
+      "bytes_exact_to_source": false,
+      "only_allowed_clock_import_change": false,
+      "forbidden_trading_or_driver_imports": []
+    },
+    {
+      "file": "mining_ablation.py",
+      "bytes_exact_to_source": true,
+      "only_allowed_clock_import_change": true,
+      "forbidden_trading_or_driver_imports": []
+    },
+    {
+      "file": "mining_features.py",
+      "bytes_exact_to_source": true,
+      "only_allowed_clock_import_change": true,
+      "forbidden_trading_or_driver_imports": []
+    },
+    {
+      "file": "patient_profit_exit.py",
+      "bytes_exact_to_source": true,
+      "only_allowed_clock_import_change": true,
+      "forbidden_trading_or_driver_imports": []
+    },
+    {
+      "file": "quote_exposure.py",
+      "bytes_exact_to_source": true,
+      "only_allowed_clock_import_change": true,
+      "forbidden_trading_or_driver_imports": []
+    },
+    {
+      "file": "sgd.py",
+      "bytes_exact_to_source": true,
+      "only_allowed_clock_import_change": true,
+      "forbidden_trading_or_driver_imports": []
+    },
+    {
+      "file": "short_payoff.py",
+      "bytes_exact_to_source": true,
+      "only_allowed_clock_import_change": true,
+      "forbidden_trading_or_driver_imports": []
+    },
+    {
+      "file": "short_trailing.py",
+      "bytes_exact_to_source": true,
+      "only_allowed_clock_import_change": true,
+      "forbidden_trading_or_driver_imports": []
+    },
+    {
+      "file": "shorter_cold_momentum.py",
+      "bytes_exact_to_source": true,
+      "only_allowed_clock_import_change": true,
+      "forbidden_trading_or_driver_imports": []
+    },
+    {
+      "file": "signals.py",
+      "bytes_exact_to_source": true,
+      "only_allowed_clock_import_change": true,
+      "forbidden_trading_or_driver_imports": []
+    },
+    {
+      "file": "tree_factors.py",
+      "bytes_exact_to_source": true,
+      "only_allowed_clock_import_change": true,
+      "forbidden_trading_or_driver_imports": []
+    },
+    {
+      "file": "volume_short_factors.py",
+      "bytes_exact_to_source": true,
+      "only_allowed_clock_import_change": true,
+      "forbidden_trading_or_driver_imports": []
+    }
+  ],
+  "runtime_all_only_allowed_change": false,
+  "clock_function_ast_exact": true,
+  "native_replay_initial_receipt_read": false,
+  "native_account_replayed": false,
+  "original_runner_imported": false,
+  "pure_quote_and_metadata_functions_only": true,
+  "r05_import_failure_retested_or_overwritten": false,
+  "source_or_delivery_written": false
+}

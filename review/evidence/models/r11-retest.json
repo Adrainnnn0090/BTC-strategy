@@ -1,0 +1,116 @@
+{
+  "round": 11,
+  "role": "models",
+  "topic": "R11定向追加复测：2018 missing合同",
+  "conclusion": "修复候选c7439216已拒绝原2018 synthetic resurrection反例，且在任何数值状态读取之前报错；真实2018保留None，真实2019长头和2025双lag短头基线正常。原a642de的19/20失败证据保留不覆写，本次仅关闭该具体P1硬化缺口。",
+  "verdict": "supported",
+  "evidence": [
+    {
+      "source": "src/btc_strategy/models.py:25",
+      "actual": "year==2018先要求missing is True且files==[]，否则ValueError；检查位于read_verified状态读取之前。"
+    },
+    {
+      "source": "本次受监测调用事件",
+      "actual": [
+        {
+          "case": "original_fabricated_present_2018_counterexample",
+          "pass": true,
+          "exception": "ValueError",
+          "message": "2018 must preserve missing model state",
+          "event_order": [
+            "manifest_read:models/manifest.json"
+          ],
+          "numeric_state_reads": 0
+        },
+        {
+          "case": "real_2018_missing_and_None_preserved",
+          "pass": true,
+          "states": 0,
+          "positions": 729,
+          "all_None": true,
+          "numeric_state_reads": 0,
+          "event_order": [
+            "manifest_read:models/manifest.json",
+            "manifest_read:models/manifest.json"
+          ]
+        },
+        {
+          "case": "real_present_baseline",
+          "family": "base_tree",
+          "year": 2019,
+          "pass": true,
+          "states": 7,
+          "numeric_state_reads": 7,
+          "event_order": [
+            "manifest_read:models/manifest.json",
+            "numeric_state_read:models/base_tree/2019/EXTRA_CAL44_H60_S101.json.gz",
+            "numeric_state_read:models/base_tree/2019/EXTRA_CAL44_H60_S1103.json.gz",
+            "numeric_state_read:models/base_tree/2019/EXTRA_CAL44_H60_S1701.json.gz",
+            "numeric_state_read:models/base_tree/2019/EXTRA_CAL44_H60_S307.json.gz",
+            "numeric_state_read:models/base_tree/2019/EXTRA_CAL44_H60_S509.json.gz",
+            "numeric_state_read:models/base_tree/2019/EXTRA_CAL44_H60_S701.json.gz",
+            "numeric_state_read:models/base_tree/2019/EXTRA_CAL44_H60_S907.json.gz"
+          ]
+        },
+        {
+          "case": "real_present_baseline",
+          "family": "short_median",
+          "year": 2025,
+          "pass": true,
+          "states": 14,
+          "numeric_state_reads": 14,
+          "event_order": [
+            "manifest_read:models/manifest.json",
+            "numeric_state_read:models/short_median/2025/MEDIAN_L1-101.json.gz",
+            "numeric_state_read:models/short_median/2025/MEDIAN_L1-1103.json.gz",
+            "numeric_state_read:models/short_median/2025/MEDIAN_L1-1701.json.gz",
+            "numeric_state_read:models/short_median/2025/MEDIAN_L1-307.json.gz",
+            "numeric_state_read:models/short_median/2025/MEDIAN_L1-509.json.gz",
+            "numeric_state_read:models/short_median/2025/MEDIAN_L1-701.json.gz",
+            "numeric_state_read:models/short_median/2025/MEDIAN_L1-907.json.gz",
+            "numeric_state_read:models/short_median/2025/MEDIAN_L2-101.json.gz",
+            "numeric_state_read:models/short_median/2025/MEDIAN_L2-1103.json.gz",
+            "numeric_state_read:models/short_median/2025/MEDIAN_L2-1701.json.gz",
+            "numeric_state_read:models/short_median/2025/MEDIAN_L2-307.json.gz",
+            "numeric_state_read:models/short_median/2025/MEDIAN_L2-509.json.gz",
+            "numeric_state_read:models/short_median/2025/MEDIAN_L2-701.json.gz",
+            "numeric_state_read:models/short_median/2025/MEDIAN_L2-907.json.gz"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "候选绑定",
+      "actual": {
+        "candidate_git": "c7439216d55207a9a480153d7555f6709817e70a",
+        "models_py_sha256": "05222c3cc648385f1369975f321ce4afe3c16f8d683055dad76ef3ee97e5921b",
+        "original_candidate": "a642de16cea72875a99859e9108960b02636c584"
+      }
+    }
+  ],
+  "counterevidence": [
+    "本次仅定向重测原反例、合法2018None与两个真实2019+成员加载基线；未重跑原全部20项、全期推断、目标、账户或refit。",
+    "没有把root提供的37测试、六族/九targets或price47 refit结果当作本角色新运行证据。"
+  ],
+  "recommendations": [
+    {
+      "priority": "P1",
+      "action": "保留原失败与本次修复收据，最终验收绑定修复候选且不恢复2018 present分支。",
+      "acceptance": "原反例在模型文件读取前拒绝，合法2018不填0，7/14成员真实基线继续正常。"
+    }
+  ],
+  "checks_performed": [
+    {
+      "check": "在/tmp重建原7seed、44列、cutoff2017-12-31且SHA有效的2018 present反例，监测manifest及read_verified调用顺序",
+      "result": "明确ValueError，只有manifest读取，numeric_state_reads=0。"
+    },
+    {
+      "check": "真实2018[]/729位置None；真实base_tree2019和short_median2025",
+      "result": "分别0/7/14状态，roster/lag/宽度符合预期；所有本次4项检查通过。"
+    }
+  ],
+  "unresolved": [
+    "本轮未扩展到新增plan identity/past clock/case前置校验，未重跑全推理或训练；更广覆盖仍由各自明确收据限定。"
+  ],
+  "independence_statement": "只读修复候选指定加载代码及真实2018–2025模型加载基线，未读他人/主席意见、真实2026经济值或V01/V02；临时对象仅/tmp，进程内spy和ROOT均finally恢复。未新训练/搜索/原writer，共享代码不改；仅首次独占写本追加JSON，原r11文件保留。AI角色不是人类或独立市场样本。"
+}

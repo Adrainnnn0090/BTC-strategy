@@ -1,0 +1,88 @@
+{
+  "strategy": "LP35",
+  "case": "BASE",
+  "complete_account_exact": true,
+  "independent_decimal": {
+    "status": "PASS",
+    "marks": 2922,
+    "fills": 102,
+    "financing_rows": 369,
+    "financing_scope": "separate modeled adjustment; raw native wallet reconciled independently"
+  },
+  "summary": {
+    "case": "BASE",
+    "return_pct": 11152.320126040278,
+    "max_drawdown_pct": 28.068241233426193,
+    "natural_trades": 51,
+    "terminal_trades": 0,
+    "short_trades": 31,
+    "short_pnl": 894.7492518502789,
+    "long_pnl": 10257.57087419,
+    "best_two_positive_contribution_fraction": 0.4303441280239575,
+    "annual": [
+      {
+        "year": "2018",
+        "return_pct": 66.34747969499963
+      },
+      {
+        "year": "2019",
+        "return_pct": 141.48989287417044
+      },
+      {
+        "year": "2020",
+        "return_pct": 189.00800446573132
+      },
+      {
+        "year": "2021",
+        "return_pct": 132.36266553599583
+      },
+      {
+        "year": "2022",
+        "return_pct": 5.712130673669424
+      },
+      {
+        "year": "2023",
+        "return_pct": 61.256526980794575
+      },
+      {
+        "year": "2024",
+        "return_pct": 133.2881560360153
+      },
+      {
+        "year": "2025",
+        "return_pct": 4.8855971718765545
+      }
+    ],
+    "positive_years": 8,
+    "financing_usdt": "42.35031689972103844732876716",
+    "ending_raw_cash": "11294.67044294",
+    "ending_adjusted_equity": "11252.32012604027896155267123",
+    "flat": true,
+    "path_sha256": "2ba8d003402fad648e03b3f9fb2ebb309531ae1c0de0eb85c47bbca1ed46d011",
+    "max_gross_exposure_pct": 98.99360891840428,
+    "average_gross_exposure_pct": 51.02995682129779,
+    "short_days": 369,
+    "financing_scope": "modeled separate from native wallet; deducted from all net marks and subsequent entry budgets"
+  },
+  "max_daily_short_gross": {
+    "date": "2018-01-05",
+    "signed_quantity": "-0.00556",
+    "equity": "80.05770443553769557917808219",
+    "gross_pct": 118.0455835631524
+  },
+  "max_daily_whole_gross": {
+    "date": "2018-01-05",
+    "signed_quantity": "-0.00556",
+    "equity": "80.05770443553769557917808219",
+    "gross_pct": 118.0455835631524
+  },
+  "forecasts_reconstructed_from_numeric_models": false,
+  "metric_scope": {
+    "summary.max_gross_exposure_pct": "maximum whole-position gross at daily post-fill marks; percent of adjusted equity",
+    "summary.average_gross_exposure_pct": "average whole-position gross at daily post-fill marks; percent of adjusted equity",
+    "summary.max_drawdown_pct": "continuous-account daily adjusted-equity peak-to-trough drawdown; percent",
+    "max_daily_short_gross": "maximum short gross at daily before-or-after-order proxy points; percent of adjusted equity",
+    "max_daily_whole_gross": "maximum whole-position gross at daily before-or-after-order proxy points; percent of adjusted equity"
+  },
+  "risk_qualification": "daily proxy quotes before/after orders;not intraday maximum or future cap; entry budgets and stop triggers are not continuous-exposure or fill-loss caps"
+}

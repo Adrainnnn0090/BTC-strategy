@@ -1,0 +1,39 @@
+{
+  "round": 4,
+  "source": "data/mining-lag-v1/2019/train.json.gz",
+  "rows": 730,
+  "trace_checks": 1460,
+  "lag_summary": {
+    "60": {
+      "fresh_rows": 689,
+      "stale_or_missing_rows": 41
+    },
+    "120": {
+      "fresh_rows": 689,
+      "stale_or_missing_rows": 41
+    }
+  },
+  "file_matches_B17_annual_seal": true,
+  "all_checks_pass": true,
+  "scope": "仅封存trace的内部来源时点一致性，不构成独立observer日志或历史PIT认证。",
+  "example_first_L60": {
+    "age_days": 0.004799803240740741,
+    "availability": "observer-recorded frontier; ancestor access and canonical survival assumed",
+    "confirmation_depth": 100,
+    "confirmed_height": 436864,
+    "cutoff_ms": 1478037600000,
+    "fresh": true,
+    "observed_at_ms": 1478037185297,
+    "observed_height": 436964
+  },
+  "example_last_L60": {
+    "age_days": 0.0027328819444444445,
+    "availability": "observer-recorded frontier; ancestor access and canonical survival assumed",
+    "confirmation_depth": 100,
+    "confirmed_height": 548097,
+    "cutoff_ms": 1541023200000,
+    "fresh": true,
+    "observed_at_ms": 1541022963879,
+    "observed_height": 548197
+  }
+}

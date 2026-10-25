@@ -1,0 +1,74 @@
+{
+  "round": 4,
+  "all_checks_pass": true,
+  "synthetic_rows": 900,
+  "unaltered_prefix_rows": 500,
+  "factor_prefix_checks": {
+    "CAL44": {
+      "shape": [
+        900,
+        44
+      ],
+      "suffix_mutation_prefix_max_error": 0.0,
+      "truncated_prefix_max_error": 0.0,
+      "first_252_all_zero": true
+    },
+    "PRICE47": {
+      "shape": [
+        900,
+        47
+      ],
+      "suffix_mutation_prefix_max_error": 0.0,
+      "truncated_prefix_max_error": 0.0,
+      "first_252_all_zero": true
+    },
+    "MINING58_DYNAMICS_L60": {
+      "shape": [
+        900,
+        58
+      ],
+      "suffix_mutation_prefix_max_error": 0.0,
+      "truncated_prefix_max_error": 0.0,
+      "first_252_all_zero": true
+    }
+  },
+  "schema_order_checks": {
+    "CAL44_prefix_in_PRICE47_and_MINING58": true,
+    "PRICE_L7_extra_formula_rows": [
+      252,
+      400,
+      899
+    ],
+    "MINING58_masks_at": [
+      44,
+      45
+    ],
+    "MINING58_dynamics_at": [
+      46,
+      53
+    ],
+    "MINING58_forced_zero_state_at": [
+      54,
+      57
+    ]
+  },
+  "PRICE47_external_observations_not_accessed": true,
+  "mining_future_observation_ignored": true,
+  "mining_asof_trace": {
+    "cutoff_ms": 1509573600000,
+    "observed_at_ms": 1509573599999,
+    "observed_height": 27000,
+    "confirmed_height": 26900,
+    "age_days": 1.1574074074074074e-08,
+    "fresh": true,
+    "confirmation_depth": 100,
+    "availability": "observer-recorded frontier; ancestor access and canonical survival assumed"
+  },
+  "stale_mining_mask": [
+    0.0,
+    0.3567918514029879
+  ],
+  "stale_mining_values_all_zero": true,
+  "None_to_zero_STOP_replacement_rejected": true,
+  "scope": "只用2017–2019合成价格/源事件与冻结因子函数，未训练模型或读取经济数据；禁止bytecode写入。"
+}

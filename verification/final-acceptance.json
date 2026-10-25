@@ -1,0 +1,48 @@
+{
+  "status": "PASS_RESEARCH_ARCHIVE_ONLY",
+  "recorded_UTC": "2026-10-25T10:58:18.719763+00:00",
+  "runtime_commit": "c7439216d55207a9a480153d7555f6709817e70a",
+  "release_manifest_sha256": "cd4e22c08fc1056866a69bb9f8bfcb78a42d9244dc7cdfe3514ce1d5fb95a439",
+  "content": {
+    "status": "PASS",
+    "files": 886,
+    "bytes": 56446427,
+    "scope": "Content equality; not alpha, PIT or live safety certification."
+  },
+  "review": {
+    "status": "PASS",
+    "rounds": 12,
+    "expert_submissions": 72,
+    "roles": 6,
+    "independence": "Blind role reviews; AI roles, shared data, not independent market samples or external human audit."
+  },
+  "support_files_hash_verified": 105,
+  "targeted_retests_hash_verified": 3,
+  "source_repositories": [
+    {
+      "repository": "/workspace/BTCStrategyResearchLedger",
+      "commit": "ea1256c6b9810569c240823108e7ded552e3c237",
+      "working_tree": "clean"
+    },
+    {
+      "repository": "/workspace/BinanceTradingRobot",
+      "commit": "1aa5cf43d13043f3d78b8dc77de13e90e578cc91",
+      "working_tree": "clean"
+    }
+  ],
+  "heuristic_secret_pattern_flags": [],
+  "current_test_result": "37 passed",
+  "offline_installed_wheel": {
+    "image_id": "sha256:79fcfc5131064b144d98bc625475b0a315bab53781c57a31ba3a28db0ec73640",
+    "numeric_families": 6,
+    "complete_native_accounts": 36,
+    "decimal": "PASS",
+    "current_content_and_review_gate": "PASS"
+  },
+  "qualifications": [
+    "All 2026 economic observations excluded; no new validation.",
+    "Heuristic secret scan is a bounded check, not universal security certification.",
+    "Historical reproduction only; selection/PIT/real execution and financing safety not certified.",
+    "Remote CI has not yet run; publish/check separately."
+  ]
+}

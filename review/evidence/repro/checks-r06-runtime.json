@@ -1,0 +1,228 @@
+{
+  "round": 6,
+  "reason_for_supplement": "The first runtime predicate allowed the clock import substitution only in bear_short_overlay.py. Source inspection shows the same exact substitution is needed in seven pure modules; broaden this precise import whitelist, not permissible function edits.",
+  "module_count": 26,
+  "exact_unchanged_count": 19,
+  "changed_module_names": [
+    "b12_signals.py",
+    "bear_short_overlay.py",
+    "cold_budget.py",
+    "conditional_short.py",
+    "entry_permissions.py",
+    "faster_cold_short.py",
+    "long_vol_budget.py"
+  ],
+  "all_26_only_allowed_clock_import_replacement": true,
+  "runtime_module_checks": [
+    {
+      "file": "audit.py",
+      "old_clock_import_count": 0,
+      "bytes_exact": true,
+      "only_exact_clock_import_replacement": true,
+      "source_sha256": "11cdf58ea93b22b18d8d43efd696e8ef3b97c9ae13738cbd76459ec78a611012",
+      "runtime_sha256": "11cdf58ea93b22b18d8d43efd696e8ef3b97c9ae13738cbd76459ec78a611012"
+    },
+    {
+      "file": "b12_signals.py",
+      "old_clock_import_count": 1,
+      "bytes_exact": false,
+      "only_exact_clock_import_replacement": true,
+      "source_sha256": "aa37914babfa3ce5cbc96d9749634da518ac6eca7320f7c91907e7e406925ffe",
+      "runtime_sha256": "3492161bc0186220ade667992845706e72d560105af56368ef329bb48b8f8641"
+    },
+    {
+      "file": "bear_short_overlay.py",
+      "old_clock_import_count": 1,
+      "bytes_exact": false,
+      "only_exact_clock_import_replacement": true,
+      "source_sha256": "d0f775486985a87d8419bad3b615c120d8eb5f915c6b18731592f05ffc558ff1",
+      "runtime_sha256": "262e9e6ad07c30fa082341d338df87edebe120a4a8bfd691a61bb2cfa7fe9d4f"
+    },
+    {
+      "file": "boosted_stop.py",
+      "old_clock_import_count": 0,
+      "bytes_exact": true,
+      "only_exact_clock_import_replacement": true,
+      "source_sha256": "903c1fab34f21868b936c480cbf5d2e81155211d33c5f231e68867fdf6cf92f0",
+      "runtime_sha256": "903c1fab34f21868b936c480cbf5d2e81155211d33c5f231e68867fdf6cf92f0"
+    },
+    {
+      "file": "boosted_stop_depth3.py",
+      "old_clock_import_count": 0,
+      "bytes_exact": true,
+      "only_exact_clock_import_replacement": true,
+      "source_sha256": "b318f2812467f964397f2c0209368c7614df31809801b50743bf722186b9bae5",
+      "runtime_sha256": "b318f2812467f964397f2c0209368c7614df31809801b50743bf722186b9bae5"
+    },
+    {
+      "file": "carry_audit.py",
+      "old_clock_import_count": 0,
+      "bytes_exact": true,
+      "only_exact_clock_import_replacement": true,
+      "source_sha256": "67b183827063937caf3650a05edc2bc6309e7589bee1cac41d3101b2b938e9ca",
+      "runtime_sha256": "67b183827063937caf3650a05edc2bc6309e7589bee1cac41d3101b2b938e9ca"
+    },
+    {
+      "file": "cold_budget.py",
+      "old_clock_import_count": 1,
+      "bytes_exact": false,
+      "only_exact_clock_import_replacement": true,
+      "source_sha256": "6ef6e1070b80f353eb5aa17bff9e2704b5e2c704e67c8a9d4685e6f458ba35fc",
+      "runtime_sha256": "f4cb6fddcef0c6692a8c389075a312bb2628ea20ea93b5a405bad9436dfc1ee5"
+    },
+    {
+      "file": "cold_entry_momentum.py",
+      "old_clock_import_count": 0,
+      "bytes_exact": true,
+      "only_exact_clock_import_replacement": true,
+      "source_sha256": "962a530df1cd79219668fbe42692f1ec0de4bf26123a0158d8b0c161138b5f00",
+      "runtime_sha256": "962a530df1cd79219668fbe42692f1ec0de4bf26123a0158d8b0c161138b5f00"
+    },
+    {
+      "file": "cold_short_profit_trailing.py",
+      "old_clock_import_count": 0,
+      "bytes_exact": true,
+      "only_exact_clock_import_replacement": true,
+      "source_sha256": "31cfa9e81bcef91165d527d564f18acbbcada6a00fef606918f67e21be46a7dc",
+      "runtime_sha256": "31cfa9e81bcef91165d527d564f18acbbcada6a00fef606918f67e21be46a7dc"
+    },
+    {
+      "file": "conditional_short.py",
+      "old_clock_import_count": 1,
+      "bytes_exact": false,
+      "only_exact_clock_import_replacement": true,
+      "source_sha256": "b5b99c652ed5508fc8241693049e603a3d682525758a76816612642aadb32b6f",
+      "runtime_sha256": "f00a3e2bc510d8ed71196b79cb7ac9f5a472c6fa263af8592fde4c0bddcf8898"
+    },
+    {
+      "file": "entry_permissions.py",
+      "old_clock_import_count": 1,
+      "bytes_exact": false,
+      "only_exact_clock_import_replacement": true,
+      "source_sha256": "25978ca543b17303404d0d44d28ac73333e3c6433dd950ca7dc26d0d421a9185",
+      "runtime_sha256": "94f84f29138dd3cb03b55197aac9d85bc4d8430779a403fdcd3e10c159ef32e9"
+    },
+    {
+      "file": "exit_coordinate.py",
+      "old_clock_import_count": 0,
+      "bytes_exact": true,
+      "only_exact_clock_import_replacement": true,
+      "source_sha256": "a1de1510c72786cbc0b2bd24f1bb7c9118265b4f677e882f8a35f34f64d7a2fd",
+      "runtime_sha256": "a1de1510c72786cbc0b2bd24f1bb7c9118265b4f677e882f8a35f34f64d7a2fd"
+    },
+    {
+      "file": "faster_cold_short.py",
+      "old_clock_import_count": 1,
+      "bytes_exact": false,
+      "only_exact_clock_import_replacement": true,
+      "source_sha256": "6e4c7698f2adc15fbd317e6580b73d3bc43f01dc7b53d8cc25e84d51a6702d51",
+      "runtime_sha256": "3fd03ebc4960130d273aa6d6c43002b1248be19fdb5943814b632cdf791df81d"
+    },
+    {
+      "file": "long_profit_local_coordinate.py",
+      "old_clock_import_count": 0,
+      "bytes_exact": true,
+      "only_exact_clock_import_replacement": true,
+      "source_sha256": "5d6ed6605c8546e0e26e986f1a6774e9ebebfbab080ecd081d785650e2ea3cf7",
+      "runtime_sha256": "5d6ed6605c8546e0e26e986f1a6774e9ebebfbab080ecd081d785650e2ea3cf7"
+    },
+    {
+      "file": "long_vol_budget.py",
+      "old_clock_import_count": 1,
+      "bytes_exact": false,
+      "only_exact_clock_import_replacement": true,
+      "source_sha256": "4f15a50a61d4626ebf552864dc1d86b72e40d58034a7c64709d3c11d258b0ee4",
+      "runtime_sha256": "6c2750d7ec055429acf0d28018ff1bc735b66bcd1a3a412e68e2eea644f0f8d1"
+    },
+    {
+      "file": "mining_ablation.py",
+      "old_clock_import_count": 0,
+      "bytes_exact": true,
+      "only_exact_clock_import_replacement": true,
+      "source_sha256": "e0d02a04b14191771d840669bacc51da7d35022bae997d61d2cb5b6b995a17ae",
+      "runtime_sha256": "e0d02a04b14191771d840669bacc51da7d35022bae997d61d2cb5b6b995a17ae"
+    },
+    {
+      "file": "mining_features.py",
+      "old_clock_import_count": 0,
+      "bytes_exact": true,
+      "only_exact_clock_import_replacement": true,
+      "source_sha256": "258bcad2aae08f7eabfc390cc941d991abe20f6e31ccd93eab00aa3a545fa338",
+      "runtime_sha256": "258bcad2aae08f7eabfc390cc941d991abe20f6e31ccd93eab00aa3a545fa338"
+    },
+    {
+      "file": "patient_profit_exit.py",
+      "old_clock_import_count": 0,
+      "bytes_exact": true,
+      "only_exact_clock_import_replacement": true,
+      "source_sha256": "8eb769aaeadd8cfc8b0c3003b49c807eae36a06013cb96cc8781c322525a0c78",
+      "runtime_sha256": "8eb769aaeadd8cfc8b0c3003b49c807eae36a06013cb96cc8781c322525a0c78"
+    },
+    {
+      "file": "quote_exposure.py",
+      "old_clock_import_count": 0,
+      "bytes_exact": true,
+      "only_exact_clock_import_replacement": true,
+      "source_sha256": "538a39a4c3e17111208e61884d91d1dc16375b4978801d5642cd6921df3a36f8",
+      "runtime_sha256": "538a39a4c3e17111208e61884d91d1dc16375b4978801d5642cd6921df3a36f8"
+    },
+    {
+      "file": "sgd.py",
+      "old_clock_import_count": 0,
+      "bytes_exact": true,
+      "only_exact_clock_import_replacement": true,
+      "source_sha256": "b8f7d5a939c49759537c9e6adde70f15c16527b69c65bceae949550d35d91d9e",
+      "runtime_sha256": "b8f7d5a939c49759537c9e6adde70f15c16527b69c65bceae949550d35d91d9e"
+    },
+    {
+      "file": "short_payoff.py",
+      "old_clock_import_count": 0,
+      "bytes_exact": true,
+      "only_exact_clock_import_replacement": true,
+      "source_sha256": "cc73f202662478de85dc558c148f59ce00fe153fb3b4679f2552c59286e082ac",
+      "runtime_sha256": "cc73f202662478de85dc558c148f59ce00fe153fb3b4679f2552c59286e082ac"
+    },
+    {
+      "file": "short_trailing.py",
+      "old_clock_import_count": 0,
+      "bytes_exact": true,
+      "only_exact_clock_import_replacement": true,
+      "source_sha256": "abe519c4757c05bacffee08f8bf7daddc378d783f03bf5008a45dffcc51d243d",
+      "runtime_sha256": "abe519c4757c05bacffee08f8bf7daddc378d783f03bf5008a45dffcc51d243d"
+    },
+    {
+      "file": "shorter_cold_momentum.py",
+      "old_clock_import_count": 0,
+      "bytes_exact": true,
+      "only_exact_clock_import_replacement": true,
+      "source_sha256": "95adec18015e887a027d16a80aa2bacd3d2be8c913c5678ac6c77489c5bb67e2",
+      "runtime_sha256": "95adec18015e887a027d16a80aa2bacd3d2be8c913c5678ac6c77489c5bb67e2"
+    },
+    {
+      "file": "signals.py",
+      "old_clock_import_count": 0,
+      "bytes_exact": true,
+      "only_exact_clock_import_replacement": true,
+      "source_sha256": "6631bdb8df45789e991b219c7be32f5025891751715a02506d969f041a2deee9",
+      "runtime_sha256": "6631bdb8df45789e991b219c7be32f5025891751715a02506d969f041a2deee9"
+    },
+    {
+      "file": "tree_factors.py",
+      "old_clock_import_count": 0,
+      "bytes_exact": true,
+      "only_exact_clock_import_replacement": true,
+      "source_sha256": "39fe1dabc1785738b23b249d4dc5aea3da4e26f4137c82c375407180a5241b5c",
+      "runtime_sha256": "39fe1dabc1785738b23b249d4dc5aea3da4e26f4137c82c375407180a5241b5c"
+    },
+    {
+      "file": "volume_short_factors.py",
+      "old_clock_import_count": 0,
+      "bytes_exact": true,
+      "only_exact_clock_import_replacement": true,
+      "source_sha256": "f2d5aa6ac0d87f087a0d4cf48dce961b8bbf76b42442db3029171015f583d32e",
+      "runtime_sha256": "f2d5aa6ac0d87f087a0d4cf48dce961b8bbf76b42442db3029171015f583d32e"
+    }
+  ],
+  "source_or_delivery_written": false,
+  "import_regression_repeated": false
+}

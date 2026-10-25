@@ -1,0 +1,7 @@
+{
+  "/workspace/BTC-strategy/models/manifest.json": "6d2132c04d5b5f216aced5607612e89e223ea0dd1120a24264201a7702aca213",
+  "/workspace/BTC-strategy/models/feature_schema.json": "d832e171f83a62ee61f35a8d72ca78dabc5b2d59601fb79245a9502b11773999",
+  "/workspace/BTC-strategy/artifacts/factors/market.json.gz": "28e1507b6ee5da428327d0db96d6c0f47a8574ee4200ceac7ceeddd372ebdd17",
+  "/workspace/BTC-strategy/src/btc_strategy/models.py": "51cdef04710e6cf5ce2e5cbacb1814cd2fd727321e45962b3e8e2c9b2ba24ee5",
+  "/workspace/BTC-strategy/src/btc_strategy/artifacts.py": "8b7cbbad50f968fcecabf6706b45fe0697090bed2313ab61d5218b754995483e"
+}

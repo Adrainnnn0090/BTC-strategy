@@ -1,0 +1,2190 @@
+{
+  "status": "PASS",
+  "exposure_accounts": 36,
+  "exposures": [
+    {
+      "strategy": "LP35",
+      "case": "BASE",
+      "post_fill_whole": {
+        "date": "2021-01-07",
+        "phase": "after_fill",
+        "signed_quantity": "0.03944",
+        "equity": "1562.389025126669360767739726",
+        "gross_pct": 98.99360891840426
+      },
+      "post_fill_short": {
+        "date": "2018-04-12",
+        "phase": "after_fill",
+        "signed_quantity": "-0.01479",
+        "equity": "124.7647646096937935151095890",
+        "gross_pct": 93.70036895999793
+      },
+      "before_or_after_whole": {
+        "date": "2018-01-05",
+        "phase": "before_order",
+        "signed_quantity": "-0.00556",
+        "equity": "80.05770443553769557917808219",
+        "gross_pct": 118.0455835631524
+      },
+      "before_or_after_short": {
+        "date": "2018-01-05",
+        "phase": "before_order",
+        "signed_quantity": "-0.00556",
+        "equity": "80.05770443553769557917808219",
+        "gross_pct": 118.0455835631524
+      },
+      "close_days_omitted_by_post_only": 51,
+      "risk_close_days_omitted_by_post_only": 21,
+      "highest_exit_day": {
+        "date": "2018-01-05",
+        "phase": "before_order",
+        "signed_quantity": "-0.00556",
+        "equity": "80.05770443553769557917808219",
+        "gross_pct": 118.0455835631524,
+        "exit_reason": "STOP_LOSS",
+        "post_fill_gross_pct": 0.0
+      },
+      "max_equity_reconciliation_error": "5.0000000000000000E-9",
+      "carried_new_year_points": 3,
+      "cross_year_examples": [
+        {
+          "date": "2021-01-01",
+          "carried_from": "2020-04-30",
+          "quantity": "0.03944"
+        },
+        {
+          "date": "2024-01-01",
+          "carried_from": "2023-10-20",
+          "quantity": "0.10518"
+        }
+      ]
+    },
+    {
+      "strategy": "LP35",
+      "case": "STRESS",
+      "post_fill_whole": {
+        "date": "2021-01-08",
+        "phase": "after_fill",
+        "signed_quantity": "0.04030",
+        "equity": "1655.134950297373576293068493",
+        "gross_pct": 99.28186240102741
+      },
+      "post_fill_short": {
+        "date": "2018-04-12",
+        "phase": "after_fill",
+        "signed_quantity": "-0.01634",
+        "equity": "137.4203167383168153625205479",
+        "gross_pct": 93.98665333015029
+      },
+      "before_or_after_whole": {
+        "date": "2021-01-08",
+        "phase": "before_order",
+        "signed_quantity": "0.04030",
+        "equity": "1655.134950297373576293068493",
+        "gross_pct": 99.28186240102741
+      },
+      "before_or_after_short": {
+        "date": "2018-04-13",
+        "phase": "before_order",
+        "signed_quantity": "-0.01634",
+        "equity": "137.1431273187660919898630137",
+        "gross_pct": 94.35217034928596
+      },
+      "close_days_omitted_by_post_only": 51,
+      "risk_close_days_omitted_by_post_only": 21,
+      "highest_exit_day": {
+        "date": "2021-01-09",
+        "phase": "before_order",
+        "signed_quantity": "0.04030",
+        "equity": "1638.890138376373576293068493",
+        "gross_pct": 99.2707479646418,
+        "exit_reason": "TAKE_PROFIT",
+        "post_fill_gross_pct": 0.0
+      },
+      "max_equity_reconciliation_error": "4.8000000000000000E-9",
+      "carried_new_year_points": 3,
+      "cross_year_examples": [
+        {
+          "date": "2021-01-01",
+          "carried_from": "2020-04-30",
+          "quantity": "0.04030"
+        },
+        {
+          "date": "2024-01-01",
+          "carried_from": "2023-10-20",
+          "quantity": "0.09948"
+        }
+      ]
+    },
+    {
+      "strategy": "LP35",
+      "case": "SEVERE",
+      "post_fill_whole": {
+        "date": "2021-01-08",
+        "phase": "after_fill",
+        "signed_quantity": "0.03420",
+        "equity": "1400.515514317619707729671233",
+        "gross_pct": 99.5718235044465
+      },
+      "post_fill_short": {
+        "date": "2018-04-12",
+        "phase": "after_fill",
+        "signed_quantity": "-0.01569",
+        "equity": "131.0656138618488176330684931",
+        "gross_pct": 94.62355408477269
+      },
+      "before_or_after_whole": {
+        "date": "2021-01-08",
+        "phase": "before_order",
+        "signed_quantity": "0.03420",
+        "equity": "1400.515514317619707729671233",
+        "gross_pct": 99.5718235044465
+      },
+      "before_or_after_short": {
+        "date": "2018-04-13",
+        "phase": "before_order",
+        "signed_quantity": "-0.01569",
+        "equity": "130.7305904648896652982465753",
+        "gross_pct": 95.04288523198036
+      },
+      "close_days_omitted_by_post_only": 51,
+      "risk_close_days_omitted_by_post_only": 21,
+      "highest_exit_day": {
+        "date": "2021-01-09",
+        "phase": "before_order",
+        "signed_quantity": "0.03420",
+        "equity": "1386.770860927619707729671233",
+        "gross_pct": 99.56059614848452,
+        "exit_reason": "TAKE_PROFIT",
+        "post_fill_gross_pct": 0.0
+      },
+      "max_equity_reconciliation_error": "5.0000000000000000E-9",
+      "carried_new_year_points": 3,
+      "cross_year_examples": [
+        {
+          "date": "2021-01-01",
+          "carried_from": "2020-04-30",
+          "quantity": "0.03420"
+        },
+        {
+          "date": "2024-01-01",
+          "carried_from": "2023-10-20",
+          "quantity": "0.08002"
+        }
+      ]
+    },
+    {
+      "strategy": "LP35",
+      "case": "DELAY",
+      "post_fill_whole": {
+        "date": "2018-04-13",
+        "phase": "after_fill",
+        "signed_quantity": "-0.01449",
+        "equity": "112.3938888765499804340273973",
+        "gross_pct": 102.09384920484652
+      },
+      "post_fill_short": {
+        "date": "2018-04-13",
+        "phase": "after_fill",
+        "signed_quantity": "-0.01449",
+        "equity": "112.3938888765499804340273973",
+        "gross_pct": 102.09384920484652
+      },
+      "before_or_after_whole": {
+        "date": "2018-04-14",
+        "phase": "before_order",
+        "signed_quantity": "-0.01449",
+        "equity": "111.0912978772846289093972603",
+        "gross_pct": 104.4303183195187
+      },
+      "before_or_after_short": {
+        "date": "2018-04-14",
+        "phase": "before_order",
+        "signed_quantity": "-0.01449",
+        "equity": "111.0912978772846289093972603",
+        "gross_pct": 104.4303183195187
+      },
+      "close_days_omitted_by_post_only": 51,
+      "risk_close_days_omitted_by_post_only": 20,
+      "highest_exit_day": {
+        "date": "2018-04-14",
+        "phase": "before_order",
+        "signed_quantity": "-0.01449",
+        "equity": "111.0912978772846289093972603",
+        "gross_pct": 104.4303183195187,
+        "exit_reason": "STOP_LOSS",
+        "post_fill_gross_pct": 0.0
+      },
+      "max_equity_reconciliation_error": "5.0000000000000000E-9",
+      "carried_new_year_points": 3,
+      "cross_year_examples": [
+        {
+          "date": "2021-01-01",
+          "carried_from": "2020-05-01",
+          "quantity": "0.02806"
+        },
+        {
+          "date": "2024-01-01",
+          "carried_from": "2023-10-21",
+          "quantity": "0.05082"
+        }
+      ]
+    },
+    {
+      "strategy": "TS04",
+      "case": "BASE",
+      "post_fill_whole": {
+        "date": "2021-01-06",
+        "phase": "after_fill",
+        "signed_quantity": "0.03944",
+        "equity": "1461.086639316269360767739726",
+        "gross_pct": 98.91342747800022
+      },
+      "post_fill_short": {
+        "date": "2018-04-12",
+        "phase": "after_fill",
+        "signed_quantity": "-0.01479",
+        "equity": "124.7647646096937935151095890",
+        "gross_pct": 93.70036895999793
+      },
+      "before_or_after_whole": {
+        "date": "2018-01-05",
+        "phase": "before_order",
+        "signed_quantity": "-0.00556",
+        "equity": "80.05770443553769557917808219",
+        "gross_pct": 118.0455835631524
+      },
+      "before_or_after_short": {
+        "date": "2018-01-05",
+        "phase": "before_order",
+        "signed_quantity": "-0.00556",
+        "equity": "80.05770443553769557917808219",
+        "gross_pct": 118.0455835631524
+      },
+      "close_days_omitted_by_post_only": 51,
+      "risk_close_days_omitted_by_post_only": 21,
+      "highest_exit_day": {
+        "date": "2018-01-05",
+        "phase": "before_order",
+        "signed_quantity": "-0.00556",
+        "equity": "80.05770443553769557917808219",
+        "gross_pct": 118.0455835631524,
+        "exit_reason": "STOP_LOSS",
+        "post_fill_gross_pct": 0.0
+      },
+      "max_equity_reconciliation_error": "5.0000000000000000E-9",
+      "carried_new_year_points": 3,
+      "cross_year_examples": [
+        {
+          "date": "2021-01-01",
+          "carried_from": "2020-04-30",
+          "quantity": "0.03944"
+        },
+        {
+          "date": "2024-01-01",
+          "carried_from": "2023-10-20",
+          "quantity": "0.10120"
+        }
+      ]
+    },
+    {
+      "strategy": "TS04",
+      "case": "STRESS",
+      "post_fill_whole": {
+        "date": "2021-01-06",
+        "phase": "after_fill",
+        "signed_quantity": "0.04030",
+        "equity": "1489.276027288373576293068493",
+        "gross_pct": 99.1571787334059
+      },
+      "post_fill_short": {
+        "date": "2018-04-12",
+        "phase": "after_fill",
+        "signed_quantity": "-0.01634",
+        "equity": "137.4203167383168153625205479",
+        "gross_pct": 93.98665333015029
+      },
+      "before_or_after_whole": {
+        "date": "2021-01-07",
+        "phase": "before_order",
+        "signed_quantity": "0.04030",
+        "equity": "1592.528278468373576293068493",
+        "gross_pct": 99.23784479520124
+      },
+      "before_or_after_short": {
+        "date": "2018-04-13",
+        "phase": "before_order",
+        "signed_quantity": "-0.01634",
+        "equity": "137.1431273187660919898630137",
+        "gross_pct": 94.35217034928596
+      },
+      "close_days_omitted_by_post_only": 51,
+      "risk_close_days_omitted_by_post_only": 21,
+      "highest_exit_day": {
+        "date": "2021-01-07",
+        "phase": "before_order",
+        "signed_quantity": "0.04030",
+        "equity": "1592.528278468373576293068493",
+        "gross_pct": 99.23784479520124,
+        "exit_reason": "TAKE_PROFIT",
+        "post_fill_gross_pct": 0.0
+      },
+      "max_equity_reconciliation_error": "4.8000000000000000E-9",
+      "carried_new_year_points": 3,
+      "cross_year_examples": [
+        {
+          "date": "2021-01-01",
+          "carried_from": "2020-04-30",
+          "quantity": "0.04030"
+        },
+        {
+          "date": "2024-01-01",
+          "carried_from": "2023-10-20",
+          "quantity": "0.09666"
+        }
+      ]
+    },
+    {
+      "strategy": "TS04",
+      "case": "SEVERE",
+      "post_fill_whole": {
+        "date": "2021-01-06",
+        "phase": "after_fill",
+        "signed_quantity": "0.03420",
+        "equity": "1260.184682377619707729671233",
+        "gross_pct": 99.44574915329963
+      },
+      "post_fill_short": {
+        "date": "2018-04-12",
+        "phase": "after_fill",
+        "signed_quantity": "-0.01569",
+        "equity": "131.0656138618488176330684931",
+        "gross_pct": 94.62355408477269
+      },
+      "before_or_after_whole": {
+        "date": "2021-01-07",
+        "phase": "before_order",
+        "signed_quantity": "0.03420",
+        "equity": "1347.544611757619707729671233",
+        "gross_pct": 99.52733717273415
+      },
+      "before_or_after_short": {
+        "date": "2018-04-13",
+        "phase": "before_order",
+        "signed_quantity": "-0.01569",
+        "equity": "130.7305904648896652982465753",
+        "gross_pct": 95.04288523198036
+      },
+      "close_days_omitted_by_post_only": 51,
+      "risk_close_days_omitted_by_post_only": 21,
+      "highest_exit_day": {
+        "date": "2021-01-07",
+        "phase": "before_order",
+        "signed_quantity": "0.03420",
+        "equity": "1347.544611757619707729671233",
+        "gross_pct": 99.52733717273415,
+        "exit_reason": "TAKE_PROFIT",
+        "post_fill_gross_pct": 0.0
+      },
+      "max_equity_reconciliation_error": "5.0000000000000000E-9",
+      "carried_new_year_points": 3,
+      "cross_year_examples": [
+        {
+          "date": "2021-01-01",
+          "carried_from": "2020-04-30",
+          "quantity": "0.03420"
+        },
+        {
+          "date": "2024-01-01",
+          "carried_from": "2023-10-20",
+          "quantity": "0.07776"
+        }
+      ]
+    },
+    {
+      "strategy": "TS04",
+      "case": "DELAY",
+      "post_fill_whole": {
+        "date": "2018-04-13",
+        "phase": "after_fill",
+        "signed_quantity": "-0.01449",
+        "equity": "112.3938888765499804340273973",
+        "gross_pct": 102.09384920484652
+      },
+      "post_fill_short": {
+        "date": "2018-04-13",
+        "phase": "after_fill",
+        "signed_quantity": "-0.01449",
+        "equity": "112.3938888765499804340273973",
+        "gross_pct": 102.09384920484652
+      },
+      "before_or_after_whole": {
+        "date": "2018-04-14",
+        "phase": "before_order",
+        "signed_quantity": "-0.01449",
+        "equity": "111.0912978772846289093972603",
+        "gross_pct": 104.4303183195187
+      },
+      "before_or_after_short": {
+        "date": "2018-04-14",
+        "phase": "before_order",
+        "signed_quantity": "-0.01449",
+        "equity": "111.0912978772846289093972603",
+        "gross_pct": 104.4303183195187
+      },
+      "close_days_omitted_by_post_only": 51,
+      "risk_close_days_omitted_by_post_only": 20,
+      "highest_exit_day": {
+        "date": "2018-04-14",
+        "phase": "before_order",
+        "signed_quantity": "-0.01449",
+        "equity": "111.0912978772846289093972603",
+        "gross_pct": 104.4303183195187,
+        "exit_reason": "STOP_LOSS",
+        "post_fill_gross_pct": 0.0
+      },
+      "max_equity_reconciliation_error": "5.0000000000000000E-9",
+      "carried_new_year_points": 3,
+      "cross_year_examples": [
+        {
+          "date": "2021-01-01",
+          "carried_from": "2020-05-01",
+          "quantity": "0.02806"
+        },
+        {
+          "date": "2024-01-01",
+          "carried_from": "2023-10-21",
+          "quantity": "0.05402"
+        }
+      ]
+    },
+    {
+      "strategy": "ME01",
+      "case": "BASE",
+      "post_fill_whole": {
+        "date": "2021-01-06",
+        "phase": "after_fill",
+        "signed_quantity": "0.03666",
+        "equity": "1358.112524383794138474876712",
+        "gross_pct": 98.9124639662773
+      },
+      "post_fill_short": {
+        "date": "2018-01-04",
+        "phase": "after_fill",
+        "signed_quantity": "-0.00556",
+        "equity": "90.80043773741553040328767123",
+        "gross_pct": 92.28025164684763
+      },
+      "before_or_after_whole": {
+        "date": "2018-01-05",
+        "phase": "before_order",
+        "signed_quantity": "-0.00556",
+        "equity": "80.05770443553769557917808219",
+        "gross_pct": 118.0455835631524
+      },
+      "before_or_after_short": {
+        "date": "2018-01-05",
+        "phase": "before_order",
+        "signed_quantity": "-0.00556",
+        "equity": "80.05770443553769557917808219",
+        "gross_pct": 118.0455835631524
+      },
+      "close_days_omitted_by_post_only": 47,
+      "risk_close_days_omitted_by_post_only": 12,
+      "highest_exit_day": {
+        "date": "2018-01-05",
+        "phase": "before_order",
+        "signed_quantity": "-0.00556",
+        "equity": "80.05770443553769557917808219",
+        "gross_pct": 118.0455835631524,
+        "exit_reason": "STOP_LOSS",
+        "post_fill_gross_pct": 0.0
+      },
+      "max_equity_reconciliation_error": "5.000000000000000E-9",
+      "carried_new_year_points": 3,
+      "cross_year_examples": [
+        {
+          "date": "2021-01-01",
+          "carried_from": "2020-04-30",
+          "quantity": "0.03666"
+        },
+        {
+          "date": "2024-01-01",
+          "carried_from": "2023-10-20",
+          "quantity": "0.09407"
+        }
+      ]
+    },
+    {
+      "strategy": "ME01",
+      "case": "STRESS",
+      "post_fill_whole": {
+        "date": "2021-01-06",
+        "phase": "after_fill",
+        "signed_quantity": "0.03796",
+        "equity": "1402.843021469389447014602740",
+        "gross_pct": 99.15427464469667
+      },
+      "post_fill_short": {
+        "date": "2018-01-03",
+        "phase": "after_fill",
+        "signed_quantity": "-0.00555",
+        "equity": "90.74424209091165541369863014",
+        "gross_pct": 91.80426908196986
+      },
+      "before_or_after_whole": {
+        "date": "2021-01-07",
+        "phase": "before_order",
+        "signed_quantity": "0.03796",
+        "equity": "1500.099980645389447014602740",
+        "gross_pct": 99.23512677981226
+      },
+      "before_or_after_short": {
+        "date": "2018-01-04",
+        "phase": "before_order",
+        "signed_quantity": "-0.00555",
+        "equity": "90.38688264399863084109589041",
+        "gross_pct": 92.53573857831583
+      },
+      "close_days_omitted_by_post_only": 47,
+      "risk_close_days_omitted_by_post_only": 12,
+      "highest_exit_day": {
+        "date": "2021-01-07",
+        "phase": "before_order",
+        "signed_quantity": "0.03796",
+        "equity": "1500.099980645389447014602740",
+        "gross_pct": 99.23512677981226,
+        "exit_reason": "TAKE_PROFIT",
+        "post_fill_gross_pct": 0.0
+      },
+      "max_equity_reconciliation_error": "5.000000000000000E-9",
+      "carried_new_year_points": 3,
+      "cross_year_examples": [
+        {
+          "date": "2021-01-01",
+          "carried_from": "2020-04-30",
+          "quantity": "0.03796"
+        },
+        {
+          "date": "2024-01-01",
+          "carried_from": "2023-10-20",
+          "quantity": "0.09105"
+        }
+      ]
+    },
+    {
+      "strategy": "ME01",
+      "case": "SEVERE",
+      "post_fill_whole": {
+        "date": "2021-01-06",
+        "phase": "after_fill",
+        "signed_quantity": "0.03231",
+        "equity": "1190.500630676882110208767123",
+        "gross_pct": 99.44927979896089
+      },
+      "post_fill_short": {
+        "date": "2018-01-03",
+        "phase": "after_fill",
+        "signed_quantity": "-0.00555",
+        "equity": "90.17958462523496624109589041",
+        "gross_pct": 92.37909947327796
+      },
+      "before_or_after_whole": {
+        "date": "2021-01-07",
+        "phase": "before_order",
+        "signed_quantity": "0.03231",
+        "equity": "1273.032774485882110208767123",
+        "gross_pct": 99.53064163152006
+      },
+      "before_or_after_short": {
+        "date": "2018-01-04",
+        "phase": "before_order",
+        "signed_quantity": "-0.00555",
+        "equity": "89.77539339549589252328767123",
+        "gross_pct": 93.16602943088411
+      },
+      "close_days_omitted_by_post_only": 47,
+      "risk_close_days_omitted_by_post_only": 12,
+      "highest_exit_day": {
+        "date": "2021-01-07",
+        "phase": "before_order",
+        "signed_quantity": "0.03231",
+        "equity": "1273.032774485882110208767123",
+        "gross_pct": 99.53064163152006,
+        "exit_reason": "TAKE_PROFIT",
+        "post_fill_gross_pct": 0.0
+      },
+      "max_equity_reconciliation_error": "5.0000000000000000E-9",
+      "carried_new_year_points": 3,
+      "cross_year_examples": [
+        {
+          "date": "2021-01-01",
+          "carried_from": "2020-04-30",
+          "quantity": "0.03231"
+        },
+        {
+          "date": "2024-01-01",
+          "carried_from": "2023-10-20",
+          "quantity": "0.07346"
+        }
+      ]
+    },
+    {
+      "strategy": "ME01",
+      "case": "DELAY",
+      "post_fill_whole": {
+        "date": "2021-01-07",
+        "phase": "after_fill",
+        "signed_quantity": "0.03112",
+        "equity": "1230.125948164707383239369863",
+        "gross_pct": 99.20862701731936
+      },
+      "post_fill_short": {
+        "date": "2018-01-05",
+        "phase": "after_fill",
+        "signed_quantity": "-0.00507",
+        "equity": "87.91905493284070350301369863",
+        "gross_pct": 98.01736725232907
+      },
+      "before_or_after_whole": {
+        "date": "2018-01-06",
+        "phase": "before_order",
+        "signed_quantity": "-0.00507",
+        "equity": "87.35387503574402370301369863",
+        "gross_pct": 99.26886198511352
+      },
+      "before_or_after_short": {
+        "date": "2018-01-06",
+        "phase": "before_order",
+        "signed_quantity": "-0.00507",
+        "equity": "87.35387503574402370301369863",
+        "gross_pct": 99.26886198511352
+      },
+      "close_days_omitted_by_post_only": 47,
+      "risk_close_days_omitted_by_post_only": 12,
+      "highest_exit_day": {
+        "date": "2018-01-06",
+        "phase": "before_order",
+        "signed_quantity": "-0.00507",
+        "equity": "87.35387503574402370301369863",
+        "gross_pct": 99.26886198511352,
+        "exit_reason": "SIGNAL",
+        "post_fill_gross_pct": 0.0
+      },
+      "max_equity_reconciliation_error": "4.900000000000000E-9",
+      "carried_new_year_points": 3,
+      "cross_year_examples": [
+        {
+          "date": "2021-01-01",
+          "carried_from": "2020-05-01",
+          "quantity": "0.03112"
+        },
+        {
+          "date": "2024-01-01",
+          "carried_from": "2023-10-21",
+          "quantity": "0.05991"
+        }
+      ]
+    },
+    {
+      "strategy": "MX03",
+      "case": "BASE",
+      "post_fill_whole": {
+        "date": "2021-01-06",
+        "phase": "after_fill",
+        "signed_quantity": "0.04044",
+        "equity": "1498.159752610157197028643836",
+        "gross_pct": 98.91162464560166
+      },
+      "post_fill_short": {
+        "date": "2018-10-15",
+        "phase": "after_fill",
+        "signed_quantity": "-0.01720",
+        "equity": "137.4044300669667657707534247",
+        "gross_pct": 80.64856793064091
+      },
+      "before_or_after_whole": {
+        "date": "2021-01-07",
+        "phase": "before_order",
+        "signed_quantity": "0.04044",
+        "equity": "1602.030657330557197028643836",
+        "gross_pct": 98.99192160963588
+      },
+      "before_or_after_short": {
+        "date": "2018-01-05",
+        "phase": "before_order",
+        "signed_quantity": "-0.00508",
+        "equity": "88.33128223201368577863013699",
+        "gross_pct": 97.75236252721888
+      },
+      "close_days_omitted_by_post_only": 47,
+      "risk_close_days_omitted_by_post_only": 11,
+      "highest_exit_day": {
+        "date": "2021-01-07",
+        "phase": "before_order",
+        "signed_quantity": "0.04044",
+        "equity": "1602.030657330557197028643836",
+        "gross_pct": 98.99192160963588,
+        "exit_reason": "TAKE_PROFIT",
+        "post_fill_gross_pct": 0.0
+      },
+      "max_equity_reconciliation_error": "5.0000000000000000E-9",
+      "carried_new_year_points": 3,
+      "cross_year_examples": [
+        {
+          "date": "2021-01-01",
+          "carried_from": "2020-04-30",
+          "quantity": "0.04044"
+        },
+        {
+          "date": "2024-01-01",
+          "carried_from": "2023-10-20",
+          "quantity": "0.10377"
+        }
+      ]
+    },
+    {
+      "strategy": "MX03",
+      "case": "STRESS",
+      "post_fill_whole": {
+        "date": "2021-01-06",
+        "phase": "after_fill",
+        "signed_quantity": "0.03693",
+        "equity": "1364.740737562391201515808219",
+        "gross_pct": 99.15702001427198
+      },
+      "post_fill_short": {
+        "date": "2018-10-15",
+        "phase": "after_fill",
+        "signed_quantity": "-0.01643",
+        "equity": "130.8837713967502693293424658",
+        "gross_pct": 80.87619505748
+      },
+      "before_or_after_whole": {
+        "date": "2021-01-07",
+        "phase": "before_order",
+        "signed_quantity": "0.03693",
+        "equity": "1459.358743420391201515808219",
+        "gross_pct": 99.2376962459256
+      },
+      "before_or_after_short": {
+        "date": "2018-01-05",
+        "phase": "before_order",
+        "signed_quantity": "-0.00507",
+        "equity": "87.91905493284070350301369863",
+        "gross_pct": 98.01736725232907
+      },
+      "close_days_omitted_by_post_only": 47,
+      "risk_close_days_omitted_by_post_only": 11,
+      "highest_exit_day": {
+        "date": "2021-01-07",
+        "phase": "before_order",
+        "signed_quantity": "0.03693",
+        "equity": "1459.358743420391201515808219",
+        "gross_pct": 99.2376962459256,
+        "exit_reason": "TAKE_PROFIT",
+        "post_fill_gross_pct": 0.0
+      },
+      "max_equity_reconciliation_error": "5.000000000000000E-9",
+      "carried_new_year_points": 3,
+      "cross_year_examples": [
+        {
+          "date": "2021-01-01",
+          "carried_from": "2020-04-30",
+          "quantity": "0.03693"
+        },
+        {
+          "date": "2024-01-01",
+          "carried_from": "2023-10-20",
+          "quantity": "0.08859"
+        }
+      ]
+    },
+    {
+      "strategy": "MX03",
+      "case": "SEVERE",
+      "post_fill_whole": {
+        "date": "2021-01-06",
+        "phase": "after_fill",
+        "signed_quantity": "0.03142",
+        "equity": "1157.792439728522728345424658",
+        "gross_pct": 99.4419851547214
+      },
+      "post_fill_short": {
+        "date": "2018-10-15",
+        "phase": "after_fill",
+        "signed_quantity": "-0.01503",
+        "equity": "119.1750071441783621678356164",
+        "gross_pct": 81.25362439169176
+      },
+      "before_or_after_whole": {
+        "date": "2021-01-07",
+        "phase": "before_order",
+        "signed_quantity": "0.03142",
+        "equity": "1238.051181866522728345424658",
+        "gross_pct": 99.52381429377289
+      },
+      "before_or_after_short": {
+        "date": "2018-01-05",
+        "phase": "before_order",
+        "signed_quantity": "-0.00506",
+        "equity": "87.33029487536210634630136986",
+        "gross_pct": 98.48354549468513
+      },
+      "close_days_omitted_by_post_only": 47,
+      "risk_close_days_omitted_by_post_only": 11,
+      "highest_exit_day": {
+        "date": "2021-01-07",
+        "phase": "before_order",
+        "signed_quantity": "0.03142",
+        "equity": "1238.051181866522728345424658",
+        "gross_pct": 99.52381429377289,
+        "exit_reason": "TAKE_PROFIT",
+        "post_fill_gross_pct": 0.0
+      },
+      "max_equity_reconciliation_error": "5.000000000000000E-9",
+      "carried_new_year_points": 3,
+      "cross_year_examples": [
+        {
+          "date": "2021-01-01",
+          "carried_from": "2020-04-30",
+          "quantity": "0.03142"
+        },
+        {
+          "date": "2024-01-01",
+          "carried_from": "2023-10-20",
+          "quantity": "0.07144"
+        }
+      ]
+    },
+    {
+      "strategy": "MX03",
+      "case": "DELAY",
+      "post_fill_whole": {
+        "date": "2021-01-07",
+        "phase": "after_fill",
+        "signed_quantity": "0.03167",
+        "equity": "1251.866424707597447025863014",
+        "gross_pct": 99.20864138360817
+      },
+      "post_fill_short": {
+        "date": "2018-01-05",
+        "phase": "after_fill",
+        "signed_quantity": "-0.00498",
+        "equity": "89.42360486545235892821917808",
+        "gross_pct": 94.65754888649762
+      },
+      "before_or_after_whole": {
+        "date": "2021-01-08",
+        "phase": "before_order",
+        "signed_quantity": "0.03167",
+        "equity": "1301.066258375697447025863014",
+        "gross_pct": 99.2537508532023
+      },
+      "before_or_after_short": {
+        "date": "2018-01-06",
+        "phase": "before_order",
+        "signed_quantity": "-0.00498",
+        "equity": "88.86845774759408172821917808",
+        "gross_pct": 95.84488891956464
+      },
+      "close_days_omitted_by_post_only": 47,
+      "risk_close_days_omitted_by_post_only": 12,
+      "highest_exit_day": {
+        "date": "2021-01-08",
+        "phase": "before_order",
+        "signed_quantity": "0.03167",
+        "equity": "1301.066258375697447025863014",
+        "gross_pct": 99.2537508532023,
+        "exit_reason": "TAKE_PROFIT",
+        "post_fill_gross_pct": 0.0
+      },
+      "max_equity_reconciliation_error": "4.8000000000000000E-9",
+      "carried_new_year_points": 3,
+      "cross_year_examples": [
+        {
+          "date": "2021-01-01",
+          "carried_from": "2020-05-01",
+          "quantity": "0.03167"
+        },
+        {
+          "date": "2024-01-01",
+          "carried_from": "2023-10-21",
+          "quantity": "0.06097"
+        }
+      ]
+    },
+    {
+      "strategy": "B88A_S03",
+      "case": "BASE",
+      "post_fill_whole": {
+        "date": "2018-02-17",
+        "phase": "after_fill",
+        "signed_quantity": "-0.00879",
+        "equity": "96.4965884292921053357534247",
+        "gross_pct": 100.9801606963339
+      },
+      "post_fill_short": {
+        "date": "2018-02-17",
+        "phase": "after_fill",
+        "signed_quantity": "-0.00879",
+        "equity": "96.4965884292921053357534247",
+        "gross_pct": 100.9801606963339
+      },
+      "before_or_after_whole": {
+        "date": "2018-02-17",
+        "phase": "before_order",
+        "signed_quantity": "-0.00879",
+        "equity": "96.4965884292921053357534247",
+        "gross_pct": 100.9801606963339
+      },
+      "before_or_after_short": {
+        "date": "2018-02-17",
+        "phase": "before_order",
+        "signed_quantity": "-0.00879",
+        "equity": "96.4965884292921053357534247",
+        "gross_pct": 100.9801606963339
+      },
+      "close_days_omitted_by_post_only": 44,
+      "risk_close_days_omitted_by_post_only": 13,
+      "highest_exit_day": {
+        "date": "2020-12-27",
+        "phase": "before_order",
+        "signed_quantity": "0.03410",
+        "equity": "915.9150790919291668273561644",
+        "gross_pct": 98.40346889559991,
+        "exit_reason": "TAKE_PROFIT",
+        "post_fill_gross_pct": 0.0
+      },
+      "max_equity_reconciliation_error": "4.9000000000000000E-9",
+      "carried_new_year_points": 3,
+      "cross_year_examples": [
+        {
+          "date": "2019-01-01",
+          "carried_from": "2018-11-14",
+          "quantity": "-0.01383"
+        },
+        {
+          "date": "2024-01-01",
+          "carried_from": "2023-10-20",
+          "quantity": "0.07401"
+        }
+      ]
+    },
+    {
+      "strategy": "B88A_S03",
+      "case": "STRESS",
+      "post_fill_whole": {
+        "date": "2018-02-17",
+        "phase": "after_fill",
+        "signed_quantity": "-0.00874",
+        "equity": "95.6477636827393142334246575",
+        "gross_pct": 101.29680654430685
+      },
+      "post_fill_short": {
+        "date": "2018-02-17",
+        "phase": "after_fill",
+        "signed_quantity": "-0.00874",
+        "equity": "95.6477636827393142334246575",
+        "gross_pct": 101.29680654430685
+      },
+      "before_or_after_whole": {
+        "date": "2018-02-17",
+        "phase": "before_order",
+        "signed_quantity": "-0.00874",
+        "equity": "95.6477636827393142334246575",
+        "gross_pct": 101.29680654430685
+      },
+      "before_or_after_short": {
+        "date": "2018-02-17",
+        "phase": "before_order",
+        "signed_quantity": "-0.00874",
+        "equity": "95.6477636827393142334246575",
+        "gross_pct": 101.29680654430685
+      },
+      "close_days_omitted_by_post_only": 44,
+      "risk_close_days_omitted_by_post_only": 13,
+      "highest_exit_day": {
+        "date": "2020-12-27",
+        "phase": "before_order",
+        "signed_quantity": "0.03090",
+        "equity": "828.0318852004678455374794521",
+        "gross_pct": 98.63309414172927,
+        "exit_reason": "TAKE_PROFIT",
+        "post_fill_gross_pct": 0.0
+      },
+      "max_equity_reconciliation_error": "5.0000000000000000E-9",
+      "carried_new_year_points": 3,
+      "cross_year_examples": [
+        {
+          "date": "2019-01-01",
+          "carried_from": "2018-11-14",
+          "quantity": "-0.01303"
+        },
+        {
+          "date": "2024-01-01",
+          "carried_from": "2023-10-20",
+          "quantity": "0.06327"
+        }
+      ]
+    },
+    {
+      "strategy": "B88A_S03",
+      "case": "SEVERE",
+      "post_fill_whole": {
+        "date": "2018-02-17",
+        "phase": "after_fill",
+        "signed_quantity": "-0.00867",
+        "equity": "94.3181384536897952643835616",
+        "gross_pct": 101.90207295052251
+      },
+      "post_fill_short": {
+        "date": "2018-02-17",
+        "phase": "after_fill",
+        "signed_quantity": "-0.00867",
+        "equity": "94.3181384536897952643835616",
+        "gross_pct": 101.90207295052251
+      },
+      "before_or_after_whole": {
+        "date": "2018-02-17",
+        "phase": "before_order",
+        "signed_quantity": "-0.00867",
+        "equity": "94.3181384536897952643835616",
+        "gross_pct": 101.90207295052251
+      },
+      "before_or_after_short": {
+        "date": "2018-02-17",
+        "phase": "before_order",
+        "signed_quantity": "-0.00867",
+        "equity": "94.3181384536897952643835616",
+        "gross_pct": 101.90207295052251
+      },
+      "close_days_omitted_by_post_only": 44,
+      "risk_close_days_omitted_by_post_only": 13,
+      "highest_exit_day": {
+        "date": "2020-12-27",
+        "phase": "before_order",
+        "signed_quantity": "0.02516",
+        "equity": "672.2765533559853656623287671",
+        "gross_pct": 98.91767735550992,
+        "exit_reason": "TAKE_PROFIT",
+        "post_fill_gross_pct": 0.0
+      },
+      "max_equity_reconciliation_error": "5.0000000000000000E-9",
+      "carried_new_year_points": 3,
+      "cross_year_examples": [
+        {
+          "date": "2019-01-01",
+          "carried_from": "2018-11-14",
+          "quantity": "-0.01134"
+        },
+        {
+          "date": "2024-01-01",
+          "carried_from": "2023-10-20",
+          "quantity": "0.04715"
+        }
+      ]
+    },
+    {
+      "strategy": "B88A_S03",
+      "case": "DELAY",
+      "post_fill_whole": {
+        "date": "2018-02-17",
+        "phase": "after_fill",
+        "signed_quantity": "-0.00817",
+        "equity": "89.5021417141993680538630137",
+        "gross_pct": 101.19237071965655
+      },
+      "post_fill_short": {
+        "date": "2018-02-17",
+        "phase": "after_fill",
+        "signed_quantity": "-0.00817",
+        "equity": "89.5021417141993680538630137",
+        "gross_pct": 101.19237071965655
+      },
+      "before_or_after_whole": {
+        "date": "2018-02-19",
+        "phase": "before_order",
+        "signed_quantity": "-0.00817",
+        "equity": "89.0128657810247085897534247",
+        "gross_pct": 102.24200234448837
+      },
+      "before_or_after_short": {
+        "date": "2018-02-19",
+        "phase": "before_order",
+        "signed_quantity": "-0.00817",
+        "equity": "89.0128657810247085897534247",
+        "gross_pct": 102.24200234448837
+      },
+      "close_days_omitted_by_post_only": 44,
+      "risk_close_days_omitted_by_post_only": 14,
+      "highest_exit_day": {
+        "date": "2018-02-19",
+        "phase": "before_order",
+        "signed_quantity": "-0.00817",
+        "equity": "89.0128657810247085897534247",
+        "gross_pct": 102.24200234448837,
+        "exit_reason": "STOP_LOSS",
+        "post_fill_gross_pct": 0.0
+      },
+      "max_equity_reconciliation_error": "5.00000000000000004E-9",
+      "carried_new_year_points": 3,
+      "cross_year_examples": [
+        {
+          "date": "2019-01-01",
+          "carried_from": "2018-11-15",
+          "quantity": "-0.01104"
+        },
+        {
+          "date": "2024-01-01",
+          "carried_from": "2023-10-21",
+          "quantity": "0.02989"
+        }
+      ]
+    },
+    {
+      "strategy": "K02",
+      "case": "BASE",
+      "post_fill_whole": {
+        "date": "2020-12-26",
+        "phase": "after_fill",
+        "signed_quantity": "0.02836",
+        "equity": "763.0784560300385571493013699",
+        "gross_pct": 98.40639655458409
+      },
+      "post_fill_short": {
+        "date": "2018-02-17",
+        "phase": "after_fill",
+        "signed_quantity": "-0.00273",
+        "equity": "99.1579493765026580197260274",
+        "gross_pct": 30.520683275064176
+      },
+      "before_or_after_whole": {
+        "date": "2020-12-26",
+        "phase": "before_order",
+        "signed_quantity": "0.02836",
+        "equity": "763.0784560300385571493013699",
+        "gross_pct": 98.40639655458409
+      },
+      "before_or_after_short": {
+        "date": "2018-02-17",
+        "phase": "before_order",
+        "signed_quantity": "-0.00273",
+        "equity": "99.1579493765026580197260274",
+        "gross_pct": 30.520683275064176
+      },
+      "close_days_omitted_by_post_only": 47,
+      "risk_close_days_omitted_by_post_only": 13,
+      "highest_exit_day": {
+        "date": "2020-12-27",
+        "phase": "before_order",
+        "signed_quantity": "0.02836",
+        "equity": "761.7417692548385571493013699",
+        "gross_pct": 98.40330717714251,
+        "exit_reason": "TAKE_PROFIT",
+        "post_fill_gross_pct": 0.0
+      },
+      "max_equity_reconciliation_error": "5.000000000000000E-9",
+      "carried_new_year_points": 3,
+      "cross_year_examples": [
+        {
+          "date": "2019-01-01",
+          "carried_from": "2018-11-14",
+          "quantity": "-0.00454"
+        },
+        {
+          "date": "2024-01-01",
+          "carried_from": "2023-10-20",
+          "quantity": "0.05651"
+        }
+      ]
+    },
+    {
+      "strategy": "K02",
+      "case": "STRESS",
+      "post_fill_whole": {
+        "date": "2020-12-26",
+        "phase": "after_fill",
+        "signed_quantity": "0.02691",
+        "equity": "722.3430753997114423818630137",
+        "gross_pct": 98.64077568912758
+      },
+      "post_fill_short": {
+        "date": "2018-02-17",
+        "phase": "after_fill",
+        "signed_quantity": "-0.00272",
+        "equity": "98.8796846687230730191780822",
+        "gross_pct": 30.494461818045018
+      },
+      "before_or_after_whole": {
+        "date": "2020-12-26",
+        "phase": "before_order",
+        "signed_quantity": "0.02691",
+        "equity": "722.3430753997114423818630137",
+        "gross_pct": 98.64077568912758
+      },
+      "before_or_after_short": {
+        "date": "2018-02-17",
+        "phase": "before_order",
+        "signed_quantity": "-0.00272",
+        "equity": "98.8796846687230730191780822",
+        "gross_pct": 30.494461818045018
+      },
+      "close_days_omitted_by_post_only": 47,
+      "risk_close_days_omitted_by_post_only": 13,
+      "highest_exit_day": {
+        "date": "2020-12-27",
+        "phase": "before_order",
+        "signed_quantity": "0.02691",
+        "equity": "721.0775387338114423818630137",
+        "gross_pct": 98.63770715690937,
+        "exit_reason": "TAKE_PROFIT",
+        "post_fill_gross_pct": 0.0
+      },
+      "max_equity_reconciliation_error": "5.00000000000000000E-9",
+      "carried_new_year_points": 3,
+      "cross_year_examples": [
+        {
+          "date": "2019-01-01",
+          "carried_from": "2018-11-14",
+          "quantity": "-0.00444"
+        },
+        {
+          "date": "2024-01-01",
+          "carried_from": "2023-10-20",
+          "quantity": "0.05129"
+        }
+      ]
+    },
+    {
+      "strategy": "K02",
+      "case": "SEVERE",
+      "post_fill_whole": {
+        "date": "2020-12-26",
+        "phase": "after_fill",
+        "signed_quantity": "0.02449",
+        "equity": "655.4516258952700537671506849",
+        "gross_pct": 98.9314637843309
+      },
+      "post_fill_short": {
+        "date": "2018-02-17",
+        "phase": "after_fill",
+        "signed_quantity": "-0.00271",
+        "equity": "98.4190721353214459865753425",
+        "gross_pct": 30.524542704138728
+      },
+      "before_or_after_whole": {
+        "date": "2020-12-26",
+        "phase": "before_order",
+        "signed_quantity": "0.02449",
+        "equity": "655.4516258952700537671506849",
+        "gross_pct": 98.9314637843309
+      },
+      "before_or_after_short": {
+        "date": "2018-02-17",
+        "phase": "before_order",
+        "signed_quantity": "-0.00271",
+        "equity": "98.4190721353214459865753425",
+        "gross_pct": 30.524542704138728
+      },
+      "close_days_omitted_by_post_only": 47,
+      "risk_close_days_omitted_by_post_only": 13,
+      "highest_exit_day": {
+        "date": "2020-12-27",
+        "phase": "before_order",
+        "signed_quantity": "0.02449",
+        "equity": "654.3034269392700537671506849",
+        "gross_pct": 98.92836433598183,
+        "exit_reason": "TAKE_PROFIT",
+        "post_fill_gross_pct": 0.0
+      },
+      "max_equity_reconciliation_error": "5.0000000000000000E-9",
+      "carried_new_year_points": 3,
+      "cross_year_examples": [
+        {
+          "date": "2019-01-01",
+          "carried_from": "2018-11-14",
+          "quantity": "-0.00424"
+        },
+        {
+          "date": "2024-01-01",
+          "carried_from": "2023-10-20",
+          "quantity": "0.04381"
+        }
+      ]
+    },
+    {
+      "strategy": "K02",
+      "case": "DELAY",
+      "post_fill_whole": {
+        "date": "2020-12-29",
+        "phase": "after_fill",
+        "signed_quantity": "0.02051",
+        "equity": "566.1989047345120283206301370",
+        "gross_pct": 98.64236369900206
+      },
+      "post_fill_short": {
+        "date": "2018-02-17",
+        "phase": "after_fill",
+        "signed_quantity": "-0.00266",
+        "equity": "96.6061644919873757202739726",
+        "gross_pct": 30.523612998516423
+      },
+      "before_or_after_whole": {
+        "date": "2020-12-30",
+        "phase": "before_order",
+        "signed_quantity": "0.02051",
+        "equity": "599.1575441958120283206301370",
+        "gross_pct": 98.73914336402595
+      },
+      "before_or_after_short": {
+        "date": "2018-02-19",
+        "phase": "before_order",
+        "signed_quantity": "-0.00266",
+        "equity": "96.4468653509537656621917808",
+        "gross_pct": 30.72229059543503
+      },
+      "close_days_omitted_by_post_only": 49,
+      "risk_close_days_omitted_by_post_only": 17,
+      "highest_exit_day": {
+        "date": "2020-12-30",
+        "phase": "before_order",
+        "signed_quantity": "0.02051",
+        "equity": "599.1575441958120283206301370",
+        "gross_pct": 98.73914336402595,
+        "exit_reason": "TAKE_PROFIT",
+        "post_fill_gross_pct": 0.0
+      },
+      "max_equity_reconciliation_error": "4.90000000000000000E-9",
+      "carried_new_year_points": 3,
+      "cross_year_examples": [
+        {
+          "date": "2019-01-01",
+          "carried_from": "2018-11-15",
+          "quantity": "-0.00423"
+        },
+        {
+          "date": "2024-01-01",
+          "carried_from": "2023-10-21",
+          "quantity": "0.02972"
+        }
+      ]
+    },
+    {
+      "strategy": "Y01",
+      "case": "BASE",
+      "post_fill_whole": {
+        "date": "2020-12-26",
+        "phase": "after_fill",
+        "signed_quantity": "0.02486",
+        "equity": "668.9339168548",
+        "gross_pct": 98.4020628211309
+      },
+      "post_fill_short": {
+        "date": null,
+        "gross_pct": 0.0
+      },
+      "before_or_after_whole": {
+        "date": "2020-12-26",
+        "phase": "before_order",
+        "signed_quantity": "0.02486",
+        "equity": "668.9339168548",
+        "gross_pct": 98.4020628211309
+      },
+      "before_or_after_short": {
+        "date": null,
+        "gross_pct": 0.0
+      },
+      "close_days_omitted_by_post_only": 19,
+      "risk_close_days_omitted_by_post_only": 8,
+      "highest_exit_day": {
+        "date": "2020-12-27",
+        "phase": "before_order",
+        "signed_quantity": "0.02486",
+        "equity": "667.7621949496",
+        "gross_pct": 98.3989659755822,
+        "exit_reason": "TAKE_PROFIT",
+        "post_fill_gross_pct": 0.0
+      },
+      "max_equity_reconciliation_error": "5.0E-9",
+      "carried_new_year_points": 2,
+      "cross_year_examples": [
+        {
+          "date": "2024-01-01",
+          "carried_from": "2023-10-20",
+          "quantity": "0.04750"
+        },
+        {
+          "date": "2025-01-01",
+          "carried_from": "2024-12-23",
+          "quantity": "0.04931"
+        }
+      ]
+    },
+    {
+      "strategy": "Y01",
+      "case": "STRESS",
+      "post_fill_whole": {
+        "date": "2020-12-26",
+        "phase": "after_fill",
+        "signed_quantity": "0.02427",
+        "equity": "651.5018489221",
+        "gross_pct": 98.63712804137892
+      },
+      "post_fill_short": {
+        "date": null,
+        "gross_pct": 0.0
+      },
+      "before_or_after_whole": {
+        "date": "2020-12-26",
+        "phase": "before_order",
+        "signed_quantity": "0.02427",
+        "equity": "651.5018489221",
+        "gross_pct": 98.63712804137892
+      },
+      "before_or_after_short": {
+        "date": null,
+        "gross_pct": 0.0
+      },
+      "close_days_omitted_by_post_only": 19,
+      "risk_close_days_omitted_by_post_only": 8,
+      "highest_exit_day": {
+        "date": "2020-12-27",
+        "phase": "before_order",
+        "signed_quantity": "0.02427",
+        "equity": "650.3604674698",
+        "gross_pct": 98.63405322121619,
+        "exit_reason": "TAKE_PROFIT",
+        "post_fill_gross_pct": 0.0
+      },
+      "max_equity_reconciliation_error": "4.2E-9",
+      "carried_new_year_points": 2,
+      "cross_year_examples": [
+        {
+          "date": "2024-01-01",
+          "carried_from": "2023-10-20",
+          "quantity": "0.04512"
+        },
+        {
+          "date": "2025-01-01",
+          "carried_from": "2024-12-23",
+          "quantity": "0.04594"
+        }
+      ]
+    },
+    {
+      "strategy": "Y01",
+      "case": "SEVERE",
+      "post_fill_whole": {
+        "date": "2020-12-26",
+        "phase": "after_fill",
+        "signed_quantity": "0.02358",
+        "equity": "631.1764850510",
+        "gross_pct": 98.91890156050492
+      },
+      "post_fill_short": {
+        "date": null,
+        "gross_pct": 0.0
+      },
+      "before_or_after_whole": {
+        "date": "2020-12-26",
+        "phase": "before_order",
+        "signed_quantity": "0.02358",
+        "equity": "631.1764850510",
+        "gross_pct": 98.91890156050492
+      },
+      "before_or_after_short": {
+        "date": null,
+        "gross_pct": 0.0
+      },
+      "close_days_omitted_by_post_only": 19,
+      "risk_close_days_omitted_by_post_only": 8,
+      "highest_exit_day": {
+        "date": "2020-12-27",
+        "phase": "before_order",
+        "signed_quantity": "0.02358",
+        "equity": "630.0709508990",
+        "gross_pct": 98.91578046450098,
+        "exit_reason": "TAKE_PROFIT",
+        "post_fill_gross_pct": 0.0
+      },
+      "max_equity_reconciliation_error": "5.0E-9",
+      "carried_new_year_points": 2,
+      "cross_year_examples": [
+        {
+          "date": "2024-01-01",
+          "carried_from": "2023-10-20",
+          "quantity": "0.04242"
+        },
+        {
+          "date": "2025-01-01",
+          "carried_from": "2024-12-23",
+          "quantity": "0.04221"
+        }
+      ]
+    },
+    {
+      "strategy": "Y01",
+      "case": "DELAY",
+      "post_fill_whole": {
+        "date": "2020-12-29",
+        "phase": "after_fill",
+        "signed_quantity": "0.02022",
+        "equity": "558.1674536098",
+        "gross_pct": 98.64690789564916
+      },
+      "post_fill_short": {
+        "date": null,
+        "gross_pct": 0.0
+      },
+      "before_or_after_whole": {
+        "date": "2020-12-30",
+        "phase": "before_order",
+        "signed_quantity": "0.02022",
+        "equity": "590.6600762284",
+        "gross_pct": 98.74344179437514
+      },
+      "before_or_after_short": {
+        "date": null,
+        "gross_pct": 0.0
+      },
+      "close_days_omitted_by_post_only": 22,
+      "risk_close_days_omitted_by_post_only": 11,
+      "highest_exit_day": {
+        "date": "2020-12-30",
+        "phase": "before_order",
+        "signed_quantity": "0.02022",
+        "equity": "590.6600762284",
+        "gross_pct": 98.74344179437514,
+        "exit_reason": "TAKE_PROFIT",
+        "post_fill_gross_pct": 0.0
+      },
+      "max_equity_reconciliation_error": "4.8E-9",
+      "carried_new_year_points": 2,
+      "cross_year_examples": [
+        {
+          "date": "2024-01-01",
+          "carried_from": "2023-10-21",
+          "quantity": "0.03110"
+        },
+        {
+          "date": "2025-01-01",
+          "carried_from": "2024-12-24",
+          "quantity": "0.02712"
+        }
+      ]
+    },
+    {
+      "strategy": "C02",
+      "case": "BASE",
+      "post_fill_whole": {
+        "date": "2019-05-13",
+        "phase": "after_fill",
+        "signed_quantity": "0.02127",
+        "equity": "185.6623498400",
+        "gross_pct": 89.34645346658819
+      },
+      "post_fill_short": {
+        "date": null,
+        "gross_pct": 0.0
+      },
+      "before_or_after_whole": {
+        "date": "2019-05-14",
+        "phase": "before_order",
+        "signed_quantity": "0.02127",
+        "equity": "188.9892634961",
+        "gross_pct": 89.53667990090125
+      },
+      "before_or_after_short": {
+        "date": null,
+        "gross_pct": 0.0
+      },
+      "close_days_omitted_by_post_only": 19,
+      "risk_close_days_omitted_by_post_only": 8,
+      "highest_exit_day": {
+        "date": "2019-05-14",
+        "phase": "before_order",
+        "signed_quantity": "0.02127",
+        "equity": "188.9892634961",
+        "gross_pct": 89.53667990090125,
+        "exit_reason": "TAKE_PROFIT",
+        "post_fill_gross_pct": 0.0
+      },
+      "max_equity_reconciliation_error": "5.0E-9",
+      "carried_new_year_points": 2,
+      "cross_year_examples": [
+        {
+          "date": "2024-01-01",
+          "carried_from": "2023-10-20",
+          "quantity": "0.02585"
+        },
+        {
+          "date": "2025-01-01",
+          "carried_from": "2024-12-23",
+          "quantity": "0.02070"
+        }
+      ]
+    },
+    {
+      "strategy": "C02",
+      "case": "STRESS",
+      "post_fill_whole": {
+        "date": "2019-05-13",
+        "phase": "after_fill",
+        "signed_quantity": "0.02122",
+        "equity": "184.8484433140",
+        "gross_pct": 89.52890094770714
+      },
+      "post_fill_short": {
+        "date": null,
+        "gross_pct": 0.0
+      },
+      "before_or_after_whole": {
+        "date": "2019-05-14",
+        "phase": "before_order",
+        "signed_quantity": "0.02122",
+        "equity": "188.1594105240",
+        "gross_pct": 89.72016523081292
+      },
+      "before_or_after_short": {
+        "date": null,
+        "gross_pct": 0.0
+      },
+      "close_days_omitted_by_post_only": 19,
+      "risk_close_days_omitted_by_post_only": 8,
+      "highest_exit_day": {
+        "date": "2019-05-14",
+        "phase": "before_order",
+        "signed_quantity": "0.02122",
+        "equity": "188.1594105240",
+        "gross_pct": 89.72016523081292,
+        "exit_reason": "TAKE_PROFIT",
+        "post_fill_gross_pct": 0.0
+      },
+      "max_equity_reconciliation_error": "4.4E-9",
+      "carried_new_year_points": 2,
+      "cross_year_examples": [
+        {
+          "date": "2024-01-01",
+          "carried_from": "2023-10-20",
+          "quantity": "0.02472"
+        },
+        {
+          "date": "2025-01-01",
+          "carried_from": "2024-12-23",
+          "quantity": "0.01949"
+        }
+      ]
+    },
+    {
+      "strategy": "C02",
+      "case": "SEVERE",
+      "post_fill_whole": {
+        "date": "2019-05-13",
+        "phase": "after_fill",
+        "signed_quantity": "0.02115",
+        "equity": "183.8359562450",
+        "gross_pct": 89.72502424749986
+      },
+      "post_fill_short": {
+        "date": null,
+        "gross_pct": 0.0
+      },
+      "before_or_after_whole": {
+        "date": "2019-05-14",
+        "phase": "before_order",
+        "signed_quantity": "0.02115",
+        "equity": "187.1260142900",
+        "gross_pct": 89.91804032171049
+      },
+      "before_or_after_short": {
+        "date": null,
+        "gross_pct": 0.0
+      },
+      "close_days_omitted_by_post_only": 19,
+      "risk_close_days_omitted_by_post_only": 8,
+      "highest_exit_day": {
+        "date": "2019-05-14",
+        "phase": "before_order",
+        "signed_quantity": "0.02115",
+        "equity": "187.1260142900",
+        "gross_pct": 89.91804032171049,
+        "exit_reason": "TAKE_PROFIT",
+        "post_fill_gross_pct": 0.0
+      },
+      "max_equity_reconciliation_error": "5.0E-9",
+      "carried_new_year_points": 2,
+      "cross_year_examples": [
+        {
+          "date": "2024-01-01",
+          "carried_from": "2023-10-20",
+          "quantity": "0.02344"
+        },
+        {
+          "date": "2025-01-01",
+          "carried_from": "2024-12-23",
+          "quantity": "0.01815"
+        }
+      ]
+    },
+    {
+      "strategy": "C02",
+      "case": "DELAY",
+      "post_fill_whole": {
+        "date": "2019-05-14",
+        "phase": "after_fill",
+        "signed_quantity": "0.02084",
+        "equity": "185.1611939080",
+        "gross_pct": 89.54026413468722
+      },
+      "post_fill_short": {
+        "date": null,
+        "gross_pct": 0.0
+      },
+      "before_or_after_whole": {
+        "date": "2019-05-15",
+        "phase": "before_order",
+        "signed_quantity": "0.02084",
+        "equity": "190.5506644452",
+        "gross_pct": 89.84744871433561
+      },
+      "before_or_after_short": {
+        "date": null,
+        "gross_pct": 0.0
+      },
+      "close_days_omitted_by_post_only": 22,
+      "risk_close_days_omitted_by_post_only": 11,
+      "highest_exit_day": {
+        "date": "2019-05-15",
+        "phase": "before_order",
+        "signed_quantity": "0.02084",
+        "equity": "190.5506644452",
+        "gross_pct": 89.84744871433561,
+        "exit_reason": "TAKE_PROFIT",
+        "post_fill_gross_pct": 0.0
+      },
+      "max_equity_reconciliation_error": "4.8E-9",
+      "carried_new_year_points": 2,
+      "cross_year_examples": [
+        {
+          "date": "2024-01-01",
+          "carried_from": "2023-10-21",
+          "quantity": "0.01800"
+        },
+        {
+          "date": "2025-01-01",
+          "carried_from": "2024-12-24",
+          "quantity": "0.01253"
+        }
+      ]
+    },
+    {
+      "strategy": "C04",
+      "case": "BASE",
+      "post_fill_whole": {
+        "date": "2019-05-13",
+        "phase": "after_fill",
+        "signed_quantity": "0.02127",
+        "equity": "185.6623498400",
+        "gross_pct": 89.34645346658819
+      },
+      "post_fill_short": {
+        "date": null,
+        "gross_pct": 0.0
+      },
+      "before_or_after_whole": {
+        "date": "2019-05-14",
+        "phase": "before_order",
+        "signed_quantity": "0.02127",
+        "equity": "188.9892634961",
+        "gross_pct": 89.53667990090125
+      },
+      "before_or_after_short": {
+        "date": null,
+        "gross_pct": 0.0
+      },
+      "close_days_omitted_by_post_only": 21,
+      "risk_close_days_omitted_by_post_only": 10,
+      "highest_exit_day": {
+        "date": "2019-05-14",
+        "phase": "before_order",
+        "signed_quantity": "0.02127",
+        "equity": "188.9892634961",
+        "gross_pct": 89.53667990090125,
+        "exit_reason": "TAKE_PROFIT",
+        "post_fill_gross_pct": 0.0
+      },
+      "max_equity_reconciliation_error": "4.8E-9",
+      "carried_new_year_points": 2,
+      "cross_year_examples": [
+        {
+          "date": "2024-01-01",
+          "carried_from": "2023-10-20",
+          "quantity": "0.02877"
+        },
+        {
+          "date": "2025-01-01",
+          "carried_from": "2024-12-25",
+          "quantity": "0.02029"
+        }
+      ]
+    },
+    {
+      "strategy": "C04",
+      "case": "STRESS",
+      "post_fill_whole": {
+        "date": "2019-05-13",
+        "phase": "after_fill",
+        "signed_quantity": "0.02122",
+        "equity": "184.8484433140",
+        "gross_pct": 89.52890094770714
+      },
+      "post_fill_short": {
+        "date": null,
+        "gross_pct": 0.0
+      },
+      "before_or_after_whole": {
+        "date": "2019-05-14",
+        "phase": "before_order",
+        "signed_quantity": "0.02122",
+        "equity": "188.1594105240",
+        "gross_pct": 89.72016523081292
+      },
+      "before_or_after_short": {
+        "date": null,
+        "gross_pct": 0.0
+      },
+      "close_days_omitted_by_post_only": 21,
+      "risk_close_days_omitted_by_post_only": 10,
+      "highest_exit_day": {
+        "date": "2019-05-14",
+        "phase": "before_order",
+        "signed_quantity": "0.02122",
+        "equity": "188.1594105240",
+        "gross_pct": 89.72016523081292,
+        "exit_reason": "TAKE_PROFIT",
+        "post_fill_gross_pct": 0.0
+      },
+      "max_equity_reconciliation_error": "4.6E-9",
+      "carried_new_year_points": 2,
+      "cross_year_examples": [
+        {
+          "date": "2024-01-01",
+          "carried_from": "2023-10-20",
+          "quantity": "0.02742"
+        },
+        {
+          "date": "2025-01-01",
+          "carried_from": "2024-12-25",
+          "quantity": "0.01897"
+        }
+      ]
+    },
+    {
+      "strategy": "C04",
+      "case": "SEVERE",
+      "post_fill_whole": {
+        "date": "2019-05-13",
+        "phase": "after_fill",
+        "signed_quantity": "0.02115",
+        "equity": "183.8359562450",
+        "gross_pct": 89.72502424749986
+      },
+      "post_fill_short": {
+        "date": null,
+        "gross_pct": 0.0
+      },
+      "before_or_after_whole": {
+        "date": "2019-05-14",
+        "phase": "before_order",
+        "signed_quantity": "0.02115",
+        "equity": "187.1260142900",
+        "gross_pct": 89.91804032171049
+      },
+      "before_or_after_short": {
+        "date": null,
+        "gross_pct": 0.0
+      },
+      "close_days_omitted_by_post_only": 21,
+      "risk_close_days_omitted_by_post_only": 10,
+      "highest_exit_day": {
+        "date": "2019-05-14",
+        "phase": "before_order",
+        "signed_quantity": "0.02115",
+        "equity": "187.1260142900",
+        "gross_pct": 89.91804032171049,
+        "exit_reason": "TAKE_PROFIT",
+        "post_fill_gross_pct": 0.0
+      },
+      "max_equity_reconciliation_error": "5.0E-9",
+      "carried_new_year_points": 2,
+      "cross_year_examples": [
+        {
+          "date": "2024-01-01",
+          "carried_from": "2023-10-20",
+          "quantity": "0.02588"
+        },
+        {
+          "date": "2025-01-01",
+          "carried_from": "2024-12-25",
+          "quantity": "0.01752"
+        }
+      ]
+    },
+    {
+      "strategy": "C04",
+      "case": "DELAY",
+      "post_fill_whole": {
+        "date": "2019-05-14",
+        "phase": "after_fill",
+        "signed_quantity": "0.02084",
+        "equity": "185.1611939080",
+        "gross_pct": 89.54026413468722
+      },
+      "post_fill_short": {
+        "date": null,
+        "gross_pct": 0.0
+      },
+      "before_or_after_whole": {
+        "date": "2019-05-15",
+        "phase": "before_order",
+        "signed_quantity": "0.02084",
+        "equity": "190.5506644452",
+        "gross_pct": 89.84744871433561
+      },
+      "before_or_after_short": {
+        "date": null,
+        "gross_pct": 0.0
+      },
+      "close_days_omitted_by_post_only": 22,
+      "risk_close_days_omitted_by_post_only": 10,
+      "highest_exit_day": {
+        "date": "2019-05-15",
+        "phase": "before_order",
+        "signed_quantity": "0.02084",
+        "equity": "190.5506644452",
+        "gross_pct": 89.84744871433561,
+        "exit_reason": "TAKE_PROFIT",
+        "post_fill_gross_pct": 0.0
+      },
+      "max_equity_reconciliation_error": "4.8E-9",
+      "carried_new_year_points": 2,
+      "cross_year_examples": [
+        {
+          "date": "2024-01-01",
+          "carried_from": "2023-10-21",
+          "quantity": "0.02016"
+        },
+        {
+          "date": "2025-01-01",
+          "carried_from": "2024-12-26",
+          "quantity": "0.01392"
+        }
+      ]
+    }
+  ],
+  "eligibility": [
+    {
+      "fold_year": 2018,
+      "cutoff": "2017-12-31",
+      "active": {
+        "Y01": false,
+        "Y04": false
+      },
+      "positive_forecasts": {
+        "Y01": 0,
+        "Y04": 0
+      }
+    },
+    {
+      "fold_year": 2019,
+      "cutoff": "2018-12-31",
+      "active": {
+        "Y01": false,
+        "Y04": false
+      },
+      "positive_forecasts": {
+        "Y01": 0,
+        "Y04": 0
+      }
+    },
+    {
+      "fold_year": 2020,
+      "cutoff": "2019-12-31",
+      "active": {
+        "Y01": true,
+        "Y04": true
+      },
+      "positive_forecasts": {
+        "Y01": 267,
+        "Y04": 265
+      }
+    },
+    {
+      "fold_year": 2021,
+      "cutoff": "2020-12-31",
+      "active": {
+        "Y01": true,
+        "Y04": true
+      },
+      "positive_forecasts": {
+        "Y01": 609,
+        "Y04": 558
+      }
+    },
+    {
+      "fold_year": 2022,
+      "cutoff": "2021-12-31",
+      "active": {
+        "Y01": true,
+        "Y04": true
+      },
+      "positive_forecasts": {
+        "Y01": 827,
+        "Y04": 868
+      }
+    },
+    {
+      "fold_year": 2023,
+      "cutoff": "2022-12-31",
+      "active": {
+        "Y01": true,
+        "Y04": true
+      },
+      "positive_forecasts": {
+        "Y01": 1033,
+        "Y04": 1154
+      }
+    },
+    {
+      "fold_year": 2024,
+      "cutoff": "2023-12-31",
+      "active": {
+        "Y01": true,
+        "Y04": true
+      },
+      "positive_forecasts": {
+        "Y01": 1153,
+        "Y04": 1256
+      }
+    },
+    {
+      "fold_year": 2025,
+      "cutoff": "2024-12-31",
+      "active": {
+        "Y01": true,
+        "Y04": true
+      },
+      "positive_forecasts": {
+        "Y01": 1335,
+        "Y04": 1514
+      }
+    }
+  ],
+  "constants": [
+    {
+      "strategy": "C02",
+      "parent_active_key": "Y01",
+      "active_signal_first": "2019-12-31",
+      "active_signal_last": "2025-12-30",
+      "active_signal_rows": 2192,
+      "unused_2025_12_31_tail_active": false,
+      "target_fields_exact_except_registered_long_fraction": true,
+      "per_case": [
+        {
+          "case": "BASE",
+          "openings": 19,
+          "reduced_openings": 15,
+          "identity_openings": 4,
+          "first_reduced_open": "2020-01-15",
+          "cold_2018_2019_marks_exact_to_unscaled_parent": true,
+          "entry_exit_dates_reasons_exact": true
+        },
+        {
+          "case": "STRESS",
+          "openings": 19,
+          "reduced_openings": 15,
+          "identity_openings": 4,
+          "first_reduced_open": "2020-01-15",
+          "cold_2018_2019_marks_exact_to_unscaled_parent": true,
+          "entry_exit_dates_reasons_exact": true
+        },
+        {
+          "case": "SEVERE",
+          "openings": 19,
+          "reduced_openings": 15,
+          "identity_openings": 4,
+          "first_reduced_open": "2020-01-15",
+          "cold_2018_2019_marks_exact_to_unscaled_parent": true,
+          "entry_exit_dates_reasons_exact": true
+        },
+        {
+          "case": "DELAY",
+          "openings": 22,
+          "reduced_openings": 17,
+          "identity_openings": 5,
+          "first_reduced_open": "2020-01-16",
+          "cold_2018_2019_marks_exact_to_unscaled_parent": true,
+          "entry_exit_dates_reasons_exact": true
+        }
+      ]
+    },
+    {
+      "strategy": "C04",
+      "parent_active_key": "Y04",
+      "active_signal_first": "2019-12-31",
+      "active_signal_last": "2025-12-30",
+      "active_signal_rows": 2192,
+      "unused_2025_12_31_tail_active": false,
+      "target_fields_exact_except_registered_long_fraction": true,
+      "per_case": [
+        {
+          "case": "BASE",
+          "openings": 21,
+          "reduced_openings": 17,
+          "identity_openings": 4,
+          "first_reduced_open": "2020-01-15",
+          "cold_2018_2019_marks_exact_to_unscaled_parent": true,
+          "entry_exit_dates_reasons_exact": true
+        },
+        {
+          "case": "STRESS",
+          "openings": 21,
+          "reduced_openings": 17,
+          "identity_openings": 4,
+          "first_reduced_open": "2020-01-15",
+          "cold_2018_2019_marks_exact_to_unscaled_parent": true,
+          "entry_exit_dates_reasons_exact": true
+        },
+        {
+          "case": "SEVERE",
+          "openings": 21,
+          "reduced_openings": 17,
+          "identity_openings": 4,
+          "first_reduced_open": "2020-01-15",
+          "cold_2018_2019_marks_exact_to_unscaled_parent": true,
+          "entry_exit_dates_reasons_exact": true
+        },
+        {
+          "case": "DELAY",
+          "openings": 22,
+          "reduced_openings": 17,
+          "identity_openings": 5,
+          "first_reduced_open": "2020-01-16",
+          "cold_2018_2019_marks_exact_to_unscaled_parent": true,
+          "entry_exit_dates_reasons_exact": true
+        }
+      ]
+    }
+  ],
+  "total_exit_days_lost_by_post_only": 1393,
+  "total_risk_exit_days_lost_by_post_only": 478,
+  "accounts_with_whole_max_understated_by_post_only": 25,
+  "accounts_with_short_max_understated_by_post_only": 18,
+  "limitations": [
+    "These are daily proxy quotes before/after orders, not an intraday maximum or future exposure cap.",
+    "Budget multipliers apply to eligible fresh entries; quantities are not rebalanced while held.",
+    "Existing fills were read and inventories reconstructed; no writer, native engine, fitting or parameter search was run.",
+    "No 2026 economic data, expert opinions, review artifacts or verification conclusions were read."
+  ]
+}

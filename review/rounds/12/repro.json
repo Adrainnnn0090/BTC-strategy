@@ -1,0 +1,47 @@
+{
+  "round": 12,
+  "role": "repro",
+  "topic": "最终验收与未解决风险",
+  "conclusion": "支持以“已消耗2018–2025历史的可复现研究档案”交付。R10实际离线6模型/36账户通过，R11原问题合成回归通过；本轮当前镜像的安装源码及886件交付内容独立核验通过。此结论覆盖工程交付与既有结果复现，不认证盈利泛化、完整训练搜索、严格PIT、真实交易或新2026验证，也不预判全部72份审查已完成。",
+  "verdict": "supported",
+  "evidence": [
+    {
+      "source": "checks-r12.json:actual_current_image_receipt,container_isolation",
+      "actual_check": "本轮实际运行不可变镜像sha256:79fcfc5131064b144d98bc625475b0a315bab53781c57a31ba3a28db0ec73640：无网络、只读、非root，仅挂新仓。安装包193个Python文件与c7439216d55207a9a480153d7555f6709817e70a源码完全相同，含当前integrity/verify；旧项目不可见、无binance_robot或review读取。"
+    },
+    {
+      "source": "checks-r12.json:manifest_sha256,actual_current_image_receipt.release_integrity",
+      "actual_check": "当前容器实际重哈希886件、56,446,427 bytes，全部PASS；清单字节等于冻结git blob，SHA256为cd4e22c08fc1056866a69bb9f8bfcb78a42d9244dc7cdfe3514ce1d5fb95a439。清单不含review。未把root既有receipt当作本角色证明。"
+    },
+    {
+      "source": "checks-r10.json; receipt-summary-r10.json; version-bridge-r12.json",
+      "actual_check": "R10本角色已安装包隔离运行：六家族预测误差0、None一致，36个唯一策略/成本完整Native账户及Decimal均PASS。R10至本候选的13组模型/账户/因子/运行时/执行路径git对象相同；replay仅新增非法case预检及指标解释。本轮没有再跑36本。"
+    },
+    {
+      "source": "checks-r11.json:all_path_checks_pass,all_API_checks_pass,all_requested_faults_rejected",
+      "actual_check": "a642de版本的13路径、20 API及17合成模型/完整性/虚构review故障均通过，2018 None与price-only惰性语义保持。R05/R07初始失败保留。c743新增guard本轮只核验安装字节与内容，未逐项重跑全部对抗例。"
+    }
+  ],
+  "counterevidence": [
+    "本轮只验证当前制品/内容；没有重新构建镜像、安装依赖、训练或执行账户。R10、R11与R12的对象及范围分别记录。",
+    "可信commit/manifest是完整性锚；任意自给空清单的PASS0不代表本发布完整。历史复现也不产生新的独立市场样本。"
+  ],
+  "recommendations": [
+    {
+      "priority": "P0",
+      "action": "将冻结commit、manifest SHA、不可变image ID与R10/R11/R12收据一并保留，明确标为研究档案；任何模型/经济规则/输入变更形成新版本，不能沿用本次验收或覆盖原失败。",
+      "acceptance": "使用者可定位完全相同制品、重算886件并区分已跑/未跑层级；发布说明不将复现PASS称为盲测、盈利或实盘安全认证。"
+    }
+  ],
+  "checks_performed": [
+    "当前不可变镜像内独立比对全部193个已安装Python文件并运行完整release内容校验；退出0，容器清理。",
+    "独立锚定清单到冻结git对象，复核13组R10至R12经济路径及replay非经济差异。",
+    "未读真实其他角色/主席意见、V01/V02或2026经济数据；只写本角色r12及附件，无共享源码改动。"
+  ],
+  "unresolved": [
+    "本角色未执行全年度重拟合；原内层搜索及全部研究过程并非本交付已完成的训练复现层级。",
+    "严格PIT、真实撮合/借贷/融资后清算安全、有效试验数及新鲜2026/OOS泛化仍未获本角色认证。",
+    "c743新增guard的逐项对抗回归未重复；当前整包身份/内容已验，正常经济运行沿用R10及不变对象桥接证据。"
+  ],
+  "independence_statement": "本结论为repro AI角色自有证据的最终工程判断，未读取其他角色/主席结论，不代表人类外部审计或新独立样本。未读真实2026/V材料，未改源ledger、共享交付或冻结件；未运行旧writer、新训练/策略搜索或额外36本重放。本角色提交即停止，不预判全体审查完成。"
+}

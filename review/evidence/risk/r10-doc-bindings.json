@@ -1,0 +1,252 @@
+{
+  "candidate_commit": "1b008bfd4a9d1af9a73ff830fb7f8a1b72425fbf",
+  "manifest_count": 886,
+  "selected_file_bindings": [
+    {
+      "path": "README.md",
+      "candidate_blob_equal": true,
+      "sha256": "4da864d261693db44ba8c78ecb706f06ff87058fc7fe863684192f5b486ce6f4",
+      "in_release_manifest": false
+    },
+    {
+      "path": "docs/RISK_AND_LIMITATIONS.md",
+      "candidate_blob_equal": true,
+      "sha256": "4aa73803927fcf8cc482719c4f795f662d98328ea9f0f57f2765935c0450756d",
+      "in_release_manifest": false
+    },
+    {
+      "path": "docs/REPRODUCIBILITY.md",
+      "candidate_blob_equal": true,
+      "sha256": "ee60e427bedd887f80599eef049fe5e3ce6f8281c909144d8ca6c3db624ffa84",
+      "in_release_manifest": false
+    },
+    {
+      "path": "docs/RESULTS_DETAIL.md",
+      "candidate_blob_equal": true,
+      "sha256": "afb3cf6bed92d9af5957368a350f67527f8f6f06c3965202ce7096a2e4686698",
+      "in_release_manifest": false
+    },
+    {
+      "path": "src/btc_strategy/strategies.py",
+      "candidate_blob_equal": true,
+      "sha256": "dd8166731dd972e88aea054b48fbfcf527d9ec7f326944646f3a3d90e64c444b",
+      "in_release_manifest": true
+    },
+    {
+      "path": "src/btc_strategy/execution.py",
+      "candidate_blob_equal": true,
+      "sha256": "43f8d2a786096f49ac04677a57ab5b5122608a49e97b35f37731880315bfea38",
+      "in_release_manifest": true
+    },
+    {
+      "path": "src/btc_strategy/replay.py",
+      "candidate_blob_equal": true,
+      "sha256": "aa035b639fc5a6ec65e3448bb03ca447369324a81471fd7fcf284b1a2a4ef508",
+      "in_release_manifest": true
+    },
+    {
+      "path": "src/btc_strategy/validation.py",
+      "candidate_blob_equal": true,
+      "sha256": "9511f46cd209a9ec720054563050519068c15ccb74042145dbe0cd7394ad4878",
+      "in_release_manifest": true
+    },
+    {
+      "path": "src/btc_strategy/artifacts.py",
+      "candidate_blob_equal": true,
+      "sha256": "d8e78c2467632ac624885c401bbe8de01fd9936069e3890b26d995fafab878aa",
+      "in_release_manifest": true
+    },
+    {
+      "path": "src/btc_strategy/_runtime/clock.py",
+      "candidate_blob_equal": true,
+      "sha256": "15a54df6a2386f038f12868991878d8cc6efe35cdc5a50fc36c1cd85ffdc4a42",
+      "in_release_manifest": true
+    },
+    {
+      "path": "strategies/exposure_controls/k02/strategy.json",
+      "candidate_blob_equal": true,
+      "sha256": "111d13da87a7ca22f7450a60be4cdcc7fc7bd9e40764574bfa8561aa46f0cd20",
+      "in_release_manifest": true
+    },
+    {
+      "path": "strategies/high_return/lp35/strategy.json",
+      "candidate_blob_equal": true,
+      "sha256": "ab037b649ea0238162e3dd95729b6d89cc2e4dd357c054f37ac54d96e9dadfa4",
+      "in_release_manifest": true
+    },
+    {
+      "path": "strategies/high_return/me01/strategy.json",
+      "candidate_blob_equal": true,
+      "sha256": "6fb21deebbaf955a6ce88d9c0f585a80cb7b1bd3182208a6f1119d3e501d757b",
+      "in_release_manifest": true
+    },
+    {
+      "path": "strategies/high_return/mx03/strategy.json",
+      "candidate_blob_equal": true,
+      "sha256": "d36c8065590b303166421620bfbcebb1bac3921bb9391ab6db2ecb32a280a97e",
+      "in_release_manifest": true
+    },
+    {
+      "path": "strategies/high_return/ts04/strategy.json",
+      "candidate_blob_equal": true,
+      "sha256": "cf62ed6ee9b8cc836cee6087c21562961b118a71aa1e0a8fee7dcfdfc13cec56",
+      "in_release_manifest": true
+    },
+    {
+      "path": "strategies/long_only/y01/strategy.json",
+      "candidate_blob_equal": true,
+      "sha256": "722f24e3953bbfaf2c069e382c901e6d18f155f546ef8304f6754e257de30b08",
+      "in_release_manifest": true
+    },
+    {
+      "path": "strategies/risk_tradeoffs/b88a_s03/strategy.json",
+      "candidate_blob_equal": true,
+      "sha256": "155a44cdae78d92431517c3555e31066535b4bb808e246c92cd04e0fe84e33e4",
+      "in_release_manifest": true
+    },
+    {
+      "path": "strategies/risk_tradeoffs/c02/strategy.json",
+      "candidate_blob_equal": true,
+      "sha256": "200ea54c2ccd50b72e9dd6a5695dab32da3bf7e5f21bb831f3fc9311288cf6d4",
+      "in_release_manifest": true
+    },
+    {
+      "path": "strategies/risk_tradeoffs/c04/strategy.json",
+      "candidate_blob_equal": true,
+      "sha256": "50270fbfe93e0c31463fc9329233473191d4065d8bd0ceb4435929e507cbbf2d",
+      "in_release_manifest": true
+    },
+    {
+      "path": "strategies/exposure_controls/k02/README.md",
+      "candidate_blob_equal": true,
+      "sha256": "3e041e561ee1499afae544e1e2928b7d41527910c518ab393299148986cee9bc",
+      "in_release_manifest": false
+    },
+    {
+      "path": "strategies/high_return/lp35/README.md",
+      "candidate_blob_equal": true,
+      "sha256": "af0d364d874df3885f84632743f47869390bc40aba9dc409f000e94846e77e91",
+      "in_release_manifest": false
+    },
+    {
+      "path": "strategies/high_return/me01/README.md",
+      "candidate_blob_equal": true,
+      "sha256": "9bfa7c9a2cb5446dca3e0961d8446d67c2f6f15d54e5369f742b479cf825cd81",
+      "in_release_manifest": false
+    },
+    {
+      "path": "strategies/high_return/mx03/README.md",
+      "candidate_blob_equal": true,
+      "sha256": "f89c9e0f530f3ca1efd08745ac36905f23772bd82b30683e0f3a5e6bed8f9d05",
+      "in_release_manifest": false
+    },
+    {
+      "path": "strategies/high_return/ts04/README.md",
+      "candidate_blob_equal": true,
+      "sha256": "b607e5e69c4497d6cc4be5c6fc06a57dcd40f8e88b1b806c1019e348c2d56d81",
+      "in_release_manifest": false
+    },
+    {
+      "path": "strategies/long_only/y01/README.md",
+      "candidate_blob_equal": true,
+      "sha256": "b7e53100f8a70e530a5412609732130f6c094b4626c9e5c5b0065ca6c9f777c4",
+      "in_release_manifest": false
+    },
+    {
+      "path": "strategies/risk_tradeoffs/b88a_s03/README.md",
+      "candidate_blob_equal": true,
+      "sha256": "5b09ec243bb79cec77207227942988faed0f410f1882dc4a9fe688937fe641fd",
+      "in_release_manifest": false
+    },
+    {
+      "path": "strategies/risk_tradeoffs/c02/README.md",
+      "candidate_blob_equal": true,
+      "sha256": "007271ddf40d89abdee22d4b06946abe09da15f9cdc05f6dbfc996a5c2c9f7df",
+      "in_release_manifest": false
+    },
+    {
+      "path": "strategies/risk_tradeoffs/c04/README.md",
+      "candidate_blob_equal": true,
+      "sha256": "be95bc1639e62dd10c64cab941ba489190ba582fbfef66dad098e0c2335b1dbb",
+      "in_release_manifest": false
+    }
+  ],
+  "nine_strategy_card_metric_checks": [
+    {
+      "id": "K02",
+      "three_card_metrics_match_packaged_four_cost_summaries_to_5dp": true,
+      "2026_exclusion_and_risk_link_present": true
+    },
+    {
+      "id": "LP35",
+      "three_card_metrics_match_packaged_four_cost_summaries_to_5dp": true,
+      "2026_exclusion_and_risk_link_present": true
+    },
+    {
+      "id": "ME01",
+      "three_card_metrics_match_packaged_four_cost_summaries_to_5dp": true,
+      "2026_exclusion_and_risk_link_present": true
+    },
+    {
+      "id": "MX03",
+      "three_card_metrics_match_packaged_four_cost_summaries_to_5dp": true,
+      "2026_exclusion_and_risk_link_present": true
+    },
+    {
+      "id": "TS04",
+      "three_card_metrics_match_packaged_four_cost_summaries_to_5dp": true,
+      "2026_exclusion_and_risk_link_present": true
+    },
+    {
+      "id": "Y01",
+      "three_card_metrics_match_packaged_four_cost_summaries_to_5dp": true,
+      "2026_exclusion_and_risk_link_present": true
+    },
+    {
+      "id": "B88A_S03",
+      "three_card_metrics_match_packaged_four_cost_summaries_to_5dp": true,
+      "2026_exclusion_and_risk_link_present": true
+    },
+    {
+      "id": "C02",
+      "three_card_metrics_match_packaged_four_cost_summaries_to_5dp": true,
+      "2026_exclusion_and_risk_link_present": true
+    },
+    {
+      "id": "C04",
+      "three_card_metrics_match_packaged_four_cost_summaries_to_5dp": true,
+      "2026_exclusion_and_risk_link_present": true
+    }
+  ],
+  "LP35_vs_TS04_each_cost_one_exit_date_change": {
+    "BASE": [
+      {
+        "entry_date": "2020-04-30",
+        "LP35_exit": "2021-01-08",
+        "TS04_exit": "2021-01-07"
+      }
+    ],
+    "STRESS": [
+      {
+        "entry_date": "2020-04-30",
+        "LP35_exit": "2021-01-09",
+        "TS04_exit": "2021-01-07"
+      }
+    ],
+    "SEVERE": [
+      {
+        "entry_date": "2020-04-30",
+        "LP35_exit": "2021-01-09",
+        "TS04_exit": "2021-01-07"
+      }
+    ],
+    "DELAY": [
+      {
+        "entry_date": "2020-05-01",
+        "LP35_exit": "2021-01-10",
+        "TS04_exit": "2021-01-08"
+      }
+    ]
+  },
+  "note": "no review submissions/chair files read; docs/readmes bind to candidate Git blobs and separate SHA list, not release_manifest"
+}

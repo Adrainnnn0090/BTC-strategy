@@ -1,0 +1,11 @@
+usage: replay.py [-h]
+                 [--strategy {LP35,TS04,ME01,MX03,B88A_S03,K02,Y01,C02,C04}]
+                 [--case {BASE,STRESS,SEVERE,DELAY}] [--all]
+                 [--cached-forecasts]
+
+options:
+  -h, --help            show this help message and exit
+  --strategy {LP35,TS04,ME01,MX03,B88A_S03,K02,Y01,C02,C04}
+  --case {BASE,STRESS,SEVERE,DELAY}
+  --all
+  --cached-forecasts

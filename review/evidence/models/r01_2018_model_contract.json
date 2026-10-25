@@ -1,0 +1,111 @@
+[
+  {
+    "stream": "BASE_TREE",
+    "study": "B10-seed-calendar-stability",
+    "year": 2018,
+    "cutoff": "2017-12-31",
+    "fits": 0,
+    "state_manifest_count": 0,
+    "representative_model_exists": false,
+    "cold_models": [
+      "EXTRA_PRICE20_H60_S101",
+      "EXTRA_PRICE20_H60_S307",
+      "EXTRA_PRICE20_H60_S509",
+      "EXTRA_PRICE20_H60_S701",
+      "EXTRA_PRICE20_H60_S907",
+      "EXTRA_PRICE20_H60_S1103",
+      "EXTRA_PRICE20_H60_S1701",
+      "EXTRA_PATH36_H60_S101",
+      "EXTRA_PATH36_H60_S307",
+      "EXTRA_PATH36_H60_S509",
+      "EXTRA_PATH36_H60_S701",
+      "EXTRA_PATH36_H60_S907",
+      "EXTRA_PATH36_H60_S1103",
+      "EXTRA_PATH36_H60_S1701",
+      "EXTRA_CAL44_H60_S101",
+      "EXTRA_CAL44_H60_S307",
+      "EXTRA_CAL44_H60_S509",
+      "EXTRA_CAL44_H60_S701",
+      "EXTRA_CAL44_H60_S907",
+      "EXTRA_CAL44_H60_S1103",
+      "EXTRA_CAL44_H60_S1701",
+      "EXTRA_PLACEBO44_H60_S101",
+      "EXTRA_PLACEBO44_H60_S307",
+      "EXTRA_PLACEBO44_H60_S509",
+      "EXTRA_PLACEBO44_H60_S701",
+      "EXTRA_PLACEBO44_H60_S907",
+      "EXTRA_PLACEBO44_H60_S1103",
+      "EXTRA_PLACEBO44_H60_S1701"
+    ],
+    "contract": "按封存None/冷启动路径执行；禁止为缺失年度补造模型或静默后移训练起点。"
+  },
+  {
+    "stream": "STOP44",
+    "study": "B20-execution-aware-labels",
+    "year": 2018,
+    "cutoff": "2017-12-31",
+    "fits": 0,
+    "state_manifest_count": 0,
+    "representative_model_exists": false,
+    "cold_models": [
+      "CAL44_CLOSE",
+      "CAL44_STOP",
+      "CAL44_RISK",
+      "DYNAMICS58_CLOSE",
+      "DYNAMICS58_STOP",
+      "DYNAMICS58_RISK"
+    ],
+    "contract": "按封存None/冷启动路径执行；禁止为缺失年度补造模型或静默后移训练起点。"
+  },
+  {
+    "stream": "PRICE_L7",
+    "study": "B81-reported-volume-long-core",
+    "year": 2018,
+    "cutoff": "2017-12-31",
+    "fits": 0,
+    "state_manifest_count": 0,
+    "representative_model_exists": false,
+    "cold_models": null,
+    "contract": "按封存None/冷启动路径执行；禁止为缺失年度补造模型或静默后移训练起点。"
+  },
+  {
+    "stream": "B67",
+    "study": "B67-lag-matched-short-supervision",
+    "year": 2018,
+    "cutoff": "2017-12-31",
+    "fits": 0,
+    "state_manifest_count": 0,
+    "representative_model_exists": false,
+    "cold_models": null,
+    "contract": "按封存None/冷启动路径执行；禁止为缺失年度补造模型或静默后移训练起点。"
+  },
+  {
+    "stream": "B88A_MEDIAN",
+    "study": "B88A-short-net-loss-families",
+    "year": 2018,
+    "cutoff": "2017-12-31",
+    "fits": 0,
+    "state_manifest_count": 0,
+    "representative_model_exists": false,
+    "cold_models": null,
+    "contract": "按封存None/冷启动路径执行；禁止为缺失年度补造模型或静默后移训练起点。"
+  },
+  {
+    "stream": "H04",
+    "study": "B17-mining-dimension-ablation",
+    "year": 2018,
+    "cutoff": "2017-12-31",
+    "fits": 0,
+    "state_manifest_count": 0,
+    "representative_model_exists": false,
+    "cold_models": [
+      "EXTRA_PAD_L60",
+      "EXTRA_PAD_L120",
+      "EXTRA_DYNAMICS_L60",
+      "EXTRA_DYNAMICS_L120",
+      "EXTRA_STATE_L60",
+      "EXTRA_STATE_L120"
+    ],
+    "contract": "按封存None/冷启动路径执行；禁止为缺失年度补造模型或静默后移训练起点。"
+  }
+]

@@ -1,0 +1,157 @@
+{
+  "status": "PASS",
+  "metadata_years": "2019–2025",
+  "metadata": [
+    {
+      "fold": 2019,
+      "cutoff": "2018-12-31",
+      "common_count": 408,
+      "common_last_index": 661,
+      "common_maturity_date": "2018-12-25",
+      "latest_allowed_date": "2018-12-25",
+      "short_and_loss_support_equal": true,
+      "long_label_digest_binding": true
+    },
+    {
+      "fold": 2020,
+      "cutoff": "2019-12-31",
+      "common_count": 771,
+      "common_last_index": 1026,
+      "common_maturity_date": "2019-12-25",
+      "latest_allowed_date": "2019-12-25",
+      "short_and_loss_support_equal": true,
+      "long_label_digest_binding": true
+    },
+    {
+      "fold": 2021,
+      "cutoff": "2020-12-31",
+      "common_count": 1135,
+      "common_last_index": 1392,
+      "common_maturity_date": "2020-12-25",
+      "latest_allowed_date": "2020-12-25",
+      "short_and_loss_support_equal": true,
+      "long_label_digest_binding": true
+    },
+    {
+      "fold": 2022,
+      "cutoff": "2021-12-31",
+      "common_count": 1498,
+      "common_last_index": 1757,
+      "common_maturity_date": "2021-12-25",
+      "latest_allowed_date": "2021-12-25",
+      "short_and_loss_support_equal": true,
+      "long_label_digest_binding": true
+    },
+    {
+      "fold": 2023,
+      "cutoff": "2022-12-31",
+      "common_count": 1861,
+      "common_last_index": 2122,
+      "common_maturity_date": "2022-12-25",
+      "latest_allowed_date": "2022-12-25",
+      "short_and_loss_support_equal": true,
+      "long_label_digest_binding": true
+    },
+    {
+      "fold": 2024,
+      "cutoff": "2023-12-31",
+      "common_count": 2224,
+      "common_last_index": 2487,
+      "common_maturity_date": "2023-12-25",
+      "latest_allowed_date": "2023-12-25",
+      "short_and_loss_support_equal": true,
+      "long_label_digest_binding": true
+    },
+    {
+      "fold": 2025,
+      "cutoff": "2024-12-31",
+      "common_count": 2588,
+      "common_last_index": 2853,
+      "common_maturity_date": "2024-12-25",
+      "latest_allowed_date": "2024-12-25",
+      "short_and_loss_support_equal": true,
+      "long_label_digest_binding": true
+    }
+  ],
+  "representative_fold": 2025,
+  "physical_prefix_end": "2024-12-31",
+  "cutoff_index": 2921,
+  "latest_label_allowed": "2024-12-25",
+  "short": {
+    "L1": {
+      "labels": 2602,
+      "statuses": {
+        "DEFINED": 2595,
+        "UNEXECUTABLE": 7
+      },
+      "cross_year_exits": 249,
+      "latest_theoretical_maturity": "2024-12-24",
+      "latest_actual_exit": "2024-11-09"
+    },
+    "L2": {
+      "labels": 2602,
+      "statuses": {
+        "DEFINED": 2595,
+        "UNEXECUTABLE": 7
+      },
+      "cross_year_exits": 250,
+      "latest_theoretical_maturity": "2024-12-25",
+      "latest_actual_exit": "2024-11-10"
+    }
+  },
+  "common_ids": 2588,
+  "common_excluded_year_end_signal_dates": [
+    "2017-12-29",
+    "2017-12-30",
+    "2018-12-29",
+    "2018-12-30",
+    "2019-12-29",
+    "2019-12-30",
+    "2020-12-29",
+    "2020-12-30",
+    "2021-12-29",
+    "2021-12-30",
+    "2022-12-29",
+    "2022-12-30",
+    "2023-12-29",
+    "2023-12-30"
+  ],
+  "long": {
+    "labels": 2603,
+    "reasons": {
+      "STOP_LOSS": 996,
+      "HORIZON_CLOSE": 1295,
+      "YEAR_CLOSE": 305,
+      "FORBIDDEN_YEAR_END_ENTRY": 7
+    },
+    "latest_theoretical_maturity": "2024-12-25",
+    "latest_actual_exit": "2024-12-25",
+    "year_close_example": {
+      "index": "2017-11-09",
+      "entry_index": "2017-11-10",
+      "exit_index": "2017-12-31",
+      "maturity_index": "2018-01-09"
+    }
+  },
+  "label_records_recomputed": 7807,
+  "immature_prefix_rejections": [
+    {
+      "name": "short_lag1",
+      "error": "short label horizon is not mature"
+    },
+    {
+      "name": "short_lag2",
+      "error": "lagged short horizon not mature"
+    },
+    {
+      "name": "long_STOP",
+      "error": "label horizon is not mature"
+    }
+  ],
+  "method": "Extracted original pure label functions; no ledger imports, writers, fitting, or account replay. Full representative label dictionaries compared exactly; price accesses bounded per label.",
+  "limitations": [
+    "Source-function re-evaluation is a maturity and reproducibility check, not an independent financial-pricing implementation.",
+    "Only the 2025 representative fold labels were recomputed; other annual folds used metadata/common-support bounds.",
+    "No test-price file, 2026 economic file, or other expert artifact was opened."
+  ]
+}
